@@ -288,6 +288,22 @@ Q.women_pnf = 6;
 Q.women_psri = 8;
 Q.women_other = 14;
 
+Q.workers_clc = 0;
+Q.middle_class_clc = 0;
+Q.industrialists_clc = 0;
+Q.rural_clc = 0;
+Q.veterans_clc = 0;
+Q.catholic_clc = 0;
+Q.women_clc = 0;
+
+Q.workers_scc = 0;
+Q.middle_class_scc = 0;
+Q.industrialists_scc = 0;
+Q.rural_scc = 0;
+Q.veterans_scc = 0;
+Q.catholic_scc = 0;
+Q.women_scc = 0;
+
 // Current Chamber of Deputies composition
 // % of Chamber of Deputies in Jan 1919
 // source: wikipedia
