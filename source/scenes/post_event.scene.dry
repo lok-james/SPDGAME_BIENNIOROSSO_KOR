@@ -160,6 +160,47 @@ if (Q.dissent < 0) {
     Q.dissent = 0.95;
 }
 
+// coalition support mechanics
+
+for (var classes of Q.classes) {
+    if (Q[classes+ '_clc'] != 0) {
+        Q[classes+ '_psi'] -= Q[classes+ '_clc'];
+        Q[classes+ '_psri'] -= Q[classes+ '_clc']/10;
+        Q[classes+ '_ldr'] -= Q[classes+ '_clc']/10;
+
+        if (Q.pri_prominent == 1) {
+            Q[classes+ '_pri'] -= Q[classes+ '_clc']/10;
+        }
+
+        if (Q.ds_allies == 1) {
+            Q[classes+ '_ds'] -= Q[classes+ '_clc']/10;
+        }
+
+        if (Q.ul_allies == 1) {
+            Q[classes+ '_ul'] -= Q[classes+ '_clc']/10;
+        }
+
+        Q[classes+ '_scc'] = 0;
+
+    }
+
+    if (Q[classes+ '_scc'] != 0) {
+        Q[classes+ '_psi'] -= Q[classes+ '_scc'];
+        Q[classes+ '_psri'] -= Q[classes+ '_scc']/10;
+        Q[classes+ '_ppi'] -= Q[classes+ '_scc']/10;
+
+        if (Q.pri_prominent == 1) {
+            Q[classes+ '_pri'] -= Q[classes+ '_scc']/10;
+        }
+
+        if (Q.ds_allies == 1) {
+            Q[classes+ '_ds'] -= Q[classes+ '_scc']/10;
+        }
+
+        Q[classes+ '_scc'] = 0;
+    }
+} 
+
 // 1. update dates
 if (Q.week_actions >= 1) {
     Q.time += 1;
@@ -176,47 +217,6 @@ if (Q.week_actions >= 1) {
             Q.resources += 6;
         }
     }
-
-    // coalition support mechanics
-
-    for (var classes of Q.classes) {
-        if (Q[classes+ '_clc'] != 0) {
-            Q[classes+ '_psi'] -= Q[classes+ '_clc'];
-            Q[classes+ '_psri'] -= Q[classes+ '_clc']/10;
-            Q[classes+ '_ldr'] -= Q[classes+ '_clc']/10;
-
-            if (Q.pri_prominent == 1) {
-                Q[classes+ '_pri'] -= Q[classes+ '_clc']/10;
-            }
-
-            if (Q.ds_allies == 1) {
-                Q[classes+ '_ds'] -= Q[classes+ '_clc']/10;
-            }
-
-            if (Q.ul_allies == 1) {
-                Q[classes+ '_ul'] -= Q[classes+ '_clc']/10;
-            }
-
-            Q[classes+ '_scc'] != 0;
-
-        }
-
-        if (Q[classes+ '_scc'] != 0) {
-            Q[classes+ '_psi'] -= Q[classes+ '_scc'];
-            Q[classes+ '_psri'] -= Q[classes+ '_scc']/10;
-            Q[classes+ '_ppi'] -= Q[classes+ '_scc']/10;
-
-            if (Q.pri_prominent == 1) {
-                Q[classes+ '_pri'] -= Q[classes+ '_scc']/10;
-            }
-
-            if (Q.ds_allies == 1) {
-                Q[classes+ '_ds'] -= Q[classes+ '_scc']/10;
-            }
-
-            Q[classes+ '_scc'] = 0;
-        }
-    } 
 
     // budget increase from taxation
     if (Q.month == 1 && Q.week == 1) {
