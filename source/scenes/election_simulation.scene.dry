@@ -292,6 +292,8 @@ if (Q.acerbo_law_passed == 1) {
     }
 }
 
+
+Q.acerbo_law_passed = 0;
 !}
  
 **Election results:**
