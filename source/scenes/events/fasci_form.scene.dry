@@ -1,0 +1,20 @@
+title: Forming of the Fasci
+subtitle: A new organisation has formed...
+view-if: year = 1919 and month = 3 and week = 3
+max-visits: 1
+tags: event
+new-page: true
+
+= Forming of the *Fasci Italiani di Combattimento*
+
+In the hall of Piazza San Sepolcro, a man speaks. He speaks of equal suffrage, of direct referendums, of nationalism, of how the Italian people were robbed, given this "mutilated victory" in its wake, as thunderous applause shakes the hall. The Fasci Italiani di Combattimento has been formed, and has already picked up momentum within the population.
+
+The party is split on the new party. After all, talks of equal suffrage, of the abolishment of the Senate, were those not in line with us? 
+
+- @distrust_watch_closely: Time will only tell what this entails.
+
+@distrust_watch_closely
+on-arrival: veterans_pnf += 7; fdc_strength += 10; 
+
+Regardless, it seems the organisation is catching fire amongst the population, especially the veterans.
+

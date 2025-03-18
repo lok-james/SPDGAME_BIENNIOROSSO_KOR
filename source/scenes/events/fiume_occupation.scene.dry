@@ -1,0 +1,31 @@
+title: Occupation of Fiume
+subtitle: D'Annunzio has seized control of Fiume!
+new-page: true
+tags: event
+view-if: year = 1919 and month = 9 and week = 3
+max-visits: 1
+face-image: img/Fiume.jpg
+
+= Occupation of Fiume
+
+Gabriele D'Annunzio, a poet and officer of the Regio Esercito, along with his "legionaries", have seized control of the city of Fiume from Entente occupying forces, declaring the "Italian Regency of Carnaro" and demanding Italy annex the city. 
+
+This has caused quite a stir internationally, and will certainly delay the resolution of our negotiations with Yugoslavia.
+
+- @support_fiume: Support D'Annunzio and his revolutionary march!
+- @no_comment: Do not release a comment.
+- @condemn_fiume: Condemn D'Annunzio and his nationalist march! 
+
+@condemn_fiume 
+subtitle: This might discourage our veteran supporters away.
+on-arrival: veterans_psi -= 3; nationalist_sentiment -= 3; communist_dissent -= 5; labour_dissent += 5; reformist_dissent -= 5;
+
+We issue a letter of condemnation of D'Annunzio, even as not much of the party agrees.
+
+@no_comment
+
+@support_fiume
+subtitle: De Ambris' participation certainly makes this move popular among labour.
+on-arrival: veterans_psi += 3; nationalist_sentiment += 3; communist_dissent -= 5; labour_dissent -= 5; reformist_dissent += 5;
+
+We issue a letter of support for D'Annunzio, even as not much of the party agrees.

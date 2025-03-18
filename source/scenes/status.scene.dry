@@ -1,0 +1,364 @@
+title: Status
+new-page: true
+is-special: true
+on-arrival: {!
+if (Q.inflation) {
+    Q.inflation_2 = Q.inflation.toFixed(1);
+}
+if (Q.economic_growth) {
+    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+}
+if (Q.unemployment) {
+    Q.unemployment_2 = Q.unemployment.toFixed(1);
+}
+Q.dissent_percent = Math.round(Q.dissent_percent);
+Q.radicalisation = Math.round(Q.radicalisation);
+Q.liberal_crackdown_timer_disp = Q.liberal_crackdown_timer * 2;
+Q.catholic_papacy_timer_disp = Q.cathoic_papacy_timer * 2;
+Q.sonnino_southern_timer_disp = Q.sonnino_southern_timer * 2;
+!}
+
+= Status
+
+Week [+ week +], [+ month : month +] [+ year +]
+
+Party: [+ resources +]
+
+Paramilitary: [+ para_resources +]
+
+PSI Position: [? if psi_in_government : In Government - ?][? if psi_in_government == 0 : Opposition ?]
+[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if socialist_catholic_coalition and psi_in_government: Catholic-Socialist Coalition ?][? if left_wing_coalition and psi_in_government: Left-Wing Coalition ?]
+
+[? if psi_in_government and not in_psi_majority: Coalition Dissent: [+ coalition_dissent : coalition_dissent +] ?]
+
+Internal Dissent: [+ dissent_percent : dissent +]
+
+Revolutionary Fervour: [+ revolutionary_fervor +]%
+
+[? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion : exhaustion +]% ?]
+
+{!<span class="tooltip-text" title="The other parties view us with doubt, considering the party contains radical advocating for the fall of the party. The question is: How radical?">Radicalisation</span>!}: [+ radicalisation : radicalisation +]
+
+Our Approach: [+ party_approach +]
+
+= Government
+
+King: [+ king +]
+
+King Approval: [+ king_relation : relationships +]
+
+Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
+
+Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]
+
+Chamber of Deputies composition:
+
+{!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_seating_disp +]%
+[? if pcdi_formed = 1: {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_seating_disp +]% ?]
+[? if psu_formed = 1: {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_seating_disp +]% ?]
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_seating_disp +]%
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_seating_disp +]% ?]
+{!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_seating_disp +]%
+{!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_seating_disp +]%
+[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_seating_disp +]% ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_seating_disp +]% ?]
+[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_seating_disp +]% ?]
+[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_seating_disp +]% ?]
+[? if not pnf_formed :{!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_seating_disp +]% ?]
+[? if pnf_formed :{!<span class="tooltip-text" title="National Fascist Party">PNF</span>!}: [+ pnf_seating_disp +]% ?]
+Others: [+ other_seating_disp +]%
+
+[? if psi_in_government = 1 : Budget: [+ budget +] ?]
+
+Next election: [+ next_election_month : month +] [+ next_election_year +]
+
+= Coalition Demands
+
+[? if left_wing_coalition : We are in a coalition without demands. ?]
+
+[? if not psi_in_government : We are not in government. ?]
+
+[? if psi_majority : The PSI holds a majority. ?]
+
+[? if liberal_reform_accepted : Land Reforms disallowed ?]
+
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer_disp +] weeks left ?]
+
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 1: Crackdown on Paramilitaries: Completed ?]
+
+[? if liberal_nationalisation_accepted : Nationalisations disallowed ?]
+
+[? if liberal_budget_accepted : Deficit spending disallowed ?]
+
+[? if liberal_foreign_accepted : Continue Entente alignment ?]
+
+[? if liberal_aid_accepted : Soviet Aid disallowed ?]
+
+[? if sonnino_southern_accepted and southern_development == 0 : Improve the Southern Question: [+ sonnino_southern_timer_disp +] weeks left ?]
+
+[? if sonnino_southern_accepted and southern_development >= 1 : Improve the Southern Question: Complete ?]
+
+[? if catholic_papacy_accepted and roman_question_answered == 0 : Roman Question resolved: [+ catholic_papacy_timer_disp +] weeks left ?]
+
+[? if catholic_papacy_accepted and roman_question_answered == 1 : Roman Question resolved: Completed ?]
+
+[? if catholic_education_accepted : Catholic Education Reforms disallowed ?]
+
+[? if catholic_women_accepted : Women's Reforms disallowed ?]
+
+[? if catholic_charity_accepted : Non-Catholic Charity funding disallowed ?]
+
+[? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
+
+= Justice
+
+[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
+
+[? if mussolini_jailed and not mussolini_convicted and judicial_reform < 2: Evidence: [? if evidence < 3 : Insufficient ?][? if evidence >= 3 : Sufficient ?] ?]
+
+[? if mussolini_jailed and not mussolini_convicted and judicial_reform >= 2: Evidence: [? if evidence < 2 : Insufficient ?][? if evidence >= 2 : Sufficient ?] ?]
+
+= Economics
+
+Inflation: [+ inflation_2 +]%
+
+Economic Growth: [+ economic_growth_2 +]%
+
+Unemployment: [+ unemployment_2 +]%
+
+@politics
+
+= Inter-party Relations
+
+{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_relation : relationships +]
+
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_relation : relationships +] ?]
+
+{!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +]
+
+{!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_relation : relationships +]
+
+[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats and Radicals">LDR</span>!}: [+ ldr_relation : relationships +] ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_relation : relationships +] ?]
+
+[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_relation : relationships +] ?]
+[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_relation : relationships +] ?]
+
+[? if not pnf_formed : {!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_relation : relationships +] ?]
+[? if pnf_formed : {!<span class="tooltip-text" title="National Fascist Party">PNF</span>!}: [+ pnf_relation : relationships +] ?]
+
+= Internal Factions of the PSI
+
+{!<span class="tooltip-text" title="The Communists are interested in radical, transformative policies and revolutionary action.">Communists</span>!} strength: [+ communist_strength : strength +], dissent: [+ communist_dissent : dissent +]
+
+{!<span class="tooltip-text" title="The Maximalists is a faction of Centre Marxists, between reform and revolution.">Maximalists</span>!} strength: [+ maximalist_strength : strength +], dissent: [+ maximalist_dissent : dissent +]
+
+{!<span class="tooltip-text" title="Labour's goal is economic reform and benefits for organized workers.">Labour</span>!} strength: [+ labour_strength : strength +], dissent: [+ labour_dissent : dissent +]
+
+[? if syndicalist_active : {!<span class="tooltip-text" title="Syndicalist's are a splinter faction of Labour, advocating for radical strikes and workers' councils.">Syndicalists</span>!} strength: [+ syndicalist_strength : strength +], dissent: [+ syndicalist_dissent : dissent +] ?]
+
+{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformists</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
+
+
+@paramilitaries
+on-arrival: {!
+if (Q.rg_strength) {
+    Q.rg_strength_2 = Math.round(Q.rg_strength);
+}
+if (Q.fdc_strength) {
+    Q.fdc_strength_2 = Math.round(Q.fdc_strength);
+}
+if (Q.ard_strength) {
+    Q.ard_strength_2 = Math.round(Q.ard_strength);
+}
+if (Q.adp_strength) {
+    Q.adp_strength_2 = Math.round(Q.adp_strength);
+}
+if (Q.abl_strength) {
+    Q.abl_strength_2 = Math.round(Q.abl_strength);
+}
+!}
+
+= Legality
+
+Fasci: [? if not fdc_banned : Operating ?][? if fdc_banned : Banned ?][? if fasci_adp_active or fasci_rg_active :,Under Attack ?]
+
+Arditismo: [? if not ard_banned : Operating ?][? if ard_banned : Banned ?][? if arditi_adp_active or arditi_rg_active :,Under Attack ?]
+
+Anti-Bolshevik Leagues: [? if not abl_banned : Operating ?][? if abl_banned : Banned ?][? if abl_adp_active or abl_rg_active :,Under Attack ?]
+
+Red Guards: [? if not rg_banned : Operating ?][? if rg_banned : Banned ?]
+
+[? if arditi_formed : Arditi del Popolo: Operating ?]
+
+= Paramilitary Forces
+
+{!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group asscoiated with the PSI.">Red Guards</span>!} Strength: [+ rg_strength_2 +] thousand
+
+Red Guard Militarization: [+ rg_militancy : militancy +]
+
+[? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Popolo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
+
+[? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +]?]
+
+{!<span class="tooltip-text" title="The Fasci is a right-wing organisation of war veterans associated with the PNF.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand
+
+Fasci Militarization: [+ fdc_militancy : militancy +]
+
+{!<span class="tooltip-text" title="The Arditismo are an organisation associated with the Fasci, comprised of former members of the 'Arditi' in the Italian Army.">Arditismo</span>!} Strength: [+ ard_strength_2 +] thousand
+
+Arditismo Militarization: [+ ard_militancy : militancy +]
+
+{!<span class="tooltip-text" title="The Anti-Bolshevik Leagues are local organisations across Italy formed to combat socialist ideologies, funded by landowners and industrialists. ">Anti-Bolshevik Leagues</span>!} Strength: [+ abl_strength_2 +] thousand
+
+Anti-Bolshevik Leagues Militarization: [+ abl_militancy : militancy +]
+
+= Government Forces
+
+Regio Esercito: [+ army_strength +] thousand troops.
+
+Regio Esercito Loyalty: [+ army_loyalty : loyalty +]
+
+[? if psi_in_government : Carabinieri: [+ interior_police_strength +] thousand officers ?]
+
+[? if psi_in_government : Carabinieri Loyalty: [+ interior_police_loyalty: loyalty +] ?]
+
+@polls
+on-arrival: {!
+Q.republican_sentiment_disp = Math.round(Q.republican_sentiment);
+Q.socialist_sentiment_disp = Math.round(Q.republican_sentiment);
+Q.nationalist_sentiment_disp = Math.round(Q.nationalist_sentiment);
+!}
+
+= Projected election results
+
+(if the election were to be held now):
+
+PSI: [+ psi_votes +]%
+
+[? if pcdi_formed : PCd'I: [+ pcdi_votes +]% ?]
+
+[? if psu_formed : PSU: [+ psu_votes +]% ?]
+
+PSRI : [+ psri_votes +]%
+
+[? if pri_prominent = 1: PRI: [+ pri_votes +]% ?]
+
+DS: [+ ds_votes +]%
+
+PPI: [+ ppi_votes +]%
+
+[+ ldr_name +]: [+ ldr_votes +]%
+
+[+ ul_name +]: [+ ul_votes +]%
+
+[+ pnf_name +]: [+ pnf_votes +]%
+
+Others: [+ other_votes +]%
+
+= Public Opinion
+
+Support for Democracy: [+ republican_sentiment_disp +]%
+
+Support for Socialism: [+ socialist_sentiment_disp +]%
+
+Support for Nationalism: [+ nationalist_sentiment_disp +]%
+
+**Detailed results for each demographic**
+
+Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] DS: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; PNF: [+ workers_pnf_display +]%, Others: [+ workers_other_display +]%
+
+Middle Class: PSI: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] DS: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; PNF: [+ middle_class_pnf_display +]%, Others: [+ middle_class_other_display +]%
+
+Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] DS: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; PNF: [+ rural_pnf_display +]%, Others: [+ rural_other_display +]%
+
+Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] DS: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%; PNF: [+ industrialists_pnf_display +]%, Others: [+ industrialists_other_display +]%
+
+Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] DS: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; PNF: [+ veterans_pnf_display +]%, Others: [+ veterans_other_display +]%
+
+Catholics: PSI: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] DS: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%; PNF: [+ catholic_pnf_display +]%, Others: [+ catholic_other_display +]%
+
+[? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
+
+@foreign
+on-arrival: soviet_end_display = soviet_end_timer * 2
+
+= Foreign Relations
+
+Holy See: [+ papal_relation : radicalisation +]
+
+Entente: [+ entente_relation : radicalisation +]
+
+Russian SFSR: [+ soviet_relation : radicalisation +]
+
+Yugoslavia: [+ balkan_relation : radicalisation +]
+
+= International Situations
+
+Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_display +] Weeks Remaining ?][? if rcw_over : Soviet Victory ?]
+
+Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City ?][? if fiume_italian : Italian ?]
+
+Adriatic Question: [? if resolved_adriatic : Complete ?][? if not resolved_adriatic : Negotiating ?]
+
+Roman Question: [? if roman_question_answered : Complete ?][? if not roman_question_answered : Negotiating ?]
+
+@interior
+
+= Reforms
+
+Work Councils: [? if work_councils = 0 and councils_empowered = 0: Non-existent ?][? if work_councils >= 1 and councils_empowered = 0: Influential ?][? if councils_empowered = 1 : Empowered ?]
+
+Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? if nationalisation_progress = 1: Minor ?][? if nationalisation_progress = 2: Moderate ?][? if nationalisation_progress = 3: Major ?]
+
+= Education
+
+Funding: [? if education_funded = 0 : Decrepit ?][? if education_funded = 1 : Minimal ?][? if education_funded = 2 : Adequate ?][? if education_funded = 3 : Generous ?]
+
+Curriculum: [? if education_reformed = 0 : Decrepit ?][? if education_reformed = 1 : Traditional ?][? if education_reformed = 2 : Standardised ?][? if education_reformed = 3 : Modernised ?]
+
+Trade Schools: [? if trade_school_funded = 0 : Unfunded ?][? if trade_school_funded = 1 : Minimal ?][? if trade_school_funded = 2 : Adequate ?][? if trade_school_funded = 3 : Numerous ?]
+
+= Labour
+
+Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded ?][? if unemployment_insurance_founded : [+ insurance_payments_timer +] Months left before renewal ?]
+
+Working Hours: [? if working_hours = 0 : Undeveloped ?][? if working_hours = 1 : Developed ?][? if working_hours = 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
+
+Workplace Safety: [? if workers_safety = 0 : Dangerous ?][? if workers_safety = 1 : Safe ?][? if workers_safety >= 2 : Monitored ?]
+
+= Judiciary
+
+Judicial Reforms: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform = 1: Corrupt ?][? if judicial_reform = 2: Reformed ?]
+
+= Women's Rights
+
+Voting Rights: [? if not womens_suffrage: Disenfranchised ?][? if womens_suffrage : Enfranchised ?]
+
+Women's Rights: [? if womens_rights = 0 : Reactionary ?][? if womens_rights = 1 : Regressive ?][? if womens_rights = 2 : Conservative ?][? if womens_rights >= 3 : Fair ?]
+
+Workplace Status: [? if womens_work = 0 : Discriminated ?][? if womens_work = 1 : Reactionary ?][? if womens_work = 2 : Biased ?][? if womens_work >= 3 : Fair ?]
+
+Legal Status: [? if family_law = 0 : Patriarchal ?][? if family_law = 1 : Biased ?][? if family_law >= 2 : Progressive ?]
+
+Abortion Rights: [? if abortion_rights = 0 : Regressive ?][? if abortion_rights >= 1 : Liberalised ?]
+
+= Taxation
+
+Upper-Class: [+ upper_tax_rates : taxation +]
+
+Lower-Class: [+ lower_tax_rates : taxation +]
+
+Tarrifs: [+ tarrifs : taxation +]
+
+= Mezzogiorno 
+
+Southern Question: [? if not southern_resolved : Ongoing ?][? if southern_resolved : Ameliorated ?]
+
+Land Reform: [? if southern_land_reformed = 0 : Unreformed ?][? if southern_land_reformed = 1 : Ongoing ?]
+
+Infrastructure: [? if southern_infrastructure_funded < 1 : Poor ?][? if southern_infrastructure_funded > 0 and southern_infrastructure_funded < 2 : Lackluster ?][? if southern_infrastructure_funded > 1 : Recovering ?]
+
+Education: [? if southern_education_funded < 1 : Poor ?][? if southern_education_funded > 0 and southern_education_funded < 2 : Lackluster ?][? if southern_education_funded > 1 : Recovering ?]
+
+Mafia: [? if mafia_strength < 1 : Neutralised ?][? if mafia_strength > 2: Strong ?][? if mafia_strength = 1 : Drained ?][? if mafia_strength = 2 : Weakened ?]

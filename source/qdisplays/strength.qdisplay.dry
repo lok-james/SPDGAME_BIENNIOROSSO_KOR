@@ -1,0 +1,8 @@
+
+# faction strength
+
+(0..10) Weak
+(10..25) Moderate
+(25..40) Strong
+(40..60) Very strong
+(60..) Dominant

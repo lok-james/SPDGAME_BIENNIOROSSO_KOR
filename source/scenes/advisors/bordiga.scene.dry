@@ -1,0 +1,49 @@
+title: Amadeo Bordiga
+is-pinned-card: true
+tags: advisor, communist
+card-image: img/portraits/AmadeoBordiga.png
+view-if: bordiga_advisor = 1
+new-page: true 
+
+= Amadeo Bordiga
+
+Bordiga is one of the prominent figures of the Communist faction of the PSI.
+
+- @bordiga_orders
+- @bordiga_revolution
+- @choosing_our_targets
+- @rev_begin_bordiga
+- @root: Return to main
+
+@bordiga_orders
+title: Ordering the Red Guards
+subtitle: We can use the Red Guards to act.
+choose-if: advisor_action_timer = 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 9; last_advisor_action = 1;
+go-to: rg_orders
+
+@bordiga_revolution
+title: Revolutionary Preparations
+subtitle: Continue our revolutionary planning.
+choose-if: advisor_action_timer = 0 
+on-arrival: last_advisor_action = 1; advisor_action_timer = 9; preparing_revolution_timer = 5; 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+go-to: preparing_revolution
+
+
+@choosing_our_targets
+title: Choosing Our Targets
+subtitle: We need to choose who we are mainly aiming for.
+choose-if: advisor_action_timer <= 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 9; last_advisor_action = 1; 
+go-to: enemies
+
+@rev_begin_bordiga
+title: Revolution!
+subtitle: We can begin the revolution! - This will lead us into a civil war.
+view-if: year > 1922 or (year = 1922 and month > 11)
+choose-if: revolutionary_fervor > 69 and advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervor < 70 : The bulk of the party does not support this. ?]
+go-to: civil_war

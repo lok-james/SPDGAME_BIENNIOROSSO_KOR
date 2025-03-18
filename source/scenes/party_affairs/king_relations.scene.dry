@@ -1,0 +1,43 @@
+title: King Relations
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: king_relation_timer <= 0 and not_participating = 0
+on-arrival: week_actions += 1; king_relation_timer = 6;
+card-image: img/portraits/VitorioEmanuel.jpg
+
+= Royal Relations
+
+Our relationship with the King can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, we will need to have the King on our side.
+
+- @king_funds: Arrange some meetings with the King.
+- @king_ldr: Utilise our influence with the [+ ldr_name +] to sway the King.
+- @king_ul: Utilise our influence with the [+ ul_name +] to sway the King.
+- @return: Let's not do this for now.
+- @easy_discard
+
+@king_funds
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; king_relation += 7; king_relation += 3*(1-dissent) if radicalisation < 3; king_relation -= 2*(1-dissent) if radicalisation > 7
+
+We are received with wariness, though the King does not turn us away outright.
+
+@king_ldr
+choose-if: ldr_relation >= 65
+unavailable-subtitle: Our relationship with the [+ ldr_name +] isn't high enough.
+on-arrival: ldr_relation -= 5; king_relation += 5
+
+With some meetings and agreements, they agree to put a good word for us with the King.
+
+@king_ul
+choose-if: ul_relation >= 65
+unavailable-subtitle: Our relationship with the [+ ul_name +] isn't high enough.
+on-arrival: ul_relation -= 5; king_relation += 5
+
+With some meetings and agreements, they agree to sway some of their Senate-aligned members towards us, which in turn sways the King.
+
+@king_return
+
+Maybe it's better we leave the King alone for now.

@@ -1,0 +1,7 @@
+
+(..0.1) Exhausted
+(0.1..0.2) Depleted
+(0.2..0.5) Drained
+(0.5..0.6) Fatigued
+(0.7..0.9) Weary
+(0.9..) Unshaken

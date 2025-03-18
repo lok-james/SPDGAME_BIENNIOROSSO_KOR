@@ -1,0 +1,385 @@
+title: Shuffle Leadership
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: shuffle_leadership_timer = 0 and difficulty >= 0
+on-arrival: week_activities += 1; shuffle_leadership_timer = 8;
+card-image: img/ShuffleLeadership.jpg
+go-to: rm_main
+
+Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
+
+Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength and reduce their dissent.
+
+- @rm_main: Remove advisors
+- @add_advisors: Add advisors
+- @remove_none: Don't change advisors.
+- @easy_discard
+
+
+###################### removing leaders
+
+@rm_main
+title: Remove advisors.
+tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor,
+frequency: 1
+
+- #remove_advisor
+- @add_advisors: Add advisors
+
+@remove_none
+title: Stop changing advisors.
+go-to: root
+tags: remove_advisor
+
+
+@remove_serrati
+title: Remove Serrati
+view-if: serrati_advisor = 1
+on-arrival: serrati_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Serrati has been removed as an advisor. The Maximalist faction disapproves.
+
+@remove_lazzari
+title: Remove Lazzari
+view-if: lazzari_advisor = 1
+tags: remove_advisor
+on-arrival: lazzari_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Lazzari has been removed as an advisor. The Maximalist faction disapproves.
+
+@remove_ferri
+title: Remove Ferri
+view-if: ferri_advisor = 1
+tags: remove_advisor
+on-arrival: ferri_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Ferri has been removed as an advisor. The Maximalist faction disapproves.
+
+@remove_bombacci
+title: Remove Bombacci
+view-if: bombacci_advisor = 1
+tags: remove_advisor
+on-arrival: bombacci_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Bombacci has been removed as an advisor. The Maximalist faction disapproves.
+
+
+# reformists
+
+@remove_kuliscioff
+title: Remove Kuliscioff
+view-if: kuliscioff_advisor = 1
+tags: remove_advisor
+on-arrival: kuliscioff_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Kuliscioff has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_turati
+title: Remove Turati
+view-if: turati_advisor = 1
+tags: remove_advisor
+on-arrival: turati_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Turati has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_salvemini
+title: Remove Salvemini
+view-if: salvemini_advisor = 1
+tags: remove_advisor
+on-arrival: salvemini_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Salvemini has been removed as an advisor. The Reformist faction disapproves.
+
+# labour
+
+@remove_treves
+title: Remove Treves
+view-if: treves_advisor = 1
+tags: remove_advisor
+on-arrival: treves_advisor = 0; labour_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Treves has been removed as an advisor. The Labour faction disapproves.
+
+@remove_rigola
+title: Remove Rigola
+view-if: rigola_advisor = 1
+tags: remove_advisor
+on-arrival: rigola_advisor = 0; labour_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Rigola has been removed as an advisor. The Labour faction disapproves.
+
+# left
+
+@remove_tasca
+title: Remove Tasca
+view-if: tasca_advisor = 1
+tags: remove_advisor
+on-arrival: tasca_advisor = 0; communist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Tasca has been removed as an advisor. The Leftist faction disapproves.
+
+@remove_terracini
+title: Remove Terracini
+view-if: terracini_advisor = 1
+tags: remove_advisor
+on-arrival: terracini_advisor = 0; communist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Terracini has been removed as an advisor. The Leftist faction disapproves.
+
+@remove_togliatti
+title: Remove Togliatti
+view-if: togliatti_advisor = 1
+tags: remove_advisor
+on-arrival: togliatti_advisor = 0; communist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Togliatti has been removed as an advisor. The Leftist faction disapproves.
+
+@remove_gramsci
+title: Remove Gramsci
+view-if: gramsci_advisor = 1
+tags: remove_advisor
+on-arrival: gramsci_advisor = 0; communist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Gramsci has been removed as an advisor. The Leftist faction disapproves.
+
+@remove_bordiga
+title: Remove Bordiga
+view-if: bordiga_advisor = 1
+tags: remove_advisor
+on-arrival: bordiga_advisor = 0; communist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Bordiga has been removed as an advisor. The Leftist faction disapproves.
+
+
+####################### adding advisors
+
+@add_advisors
+title: Add advisors
+choose-if: n_advisors < 3
+unavailable-subtitle: Maximum of 3 advisors.
+go-to: advisor_menu
+
+@advisor_menu
+title: Add other advisors.
+tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor
+frequency: 1
+
+
+- @centrist: Add Maximalists
+- @left: Add Leftists
+- @reformist: Add Reformists
+- @labour: Add Labour
+- @rm_main: Remove advisors instead.
+- @remove_none: Stop changing advisors.
+
+@centrist
+view-if: n_advisors < 3
+
+- #maximalist_advisor
+
+@reformist
+view-if: n_advisors < 3
+
+- #reformist_advisor
+
+@left
+view-if: n_advisors < 3
+
+- #communist_advisor
+
+@labour
+view-if: n_advisors < 3
+
+- #labour_advisor
+
+@add_serrati
+title: Giacinto Menotti Serrati
+subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Inter-Party Relationships, Implementing our Program ?]
+is-card: true
+card-image: img/portraits/GiacintoMenottiSerrati.png
+tags: maximalist_advisor
+view-if: serrati_advisor = 0 and n_advisors < 3 and maximalists_resign = 0
+on-arrival: serrati_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Giacinto Menotti Serrati is now an advisor.
+
+@add_lazzari
+title: Constantinto Lazzari
+subtitle: Constantinto Lazzari is a pacifist leader of the party, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Party Disunity, Rally, Fiscal Policy ?]
+is-card: true
+card-image: img/portraits/ConstantintoLazzari.jpg
+tags: maximalist_advisor
+view-if: lazzari_advisor = 0 and n_advisors < 3 and maximalists_resign = 0
+on-arrival: lazzari_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Constantinto Lazzari is now an advisor.
+
+@add_ferri
+title: Enrico Ferri
+subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Fundraising, Ideology, Media ?]
+is-card: true
+card-image: img/portraits/EnricoFerri.jpg
+tags: maximalist_advisor
+view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathiser_expelled = 0
+on-arrival: ferri_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Enrico Ferri is now an advisor.
+
+@add_bombacci
+title: Nicola Bombacci
+subtitle: Nicola Bombacci is a prominent leader of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Ideology, Rally ?]
+is-card: true
+card-image: img/portraits/NicolaBombacci.jpg
+tags: maximalist_advisor
+view-if: bombacci_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathiser_expelled = 0
+on-arrival: bombacci_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Nicola Bombacci is now an advisor.
+
+# reformist
+
+@add_kuliscioff
+title: Anna Kuliscioff
+subtitle: Anna Kuliscioff is a Russian-born feminist, intellectual, and member of the Reformist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Women's Rights, Veteran's Welfare, Labour Rights ?]
+is-card: true
+card-image: img/portraits/AnnaKuliscioff.jpg
+tags: reformist_advisor
+view-if: kuliscioff_advisor = 0 and n_advisors < 3
+on-arrival: kuliscioff_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Anna Kuliscioff is now an advisor.
+
+@add_turati
+title: Filippo Turati
+subtitle: Filippo Turati leads the reformist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Interior Policy, Snap Election ?]
+is-card: true
+card-image: img/portraits/FilippoTurati.jpg
+tags: reformist_advisor
+view-if: turati_advisor = 0 and n_advisors < 3 and reformists_defect = 0
+on-arrival: turati_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Filippo Turati is now an advisor.
+
+@add_salvemini
+title: Gaetano Salvemini
+subtitle: Gaetano Salvemini is a reformist member who advocates for Southern Italy. {!<br><br>!}[? if difficulty < 0 : Actions - Southern Question, Public Education, Comintern Relations ?]
+is-card: true
+card-image: img/portraits/GaetanoSalvemini.jpg
+tags: reformist_advisor
+view-if: salvemini_advisor = 0 and n_advisors < 3 and reformists_defect = 0
+on-arrival: salvemini_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Gaetano Salvemini is now an advisor.
+
+# left
+
+@add_tasca
+title: Angelo Tasca
+subtitle: Angelo Tasca is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Inter-Party Relationships, Paramilitary Funding ?]
+is-card: true
+card-image: img/portraits/AngeloTasca.jpg
+view-if: tasca_advisor = 0 and n_advisors < 3 and communist_split = 0
+on-arrival: tasca_advisor = 1; n_advisors += 1; communist_strength += 5
+go-to: advisor_menu
+tags: communist_advisor
+
+Angelo Tasca is now an advisor.
+
+@add_terracini
+title: Umberto Terracini
+subtitle: Umberto Terracini is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Comintern Relations, Constitutional Reform, Fasci Urgency ?]
+is-card: true
+card-image: img/portraits/UmbertoTerracini.jpg
+view-if: terracini_advisor = 0 and n_advisors < 3 and communist_split = 0
+on-arrival: terracini_advisor = 1; n_advisors += 1; communist_strength += 5
+go-to: advisor_menu
+tags: communist_advisor
+
+Umberto Terracini is now an advisor.
+
+@add_togliatti
+title: Palmiro Togliatti
+subtitle: Palmiro Togliatti is affiliated with the Left-wing of the party, advocating for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Public Education, Shuffle Cabinet ?]
+is-card: true
+card-image: img/portraits/PalmiroTogliatti.jpg
+view-if: togliatti_advisor = 0 and n_advisors < 3 and communist_split = 0
+on-arrival: togliatti_advisor = 1; n_advisors += 1; communist_strength += 5
+go-to: advisor_menu
+tags: communist_advisor
+
+Palmiro Togliatti is now an advisor.
+
+@add_gramsci
+title: Antonio Gramsci
+subtitle: Antonio Gramsci leads the *L'Ordine Nuovo* bloc, advocating for differing ideals than the rest of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Party Organisations, Ideology ?]
+is-card: true
+card-image: img/portraits/AntonioGramsci.png
+view-if: gramsci_advisor = 0 and n_advisors < 3 and communist_split = 0
+on-arrival: gramsci_advisor = 1; n_advisors += 1; communist_strength += 5
+go-to: advisor_menu
+tags: communist_advisor
+
+Antonio Gramsci is now an advisor.
+
+@add_bordiga
+title: Amadeo Bordiga
+subtitle: Amadeo Bordiga leads the Left-wing faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Revolutionary Planning, Choosing our Targets ?]
+is-card: true
+card-image: img/portraits/AmadeoBordiga.png
+view-if: bordiga_advisor = 0 and n_advisors < 3 and communist_split = 0
+on-arrival: bordiga_advisor = 1; n_advisors += 1; communist_strength += 5
+go-to: advisor_menu
+tags: communist_advisor
+
+Amadeo Bordiga is now an advisor.
+
+
+
+# labour
+
+@add_treves
+title: Claudio Treves
+subtitle: Claudio Treves is a socialist journalist, affiliated with the Trade Unions. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Reform, Media, Labour Rights ?]
+is-card: true
+card-image: img/portraits/ClaudioTreves.jpg
+tags: labour_advisor
+view-if: treves_advisor = 0 and n_advisors < 3 and unions_break = 0
+on-arrival: treves_advisor = 1; n_advisors += 1; labour_strength += 5
+go-to: advisor_menu
+
+Claudio Treves is now an advisor.
+
+@add_rigola
+title: Rinaldo Rigola
+subtitle: Rinaldo Rigola is the leader of the Italian CGIL, General Confederation of Labour. {!<br><br>!}[? if difficulty < 0 : Actions - Fundraising, Fiscal Policy, Veterans Welfare ?]
+is-card: true
+card-image: img/portraits/RinaldoRigola.png
+tags: labour_advisor
+view-if: rigola_advisor = 0 and n_advisors < 3 and unions_break = 0
+on-arrival: rigola_advisor = 1; n_advisors += 1; labour_strength += 5
+go-to: advisor_menu
+
+Rinaldo Rigola is now an advisor.

@@ -1,0 +1,39 @@
+title: Constantino Lazzari
+is-pinned-card: true
+tags: advisor, maximalist
+card-image: img/portraits/CostantinoLazzari.jpg
+view-if: lazzari_advisor = 1
+new-page: true 
+
+= Constantino Lazzari
+
+Lazzari is a long-time member of the PSI, founding the party back in 1892. A member of the Maximalist faction, he holds significant influence in the party, being the current Secretary of the Party.
+
+- @party_disunity_lazzari
+- @party_rally
+- @fiscal_policy_lazzari
+- @root: Return to main
+
+@party_disunity_lazzari
+title: Party Disunity
+subtitle: The current state of the party is disunited; factions are quarreling as every side pushes its own ideas.
+choose-if: advisor_action_timer == 0 and communist_dissent > 0 and reformist_dissent > 0 and labour_dissent > 0 and maximalist_dissent > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if (communist_dissent = 0 and reformist_dissent = 0 and maximalist_dissent = 0 and labour_dissent = 0) : The party is the most united it has been since its inception. ?]
+on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+go-to: party_disunity
+
+@party_rally
+title: Party Rally
+subtitle: We should go rally our voters and spread our message further.
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+go-to: rally
+
+@fiscal_policy_lazzari
+title: Fiscal Policy
+subtitle: Having control of the Financial Ministry, we can adjust taxes and tariffs.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not finance_minister_party = "PSI" : The PSI does not control the Financial Ministry. ?]
+choose-if: psi_in_government and finance_minister_party = "PSI" and advisor_action_timer == 0
+on-arrival: advisor_action_timer = 9; fiscal_policy_timer -= 5; last_advisor_action = 1;
+go-to: fiscal_policy

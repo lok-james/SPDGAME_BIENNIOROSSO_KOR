@@ -1,0 +1,59 @@
+title: Political Rally
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: rally_timer <= 0
+on-arrival: week_actions += 1; rally_timer = 6
+card-image: img/Rally.jpg
+
+= Political Rally
+
+Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
+
+- @class_struggle: The class struggle of the proletariat against the bourgeoisie.
+- @welfare: The maintenance and expansion of social welfare programs, especially due to the post-war struggle.
+- @democracy: Continuing the democratisation of the government and rallying against the current monarchists and the authoritarian fascists.
+- @pacifism: Opposing war, nationalism, and militarism at all costs.
+- @economic: Ending this economic crisis and inaction of the government.
+- @local: A mixture of various local and national concerns that resonate most with the audience.
+- @easy_discard
+- @cancel_advisor_action
+
+@class_struggle
+on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if communist_strength > reformist_strength; workers_psi += 4*(1-dissent) if nationalisation_progress > 0; veterans_psi += 3*(1-dissent) if nationalisation_progress > 0; communist_strength += 5; communist_dissent -= 5; middle_class_psi -= 3; industrialists_psi -= 2;
+
+Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalisation_progress > 0 : Our achievements in nationalisation have assisted our messaging. ?]
+
+@welfare
+on-arrival: veterans_psi += 3*(1-dissent); workers_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 3*(1-dissent) if welfare > 0; veterans_psi += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labour_strength += 4; reformist_dissent -= 3; labour_dissent -= 3;
+
+The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
+
+@democracy
+on-arrival: democratisation += 1; republican_sentiment += 2*(1 - dissent); workers_psi += 4*(1-dissent) if democratisation >= 3; veterans_psi += 3*(1-dissent) if democratisation >= 3; socialist_sentiment += 1*(1 - dissent) if democratisation >= 3; middle_class_psi += 4*(1-dissent) if democratisation >= 3; republican_sentiment += 4*(1 - dissent) if democratisation >= 3
+
+Our speakers rally against the corrupt system and rail against the monarchists and authoritarians who prop up its existence.
+
+[? if democratisation < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
+[? if democratisation >= 3 : Since we have consistently made democratisation a theme of our campaign, the workers are enthusiastic about our message. ?]
+
+@pacifism
+on-arrival: pacifism += 1; nationalist_sentiment -= 2*(1 - dissent); workers_psi += 4*(1 - dissent) if pacifism >= 3; veterans_psi += 3*(1-dissent) if pacifism >= 3; nationalist_sentiment -= 3*(1-dissent) if pacifism >= 3; middle_class_psi += 4*(1-dissent) if pacifism >= 3
+
+Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
+
+[? if pacifism < 3 : Given the volume of nationalist indoctrination in our society, it is difficult to argue so vehemently against the military. ?]
+[? if pacifism >= 3 : Since we have consistently made pacifism a theme of our campaign, the workers are enthusiastic about our message. ?]
+
+@economic
+view-if: not psi_in_government 
+choose-if: national_economic_recovery = 0
+unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
+on-arrival: workers_psi += 3*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); ppi_relation -= 6*(1-dissent); ldr_relation -= 6*(1-dissent); ul_relation -= 6*(1-dissent); ds_relation -= 6*(1-dissent);
+
+Our anti-government sentiment resonates with the workers and veterans, though the governing coalition doesn't seem the fondest of our message.
+
+@local
+on-arrival: workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); rural_psi += 1*(1-dissent); veterans_psi += 3*(1-dissent);
+
+Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.

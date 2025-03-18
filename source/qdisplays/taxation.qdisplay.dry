@@ -1,0 +1,10 @@
+
+(..-6) Extremely low
+(-5..-4) Very low
+(-3..-2) Low
+(-1..-1) Below baseline
+(0..0) Moderate
+(1..1) Above baseline
+(2..3) High
+(4..5) Very high
+(6..) Extremely high

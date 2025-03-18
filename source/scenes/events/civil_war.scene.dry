@@ -1,0 +1,236 @@
+title: Civil War
+new-page: true
+on-arrival: {!
+Q.rg_strength = Math.round(Q.rg_strength);
+Q.adp_strength = Math.round(Q.adp_strength);
+Q.fdc_strength = Math.round(Q.fdc_strength);
+Q.ard_strength = Math.round(Q.ard_strength);
+Q.abl_strength = Math.round(Q.abl_strength);
+
+var total_strength = Q.communist_strength + Q.maximalist_strength + Q.labour_strength + Q.reformist_strength;
+var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.labour_strength*Q.labour_dissent + Q.reformist_strength*Q.reformist_dissent;
+var total_fervor = Q.revolutionary_fervor/100
+
+Q.dissent = 0.01*total_dissent/total_strength;
+console.log('new dissent: ' + Q.dissent);
+
+if (Q.dissent < 0) {
+    Q.dissent = 0;
+} else if (Q.dissent > 0.95) {
+    Q.dissent = 0.95;
+}
+
+Q.civil_war_seen = 1;
+
+// our allies
+Q.total_power = 0;
+
+Q.rg_power = Q.rg_strength*Q.rg_militancy;
+if (Q.dissent > 0.15) {
+    Q.rg_power *= (1 - Q.dissent/1.5);
+}
+if (Q.preparation_done == 1) {
+    Q.rg_power*1.2;
+}
+if (Q.rg_banned == 1) {
+    Q.total_power += Q.rg_power * 0.75;
+} else {
+    Q.total_power += Q.rg_power;
+}
+if (Q.interior_police_loyalty < 0) {
+    Q.interior_police_loyalty = 0;
+}
+Q.interior_police_power = Q.interior_police_strength*Q.interior_police_militancy*Q.interior_police_loyalty;
+Q.total_power += Q.interior_police_power;
+
+if (Q.army_loyalty < 0) {
+    Q.army_loyalty = 0;
+}
+Q.loyal_army_power = Q.army_strength*Q.army_militancy*Q.army_loyalty;
+if (Q.psi_in_government) {
+    Q.total_power += Q.loyal_army_power;
+} else {
+    Q.total_power += Q.loyal_army_power/4;
+}
+
+if (Q.rcw_over == 0) {
+    Q.soviet_power = 50;
+}
+if (Q.rcw_over == 1 && Q.soviet_recovery_timer > 0) {
+    Q.soviet_power = 75;
+}
+if (Q.rcw_over == 1 && Q.soviet_recovery_timer < 1) {
+    Q.soviet_power = 100;
+}
+
+Q.adp_power = Q.adp_strength*Q.adp_militancy
+
+if (Q.arditi_cooperation == 1) {
+    Q.total_power += Q.adp_power;
+}
+
+if (Q.soviet_relation < 3) {
+    Q.soviet_multiplier = 0.6;
+}
+if (Q.soviet_relation > 2 && Q.soviet_relation < 6) {
+    Q.soviet_multiplier = 0.8;
+}
+if (Q.soviet_relation > 5 && Q.soviet_relation < 8) {
+    Q.soviet_multiplier = 1;
+}
+if (Q.soviet_relation >= 8) {
+    Q.soviet_multiplier = 1.2;
+}
+Q.soviet_power *= Q.soviet_multiplier;
+Q.total_power += Q.soviet_power;
+
+// use normalised workers_psi instead of labour_strength?
+Q.normalised_workers_psi = 100*Q.workers_psi/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
+Q.normalised_workers_psri = 100*Q.workers_psri/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
+Q.normalised_workers_total = Q.normalised_workers_psi;
+if (Q.psri_relation >= 50) {
+    Q.normalised_workers_total += Q.normalised_workers_psri;
+} else if (Q.psri_relation >= 45) {
+    Q.normalised_workers_total += Q.normalised_workers_psri*0.5;
+}
+Q.total_power += (2 - Q.labour_dissent/100)*Q.normalised_workers_total*(2 - Q.unemployment/100)*2.5*total_fervor;
+console.log("Supporter strength:", Q.total_power);
+
+// our enemies
+Q.enemy_power = 0;
+Q.fdc_power = Q.fdc_strength*Q.fdc_militancy;
+Q.ard_power = Q.ard_strength*Q.ard_militancy;
+Q.abl_power = Q.abl_strength*Q.abl_militancy;
+
+if (Q.fdc_banned == 1) {
+    Q.enemy_power += Q.fdc_power * 0.75;
+} else {
+    Q.enemy_power += Q.fdc_power;
+}
+if (Q.ard_banned == 1) {
+    Q.enemy_power += Q.ard_power * 0.75;
+} else {
+    Q.enemy_power += Q.ard_power;
+}
+if (Q.abl_banned == 1) {
+    Q.enemy_power += Q.abl_power * 0.75;
+} else {
+    Q.enemy_power += Q.abl_power;
+}
+Q.hostile_army_power = Q.army_strength*Q.army_militancy*(1-Q.army_loyalty);
+Q.enemy_power += Q.hostile_army_power;
+console.log("Enemy strength:", Q.enemy_power);
+
+if (Q.total_power > Q.enemy_power*1.1) {
+    Q.socialist_victory = 1;
+} else if (Q.total_power/Q.enemy_power >= 0.6) {
+    Q.long_war = 1;
+} else {
+    Q.total_defeat = 1;
+}
+
+Q.is_favorable = 0;
+if (Q.total_power >= Q.enemy_power*0.95) {
+    Q.is_favorable = 1;
+}
+!}
+go-to: war_menu
+
+= The Array of Forces
+
+Our enemies are the paramilitary Arditismo, with [+ ard_strength +] thousand troops, the Far-right Fasci, with [+ fdc_strength +] thousand troops and the Anti-Bolshevik Leagues, with [+ abl_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ interior_police_strength +] thousand members, are unclear.
+
+On our side, we have the Red Guards, at [+ rg_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
+
+[? if rg_militancy < 0.25 : Unfortunately, the Red Guards are poorly trained and equipped, and will not be able to stand against our more militarised opponents. ?][? if rg_militancy >= 0.25 and rg_militancy < 0.5 : We have spent some resources training and equipping the Red Guard. Let us hope our people can persist. ?][? if rg_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Guard into a fighting force. Let us hope that they survive. ?]
+
+What else do we have?
+
+# note: many scenarios lead to civil war. This calculates the array of forces, and the possible outcomes.
+
+@war_menu
+
+- @re_help: Appeal to the Regio Esercito to join our side.
+- @soviet_help: Call for support from the Soviet Union.
+- @general_strike: Call a general strike!
+- @loyal_police: Call up the loyal portions of the Carabinieri.
+- @war_outcome: Now, the battle...
+
+@re_help
+max-visits: 1
+go-to: war_menu
+on-arrival: war_choices += 1
+
+We have urged the Regio Esercito to join us, to support our side in the civil war. [? if army_loyalty < 0.2 : Unfortunately, few heed our calls; the Regio Esercito detest us. ?][? if army_loyalty >= 0.2 and army_loyalty < 0.4 : Some officers and troops heed our calls to not fight against us. Some even join us. ?][? if army_loyalty >= 0.4 and army_loyalty < 0.6 : The Army is split. Many avoid taking a side, or join our side. ?][? if army_loyalty >= 0.6 : Surprisingly, the majority of the Army is on our side! Our preparations have worked. ?]
+
+@soviet_help
+max-visits: 1 
+go-to: war_menu
+on-arrival: war_choices += 1;
+
+We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 :as well as the bourgeois parties,?] [? if not rcw_over : though not much can be sent as they are in their own civil war as well. ?]
+
+[? if soviet_relation < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if (soviet_relation > 2 and soviet_relation < 6) : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if (soviet_relation > 5 and soviet_relation < 8) : The Soviet Union sends us a force of willing volunteers, aiding our cause. ?][? if soviet_relation >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
+
+@general_strike
+max-visits: 1
+go-to: war_menu
+on-arrival: war_choices += 1
+
+General strikes are a significant tool we have against both the bourgeois and the far-right, and it can help us out now. [? if normalised_workers_total > 70 : The workers are largely united with us. ?][? if normalised_workers_total >= 50 and normalised_workers_total <= 70 : There is some dissent within labour, but a majority of workers support the general strike. ?][? if normalised_workers_total > 30 and normalised_workers_total < 50 : However, there is substantial dissent within labour, and less than half support the general strike. ?][? if normalised_workers_total <= 30 : However, labour is deeply divided, and most workers do not heed the call to strike. ?]
+
+@loyal_police
+max-visits: 1
+go-to: war_menu
+on-arrival: war_choices += 1
+
+We urge the Carabinieri, the force of the Interior police, to join our cause. [? if interior_police_loyalty < 0.4 : Unfortunately, the Carabinieri are politically unreliable at best. ?][? if interior_police_loyalty >= 0.4 and interior_police_loyalty < 0.65 : In this crucial hour, the Carabinieri are split, with about half actively supporting our efforts. ?][? if interior_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating socialist loyalties in the Carabinieri have proven their worth. ?]
+
+@war_outcome
+view-if: war_choices >= 2
+go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory if socialist_victory = 1 and participating = 1; communist_victory if socialist_victory = 1 and not_participating = 1
+
+@defeat
+
+= Total Defeat
+achievement: follia_di_sinistra
+
+Our forces are no match for those of the reactionaries. Red Guard forces are quickly overpowered by the forces of the Arditismo, Fasci, and Regio Esercito. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Italy.
+
+Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
+
+- @game_over: Game over.
+
+@long_war
+
+= Long War
+
+The initial phase of the action ends, and somehow, both sides remain standing.
+
+The war settles into fixed battle lines. This will not be a quick coup, but a long civil war. The nation will destroy itself before it can be rebuilt again.
+
+- @game_over: Game over.
+
+@socialist_victory
+achievement: vittoria_monarchica
+
+= Victory for the Kingdom
+
+The battle lines hold, and the Fasci, Arditismo, and pro-coup Regio Esercito forces are defeated. Today, the forces of the kingdom prevail over the fascists. It will be tough to recover once more before we have even recovered from our involvement in the First World War, but we are confident.
+
+Italy holds strong, against fascism.
+
+- @game_over: Game over.
+
+@communist_victory
+on-arrival: soviet_victory = 1
+achievement: vittoria_sovietica
+
+= Victory for the Socialists
+
+The bourgeois and fascists lines shatter, as their forces are quickly overwhelmed by pro-socialist forces and the Red Guard, forcing a surrender. The Monarchy has been abolished, as bourgeois leaders are arrested and trialed in people's courts across the nation. The 18th Congress has been scheduled to occur within a few months to determine the state and organisation of the new nation.
+
+Italy has toppled its bourgeois oppressors and established a revolutionary state.
+
+- @game_over: Game over.
+

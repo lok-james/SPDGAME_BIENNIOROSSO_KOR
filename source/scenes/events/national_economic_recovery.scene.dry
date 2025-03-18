@@ -1,0 +1,44 @@
+title: Italian Economic Recovery!
+tags: event
+view-if: economic_growth > 0 and inflation < 5 and inflation > 0 and unemployment < 8
+on-arrival: {!
+if (Q.psi_in_government) {
+Q.workers_psi += 7*(1-Q.dissent);
+Q.middle_class_psi += 7*(1-Q.dissent);
+Q.industrialists_psi += 7*(1-Q.dissent);
+Q.rural_psi += 7*(1-Q.dissent);
+Q.veterans_psi += 7*(1-Q.dissent);
+Q.catholic_psi += 7*(1-Q.dissent);
+}
+
+Q.workers_pnf -= 7*(1-Q.dissent);
+Q.middle_class_pnf -= 7*(1-Q.dissent);
+Q.industrialists_pnf -= 7*(1-Q.dissent);
+Q.rural_pnf -= 7*(1-Q.dissent);
+Q.veterans_pnf -= 7*(1-Q.dissent);
+Q.catholic_pnf -= 7*(1-Q.dissent);
+
+if (Q.grand_coalition) {
+Q.workers_ldr += 7*(1-Q.dissent);
+Q.middle_class_ldr += 7*(1-Q.dissent);
+Q.industrialists_ldr += 7*(1-Q.dissent);
+Q.rural_ldr += 7*(1-Q.dissent);
+Q.veterans_ldr += 7*(1-Q.dissent);
+Q.catholic_ldr += 7*(1-Q.dissent);
+
+Q.workers_ppi += 7*(1-Q.dissent);
+Q.middle_class_ppi += 7*(1-Q.dissent);
+Q.industrialists_ppi += 7*(1-Q.dissent);
+Q.rural_ppi += 7*(1-Q.dissent);
+Q.veterans_ppi += 7*(1-Q.dissent);
+Q.catholic_ppi += 7*(1-Q.dissent);
+}
+
+Q.national_economic_recovery = 1;
+!}
+max-visits: 1
+achievement: risorgimento_economico
+
+= Economic Economic Recovery 
+
+It seems the economy is finally recovering. People are heading back to work, inflation is down to single digits, and our economic forecasts show a positive growth for the first time in months. Regardless of the efforts taken, it seems most of the credit will be given to the current governing coalition, which [? if psi_in_government :fortunately, means us. ?][? if not psi_in_government :unfortunately, does not include us. ?]

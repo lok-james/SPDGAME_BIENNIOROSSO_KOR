@@ -1,0 +1,53 @@
+title: International Relations
+new-page: true
+is-card: true
+tags: party_affairs
+view-if: international_relations_timer <= 0
+on-arrival: week_actions += 1; international_relations_timer += 8;
+card-image: img/Comintern.jpg
+max-visits: 12
+#subtitle: Building ties with our fraternal socialist parties.
+
+= Comintern Relations
+
+At the Labour and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
+
+- @fr_uk: Build relationships with the French SFIO and British Labour Party to keep their governments aligned with Italy.
+- @germany: Learn organisation and street fighting from the German communists.
+- @comintern: Expand our contacts and influence with the Soviets through the Comintern.
+- @america: Contact the Socialist party of America.
+- @return: We do not need international contacts at the moment.
+- @easy_discard
+- @cancel_advisor_action
+
+@fr_uk
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5;
+
+The socialists of France and Britain can influence their governments to be friendlier towards Italy.
+
+@germany
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04; resources -= 1;
+
+The Spartacist Uprising has failed. Though not officially persecuted, with its leaders dead, the Spartacus League higher command certainly aren't living peacefully. Fortunately, we should be able to offer them refuge, welcoming them as exiles to Italy and training our forces with their experiences in the Spartakusbund.
+
+@comintern
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 2 if not rcw_over; soviet_recovery_timer -= 2 if rcw_over;
+
+Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
+
+@america
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1
+
+The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.

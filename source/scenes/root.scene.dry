@@ -1,0 +1,647 @@
+title: Root Scene
+new-page: true
+go-to: post_event if started = 1; start_menu if started = 0
+
+@start_menu
+new-page: true
+go-to: start_menu_2
+
+= Biennio Rosso: An Alternate History
+
+@start_menu_2
+
+- @start: Start game
+- @election_simulation: Election Simulation
+- @mod_info: Mod Info & Settings
+- @credits: Credits
+- @achievements: Achievements
+
+@achievements
+go-to: game_over.achievements
+
+@start
+on-arrival: {!
+Q.started = 1;
+// time elapsed (in months)
+Q.time = 1;
+Q.year = 1919;
+Q.month = 1;
+Q.week = 1;
+// how many actions have been taken this month?
+Q.week_actions = 0;
+
+// 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
+Q.difficulty = 0;
+Q.historical_mode = 0;
+// old demographics
+Q.old_demographics = 0;
+// use decimals for reichstag seats
+// TODO: not yet implemented
+Q.use_decimals = 1;
+
+// party resources
+Q.resources = 2;
+Q.para_resources = 2;
+// party dues
+Q.dues = 2;
+
+// the state of the party
+// overall dissent reduces every increase in party support.
+Q.dissent = 0.05;
+Q.dissent_percent = 5;
+Q.party_approach = "Unclear";
+
+// factions
+Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist'];
+// should this be normalised to 100%?
+Q.communist_strength = 17;
+Q.communist_dissent = 30;
+Q.maximalist_strength = 35;
+Q.maximalist_dissent = 10;
+Q.labour_strength = 15;
+Q.labour_dissent = 15;
+Q.reformist_strength = 12;
+Q.reformist_dissent = 25;
+Q.syndicalist_strength = 0;
+Q.syndicalist_dissent = 0;
+
+// in the event dissent gets too high
+Q.unions_break = 0;
+Q.maximalists_resign = 0;
+Q.communist_split = 0;
+Q.reformists_defect = 0;
+
+// Depending on how the Congress goes
+Q.reformists_expelled = 0;
+
+// fasci_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
+Q.fasci_urgency = 0;
+// radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
+Q.radicalisation = 5;
+// have we formed the Arditi del popolo?
+Q.arditi_formed = 0;
+
+// organisations
+
+// inter-party relations
+Q.ul_relation = 37;
+Q.ldr_relation = 37;
+Q.ds_relation = 37;
+Q.ppi_relation = 40;
+Q.psri_relation = 60;
+Q.pri_relation = 60;
+// PNF relations are invariably hostile
+Q.pnf_relation = 0;
+
+Q.ul_leader = "Giolitti";
+Q.ldr_leader = "Orlando";
+Q.ds_leader = "Colonna";
+Q.ppi_leader = "Sturzo";
+Q.psri_leader = "Ciotti";
+Q.pnf_leader = "Mussolini";
+Q.pri_leader = "Chisea"
+Q.psu_leader = "Turati"
+Q.pcdi_leader = "Bordiga"
+Q.ldr_name = "LDR";
+Q.ldr_full_name = "Liberals, Democrats and Radicals";
+Q.ldr_full_italian = "Liberali, democratici e radicali";
+Q.ul_name = "UL";
+Q.ul_full_name = "Liberal Union";
+Q.ul_full_italian = "Liberale Unione";
+Q.pnf_name = "FdC";
+Q.pnf_full_name = "Italian Fasces of Combat";
+Q.pnf_full_italian = "Fasci Italiani di Combattimento";
+Q.pli_formed = 0;
+Q.pldi_formed = 0;
+Q.pri_prominent = 0;
+
+// relation with the king; for snap elections and march
+Q.king_relation = 20;
+
+// The array of forces - paramilitary groups
+// Number of members in 1919 (in thousands)
+Q.rg_strength = 100;
+Q.rg_militancy = 0.20;
+Q.rg_banned = 0;
+
+Q.fdc_strength = 30;
+Q.fdc_militancy = 0.30;
+Q.fdc_banned = 0;
+
+Q.ard_strength = 15;
+Q.ard_militancy = 0.50;
+Q.ard_banned = 0;
+
+Q.adp_strength = 0;
+Q.adp_militancy = 0.25;
+Q.adp_banned = 0;
+
+Q.abl_strength = 10;
+Q.abl_militancy = 0.15;
+Q.abl_banned = 0;
+
+Q.interior_police_strength = 20;
+Q.interior_police_militancy = 1;
+Q.interior_police_loyalty = 0.45;
+
+// strength includes actual military and de facto reserves?
+Q.army_strength = 3100;
+Q.army_militancy = 5;
+Q.army_loyalty = 0.2;
+
+// The state of the country
+
+// popular opinion
+// pro-monarchy vs anti-monarchy
+Q.republican_sentiment = 10;
+Q.socialist_sentiment = 14;
+Q.nationalist_sentiment = 37;
+Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
+Q.democratisation = 0;
+
+// revolution vs radicalism
+Q.revolutionary_fervor = 60;
+
+// pacifism vs war
+Q.pacifism = 0;
+acerbo_law_passed = 0;
+
+// capital strikes happen when you upset the industrialists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
+// coup progress happens when you piss off the fasci too much too quickly + if they have enough troops
+// when capital_strike_progress reaches 10, there's a special event that launches the coup.
+Q.capital_strike_progress = 0;
+Q.capital_strike_seen = 0;
+Q.turin_action = 0;
+Q.sonnino_avenged = 0;
+// if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
+Q.fasci_coup_progress = 0;
+
+Q.budget = -2;
+Q.in_default = 0;
+
+// Proportion of different social groups
+Q.workers = 27; // industry and trade
+Q.middle_class = 17; // small business owners
+Q.industrialists = 6; // industrialists & landowners
+Q.rural = 37; // farmers & the like, many in the south
+Q.veterans = 6;
+Q.catholic = 9;
+Q.women = 0;
+
+Q.inflation = 19.2;
+Q.economic_growth = -3.7;
+Q.unemployment = 13.5;
+
+Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholic', 'women'];
+Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
+
+// Communist split from the party
+Q.pcdi_formed = 0;
+Q.psu_formed = 0
+Q.psri_reconciled = 0;
+Q.arditi_formed = 0;
+Q.sympathiser_expelled = 0;
+
+// Support for party by social group
+// they don't have to sum to 100 since the electoral calculations will be normalised.
+Q.workers_pcdi = 0;
+Q.workers_psi = 69;
+Q.workers_psu = 0;
+Q.workers_pri = 0;
+Q.workers_ppi = 3;
+Q.workers_ldr = 9;
+Q.workers_ds = 6;
+Q.workers_ul = 4;
+Q.workers_pnf = 2;
+Q.workers_psri = 8;
+Q.workers_other = 12;
+
+Q.middle_class_pcdi = 0;
+Q.middle_class_psi = 25;
+Q.middle_class_psu = 0;
+Q.middle_class_pri = 0;
+Q.middle_class_ppi = 20;
+Q.middle_class_ldr = 9;
+Q.middle_class_ds = 10;
+Q.middle_class_ul = 13;
+Q.middle_class_pnf = 2;
+Q.middle_class_psri = 2;
+Q.middle_class_other = 18;
+
+Q.industrialists_pcdi = 0;
+Q.industrialists_psi = 1;
+Q.industrialists_psu = 0;
+Q.industrialists_pri = 0;
+Q.industrialists_ppi = 12;
+Q.industrialists_ldr = 51;
+Q.industrialists_ds = 6;
+Q.industrialists_ul = 28;
+Q.industrialists_pnf = 1;
+Q.industrialists_psri = 0;
+Q.industrialists_other = 1;
+
+Q.rural_pcdi = 0;
+Q.rural_psi = 27;
+Q.rural_psu = 0;
+Q.rural_pri = 0;
+Q.rural_ppi = 25;
+Q.rural_ldr = 17;
+Q.rural_ds = 16;
+Q.rural_ul = 6;
+Q.rural_pnf = 0;
+Q.rural_psri = 0;
+Q.rural_other = 5;
+
+Q.veterans_pcdi = 0;
+Q.veterans_psi = 14;
+Q.veterans_psu = 0;
+Q.veterans_ppi = 10;
+Q.veterans_ldr = 20;
+Q.veterans_pri = 0;
+Q.veterans_ds = 18;
+Q.veterans_ul = 14;
+Q.veterans_pnf = 2;
+Q.veterans_psri = 3;
+Q.veterans_other = 20;
+
+Q.catholic_pcdi = 0;
+Q.catholic_psi = 6;
+Q.catholic_psu = 0;
+Q.catholic_pri = 0;
+Q.catholic_ppi = 70;
+Q.catholic_ldr = 9;
+Q.catholic_ds = 3;
+Q.catholic_ul = 2;
+Q.catholic_pnf = 1;
+Q.catholic_psri = 1;
+Q.catholic_other = 13;
+
+Q.women_pcdi = 0;
+Q.women_psi = 14;
+Q.women_psu = 0;
+Q.women_pri = 0;
+Q.women_ppi = 34;
+Q.women_ldr = 18;
+Q.women_ds = 10;
+Q.women_ul = 17;
+Q.women_pnf = 6;
+Q.women_psri = 8;
+Q.women_other = 14;
+
+// Current Chamber of Deputies composition
+// % of Chamber of Deputies in Jan 1919
+// source: wikipedia
+// Had to do some early forming of PNF and other parties to make this easier for me + gameplay wise 
+Q.pcdi_seating_disp = 0;
+Q.psi_seating_disp = 10.2;
+Q.psu_seating_disp = 0;
+Q.ppi_seating_disp = 5.7;
+Q.pri_seating_disp = 0;
+Q.ldr_seating_disp = 12.2;
+Q.ds_seating_disp = 7.9;
+Q.ul_seating_disp = 53.1;
+Q.pnf_seating_disp = 0;
+Q.psri_seating_disp = 3.7;
+Q.other_seating_disp = 7.2;
+
+Q.pcdi_r = 0;
+Q.psi_r = 17.6;
+Q.psu_r = 0;
+Q.ppi_r = 6.0;
+Q.pri_r = 0;
+Q.ldr_r = 10.4;
+Q.ds_r = 8.2;
+Q.ul_r = 47.6;
+Q.pnf_r = 0;
+Q.psri_r = 3.9;
+Q.other_r = 6.3;
+
+// diff from prev
+Q.old_pcdi_r = 0;
+Q.old_psi_r = 17;
+Q.old_psu_r = 0;
+Q.old_ppi_r = 5;
+Q.old_pri_r = 0;
+Q.old_ldr_r = 17;
+Q.old_ds_r = 15;
+Q.old_ul_r = 40;
+Q.old_pnf_r = 0;
+Q.old_psri_r = 4;
+Q.old_other_r = 2;
+
+// array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
+Q.election_records = [];
+// party support records for every month
+Q.party_support_records = [];
+// inflation and unemployment records
+Q.economic_records = [];
+
+
+// State of the government
+Q.king = "Vittorio Emanuele III";
+// starting prime minister: Vittorio Emanuele Orlando
+Q.prime_minister = "Orlando";
+Q.prime_minister_party = Q.ldr_name;
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.pri_in_government = 0;
+Q.ppi_in_government = 1;
+Q.ldr_in_government = 1;
+Q.ds_in_government = 1;
+Q.ul_in_government = 1;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0; 
+
+// Left-Wing Coalition = PSI + PSRI
+Q.left_wing_coalition = 0
+// Catholic-Centre Coalition = PPI + LDR + UL + DS
+Q.catholic_centre_coalition = 0;
+// Centre-Left Coalition = PSI + PPI + DS + PSRI
+Q.centre_left_coalition = 0;
+Q.in_psi_majority = 0;
+Q.catholic_centre_failed = 0;
+Q.anti_socialist_coalition = 0; 
+
+// if you're in a coalition, this is an incremental counter for how many times dissent has happened from your partners.
+Q.coalition_dissent = 0;
+
+// is the current government a liberal minority government?
+Q.minority_government = 0;
+
+// ministries - which parties control the ministries?
+Q.foreign_minister = 'Sonnino';
+Q.foreign_minister_party = Q.ul_name;
+Q.interior_minister = 'Orlando';
+Q.interior_minister_party = Q.ldr_name;
+Q.justice_minister = 'Sacchi';
+Q.justice_minister_party = 'DS';
+Q.labour_minister = 'Ferraris';
+Q.labour_minister_party = Q.ul_name;
+Q.public_works_minister = 'Dari';
+Q.public_works_minister_party = Q.ul_name;
+Q.treasury_minister = 'Nitti';
+Q.treasury_minister_party = 'DS';
+Q.finance_minister = 'Meda';
+Q.finance_minister_party = 'PPI';
+Q.agriculture_minister = 'Miliani';
+Q.agriculture_minister_party = Q.ldr_name;
+Q.public_education_minister = 'Berenini';
+Q.public_education_minister_party = 'PSRI';
+
+// have we reformed these institutions to be more democratic?
+Q.judicial_reform = 0;
+Q.womens_rights = 0;
+Q.womens_work = 0;
+Q.nationalisation_progress = 0;
+Q.councils_empowered = 0;
+
+// level of welfare relative to 1919 (can go negative)
+Q.welfare = 0;
+Q.unemployment_insurance_founded = 0;
+Q.work_councils = 0;
+Q.workers_safety = 0;
+Q.works_program = 0;
+
+// level of support for farmers
+Q.agricultural_policy = 0;
+Q.land_seizures = 0;
+
+// party congresses'
+Q.ppi_left = 2;
+Q.ppi_moderates = 0;
+Q.ppi_right = 0;
+
+Q.ul_giolitti = 4;
+Q.ul_sonnino = 2;
+
+Q.ldr_left = 3;
+Q.ldr_moderates = 5;
+Q.ldr_right = 1;
+
+Q.ds_left = 0;
+Q.ds_moderates = 5;
+Q.ds_right = 0;
+
+// International Relations
+Q.soviet_relation = 2;
+Q.entente_relation = 4;
+Q.balkan_relation = 2;
+Q.papal_relation = 3
+Q.pope = "Della Chiesa";
+Q.rcw_over = 0;
+Q.roman_question_answered = 0;
+Q.soviet_aid_given = 0;
+
+// have there been any factory takeovers?
+Q.factory_takeovers = 0;
+
+// education_policy 
+Q.secularised_education = 0;
+Q.trade_school_funded = 0;
+Q.wage_increase = 0;
+Q.working_hours = 0;
+Q.education_reformed = 0;
+
+// southern Question
+Q.southern_resolved = 0;
+Q.mafia_strength = 3;
+Q.southern_education_funded = 0;
+Q.southern_infrastructure_funded = 0;
+Q.southern_land_reformed = 0;
+
+// Tax rates relative to 1919 baseline
+Q.lower_tax_rates = 0;
+Q.upper_tax_rates = 0;
+Q.tariffs = 0;
+
+// economic Plans
+Q.moderate_plan_support = 0;
+Q.nationalisation_support = 1;
+
+// timers for the russian civil war
+Q.soviet_end_timer = 90;
+Q.soviet_recovery_timer = 0;
+
+// our conduct in the government, and the conduct of our coalition opponents.
+// did the PSI vote against the previous government in a vote of no confidence?
+Q.psi_no_confidence = 0;
+// was the last PSI government taken down in a vote of no confidence by our coalition partners?
+Q.no_confidence_against_psi = 0;
+
+// Advisors/Leaders
+Q.n_advisors = 3;
+// timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
+// let's just put all of the timers here...
+// most party affairs and government affairs cards are on a timer.
+Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_organisations', 
+            'womens_rights', 'fiscal_policy', 'inter_party_relationships', 
+            'international_relations', 'shuffle_leadership', 'para_funding', 
+            'constitutional_reform', 'urgency', 'foreign_policy', 'shuffle_cabinet', 
+            'soviet_recovery', 'liberal_crackdown', 'catholic_papacy', 'insurance_payments', 
+            'fdc_ban', 'ard_ban', 'abl_ban', 'demobilise', 'soviet_end', 
+            'agricultural_policy', 'coalition_affairs', 'unemployment_gov', 'welfare_gov', 
+            'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
+            'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
+            'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relation', 
+            'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
+            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
+            'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_pm',
+            'gov_army', 'rg_orders'];
+// all timers
+Q.advisor_action_timer = 0;
+Q.ideology_timer = 0;
+Q.media_timer = 0;
+Q.judiciary_reform_timer = 0;
+Q.party_organisations_timer = 0;
+Q.womens_rights_timer = 0;
+Q.fiscal_policy_timer = 0;
+Q.inter_party_relationships_timer = 0;
+Q.interior_policy_timer = 0;
+Q.international_relations_timer = 0;
+Q.shuffle_leadership_timer = 0;
+Q.para_funding_timer = 0;
+Q.constitutional_reform_timer = 0;
+Q.foreign_policy_timer = 0;
+Q.shuffle_cabinet_timer = 0;
+Q.soviet_recovery_timer = 0;
+Q.liberal_crackdown_timer = 0;
+Q.cathoic_papacy_timer = 0;
+Q.insurance_payments_timer = 0;
+Q.fdc_ban_timer = 0;
+Q.ard_ban_timer = 0;
+Q.abl_ban_timer = 0;
+Q.demobilise_timer = 6;
+Q.agricultural_policy_timer = 0;
+Q.coalition_affairs_timer = 0;
+Q.unemployment_gov_timer = 0; 
+Q.welfare_gov_timer = 0;
+Q.economic_democracy_timer = 0;
+Q.education_policy_timer = 0;
+Q.labour_rights_timer = 0;
+Q.military_influence_timer = 0;
+Q.roman_question_timer = 0; 
+Q.southern_question_timer = 0;
+Q.arditi_timer = 0;
+Q.para_rally_timer = 0;
+Q.preparing_revolution_timer = 0;
+Q.red_guards_timer = 0;
+Q.targeting_timer = 0;
+Q.enemies_timer = 0;
+Q.fundraising_timer = 0;
+Q.king_relation_timer = 0;
+Q.party_disunity_timer = 0;
+Q.rally_timer = 0;
+Q.revolutionary_timer = 0;
+Q.urgency_timer = 0;
+Q.welfare_party_timer = 0;
+Q.deficit_timer = 0;
+Q.adriatic_timer = 44;
+Q.ul_emergency_timer = 18;
+Q.ldr_emergency_timer = 18;
+Q.ds_emergency_timer = 18;
+Q.mussolini_trial_timer = 0;
+Q.sonnino_southern_timer = 0;
+Q.crisis_program_timer = 0;
+Q.economic_policy_timer = 0;
+Q.gov_cooldown_timer = 14;
+Q.gov_foreign_timer = 14;
+Q.gov_interior_timer = 14;
+Q.gov_justice_timer = 14;
+Q.gov_pm_timer = 14;
+Q.gov_army_timer = 14;
+Q.giolitti_tenure = 0;
+
+// n_elections is the number of elections that have happened since the start of the game.
+Q.n_elections = 0;
+// number of elections without a clear majority.
+Q.no_majority_elections = 0;
+// elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
+Q.in_election = 1;
+Q.next_election_year = 1919;
+Q.next_election_month = 11;
+Q.next_election_time = 11;
+
+
+// Initial advisors are the respective leaders of their faction.
+Q.serrati_advisor = 1; // Giacinto Menotti Serrati; Maximalist Leader
+Q.bordiga_advisor = 1; // Amadeo Bordiga; Communist Leader
+Q.turati_advisor = 1; // Filippo Turati; Reformist Leader
+
+// Communist advisors
+Q.tasca_advisor = 0; // Angelo Tasca
+Q.terracini_advisor = 0; // Umberto Terracini
+Q.togliatti_advisor = 0; // Palmiro Togliatti
+Q.gramsci_advisor = 0; // Antonio Gramsci
+
+// Maximalist advisors
+Q.lazzari_advisor = 0; // Constantinto Lazzari
+Q.ferri_advisor = 0; // Enrico Ferri
+Q.bombacci_advisor = 0; // Nicola Bombacci
+
+// Reformist advisors
+Q.kuliscioff_advisor = 0; // Anna Kuliscioff
+Q.salvemini_advisor = 0; // Gaetano Salvemini
+
+// Trade Unionist advisors
+Q.treves_advisor = 0; // Claudio Treves
+Q.rigola_advisor = 0; // Rinaldo Rigola
+!}
+new-page: true
+
+> *"Irresponsible groups of armed men, no longer bound by any State discipline or controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
+
+ - Antonio Gramsci, *The Return to Freedom*, 1919
+
+This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
+
+For more information on the politics and of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+
+This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy">here</a> if you have not done so already.
+
+- @1919_easy: Begin (easy difficulty)
+- @1919_main: Begin (normal difficulty)
+- @1919_hard: Begin (hard difficulty)
+- @1919_historical: Begin (historical mode)
+
+@1919_easy
+on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ldr_relation = 55; psri_relation = 65; budget = -2;
+go-to: 1919_main
+
+@1919_hard
+on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 75; reformist_dissent = 30; communist_dissent = 30; labour_dissent = 20; maximalist_dissent = 15; ppi_relation = 35; ds_relation = 35; psri_relation = 35; budget = -3;
+go-to: 1919_main
+
+@1919_historical
+subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
+on-arrival: {!
+Q.difficulty = 2;
+Q.historical_mode = 1;
+Q.resources = 2;
+Q.dues = 1;
+Q.rg_strength = 62;
+Q.reformist_dissent = 35;
+Q.communist_dissent = 35;
+Q.labour_dissent = 25;
+Q.maximalist_dissent = 25;
+Q.ppi_relation = 15;
+Q.ds_relation = 20;
+Q.psri_relation = 25;
+Q.budget = -4;
+this.state.disableSaves = true;
+!}
+go-to: 1919_main
+
+@1919_main
+set-bg: img/background.png
+audio: shuffle music/Innodeilavoratori.mp3 music/FraIl19FraLAnno20.mp3 music/BandieraRossa.mp3 music/Canzonieredelventorosso.mp3 music/WorkersHymn.mp3
+new-page: true
+go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
+
+= 1919
+
+It is a dark time for Italian Kingdom. After the first world war, the economy is in crisis, with inflation uncontrollable and unemployment widespread. Our internal situation isn't much better, as nationalist and socialist paramilitaries engage in effectively open warfare against each other whilst government inaction is criticised.
+
+Now, your task is to prepare for the next election. The bourgeois-right government is unpopular, and with the new voting laws passed, we stand to gain. Perhaps the next government will have a socialist majority.
+
+

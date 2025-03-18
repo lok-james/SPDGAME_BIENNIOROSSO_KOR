@@ -1,0 +1,40 @@
+title: Giacinto Menotti Serrati
+is-pinned-card: true
+tags: advisor, maximalist
+card-image: img/portraits/GiacintoMenottiSerrati.png
+view-if: serrati_advisor = 1
+new-page: true 
+
+= Giacinto Menotti Serrati
+
+Serrati is a leader of the Maximalists, one of the factions of the PSI.
+
+- @serrati_revolution_or_reformist
+- @inter_party_relationships_serrati
+- @implement_plan
+- @root: Return to main
+
+@serrati_revolution_or_reformist
+title: Revolution or Reformist?
+subtitle: Debate our path forward. For Serrati, it is in favour of revolution.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: communist_dissent -= 7*(1-dissent); reformist_dissent += 7*(1-dissent); radicalisation += 0.5; revolutionary_fervor += 3; communist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent); advisor_action_timer = 9;
+
+We are able to sway some of the more left-wing members of the party to our cause, advocating for a more revolutionary approach. This only further exacerbates the split within the party, however.
+
+@inter_party_relationships_serrati
+title: Inter-Party Relationships
+subtitle: Improve our relations with the different parties of Italy.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 9; inter_party_relationships_timer -= 6; last_advisor_action = 1
+go-to: inter_party_relationships
+
+@implement_plan
+title: Implementing our Plan
+subtitle: We can being implementing the Maximum Program.
+choose-if: advisor_action_timer = 0 and economic_plan = 1 and nationalisation_adopted = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if economic_plan = 0 : We have not chosen a program yet. ?][? if economic_plan = 1 and moderate_plan_adopted : We have chosen a different plan. ?]
+on-arrival: advisor_action_timer = 9; economic_policy_timer -= 8; last_advisor_action = 1
+go-to: maximum_program

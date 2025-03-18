@@ -1,0 +1,22 @@
+title: Facta I Government Collapses!
+subtitle: The current coalition has fallen...
+view-if: year = 1922 and month = 8 and (not psi_in_government or not_participating = 1) and prime_minister = "Facta"
+new-page: true
+max-visits: 1
+on-arrival: {!
+Q.republican_sentiment -= 7;
+Q.nationalist_sentiment += 4;
+Q.socialist_sentiment += 3;
+
+Q.workers_psi += 4;
+Q.middle_class_psi += 3;
+Q.workers_pnf += 6;
+Q.middle_class_pnf += 4;
+Q.veterans_pnf += 7;
+Q.government_collapse += 1;
+!}
+tags: event
+
+= Facta I Government Collapses!
+
+The current governing coalition has collapsed, failing to secure a majority in a Vote-of-No-Confidence. He continues to lead, but without the support of the Agrarian Party.
