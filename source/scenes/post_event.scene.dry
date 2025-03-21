@@ -458,23 +458,23 @@ if (Q.week_actions >= 1) {
         // support should be based on sentiment, and vice versa
 
         if (Q.socialist_sentiment < Q.psi_votes) {
-            Q.socialist_sentiment += Q.psi_votes/10;
-            Q.workers_psi -= Q.socialist_sentiment/10;
+            Q.socialist_sentiment += (Q.psi_votes/10)/12;
+            Q.workers_psi -= (Q.socialist_sentiment/10)/12;
         }
 
         if (Q.socialist_sentiment > Q.psi_votes) {
-            Q.socialist_sentiment -= Q.psi_votes/10;
-            Q.workers_psi += Q.socialist_sentiment/10;
+            Q.socialist_sentiment -= (Q.psi_votes/10)/12;
+            Q.workers_psi += (Q.socialist_sentiment/10)/12;
         }
 
         if (Q.nationalist_sentiment < Q.pnf_votes) {
-            Q.nationalist_sentiment += Q.psi_votes/10;
-            Q.veterans_pnf -= Q.nationalist_sentiment/10;
+            Q.nationalist_sentiment += (Q.psi_votes/10)/12;
+            Q.veterans_pnf -= (Q.nationalist_sentiment/10)/12;
         }
 
         if (Q.nationalist_sentiment > Q.pnf_votes) {
-            Q.nationalist_sentiment -= Q.pnf_votes/10;
-            Q.veterans_pnf += Q.nationalist_sentiment/10;
+            Q.nationalist_sentiment -= (Q.pnf_votes/10)/12;
+            Q.veterans_pnf += (Q.nationalist_sentiment/10)/12;
         }
 
         ////////////////////////// annual support changes
