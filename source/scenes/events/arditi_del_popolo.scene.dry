@@ -31,3 +31,5 @@ subtitle: Their inclusion of anti-socialist forces within their ranks is controv
 choose-if: reformist_strength < communist_strength
 unavailable-subtitle: The Reformists are able to sway the party against this.
 on-arrival: reformist_dissent += 7*(dissent); adp_strength += 20; 
+
+Very well. We refuse any form of cooperation with the Arditi del Popolo.
