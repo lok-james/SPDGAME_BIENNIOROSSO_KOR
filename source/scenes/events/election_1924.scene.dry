@@ -582,7 +582,7 @@ Who should we select to be Prime Minister?
 title: Open negotiations with the Liberal parties.
 subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_seating_disp) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : We will have to negotiate with the [+ ul_name +] to secure a majority coalition. ?]
 unavailable-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if liberal_coalition_failed : The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?]
-view-if: centre_left_coalition_seating_disp >= 50 or ((centre_left_coalition_r + ul_seating_disp >= 50) and not ul_allies)
+view-if: centre_left_coalition_r >= 50 or ((centre_left_coalition_r + ul_seating_disp >= 50) and not ul_allies)
 choose-if: participating = 1 and ldr_relation >= ldr_min_relations and ldr_negotiations_failed = 0 and southern_land_reformed = 0
 on-arrival: {!
 if (Q.centre_left_coalition_r >= 50) {
