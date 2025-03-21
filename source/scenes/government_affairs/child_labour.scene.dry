@@ -57,7 +57,9 @@ Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [
 @child_labour_success
 on-arrival: {!
 child_labour_laws = 1;
-coalition_dissent += 1 if centre_left_coalition and ul_leader != "Sonnino"; 
+if (Q.centre_left_coalition == 1 && ul_leader != "Sonnino") {
+    Q.coalition_dissent += 1;
+}
 
 if (Q.in_unstable_coalition == 0) {
     Q.workers_psi += 7*(1-Q.dissent);
@@ -108,7 +110,6 @@ Q.ds_right += 0.2;
 Q.ul_sonnino += 2;
 
 Q.unemployment -= 0.8;
-
 !}
 
 With the support of the left including the PSRI[? if pri_prominent: and the PRI?][? if ul_leader = "Sonnino" :alongside the PPI?], we have successfully passed a bill to ban child labour in Italy! This has heartened our more radical supporters, while hurting our relations with the [+ ldr_name +]. With the increasing political discourse around child labour, the [+ ldr_name +] and DS have gained landowner and industrialist votes at the expense of the [+ pnf_name +].
