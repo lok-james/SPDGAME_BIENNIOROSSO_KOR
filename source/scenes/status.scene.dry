@@ -35,7 +35,7 @@ Internal Dissent: [+ dissent_percent : dissent +]
 
 Revolutionary Fervour: [+ revolutionary_fervour +]%
 
-[? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion : exhaustion +]% ?]
+[? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion : exhaustion +] ?]
 
 {!<span class="tooltip-text" title="The other parties view us with doubt, considering the party contains radical advocating for the fall of the party. The question is: How radical?">Radicalisation</span>!}: [+ radicalisation : radicalisation +]
 
