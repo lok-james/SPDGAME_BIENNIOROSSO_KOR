@@ -2,7 +2,7 @@ title: Women's Rights
 new-page: true
 is-card: true
 view-if: psi_in_government and womens_rights_timer <= 0
-on-arrival: week_actions += 1; womens_rights_timer = 5;
+on-arrival: week_actions += 1; womens_rights_timer = 5; suffrage_support = psi_seating_disp + ppi_seating_disp + pri_seating_disp + psri_seating_disp; suffrage_support += ds_seating_disp if ds_allies
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: govt_affairs
 
@@ -63,8 +63,8 @@ With the support of the left including the PSI and PSRI, we have successfully pa
 
 @suffrage
 max-visits: 1
-subtitle: [? if left_wing_coalition_r + ppi_seating_disp < 50 : This is unlikely to succeed; we do not have majority support. ?]
-go-to: suffrage_fail if left_wing_coalition_r + ppi_seating_disp < 50; suffrage_success if left_wing_coalition_r + ppi_seating_disp >= 50
+subtitle: [? if suffrage_support < 50 : This is unlikely to succeed; we do not have majority support. ?]
+go-to: suffrage_fail if suffrage_support < 50; suffrage_success if suffrage_support >= 50
 
 @suffrage_fail
 on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ppi_left += 1; ldr_right += 0.6;

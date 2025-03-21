@@ -191,9 +191,9 @@ view-if: war_choices >= 2
 go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory if socialist_victory = 1 and participating = 1; communist_victory if socialist_victory = 1 and not_participating = 1
 
 @defeat
+achievement: follia_di_sinistra
 
 = Total Defeat
-achievement: follia_di_sinistra
 
 Our forces are no match for those of the reactionaries. Red Guard forces are quickly overpowered by the forces of the Arditismo, Fasci, and Regio Esercito. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Italy.
 
