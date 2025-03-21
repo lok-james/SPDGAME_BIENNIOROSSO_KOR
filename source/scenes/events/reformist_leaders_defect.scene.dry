@@ -3,7 +3,7 @@ new-page: true
 subtitle: Reformist disagreements with our policies have grown too severe.
 tags: event
 view-if: reformist_dissent >= 60
-on-arrival: workers_psi -= reformist_strength/100; workers_other += 2; workers_psri += 2; workers_psu += reformist_strength/100; reformist_strength *= 0.3; n_advisors -= 1 if salvemini_advisor == 1; n_advisors -= 1 if kuliscioff_advisor == 1; n_advisors -= 1 if turati_advisor == 1; kuliscioff_advisor = 0; turati_advisor = 0; salvemini_advisor = 0; rg_strength -= 10; reformists_defect = 1; psri_relation -= 7; psu_formed = 1; psu_seating = (psi_seating/3)*2; psi_seating = psi_seating/3; psu_seating_disp = (psi_seating_disp/3)*2; psi_seating_disp = psi_seating_disp/3
+on-arrival: reformist_seen = 1; workers_psi -= reformist_strength/100; workers_other += 2; workers_psri += 2; workers_psu += reformist_strength/100; reformist_strength *= 0.3; n_advisors -= 1 if salvemini_advisor == 1; n_advisors -= 1 if kuliscioff_advisor == 1; n_advisors -= 1 if turati_advisor == 1; kuliscioff_advisor = 0; turati_advisor = 0; salvemini_advisor = 0; rg_strength -= 10; reformists_defect = 1; psri_relation -= 7; psu_formed = 1; psu_seating = (psi_seating/3)*2; psi_seating = psi_seating/3; psu_seating_disp = (psi_seating_disp/3)*2; psi_seating_disp = psi_seating_disp/3
 max-visits: 1
 
 = Reformist leaders defect

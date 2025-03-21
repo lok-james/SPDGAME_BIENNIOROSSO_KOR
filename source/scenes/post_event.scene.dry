@@ -340,7 +340,7 @@ if (Q.week_actions >= 1) {
         if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
-            Q.workers_psi += 4/12*Q.radicalisation;
+            Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
             Q.workers_pnf -= 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
@@ -354,7 +354,7 @@ if (Q.week_actions >= 1) {
         if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
-            Q.workers_psi += 4/12*Q.radicalisation;
+            Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
             Q.workers_pnf -= 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
@@ -368,7 +368,7 @@ if (Q.week_actions >= 1) {
         if (Q.inflation >= 12 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
-            Q.workers_psi += 4/12*Q.radicalisation;
+            Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
             Q.workers_pnf -= 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
@@ -383,7 +383,7 @@ if (Q.week_actions >= 1) {
         if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
-            Q.workers_psi -= 4/12*Q.radicalisation;
+            Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
             Q.workers_pnf += 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
@@ -397,7 +397,7 @@ if (Q.week_actions >= 1) {
         if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
-            Q.workers_psi -= 4/12*Q.radicalisation;
+            Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
             Q.workers_pnf += 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
@@ -411,7 +411,7 @@ if (Q.week_actions >= 1) {
         if (Q.inflation >= 12 && Q.republican_sentiment > 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
-            Q.workers_psi -= 4/12*Q.radicalisation;
+            Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
             Q.workers_pnf += 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
@@ -427,15 +427,15 @@ if (Q.week_actions >= 1) {
         // if anti_monarchist_sentiment is less than the support of left wing parties, reduce PSI support...
         if (Q.anti_monarchist_sentiment < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
             if (Q.industrialists_psi > 0) {
-                Q.industrialists_psi -= 4/12*Q.radicalisation;
+                Q.industrialists_psi -= 4/12*Q.revolutionary_exhaustion;
                 Q.industrialists_pnf += 2/12;
             }
             if (Q.middle_class_psi > 0) {
-                Q.middle_class_psi -= 4/12*Q.radicalisation;
+                Q.middle_class_psi -= 4/12*Q.revolutionary_exhaustion;
                 Q.middle_class_pnf += 2/12;
             }
             if (Q.rural_psi > 0) {
-                Q.rural_psi -= 4/12*Q.radicalisation;
+                Q.rural_psi -= 4/12*Q.revolutionary_exhaustion;
                 Q.rural_pnf += 2/12;
             }
             if (Q.workers_psi_normalised > 30) {
