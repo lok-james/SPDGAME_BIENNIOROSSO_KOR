@@ -1,6 +1,6 @@
 title: PNF Collapses!
 view-if: year == 1922 and month == 11 and march_failed = 1
-on-arrivsl: workers_pnf *= 0.35; rural_pnf *= 0.35; industrialists_pnf *= 0.1; veterans_pnf *= 0.5; middle_class_pnf *= 0.4; pnf_collapse_seen = 1
+on-arrival: workers_pnf *= 0.35; rural_pnf *= 0.35; industrialists_pnf *= 0.1; veterans_pnf *= 0.5; middle_class_pnf *= 0.4; pnf_collapse_seen = 1
 max-visits: 1
 tags: event
 new-page: true

@@ -29,7 +29,7 @@ We protest alongside the protestors and defending the common worker in the face 
 
 @condemn_protest
 subtitle: Our voting base won't be happy about this.
-on-arrival: workers_psi -= 1*(1-dissent); rural_psi -= 2*(1-dissent); middle_class_psi += 2*(1-dissent); communist_dissent += 10; maximalist_dissent += 10; labour_dissent += 10; syndicalist_dissent += 10; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
+on-arrival: workers_psi -= 1*(1-dissent); rural_psi -= 2*(1-dissent); middle_class_psi += 2*(1-dissent); communist_dissent += 10; maximalist_dissent += 10; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
 
 Our actions are criticised by every faction of the party. Though the ruling coalition certainly appreciates our attempt to quell the riots, it comes at a loss of our voters, who see this as a betrayal of the worker.
 

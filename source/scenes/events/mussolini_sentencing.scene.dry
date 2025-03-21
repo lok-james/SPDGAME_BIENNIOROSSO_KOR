@@ -18,7 +18,7 @@ We have done all we can. Now we must see if will bare fruit.
 go-to: mussolini_sentenced if (evidence >= 3 and judicial_reform < 2) or (evidence >= 2 and judicial_reform >= 2); mussolini_exonerated if (evidence < 3 and judicial_reform < 2) or (evidence < 2 and judicial_reform >= 2)
 
 @mussolini_sentenced
-on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.8; middle_class_pnf *= 0.9 fdc_militancy += 0.02; fdc_strength -= 20
+on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.8; middle_class_pnf *= 0.9; fdc_militancy += 0.02; fdc_strength -= 20
 achievement: il_traditore_e_sempre_un_infame
 
 = Mussolini behind bars; Agitator convicted

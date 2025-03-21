@@ -171,7 +171,7 @@ if (Q.upper_tax_rates < 0) {
     Q.capital_strike_progress -= 1;
 }
 
-if (Q.budget < 0 and Q.liberal_budget_accepted == 1) {
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1; 
 }
 
