@@ -22,6 +22,12 @@ if ((Q.next_election_year >= 1925 || Q.next_election_year == 1924 && Q.next_elec
     Q.next_election_month = 4;
 }
 
+if (Q.reformist_seen == 1) {
+    Q.psi_seating_disp = (Q.psi_seating_disp).toFixed(1);
+    Q.psu_seating_disp = (Q.psu_seating_disp).toFixed(1);
+    Q.reformist_seen = 0;
+}
+
 Q.mussolini_trial_timer_disp = Q.mussolini_trial_timer * 2;
 
 if (Q.revolutionary_exhaustion > 1) {
