@@ -12,6 +12,10 @@ Q.workers_psi += 1;
 Q.workers_psri -= 1;
 Q.workers_pnf += 1;
 Q.government_collapse += 1;
+
+Q.psri_in_government = 0;
+
+Q.ldr_left += 0.2;
 !}
 tags: event
 

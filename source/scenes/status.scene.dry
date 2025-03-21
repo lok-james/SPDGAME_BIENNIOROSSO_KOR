@@ -33,7 +33,7 @@ PSI Position: [? if psi_in_government : In Government - ?][? if psi_in_governmen
 
 Internal Dissent: [+ dissent_percent : dissent +]
 
-Revolutionary Fervour: [+ revolutionary_fervor +]%
+Revolutionary Fervour: [+ revolutionary_fervour +]%
 
 [? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion : exhaustion +]% ?]
 
@@ -110,14 +110,6 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
 
-= Justice
-
-[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
-
-[? if mussolini_jailed and not mussolini_convicted and judicial_reform < 2: Evidence: [? if evidence < 3 : Insufficient ?][? if evidence >= 3 : Sufficient ?] ?]
-
-[? if mussolini_jailed and not mussolini_convicted and judicial_reform >= 2: Evidence: [? if evidence < 2 : Insufficient ?][? if evidence >= 2 : Sufficient ?] ?]
-
 = Economics
 
 Inflation: [+ inflation_2 +]%
@@ -181,11 +173,11 @@ if (Q.abl_strength) {
 
 = Legality
 
-Fasci: [? if not fdc_banned : Operating ?][? if fdc_banned : Banned ?][? if fasci_adp_active or fasci_rg_active :,Under Attack ?]
+Fasci: [? if not fdc_banned : Operating?][? if fdc_banned : Banned ?][? if fasci_adp_active or fasci_rg_active :, Under Attack ?]
 
-Arditismo: [? if not ard_banned : Operating ?][? if ard_banned : Banned ?][? if arditi_adp_active or arditi_rg_active :,Under Attack ?]
+Arditismo: [? if not ard_banned : Operating?][? if ard_banned : Banned ?][? if arditi_adp_active or arditi_rg_active :, Under Attack ?]
 
-Anti-Bolshevik Leagues: [? if not abl_banned : Operating ?][? if abl_banned : Banned ?][? if abl_adp_active or abl_rg_active :,Under Attack ?]
+Anti-Bolshevik Leagues: [? if not abl_banned : Operating?][? if abl_banned : Banned ?][? if abl_adp_active or abl_rg_active :, Under Attack ?]
 
 Red Guards: [? if not rg_banned : Operating ?][? if rg_banned : Banned ?]
 
@@ -331,6 +323,12 @@ Workplace Safety: [? if workers_safety = 0 : Dangerous ?][? if workers_safety = 
 
 Judicial Reforms: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform = 1: Corrupt ?][? if judicial_reform = 2: Reformed ?]
 
+[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
+
+[? if mussolini_jailed and not mussolini_convicted and judicial_reform < 2: Evidence: [? if evidence < 3 : Insufficient ?][? if evidence >= 3 : Sufficient ?] ?]
+
+[? if mussolini_jailed and not mussolini_convicted and judicial_reform >= 2: Evidence: [? if evidence < 2 : Insufficient ?][? if evidence >= 2 : Sufficient ?] ?]
+
 = Women's Rights
 
 Voting Rights: [? if not womens_suffrage: Disenfranchised ?][? if womens_suffrage : Enfranchised ?]
@@ -350,6 +348,14 @@ Upper-Class: [+ upper_tax_rates : taxation +]
 Lower-Class: [+ lower_tax_rates : taxation +]
 
 Tarrifs: [+ tarrifs : taxation +]
+
+= Child Labour
+
+Legality: [? if child_labour_laws = 0: Legal ?][? if child_labour_laws = 1: Heavily Restricted ?]
+
+Education Attendance: [? if child_attendance = 0: Nonexistent ?][? if child_attendance = 1: Poor ?][? if child_attendance = 2: Moderate ?][? if child_attendance >= 3: High ?]
+
+Workplace Safety: [? if child_safety = 0 : Dangerous ?][? if child_safety = 1 : Safe ?][? if child_safety >= 2 : Monitored ?]
 
 = Mezzogiorno 
 

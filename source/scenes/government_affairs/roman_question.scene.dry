@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered == 0
 frequency: 250
-on-arrival: week_actions += 1; papal_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((papal_relations <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((papal_relation >= 5 and papal_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (papal_relation >= 7 or pope == "Gasparri"); current_budget += budget; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
+on-arrival: week_actions += 1; papal_appeased = 0; roman_question_timer = 8; negotiating_power = 4 if ((papal_relation <= 4 and pope == "Ratti") or pope == "Del Val"); negotiating_power = 3 if ((papal_relation >= 5 and papal_relation <= 7 and pope == "Ratti") or pope == "Della Chiesa"); negotiating_power = 2 if (papal_relation >= 7 or pope == "Gasparri"); papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
 card-image: img/RomanQuestion.jpg
 go-to: papal_menu
 tags: govt_affairs
@@ -18,7 +18,7 @@ Now that we are in power, we might be able to resolve this issue with the Holy S
 @papal_menu
 
 - @papal_negotiations: Let us begin negotiations with the Holy See.
-- @no_papal: Let us open negotiations another time.
+- @root: Let us open negotiations another time.
 - @easy_discard
 
 @papal_negotiations
@@ -49,7 +49,7 @@ on-arrival: papal_defence_offered = 1; papal_appeased += 1;
 go-to: papal_negotiations
 
 @papal_education
-subtitle: This is a controversial move within the party.
+subtitle: This is a controversial move within the party. [? if secularised_education : This will reverse our previous decision to secularise education. ?]
 view-if: papal_education_offered == 0
 on-arrival: papal_education_offered = 1; papal_appeased += 1;
 go-to: papal_negotiations
@@ -57,7 +57,7 @@ go-to: papal_negotiations
 @papal_sign
 choose-if: papal_appeased >= negotiating_power
 unavailable-subtitle: The Holy See would refuse this offer.
-on-arrival: roman_question_answered = 1; ppi_relation += 15; catholic_psi += 7*(1-dissent); budget -= 3 if papal_compensation_offered = 1; ldr_promise_failed = 1 if ((current_budget > 0 and budget < 0) and liberal_budget_accepted = 1); army_loyalty -= 0.05 if papal_defence_offered = 1; army_strength -= 50 if papal_defence_offered = 1; secularised_education = 0 if (papal_education_offered = 1 and secularised_education = 1); communist_dissent += 10 if papal_education_offered = 1; maximalist_dissent += 10 if papal_education_offered = 1; ppi_left += 4;
+on-arrival: roman_question_answered = 1; ppi_relation += 15; catholic_psi += 7*(1-dissent); budget -= 3 if papal_compensation_offered = 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted = 1); army_loyalty -= 0.05 if papal_defence_offered = 1; army_strength -= 50 if papal_defence_offered = 1; secularised_education = 0 if (papal_education_offered = 1 and secularised_education = 1); communist_dissent += 10 if papal_education_offered = 1; maximalist_dissent += 10 if papal_education_offered = 1; ppi_left += 3;
 go-to: ldr_promise_vonc if ldr_promise_failed
 
 The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
@@ -65,5 +65,3 @@ The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
 @papal_return
 on-arrival: papal_appeased = 0; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
 go-to: papal_menu
-
-@no_papal

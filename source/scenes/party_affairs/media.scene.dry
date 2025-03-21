@@ -25,21 +25,21 @@ The PSI runs a veritable media empire, with many newspapers throughout every Ita
 @commercial
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
 subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
-on-arrival: resources += 1; middle_class_psi += 4*(1 - dissent); communist_dissent += 7; labour_dissent += 7
+on-arrival: resources += 1; middle_class_psi += 4*(1 - dissent); communist_dissent += 7; labour_dissent += 7; socialist_sentiment += 3;
 
 Our commercialized newspapers are able to bring in more funds. However, the left and labour factions express their displeasure.
 
 @campaign
 title: The purpose of our media is to elect more Social Democrats.
 subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_psi += 4*(1 - dissent);
+on-arrival: campaign_media += 1; workers_psi += 4*(1 - dissent); socialist_sentiment += 1*(1-dissent);
 
 Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
 
 @ideological
 title: We will have vibrant ideological debate within our newspapers.
 subtitle: There will be space for all factions to air their views.
-on-arrival: communist_dissent -= 6; labour_dissent -= 6; maximalist_dissent -= 6; reformist_dissent -= 6; 
+on-arrival: communist_dissent -= 6; labour_dissent -= 6; maximalist_dissent -= 6; reformist_dissent -= 6; syndicalist_dissent -= 6 if syndicalist_active
 
 This has been our media course historically, and it has successfully paved over the many tensions in our party.
 
@@ -47,7 +47,7 @@ This has been our media course historically, and it has successfully paved over 
 title: Why not fund a radio station?
 subtitle: -3 resources
 choose-if: resources >= 3
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 3)
 view-if: radio = 0
 on-arrival: radio += 1; resources -= 3; middle_class_psi += 2*(1 - dissent); industrialists_psi += 4*(1 - dissent); workers_psi += 2*(1 - dissent); labour_dissent += 5; socialist_sentiment += 3*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent) if pacifism > 1; republican_sentiment += 3*(1-dissent) if democratisation > 1
 
@@ -57,7 +57,7 @@ A radio station would be one of the first of its kind in Italy, and the first so
 title: We must keep on building up our radio network.
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 view-if: radio > 0 and radio <= 3
 on-arrival: radio += 1; resources -= 1; industrialists_psi += 5*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 1*(1 - dissent); socialist_sentiment += 3*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2
 
@@ -75,7 +75,7 @@ Our radio network has become a successful tool for spreading our message.
 title: We should keep on supporting our radio network.
 subtitle: As radio becomes more common, the novelty is beginning to wear off, and radio is becoming saturated in society. -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 3)
 view-if: radio > 3 and (radio >= 6 or year >= 1922) and radio <= 9
 on-arrival: radio += 1; resources -= 1; middle_class_psi += 3*(1 - dissent); industrialists_psi += 2*(1 - dissent); workers_psi += 3*(1 - dissent); rural_psi += 2*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 2*(1-dissent)*(democratisation-2) if democratisation > 2
 

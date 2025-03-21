@@ -6,7 +6,7 @@ tags: event
 
 = Repeal of the Acerbo Law
 
-The Acerbo Law, passed in June 1924, has backfired immensely, giving rise to the PSI rather than the PNF. Now that we are in power, however, we can remove this corrupt law and restore fair democracy to Italy. 
+The Acerbo Law, passed in June 1924, has backfired immensely, giving rise to the PSI rather than the PNF. Now that we are in power, however, we can remove this corrupt law and restore fair democracy to Italy once more.
 
 - @remove_acerbo: Get rid of the Law.
 - @keep_acerbo: Actually...
@@ -22,10 +22,10 @@ The Acerbo Law is easily repealed, reinstating the previous system of the D'Hond
 @keep_acerbo
 view-if: psi_seating_disp >= 50
 subtitle: They voted for it anyways, right?
-on-arrival: psri_relation -= 10; ppi_relation -= 10; ldr_relation -= 10; ul_relation -= 10; pri_relation -= 10; reformist_dissent += 10;
+on-arrival: psri_relation -= 10; ppi_relation -= 10; ldr_relation -= 10; ul_relation -= 10; pri_relation -= 10; reformist_dissent += 5; ppi_right += 2; ldr_right += 2; ds_right += 2;
 
 The other parties in the Chamber of Deputies are unsurprisingly outraged by our blatant power grab, calling us no better than the fascists. 
 
 But hey, they're the ones who voted for it, aren't they?
 
-- @root: Exactly.
+- @root: Continue...

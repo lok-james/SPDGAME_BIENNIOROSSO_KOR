@@ -1,0 +1,116 @@
+title: Child Labour
+new-page: true
+is-card: true
+view-if: psi_in_government and child_labour_timer <= 0
+on-arrival: week_actions += 1; child_labour_timer = 5; labour_law_support = left_wing_coalition_r; labour_law_support += ul_seating_disp if ul_leader = "Sonnino"
+card-image: img/portraits/PalmiroTogliatti.jpg
+tags: govt_affairs
+
+= Child Labour
+
+Education in Italy is an area of mixed responsibility between the national government and the local city halls across Italy. Historically and currently, education in it of itself has been lackluster; attendance has fallen, limited access from those who come from a poorer background, alongside a traditional curriculum not kept up to modern standards. Now that we are in control, however, we can begin reforming and overhauling the education system.
+
+# another 'situation' esque thing - like the southern question 
+# labour, public education ministries for the two
+
+- @child_safety: Develop and enforce safety regulation.
+- @education_attendance: Enforce and pass compulsory education laws.
+- @child_welfare: Improve welfare for poor families with children.
+- @child_ban: Attempt to raise the minimum working age to 16.
+- @return: Do not enact any policies for now.
+- @easy_discard
+- @cancel_advisor_action
+
+@child_safety
+choose-if: labour_minister_party = "PSI"
+unavailable-subtitle: We do not control the Labour Ministry.
+on-arrival: child_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; capital_strike_progress += 1 if child_safety >= 3; socialist_sentiment += 1*child_safety;
+
+The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for children in the workforce. [? if child_safety >= 3 : Businesses have begun to argue that our focus on safety, even for children, is overbearing and unnecessary, interfering with the economy. ?]
+
+@education_attendance
+choose-if: public_education_minister_party = "PSI"
+unavailable-subtitle: We do not control the Public Education Ministry.
+subtitle: This has broad popular support across the workers and middle class.
+on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; unemployment -= 0.4; unemployment -= 0.2 if unemployment >= 8;
+max-visits: 3
+
+We continue enforcing the *Casati Law* further, as well as amending it further to increase the percentages necessary to qualify as 'adequate', improving attendance overall.
+
+@child_welfare
+subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
+on-arrival: welfare += 1; child_welfare += 1; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; coalition_dissent += 1 if (welfare >= 1 and unemployment >= 15); unemployment -= 0.4; inflation += 0.2; economic_growth += 0.3; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1);
+go-to: ldr_promise_vonc if ldr_promise_failed = 1;
+
+We have increased welfare spending on poorer families with children. [? if welfare >= 1 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
+
+@child_ban
+max-visits: 1
+subtitle: [? if labour_law_support < 50 : This is unlikely to succeed; we do not have majority support. ?][? if child_welfare < 3 : Enacting a ban without financial aid to poorer families might backfire. ?]
+go-to: child_labour_fail if labour_law_support < 50; child_labour_success if labour_law_support >= 50
+
+@child_labour_fail
+on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 4*(1-dissent) if not in_unstable_coalition; workers_clc += 4*(1-dissent) if centre_left_coalition; workers_scc += 4*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ldr_right += 0.5; ul_sonnino += 0.8;
+
+Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ pnf_name +]'s and [+ ldr_name +] speaking in particularly vehement opposition. The activists, feeling demoralized from this attempt, have decided to bide their time.
+
+@child_labour_success
+on-arrival: {!
+child_labour_laws = 1;
+coalition_dissent += 1 if centre_left_coalition and ul_leader != "Sonnino"; 
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 7*(1-Q.dissent);
+    Q.rural_psi += 3*(1-Q.dissent);
+    Q.industrialists_psi -= 5*(1-Q.dissent);
+
+    if (Q.child_welfare < 3) {
+        Q.workers_psi -= 10*(1-Q.dissent);
+    }
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.workers_clc += 7*(1-Q.dissent);
+    Q.rural_clc += 3*(1-Q.dissent);
+    Q.industrialists_clc -= 5*(1-Q.dissent);
+
+    if (Q.child_welfare < 3) {
+        Q.workers_clc -= 10*(1-Q.dissent);
+    }
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.workers_scc += 7*(1-Q.dissent);
+    Q.rural_scc += 3*(1-Q.dissent);
+    Q.industrialists_scc -= 5*(1-Q.dissent);
+
+    if (Q.child_welfare < 3) {
+        Q.workers_scc -= 10*(1-Q.dissent);
+    }
+}
+
+Q.industrialists_ds += 3;
+Q.industrialists_ldr += 3; 
+Q.industrialists_ul += 3; 
+Q.rural_ul += 5;
+Q.middle_class_ul += 3*(1-dissent); 
+
+Q.workers_pnf -= 5; 
+Q.industrialists_pnf -= 3; 
+Q.middle_class_pnf -= 2; 
+Q.rural_pnf -= 2; 
+Q.middle_class_pnf -= 2; 
+
+Q.socialist_sentiment += 4; 
+
+Q.ldr_right += 0.6; 
+Q.ds_right += 0.2; 
+Q.ul_sonnino += 2;
+
+Q.unemployment -= 0.8;
+
+!}
+
+With the support of the left including the PSRI[? if pri_prominent: and the PRI?][? if ul_leader = "Sonnino" :alongside the PPI?], we have successfully passed a bill to ban child labour in Italy! This has heartened our more radical supporters, while hurting our relations with the [+ ldr_name +]. With the increasing political discourse around child labour, the [+ ldr_name +] and DS have gained landowner and industrialist votes at the expense of the [+ pnf_name +].
+
+[? if child_welfare < 3 : Unfortunately, the bill has seemingly backfired, as the new ban on child labour has forced many into further poverty due to a lowered income. ?]

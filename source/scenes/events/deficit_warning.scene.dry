@@ -14,14 +14,14 @@ It seems we have inherited a deficit from the previous government. We should be 
 @bank_balanced
 on-arrival: election_seen = 0;
 
-= Banca d'Italia informs on balanced budget
+= Banca d'Italia reports on balanced budget
 
-It seems the previous government has managed to balance the budget, even in the current economic situation. Nevertheless, we inherit a stable budget, though it might be encouraged to allow some deficit spending to resolve our economy.
+It seems the previous government has managed to balance the budget, even in the current economic situation. Nevertheless, we inherit a stable budget, [? if inflation < 7 :though it might be encouraged to allow some deficit spending to resolve our economy. ?][? if inflation >= 7 :though it might be encouraged to continue austerity to keep inflation down. ?]
 
 @bank_surplus
 on-arrival: election_seen = 0;
 
 = Banca d'Italia informs of surplus
 
-It seems the previous government has somehow been able to resolve our debt issues, even as the current economic crisis continues. Regardless, it seems we are allowed a great deal of room to act and spend.
+It seems the previous government has somehow been able to resolve our debt issues[? if not national_economic_recovery : , even as the current economic crisis continues?]. Regardless, it seems we are allowed a great deal of room to act and spend.
 

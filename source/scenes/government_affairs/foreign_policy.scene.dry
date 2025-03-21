@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: psi_in_government and foreign_minister_party = "PSI" and foreign_policy_timer <= 0
 frequency: 500
-on-arrival: week_actions += 1; current_budget = 0; current_budget += budget; foreign_policy_timer = 5;
+on-arrival: week_actions += 1; foreign_policy_timer = 5;
 card-image: img/portraits/GiacomoMatteotti.jpg
 tags: govt_affairs
 
@@ -19,26 +19,26 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 - @improve_soviet_relations: Establish diplomatic ties with the Russian SFSR.
 - @improve_papal_relations: Improve ties with the Papacy.
 - @reopen_negotiations: Perhaps it is time to resolve the Roman Question?
-- @root: Keep the Foreign Ministry neutral.
+- @root: Keep the Foreign Ministry as is.
 - @easy_discard
 
 @aid_soviet_union
-subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : This will violate our agreement with the Liberals! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
+subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : Providing aid to the Russian SFSR would violate coalition agreements! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
 view-if: not rcw_over or soviet_recovery_timer > 0
-on-arrival: soviet_aid_given += 1; budget -= 1; soviet_end_timer -= 2 if not rcw_over; soviet_recovery_timer -= 2 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted and current_budget > -1) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation));
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; soviet_aid_given += 1; budget -= 1; soviet_end_timer -= 2 if not rcw_over; soviet_recovery_timer -= 2 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation)); ldr_left -= 0.2; ds_left -= 0.1;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if centre_left_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
+We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if in_unstable_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
 
 [? if ldr_promise_failed : Unfortunately, our decision to send aid has violated our agreement with the liberals, who have already requested a meeting with us. ?]
 
 @improve_balkan_ties
 on-arrival: balkan_relation += 1;
 
-We begin improving our relations with the newly established state of Yugoslavia, with our relations strained over the issue of Fiume.
+We begin improving our relations with the newly established state of Yugoslavia, whom are naturally wary of us. [? if adriatic_timer > 0 : The Adriatic Question hangs over our relations, as well. ?]
 
 @improve_allied_relations 
-on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ul_relation += 4*(1-dissent);
+on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ul_relation += 4*(1-dissent); ldr_right -= 0.1; ul_giolitti += 0.1
 
 We continue improving our relations with our former allies in the Entente. [? if centre_left_coalition : Our coalition partners are pleased at our continued alignment. ?]
 

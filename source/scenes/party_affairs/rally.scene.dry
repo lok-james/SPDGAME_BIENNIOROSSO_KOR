@@ -20,7 +20,7 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @cancel_advisor_action
 
 @class_struggle
-on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if communist_strength > reformist_strength; workers_psi += 4*(1-dissent) if nationalisation_progress > 0; veterans_psi += 3*(1-dissent) if nationalisation_progress > 0; communist_strength += 5; communist_dissent -= 5; middle_class_psi -= 3; industrialists_psi -= 2;
+on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent) if communist_strength > reformist_strength; workers_psi += 4*(1-dissent) if nationalisation_progress > 0 or max_seize > 0; veterans_psi += 3*(1-dissent) if nationalisation_progress > 0; communist_strength += 5; communist_dissent -= 5; middle_class_psi -= 3; industrialists_psi -= 2;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalisation_progress > 0 : Our achievements in nationalisation have assisted our messaging. ?]
 
@@ -38,7 +38,7 @@ Our speakers rally against the corrupt system and rail against the monarchists a
 [? if democratisation >= 3 : Since we have consistently made democratisation a theme of our campaign, the workers are enthusiastic about our message. ?]
 
 @pacifism
-on-arrival: pacifism += 1; nationalist_sentiment -= 2*(1 - dissent); workers_psi += 4*(1 - dissent) if pacifism >= 3; veterans_psi += 3*(1-dissent) if pacifism >= 3; nationalist_sentiment -= 3*(1-dissent) if pacifism >= 3; middle_class_psi += 4*(1-dissent) if pacifism >= 3
+on-arrival: pacifism += 1; nationalist_sentiment -= 3*(1 - dissent); workers_psi += 4*(1 - dissent) if pacifism >= 3; veterans_psi += 3*(1-dissent) if pacifism >= 3; nationalist_sentiment -= 3*(1-dissent) if pacifism >= 3; middle_class_psi += 4*(1-dissent) if pacifism >= 3
 
 Our speakers denounce the military establishment and all the spending entering that black hole. Some adventurous speakers question the responsibility of the military elites in organizing the Great War.
 
@@ -49,7 +49,7 @@ Our speakers denounce the military establishment and all the spending entering t
 view-if: not psi_in_government 
 choose-if: national_economic_recovery = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
-on-arrival: workers_psi += 3*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); ppi_relation -= 6*(1-dissent); ldr_relation -= 6*(1-dissent); ul_relation -= 6*(1-dissent); ds_relation -= 6*(1-dissent);
+on-arrival: workers_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); ppi_relation -= 4*(1-dissent); ldr_relation -= 4*(1-dissent); ul_relation -= 4*(1-dissent); ds_relation -= 4*(1-dissent); workers_psi += 3*(1-dissent) if unemployment > 10; veterans_psi += 5*(1-dissent) if unemployment > 10;
 
 Our anti-government sentiment resonates with the workers and veterans, though the governing coalition doesn't seem the fondest of our message.
 

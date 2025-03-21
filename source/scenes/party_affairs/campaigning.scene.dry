@@ -17,13 +17,14 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @rural: Rural workers and small farmers.
 - @veterans: Newly unemployed veterans discharged from the army.
 - @catholics: Catholics, who typically support the People's Party.
+- @women: Women, who typically support the People's Party.
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard
 
 @workers
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: workers_psi += 6*(1-dissent); workers_psi -= 2 if radicalisation > 8; workers_psi -= 2 if unemployment >= 15 and psi_in_government; workers_psi -= 2 if unemployment >= 25 and psi_in_government; resources -= 1; workers_psi += 3*(1-dissent) if nationalisation_progress >= 1;
 
 We have increased our campaigning among the workers. [? if unemployment >= 15: The high levels of unemployment make our campaign more difficult. ?]
@@ -31,7 +32,7 @@ We have increased our campaigning among the workers. [? if unemployment >= 15: T
 @middle_class
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: middle_class_psi += 6*(1-dissent); middle_class_psi -= 4 if anti_monarchist_sentiment <= 49; resources -= 1;
 
 We have increased our campaigning among the middle class. [? if socialist_sentiment <= 49: Our campaign is worsened by their wariness of our ideals. ?]
@@ -39,7 +40,7 @@ We have increased our campaigning among the middle class. [? if socialist_sentim
 @industrialists
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: industrialists_psi += 5*(1-dissent); resources -= 1; industrialists_psi -= 3 if nationalist_sentiment >= 51;
 
 We have increased our campaigning among the industrialists. Our ideals are diametrically opposed to them, making campaigning harder.
@@ -47,7 +48,7 @@ We have increased our campaigning among the industrialists. Our ideals are diame
 @rural
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: rural_psi += 6*(1-dissent); rural_psi -= 3*(1-dissent) if socialist_sentiment > 49; resources -= 1; rural_psi += 3*(1-dissent) if agricultural_policy >= 2
 
 We have increased our campaigning among farmers. [? if agricultural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
@@ -55,15 +56,24 @@ We have increased our campaigning among farmers. [? if agricultural_policy >= 2 
 @veterans
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: veterans_psi += 6*(1-dissent); resources -= 1; veterans_psi -= 3 if welfare < 0; veterans_psi += 3*(1-dissent) if welfare >= 2;
 
-We have increased our campaigning among the unemployment. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?]
+We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?]
 
 @catholics
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: catholic_psi += 6*(1-dissent); resources -= 1; catholic_psi -= 5*(1-dissent) if secularised_education;
 
 We have increased our campaigning among Catholics.
+
+@women
+subtitle: -1 resources
+view-if: womens_suffrage
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources. (Need 1)
+on-arrival: women_psi += 6*(1-dissent); resources -= 1; women_psi += 2*(1-dissent) if abortion_rights; women_psi += 2*(1-dissent) if womens_rights > 2; 
+
+We have increased our campaigning among Women. [? if womens_rights > 2 : Our reforms to women's rights have made it easier for us to build support. ?]

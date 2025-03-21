@@ -8,6 +8,10 @@ on-arrival: {!
 Q.ldr_promise_failed = 0;
 Q.ppi_promise_failed = 0;
 
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
 Q.liberal_aid_accepted = 0;
 Q.liberal_budget_accepted = 0;
 Q.liberal_crackdown_accepted = 0;
@@ -134,7 +138,7 @@ if (Q.pnf_seating_disp >= Q.psi_seating_disp && Q.pnf_seating_disp >= Q.psri_sea
     Q.largest_party = 'PNF';
 }
 
-Q.ppi_min_relations = 40;
+Q.ppi_min_relations = 50;
 Q.ldr_min_relations = 35;
 
 Q.ppi_negotiations_min = 40;
@@ -151,7 +155,7 @@ if (Q.ldr_leader === "Salandra") {
 }
 
 // coalitions
-Q.left_wing_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp ;
+Q.left_wing_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp;
 Q.centre_left_coalition_r = Q.psi_seating_disp + Q.ldr_seating_disp + Q.psri_seating_disp;
 Q.socialist_catholic_coalition_r = Q.psi_seating_disp + Q.psri_seating_disp + Q.ppi_seating_disp;
 Q.grand_coalition_r = Q.psri_seating_disp + Q.ppi_seating_disp + Q.ul_seating_disp + Q.ldr_seating_disp + Q.ds_seating_disp + Q.other_seating_disp;
@@ -234,24 +238,49 @@ Q.public_education_minister = 'Berenini';
 Q.public_education_minister_party = 'PSRI';
 
 Q.leverage = Q.psi_seating_disp;
-
 Q.bn_seating_disp = 0;
 Q.str_change_bn = 0;
+Q.bn_seating = 0;
+
+if (Q.bn_r == NaN || Q.bn_r == null) {
+    Q.bn_r = 0;
+}
+
+Q.old_bn_r = Q.bn_r
+
+if (Q.bn_r != 0) {
+    Q.bn_r = 0;
+}
 
 if (Q.ul_in_bn == 1) {
     Q.bn_seating_disp += parseFloat(Q.ul_seating_disp);
     Q.str_change_bn += parseFloat(Q.str_change_ul);
+    Q.bn_seating += Q.ul_seating;
+    Q.bn_r += Q.ul_r;
 }
 if (Q.ds_in_bn == 1) {
     Q.bn_seating_disp += parseFloat(Q.ds_seating_disp);
     Q.str_change_bn += parseFloat(Q.str_change_ds);
+    Q.bn_seating += Q.ds_seating;
+    Q.bn_r += Q.ds_r;
 }
 if (Q.pnf_in_bn == 1) {
-    Q.bn_seating_disp += Q.pnf_seating_disp;
+    Q.bn_seating_disp += parseFloat(Q.pnf_seating_disp);
     Q.str_change_bn += parseFloat(Q.str_change_pnf);
+    Q.bn_seating += Q.pnf_seating;
+    Q.bn_r += Q.pnf_r;
 }
 
+Q.change_bn_r = Q.bn_r - Q.old_bn_r;
 Q.str_change_bn = Q.str_change_bn.toFixed(1);
+
+var sign = Q.bn_r > 0 
+                ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
+                : Q['change_' + party + '_r'] < 0 
+                    ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
+                    : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
+Q.change_bn_r = Math.abs(Q.change_bn_r);
+Q.str_change_bn = sign + parseFloat(Q.change_bn_r).toFixed(1);
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
@@ -602,9 +631,9 @@ go-to: liberal_demands if centre_left_coalition_r >= 50; sonnino_demands if ((ce
 @socialist_catholic_coalition 
 title: Open negotiations with the People's Party.
 subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%).
-unavailable-subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
+unavailable-subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?][? if papal_relation < 5 : Our relations with the Holy See are too poor. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
-choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0
+choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0 and papal_relation >= 5
 on-arrival: {!
 Q.psi_in_government = 1;
 Q.psri_in_government = 1;

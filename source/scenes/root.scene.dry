@@ -52,10 +52,10 @@ Q.dissent_percent = 5;
 Q.party_approach = "Unclear";
 
 // factions
-Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist'];
+Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist', 'labour'];
 // should this be normalised to 100%?
 Q.communist_strength = 17;
-Q.communist_dissent = 30;
+Q.communist_dissent = 30; 
 Q.maximalist_strength = 35;
 Q.maximalist_dissent = 10;
 Q.labour_strength = 15;
@@ -160,7 +160,8 @@ Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
 Q.democratisation = 0;
 
 // revolution vs radicalism
-Q.revolutionary_fervor = 60;
+Q.revolutionary_fervour = 60;
+Q.revolutionary_exhaustion = 1; 
 
 // pacifism vs war
 Q.pacifism = 0;
@@ -409,6 +410,7 @@ Q.public_education_minister_party = 'PSRI';
 Q.judicial_reform = 0;
 Q.womens_rights = 0;
 Q.womens_work = 0;
+Q.family_law = 0;
 Q.nationalisation_progress = 0;
 Q.councils_empowered = 0;
 
@@ -416,10 +418,10 @@ Q.councils_empowered = 0;
 Q.welfare = 0;
 Q.unemployment_insurance_founded = 0;
 Q.work_councils = 0;
-Q.workers_safety = 0;
-Q.works_program = 0;
+Q.workers_safety = 0; 
+Q.judicial_reform = 0;
 
-// level of support for farmers
+// level of support for farmers 
 Q.agricultural_policy = 0;
 Q.land_seizures = 0;
 
@@ -458,6 +460,12 @@ Q.trade_school_funded = 0;
 Q.wage_increase = 0;
 Q.working_hours = 0;
 Q.education_reformed = 0;
+
+// child labour 
+Q.child_safety = 0;
+Q.child_attendance = 0;
+Q.child_labour_laws = 0;
+Q.child_welfare = 0;
 
 // southern Question
 Q.southern_resolved = 0;
@@ -503,7 +511,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
             'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_pm',
-            'gov_army', 'rg_orders'];
+            'gov_army', 'rg_orders', 'child_labour'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;

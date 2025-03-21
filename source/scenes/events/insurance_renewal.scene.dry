@@ -2,32 +2,31 @@ title: Unemployment Insurance Funding
 new-page: true
 subtitle: It's time to fund the program once more.
 view-if: insurance_payments_timer = 0 and unemployment_insurance_founded == 1
-on-arrival: current_budget = 0; current_budget += budget;
 tags: event
 
 = Unemployment Insurance Funding
 
-Funding for the Unemployment Insurance Program has once again dried up, and scheduled for its yearly funding once more. What do we do?
+Funding for the Unemployment Insurance Program has once again dried up, and the program is scheduled for its yearly funding once more. What do we do?
 
 - @fund_insurance: Continue funding the Program.
 - @end_insurance: End funding for the Program.
 - @await_government: We have to await the Finance Minister's decision.
 
 @fund_insurance
-subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: The funding of any non-Catholic welfare program would violate our agreement! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
+subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: Any funding of any non-Catholic welfare program would violate our coalition agreements! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI"
 unavailable-subtitle: The PSI does not control the Finance Ministry.
-on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 24; budget -= 2; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted and current_budget > -1); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_ppi += 4*(1-dissent)*unemployment_insurance_funded; veterans_pnf -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.7; inflation += 0.3; inflation += 0.5 if budget < 0;
+on-arrival: unemployment_insurance_funded += 1; insurance_payments_timer = 24; budget -= 2; ldr_promise_failed = 1 if budget < 0; ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 4*(1-dissent)*unemployment_insurance_funded if not in_unstable_coalition; veterans_clc += 4*(1-dissent)*unemployment_insurance_funded if centre_left_coalition; veterans_scc += 4*(1-dissent)*unemployment_insurance_funded if socialist_catholic_coalition; veterans_pnf -= 4*(1-dissent)*unemployment_insurance_funded; economic_growth += 0.4; inflation += 0.3; inflation += 0.5 if budget < 0;
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
-The Program is set to continue for another year, our appeal to veterans increase alongside it.
+The program is set to continue for another year, our appeal to veterans increase alongside it.
 
 @end_insurance
 view-if: finance_minister_party = "PSI"
 subtitle: Our veterans on this program will see this as a betrayal.
-on-arrival: veterans_psi -= 4*(1-dissent) if psi_in_government; veterans_ldr -= 3 if centre_left_coalition or grand_coalition; veterans_ppi -= 3 if socialist_catholic_coalition or grand_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
+on-arrival: veterans_clc -= 6*(1-dissent) if centre_left_coalition; veterans_scc -= 6*(1-dissent) if socialist_catholic_coalition; veterans_psi -= 4*(1-dissent) if psi_in_government and not in_unstable_coalition; veterans_ldr -= 4 if grand_coalition; veterans_ppi -= 4 if grand_coalition; veterans_pnf += 9; unemployment_insurance_founded = 0;
 
-The short-lived Program comes to an end, as veterans now without government support flock to the fascists, bitter regarding our betrayal.
+The short-lived program comes to an end, as veterans now without government support flock to the fascists, bitter regarding our betrayal.
 
 @await_government
 view-if: not psi_in_government or not finance_minister_party = "PSI"

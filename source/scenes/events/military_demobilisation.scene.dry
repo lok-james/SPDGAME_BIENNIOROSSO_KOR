@@ -16,7 +16,7 @@ The Military is to continue its demobilisation of its forces back to post-war le
 - @allow_demobilise
 
 @delay_demobilise 
-subtitle: Further unemployment would only make matters worse.
+subtitle: -1 Budget - Further unemployment would only make matters worse.
 view-if: psi_in_government
 choose-if: army_loyalty > 0.53
 unavailable-subtitle: Our influence within the army is too low.
@@ -37,7 +37,7 @@ We are able to convince the army to end its demobilisation, the budget will be b
 subtitle: +1 Budget, -1 Paramilitary Resource
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1).
-on-arrival: para_resources -= 1; rg_strength += 15; rg_militancy += 0.02; army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 12; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
+on-arrival: para_resources -= 1; rg_strength += 15*revolutionary_exhaustion; rg_militancy += 0.02; army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 12; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
 
 @allow_demobilise
 title: Let them demobilise.

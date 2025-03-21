@@ -20,7 +20,7 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 
 - @article_33: Alter Article 33.
 - @article_65: Alter Article 65.
-- @article_33_2: Alter Article 33 again.
+- @article_33_2: Alter Article 33 once more.
 - @root: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
@@ -30,7 +30,7 @@ subtitle: Remove the appointed Senate's ability to reject bills.
 view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50
 choose-if: king_relation > 70
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2;
+on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2; republican_sentiment += 4*democratisation
 achievement: riforma_costituzionale
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting the powers of the Senate and further democratising the Kingdom.
@@ -40,7 +40,7 @@ subtitle: Make the Prime Minister choose and appoint his own ministers.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and veto_removed = 1
 choose-if: king_relation > 70
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1;
+on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1; republican_sentiment += 4*democratisation
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
 
@@ -49,6 +49,6 @@ subtitle: Remove the King's ability to veto bills.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and pm_appointed = 1
 choose-if: king_relation > 80
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1;
+on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1; republican_sentiment += 4*democratisation
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.

@@ -28,7 +28,7 @@ subtitle: [? if finance_minister_party = "PPI": Thankfully, the PPI seems willin
 view-if: tax_reformed = 0
 choose-if: finance_minister_party = "PSI" or finance_minister_party = "PPI"
 unavailable-subtitle: We do not control the Financial Ministry.
-on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5;
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; ppi_moderates += 0.2 if ppi_left < ppi_right; socialist_sentiment += 1; republican_sentiment += 2;
 
 We begin the slow and arduous process of reviewing and revising the tax code, removing loopholes and making it more progressive, albeit not our only goal.
 
@@ -38,7 +38,7 @@ view-if: tax_reformed > 0
 choose-if: finance_minister_party = "PSI" or finance_minister_party = "PPI"
 unavailable-subtitle: We do not control the Financial Ministry.
 max-visits: 2
-on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if (tax_reformed = 3 and upper_tax_rates >= 5); lower_tax_rates += 1 if (tax_reformed = 3 and lower_tax_rates <= 5)
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if (tax_reformed = 3 and upper_tax_rates >= 5); lower_tax_rates += 1 if (tax_reformed = 3 and lower_tax_rates <= 5); ppi_moderates += 0.1 if ppi_left < ppi_right; socialist_sentiment += 1; republican_sentiment += 2;
 
 [? if tax_reformed = 2: We continue reforming the tax code, slowly but surely bringing it to modern standards and improving the bureaucracy plaguing it. ?]
 
@@ -51,7 +51,7 @@ subtitle: We can redistribute unused and uncultivated land to keep the lower une
 view-if: uncultivated_redistributed = 0
 choose-if: agriculture_minister_party = "PSI" and judicial_reform > 0
 unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 0 : The judiciary would not support this. ?]
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.4 if unemployment >= 8; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent);
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.4 if unemployment >= 8; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; ldr_moderates += 0.2 if ldr_right > ldr_left
 
 We begin redistributions of uncultivated lands of large estates via legal means, decreasing unemployment and increasing the rural populace.
 
@@ -61,7 +61,7 @@ view-if: uncultivated_redistributed > 0
 choose-if: agriculture_minister_party = "PSI" and judicial_reform > 1
 unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 1 : The judiciary would not support this. ?]
 max-visits: 2
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.3 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3;
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.3 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3; ldr_moderates += 0.2 if ldr_right > ldr_left
 
 [? if uncultivated_redistributed = 2: We continue redistributing land via the judicial system, as people are able to work again, reducing unemployment. ?]
 
@@ -107,7 +107,7 @@ view-if: min_compensation > 0
 choose-if: labour_minister_party = "PSI" and budget >= compensation_cost
 unavailable-subtitle: [? if not public_works_minister_party = "PSI" : We do not continue the Public Works Ministry. ?][? if budget < compensation_cost : We do not have a surplus. ?]
 max-visits: 2
-on-arrival: budget -= compensation_cost; min_compensation += 1; unemployment -= 0.5 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation;
+on-arrival: budget -= compensation_cost; min_compensation += 1; unemployment -= 0.6 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation; coalition_dissent += 1 if centre_left_coalition
 
 [? if uncultivated_redistributed = 2: We continue buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
 

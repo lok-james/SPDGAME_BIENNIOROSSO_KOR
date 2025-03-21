@@ -9,6 +9,7 @@ Q.industrialists_pri = Q.industrialists_other * 0.8;
 Q.rural_pri = Q.rural_other * 0.8;
 Q.veterans_pri = Q.veterans_other * 0.8;
 Q.catholic_pri = Q.catholic_other * 0.8;
+Q.women_pri = Q.women_other * 0.8;
 
 Q.workers_other -= Q.workers_other * 0.8;
 Q.middle_class_other -= Q.middle_class_other * 0.8;
@@ -16,12 +17,14 @@ Q.industrialists_other -= Q.industrialists_other * 0.8;
 Q.rural_other -= Q.rural_other * 0.8;
 Q.veterans_other -= Q.veterans_other * 0.8;
 Q.catholic_other -= Q.catholic_other * 0.8;
+Q.women_other -= Q.women_other * 0.8;
 
 if (Q.not_participating == 1) {
     Q.pri_relation -= 30;
 }
 
 Q.pri_prominent = 1;
+Q.republican_sentiment += 4;
 !}
 max-visits: 1
 tags: event
@@ -32,4 +35,4 @@ The *Partito Repubblicano Italiano*, known also as the Italian Republican Party,
 
 Whatever the case, the PRI have been our historic allies, [? if participating = 1:and we are optimistic to renew the bonds between our parties to be a strong force in politics. ?][? if not_participating = 1:it seems it will have to come to an end. ?]
 
-- @root: Time will tell what this new force will do.
+- @root: Only time will tell what this new force will do.

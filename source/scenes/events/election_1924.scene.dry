@@ -8,6 +8,10 @@ on-arrival: {!
 Q.ldr_promise_failed = 0;
 Q.ppi_promise_failed = 0;
 
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
 Q.liberal_aid_accepted = 0;
 Q.liberal_budget_accepted = 0;
 Q.liberal_crackdown_accepted = 0;
@@ -152,7 +156,7 @@ if (Q.pnf_seating_disp >= Q.psi_seating_disp && Q.pnf_seating_disp >= Q.psri_sea
     Q.largest_party = 'PNF';
 }
 
-Q.ppi_min_relations = 40;
+Q.ppi_min_relations = 50;
 Q.ldr_min_relations = 35;
 
 Q.ppi_negotiations_min = 40;
@@ -638,9 +642,9 @@ go-to: liberal_demands if centre_left_coalition_r >= 50; sonnino_demands if ((ce
 @socialist_catholic_coalition 
 title: Open negotiations with the People's Party.
 subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%).
-unavailable-subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?]
+unavailable-subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?][? if papal_relation < 5 : Our relations with the Holy See are too poor. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
-choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0
+choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0 and papal_relation >= 5
 on-arrival: {!
 Q.psi_in_government = 1;
 Q.psri_in_government = 1;

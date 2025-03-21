@@ -1,0 +1,12 @@
+title: Syndicalists Arrested!
+view-if: year == 1920 and month = 10 and prime_minister == "Giolitti" and syndicalist_active
+frequency: 1000
+max-visits: 1
+on-arrival: syndicalist_strength *= 0.2
+tags: event
+
+= USI Leadership arrested!
+
+Shockingly, it seems that Prime Minister Giolitti has ordered the Interior Ministry to arrest the leadership of the Italian Syndicalist Union, successfully imprisoning many under charges of disrupting the public order. This has weakened the syndicalist faction significantly.
+
+- @root: Concerning.

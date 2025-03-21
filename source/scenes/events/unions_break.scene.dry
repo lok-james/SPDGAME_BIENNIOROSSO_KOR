@@ -1,9 +1,9 @@
-title: Unions break from the Party
+title: CGL breaks from the Party
 new-page: true 
-subtitle: Trade Unionist disagreements with our policies have grown too severe.
+subtitle: Labour disagreements with our policies have grown too severe.
 tags: event
-view-if: labour_dissent >= 60
-on-arrival: unions_break = 1; syndicalist_active = 0; syndicalist_strength = syndicalist_strength/2; labour_strength = labour_strength/2; workers_psi -= 20; veterans_psi -= 7; workers_psri += 5; workers_pnf += 5; n_advisors -= 1 if rigola_advisor == 1; rigola_advisor = 0; rg_strength -= 35;
+view-if: (labour_dissent >= 60 and syndicalist_active = 0) or ((labour_dissent + syndicalist_dissent) >= 120 and syndicalist_active = 1)
+on-arrival: unions_break = 1; syndicalist_active = 0; syndicalist_strength *= 0.5; labour_strength = labour_strength/2; workers_psi -= labour_strength/100; workers_psi -= syndicalist_strength/100; veterans_psi -= 7; workers_psri += 5; workers_pnf += 5; n_advisors -= 1 if rigola_advisor == 1; rigola_advisor = 0; rg_strength -= 35;
 max-visits: 1
 
 = USI & CGIL Break from the PSI

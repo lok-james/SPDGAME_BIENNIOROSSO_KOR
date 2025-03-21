@@ -9,6 +9,7 @@ Q.psri_industrialists_movement = (Q.industrialists_psri / 4) * 3;
 Q.psri_rural_movement = (Q.rural_psri / 4) * 3;
 Q.psri_veterans_movement = (Q.veterans_psri / 4) * 3;
 Q.psri_catholic_movement = (Q.catholic_psri / 4) * 3;
+Q.psri_women_movement = (Q.women_psri / 4) * 3;
 !}
 max-visits: 1
 tags: event
@@ -31,6 +32,7 @@ Q.industrialists_psi += Q.psri_industrialists_movement;
 Q.rural_psi += Q.psri_rural_movement;
 Q.veterans_psi += Q.psri_veterans_movement; 
 Q.catholic_psi += Q.psri_catholic_movement;
+Q.women_psi += Q.psri_women_movement;
 
 Q.workers_psri -= Q.psri_workers_movement;
 Q.middle_class_psri -= Q.psri_middle_class_movement;
@@ -38,18 +40,20 @@ Q.industrialists_psri -= Q.psri_industrialists_movement;
 Q.rural_psri -= Q.psri_rural_movement;
 Q.veterans_psri -= Q.psri_veterans_movement;
 Q.catholic_psri -= Q.psri_catholic_movement;
+Q.women_psri -= Q.psri_women_movement;
 
 Q.reformist_strength += 12;
 Q.communist_dissent += 12;
 Q.maximalist_dissent += 12;
 
 Q.psri_reconciled = 1;
+Q.socialist_sentiment += 6;
 !}
 
 Though the other factories decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakened by defections to us.
 
 @reconcile_deny
 subtitle: It is more suitable that we remain separate.
-on-arrival: communist_dissent -= 10; maximalist_dissent -= 10; reformist_dissent += 10; psri_relation -= 10;
+on-arrival: communist_dissent -= 10; maximalist_dissent -= 10; reformist_dissent += 10; psri_relation -= 10; socialist_sentiment -= 6;
 
 Many within the Reformists and PSRI are confused by our actions, as are workers who are split on which party to vote for, though the other factions breathe a sigh of relief that the reformists don't get any stronger.

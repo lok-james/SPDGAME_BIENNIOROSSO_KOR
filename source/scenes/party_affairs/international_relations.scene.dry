@@ -23,7 +23,7 @@ At the Labour and Socialist International, we can forge contacts with our frater
 @fr_uk
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5;
 
 The socialists of France and Britain can influence their governments to be friendlier towards Italy.
@@ -31,15 +31,15 @@ The socialists of France and Britain can influence their governments to be frien
 @germany
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04; resources -= 1;
+unavailable-subtitle: Not enough resources. (Need 1)
+on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04*revolutionary_exhaustion; resources -= 1;
 
 The Spartacist Uprising has failed. Though not officially persecuted, with its leaders dead, the Spartacus League higher command certainly aren't living peacefully. Fortunately, we should be able to offer them refuge, welcoming them as exiles to Italy and training our forces with their experiences in the Spartakusbund.
 
 @comintern
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 2 if not rcw_over; soviet_recovery_timer -= 2 if rcw_over;
 
 Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
@@ -47,7 +47,7 @@ Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in 
 @america
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: resources -= 1
 
-The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+The Socialist Party of America is tiny and has limited support, especially following their loss in the recent elections. There is not much we can do for them, and conversely, not much they can do for us.

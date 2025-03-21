@@ -18,7 +18,7 @@ We have done all we can. Now we must see if will bare fruit.
 go-to: mussolini_sentenced if (evidence >= 3 and judicial_reform < 2) or (evidence >= 2 and judicial_reform >= 2); mussolini_exonerated if (evidence < 3 and judicial_reform < 2) or (evidence < 2 and judicial_reform >= 2)
 
 @mussolini_sentenced
-on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.75; fdc_militancy += 0.02; fdc_strength -= 20
+on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.8; middle_class_pnf *= 0.9 fdc_militancy += 0.02; fdc_strength -= 20
 achievement: il_traditore_e_sempre_un_infame
 
 = Mussolini behind bars; Agitator convicted
@@ -28,9 +28,9 @@ The Judge has ruled in favour of us. Mussolini is found guilty of his crimes, an
 In response, however, Mussolini's most loyal forces riot, inciting further violence and bloodshed across the nation in response, though we are able to quell the weakened forces easily.
 
 @mussolini_exonerated
-on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.5; industrialists_pnf *= 1.25; fdc_strength += 20; fdc_militancy += 0.04;
+on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.5; industrialists_pnf *= 1.25; fdc_strength += 20; fdc_militancy += 0.04; middle_class_psi *= 1.3; pnf_leader = "Mussolini";
 
-= Mussolini Acquitted; State unlawfully holds Innocent man for 12 months
+= Mussolini Acquitted; State unlawfully holds innocent man for 12 months
 
 The Judge has ruled in favour of Mussolini, acquitting him of all charges we have placed against him due to 'insufficient evidence'. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.
 

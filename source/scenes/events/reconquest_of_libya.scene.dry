@@ -19,29 +19,29 @@ Our sources in the Army and Navy Ministries has informed us that the High Comman
 
 @libya_majority
 subtitle: We're in control of the government after all, aren't we?
-view-if: in_psi_majority = 1
-on-arrival: maximalist_dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; labour_dissent -= 10; veterans_psi -= 7; veterans_pnf += 7; army_loyalty -= 0.1; workers_psi -= 3
+view-if: in_psi_majority or left_wing_coalition
+on-arrival: maximalist_dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; labour_dissent -= 10; syndicalist_dissent -= 10; veterans_psi -= 7; veterans_pnf += 12; middle_class_psi -= 6*(1-dissent) army_loyalty -= 0.1; workers_psi -= 3*(1-dissent)
 
 Being in control of the government, we force the military to drop their plans, as the factions laud our decisive action. The military, however, is less than enthused by the news, and our veteran support base is in an uproar.
 
 @libya_coalition_influence
 subtitle: Thankfully, we can persuade our coalition to heed our concerns.
-view-if: centre_left_coalition or socialist_catholic_coalition or left_wing_coalition
-on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; labour_dissent -= 5; coalition_dissent += 1; veterans_psi -= 4; veterans_pnf += 4; army_loyalty -= 0.05;
+view-if: in_unstable_coalition
+on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; labour_dissent -= 5; syndicalist_dissent -= 5; coalition_dissent += 1; veterans_psi -= 4; veterans_pnf += 4; army_loyalty -= 0.05;
 
 Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the PNF seizes the opportunity to increase their support.
 
 @libya_military_influence
 subtitle: -1 Resource - Thankfully, we can use to influence as well as our coffers to 'delay' the war.
 choose-if: army_loyalty > 0.53 and resources > 0
-unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : Requires 1 Party Resource. ?]
+unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : Not enough resources. (Need 1) ?]
 on-arrival: resources -= 1; veterans_psi -= 1;
 
 Using our already-established influence, we coordinate troops to 'miscount' their equipment and 'take their time' in supplying equipment, whilst our funds go towards more 'friendly' officers who are encouraged to go through the full bureaucratic process to order troops or planning. War preparations, seeming for no reason, has ground to a halt.
 
 @libya_nothing
 subtitle: What else could we do?
-on-arrival: maximalist_dissent += 7; reformist_dissent += 7; communist_dissent += 7; labour_dissent += 7;
+on-arrival: maximalist_dissent += 4; reformist_dissent += 4; communist_dissent += 4; labour_dissent += 4; syndicalist_dissent += 4 if syndicalist_active
 
 Realistically, there is nothing we can do. The factions are unsurprisingly outraged by our inaction, but it passes quickly, as usual.
 

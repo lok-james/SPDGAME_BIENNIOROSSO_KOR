@@ -1,4 +1,4 @@
-title: Orlando Government Collapses!
+title: Orlando I Government Collapses!
 subtitle: The current coalition has fallen...
 view-if: year = 1919 and month = 6 and prime_minister = "Orlando"
 new-page: true
@@ -14,9 +14,13 @@ Q.nationalist_sentiment += 1;
 Q.workers_psi += 2;
 Q.workers_pnf += 2;
 Q.government_collapse = 1;
+
+Q.ldr_in_government = 1;
+
+Q.ldr_left += 1;
 !}
 tags: event
 
-= Orlando Government Collapses!
+= Orlando I Government Collapses!
 
 The current governing coalition has collapsed, primarily due to Orlando's failure to acquire Fiume. He is succeeded by Franceso Saverio Nitti of the LDR, who joins the governing coalition.

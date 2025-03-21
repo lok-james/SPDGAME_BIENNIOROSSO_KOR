@@ -1,4 +1,6 @@
-# Social Democracy: An Alternate History
+# Biennio Rosso: An Alternate History
+
+## Mod of Autumn Chen's [Social Democracy: An Alternate Hisotry](https://github.com/aucchen/social_democracy_alternate_history)
 
 ## Included Libraries
 

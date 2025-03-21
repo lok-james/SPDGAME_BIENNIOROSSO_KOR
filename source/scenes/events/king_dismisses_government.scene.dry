@@ -1,9 +1,27 @@
 title: King dismisses government!
 view-if: king_relation < ((10*radicalisation)/government_collapse) and king_dismissed_cooldown <= 0 and psi_seating_disp < 50 and psi_in_government
 on-arrival: {!
+
+Q.rural_psi -= 3; 
+Q.middle_class_psi -= 2; 
+Q.workers_psi -= 3; 
+Q.middle_class_pnf += 2; Q.
+catholic_pnf += 4; 
+if (Q.socialist_catholic_coalition == 1) {
+    Q.catholic_ppi -= 4;
+}
+Q.industrialists_pnf += 4; 
+if (Q.centre_left_coalition == 1) {
+    industrialists_ldr -= 4;
+}
+
 // resetting coalition stuff
 Q.ldr_promise_failed = 0;
 Q.ppi_promise_failed = 0;
+
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
 
 Q.liberal_aid_accepted = 0;
 Q.liberal_budget_accepted = 0;

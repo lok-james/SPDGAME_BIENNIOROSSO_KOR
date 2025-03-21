@@ -160,7 +160,7 @@ title: [+ pnf_leader +] does not yet control Italy...
 tags: endings
 go-to: eg_menu
 
-Mussolini does not yet control Italy.
+[+ pnf_leader +] does not yet control Italy.
 
 @reformist_civil_war_won
 title: We have won the civil war.

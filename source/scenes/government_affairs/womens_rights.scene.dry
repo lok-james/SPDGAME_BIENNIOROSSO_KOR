@@ -2,7 +2,7 @@ title: Women's Rights
 new-page: true
 is-card: true
 view-if: psi_in_government and womens_rights_timer <= 0
-on-arrival: week_actions += 1; womens_rights_timer = 5; current_budget = 0; current_budget += budget;
+on-arrival: week_actions += 1; womens_rights_timer = 5;
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: govt_affairs
 
@@ -14,16 +14,16 @@ For better or for worse, the Socialists stand virtually alone in supporting incr
 
 - @labour: Institute policies that help women in the workforce. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
 - @family: Reform marriage, divorce, and property law. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
-- @welfare: Improve welfare for single mothers and children. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+- @welfare: Improve welfare for single mothers and children.
 - @liberalize: Attempt to liberalize abortion laws. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
-- @suffrage: Attempt to pass women's suffrage. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+- @suffrage: Attempt to pass women's suffrage.
 - @return: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
 
 @labour
 subtitle: Paid maternal leave policies, equal pay policies, and so on.
-on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15; middle_class_psi += 4*(1-dissent); workers_psi += 4*(1 - dissent); economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition; ppi_moderates += 0.1; ppi_promise_failed = 1 if catholic_women_accepted
+on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15 and not in_unstable_coalition; workers_clc -= 4 if unemployment > 15 and centre_left_coalition; workers_scc -= 4 if unemployment > 15 and socialist_catholic_coalition; middle_class_psi += 4*(1-dissent) if not in_unstable_coalition; middle_class_clc += 4*(1-dissent) if centre_left_coalition; middle_class_scc += 4*(1-dissent) if socialist_catholic_coalition; workers_psi += 4*(1 - dissent) if not in_unstable_coalition; workers_clc += 4*(1 - dissent) if centre_left_coalition; workers_scc += 4*(1 - dissent) if socialist_catholic_coalition; economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
 max-visits: 3
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
@@ -31,7 +31,7 @@ These policies mean that our party is increasing in popularity among the "new wo
 
 @family
 subtitle: Change family and inheritance law to treat women more equally.
-on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent); workers_psi += 3*(1-dissent); industrialists_psi -= 2; rural_psi -= 2; catholic_psi -= 4; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 4; ppi_moderates += 0.1; ppi_promise_failed = 1 if catholic_women_accepted
+on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent) if not in_unstable_coalition; middle_class_clc += 2*(1-dissent) if centre_left_coalition; middle_class_scc += 2*(1-dissent) if socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 2 if not in_unstable_coalition; industrialists_clc -= 2 if centre_left_coalition; industrialists_scc -= 2 if socialist_catholic_coalition; rural_psi -= 2 if not in_unstable_coalition; rural_clc -= 2 if centre_left_coalition; rural_scc -= 2 if socialist_catholic_coalition; catholic_psi -= 4 if not in_unstable_coalition; catholic_clc -= 4 if centre_left_coalition; catholic_scc -= 4 if socialist_catholic_coalition; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 4; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
 max-visits: 2
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
@@ -39,8 +39,8 @@ These policies aim to ensure that women have equal rights within a marriage, inc
 
 @welfare
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: welfare += 1; workers_psi += 5*(1-dissent); veterans_psi += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1 if (welfare >= 1 and unemployment >= 15); unemployment -= 0.4; inflation += 0.2; economic_growth += 0.3; ldr_promise_failed = 1 if (current_budget >= 0 and budget < 0 and liberal_budget_accepted == 1); ppi_promise_failed = 1 if catholic_women_accepted
-go-to: ldr_promise_vonc if ldr_promise_failed = 1; catholic_promise_vonc if ppi_promise_failed == 1
+on-arrival: welfare += 1; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; womens_rights += 1; coalition_dissent += 1 if (welfare >= 1 and unemployment >= 15); unemployment -= 0.4; inflation += 0.2; economic_growth += 0.3; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1);
+go-to: ldr_promise_vonc if ldr_promise_failed = 1;
 
 We have increased welfare spending on women and children. [? if welfare >= 1 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
 
@@ -50,30 +50,28 @@ subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do 
 go-to: liberalize_fail if left_wing_coalition_r < 50; liberalize_success if left_wing_coalition_r >= 50
 
 @liberalize_fail
-on-arrival: ppi_relation -= 5; coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 3*(1-dissent); catholic_psi -= 5; ppi_moderates += 1; ppi_promise_failed = 1 if catholic_women_accepted
+on-arrival: ppi_relation -= 4; coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; catholic_psi -= 5 if not in_unstable_coalition; catholic_clc -= 5 if centre_left_coalition; catholic_scc -= 5 if socialist_catholic_coalition; ppi_moderates += 1 if ppi_right < ppi_left; ppi_right += 1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
 Unfortunately, our proposal is voted down in the Chamber of Deputies, with the Italian People's Party speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
 @liberalize_success
-on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1; ppi_relation -= 8; catholic_psi -= 10; ds_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; veterans_pnf -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent); socialist_sentiment += 7; ppi_moderates += 2; ppi_promise_failed = 1 if catholic_women_accepted
+on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1 if in_unstable_coalition; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 5*ppi_right; catholic_psi -= 10 if not in_unstable_coalition; catholic_clc -= 10 if centre_left_coalition; catholic_scc -= 10 if socialist_catholic_coalition; ul_relation -= 5; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 3*(1-dissent) if not in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; veterans_pnf -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent) if not in_unstable_coalition; veterans_clc += 3*(1-dissent) if centre_left_coalition; veterans_scc += 3*(1-dissent) if socialist_catholic_coalition; socialist_sentiment += 7; republican_sentiment += 3; ppi_left -= 2; ds_right += 1.2; ppi_promise_failed = 1 if catholic_women_accepted
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
 With the support of the left including the PSI and PSRI, we have successfully passed a bill to legalize abortion in Italy! This has heartened our more progressive supporters, while hurting our relations with the People's Party. With the increasing political discourse around abortion, the religiously-oriented People's Party and [+ ul_full_name +] have gained conservative votes at the expense of the [+ pnf_name +].
 
 @suffrage
 max-visits: 1
-subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?]
-go-to: suffrage_fail if left_wing_coalition_r < 50; suffrage_success if left_wing_coalition_r >= 50
+subtitle: [? if left_wing_coalition_r + ppi_seating_disp < 50 : This is unlikely to succeed; we do not have majority support. ?]
+go-to: suffrage_fail if left_wing_coalition_r + ppi_seating_disp < 50; suffrage_success if left_wing_coalition_r + ppi_seating_disp >= 50
 
 @suffrage_fail
-on-arrival: ldr_relation -= 5; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 3*(1-dissent); industrialists_psi -= 5; ppi_left += 1; ppi_promise_failed = 1 if catholic_women_accepted
-go-to: catholic_promise_vonc if ppi_promise_failed == 1
+on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ppi_left += 1; ldr_right += 0.6;
 
-Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ ul_full_name +] and [+ ldr_full_name +] speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ ul_name +] and [+ ldr_name +] speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
 @suffrage_success
-on-arrival: womens_suffrage = 1; women += 27; womens_rights += 1; coalition_dissent += 1 if not socialist_catholic_coalition; ldr_relation -= 8; middle_class_psi -= 7; ul_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; middle_class_pnf -= 2; women_ppi += 3; middle_class_ul += 3*(1-dissent); socialist_sentiment += 7; ppi_left += 2; ppi_promise_failed = 1 if catholic_women_accepted
-go-to: catholic_promise_vonc if ppi_promise_failed == 1
+on-arrival: womens_suffrage = 1; women += 27; womens_rights += 1; coalition_dissent += 2 if centre_left_coalition; ldr_relation -= 5*ldr_right; middle_class_psi -= 7 if not in_unstable_coalition; middle_class_clc -= 7 if centre_left_coalition; middle_class_scc -= 7 if socialist_catholic_coalition; ul_relation -= 8; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 3*(1-dissent) if in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3; industrialists_ds += 3; industrialists_ldr += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; middle_class_pnf -= 2; women_ppi += 3; middle_class_ul += 3*(1-dissent); socialist_sentiment += 7; ppi_left += 2; ldr_right += 0.6; ds_right += 0.2;
 
-With the support of the left including the PSRI [? if pri_prominent:the PRI?], we have successfully passed a bill to allow women to vote in Italy! This has heartened our more radical supporters, while hurting our relations with the Liberal parties. With the increasing political discourse around suffrage, the [+ ldr_full_name +] and [+ ul_full_name +] have gained middle class and landowner votes at the expense of the [+ pnf_name +].
+With the support of the left including the PSRI[? if pri_prominent: and the PRI?] alongside the PPI, we have successfully passed a bill to allow women to vote in Italy! This has heartened our more radical supporters, while hurting our relations with the liberal parties. With the increasing political discourse around suffrage, the [+ ldr_full_name +] and [+ ul_full_name +] have gained middle class and landowner votes at the expense of the [+ pnf_name +].

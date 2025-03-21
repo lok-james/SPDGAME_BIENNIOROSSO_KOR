@@ -15,7 +15,8 @@ The PSI is torn between many different ideological currents. What should be our 
 
 - @class_struggle: Class struggle and preparing the proletariat for the revolution are our primary goals.
 - @centrist: The Center Marxism of Karl Kautsky remains the best way to resolve our internal contradictions.
-- @labour: We should work with the trade unions to improve the lives of workers.
+- @syndicalism: We should work with the trade unions to improve the lives of workers via force.
+- @labour: We should work with the trade unions to improve the lives of workers via reforms.
 - @reform: Following Eduard Bernstein & Filippo Turati, we should work for ethical socialism, strengthen democracy, and expand the party's electorate.
 - @easy_discard
 - @cancel_advisor_action
@@ -27,7 +28,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; communist_strength += 10; communist_dissent -= 5; ldr_relation -= 3; ul_relation -= 5;
+on-departure: ideology = "left"; communist_strength += 10; communist_dissent -= 5; ldr_relation -= 3; ul_relation -= 5; ldr_left -= 0.2; socialist_sentiment += 3*(1-dissent)
 
 The radical left of the party supports a course of class struggle, and violent revolution.
 
@@ -53,6 +54,17 @@ on-departure: ideology = "labour"; labour_strength += 10; labour_dissent -= 5;
 
 The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
 
+@syndicalism
+on-arrival: {!
+if (Q.ideology && Q.ideology != "syndicalist") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "syndicalist"; syndicalist_strength += 10; syndicalist_dissent -= 5 if syndicalist_active; 
+
+The minor syndicalist wing of the party supports violent means in order to provide benefits to the workers, such as strikes and factory occupations.
+
 @reform
 on-arrival: {!
 if (Q.ideology && Q.ideology != "reformist") {
@@ -60,11 +72,11 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; republican_sentiment += 2*(1-dissent);
+on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; republican_sentiment += 3*(1-dissent);
 
 The reformist wing of the party seeks to preserve continued participation in government, and is most supportive of coalitions with the other pro-democracy parties.
 
 @changed
-on-arrival: communist_dissent += 5; maximalist_dissent += 5; labour_dissent += 5; reformist_dissent += 5
+on-arrival: communist_dissent += 5; maximalist_dissent += 5; labour_dissent += 5; reformist_dissent += 5; syndicalist_dissent += 5 if syndicalist_active
 
 We have changed ideologies. Many in the party feel unmoored.
