@@ -13,7 +13,7 @@ go-to: rome_menu
 
 [+ pnf_leader +], alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to [+ pnf_leader +]'s demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
 
-[? if psi_in_government : We could utilise our government influence to bring down [+ pnf_leader +] and fascism once and for all. ?][if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
+[? if psi_in_government : We could utilise our government influence to bring down [+ pnf_leader +] and fascism once and for all. ?][? if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
 
 @rome_menu
 
@@ -90,11 +90,11 @@ The King refuses to authorise the order, but a number of our loyal forces within
 
 @rome_rg_mobilise
 max-visits: 1
-subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if not_participating = 1: potentially escalating the situation to a civil war. ?][? if rg_banned = 1 : The Red Guards are banned, and will be weakened. ?]
+subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if participating = 0: potentially escalating the situation to a civil war. ?][? if rg_banned = 1 : The Red Guards are banned, and will be weakened. ?]
 choose-if: communist_dissent < 50 or maximalist_dissent < 50 or reformist_dissent < 50 or labour_dissent < 50
 unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and labour_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
-go-to: rome_menu if participating == 1; civil_war if not_participating == 1
+go-to: rome_menu if participating == 1 or (maximalist_participating == 1 and not psi_in_government); civil_war if not_participating == 0 or (maximalist_participating == 1 and not psi_in_government)
 
 The Red Guards mobilise upon our order, beginning the March to Rome to confront [+ pnf_leader +].
 
