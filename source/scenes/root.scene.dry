@@ -159,7 +159,7 @@ Q.nationalist_sentiment = 37;
 Q.anti_monarchist_sentiment = Q.republican_sentiment+Q.socialist_sentiment;
 Q.democratisation = 0;
 
-// revolution vs radicalism
+// revolution vs radicalisation
 Q.revolutionary_fervour = 60;
 Q.revolutionary_exhaustion = 1; 
 
@@ -465,7 +465,7 @@ Q.education_reformed = 0;
 Q.child_safety = 0;
 Q.child_attendance = 0;
 Q.child_labour_laws = 0;
-Q.child_welfare = 0;
+Q.child_welfare = 0; 
 
 // southern Question
 Q.southern_resolved = 0;
@@ -511,7 +511,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
             'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_pm',
-            'gov_army', 'rg_orders', 'child_labour'];
+            'gov_army', 'rg_orders', 'child_labour', 'radicalisation'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -621,7 +621,7 @@ This is a game of alternate history. While historical accuracy is a major concer
 
 For more information on the politics and of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
-This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy">here</a> if you have not done so already.
+This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <span style="color: #900;"><a href="https://red-autumn.itch.io/social-democracy">**here**</a></span> if you have not done so already.
 
 - @1919_easy: Begin (easy difficulty)
 - @1919_main: Begin (normal difficulty)

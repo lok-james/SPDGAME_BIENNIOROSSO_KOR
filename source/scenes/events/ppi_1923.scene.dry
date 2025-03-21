@@ -33,7 +33,7 @@ if (Q.pope === "Del Val") {
 if (Q.abortion_rights > 0) {
     Q.ppi_right += 2;
 }
-if (Q.radicalism > 7) {
+if (Q.radicalisation > 7) {
     Q.ppi_right += 1;
 }
 if (Q.largest_party === "PNF") {
