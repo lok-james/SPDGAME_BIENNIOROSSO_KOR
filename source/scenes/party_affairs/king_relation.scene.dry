@@ -37,7 +37,3 @@ unavailable-subtitle: Our relationship with the [+ ul_name +] isn't high enough.
 on-arrival: ul_relation -= 5; king_relation += 5
 
 With some meetings and agreements, they agree to sway some of their Senate-aligned members towards us, which in turn sways the King.
-
-@king_return
-
-Maybe it's better we leave the King alone for now.
