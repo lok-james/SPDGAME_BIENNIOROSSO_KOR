@@ -56,7 +56,7 @@ Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [
 
 @child_labour_success
 on-arrival: {!
-child_labour_laws = 1;
+Q.child_labour_laws = 1;
 if (Q.centre_left_coalition == 1 && ul_leader != "Sonnino") {
     Q.coalition_dissent += 1;
 }
