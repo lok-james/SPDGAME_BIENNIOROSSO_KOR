@@ -134,6 +134,7 @@ if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 &
 @eg_menu
 
 - #endings
+- @achievements
 - @end_game: End game.
 
 @mussolini_wins
