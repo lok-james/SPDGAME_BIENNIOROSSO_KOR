@@ -1,6 +1,6 @@
 title: Women's Rights rolled back
 subtitle: The PPI have begun obstructing reforms to women's rights.
-view-if: ppi_relation <= 30 and gov_women_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and womens_rights > 0
+view-if: ppi_relation <= 30 and gov_women_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and womens_rights > 0 and ppi_in_government
 on-arrival: gov_cooldown_timer = 2; gov_justice_timer = 9; womens_rights -= 1; ppi_relation -= 5; middle_class_psi -= 2*(1-dissent); workers_psi -= 3*(1-dissent); catholic_psi -= 4; womens_work -= 1 if womens_work > 0; family_law -= 1 if family_law > 0;
 new-page: true
 tags: event
