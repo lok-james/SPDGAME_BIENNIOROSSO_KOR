@@ -921,6 +921,13 @@ if (Q.week_actions >= 1) {
             Q.workers_pcdi += 2/12;
         }
 
+        if (Q.reformist_strength > Q.communist_strength) {
+            Q.radicalisation -= 1/12;
+        }
+
+        if (Q.reformist_strength < Q.communist_strength) {
+            Q.radicalisation += 1/12;
+        }
 
     }
 }

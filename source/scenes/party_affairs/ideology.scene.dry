@@ -28,7 +28,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; communist_strength += 10; communist_dissent -= 5; ldr_relation -= 3; ul_relation -= 5; ldr_left -= 0.2; socialist_sentiment += 3*(1-dissent)
+on-departure: ideology = "left"; communist_strength += 10; communist_dissent -= 5; ldr_relation -= 3; ul_relation -= 5; ldr_left -= 0.2; socialist_sentiment += 3*(1-dissent); radicalisation += 0.1;
 
 The radical left of the party supports a course of class struggle, and violent revolution.
 
@@ -72,7 +72,7 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; republican_sentiment += 3*(1-dissent);
+on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; republican_sentiment += 3*(1-dissent); radicalisation -= 0.1;
 
 The reformist wing of the party seeks to preserve continued participation in government, and is most supportive of coalitions with the other pro-democracy parties.
 

@@ -36,12 +36,12 @@ on-arrival: resources -= 1;
 go-to: catholic_op if psi_in_government == 0; catholic_coalition if socialist_catholic_coalition == 1
 
 @catholic_op
-on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent); ppi_right -= 0.5; republican_sentiment += 1;
+on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent); ppi_right -= 0.5; republican_sentiment += 1; radicalisation -= 0.05;
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 
 @catholic_coalition
-on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent); ppi_left += 0.5; republican_sentiment += 3;
+on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent); ppi_left += 0.5; republican_sentiment += 3; radicalisation -= 0.1;
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
@@ -53,12 +53,12 @@ on-arrival: resources -= 1;
 go-to: liberal_op if psi_in_government == 0; liberal_coalition if centre_left_coalition == 1
 
 @liberal_op
-on-arrival: ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent); ldr_right -= 0.5; ul_sonnino -= 0.2; republican_sentiment += 1;
+on-arrival: ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent); ldr_right -= 0.5; ul_sonnino -= 0.2; republican_sentiment += 1; radicalisation -= 0.05;
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 
 @liberal_coalition
-on-arrival: ldr_relation += 8; ul_relation += 8; communist_dissent += 4*(1-dissent); ldr_left += 0.5; ul_sonnino -= 0.5; republican_sentiment += 3;
+on-arrival: ldr_relation += 8; ul_relation += 8; communist_dissent += 4*(1-dissent); ldr_left += 0.5; ul_sonnino -= 0.5; republican_sentiment += 3; radicalisation -= 0.1;
 
 We are currently coalition partners with them, so improving relations comes naturally.
 

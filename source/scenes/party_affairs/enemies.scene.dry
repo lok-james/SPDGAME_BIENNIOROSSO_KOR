@@ -22,7 +22,7 @@ In our media and campaign materials, who should we consider as our main opponent
 
 @anti_dem
 view-if: pcdi_formed
-on-arrival: enemies = "anti-democratic parties"; maximalist_strength += 5; reformist_strength += 5; communist_dissent += 5; workers_pcdi -= 2; workers_pnf -= 2; 
+on-arrival: enemies = "anti-democratic parties"; maximalist_strength += 5; reformist_strength += 5; communist_dissent += 5; workers_pcdi -= 2; workers_pnf -= 2; radicalisation -= 0.05;
 
 Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties.
 
