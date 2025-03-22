@@ -109,7 +109,7 @@ subtitle: Our forces will begin to March on Rome as well, [? if participating = 
 choose-if: communist_dissent < 50 or maximalist_dissent < 50 or reformist_dissent < 50 or labour_dissent < 50
 unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and labour_dissent > 50) : The party is too disunited to act. ?]
 on-arrival: rome_rg_visited = 1
-go-to: rome_menu if participating == 1 or (maximalist_participating == 1 and not psi_in_government); civil_war if not_participating == 1 or (maximalist_participating == 1 and not psi_in_government)
+go-to: rome_menu if participating == 1 or maximalist_participating == 1; civil_war if not_participating == 1
 
 The Red Guards mobilise upon our order, beginning the March to Rome to confront [+ pnf_leader +].
 
