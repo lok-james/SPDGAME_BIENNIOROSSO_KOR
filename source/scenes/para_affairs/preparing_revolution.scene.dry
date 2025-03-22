@@ -2,7 +2,7 @@ title: Preparing our Revolution
 new-page: true
 is-card: true
 on-arrival: preparing_revolution_timer = 3; week_actions += 1
-view-if: (preparation_done != 1 or (year > 1922 or (year = 1922 and month > 11))) and preparing_revolution_timer <= 0 and participating = 0 and rg_banned = 0
+view-if: (preparation_done != 1 or (year > 1922 or (year = 1922 and month > 11) and revolutionary_fervour > 69)) and preparing_revolution_timer <= 0 and participating = 0 and rg_banned = 0
 card-image: img/PreparingRevolution.jpg
 frequency: 300
 tags: para_affairs
@@ -49,7 +49,8 @@ Through some carefully placed information and contacts, the Carabinieri 'discove
 
 @rev_finish
 choose-if: weaponry_rg == 3 and loyalty_rg == 3 and sabotage_rg == 3
-on-arrival: preparation_done = 1; interior_police_loyalty += 0.2; army_loyalty += 0.2; rg_militancy += 0.1;
+view-if: preparation_done = 0
+on-arrival: preparation_done = 1; interior_police_loyalty += 0.2; army_loyalty += 0.2; rg_militancy += 0.1; revolutionary_fervour += 7; revolutionary_exhaustion += 0.01 if not_participating
 
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.
 
