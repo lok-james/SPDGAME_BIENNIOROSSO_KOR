@@ -57,8 +57,8 @@ view-if: psi_in_government and foreign_minister_party == "PSI"
 choose-if: balkan_relation >= 8 and entente_relation > 2
 unavailable-subtitle: [? if balkan_relation < 8 : The Yugoslavian government is too wary of us. ?][? if entente_relation < 2: The Yugoslavian government knows they can get more from us. ?]
 on-arrival: {!
-Q.veterans_psi += 4*(1-dissent);
-Q.veterans_pnf -= 2*(1-dissent);
+Q.veterans_psi += 4*(1-Q.dissent);
+Q.veterans_pnf -= 2*(1-Q.dissent);
 
 Q.workers += 3;
 Q.middle_class += 2;

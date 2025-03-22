@@ -96,7 +96,7 @@ unavailable-subtitle: The PSI does not control the Public Education Ministry.
 on-arrival: {!
 Q.southern_education_funded += 1; 
 Q.budget -= 1; 
-if (Q.budget < 0 && Q.liberal_budget_accepted == 0) {
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
 } 
 Q.economic_growth += 0.3;

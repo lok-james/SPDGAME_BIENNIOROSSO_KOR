@@ -95,7 +95,7 @@ Q.industrialists_ds += 3;
 Q.industrialists_ldr += 3; 
 Q.industrialists_ul += 3; 
 Q.rural_ul += 5;
-Q.middle_class_ul += 3*(1-dissent); 
+Q.middle_class_ul += 3*(1-Q.dissent); 
 
 Q.workers_pnf -= 5; 
 Q.industrialists_pnf -= 3; 

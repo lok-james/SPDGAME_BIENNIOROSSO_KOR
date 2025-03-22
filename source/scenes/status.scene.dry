@@ -322,7 +322,7 @@ Workplace Safety: [? if workers_safety = 0 : Dangerous ?][? if workers_safety = 
 
 = Judiciary
 
-Judicial Reforms: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform = 1: Corrupt ?][? if judicial_reform = 2: Reformed ?]
+Judicial Reforms: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform = 1: Corrupt ?][? if judicial_reform >= 2: Reformed ?]
 
 [? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
 
