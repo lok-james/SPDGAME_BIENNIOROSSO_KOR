@@ -125,8 +125,8 @@ for (var party of Q.parties) {
 // 2. normalize support (fraction)
 for (var party of Q.parties) {
     Q[party+'_normalised'] = Q[party + '_support']/total_support;
-    Q[party+'_votes'] = Math.round(Q[party+'_normalised']*100);
-    Q[party+'_votes_display'] = Math.round(Q[party+'_normalised']*100);
+    Q[party+'_votes'] = (Q[party+'_normalised']*100).toFixed(1);
+    Q[party+'_votes_display'] = (Q[party+'_normalised']*100).toFixed(1);
 }
 
 
