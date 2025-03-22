@@ -196,7 +196,7 @@ Q.unemployment = 13.5;
 Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholic', 'women'];
 Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
 
-// Communist split from the party
+// splits from the party
 Q.pcdi_formed = 0;
 Q.psu_formed = 0
 Q.psri_reconciled = 0;
@@ -329,7 +329,7 @@ Q.pri_r = 0;
 Q.ldr_r = 10.4;
 Q.ds_r = 8.2;
 Q.ul_r = 47.6;
-Q.pnf_r = 0;
+Q.pnf_r = 0; 
 Q.psri_r = 3.9;
 Q.other_r = 6.3;
 

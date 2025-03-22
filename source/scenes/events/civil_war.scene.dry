@@ -46,11 +46,12 @@ Q.total_power += Q.interior_police_power;
 if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
+
 Q.loyal_army_power = Q.army_strength*Q.army_militancy*Q.army_loyalty;
-if (Q.psi_in_government) {
-    Q.total_power += Q.loyal_army_power;
+if (Q.radicalisation < 10) {
+    Q.total_power += Q.loyal_army_power * (Q.radicalisation/10)/5;
 } else {
-    Q.total_power += Q.loyal_army_power/4;
+    Q.total_power += Q.loyal_army_power/5;
 }
 
 if (Q.rcw_over == 0) {
