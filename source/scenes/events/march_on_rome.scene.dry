@@ -28,7 +28,7 @@ What should we do?
 go-to: civil_war
 
 @cv_def
-go-to rome_menu
+go-to: rome_menu
 
 @rome_menu
 
