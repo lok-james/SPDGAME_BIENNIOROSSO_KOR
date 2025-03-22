@@ -21,6 +21,8 @@ choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 9; resources += dues;
 
+We have gained +[+ dues +] resources.
+
 @fiscal_policy_rigola
 title: Fiscal Policy
 subtitle: Having control of the Financial Ministry, we can adjust taxes and tariffs.

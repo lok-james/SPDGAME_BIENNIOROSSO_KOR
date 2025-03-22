@@ -21,6 +21,8 @@ choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 9; resources += dues;
 
+We have gained +[+ dues +] resources.
+
 @question_of_ideology
 title: Question of Ideology
 subtitle: There are a number of ideologues from each faction which seek to direct the path of the party.
