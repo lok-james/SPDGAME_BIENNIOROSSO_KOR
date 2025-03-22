@@ -22,7 +22,7 @@ Though its broad reach has allowed it to remain non-sectarian to any party, they
 subtitle: -1 Paramilitary Resource
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1)
-on-arrival: para_resources -= 1; adp_strength += 17; adp_militancy += 0.0.5; socialist_sentiment += 2; republican_sentiment += 3;
+on-arrival: para_resources -= 1; adp_strength += 17; adp_militancy += 0.05; socialist_sentiment += 2; republican_sentiment += 3;
 
 Our funding allows the Arditi to grow in number, strengthening our relations with them in the process.
 
