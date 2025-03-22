@@ -2,7 +2,7 @@ title: Preparing our Revolution
 new-page: true
 is-card: true
 on-arrival: preparing_revolution_timer = 3; week_actions += 1
-view-if: (preparation_done != 1 or (year > 1922 or (year = 1922 and month > 11) and revolutionary_fervour > 69)) and preparing_revolution_timer <= 0 and participating = 0 and rg_banned = 0
+view-if: (preparation_done != 1 or (year > 1922 or (year = 1922 and month > 11) and revolutionary_fervour >= 65)) and preparing_revolution_timer <= 0 and participating = 0 and rg_banned = 0
 card-image: img/PreparingRevolution.jpg
 frequency: 300
 tags: para_affairs
@@ -59,6 +59,6 @@ Our preparations seem to have borne fruit, as it seems will be have an advantage
 @rev_begin
 subtitle: We can begin the revolution! - This will lead us into a civil war.
 view-if: year > 1922 or (year = 1922 and month > 11)
-choose-if: revolutionary_fervour > 69
+choose-if: revolutionary_fervour >= 65
 unavailable-subtitle: The bulk of the party does not support this.
 go-to: civil_war

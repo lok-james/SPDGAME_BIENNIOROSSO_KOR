@@ -533,6 +533,7 @@ view-if: left_wing_coalition_r >= 50
 choose-if: participating = 1 or maximalist_participating = 1
 unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means. ?]
 on-arrival: {!
+Q.leverage = Q.leverage * 2;
 Q.psi_in_government = 1;
 Q.psri_in_government = 1;
 Q.in_coalition = 1;

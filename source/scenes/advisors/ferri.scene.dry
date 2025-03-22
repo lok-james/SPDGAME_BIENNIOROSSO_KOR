@@ -9,18 +9,17 @@ new-page: true
 
 Ferri is a member of the Maximalist faction of the PSI. Having served as the editor of *Avanti!* and a criminologist, he has influence in writing.
 
-- @fundraising_ferri
+- @emergency_fundraising_ferri
 - @question_of_ideology
 - @media_ferri
 - @root: Return to main
 
-@fundraising_ferri
-title: Fundraising
-subtitle: The party needs funds to operate, and gets those funds through dues by members.
+@emergency_fundraising_ferri
+title: Emergency Fundraising
+subtitle: An emergency infusion of resources.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1;
-go-to: fundraising
+on-arrival: advisor_action_timer = 9; resources += dues;
 
 @question_of_ideology
 title: Question of Ideology

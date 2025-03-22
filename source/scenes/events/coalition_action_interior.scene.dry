@@ -1,5 +1,5 @@
 title: [+ pnf_leader +] cracks down on the Red Guards
-subtitle: Interior Minister [+ interior_minister_party +] is utilising the Ministry against us.
+subtitle: Interior Minister [+ interior_minister +] is utilising the Ministry against us.
 view-if: prime_minister_party == pnf_name and gov_interior_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1922
 on-arrival: gov_cooldown_timer = 2; gov_interior_timer = 12; rg_strength *= 0.95; rg_militancy -= 0.05
 new-page: true

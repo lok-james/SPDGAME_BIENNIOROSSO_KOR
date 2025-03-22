@@ -521,6 +521,7 @@ view-if: left_wing_coalition_r >= 50
 choose-if: participating = 1 or maximalist_participating = 1
 unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means. ?]
 on-arrival: {!
+Q.leverage = Q.leverage * 2;
 Q.psi_in_government = 1;
 Q.psri_in_government = 1;
 Q.in_coalition = 1;
@@ -1295,11 +1296,11 @@ Giacomo Matteotti of the PSI has been appointed Foreign Minister.
 
 @agriculture
 title: Agricultural Ministry
-subtitle: The Agricultural Ministry dictates our agricultural policy,
+subtitle: The Agricultural Ministry dictates our agricultural policy, - Taking this is expected of us to strengthen our traiditonal voting bloc.
 unavailable-subtitle: We do not have enough leverage.
-choose-if: leverage >= 10 
+choose-if: leverage >= 5 
 view-if: agriculture_minister_party != "PSI"
-on-arrival: leverage -= 10; agriculture_minister_party = "PSI"; agriculture_minister = "Graziadei"
+on-arrival: leverage -= 5; agriculture_minister_party = "PSI"; agriculture_minister = "Graziadei"
 go-to: ministries
 tags: mins_1919
 
@@ -1372,7 +1373,7 @@ go-to: ministries
 @drop_agriculture
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "PSI"
-on-arrival: agriculture_minister_party = "DS" if ds_allies; agriculture_minister_party = ldr_name if centre_left_coalition; agriculture_minister_party = "PSRI" if left_wing_coalition; agriculture_minister_party = "PPI" if socialist_catholic_coalition; leverage += 10;
+on-arrival: agriculture_minister_party = "DS" if ds_allies; agriculture_minister_party = ldr_name if centre_left_coalition; agriculture_minister_party = "PSRI" if left_wing_coalition; agriculture_minister_party = "PPI" if socialist_catholic_coalition; leverage += 5;
 tags: drop_mins_1919
 go-to: ministries
 

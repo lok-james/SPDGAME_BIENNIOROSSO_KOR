@@ -16,6 +16,7 @@ Q.radicalisation = Math.round(Q.radicalisation);
 Q.liberal_crackdown_timer_disp = Q.liberal_crackdown_timer * 2;
 Q.catholic_papacy_timer_disp = Q.cathoic_papacy_timer * 2;
 Q.sonnino_southern_timer_disp = Q.sonnino_southern_timer * 2;
+Q.revolutionary_fervour = Math.round(Q.revolutionary_fervour);
 !}
 
 = Status
