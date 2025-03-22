@@ -1,7 +1,7 @@
 title: Constitutional Reform
 new-page: true
 is-card: true
-view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and anti_monarchist_sentiment >= 30
+view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65) and constitutional_reform_timer <= 0 and anti_monarchist_sentiment >= 30 and (veto_removed = 0 or king_veto_removed = 0 or pm_appointed = 0)
 frequency: 500
 on-arrival: week_actions += 1; constitutional_reform_timer = 9
 card-image: img/portraits/VitorioEmanuel.jpg
@@ -27,7 +27,7 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 
 @article_33
 subtitle: Remove the appointed Senate's ability to reject bills.
-view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50
+view-if: centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 and veto_removed = 0
 choose-if: king_relation > 70
 unavailable-subtitle: The King & Senate would not approve this.
 on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2; republican_sentiment += 4*democratisation
@@ -37,7 +37,7 @@ The Constitutional Amendment makes it to the King, who is convinced to approve t
 
 @article_65
 subtitle: Make the Prime Minister choose and appoint his own ministers.
-view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and veto_removed = 1
+view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and veto_removed = 1 and pm_appointed = 0
 choose-if: king_relation > 70
 unavailable-subtitle: The King & Senate would not approve this.
 on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1; republican_sentiment += 4*democratisation
@@ -46,7 +46,7 @@ The Constitutional Amendment makes it to the King, who is convinced to approve t
 
 @article_33_2
 subtitle: Remove the King's ability to veto bills.
-view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and pm_appointed = 1
+view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and pm_appointed = 1 and king_veto_removed = 0
 choose-if: king_relation > 80
 unavailable-subtitle: The King & Senate would not approve this.
 on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1; republican_sentiment += 4*democratisation
