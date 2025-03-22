@@ -7,13 +7,28 @@ priority: -1
 tags: event
 new-page: true
 face-image: img/MarchOnRome.jpg
-go-to: rome_menu
+go-to: rome_menu if (maximalist_participating = 0 or (maximalist_participating and not psi_in_government)); cv_menu if maximalist_participating = 1 and psi_in_government
 
 = March on Rome
 
 [+ pnf_leader +], alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to [+ pnf_leader +]'s demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
 
 [? if psi_in_government : We could utilise our government influence to bring down [+ pnf_leader +] and fascism once and for all. ?][? if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
+
+@cv_menu
+
+We are at a crossroads. The results of Bologna has resulted in us taking a middle-of-the-line avenue, advocating for both extraparliamentary means and participation in government, at least without the bourgeois parties. The communists on the left, however, argue that this is the perfect opportunity to strike, while the reformists on the left argue for our continued participation in government.
+
+What should we do?
+
+- @cv_fight: The Communists should be heeded; we must use this opportunity!
+- @cv_def: The Reformists should be heeded; we should continue our position in government.
+
+@cv_fight 
+go-to: civil_war
+
+@cv_def
+go-to rome_menu
 
 @rome_menu
 

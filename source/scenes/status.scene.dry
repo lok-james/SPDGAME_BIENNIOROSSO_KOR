@@ -218,7 +218,7 @@ Regio Esercito Loyalty: [+ army_loyalty : loyalty +]
 @polls
 on-arrival: {!
 Q.republican_sentiment_disp = Math.round(Q.republican_sentiment);
-Q.socialist_sentiment_disp = Math.round(Q.republican_sentiment);
+Q.socialist_sentiment_disp = Math.round(Q.socialist_sentiment);
 Q.nationalist_sentiment_disp = Math.round(Q.nationalist_sentiment);
 !}
 

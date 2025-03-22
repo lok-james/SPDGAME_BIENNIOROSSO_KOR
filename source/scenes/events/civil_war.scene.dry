@@ -188,7 +188,7 @@ We urge the Carabinieri, the force of the Interior police, to join our cause. [?
 
 @war_outcome
 view-if: war_choices >= 2
-go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory if socialist_victory = 1 and participating = 1; communist_victory if socialist_victory = 1 and not_participating = 1
+go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory if socialist_victory = 1 and participating = 1; communist_victory if socialist_victory = 1 and not_participating = 1 or maximalist_participating = 1
 
 @defeat
 achievement: follia_di_sinistra

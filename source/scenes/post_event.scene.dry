@@ -38,6 +38,14 @@ if (Q.revolutionary_exhaustion < 0) {
     Q.revolutionary_exhaustion = 0;
 }
 
+if (Q.revolutionary_fervour > 100) {
+    Q.revolutionary_fervour = 100;
+}
+
+if (Q.revolutionary_fervour < 0) {
+    Q.revolutionary_fervour = 0;
+}
+
 if (Q.republican_sentiment < 0) {
     Q.republican_sentiment = 0;
 }
