@@ -121,7 +121,7 @@ var party_majority = "";
 var party_majority_num = 0;
 
 // Find the party with at least 25% and the highest support
-for (let party of Q.parties) {
+for (party of Q.parties) {
     if (Q[party + '_r'] >= 25 && Q[party + '_r'] > party_majority_num) {
         party_majority = party;
         party_majority_num = Q[party + '_r'];
@@ -129,17 +129,17 @@ for (let party of Q.parties) {
 }
 
 if (party_majority_num >= 25) {
-    let majority_seats = Math.floor((total_seats / 3) * 2); // 2/3 of 535
-    let remaining_seats = total_seats - majority_seats;
-    let remaining_votes = 100 - party_majority_num;
+    var majority_seats = Math.floor((total_seats / 3) * 2); // 2/3 of 535
+    var remaining_seats = total_seats - majority_seats;
+    var remaining_votes = 100 - party_majority_num;
 
     // Assign majority party its seats
     Q[party_majority + '_seating'] = majority_seats;
 
-    for (let party of Q.parties) {
+    for (party of Q.parties) {
         if (party !== party_majority) {
             // Distribute the remaining seats proportionally
-            let proportional_seats = (Q[party + '_r'] / remaining_votes) * remaining_seats;
+            var proportional_seats = (Q[party + '_r'] / remaining_votes) * remaining_seats;
             Q[party + '_seating'] = Math.round(proportional_seats);
         }
     }

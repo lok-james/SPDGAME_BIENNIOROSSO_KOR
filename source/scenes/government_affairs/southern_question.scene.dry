@@ -61,8 +61,8 @@ if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
 
-Q.economic_growth += 0.3; 
-Q.unemployment -= 0.6;
+Q.economic_growth += 0.2;
+Q.unemployment -= 0.4;
 if (Q.in_unstable_coalition == 0) {
     Q.rural_psi += 2*(1-Q.dissent);
     Q.industrialists_psi -= 3*(1-Q.dissent);
@@ -103,26 +103,26 @@ Q.economic_growth += 0.3;
 Q.unemployment -= 0.4; 
 
 if (Q.in_unstable_coalition == 0) {
-    Q.rural_psi += 4*(1-Q.dissent); 
-    Q.middle_class_psi += 3*(1-Q.dissent); 
+    Q.rural_psi += 3*(1-Q.dissent); 
+    Q.middle_class_psi += 1*(1-Q.dissent); 
     Q.industrialists_psi -= 3*(1-Q.dissent); 
     Q.catholic_psi -= 4*(1-Q.dissent);
 }
 
 if (Q.centre_left_coalition == 1) {
-    Q.rural_clc += 4*(1-Q.dissent); 
-    Q.middle_class_clc += 3*(1-Q.dissent); 
+    Q.rural_clc += 3*(1-Q.dissent); 
+    Q.middle_class_clc += 1*(1-Q.dissent); 
     Q.industrialists_clc -= 3*(1-Q.dissent); 
     Q.catholic_clc -= 4*(1-Q.dissent);
 }
 
 if (Q.socialist_catholic_coalition == 0) {
-    Q.rural_scc += 4*(1-Q.dissent); 
-    Q.middle_class_scc += 3*(1-Q.dissent); 
+    Q.rural_scc += 3*(1-Q.dissent); 
+    Q.middle_class_scc += 1*(1-Q.dissent); 
     Q.industrialists_scc -= 3*(1-Q.dissent); 
     Q.catholic_scc -= 4*(1-Q.dissent);
 }
-Q.nationalist_sentiment -= 3;
+Q.nationalist_sentiment -= 3*(1-Q.dissent);
 Q.ppi_relation -= 4;
 Q.ul_sonnino -= 0.1;
 

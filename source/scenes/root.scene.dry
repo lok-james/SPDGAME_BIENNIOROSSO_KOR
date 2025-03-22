@@ -525,7 +525,7 @@ Q.interior_policy_timer = 0;
 Q.international_relations_timer = 0;
 Q.shuffle_leadership_timer = 0;
 Q.para_funding_timer = 0;
-Q.constitutional_reform_timer = 0;
+Q.constitutional_reform_timer = 0; 
 Q.foreign_policy_timer = 0;
 Q.shuffle_cabinet_timer = 0;
 Q.soviet_recovery_timer = 0;
@@ -575,6 +575,7 @@ Q.gov_justice_timer = 14;
 Q.gov_pm_timer = 14;
 Q.gov_army_timer = 14;
 Q.giolitti_tenure = 0;
+Q.radicalisation_timer = 6;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
