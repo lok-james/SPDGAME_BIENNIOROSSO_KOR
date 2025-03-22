@@ -20,7 +20,7 @@ The *Guardie Rosse*, following our continued goal of violent revolution, will be
 subtitle: -30k Red Guard Strength - Test the Red Guards against the Arditsmo.
 choose-if: rg_strength >= 30
 unavailable-subtitle: The Red Guards don't have enough forces to act.
-on-arrival: revolutionary_fervour += 5; rg_strength -= 30*revolutionary_exhaustion; rg_militancy += 0.03*revolutionary_exhaustion; ard_strength -= 30*rg_militancy; revolutionary_exhaustion += 0.03 if not_participating = 1 
+on-arrival: radicalisation += 0.1; revolutionary_fervour += 5; rg_strength -= 30*revolutionary_exhaustion; rg_militancy += 0.03*revolutionary_exhaustion; ard_strength -= 30*rg_militancy; revolutionary_exhaustion += 0.03 if not_participating = 1; middle_class_psi -= 6*(1-dissent); 
 
 Our forces begin intercepting and picking fights with the Arditismo, allowing them to gain combat experience and reinvigorating the party.
 
@@ -28,7 +28,7 @@ Our forces begin intercepting and picking fights with the Arditismo, allowing th
 subtitle: -10k Red Guard Strength - Aid factory workers to seize control of their workplaces.
 choose-if: rg_strength >= 10
 unavailable-subtitle: The Red Guards don't have enough forces to act.
-on-arrival: revolutionary_fervour += 3; rg_strength -= 10*revolutionary_exhaustion; workers_psi += 4; revolutionary_exhaustion += 0.02 if not_participating = 1; industrialists_psi -= 4; factory_takeovers += 1;
+on-arrival: radicalisation += 0.05; revolutionary_fervour += 3; rg_strength -= 10*revolutionary_exhaustion; workers_psi += 4; revolutionary_exhaustion += 0.02 if not_participating = 1; industrialists_psi -= 4; factory_takeovers += 1;  middle_class_psi -= 4*(1-dissent); 
 
 We have seized control of more factories and kicked the bourgeois industrialists out! This has reinvigorated the party, and convinced more workers to our side.
 
@@ -36,6 +36,6 @@ We have seized control of more factories and kicked the bourgeois industrialists
 subtitle: -5k Red Guard Strength - Protest and strike against the current working conditions.
 choose-if: rg_strength >= 5
 unavailable-subtitle: The Red Guards don't have enough forces to act.
-on-arrival: revolutionary_fervour += 1; rg_strength -= 5*revolutionary_exhaustion; workers_psi += 2; revolutionary_exhaustion += 0.01 if not_participating = 1; industrialists_psi -= 2;
+on-arrival: radicalisation += 0.02; revolutionary_fervour += 1; rg_strength -= 5*revolutionary_exhaustion; workers_psi += 2; revolutionary_exhaustion += 0.01 if not_participating = 1; industrialists_psi -= 2;  middle_class_psi -= 2*(1-dissent); 
 
 We have seized control of more factories and kicked the bourgeois industrialists out! This has reinvigorated the party, and convinced more workers to our side.

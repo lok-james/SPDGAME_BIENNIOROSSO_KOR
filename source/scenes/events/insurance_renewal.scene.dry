@@ -24,9 +24,9 @@ The program is set to continue for another year, our appeal to veterans increase
 @end_insurance
 view-if: finance_minister_party = "PSI"
 subtitle: Our veterans on this program will see this as a betrayal.
-on-arrival: veterans_clc -= 6*(1-dissent) if centre_left_coalition; veterans_scc -= 6*(1-dissent) if socialist_catholic_coalition; veterans_psi -= 4*(1-dissent) if psi_in_government and not in_unstable_coalition; veterans_ldr -= 4 if grand_coalition; veterans_ppi -= 4 if grand_coalition; veterans_pnf += 9; unemployment_insurance_founded = 0;
+on-arrival: veterans_clc -= 6*(1-dissent) if centre_left_coalition; veterans_scc -= 6*(1-dissent) if socialist_catholic_coalition; veterans_psi -= 4*(1-dissent) if psi_in_government and not in_unstable_coalition; veterans_ldr -= 4 if grand_coalition; veterans_ppi -= 4 if grand_coalition; veterans_pnf += 9 if not pnf_in_government; veterans_pnf -= 4 if pnf_in_government; unemployment_insurance_founded = 0;
 
-The short-lived program comes to an end, as veterans now without government support flock to the fascists, bitter regarding our betrayal.
+The short-lived program comes to an end, as veterans now without government support flock to more radical parties, bitter regarding the government's betrayal.
 
 @await_government
 view-if: not psi_in_government or not finance_minister_party = "PSI"

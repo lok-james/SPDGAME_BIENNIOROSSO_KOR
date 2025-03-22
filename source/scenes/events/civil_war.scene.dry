@@ -212,6 +212,7 @@ The war settles into fixed battle lines. This will not be a quick coup, but a lo
 - @game_over: Game over.
 
 @socialist_victory
+on-arrival: prime_minister = "Bordiga" if prime_minister_party = "PNF"; prime_minister_party = "PSI" if prime_minister_party = "PNF";
 achievement: vittoria_monarchica
 
 = Victory for the Kingdom
@@ -223,7 +224,7 @@ Italy holds strong, against fascism.
 - @game_over: Game over.
 
 @communist_victory
-on-arrival: soviet_victory = 1
+on-arrival: soviet_victory = 1; prime_minister = "Bordiga"; prime_minister_party = "PSI";
 achievement: vittoria_sovietica
 
 = Victory for the Socialists

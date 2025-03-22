@@ -48,7 +48,7 @@ on-arrival: {!
 Q.soviet_relation += 1; 
 Q.ldr_relation -= 4*(1-Q.dissent); 
 Q.ds_relation -= 4*(1-Q.dissent);  
-if (Q.soviet_relation > Q.entente_relation) {
+if (Q.soviet_relation > Q.entente_relation && Q.liberal_foreign_accepted == 1) {
     Q.ldr_promise_failed = 1;
 Q.ds_right += 0.1;
 Q.ldr_right += 0.1;
