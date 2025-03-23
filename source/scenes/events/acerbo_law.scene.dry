@@ -76,8 +76,8 @@ go-to: acerbo_menu
 
 @acerbo_results
 subtitle: [? if anti_acerbo_coalition < 50 : It seems the law is destined to pass. ?][? if anti_acerbo_coalition >= 50: It seems we have been able to secure enough votes to kill the bill. ?]
-on-arrival: acerbo_law_passed = 1 if anti_acerbo_coalition < 50; acerbo_law_failed = 1 if anti_acerbo_coalition >= 50; 
+on-arrival: acerbo_law_passed = 1 if anti_acerbo_coalition < 50;
 
 [? if acerbo_law_passed : The worst has come. The Acerbo Law has been able to reach a majority in parliament, and is promptly signed off by the King. We will merely have to wait for the next elections to see the fallout. ?]
 
-[? if acerbo_law_failed : It's a miracle; the bill dies in the Chamber of Deputes, as we are able to form a united front against fascism. [+ prime_minister +] is outraged, but we have managed to stem fascist takeover, even slightly. ?]
+[? if not acerbo_law_passed : It's a miracle; the bill dies in the Chamber of Deputes, as we are able to form a united front against fascism. [+ prime_minister +] is outraged, but we have managed to stem fascist takeover, even slightly. ?]

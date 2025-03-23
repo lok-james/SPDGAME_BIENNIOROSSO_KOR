@@ -194,14 +194,19 @@ Q.grand_coalition_r = Q.psri_seating_disp + Q.ppi_seating_disp + Q.ul_seating_di
 Q.centre_right_coalition_r = Q.pnf_seating_disp + Q.ul_seating_disp;
 Q.anti_socialist_coalition_r = Q.pnf_seating_disp + Q.ul_seating_disp;
 
+Q.left_wing_minimum = 50;
+
 if (Q.pri_prominent == 1) {
+    Q.other_toleration_seating = Q.other_seating_disp * 0.1;
+    Q.left_wing_minimum -= Q.other_toleration_seating;
     Q.left_wing_coalition_r += Q.pri_seating_disp;
     Q.centre_left_coalition_r += Q.pri_seating_disp;
     Q.socialist_catholic_coalition_r += Q.pri_seating_disp;
 }
 
 if (Q.pri_prominent == 0) {
-    Q.other_toleration_seating = Q.other_seating_disp * 0.8
+    Q.other_toleration_seating = Q.other_seating_disp * 0.8;
+    Q.left_wing_minimum -= Q.other_toleration_seating;
 }
 
 if (Q.ds_leader === "Giuffrida" && Q.ds_in_bn == 0 && Q.ds_relation >= Q.ds_min_relations || (Q.ds_leader === "Colonna" && Q.largest_party === "PSI" && Q.ds_in_bn == 0 && Q.ds_relation >= Q.ds_min_relations)) {
@@ -546,8 +551,8 @@ Finally, the PSI can govern alone! Our long campaign of electioneering has paid 
 @left_wing_coalition
 set-bg: background.png
 title: Can we form a Left-Wing Coalition?
-subtitle: PSI + PSRI[? if pri_prominent : + PRI?][? if ds_allies : + DS?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: Dissident Republicans, Socialists & the Italian Republican Party are willing to provide toleration to the coalition. ?]
-view-if: left_wing_coalition_r + other_toleration_seating >= 50
+subtitle: PSI + PSRI[? if pri_prominent : + PRI?][? if ds_allies : + DS?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: Dissident Republicans, Socialists [? if pri_prominent = 0:& the Italian Republican Party?] are willing to provide toleration to the coalition. ?]
+view-if: left_wing_coalition_r >= left_wing_minimum
 choose-if: (participating = 1 or maximalist_participating = 1) and psri_relation >= psri_min_relations
 unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if psri_relation < psri_min_relations : Our relations with the PSRI are too poor. ?]
 on-arrival: {!
@@ -600,7 +605,7 @@ Who should we select to be Prime Minister?
 @centre_left_coalition
 title: Open negotiations with the Liberal parties.
 subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_seating_disp) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : We will have to negotiate with the [+ ul_name +] to secure a majority coalition. ?]
-unavailable-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if liberal_coalition_failed : The Liberals are unwilling to accept another coalition right after the previous one failed. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?]
+unavailable-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if ldr_negotiations_failed : The liberals are unwilling to enter into talks again. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?]
 view-if: centre_left_coalition_r >= 50 or ((centre_left_coalition_r + ul_seating_disp >= 50) and not ul_allies)
 choose-if: participating = 1 and ldr_relation >= ldr_min_relations and ldr_negotiations_failed = 0 and southern_land_reformed = 0
 on-arrival: {!

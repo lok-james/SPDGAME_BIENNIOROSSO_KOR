@@ -165,7 +165,7 @@ Q.revolutionary_exhaustion = 1;
 
 // pacifism vs war
 Q.pacifism = 0;
-acerbo_law_passed = 0;
+Q.acerbo_law_passed = 0;
 
 // capital strikes happen when you upset the industrialists & landowners too much with your policies. they're an additional check on your policies, when purely electoral checks don't suffice.
 // coup progress happens when you piss off the fasci too much too quickly + if they have enough troops

@@ -1,5 +1,5 @@
 title: [+ pnf_leader +] appointed Prime Minister
-set-bg: MussoliniBg.jpg
+set-bg: img/MussoliniBG.png
 view-if: march_succeeded = 1
 on-arrival: {!
 
