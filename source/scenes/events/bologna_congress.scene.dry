@@ -4,7 +4,6 @@ subtitle: It is time to decide our path for the future.
 view-if: year = 1919 and month = 10
 max-visits: 1
 face-image: img/portraits/NicolaBombacci.jpg
-on-arrival: left_perc = ((communist_strength + (maximalist_strength/2))/(communist_strength + labour_strength + reformist_strength + maximalist_strength))*100; right_perc = ((reformist_strength + (labour_strength/2))/(communist_strength + labour_strength + reformist_strength + maximalist_strength))*100
 tags: event
 
 = XVI Congress of the Italian Socialist Party
@@ -23,7 +22,7 @@ The first thing on the agenda is to decide between a reformist or revolutionary 
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
 choose-if: communist_strength > reformist_strength
 unavailable-subtitle: The bulk of the party are opposed to this.
-on-arrival: reformist_dissent += right_perc; reformist_strength -= right_perc; communist_strength += left_perc; maximalist_strength += left_perc/2; communist_dissent -= left_perc; maximalist_dissent -= left_perc/2; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; party_approach = "Revolutionary";
+on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; party_approach = "Revolutionary";
 go-to: @election_agenda
 
 This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress in protest as the results of the votes is announced.
@@ -39,13 +38,12 @@ The less radical members of the Communists and Reformists accept the compromise,
 choose-if: communist_strength < reformist_strength
 unavailable-subtitle: The bulk of the party are opposed to this.
 subtitle: The party will fully abandon extraparliamentary means and pursue a policy of parliamentary reform.
-on-arrival: reformist_dissent -= right_perc; reformist_strength += right_perc; communist_strength -= left_perc; maximalist_strength -= right_perc/2; communist_dissent += right_perc; maximalist_dissent += right_perc/2; participating = 1; revolutionary_fervour -= 7; king_relation += 7*(1-(radicalisation/10)); party_approach = "Parliamentary";
+on-arrival: reformist_dissent *= 0.5; reformist_strength *= 1.5; communist_strength *= 0.5; maximalist_strength *= 0.75; communist_dissent *= 1.5; maximalist_dissent *= 1.25; participating = 1; revolutionary_fervour -= 7; king_relation += 7*(1-(radicalisation/10)); party_approach = "Parliamentary";
 go-to: @election_agenda
 
 The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw the Reformists as having lost most of its support within the party. Already, as the vote is announced, many Communist and Maximalist members storm out of the Congress in protest, leaving the Reformists to continue the Congress.
 
 @election_agenda
-on-arrival: left_perc = ((communist_strength + (maximalist_strength/2))/(communist_strength + labour_strength + reformist_strength + maximalist_strength))*100; right_perc = ((reformist_strength + (labour_strength/2))/(communist_strength + labour_strength + reformist_strength + maximalist_strength))*100
 new-page: false
 
 The second and final thing on the agenda is whether or not the PSI should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full abstention.
@@ -58,7 +56,7 @@ The second and final thing on the agenda is whether or not the PSI should partic
 subtitle: The party will fully refuse to participate in the upcoming election.
 choose-if: participating = 0
 unavailable-subtitle: [? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
-on-arrival: reformist_dissent += right_perc; reformist_strength -= right_perc; communist_strength += left_perc; maximalist_strength += left_perc/2; communist_dissent -= left_perc; maximalist_dissent -= left_perc/2; not_participating = 1;
+on-arrival: reformist_dissent += 7; reformist_strength -= 7; communist_strength += 7; communist_dissent -= 7; not_participating = 1;
 
 The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full abstention in the upcoming elections.
 
@@ -66,7 +64,7 @@ The Communists are able to convince the Maximalists that wasting time on partici
 subtitle: The party will participate, but not form coalitions with the bourgeois parties.
 choose-if: not_participating = 0
 unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?]
-on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10; maximalist_participating = 1;
+on-arrival: maximalist_strength += 10; maximalist_dissent -= 10; maximalist_participating = 1;
 
 The Maximalist majority secures a compromise solution, agreeing to participate in the upcoming elections but refusing any sort of coalition with the bourgeois parties. 
 
@@ -74,6 +72,6 @@ The Maximalist majority secures a compromise solution, agreeing to participate i
 choose-if: not_participating = 0
 unavailable-subtitle: [? if not_participating = 1 : We have already chosen to achieve socialism via extraparliamentary ways. ?]
 subtitle: The party will fully participate in the upcoming election.
-on-arrival: reformist_dissent -= right_perc; reformist_strength += right_perc; communist_strength -= left_perc; maximalist_strength -= right_perc/2; communist_dissent += right_perc; maximalist_dissent += right_perc/2; participating = 1;
+on-arrival: reformist_dissent -= 7; reformist_strength += 7; communist_strength -= 7; communist_dissent += 7; participating = 1;
 
 The Reformists are able to convince sympathetic Maximalist members to support their endeavour to participate in the November elections and form a coalition with the bourgeois parties. The Communists and remaining Maximalists are unsurprisingly, outraged.

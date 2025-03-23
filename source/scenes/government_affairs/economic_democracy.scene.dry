@@ -68,6 +68,7 @@ if (Q.in_unstable_coalition == 0) {
 if (Q.centre_left_coalition == 1) {
     Q.workers_clc += 3*(1-Q.dissent); 
     Q.industrialists_clc -= 4*(1-Q.dissent);
+    Q.coalition_dissent += 1;
 }
 
 if (Q.socialist_catholic_coalition == 1) {
@@ -117,6 +118,7 @@ if (Q.in_unstable_coalition == 0) {
 if (Q.centre_left_coalition == 1) {
     Q.workers_clc += 5*(1-Q.dissent); 
     Q.industrialists_clc -= 6*(1-Q.dissent);
+    Q.coalition_dissent += 1;
 }
 
 if (Q.socialist_catholic_coalition == 1) {
@@ -144,6 +146,9 @@ if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
 Q.capital_strike_progress += 1; 
 if (Q.nationalisation_progress > 1) {
     Q.capital_strike_progress += 1;
+}
+if (Q.nationalisation_progress >= 2 && Q.in_unstable_coalition == 1) {
+    Q.coalition_dissent += 1;
 }
 Q.psri_relation += 7*(1-Q.dissent);
 !}
