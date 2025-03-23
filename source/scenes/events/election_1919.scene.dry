@@ -265,10 +265,6 @@ Q.bn_seating_disp = 0;
 Q.str_change_bn = 0;
 Q.bn_seating = 0;
 
-if (Q.bn_r == NaN || Q.bn_r == null) {
-    Q.bn_r = 0;
-}
-
 Q.old_bn_r = Q.bn_r
 
 if (Q.bn_r != 0) {

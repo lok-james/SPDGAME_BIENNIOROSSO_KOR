@@ -333,6 +333,8 @@ Q.pnf_r = 0;
 Q.psri_r = 3.9;
 Q.other_r = 6.3;
 
+Q.bn_r = 0;
+
 // diff from prev
 Q.old_pcdi_r = 0;
 Q.old_psi_r = 17;
