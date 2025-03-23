@@ -17,8 +17,8 @@ The Maximalists are caught in the centre, as the Communists and Reformists argue
 
 @refuse_comintern
 subtitle: It is likely the [? if pcdi_formed :remaining?] Communists will split from the party.
-choose-if: participating = 1 or pcdi_formed
-unavailable-subtitle: [? if participating = 0 : The XVI Congress has already forced us to adopt a revolutionary stance. ?]
+choose-if: maximalist_participating = 1 or participating = 1 or pcdi_formed
+unavailable-subtitle: [? if participating = 0 and maximalist_participating = 0: The XVI Congress has already forced us to adopt a revolutionary stance. ?]
 on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1; revolutionary_fervour -= 10; soviet_relations -= 3;
 
 [? if communist_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communist_split = 1 : joining the existing PCI. ?][? if communist_split = 0 : creating a new party called the Italian Communist Party. ?] 

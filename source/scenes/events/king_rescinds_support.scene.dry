@@ -1,0 +1,29 @@
+title: King [+ king +] rescinds support for the PNF
+view-if: pnf_in_power = 1 and pnf_in_government = 0
+on-arrival: {!
+Q.pnf_in_power = 0; 
+Q.pnf_weakened = 1;
+
+Q.workers_pnf *= 0.5;
+Q.middle_class_pnf *= 0.3;
+Q.industrialists_pnf *= 0.2;
+Q.rural_pnf *= 0.4;
+Q.veterans_pnf *= 0.6;
+Q.women_pnf *= 0.4;
+
+Q.fdc_strength *= 0.7;
+Q.fdc_militancy *= 0.3;
+!}
+max-visits: 1
+tags: event
+new-page: true
+
+= King rescinds support for the PNF 
+
+Following the recent elections & the fascists' failure to consolidate power, King [+ king +] has rescinded his support for the PNF, denouncing [+ pnf_leader +] and the party for its ineffectiveness and failures to stabilise the country.
+
+Already, we have seen a significant drop in support for the fascists, as voters return to less radical parties, alongside a drop in far-right paramilitary strength.
+
+Fascism is dead, at least in Italy.
+
+- @root: Thus falls the failed experiment.

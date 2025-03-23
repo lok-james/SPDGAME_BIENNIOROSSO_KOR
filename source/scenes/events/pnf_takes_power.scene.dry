@@ -49,6 +49,8 @@ Q.public_works_minister = "Carnazza";
 
 Q.next_election_year = 1924; 
 Q.next_election_month = 4;
+
+Q.pnf_in_power = 1;
 !}
 tags: event
 max-visits: 1

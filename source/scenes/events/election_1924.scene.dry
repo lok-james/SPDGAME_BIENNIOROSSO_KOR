@@ -41,6 +41,8 @@ Q.ldr_enemies = 0;
 Q.ul_allies = 0;
 Q.in_coalition = 0;
 Q.southern_development = 0;
+
+Q.pnf_waiting = 0;
 !}
 on-departure: week_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1924
@@ -536,7 +538,7 @@ What now?
 @nothing
 subtitle: This will end the game.
 
-[+ pnf_leader +] acts fast, as the Red Guards are harassed and attacked by both government and right-wing paramilitaries. In the Chamber of Deputies, the assassination of Giacomo Matteotti by government forces sparks momentary outrage while Mussolini seizes the opportunity and quickly consolidates Italy into one-party dictatorship.
+[+ pnf_leader +] acts fast, as the Red Guards are harassed and attacked by both government and right-wing paramilitaries. In the Chamber of Deputies, the assassination of Giacomo Matteotti by government forces sparks momentary outrage while [+ pnf_leader +] seizes the opportunity and quickly consolidates Italy into one-party dictatorship.
 
 Italy is lost.
 

@@ -1,43 +1,150 @@
-title: March on Rome
-subtitle: The fascists are making their move!
-view-if: ((year == 1922 and month == 10) or (fasci_coup_progress >= 10 and year == 1922 and month <= 10)) and (fdc_banned == 0 and ard_banned == 0 and abl_banned == 0) and pnf_in_government = 0
-on-arrival: pnf_leader = "Balbo" if pnf_leader == "Grand Council"
+title: Second March on Rome
+subtitle: The fascists are making their move again!
+view-if: pnf_in_power = 1 and (left_wing_coalition or psi_majority)
+on-arrival: {!
+Q.pnf_in_power = 0;
+
+Q.rg_strength = Math.round(Q.rg_strength);
+Q.fdc_strength = Math.round(Q.fdc_strength);
+Q.ard_strength = Math.round(Q.ard_strength);
+Q.army_strength = Math.round(Q.army_strength);
+Q.adp_strength = Math.round(Q.adp_strength);
+
+Q.rome_total_defence = 0;
+Q.rg_power = Q.rg_militancy * (Q.rg_strength * (1 - Q.dissent));
+if (Q.interior_police_loyalty < 0) {
+    Q.interior_police_loyalty = 0;
+}
+Q.adp_power = Q.adp_strength * Q.adp_militancy
+
+if (Q.rg_banned == 0) {
+    Q.rome_total_defence += Q.rg_power;
+} 
+if (Q.rg_banned == 1) {
+    Q.rome_total_defence += Q.rg_power * 0.75;
+} 
+
+Q.rome_enemy_forces = 0;
+Q.fdc_power = Q.fdc_strength * Q.fdc_militancy;
+Q.ard_power = Q.ard_strength * Q.ard_militancy;
+Q.abl_power = Q.abl_strength * Q.abl_militancy;
+
+if (Q.ard_banned === 0) {
+    Q.rome_enemy_forces += Q.ard_power;
+} else {
+    Q.rome_enemy_forces += Q.ard_power * 0.75;
+}
+if (Q.fdc_banned == 0) {
+    Q.rome_enemy_forces += Q.fdc_power;
+} else {
+    Q.rome_enemy_forces += Q.fdc_power * 0.75;
+}
+if (Q.abl_banned == 0) {
+    Q.rome_enemy_forces += Q.abl_power;
+} else {
+    Q.rome_enemy_forces += Q.abl_power * 0.75;
+}
+
+if (Q.rome_adp_visited == 1) {
+    Q.rome_total_defence += Q.adp_power;
+}
+
+console.log('Our strength:', Q.rome_total_defence)
+console.log('Enemy strength:', Q.rome_enemy_forces)
+
+Q.second_rome_results = Q.rome_total_defence / Q.rome_enemy_forces 
+
+if (Q.second_rome_results <= 0.75) {
+    Q.second_rome_total_defeat = 1;
+}
+if (Q.second_rome_results > 0.75 && Q.second_rome_results < 1.25) {
+    Q.second_rome_civil_war = 1;
+}
+if (Q.second_rome_results >= 1.25) {
+    Q.second_rome_victory = 1;
+}
+!}
 max-visits: 1
 priority: -1
 tags: event
 new-page: true
-face-image: img/MarchOnRome.jpg
-go-to: rome_menu if (maximalist_participating = 0 or (maximalist_participating and not psi_in_government)); cv_menu if maximalist_participating = 1 and psi_in_government
+go-to: second_rome_friendly if king_relation >= 50 and radicalisation <= 5; second_rome_antagonistic if king_relation < 50 and radicalisation > 5; second_rome_neutral if (king_relation < 50 and radicalisation < 5) or (king_relation >= 50 and radicalisation >= 5)
 
-= March on Rome
+= Second March on Rome
 
-[+ pnf_leader +], alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to [+ pnf_leader +]'s demands, as frantic calls are made to them to organise meetings. ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
+[+ pnf_leader +] has begun a Second March on Rome, threatening to violently overthrow the government once more. 
 
-[? if psi_in_government : We could utilise our government influence to bring down [+ pnf_leader +] and fascism once and for all. ?][? if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
+The fascists have, once more, demanded a recount of the elections under "supervision" of the nationalist paramilitaries, or the immediate resignation of the government and the reappointment of [+ pnf_leader +] as Prime Minister once more. 
 
-@cv_menu
+@second_rome_friendly
 
-We are at a crossroads. The results of Bologna has resulted in us taking a middle-of-the-line avenue, advocating for both extraparliamentary means and participation in government, at least without the bourgeois parties. The communists on the left, however, argue that this is the perfect opportunity to strike, while the reformists on the left argue for our continued participation in government.
+The King has reassured us that his is on our side in this time of crisis. He has recognised this violent overthrow of power for what it is, and is prepared to stand by us in the event of civil war.
+
+What should we do? 
+
+- @second_rome_fight: Deploy the Red Guards and call a general strike against the fascists!
+- @new_elections_force: Call for new snap elections.
+
+@second_rome_neutral
+
+The King is looking upon the proposals of the fascists favourably once more. He has requested that we resign.
+
+- @new_elections_force: We will resign our positions in government.
+- @new_elections_refuse: Refuse the King's request and deploy the Red Guards!
+
+@second_rome_antagonistic
+
+The King, fearful and wary of our participation in government, has declared his full support for the second March on Rome, dismissing our government, dissolving the Chamber of Deputies and declaring a state of emergency as he has appointed Mussolini to the Prime Ministership once more, attempting a royal coup of the government in all but name.
 
 What should we do?
 
-- @cv_fight: The Communists should be heeded; we must use this opportunity!
-- @cv_def: The Reformists should be heeded; we should continue our position in government.
+- @second_rome_refuse: Deploy the Red Guards and call for a general strike against the King and the fascists!
+- @give_up: Resign our positions in government.
 
-@cv_fight 
+@second_rome_fight
+go-to: sr_victory if second_rome_victory; sr_civil_war if second_rome_civil_war; sr_loss if second_rome_total_defeat
+
+@sr_victory
+on-arrival: nationalist_sentiment -= 7; socialist_sentiment += 6; republican_sentiment += 3
+
+Our forces easily overwhelm the far-right paramilitaries, who are forced to retreat when confronted with our own forces. The Second March on Rome is over, and we have won.
+
+This show of force has reinvigorated the PSI, and weakened the fascists.
+
+@sr_civil_war
+on-arrival: friendly_king = 1
+
+Our forces confront the fascists on the streets of Rome, and armed fighting erupts. Neither side is dislodged from their positions. 
+
+- @civil_war: It is a civil war.
+
+@sr_loss
+
+Our forces confront the fascists on the streets of Rome, and armed fighting erupts. We are forced to retreat with heavy losses, as [+ pnf_leader +] proclaims victory and is appointed as Prime Minister by the King.
+
+Italy is lost.
+
+- @game_over: Game over.
+
+@new_elections_force
+subtitle: This will not end the game.
+on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_election_month = month + 1 if next_election_time >= time+1; next_election_year = year if next_election_time >= time+1; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_pnf += 10; middle_class_pnf += 18; industrialists_pnf += 20; rural_pnf += 17; veterans_pnf += 20; women_pnf += 12; pnf_waiting = 1;
+
+We resign our positions in government, and new snap elections are called next month, under "supervision" from the far-right paramilitaries.
+
+@second_rome_refuse
+subtitle: This will lead to a civil war.
+on-arrival: royal_coup = 1
 go-to: civil_war
 
-@cv_def
-go-to: rome_menu
+@give_up
+subtitle: This will end the game.
 
-@rome_menu
+[+ pnf_leader +] acts fast, as the Red Guards are harassed and attacked by both government and right-wing paramilitaries. In the Chamber of Deputies, the assassination of Giacomo Matteotti by government forces sparks momentary outrage while [+ pnf_leader +] seizes the opportunity and quickly consolidates Italy into one-party dictatorship.
 
-- @rome_army_mobilise: Mobilise the Army to stop [+ pnf_leader +]!
-- @rome_police_mobilise: Mobilise the Carabinieri to stop [+ pnf_leader +]!
-- @rome_rg_mobilise: Mobilise the Red Guards to stop [+ pnf_leader +]!
-- @rome_adp_mobilise: Mobilise the Arditi del Popolo to stop [+ pnf_leader +]!
-- @rome_done: We have done all we can.
-- @rome_nothing: There is nothing we can do.
+Italy is lost.
+
+- @game_over: Game over.
 
 @rome_army_mobilise
 max-visits: 1
@@ -211,6 +318,7 @@ subtitle: We must prepare for the worst.
 view-if: rome_army_visited = 0 and rome_police_visited = 0 and rome_rg_visited = 0
 on-arrival: mussolini_unopposed = 1
 go-to: pnf_takes_power 
+
 
 @total_defeat_accede
 title: Total Defeat

@@ -581,6 +581,8 @@ Q.radicalisation_timer = 6;
 
 // wow 
 Q.mussolini_dies = 0;
+Q.royal_coup = 0;
+Q.friendly_king = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

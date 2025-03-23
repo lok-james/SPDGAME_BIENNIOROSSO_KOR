@@ -1246,9 +1246,9 @@ Filippo Turati of the PSI has been appointed Interior Minister.
 @finance
 title: Finance Ministry
 subtitle: The Finance Ministry controls the government budget and taxes.
-unavailable-subtitle: We do not have enough leverage.
+unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
 tags: mins_1919
-choose-if: leverage >= 10 
+choose-if: leverage >= 10 and king_relation >= 30
 view-if: finance_minister_party != "PSI"
 on-arrival: leverage -= 10; finance_minister_party = "PSI"; finance_minister = "Lazzari"
 go-to: ministries
@@ -1258,9 +1258,9 @@ Constantinto Lazzari of the PSI has been appointed Finance Minister.
 @treasury
 title: Treasury Ministry
 subtitle: The Treasury Ministry controls broader economic policy.
-unavailable-subtitle: We do not have enough leverage.
+unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
 tags: mins_1919
-choose-if: leverage >= 10 
+choose-if: leverage >= 10 and king_relation >= 30
 view-if: treasury_minister_party != "PSI"
 on-arrival: leverage -= 10; treasury_minister_party = "PSI"; treasury_minister = "Modigliani"
 go-to: ministries
@@ -1282,9 +1282,9 @@ Claudio Treves of the PSI has been appointed Justice Minister.
 @public_works
 title: Public Works Ministry
 subtitle: The Public Works Ministry control our national public works.
-unavailable-subtitle: We do not have enough leverage.
+unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
 tags: mins_1919
-choose-if: leverage >= 10 
+choose-if: leverage >= 10 and king_relation >= 30
 view-if: public_works_minister_party != "PSI"
 on-arrival: leverage -= 10; public_works_minister_party = "PSI"; public_works_minister = "Vella"
 go-to: ministries

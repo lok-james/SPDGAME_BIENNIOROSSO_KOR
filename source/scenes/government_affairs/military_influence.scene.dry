@@ -40,8 +40,8 @@ on-arrival: bribes_caught = 1; coalition_dissent += 3 if in_unstable_coalition; 
 It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged. ?] Our supporters have lost faith in us, and the National Fascist Party has seized the opportunity to further smear our image.
 
 @purge_loyalty
-choose-if: judicial_reform >= 2 and justice_minister_party = "PSI"
-unavailable-subtitle: [? if judicial_reform < 2 : The reactionary judiciary would not allow this. ?][? if not justice_minister_party = "PSI" : We do not have control of the Justice Ministry. ?]
+choose-if: judicial_reform >= 2 and justice_minister_party = "PSI" and king_relation >= 30
+unavailable-subtitle: [? if judicial_reform < 2 : The reactionary judiciary would not allow this. ?][? if not justice_minister_party = "PSI" : We do not have control of the Justice Ministry. ?][? if king_relation < 30 : The King would not allow this. ?]
 on-arrival: army_loyalty += 0.09 if army_loyalty < 1; ldr_relation -= 5; ul_relation -= 5; army_strength -= 20 if army_strength > 0; unemployment += 0.3; veterans += 1; ldr_moderates += 0.2;
 
 Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.

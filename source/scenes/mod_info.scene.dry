@@ -41,11 +41,13 @@ I'll probably be doing QoL stuff mainly, maybe adding some other features if any
 - @mod_info_menu: Back
 
 @enable_wacky
+subtitle: :3
 view-if: wacky_on = 0
 on-arrival: wacky_on = 1
 go-to: mod_info_menu
 
 @disable_wacky
+subtitle: 3:
 view-if: wacky_on = 1
 on-arrival: wacky_on = 0
 go-to: mod_info_menu

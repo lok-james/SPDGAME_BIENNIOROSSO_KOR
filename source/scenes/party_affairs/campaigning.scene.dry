@@ -33,17 +33,17 @@ We have increased our campaigning among the workers. [? if unemployment >= 15: T
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: middle_class_psi += 6*(1-dissent); middle_class_psi -= 4 if anti_monarchist_sentiment <= 49; resources -= 1;
+on-arrival: middle_class_psi += 6*(1-dissent); middle_class_psi -= 3 if anti_monarchist_sentiment <= 49; resources -= 1; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted
 
-We have increased our campaigning among the middle class. [? if socialist_sentiment <= 49: Our campaign is worsened by their wariness of our ideals. ?]
+We have increased our campaigning among the middle class. [? if socialist_sentiment <= 49: Our campaign is worsened by their wariness of our ideals. ?][? if nationalisation_adopted : Our campaign is worsened by our radical political & economic plan. ?]
 
 @industrialists
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: industrialists_psi += 5*(1-dissent); resources -= 1; industrialists_psi -= 3 if nationalist_sentiment >= 51;
+on-arrival: industrialists_psi += 5*(1-dissent); resources -= 1; industrialists_psi -= 1 if nationalist_sentiment >= 51; industrialists_psi -= 3 if nationalisation_adopted
 
-We have increased our campaigning among the industrialists. Our ideals are diametrically opposed to them, making campaigning harder.
+We have increased our campaigning among the industrialists. Our ideals are diametrically opposed to them, making campaigning harder. [? if nationalisation_adopted : Our campaign is worsened by our radical political & economic plan. ?]
 
 @rural
 subtitle: -1 resources

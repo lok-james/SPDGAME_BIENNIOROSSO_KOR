@@ -28,7 +28,7 @@ How do we assuage our partners?
 
 @white_leagues
 view-if: rg_strength > 0
-on-arrival: coalition_dissent = 0; rural_psi -= 10; middle_class_psi -= 10; rural_ppi += 7; rural_pnf += 3; middle_class_ppi += 5; middle_class_pnf += 5; communist_dissent += 17; maximalist_dissent += 10; labour_dissent += 12; reformist_dissent += 7; rg_strength *= 0.9; rg_militancy -= 0.03; ard_strength += 20; 
+on-arrival: coalition_dissent = 0; rural_psi -= 10; middle_class_psi -= 10; rural_ppi += 7; rural_pnf += 3; middle_class_ppi += 5; middle_class_pnf += 5; communist_dissent += 17; maximalist_dissent += 10; labour_dissent += 12; reformist_dissent += 7; rg_strength *= 0.9; rg_militancy -= 0.03; ard_strength += 20; catholic_papacy_timer += 12 if (catholic_papacy_timer == 0 and roman_question_answered == 0) 
 
 Fine. We pull back the Red Guards from rural areas of contention with the catholic White Leagues, allowing the PPI to grab our voters to the dismay of the party. The rural Arditismo capitalises on our absence as well, recruiting more forces and 'campaigning'.
 
@@ -36,7 +36,7 @@ Fine. We pull back the Red Guards from rural areas of contention with the cathol
 choose-if: resources >= 3
 unavailable-subtitle: We do not have enough resources.
 subtitle: -3 resources
-on-arrival: resources -= 3; coalition_dissent -= 1;
+on-arrival: resources -= 3; coalition_dissent -= 1; catholic_papacy_timer += 12 if (catholic_papacy_timer == 0 and roman_question_answered == 0)
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
