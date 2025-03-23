@@ -577,6 +577,9 @@ Q.gov_army_timer = 14;
 Q.giolitti_tenure = 0;
 Q.radicalisation_timer = 6;
 
+// wow 
+Q.mussolini_dies = 0;
+
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
 // number of elections without a clear majority.

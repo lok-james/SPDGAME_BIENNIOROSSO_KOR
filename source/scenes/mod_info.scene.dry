@@ -18,6 +18,8 @@ and Vuk for playtesting & feedback.
 - @ideas_and_feedback: Ideas & Feedback
 - @update_log: Update Log
 - @future_plans: Future Plans
+- @enable_wacky: Enable the more insane options in game.
+- @disable_wacky: Disable the more insane options in game.
 - @root: Back
 
 @ideas_and_feedback
@@ -37,3 +39,13 @@ If you have any ideas, feedback or bug reports (even the tiniest spelling error!
 I'll probably be doing QoL stuff mainly, maybe adding some other features if any receives overwhelming support.
 
 - @mod_info_menu: Back
+
+@enable_wacky
+view-if: wacky_on = 0
+on-arrival: wacky_on = 1
+go-to: mod_info_menu
+
+@disable_wacky
+view-if: wacky_on = 1
+on-arrival: wacky_on = 0
+go-to: mod_info_menu
