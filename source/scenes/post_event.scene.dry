@@ -137,7 +137,7 @@ for (var party of Q.parties) {
 }
 
 Q.socialist_soft_cap = Q.pcdi_votes + Q.psi_votes + Q.psu_votes + Q.psri_votes
-Q.republican_soft_cap = Q.psri_votes + Q.ppi_votes + Q.ldr_votes + Q.ul_votes + Q.ds_votes
+Q.republican_soft_cap = Q.psri_votes + Q.pri_votes + Q.ppi_votes + Q.ldr_votes + Q.ul_votes + Q.ds_votes
 
 // set faction strength/dissent to 0
 for (var c of Q.factions) {
