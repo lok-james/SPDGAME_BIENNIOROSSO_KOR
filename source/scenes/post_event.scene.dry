@@ -1044,7 +1044,7 @@ if (Q.week_actions >= 1) {
 
             if (Q.veterans_pcdi_normalised < 25) {
                 Q.veterans_psi -= 5/12;
-                .veterans_pcdi += 5/12;
+                Q.veterans_pcdi += 5/12;
             }
 
             if (Q.rural_pcdi_normalised < 7) {
