@@ -1,7 +1,7 @@
 title: Introduction of the Acerbo Law
 view-if: year = 1923 and month = 7 and week = 3 and prime_minister_party = "PNF"
 max-visits: 1
-on-arrival: anti_acerbo_coalition = psi_seating_disp + psri_seating_disp + pri_seating_disp 
+on-arrival: anti_acerbo_coalition = 0
 new-page: true
 tags: event
 go-to: acerbo_menu
@@ -16,11 +16,35 @@ What should we do?
 
 @acerbo_menu
 
+- @psi_check: Check in on our own deputies.
+- @psri_check: Contact the Reformist Socialists.
 - @ppi_convince: Contact the People's Party.
 - @ldr_convince: Contact the Democratic Liberal Party.
 - @ul_convince: Contact the Liberal Party.
 - @ds_convince: Contact the Social Democrats.
 - @acerbo_results: We have done all we can.
+
+@psi_check
+on-arrival: {!
+if (Q.fdc_strength*Q.fdc_militancy > Q.rg_strength*Q.rg_militancy) {
+    Q.anti_acerbo_coalition += parseFloat(Q.psi_seating_disp/2);
+    Q.psi_unreliable = 1;
+} else if (Q.fdc_strength*Q.fdc_militancy <= Q.rg_strength*Q.rg_militancy) {
+    Q.anti_acerbo_coalition += parseFloat(Q.psi_seating_disp);
+}
+!}
+go-to: acerbo_menu
+
+[? if psi_unreliable : Unfortunately, our forces are being harassed consistently by the far-right paramilitaries, who are able to overwhelm our forces. We will be able to rely on half of our own deputies voting against the Bloc, optimistically. ?]
+
+[? if not psi_unreliable : Thankfully, it seems the far-right paramilitaries are unable to intimidate many of our own deputies, and we can rely on their full support in voting against the law. ?]
+
+@psri_check 
+on-arrival {!
+Q.anti_acerbo_coalition += parseFloat(Q.psri_seating_disp);
+!}
+
+The PSRI has reassured us that its deputies will be voting against the Acerbo Law.
 
 @ppi_convince 
 subtitle: [? if not ppi_leader = "Sturzo": The PPI is disorganised following Sturzo's recent dismissal. ?]
@@ -34,11 +58,11 @@ go-to: acerbo_menu
 subtitle: [? if ldr_leader = "Salandra" : We shouldn't be optimistic about their response. ?]
 on-arrival: {!
 if (Q.ldr_leader == "Nitti" && Q.ldr_relation > 65) {
-    Q.anti_acerbo_coalition += Q.ldr_seating_disp;
+    Q.anti_acerbo_coalition += parseFloat(Q.ldr_seating_disp);
     Q.ldr_convinced = 1;
 }
 if (Q.ldr_leader == "Orlando" && Q.ldr_relation > 75) {
-    Q.anti_acerbo_coalition += Q.ldr_seating_disp;
+    Q.anti_acerbo_coalition += parseFloat(Q.ldr_seating_disp);
     Q.ldr_convinced = 1;
 }
 !}
@@ -52,7 +76,7 @@ go-to: acerbo_menu
 on-arrival: {! 
 if (Q.ul_relation >= 75) {
     Q.ul_convinced = 1;
-    Q.anti_acerbo_coalition += ul_seating_disp;
+    Q.anti_acerbo_coalition += parseFloat(ul_seating_disp);
 }
 !}
 go-to: acerbo_menu
@@ -65,7 +89,7 @@ go-to: acerbo_menu
 subtitle: [? if ds_leader = "Carnazza" or ds_leader = "Colonna" : We shouldn't be optimistic about their response. ?]
 on-arrival: {!
 if (Q.ds_leader == "Giuffrida") {
-    Q.anti_acerbo_coalition += Q.ds_seating_disp;
+    Q.anti_acerbo_coalition += parseFloat(Q.ds_seating_disp);
     Q.ds_convinced = 1;
 }
 !}
@@ -80,6 +104,88 @@ subtitle: [? if anti_acerbo_coalition < 50 : It seems the law is destined to pas
 on-arrival: {!
 if (parseFloat(Q.anti_acerbo_coalition) < 50) {
     Q.acerbo_law_passed = 1;
+}
+
+if (Q.acerbo_law_passed == 1) {
+    if (Q.ppi_leader === "Sturzo") {
+        Q.rural_pnf *= Q.rural_ppi * 0.3;
+        Q.veterans_pnf *= Q.veterans_ppi * 0.5;
+        Q.catholic_pnf *= Q.catholic_ppi * 0.3;
+    }
+
+    if (Q.ppi_leader === "De Gasperi") {
+        Q.middle_class_pnf *= Q.middle_class_ppi * 0.5;
+        Q.rural_pnf *= Q.rural_ppi * 0.4;
+        Q.veterans_pnf *= Q.veterans_ppi * 0.6;
+        Q.catholic_pnf *= Q.catholic_ppi * 0.4;
+        Q.women_pnf *= Q.women_ppi * 0.3;
+    }
+
+    if (Q.ppi_leader === "Triumvirate") {
+        Q.workers_pnf *= Q.workers_ppi * 0.3;
+        Q.middle_class_pnf *= Q.middle_class_ppi * 0.6;
+        Q.rural_pnf *= Q.rural_ppi * 0.5;
+        Q.industrialists_pnf *= Q.industrialists_ppi * 0.6;
+        Q.veterans_pnf *= Q.veterans_ppi * 0.7;
+        Q.catholic_pnf *= Q.catholic_ppi * 0.5;
+        Q.women_pnf *= Q.women_ppi * 0.4;
+    }
+
+    if (Q.ldr_leader === "Nitti") {
+        Q.middle_class_pnf *= Q.middle_class_ldr * 0.3;
+        Q.industrialists_pnf *= Q.industrialists_ldr * 0.4;
+        Q.women_pnf *= Q.women_ldr * 0.2;
+    }
+
+    if (Q.ldr_leader === "Orlando") {
+        Q.middle_class_pnf *= Q.middle_class_ldr * 0.4;
+        Q.rural_pnf *= Q.rural_ldr * 0.1;
+        Q.industrialists_pnf *= Q.industrialists_ldr * 0.5;
+        Q.veterans_pnf *= Q.veterans_ldr * 0.2;
+        Q.women_pnf *= Q.women_ldr * 0.4;
+    }
+
+    if (Q.ldr_leader === "Salandra") {
+        Q.workers_pnf *= Q.workers_ldr * 0.1;
+        Q.middle_class_pnf *= Q.middle_class_ldr * 0.4;
+        Q.rural_pnf *= Q.rural_ldr * 0.3;
+        Q.industrialists_pnf *= Q.industrialists_ldr * 0.6;
+        Q.veterans_pnf *= Q.veterans_ldr * 0.4;
+        Q.catholic_pnf *= Q.catholic_ldr * 0.1;
+        Q.women_pnf *= Q.women_ldr * 0.4;
+    }
+
+    if (Q.ds_leader === "Giuffrida") {
+        Q.middle_class_pnf *= Q.middle_class_ds * 0.2;
+        Q.industrialists_pnf *= Q.industrialists_ds * 0.2;
+        Q.women_pnf *= Q.women_ds * 0.1;
+    }
+
+    if (Q.ds_leader === "Colonna") {
+        Q.workers_pnf *= Q.workers_ds * 0.1;
+        Q.middle_class_pnf *= Q.middle_class_ds * 0.3;
+        Q.rural_pnf *= Q.rural_ds * 0.1;
+        Q.industrialists_pnf *= Q.industrialists_ds * 0.3;
+        Q.women_pnf *= Q.women_ds * 0.4;
+    }
+
+    if (Q.ds_leader === "Carnazza") {
+        Q.workers_pnf *= Q.workers_ds * 0.2;
+        Q.middle_class_pnf *= Q.middle_class_ds * 0.4;
+        Q.rural_pnf *= Q.rural_ds * 0.3;
+        Q.industrialists_pnf *= Q.industrialists_ds * 0.6;
+        Q.veterans_pnf *= Q.veterans_ds * 0.4;
+        Q.catholic_pnf *= Q.catholic_ds * 0.1;
+        Q.women_pnf *= Q.women_ds * 0.4;
+    }
+
+    Q.workers_pnf *= Q.workers_ul * 0.1;
+    Q.middle_class_pnf *= Q.middle_class_ul * 0.3;
+    Q.rural_pnf *= Q.rural_ul * 0.2;
+    Q.industrialists_pnf *= Q.industrialists_ul * 0.4;
+    Q.veterans_pnf *= Q.veterans_ul * 0.2;
+    Q.catholic_pnf *= Q.catholic_ul * 0.2;
+    Q.women_pnf *= Q.women_ul * 0.3;
 }
 !}
 

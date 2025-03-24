@@ -203,11 +203,11 @@ view-if: soviet_victory == 0
 tags: endings
 go-to: eg_menu
 
-Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III,[? if grand_coalition : his cabinet of corrupt Liberals ?][? if psi_in_government : our own party in cabinet attempting change ?][? if left_wing_coalition or psi_majority : sweeping change led by us ?], and under threat of the fascist [+ pnf_leader +] and his far-right bloc.
+Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III,[? if psi_in_government : under a government led by us,?][? if not psi_in_government : under an incompetent government,?] and under threat of the fascist [+ pnf_leader +] and his far-right bloc.
 
 @psi_victorious
 title: PSI still in government
-view-if: psi_in_government == 1 and chancellor_party == "PSI" and total_defeat == 0 and long_war == 0
+view-if: psi_in_government == 1 and prime_minister_party == "PSI" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 

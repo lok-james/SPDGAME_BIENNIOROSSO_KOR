@@ -3,7 +3,7 @@ new-page: true
 subtitle: Our policies seem to have borne fruit.
 tags: event
 view-if: economic_progress >= 100 and psi_in_government
-on-arrival: budget += 1; economic_progress -= 100; economic_growth += 0.4; inflation -= 0.7; unemployment -= 0.3;
+on-arrival: budget += 1 if improvements_seen = 2; improvements_seen -= 2 if improvements_seen = 2; economic_progress -= 100; economic_growth += 0.4; inflation -= 0.7; unemployment -= 0.3; improvements_seen += 1;
 
 = Economic Improvements
 

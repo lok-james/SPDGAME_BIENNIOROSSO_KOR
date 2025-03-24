@@ -172,13 +172,15 @@ if (Q.abl_strength) {
 }
 !}
 
+Streetfighting: [+ violent_prevalence : violence +]
+
 = Legality
 
-Fasci: [? if not fdc_banned : Operating?][? if fdc_banned : Banned ?][? if fasci_adp_active or fasci_rg_active :, Under Attack ?]
+Fasci: [? if not fdc_banned : Operating?][? if fdc_banned : Banned?][? if fasci_adp_active or fasci_rg_active :, Under Attack ?]
 
-Arditismo: [? if not ard_banned : Operating?][? if ard_banned : Banned ?][? if arditi_adp_active or arditi_rg_active :, Under Attack ?]
+Arditismo: [? if not ard_banned : Operating?][? if ard_banned : Banned?][? if arditi_adp_active or arditi_rg_active :, Under Attack ?]
 
-Anti-Bolshevik Leagues: [? if not abl_banned : Operating?][? if abl_banned : Banned ?][? if abl_adp_active or abl_rg_active :, Under Attack ?]
+Anti-Bolshevik Leagues: [? if not abl_banned : Operating?][? if abl_banned : Banned?][? if abl_adp_active or abl_rg_active :, Under Attack ?]
 
 Red Guards: [? if not rg_banned : Operating ?][? if rg_banned : Banned ?]
 

@@ -192,6 +192,7 @@ Q.women = 0;
 Q.inflation = 19.2;
 Q.economic_growth = -3.7;
 Q.unemployment = 13.5;
+Q.improvements_seen = 0; 
 
 Q.classes = ['workers', 'middle_class', 'industrialists', 'rural', 'veterans', 'catholic', 'women'];
 Q.parties = ['psi', 'ul', 'ldr', 'ds', 'ppi', 'psri', 'pnf', 'other', 'pcdi', 'psu', 'pri'];
@@ -444,10 +445,15 @@ Q.ds_moderates = 5;
 Q.ds_right = 0;
 
 // national bloc stuff
-Q.bn_formed = 0;
+Q.bn_formed = 0; 
 Q.ds_in_bn  = 0;
 Q.ul_in_bn = 0;
 Q.pnf_in_bn = 0;
+
+Q.violent_prevalence = 1;
+Q.psi_time_in_gov = 0;
+Q.psi_inc_strife = 1;
+Q.psi_inc_economic = 1;
 
 // International Relations
 Q.soviet_relation = 2;
@@ -518,8 +524,8 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relation', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
-            'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_pm',
-            'gov_army', 'rg_orders', 'child_labour', 'radicalisation'];
+            'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury',
+            'gov_army', 'gov_finance', 'rg_orders', 'child_labour', 'radicalisation'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -580,7 +586,8 @@ Q.gov_cooldown_timer = 14;
 Q.gov_foreign_timer = 14;
 Q.gov_interior_timer = 14;
 Q.gov_justice_timer = 14;
-Q.gov_pm_timer = 14;
+Q.gov_treasury_timer = 14;
+Q.gov_finance_timer = 14;
 Q.gov_army_timer = 14;
 Q.giolitti_tenure = 0;
 Q.radicalisation_timer = 6;

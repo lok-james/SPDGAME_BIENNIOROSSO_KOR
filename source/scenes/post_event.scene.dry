@@ -66,6 +66,14 @@ if (Q.nationalist_sentiment >= 100) {
     Q.nationalist_sentiment = 99;
 }
 
+if (Q.violent_prevalence > 1) {
+    Q.violent_prevalence = 1;
+}
+
+if (Q.violent_prevalence < 0) {
+    Q.violent_prevalence = 0;
+}
+
 if (Q.rg_strength < 0) {
     Q.rg_strength = 0;
 }
@@ -167,7 +175,6 @@ Q.syndicalist_strength = 100*Q.syndicalist_strength/total_strength
 
 var total_dissent = Q.communist_strength*Q.communist_dissent + Q.maximalist_strength*Q.maximalist_dissent + Q.labour_strength*Q.labour_dissent + Q.reformist_strength*Q.reformist_dissent + Q.syndicalist_strength*Q.syndicalist_dissent;
 
-
 Q.dissent = 0.01*total_dissent/total_strength;
 Q.dissent_percent = Q.dissent*100;
 console.log('new dissent: ' + Q.dissent);
@@ -232,8 +239,8 @@ if (Q.week_actions >= 1) {
         Q.month = 1;
         Q.year += 1;
         if (Q.historical_mode) {
-            Q.resources += 6;
-            Q.para_resources += 4;
+            Q.resources += 3;
+            Q.para_resources += 2;
         }
     }
 
@@ -244,26 +251,54 @@ if (Q.week_actions >= 1) {
             Q.budget += 1;
         }
     }
-    // decrement timers
-    for (timer of Q.timers) {
-        if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
-            Q[timer+'_timer'] -= 1;
-        }
-    }
-    // append to historical party support records
-    var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
-    for (var party of Q.parties) {
-        party_support_results[party] = Q[party + '_normalised']*100;
-    }
-    Q.party_support_records.push(party_support_results);
-    Q.economic_records.push({'date': new Date(Q.year, Q.month - 1),
-                             'inflation': Q.inflation,
-                             'unemployment': Q.unemployment,
-                             'economicgrowth': Q.economic_growth});
     // change economic stats...
     // budget deficits lead to some inflation
     // make all the effects be monthly still :3
     if (Q.week == 1) {
+
+        // recalculate violence
+
+        Q.rg_violence = Q.rg_militancy * (Q.rg_strength * (1 - Q.dissent));
+        Q.fdc_violence = Q.fdc_strength * Q.fdc_militancy;
+        Q.ard_violence = Q.ard_strength * Q.ard_militancy;
+        Q.abl_violence = Q.abl_strength * Q.abl_militancy;
+
+        Q.violence_calc = Q.friendly_violence / Q.enemy_violence;
+
+        Q.total_violence = Q.rg_violence + Q.fdc_violence + Q.ard_violence + Q.abl_violence;
+
+        if (Q.violence_calc >= 0.75 && Q.violence_calc <= 1.25) {
+            Q.violent_prevalence += 0.01;
+        } 
+        if (Q.violence_calc < 0.75 || Q.violence_calc > 1.25) {
+            Q.violent_prevalence -= 0.01;
+        }
+
+        if (Q.total_violence > 250) {
+            Q.violence_calc += 0.01;
+        }
+
+        if (Q.total_violence < 100) {
+            Q.violence_calc -= 0.01;
+        }
+
+        // decrement timers
+        for (timer of Q.timers) {
+            if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+                Q[timer+'_timer'] -= 1;
+            }
+        }
+        // append to historical party support records
+        var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
+        for (var party of Q.parties) {
+            party_support_results[party] = Q[party + '_normalised']*100;
+        }
+        Q.party_support_records.push(party_support_results);
+        Q.economic_records.push({'date': new Date(Q.year, Q.month - 1),
+                                'inflation': Q.inflation,
+                                'unemployment': Q.unemployment,
+                                'economicgrowth': Q.economic_growth});
+
         if (Q.budget <= -2 && Q.budget > -5 && Q.inflation < 5) {
             Q.inflation += 0.1;
             if (Q.unemployment >= 15) {
@@ -731,49 +766,107 @@ if (Q.week_actions >= 1) {
 
         if (Q.psi_in_government == 1) {
             if (Q.economic_growth > 0) {
-                Q.economic_progress += 5;
+                Q.economic_progress += 4;
             }
             if (Q.economic_growth > 5) {
-                Q.economic_progress += 3;
+                Q.economic_progress += 2;
             }
             if (Q.economic_growth > 10) {
-                Q.economic_progress += 2;
+                Q.economic_progress += 1;
             }
             if (Q.inflation < 10 && Q.inflation > 0) {
-                Q.economic_progress += 3;
+                Q.economic_progress += 2;
             }
             if (Q.inflation < 5 && Q.inflation > 0) {
-                Q.economic_progress += 2;
+                Q.economic_progress += 1;
             }
             if (Q.unemployment < 10) {
-                Q.economic_progress += 3;
+                Q.economic_progress += 2;
             }       
             if (Q.unemployment < 5) {
-                Q.economic_progress += 2;
+                Q.economic_progress += 1;
             } 
 
-            if (Q.economic_progress > 0) {
-                if (Q.economic_growth < 0) {
-                    Q.economic_progress -= 5;
-                }
-                if (Q.economic_growth < -5) {
-                    Q.economic_progress -= 3;
-                }
-                if (Q.economic_growth < -10) {
-                    Q.economic_progress -= 2;
-                }
-                if (Q.inflation > 10) {
-                    Q.economic_progress -= 3;
-                }
-                if (Q.inflation > 5) {
-                    Q.economic_progress -= 2;
-                }
-                if (Q.unemployment > 10) {
-                    Q.economic_progress -= 3;
-                }       
-                if (Q.unemployment > 5) {
-                    Q.economic_progress -= 2;
-                } 
+
+            if (Q.economic_growth < 0) {
+                Q.economic_progress -= 4;
+            }
+            if (Q.economic_growth < -5) {
+                Q.economic_progress -= 2;
+            }
+            if (Q.economic_growth < -10) {
+                Q.economic_progress -= 1;
+            }
+            if (Q.inflation > 10) {
+                Q.economic_progress -= 2;
+            }
+            if (Q.inflation > 5) {
+                Q.economic_progress -= 1;
+            }
+            if (Q.unemployment > 10) {
+                Q.economic_progress -= 2;
+            }       
+            if (Q.unemployment > 5) {
+                Q.economic_progress -= 1;
+            
+            }
+
+            Q.psi_time_in_gov += 1;
+            if (Q.psi_time_in_gov % 3 == 0) {
+                Q.psi_inc_strife += 1;
+            }
+            if (Q.psi_time_in_gov % 6 == 0) {
+                Q.psi_inc_economic += 1;
+            }
+
+            Q.economic_downturn = 0;
+
+            if (Q.return_to_normalcy == 0) {
+                Q.workers_psi -= 2/6*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.middle_class_psi -= 5/6*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.rural_psi -= 3/6*Q.psi_inc_strife*Q.violent_prevalence;
+            }
+
+            if (Q.return_to_normalcy == 1) {
+                Q.workers_psi -= (2/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.middle_class_psi -= (5/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.rural_psi -= (3/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
+            }
+
+            if (Q.inflation > 5) {
+                Q.economic_downturn += Math.abs(Q.inflation - 5);
+            }
+
+            if (Q.inflation < 0) {
+                Q.economic_downturn += Math.abs(Q.inflation);
+            }
+            
+            if (Q.economic_growth < 0) {
+                Q.economic_downturn += Math.abs(Q.economic_growth);
+            }
+
+            if (Q.unemployment > 8) {
+                Q.economic_downturn += Math.abs(Q.unemployment - 5);
+            }
+
+            if (Q.national_economic_recovery == 0) {
+                Q.workers_psi -= ((Q.economic_downturn * 0.9)/12)*psi_inc_economic;
+                Q.middle_class_psi -= ((Q.economic_downturn * 0.6)/12)*psi_inc_economic;
+                Q.rural_psi -= ((Q.economic_downturn * 0.7)/12)*psi_inc_economic;
+                Q.veterans_psi -= ((Q.economic_downturn)/12)*psi_inc_economic;
+                Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/12)*psi_inc_economic;
+                Q.women_psi -= ((Q.economic_downturn * 0.7)/12)*psi_inc_economic;
+                Q.catholic_psi -= ((Q.economic_downturn * 0.5)/12)*psi_inc_economic;
+            }
+
+            if (Q.national_economic_recovery == 1) {
+                Q.workers_psi -= (((Q.economic_downturn * 0.9)/12)*psi_inc_economic)/2;
+                Q.middle_class_psi -= (((Q.economic_downturn * 0.6)/12)*psi_inc_economic)/2;
+                Q.rural_psi -= (((Q.economic_downturn * 0.7)/12)*psi_inc_economic)/2;
+                Q.veterans_psi -= (((Q.economic_downturn)/12)*psi_inc_economic)/2;
+                Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/12)*psi_inc_economic)/2;
+                Q.women_psi -= (((Q.economic_downturn * 0.7)/12)*psi_inc_economic)/2;
+                Q.catholic_psi -= (((Q.economic_downturn * 0.5)/12)*psi_inc_economic)/2;
             }
         }
  
@@ -1038,7 +1131,7 @@ if (Q.week_actions >= 1) {
             if (Q.psu_formed == 0) {
 
                 if (Q.middle_class_psi_normalised > 20) {
-                    Q.middle_class_psi -= 5/12;
+                    Q.middle_class_psi -= 7/12;
                     Q.middle_class_psri += 3/12;
                     Q.middle_class_ldr += 1/12;
                     Q.middle_class_ul += 1/12;
@@ -1053,7 +1146,7 @@ if (Q.week_actions >= 1) {
 
             if (Q.psu_formed == 1) {
                 if (Q.middle_class_psi_normalised > 20) {
-                    Q.middle_class_psi -= 9/12;
+                    Q.middle_class_psi -= 10/12;
                     Q.middle_class_psri += 3/12;
                     Q.middle_class_psu += 6/12;
                 }
