@@ -550,21 +550,40 @@ set-bg: background.png
 subtitle: PSI: [+ psi_seating_disp +]%
 view-if: psi_seating_disp >= 50
 on-arrival: {!
-Q.prime_minister = "Turati"; 
-Q.prime_minister_party = "PSI";
+
+if (Q.reformists_defect == 0) {
+    Q.prime_minister = "Turati"; 
+    Q.prime_minister_party = "PSI";
+}
+
+if (Q.reformists_defect == 1) {
+    Q.prime_minister = "Bacci";
+    Q.prime_minister_party = "PSI";
+    Q.workers_psi -= 4*(1-Q.dissent);
+    Q.middle_class -= 5*(1-Q.dissent);
+}
 
 Q.psi_in_government = 1; 
 Q.in_psi_majority = 1; 
 
 Q.foreign_minister_party = "PSI"; 
-Q.interior_minister_party = "PSI"; 
-Q.justice_minister_party = "PSI"; 
+Q.foreign_minister = "Matteoti";
+Q.interior_minister_party = "PSI";
+Q.interior_minister = "Turati"; 
+Q.justice_minister_party = "PSI";
+Q.justice_minister = "Treves";
 Q.labour_minister_party = "PSI"; 
-Q.finance_minister_party = "PSI"; 
-Q.treasury_minister_party = "PSI"; 
-Q.agriculture_minister_party = "PSI"; 
+Q.labour_minister = "Rigola";
+Q.finance_minister_party = "PSI";
+Q.finance_minister = "Lazzari";
+Q.treasury_minister_party = "PSI";
+Q.treasury_minister = "Modigliani";
+Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister = "Graziadei"; 
 Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister = "Togliatti";
 Q.public_works_minister_party = "PSI";
+Q.public_works_minister = "Vella";
 !}
 achievement: governo_monocolore; follia_di_acerbo; ritorno_trionfale
 
@@ -888,6 +907,8 @@ Though tense negotiations between the Liberals and newly formed Catholic parties
 @turati
 title: Filippo Turati for Prime Minister
 subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
+choose-if: reformists_defect = 0
+unavailable-subtitle: Turati is no longer a member of the PSI.
 on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI";
 go-to: ministries
 

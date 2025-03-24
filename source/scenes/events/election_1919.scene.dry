@@ -475,7 +475,7 @@ Centre-Right Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_ene
 
 Anti-Socialist Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_enemies: + [+ ldr_name +]?]): [+ anti_socialist_coalition_r +]%
 
-[? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in National Fascist Party votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+[? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in [+ pnf_name +] votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
 There are some potential coalition arrangements.
 
@@ -506,8 +506,18 @@ title: PSI majority alone
 subtitle: PSI: [+ psi_seating_disp +]%
 view-if: psi_seating_disp >= 50
 on-arrival: {!
-Q.prime_minister = "Turati"; 
-Q.prime_minister_party = "PSI";
+
+if (Q.reformists_defect == 0) {
+    Q.prime_minister = "Turati"; 
+    Q.prime_minister_party = "PSI";
+}
+
+if (Q.reformists_defect == 1) {
+    Q.prime_minister = "Bacci";
+    Q.prime_minister_party = "PSI";
+    Q.workers_psi -= 4*(1-Q.dissent);
+    Q.middle_class -= 5*(1-Q.dissent);
+}
 
 Q.psi_in_government = 1; 
 Q.in_psi_majority = 1; 
@@ -853,6 +863,8 @@ Though tense negotiations between the Liberals and newly formed Catholic parties
 @turati
 title: Filippo Turati for Prime Minister
 subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
+choose-if: reformists_defect = 0
+unavailable-subtitle: Turati is no longer a member of the PSI.
 on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = "PSI";
 go-to: ministries
 

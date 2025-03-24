@@ -3,8 +3,73 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: rally_timer <= 0
-on-arrival: week_actions += 1; rally_timer = 6
+on-arrival: week_actions += 1; rally_timer = 6; disrupt_strength = ((fdc_strength*fdc_militancy) + (ard_strength*ard_militancy) + (abl_strength*abl_militancy))
 card-image: img/Rally.jpg
+go-to: main_rally; far_right_disrupt if (fdc_strength + ard_strength + abl_strength) > 150 and (not fdc_banned and not ard_banned and not abl_banned) not return_to_normalcy
+
+@far_right_disrupt
+
+The far-right paramilitaries are disrupting our rally! Their street troops are preventing us from meeting.
+
+- @rg_defend: Use the Red Guards to protect our rally.
+- @adp_defend: Use the Arditi del Popolo to protect our rally.
+- @both_defend: The Red Guards and Arditi del Popolo should work together to protect our rally.
+- @cancel: Cancel the rally.
+
+@rg_defend
+choose-if: not rg_banned
+unavailable-subtitle: The Red Guards are banned.
+on-arrival: rg_defend_success = rg_strength*rg_militancy - disrupt_strength
+go-to: rg_protect_win if rg_defend_success >= 0; rg_protect_lose if rg_defend_success < 0
+
+@rg_protect_win 
+go-to: main_rally
+
+The Red Guards have successfully defended our rally, so it can go ahead as usual.
+
+@rg_protect_lose
+on-arrival: workers_pnf += 3
+
+Unfortunately, the Red Guards were unable to hold back the far-right mob. The fascists have won this show of strength.
+
+@adp_defend
+view-if: arditi_cooperation
+on-arrival: adp_defend_success = adp_strength*adp_militancy - disrupt_strength
+go-to: adp_protect_win if rg_defend_success >= 0; adp_protect_lose if rg_defend_success < 0
+
+@adp_protect_win 
+go-to: main_rally
+
+The Arditi del Popolo have successfully defended our rally, so it can go ahead as usual.
+
+@adp_protect_lose
+on-arrival: workers_pnf += 3
+
+Unfortunately, the Arditi del Popolo were unable to hold back the far-right mob. The fascists have won this show of strength.
+
+@both_defend
+view-if: arditi_cooperation
+choose-if: arditi_rg_cooperation
+unavailable-subtitle: The Arditi del Popolo have never cooperated with the Red Guards before.
+on-arrival: both_defend_success = ((adp_strength*adp_militancy) + (rg_strength*rg_militancy)) - disrupt_strength
+go-to: both_protect_win if both_defend_success >= 0; both_protect_lose if both_defend_success < 0
+
+@both_protect_win 
+go-to: main_rally
+
+The Red Guards and Arditi del Popolo have successfully defended our rally, so it can go ahead as usual.
+
+@both_protect_lose
+on-arrival: workers_pnf += 3
+
+Unfortunately, the Red Guards and Arditi del Popolo were unable to hold back the far-right mob. The fascists have won this show of strength.
+
+@cancel
+on-arrival: workers_pnf += 3
+
+The far-right have won this show of strength.
+
+@main_rally
 
 = Political Rally
 

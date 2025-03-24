@@ -27,7 +27,7 @@ on-arrival: para_resources -= 1; adp_strength += 17; adp_militancy += 0.05; soci
 Our funding allows the Arditi to grow in number, strengthening our relations with them in the process.
 
 @arditi_training
-on-arrival: rg_strength += adp_strength*0.15; rg_militancy += adp_militancy*0.1
+on-arrival: rg_strength += adp_strength*0.15; rg_militancy += adp_militancy*0.1; arditi_rg_cooperation = 1
 
 The more experienced Arditi offer to help train the Red Guards, growing our strength and making our members more proficient.
 

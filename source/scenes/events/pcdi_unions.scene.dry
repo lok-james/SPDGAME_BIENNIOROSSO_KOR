@@ -2,7 +2,7 @@ title: PCd'I consolidates support base
 new-page: true 
 tags: event
 view-if: pcdi_formed and unions_break
-on-arrival: workers_pcdi += 9; workers_pcdi += 7 if psu_formed = 0; veterans_pcdi += 9; veterans_pcdi += 7 if psu_formed = 0; socialist_sentiment += 4; republican_sentiment += 2;
+on-arrival: workers_pcdi *= 1.3; workers_pcdi *= 1.4 if psu_formed = 0; veterans_pcdi *= 1.5; veterans_pcdi *= 1.3 if psu_formed = 0; socialist_sentiment += 4; republican_sentiment += 2;
 max-visits: 1
 
 = PCd'I Consolidates support base 

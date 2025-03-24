@@ -434,9 +434,9 @@ if (Q.week_actions >= 1) {
             Q.ds_moderates += 1/12;
         }
 
-        ///////////////////////////// change party support based on anti_monarchist_sentiment
-        // if anti_monarchist_sentiment is less than the support of left wing parties, reduce PSI support...
-        if (Q.anti_monarchist_sentiment < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
+        ///////////////////////////// change party support based on socialist sentiment
+        // if socialist_sentiment is less than the support of left wing parties, reduce PSI support...
+        if (Q.socialist_sentiment < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
             if (Q.industrialists_psi > 0) {
                 Q.industrialists_psi -= 4/12*Q.revolutionary_exhaustion;
                 Q.industrialists_pnf += 2/12;
@@ -469,26 +469,31 @@ if (Q.week_actions >= 1) {
         // support should be based on sentiment, and vice versa
 
         if (Q.socialist_sentiment < Q.psi_votes) {
-            Q.socialist_sentiment += (Q.psi_votes/10)/12;
-            Q.workers_psi -= (Q.socialist_sentiment/10)/12;
+            Q.socialist_sentiment += (Q.psi_votes/10)/6;
+            Q.workers_psi -= (Q.socialist_sentiment/10)/6;
         }
 
         if (Q.socialist_sentiment > Q.psi_votes) {
-            Q.socialist_sentiment -= (Q.psi_votes/10)/12;
-            Q.workers_psi += (Q.socialist_sentiment/10)/12;
+            Q.socialist_sentiment -= (Q.psi_votes/10)/6;
+            Q.workers_psi += (Q.socialist_sentiment/10)/6;
         }
 
         if (Q.nationalist_sentiment < Q.pnf_votes) {
-            Q.nationalist_sentiment += (Q.psi_votes/10)/12;
-            Q.veterans_pnf -= (Q.nationalist_sentiment/10)/12;
+            Q.nationalist_sentiment += (Q.psi_votes/10)/6;
+            Q.veterans_pnf -= (Q.nationalist_sentiment/10)/6;
         }
 
         if (Q.nationalist_sentiment > Q.pnf_votes) {
-            Q.nationalist_sentiment -= (Q.pnf_votes/10)/12;
-            Q.veterans_pnf += (Q.nationalist_sentiment/10)/12;
+            Q.nationalist_sentiment -= (Q.pnf_votes/10)/6;
+            Q.veterans_pnf += (Q.nationalist_sentiment/10)/6;
         }
 
         ////////////////////////// annual support changes
+
+        if (Q.year == 1919) {
+            Q.workers_psi -= 9/12;
+            Q.rural_psi -= 7/12;
+        }
 
         // initial boost for pnf for workers, before industrialists
         if (Q.year == 1920) {
@@ -501,19 +506,19 @@ if (Q.week_actions >= 1) {
             Q.industrialists_ldr -= 2/12;
             Q.middle_class_ul -= 1/12;
             Q.industrialists_ul -= 6/12;
-            Q.fdc_strength += 47/12;
-            Q.ard_strength += 25/12;
-            Q.abl_strength += 14/12;
+            Q.fdc_strength += 13/12;
+            Q.ard_strength += 6/12;
+            Q.abl_strength += 3/12;
             Q.fdc_militancy += 0.07/12;
-            Q.ard_militancy += 0.04/12;
-            Q.abl_militancy += 0.02/12;
+            Q.ard_militancy += 0.03/12;
+            Q.abl_militancy += 0.01/12;
             Q.middle_class_pnf += 3/12;
             Q.rural_other -= 3/12;
             Q.rural_pnf += 2/12;
             Q.workers_pnf += 3/12;
 
-            Q.rural_psi -= 4/12;
-            Q.workers_psi -= 3/12;
+            Q.rural_psi -= 7/12;
+            Q.workers_psi -= 5/12;
 
             Q.nationalist_sentiment += 10/12;
 
@@ -533,6 +538,10 @@ if (Q.week_actions >= 1) {
             Q.middle_class_pnf += 1/12;
             Q.workers_pnf += 3/12;
             Q.rural_pnf += 2/12;
+
+            Q.fdc_strength += 21/12;
+            Q.ard_strength += 13/12;
+            Q.abl_strength += 7/12;
         } 
         
         if (Q.year == 1921) {
@@ -545,6 +554,13 @@ if (Q.week_actions >= 1) {
             Q.veterans_pnf += 3/12;
             Q.workers_pnf -= 4/12;
             Q.industrialists_pnf += 7/12;
+
+            Q.fdc_strength += 52/12;
+            Q.ard_strength += 13/12;
+            Q.abl_strength += 8/12;
+            Q.fdc_militancy += 0.07/12;
+            Q.ard_militancy += 0.04/12;
+            Q.abl_militancy += 0.02/12;
 
             Q.rural_psi -= 7/12;
             Q.workers_psi -= 6/12;
@@ -618,6 +634,13 @@ if (Q.week_actions >= 1) {
             Q.rural_psi -= 4/12;
             Q.workers_psi -= 3/12;
             Q.middle_class_psi -= 4/12;
+
+            Q.fdc_strength += 47/12;
+            Q.ard_strength += 12/12;
+            Q.abl_strength += 14/12;
+            Q.fdc_militancy += 0.13/12;
+            Q.ard_militancy += 0.07/12;
+            Q.abl_militancy += 0.05/12;
         } 
         
         if (Q.year >= 1923) {
@@ -770,18 +793,33 @@ if (Q.week_actions >= 1) {
             Q.veterans_pnf += 3/6;
             Q.veterans_psi -= 5/6;
             Q.fdc_strength += 14/6;
+
+            if (Q.fdc_strength*Q.fdc_militancy >= (Q.rg_strength*Q.rg_militancy)/3) {
+                Q.veterans_pnf += 3/6;
+                Q.veterans_psi -= 5/6;
+            }
         }
 
         if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.ard_banned == 0) {
             Q.rural_pnf += 3/6;
             Q.rural_psi -= 5/6;
             Q.ard_strength += 9/6;
+
+            if (Q.ard_strength*Q.ard_militancy >= (Q.rg_strength*Q.rg_militancy)/3) {
+                Q.rural_pnf += 3/6;
+                Q.rural_psi -= 5/6;
+            }
         }
 
         if (Q.abl_rg_active == 0 && Q.abl_adp_active == 0 && Q.abl_banned == 0) {
             Q.middle_class_pnf += 3/6;
             Q.middle_class_psi -= 5/6;
             Q.abl_strength += 4/6;
+
+            if (Q.abl_strength*Q.abl_militancy >= (Q.rg_strength*Q.rg_militancy)/3) {
+                Q.middle_class_pnf += 3/6;
+                Q.middle_class_psi -= 5/6;
+            }
         }
 
         if (Q.radicalisation > 7.5 && Q.radicalisation_timer == 0) {
@@ -856,8 +894,8 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.pnf_in_government == 1 && Q.blackshirts_formed == 1) {
-            Q.fdc_strength += 27/12;
-            Q.fdc_militancy += 0.08/12;
+            Q.fdc_strength += 43/12;
+            Q.fdc_militancy += 0.13/12;
         }
 
         // voter intimidation
