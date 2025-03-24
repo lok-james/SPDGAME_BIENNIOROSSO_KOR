@@ -40,7 +40,7 @@ go-to: acerbo_menu
 [? if not psi_unreliable : Thankfully, it seems the far-right paramilitaries are unable to intimidate many of our own deputies, and we can rely on their full support in voting against the law. ?]
 
 @psri_check 
-on-arrival {!
+on-arrival: {!
 Q.anti_acerbo_coalition += parseFloat(Q.psri_seating_disp);
 !}
 

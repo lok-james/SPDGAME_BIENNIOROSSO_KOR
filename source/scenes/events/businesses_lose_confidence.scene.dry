@@ -19,7 +19,7 @@ The business community has a variety of suggestions as to how we might improve t
 
 @taxes
 choose-if: upper_tax_rates > -5 and (not national_economic_recovery or budget > 0)
-unavailable-subtitle: [? upper_tax_rates > -5: if Tax rates for the upper brackets are already too low. ?][? if budget < 1 and national_economic_recovery : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if upper_tax_rates > -5: Tax rates for the upper brackets are already too low. ?][? if budget < 1 and national_economic_recovery : Not enough budget. (Need 1) ?]
 on-arrival: upper_tax_rates -= 1; budget -= 1; capital_strike_progress -= 1; unemployment -= 0.4; middle_class_psi += 5*(1-dissent); industrialists_psi += 4*(1-dissent); communist_dissent += 7; maximalist_dissent += 3; labour_dissent += 9
 
 Cutting taxes for the upper brackets improves our relationship with the capitalists, though is unsurprisingly unpopular within the party.
