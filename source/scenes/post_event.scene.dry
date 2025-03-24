@@ -108,41 +108,67 @@ if (Q.interior_police_loyalty < 0) {
 if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
-// re-calculate party support
-// calculate normalised class voting for the achievements
+
+// Recalculate party support
+// Normalize class voting for the achievements
 for (var c of Q.classes) {
     var class_votes = 0;
+
+    // Keep dividing by 2 until all values are under 1000
+    let needs_scaling = true;
+    while (needs_scaling) {
+        needs_scaling = false;
+        for (var party of Q.parties) {
+            if (Q[c+'_'+party] > 100) {
+                needs_scaling = true;
+                break; // If any value is too high, we'll rescale
+            }
+        }
+
+        if (needs_scaling) {
+            for (var party of Q.parties) {
+                Q[c+'_'+party] /= 2;
+            }
+        }
+    }
+
+    // Calculate total class votes
     for (var party of Q.parties) {
         if (Q[c+'_'+party] < 0) {
             Q[c+'_'+party] = 0;
         }
         class_votes += Q[c+'_'+party];
     }
+
+    // Normalize class votes
     for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalised'] = 100*Q[c+'_'+party]/class_votes;
-        Q[c + '_' + party + '_display'] = (100*Q[c+'_'+party]/class_votes).toFixed(1);
+        Q[c + '_' + party + '_normalised'] = 100 * Q[c+'_'+party] / class_votes;
+        Q[c + '_' + party + '_display'] = (100 * Q[c+'_'+party] / class_votes).toFixed(1);
     }
 }
-// calculate support for each of the parties
-var total_support = 0; 
+
+// Calculate support for each party
+var total_support = 0;
 for (var party of Q.parties) {
     var party_support = 0;
     for (var c of Q.classes) {
-        if (Q.old_demographics) { 
-            party_support += Q[c]*Q[c+'_'+party];
-        } else  { 
-            party_support += Q[c]*Q[c+'_'+party+'_normalised'];
-        } 
+        if (Q.old_demographics) {
+            party_support += Q[c] * Q[c+'_'+party];
+        } else {
+            party_support += Q[c] * Q[c+'_'+party+'_normalised'];
+        }
     }
     Q[party + '_support'] = party_support;
-    total_support += party_support; 
+    total_support += party_support;
 }
-// 2. normalize support (fraction)
+
+// Normalize support (fraction)
 for (var party of Q.parties) {
-    Q[party+'_normalised'] = Q[party + '_support']/total_support;
-    Q[party+'_votes'] = (Q[party+'_normalised']*100).toFixed(1);
-    Q[party+'_votes_display'] = (Q[party+'_normalised']*100).toFixed(1);
+    Q[party+'_normalised'] = Q[party + '_support'] / total_support;
+    Q[party+'_votes'] = (Q[party+'_normalised'] * 100).toFixed(1);
+    Q[party+'_votes_display'] = (Q[party+'_normalised'] * 100).toFixed(1);
 }
+
 
 Q.socialist_soft_cap = Q.pcdi_votes + Q.psi_votes + Q.psu_votes + Q.psri_votes
 Q.republican_soft_cap = Q.psri_votes + Q.pri_votes + Q.ppi_votes + Q.ldr_votes + Q.ul_votes + Q.ds_votes
