@@ -4,6 +4,7 @@ max-visits: 1
 on-arrival: anti_acerbo_coalition = psi_seating_disp + psri_seating_disp + pri_seating_disp 
 new-page: true
 tags: event
+go-to: acerbo_menu
 
 = Introduction of the Acerbo Law
 
