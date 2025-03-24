@@ -299,19 +299,19 @@ if (Q.ul_in_bn == 1) {
     Q.bn_seating_disp += parseFloat(Q.ul_seating_disp);
     Q.str_change_bn += parseFloat(Q.change_ul_r);
     Q.bn_seating += Q.ul_seating;
-    Q.bn_r += Q.ul_r;
+    Q.bn_r += parseFloat(Q.ul_r);
 }
 if (Q.ds_in_bn == 1) {
     Q.bn_seating_disp += parseFloat(Q.ds_seating_disp);
     Q.str_change_bn += parseFloat(Q.change_ds_r);
-    Q.bn_seating += Q.ds_seating;
-    Q.bn_r += Q.ds_r;
+    Q.bn_seating += parseFloat(Q.ds_seating);
+    Q.bn_r += parseFloat(Q.ds_r);
 }
 if (Q.pnf_in_bn == 1) {
     Q.bn_seating_disp += parseFloat(Q.pnf_seating_disp);
     Q.str_change_bn += parseFloat(Q.change_pnf_r);
-    Q.bn_seating += Q.pnf_seating;
-    Q.bn_r += Q.pnf_r;
+    Q.bn_seating += parseFloat(Q.pnf_seating);
+    Q.bn_r += parseFloat(Q.pnf_r);
 }
 
 Q.change_bn_r = Q.bn_r - Q.old_bn_r;
