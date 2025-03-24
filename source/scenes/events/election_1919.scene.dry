@@ -554,7 +554,7 @@ Finally, the PSI can govern alone! Our long campaign of electioneering has paid 
 
 @left_wing_coalition
 title: Can we form a Left-Wing Coalition?
-subtitle: PSI + PSRI[? if pri_prominent : + PRI?][? if ds_allies : + DS?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: Dissident Republicans, Socialists [? if pri_prominent = 0:& the Italian Republican Party?] are willing to provide toleration to the coalition. ?]
+subtitle: PSI + PSRI[? if pri_prominent : + PRI?][? if psu_coalitioning : + PSU?][? if ds_allies : + DS?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: Dissident Republicans, Socialists [? if pri_prominent = 0:& the Italian Republican Party?] are willing to provide toleration to the coalition. ?]
 view-if: left_wing_coalition_r >= left_wing_minimum
 choose-if: (participating = 1 or maximalist_participating = 1) and psri_relation >= psri_min_relations
 unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if psri_relation < psri_min_relations : Our relations with the PSRI are too poor. ?]
