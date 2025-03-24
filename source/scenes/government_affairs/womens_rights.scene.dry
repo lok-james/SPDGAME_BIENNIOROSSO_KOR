@@ -2,7 +2,16 @@ title: Women's Rights
 new-page: true
 is-card: true
 view-if: psi_in_government and womens_rights_timer <= 0
-on-arrival: week_actions += 1; womens_rights_timer = 5; suffrage_support = psi_seating_disp + ppi_seating_disp + pri_seating_disp + psri_seating_disp; suffrage_support += ds_seating_disp if ds_allies
+on-arrival: {!
+Q.week_actions += 1; 
+Q.womens_rights_timer = 5; 
+
+Q.suffrage_support = parseFloat(Q.psi_seating_disp) + parseFloat(Q.ppi_seating_disp) + parseFloat(Q.pri_seating_disp) + parseFloat(Q.psri_seating_disp); 
+
+if (Q.ds_allies == 1) {
+    Q.suffrage_support += parseFloat(Q.ds_seating_disp)
+}
+!}
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: govt_affairs
 
