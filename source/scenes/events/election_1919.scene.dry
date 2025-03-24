@@ -191,6 +191,13 @@ if (Q.pri_prominent == 0) {
     Q.left_wing_minimum -= Q.other_toleration_seating;
 }
 
+if (Q.psu_formed == 1) {
+    if (Q.participating == 1 || Q.participating == 0 && Q.radicalisation < 3) {
+        Q.left_wing_coalition_r += Q.psu_seating_disp;
+        Q.psu_coalitioning = 1;
+    }
+}
+
 if (Q.ds_leader === "Giuffrida" && Q.ds_in_bn == 0 && Q.ds_relation >= Q.ds_min_relations || (Q.ds_leader === "Colonna" && Q.largest_party === "PSI" && Q.ds_in_bn == 0 && Q.ds_relation >= Q.ds_min_relations)) {
     Q.left_wing_coalition_r += Q.ds_seating_disp;
     Q.centre_left_coalition_r += Q.ds_seating_disp;
@@ -463,7 +470,7 @@ go-to: coalition_menu
 
 **Potential Coalitions:**
 
-Left-Wing Coalition (PSI + PSRI[? if pri_prominent : + PRI?][? if ds_allies : + DS?]): [+ left_wing_coalition_r +]%
+Left-Wing Coalition (PSI + PSRI[? if pri_prominent : + PRI?][? if psu_coalitioning : + PSU?][? if ds_allies : + DS?]): [+ left_wing_coalition_r +]%
 
 Centre-Left Coalition (PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]): [+ centre_left_coalition_r +]%
 
@@ -566,9 +573,13 @@ if (Q.ds_allies == 1) {
     Q.ds_in_government = 1;
 }
 
+if (Q.psu_coalitioning == 1) {
+    Q.psu_in_government = 1;
+}
+
 Q.foreign_minister_party = "PSRI"; 
-if (Q.ds_allies == 1) {
-    Q.interior_minister_party = "DS";
+if (Q.psu_coalitioning == 1) {
+    Q.interior_minister_party = "PSU";
 } else {
     Q.interior_minister_party = "PSRI"; 
 }
