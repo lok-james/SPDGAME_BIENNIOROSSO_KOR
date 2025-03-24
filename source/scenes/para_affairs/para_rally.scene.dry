@@ -6,7 +6,7 @@ on-arrival: para_rally_timer = 3; week_actions += 1; rg_militarisation_cost = 2 
 card-image: img/ParaRally.jpg
 frequency: 250
 tags: para_affairs
-go-to: main_rally; far_right_disrupt if prime_minister_party = "PNF" and (not fdc_banned and not ard_banned and not abl_banned) not return_to_normalcy
+go-to: main_rally; far_right_disrupt if prime_minister_party = "PNF" and (fdc_banned = 0 and ard_banned = 0 and abl_banned = 0) and not return_to_normalcy
 
 @far_right_disrupt
 
