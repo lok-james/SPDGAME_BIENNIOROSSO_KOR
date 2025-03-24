@@ -443,6 +443,12 @@ Q.ds_left = 0;
 Q.ds_moderates = 5;
 Q.ds_right = 0;
 
+// national bloc stuff
+Q.bn_formed = 0;
+Q.ds_in_bn  = 0;
+Q.ul_in_bn = 0;
+Q.pnf_in_bn = 0;
+
 // International Relations
 Q.soviet_relation = 2;
 Q.entente_relation = 4;
