@@ -114,20 +114,22 @@ if (Q.army_loyalty < 0) {
 for (var c of Q.classes) {
     var class_votes = 0;
 
+    if (Q.week_actions >= 1) {
     // Keep dividing by 2 until all values are under 1000
-    let needs_scaling = true;
-    while (needs_scaling) {
-        needs_scaling = false;
-        for (var party of Q.parties) {
-            if (Q[c+'_'+party] > 100) {
-                needs_scaling = true;
-                break; // If any value is too high, we'll rescale
-            }
-        }
-
-        if (needs_scaling) {
+        let needs_scaling = true;
+        while (needs_scaling) {
+            needs_scaling = false;
             for (var party of Q.parties) {
-                Q[c+'_'+party] /= 2;
+                if (Q[c+'_'+party] > 100) {
+                    needs_scaling = true;
+                    break; // If any value is too high, we'll rescale
+                }
+            }
+
+            if (needs_scaling) {
+                for (var party of Q.parties) {
+                    Q[c+'_'+party] /= 2;
+                }
             }
         }
     }
