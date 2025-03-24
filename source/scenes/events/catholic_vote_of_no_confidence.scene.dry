@@ -184,8 +184,9 @@ Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
 
 Q.government_collapse += 1;
+Q.ppi_relation -= 10;
+Q.leverage = Q.psi_seating_disp
 !}
-on-departure: coalition_dissent = 0; rural_psi -= 3; middle_class_psi -= 2; workers_psi -= 3; middle_class_pnf += 2; psi_in_government = 0; socialist_catholic_coalition = 0; ppi_relation -= 10; catholic_coalition_failed = 1; leverage = psi_r
 go-to: election_1919.coalition_menu if next_election_time >= 4
 
 The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.

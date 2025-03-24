@@ -11,8 +11,8 @@ tags: govt_affairs
 
 With control of the Agricultural Ministry in the hands of the PSI, it seems there is much work to be done in regards to reform. Many in the party are calling for land seizures, and some of our rural voters are requesting aid and financing to help in relieving their economic burden. What do we do?
  
-- @support_coops: Support Agricultural cooperatives
-- @support_coops_2: Continue supporting Agricultural cooperatives
+- @support_coops: Support Agricultural cooperatives.
+- @support_coops_2: Continue supporting Agricultural cooperatives.
 - @land_seize: Land Seizure
 - @agricultural_finance: Agricultural Financing
 - @root: Do not enact any policies for now.

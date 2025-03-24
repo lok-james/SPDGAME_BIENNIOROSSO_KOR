@@ -21,17 +21,17 @@ According to the Constitution, women are equal to men, but this is not followed 
 
 For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if psi_seating_disp < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
 
-- @labour: Institute policies that help women in the workforce. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
-- @family: Reform marriage, divorce, and property law. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+- @labour: Institute policies that help women in the workforce.
+- @family: Reform marriage, divorce, and property law. 
 - @welfare: Improve welfare for single mothers and children.
-- @liberalize: Attempt to liberalize abortion laws. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+- @liberalize: Attempt to liberalize abortion laws. 
 - @suffrage: Attempt to pass women's suffrage.
 - @return: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
 
 @labour
-subtitle: Paid maternal leave policies, equal pay policies, and so on.
+subtitle: Paid maternal leave policies, equal pay policies, and so on. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
 on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15 and not in_unstable_coalition; workers_clc -= 4 if unemployment > 15 and centre_left_coalition; workers_scc -= 4 if unemployment > 15 and socialist_catholic_coalition; middle_class_psi += 4*(1-dissent) if not in_unstable_coalition; middle_class_clc += 4*(1-dissent) if centre_left_coalition; middle_class_scc += 4*(1-dissent) if socialist_catholic_coalition; workers_psi += 4*(1 - dissent) if not in_unstable_coalition; workers_clc += 4*(1 - dissent) if centre_left_coalition; workers_scc += 4*(1 - dissent) if socialist_catholic_coalition; economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
 max-visits: 3
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
@@ -39,7 +39,7 @@ go-to: catholic_promise_vonc if ppi_promise_failed == 1
 These policies mean that our party is increasing in popularity among the "new women" who work outside the home. [? if unemployment > 15 : However, many male workers develop a backlash towards women in the workplace, especially given the rising unemployment. ?]
 
 @family
-subtitle: Change family and inheritance law to treat women more equally.
+subtitle: Change family and inheritance law to treat women more equally. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
 on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent) if not in_unstable_coalition; middle_class_clc += 2*(1-dissent) if centre_left_coalition; middle_class_scc += 2*(1-dissent) if socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 2 if not in_unstable_coalition; industrialists_clc -= 2 if centre_left_coalition; industrialists_scc -= 2 if socialist_catholic_coalition; rural_psi -= 2 if not in_unstable_coalition; rural_clc -= 2 if centre_left_coalition; rural_scc -= 2 if socialist_catholic_coalition; catholic_psi -= 4 if not in_unstable_coalition; catholic_clc -= 4 if centre_left_coalition; catholic_scc -= 4 if socialist_catholic_coalition; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 4; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
 max-visits: 2
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
@@ -57,7 +57,7 @@ We have increased welfare spending on women and children. [? if welfare >= 1 and
 
 @liberalize
 max-visits: 1
-subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?]
+subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?] [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
 go-to: liberalize_fail if left_wing_coalition_r < 50; liberalize_success if left_wing_coalition_r >= 50
 
 @liberalize_fail

@@ -21,11 +21,27 @@ The Acerbo Law is easily repealed, reinstating the previous system of the D'Hond
 
 @keep_acerbo
 view-if: psi_seating_disp >= 50
-subtitle: They voted for it anyways, right?
-on-arrival: psri_relation -= 10; ppi_relation -= 10; ldr_relation -= 10; ul_relation -= 10; pri_relation -= 10; reformist_dissent += 5; ppi_right += 2; ldr_right += 2; ds_right += 2;
+subtitle: Is the fallout from keeping the law really worth it?
+on-arrival: {!
+Q.psri_relation -= 10; 
+Q.ppi_relation -= 12; 
+Q.ldr_relation -= 18; 
+Q.ul_relation -= 18; 
+Q.pri_relation -= 18; 
 
-The other parties in the Chamber of Deputies are unsurprisingly outraged by our blatant power grab, calling us no better than the fascists. 
+Q.reformist_dissent += 12;
+
+Q.radicalisation += 2;
+
+Q.workers_psi *= 0.7;
+Q.middle_class_psi *= 0.4;
+Q.rural_psi *= 0.8;
+
+Q.ppi_right += 2; 
+Q.ldr_right += 2; 
+Q.ds_right += 2;
+!}
+
+This has caused an outrage within the reformists, as well as our less radical support base, calling us no better than the fascists we beat. Already, we are seeing our support defect to the PSRI and liberal parties, who vow now to defeat us like the fascists.
 
 But hey, they're the ones who voted for it, aren't they?
-
-- @root: Continue...

@@ -525,7 +525,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
             'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury',
-            'gov_army', 'gov_finance', 'rg_orders', 'child_labour', 'radicalisation'];
+            'gov_army', 'gov_finance', 'rg_orders', 'child_labour', 'radicalisation', 'psu_negotiating'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -591,6 +591,7 @@ Q.gov_finance_timer = 14;
 Q.gov_army_timer = 14;
 Q.giolitti_tenure = 0;
 Q.radicalisation_timer = 6;
+Q.psu_negotiating_timer = 0;
 
 // wow 
 Q.mussolini_dies = 0;

@@ -32,7 +32,7 @@ The Labour Ministry works on developing and enforcing safety regulations, in ord
 choose-if: public_education_minister_party = "PSI"
 unavailable-subtitle: We do not control the Public Education Ministry.
 subtitle: This has broad popular support across the workers and middle class.
-on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; unemployment -= 0.4; unemployment -= 0.2 if unemployment >= 8;
+on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; unemployment -= 0.4; unemployment -= 0.2 if unemployment >= 8;
 max-visits: 3
 
 We continue enforcing the *Casati Law* further, as well as amending it further to increase the percentages necessary to qualify as 'adequate', improving attendance overall.

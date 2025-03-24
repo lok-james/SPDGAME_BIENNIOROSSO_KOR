@@ -692,9 +692,9 @@ if (Q.week_actions >= 1) {
                 Q.industrialists_pnf += 1/12;
             }
 
-            Q.rural_psi -= 4/12;
-            Q.workers_psi -= 3/12;
-            Q.middle_class_psi -= 4/12;
+            Q.rural_psi -= 7/12;
+            Q.workers_psi -= 5/12;
+            Q.middle_class_psi -= 9/12;
 
             Q.fdc_strength += 47/12;
             Q.ard_strength += 12/12;
@@ -876,23 +876,23 @@ if (Q.week_actions >= 1) {
             }
 
             if (Q.national_economic_recovery == 0) {
-                Q.workers_psi -= ((Q.economic_downturn * 0.9)/3)*psi_inc_economic;
-                Q.middle_class_psi -= ((Q.economic_downturn * 0.6)/3)*psi_inc_economic;
+                Q.workers_psi -= ((Q.economic_downturn)/3)*psi_inc_economic;
+                Q.middle_class_psi -= ((Q.economic_downturn * 0.8)/3)*psi_inc_economic;
                 Q.rural_psi -= ((Q.economic_downturn * 0.7)/3)*psi_inc_economic;
-                Q.veterans_psi -= ((Q.economic_downturn)/3)*psi_inc_economic;
+                Q.veterans_psi -= ((Q.economic_downturn * 1.2)/3)*psi_inc_economic;
                 Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/3)*psi_inc_economic;
-                Q.women_psi -= ((Q.economic_downturn * 0.7)/3)*psi_inc_economic;
-                Q.catholic_psi -= ((Q.economic_downturn * 0.5)/3)*psi_inc_economic;
+                Q.women_psi -= ((Q.economic_downturn * 0.8)/3)*psi_inc_economic;
+                Q.catholic_psi -= ((Q.economic_downturn * 0.6)/3)*psi_inc_economic;
             }
 
             if (Q.national_economic_recovery == 1) {
-                Q.workers_psi -= (((Q.economic_downturn * 0.9)/3)*psi_inc_economic)/2;
-                Q.middle_class_psi -= (((Q.economic_downturn * 0.6)/3)*psi_inc_economic)/2;
+                Q.workers_psi -= (((Q.economic_downturn)/3)*psi_inc_economic)/2;
+                Q.middle_class_psi -= (((Q.economic_downturn * 0.8)/3)*psi_inc_economic)/2;
                 Q.rural_psi -= (((Q.economic_downturn * 0.7)/3)*psi_inc_economic)/2;
-                Q.veterans_psi -= (((Q.economic_downturn)/3)*psi_inc_economic)/2;
+                Q.veterans_psi -= (((Q.economic_downturn * 1.2)/3)*psi_inc_economic)/2;
                 Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/3)*psi_inc_economic)/2;
-                Q.women_psi -= (((Q.economic_downturn * 0.7)/3)*psi_inc_economic)/2;
-                Q.catholic_psi -= (((Q.economic_downturn * 0.5)/3)*psi_inc_economic)/2;
+                Q.women_psi -= (((Q.economic_downturn * 0.8)/3)*psi_inc_economic)/2;
+                Q.catholic_psi -= (((Q.economic_downturn * 0.6)/3)*psi_inc_economic)/2;
             }
         }
  
@@ -909,8 +909,8 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.fasci_rg_active == 0 && Q.fasci_adp_active == 0 && Q.fdc_banned == 0) {
-            Q.veterans_pnf += 3/6;
-            Q.veterans_psi -= 5/6;
+            Q.veterans_pnf += 5/6;
+            Q.veterans_psi -= 7/6;
             Q.fdc_strength += 14/6;
 
             if (Q.fdc_strength*Q.fdc_militancy >= (Q.rg_strength*Q.rg_militancy)/3) {
@@ -920,8 +920,8 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.arditi_rg_active == 0 && Q.arditi_adp_active == 0 && Q.ard_banned == 0) {
-            Q.rural_pnf += 3/6;
-            Q.rural_psi -= 5/6;
+            Q.rural_pnf += 5/6;
+            Q.rural_psi -= 7/6;
             Q.ard_strength += 9/6;
 
             if (Q.ard_strength*Q.ard_militancy >= (Q.rg_strength*Q.rg_militancy)/3) {
@@ -931,8 +931,8 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.abl_rg_active == 0 && Q.abl_adp_active == 0 && Q.abl_banned == 0) {
-            Q.middle_class_pnf += 3/6;
-            Q.middle_class_psi -= 5/6;
+            Q.middle_class_pnf += 5/6;
+            Q.middle_class_psi -= 7/6;
             Q.abl_strength += 4/6;
 
             if (Q.abl_strength*Q.abl_militancy >= (Q.rg_strength*Q.rg_militancy)/3) {

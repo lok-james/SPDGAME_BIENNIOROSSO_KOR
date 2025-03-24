@@ -50,7 +50,7 @@ Q.psri_reconciled = 1;
 Q.socialist_sentiment += 6;
 !}
 
-Though the other factories decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakened by defections to us.
+Though the other factions decry this, the vast majority of the PSRI is reunited once more with the party, as new leadership flocks back. Though a small minority of the PSRI still remains, they are severely weakened by defections to us.
 
 @reconcile_deny
 subtitle: It is more suitable that we remain separate.
