@@ -132,8 +132,8 @@ Raising taxes on the rich is popular among our base, but it alienates the bourge
 
 @cut_overall
 subtitle: -2 Budget [? if budget < 2 and liberal_budget_accepted :- This will put us into a deficit! ?]
-unavailable-subtitle: [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?]
-choose-if: upper_tax_rates >= -5 and lower_tax_rates >= -5
+unavailable-subtitle: [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?][? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
+choose-if: upper_tax_rates >= -5 and lower_tax_rates >= -5 and (not national_economic_recovery or budget > 1)
 on-arrival: {!
 Q.budget -= 2; 
 Q.upper_tax_rates -= 1; 

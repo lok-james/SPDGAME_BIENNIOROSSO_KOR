@@ -89,6 +89,8 @@ We are able to seize land form large estate, mostly uncultivated land and hand t
 
 @agricultural_finance
 subtitle: -1 Budget - Increase financing for agricultural credit and insurance. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: budget -= 1; agricultural_policy += 1; ldr_promise_failed = 1 if budget < 0 and liberal_budget_accepted; rural_psi += 7*(1-dissent) if not in_unstable_coalition; rural_clc += 7*(1-dissent) if centre_left_coalition; rural_scc += 7*(1-dissent) if socialist_catholic_coalition; rural_pnf -= 3*(1-dissent); unemployment -= 0.3 if unemployment >= 8; communist_dissent += 5; maximalist_dissent += 5; economic_growth += 0.2; economic_growth += 0.3 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed == 1
 

@@ -21,6 +21,7 @@ Now that we control a sizeable bloc in the Chamber of Deputies, we are able to a
 - @article_33: Alter Article 33.
 - @article_65: Alter Article 65.
 - @article_33_2: Alter Article 33 once more.
+- @constitution_removal: Abolish the Monarchy.
 - @root: Do not pursue constitutional reform.
 - @easy_discard
 - @cancel_advisor_action
@@ -52,3 +53,14 @@ unavailable-subtitle: The King & Senate would not approve this.
 on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1; republican_sentiment += 4*democratisation
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
+
+@constitution_removal
+subtitle: This will end the game.
+view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and king_veto_removed = 1
+choose-if: king_relation >= 85
+unavailable-subtitle: The King & Senate would not approve this.
+on-arrival: king = "N/A"
+
+The reform passes with the slightest of margins, removing the Statuto Albertino as the constitution of the Kingdom of Italy. A new constitutional congress is to be held in the coming weeks as the King officially abdicates the throne.
+
+- @game_over: Game over.

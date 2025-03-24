@@ -25,9 +25,9 @@ What do we do?
 
 @unemployment_insurance_program
 subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
-choose-if: finance_minister_party = "PSI"
-view-if: not unemployment_insurance_founded and psi_in_government
-unavailable-subtitle: The PSI does not control the Financial Ministry.
+view-if: not unemployment_insurance_founded 
+choose-if: not national_economic_recovery or budget > 1
+unavailable-subtitle: Not enough budget. (Need 2)
 on-arrival: {!
 Q.unemployment_insurance_founded = 1; 
 Q.insurance_payments_timer = 24; 
@@ -67,9 +67,8 @@ Unfortunately, our current financial situation limits the scope of this welfare 
 
 @veterans_organisations_gov
 subtitle: -1 Budget [? if catholic_charity_accepted :- The funding of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
-choose-if: labour_minister_party = "PSI" 
-view-if: psi_in_government
-unavailable-subtitle: The PSI does not control the Labour & Social Security Ministry.
+choose-if: labour_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
+unavailable-subtitle: [? if labour_minister_party != "PSI" : The PSI does not control the Labour & Social Security Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent) if not in_unstable_coalition; veterans_clc += 2*(1-dissent) if centre_left_coalition; veterans_scc += 2*(1-dissent) if socialist_catholic_coalition; veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4;
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
@@ -81,8 +80,7 @@ We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds 
 @veterans_organisations_catholic
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: treasury_minister_party = "PSI" 
-view-if: psi_in_government
-unavailable-subtitle: The PSI does not control the Treasury Ministry.
+unavailable-subtitle: [? if treasury_minister_party != "PSI" : The PSI does not control the Treasury Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4; ppi_left += 0.1
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 

@@ -1,0 +1,19 @@
+title: Tax Cuts for the Rich
+subtitle: Finance Minister [+ finance_minister +] authorises tax cuts.
+view-if: (finance_minister_party == ul_name or finance_minister_party == ldr_name) and gov_finance_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and upper_tax_rates > -5 and (economic_growth < 0 or unemployment > 8) and budget >= 2
+on-arrival: gov_cooldown_timer = 2; gov_treasury_timer = 9
+new-page: true
+tags: event
+
+= Finance Minister [+ finance_minister +] authorizes tax cuts for the rich
+
+Finance Minister [+ finance_minister +] has authorised tax cuts for the rich in order to stimulate the economy. These cuts are unpopular amongst our voting bloc, seeing them as unfair and greedy.
+
+- @pm_nothing: There is nothing we can do.
+
+@pm_nothing
+on-arrival: workers_psi -= 2 if psi_in_government; veterans_psi -= 2 if psi_in_government; workers_psi += 2 if not psi_in_government; veterans_psi += 2 if not psi_in_government; workers_ldr -= 8 if finance_minister_party == ldr_name; workers_ul -= 8 if finance_minister_party == ul_name; veterans_ldr -= 8 if finance_minister_party == ldr_name; veterans_ul -= 8 if finance_minister_party == ul_name; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; welfare -= 1; budget += 1; unemployment -= 0.2; inflation += 0.3; economic_growth += 0.2;
+
+[? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ finance_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name +] are able to use this policy to recruit more members. ?]
+
+[? if not psi_in_government : The cuts pass, and we utilise them to recruit workers who have lost faith in the liberal parties, alongside the [+ pnf_name +]. ?]

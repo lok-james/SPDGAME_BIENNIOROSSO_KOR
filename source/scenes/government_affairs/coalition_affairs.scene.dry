@@ -32,6 +32,8 @@ This is a highly unpopular move, but smooth things over with our coalition partn
 @promise_funds
 subtitle: -1 Budget 
 view-if: socialist_catholic_coalition
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: budget -= 1; coalition_dissent = 0; labour_dissent += 5; communist_dissent += 5; maximalist_dissent += 5; workers_ppi += 5; workers_psi -= 3; catholic_ppi += 4; veterans_ppi += 4; veterans_psi -= 4;
 
 This is a controversial move within the party, with many criticising our anti-secular move as a betrayal of party ideals.

@@ -56,6 +56,8 @@ Though thought dead on arrival, the PSI, PSRI and defectors from other parties h
 @nationalise_industries
 subtitle: -1 Budget - We should begin buying out businesses and empower the workers and consumers to govern. [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : Nationalising parts of the economy would violate our coalition agreements! ?]
 view-if: nationalisation_progress = 0
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: {!
 Q.budget -= 1; 
 Q.nationalisation_progress += 1;
@@ -106,6 +108,8 @@ We begin buying out now-defunct or bankrupt companies, repurposing and organisin
 @nationalise_more
 subtitle: -1 Budget - We can continue buying out businesses and empower the workers and consumers to govern. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : Nationalising parts of the economy would violate our coalition agreements! ?]
 view-if: nationalisation_progress > 0
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: {!
 Q.budget -= 1; 
 Q.nationalisation_progress += 1; 

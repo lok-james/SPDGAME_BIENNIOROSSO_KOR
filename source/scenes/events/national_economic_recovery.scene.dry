@@ -65,6 +65,8 @@ Q.national_economic_recovery = 1;
 max-visits: 1
 achievement: risorgimento_economico
 
-= Economic Economic Recovery 
+= National Economic Recovery 
 
 It seems the economy is finally recovering. People are heading back to work, inflation is down to single digits, and our economic forecasts show a positive growth for the first time in months. Regardless of the efforts taken, it seems most of the credit will be given to the current governing coalition, which [? if psi_in_government :fortunately, includes us. ?][? if not psi_in_government :unfortunately, does not include us. ?]
+
+Following our economic recovery, the Financial Ministry will no longer take extreme measures in an attempt to resolve the economic crisis, **meaning that we can no longer go into a deficit**.

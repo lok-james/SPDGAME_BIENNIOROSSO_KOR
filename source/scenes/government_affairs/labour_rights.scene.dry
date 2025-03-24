@@ -51,4 +51,6 @@ The Labour Ministry works on developing and enforcing a standard national minimu
 @unemployment_insurance
 subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
 view-if: not unemployment_insurance_founded
+choose-if: not national_economic_recovery or budget > 1
+unavailable-subtitle: Not enough budget. (Need 2)
 go-to: welfare_gov.unemployment_insurance_program

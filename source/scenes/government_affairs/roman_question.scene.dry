@@ -32,6 +32,8 @@ Now that we are in power, we might be able to resolve this issue with the Holy S
 
 @papal_compensation
 subtitle: -3 Budget [? if liberal_budget_accepted and budget <= 3 : This will put us into a deficit! ?]
+choose-if: not national_economic_recovery or budget >= 3
+unavailable-subtitle: Not enough budget. (Need 3)
 view-if: papal_compensation_offered = 0
 on-arrival: papal_compensation_offered = 1; papal_appeased += 1
 go-to: papal_negotiations

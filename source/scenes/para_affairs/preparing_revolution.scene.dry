@@ -60,5 +60,6 @@ Our preparations seem to have borne fruit, as it seems will be have an advantage
 subtitle: We can begin the revolution! - This will lead us into a civil war.
 view-if: year > 1922 or (year = 1922 and month > 11)
 choose-if: revolutionary_fervour >= 65
+on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
 unavailable-subtitle: The bulk of the party does not support this.
 go-to: civil_war

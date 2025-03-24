@@ -23,6 +23,7 @@ Finally, the PNF has fallen. From a massive party threatening to end Italian dem
 view-if: not communist_split
 choose-if: revolutionary_fervour >= 65
 unavailable-subtitle: The bulk of the party does not support this.
+on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
 go-to: civil_war
 
 @normalcy_refuse
