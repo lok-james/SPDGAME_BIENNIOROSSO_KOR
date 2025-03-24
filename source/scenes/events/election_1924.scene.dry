@@ -71,6 +71,8 @@ for (var party of Q.parties) {
     } else {
         Q[party + '_r'] = Q[party + '_votes'];
     }
+
+    
     // if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {
         Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
@@ -110,6 +112,18 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
     Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
     }
+}
+
+if (Q.prime_minister_party == Q.pnf_name) {
+    Q.pnf_r += parseFloat(Q.ppi_r * 0.2);
+    Q.pnf_r += parseFloat(Q.ul_r * 0.7);
+    Q.pnf_r += parseFloat(Q.ds_r * 0.3);
+    Q.pnf_r += parseFloat(Q.ldr_r * 0.5);
+
+    Q.ppi_r -= parseFloat(Q.ppi_r * 0.2)
+    Q.ul_r -= parseFloat(Q.ul_r * 0.7);
+    Q.ds_r -= parseFloat(Q.ds_r * 0.3);
+    Q.ldr_r -= parseFloat(Q.ldr_r * 0.5); 
 }
 
 // acerbo law
@@ -501,6 +515,8 @@ Anti-Socialist Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_e
 
 [? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in National Fascist Party votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
+[? if prime_minister_party == pnf_name : Numerous deputies of the PPI, UL, DS and LDR have defected to the PNF. ?]
+
 There are some potential coalition arrangements.
 
 @coalition_menu
@@ -877,7 +893,7 @@ if (Q.ldr_enemies == 1) {
 }
 Q.public_works_minister_party = "PNF";
 !}
-view-if: anti_socialist_coalition_r >= 50 and pnf_seating_disp > ul_seating_disp + ldr_seating_disp
+view-if: anti_socialist_coalition_r >= 50 and pnf_seating_disp > ul_seating_disp + ldr_seating_disp and pnf_seating_disp < 50
 
 It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Fascist Party, as a junior partner to their list. [+ pnf_leader +] has made himself crucial to this coalition, and been able to come out on top in the inter-party struggle, being appointed Prime Minister by the King.
 

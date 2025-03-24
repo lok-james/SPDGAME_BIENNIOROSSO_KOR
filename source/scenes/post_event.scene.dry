@@ -822,15 +822,15 @@ if (Q.week_actions >= 1) {
             Q.economic_downturn = 0;
 
             if (Q.return_to_normalcy == 0) {
-                Q.workers_psi -= 2/6*Q.psi_inc_strife*Q.violent_prevalence;
-                Q.middle_class_psi -= 5/6*Q.psi_inc_strife*Q.violent_prevalence;
-                Q.rural_psi -= 3/6*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.workers_psi -= 5/3*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.middle_class_psi -= 7/3*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.rural_psi -= 9/3*Q.psi_inc_strife*Q.violent_prevalence;
             }
 
             if (Q.return_to_normalcy == 1) {
-                Q.workers_psi -= (2/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
-                Q.middle_class_psi -= (5/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
-                Q.rural_psi -= (3/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.workers_psi -= (5/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.middle_class_psi -= (7/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.rural_psi -= (9/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
             }
 
             if (Q.inflation > 5) {
@@ -850,23 +850,23 @@ if (Q.week_actions >= 1) {
             }
 
             if (Q.national_economic_recovery == 0) {
-                Q.workers_psi -= ((Q.economic_downturn * 0.9)/12)*psi_inc_economic;
-                Q.middle_class_psi -= ((Q.economic_downturn * 0.6)/12)*psi_inc_economic;
-                Q.rural_psi -= ((Q.economic_downturn * 0.7)/12)*psi_inc_economic;
-                Q.veterans_psi -= ((Q.economic_downturn)/12)*psi_inc_economic;
-                Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/12)*psi_inc_economic;
-                Q.women_psi -= ((Q.economic_downturn * 0.7)/12)*psi_inc_economic;
-                Q.catholic_psi -= ((Q.economic_downturn * 0.5)/12)*psi_inc_economic;
+                Q.workers_psi -= ((Q.economic_downturn * 0.9)/3)*psi_inc_economic;
+                Q.middle_class_psi -= ((Q.economic_downturn * 0.6)/3)*psi_inc_economic;
+                Q.rural_psi -= ((Q.economic_downturn * 0.7)/3)*psi_inc_economic;
+                Q.veterans_psi -= ((Q.economic_downturn)/3)*psi_inc_economic;
+                Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/3)*psi_inc_economic;
+                Q.women_psi -= ((Q.economic_downturn * 0.7)/3)*psi_inc_economic;
+                Q.catholic_psi -= ((Q.economic_downturn * 0.5)/3)*psi_inc_economic;
             }
 
             if (Q.national_economic_recovery == 1) {
-                Q.workers_psi -= (((Q.economic_downturn * 0.9)/12)*psi_inc_economic)/2;
-                Q.middle_class_psi -= (((Q.economic_downturn * 0.6)/12)*psi_inc_economic)/2;
-                Q.rural_psi -= (((Q.economic_downturn * 0.7)/12)*psi_inc_economic)/2;
-                Q.veterans_psi -= (((Q.economic_downturn)/12)*psi_inc_economic)/2;
-                Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/12)*psi_inc_economic)/2;
-                Q.women_psi -= (((Q.economic_downturn * 0.7)/12)*psi_inc_economic)/2;
-                Q.catholic_psi -= (((Q.economic_downturn * 0.5)/12)*psi_inc_economic)/2;
+                Q.workers_psi -= (((Q.economic_downturn * 0.9)/3)*psi_inc_economic)/2;
+                Q.middle_class_psi -= (((Q.economic_downturn * 0.6)/3)*psi_inc_economic)/2;
+                Q.rural_psi -= (((Q.economic_downturn * 0.7)/3)*psi_inc_economic)/2;
+                Q.veterans_psi -= (((Q.economic_downturn)/3)*psi_inc_economic)/2;
+                Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/3)*psi_inc_economic)/2;
+                Q.women_psi -= (((Q.economic_downturn * 0.7)/3)*psi_inc_economic)/2;
+                Q.catholic_psi -= (((Q.economic_downturn * 0.5)/3)*psi_inc_economic)/2;
             }
         }
  
@@ -1013,6 +1013,15 @@ if (Q.week_actions >= 1) {
             Q.rural_psri -= 3/12;
             Q.veterans_psri -= 1/12;
             Q.women_psri -= 6/12;
+
+            if (Q.acerbo_law_passed) {
+                Q.workers_psi -= 9/9;
+                Q.middle_class_psi -= 12/9;
+                Q.industrialists_psi -= 21/9;
+                Q.rural_psi -= 17/9;
+                Q.veterans_psi -= 9/9;
+                Q.women_psi -= 5/9;
+            }
 
             Q.nationalist_sentiment += 10/12;
 

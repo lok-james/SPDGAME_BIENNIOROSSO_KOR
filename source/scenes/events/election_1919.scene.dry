@@ -299,7 +299,7 @@ if (Q.pnf_in_bn == 1) {
 
 Q.change_bn_r = Q.bn_r - Q.old_bn_r;
 Q.str_change_bn = (Q.str_change_bn).toFixed(1);
-Q.bn_r = (Q.bn_r).toFixed(1);
+Q.bn_r = parseFloat(Q.bn_r).toFixed(1);
 
 var sign = Q.bn_r > 0 
                 ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
