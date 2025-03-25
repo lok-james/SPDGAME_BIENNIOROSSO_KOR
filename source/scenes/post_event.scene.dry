@@ -842,15 +842,15 @@ if (Q.week_actions >= 1) {
             Q.economic_downturn = 0;
 
             if (Q.return_to_normalcy == 0) {
-                Q.workers_psi -= 5/3*Q.psi_inc_strife*Q.violent_prevalence;
-                Q.middle_class_psi -= 7/3*Q.psi_inc_strife*Q.violent_prevalence;
-                Q.rural_psi -= 9/3*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.workers_psi -= 5/6*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.middle_class_psi -= 7/6*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.rural_psi -= 5/6*Q.psi_inc_strife*Q.violent_prevalence;
             }
 
             if (Q.return_to_normalcy == 1) {
-                Q.workers_psi -= (5/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
-                Q.middle_class_psi -= (7/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
-                Q.rural_psi -= (9/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.workers_psi -= (5/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.middle_class_psi -= (7/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.rural_psi -= (5/6*Q.psi_inc_strife*Q.violent_prevalence)/2;
             }
 
             if (Q.inflation > 5) {
