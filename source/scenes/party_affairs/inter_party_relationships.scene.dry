@@ -3,7 +3,7 @@ new-page: true
 view-if: year <= 1922 and inter_party_relationships_timer <= 0 and (not_participating = 0 or prime_minister_party = "PNF")
 tags: party_affairs
 is-card: true
-on-arrival: week_actions += 1; inter_party_relationships_timer = 6;
+on-arrival: week_actions += 1; inter_party_relationships_timer = 4;
 card-image: img/InterPartyRelationships.jpg
 max-visits: 24
 

@@ -43,6 +43,7 @@ go-to: acerbo_menu
 on-arrival: {!
 Q.anti_acerbo_coalition += parseFloat(Q.psri_seating_disp);
 !}
+go-to: acerbo_menu
 
 The PSRI has reassured us that its deputies will be voting against the Acerbo Law.
 

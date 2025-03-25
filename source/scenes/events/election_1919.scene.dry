@@ -649,7 +649,7 @@ if (Q.centre_left_coalition_r >= 50) {
     } else {
         Q.labour_minister_party = Q.ldr_name;
     }
-    Q.finance_minister_party = "PSRI";
+    Q.finance_minister_party = "UL";
     if (Q.ds_allies == 1) {
         Q.treasury_minister_party = "DS"; 
     } else {

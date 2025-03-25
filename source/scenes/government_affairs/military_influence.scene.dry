@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 view-if: psi_in_government and military_influence_timer <= 0
 frequency: 500
-on-arrival: week_actions += 1; military_influence_timer = 6
+on-arrival: week_actions += 1; military_influence_timer = 4
 card-image: img/MilitaryInfluence.jpg
 tags: govt_affairs
 

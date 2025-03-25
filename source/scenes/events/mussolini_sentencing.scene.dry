@@ -15,7 +15,7 @@ We have done all we can. Now we must see if will bare fruit.
 - @trial_results: We await the Judges' decision...
 
 @trial_results
-go-to: mussolini_sentenced if (evidence >= 3 and judicial_reform < 2) or (evidence >= 2 and judicial_reform >= 2); mussolini_exonerated if (evidence < 3 and judicial_reform < 2) or (evidence < 2 and judicial_reform >= 2)
+go-to: mussolini_sentenced if ((evidence >= 3 and judicial_reform < 2) or (evidence >= 2 and judicial_reform >= 2) annd king_relation >= 30); mussolini_exonerated if ((evidence < 3 and judicial_reform < 2) or (evidence < 2 and judicial_reform >= 2)) and king_relation >= 30; mussolini_pardoned if king_relation < 30 
 
 @mussolini_sentenced
 on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.8; middle_class_pnf *= 0.9; fdc_militancy += 0.02; fdc_strength -= 20
@@ -35,3 +35,10 @@ on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.5; industrialists_pnf *= 1.2
 The Judge has ruled in favour of Mussolini, acquitting him of all charges we have placed against him due to 'insufficient evidence'. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.
 
 - @root: Damn it.
+
+@mussolini_pardoned
+on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.8; industrialists_pnf *= 1.4; fdc_strength += 23; fdc_militancy += 0.06; middle_class_psi *= 1.5; pnf_leader = "Mussolini";
+
+= King [+ king +] saves innocent man from PSI's authoritarianism
+
+In an unexpected twist, the King has exercised his constitutional rights, pardoning Mussolini and forcing the Ministry to release him. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.

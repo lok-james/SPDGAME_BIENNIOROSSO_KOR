@@ -2,7 +2,7 @@ title: Shuffle Cabinet
 new-page: true
 is-card: true
 tags: govt_affairs
-on-arrival: shuffle_cabinet_timer = 6;
+on-arrival: shuffle_cabinet_timer = 4;
 view-if: psi_in_government == 1 and shuffle_cabinet_timer <= 0 and prime_minister_party == "PSI" and not in_psi_majority
 card-image: img/ShuffleCabinet.jpg
 

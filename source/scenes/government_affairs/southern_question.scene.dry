@@ -2,7 +2,7 @@ title: Southern Question
 new-page: true
 is-card: true
 view-if: psi_in_government = 1 and (public_works_minister_party = "PSI" or public_education_minister_party = "PSI" or interior_minister_party = "PSI") and southern_question_timer <= 0 and southern_resolved = 0
-on-arrival: week_actions += 1; southern_question_timer += 5;
+on-arrival: week_actions += 1; southern_question_timer += 3;
 card-image: img/SouthernQuestion.jpg
 tags: govt_affairs
 

@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: rally_timer <= 0
-on-arrival: week_actions += 1; rally_timer = 6; disrupt_strength = ((fdc_strength*fdc_militancy) + (ard_strength*ard_militancy) + (abl_strength*abl_militancy))
+on-arrival: week_actions += 1; rally_timer = 4; disrupt_strength = ((fdc_strength*fdc_militancy) + (ard_strength*ard_militancy) + (abl_strength*abl_militancy))
 card-image: img/Rally.jpg
 go-to: main_rally; far_right_disrupt if prime_minister_party = "PNF" and (fdc_banned = 0 and ard_banned = 0 and abl_banned = 0) and not return_to_normalcy
 

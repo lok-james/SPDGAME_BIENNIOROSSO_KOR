@@ -1,12 +1,13 @@
 title: Repeal of the Acerbo Law
 view-if: acerbo_law_passed and psi_in_government and pnf_waiting = 0 and pnf_in_power = 0
+priority: -1
 max-visits: 1
 new-page: true
 tags: event
 
 = Repeal of the Acerbo Law
 
-The Acerbo Law, passed in June 1924, has backfired immensely, giving rise to the PSI rather than the PNF. Now that we are in power, however, we can remove this corrupt law and restore fair democracy to Italy once more.
+The Acerbo Law, passed in July 1923, has backfired immensely, giving rise to the PSI rather than the PNF. Now that we are in power, however, we can remove this corrupt law and restore fair democracy to Italy once more.
 
 - @remove_acerbo: Get rid of the Law.
 - @keep_acerbo: Actually...

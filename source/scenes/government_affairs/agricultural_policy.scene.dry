@@ -1,7 +1,7 @@
 title: Agricultural Policy
 new-page: true
 is-card: true
-on-arrival: week_actions += 1; agricultural_policy_timer = 5;
+on-arrival: week_actions += 1; agricultural_policy_timer = 3;
 view-if: psi_in_government and agriculture_minister_party = "PSI" and agricultural_policy_timer <= 0
 frequency: 500
 card-image: img/portraits/AntonioGraziadei.jpg
@@ -20,14 +20,14 @@ With control of the Agricultural Ministry in the hands of the PSI, it seems ther
 
 @support_coops
 subtitle: Support cooperatives via legal means and aid them.
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; rural_psi += 4*(1-dissent) if not in_unstable_coalition; rural_clc += 4*(1-dissent) if centre_left_coalition; rural_scc += 4*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent); socialist_sentiment += 2;
+on-arrival: coalition_dissent += 1 if centre_left_coalition; rural_psi += 4*(1-dissent) if not in_unstable_coalition; rural_clc += 4*(1-dissent) if centre_left_coalition; rural_scc += 4*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent); socialist_sentiment += 2;
 view-if: cooperatives_support = 0
 
 We are able to utilise the Ministry to support peasants and cooperatives, protecting them using legal means.
 
 @support_coops_2
 subtitle: Continue the supporting peasant cooperatives and aiding them.
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; rural_psi += 5*(1-dissent) if not in_unstable_coalition; rural_clc += 5*(1-dissent) if centre_left_coalition; rural_scc += 5*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 5; ds_relation -= 3; labour_strength += 17; cooperatives_support += 1; psri_relation += 5*(1-dissent); socialist_sentiment += 3;
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; rural_psi += 5*(1-dissent) if not in_unstable_coalition; rural_clc += 5*(1-dissent) if centre_left_coalition; rural_scc += 5*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 5; ul_relation -= 5; ds_relation -= 3; labour_strength += 9; cooperatives_support += 1; psri_relation += 5*(1-dissent); socialist_sentiment += 3;
 view-if: cooperatives_support >=1
 max-visits: 2
 
@@ -47,17 +47,21 @@ if (Q.in_unstable_coalition == 1) {
 
 if (Q.in_unstable_coalition == 0) {
     Q.rural_psi += 3*(1-Q.dissent);
+    Q.middle_class_psi -= 2*(1-Q.dissent);
 }
 
 if (Q.centre_left_coalition == 1) {
     Q.rural_clc += 3*(1-Q.dissent);
+    Q.middle_class_clc -= 2*(1-Q.dissent);
 }
 
 if (Q.socialist_catholic_coalition == 1) {
     Q.rural_scc += 3*(1-Q.dissent);
+    Q.middle_class_scc -= 2*(1-Q.dissent);
 }
 
 Q.rural_pnf -= 2*(1-Q.dissent);
+Q.middle_class_pnf += 1*(1-Q.dissent);
 
 if (Q.unemployment >= 8) {
     Q.unemployment -= 0.2
@@ -91,7 +95,7 @@ We are able to seize land form large estate, mostly uncultivated land and hand t
 subtitle: -1 Budget - Increase financing for agricultural credit and insurance. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
-on-arrival: budget -= 1; agricultural_policy += 1; ldr_promise_failed = 1 if budget < 0 and liberal_budget_accepted; rural_psi += 7*(1-dissent) if not in_unstable_coalition; rural_clc += 7*(1-dissent) if centre_left_coalition; rural_scc += 7*(1-dissent) if socialist_catholic_coalition; rural_pnf -= 3*(1-dissent); unemployment -= 0.3 if unemployment >= 8; communist_dissent += 5; maximalist_dissent += 5; economic_growth += 0.2; economic_growth += 0.3 if economic_growth < 0
+on-arrival: budget -= 1; agricultural_policy += 1; ldr_promise_failed = 1 if budget < 0 and liberal_budget_accepted; rural_psi += 7*(1-dissent) if not in_unstable_coalition; rural_clc += 7*(1-dissent) if centre_left_coalition; rural_scc += 7*(1-dissent) if socialist_catholic_coalition; rural_pnf -= 3*(1-dissent); unemployment -= 0.3 if unemployment >= 8; communist_dissent += 8; maximalist_dissent += 6; labour_dissent += 3; economic_growth += 0.2; economic_growth += 0.3 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed == 1
 
 We have increased financial support for small farmers, providing aid through credit and insurance. The left and maximalists are unsurprisingly opposed to our policies, seeing them as handouts to petite-bourgeois farmers.

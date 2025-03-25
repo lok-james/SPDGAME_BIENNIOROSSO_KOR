@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: king_relation_timer <= 0 and not_participating = 0
-on-arrival: week_actions += 1; king_relation_timer = 6;
+on-arrival: week_actions += 1; king_relation_timer = 4;
 card-image: img/portraits/VitorioEmanuel.jpg
 
 = Royal Relations

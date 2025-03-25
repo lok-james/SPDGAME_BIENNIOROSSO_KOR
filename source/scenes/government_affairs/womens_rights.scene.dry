@@ -4,7 +4,7 @@ is-card: true
 view-if: psi_in_government and womens_rights_timer <= 0
 on-arrival: {!
 Q.week_actions += 1; 
-Q.womens_rights_timer = 5; 
+Q.womens_rights_timer = 3; 
 
 Q.suffrage_support = parseFloat(Q.psi_seating_disp) + parseFloat(Q.ppi_seating_disp) + parseFloat(Q.pri_seating_disp) + parseFloat(Q.psri_seating_disp); 
 

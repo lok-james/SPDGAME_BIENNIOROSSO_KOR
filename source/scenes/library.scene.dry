@@ -38,13 +38,13 @@ go-to: menu
 
 **1892**: The PSI is officially founded in Genoa, caused by the rise of labour, socialism and dissatisfaction with the political system. It is divided between the Reformists & Revolutionaries, growing throughout the rest of the Century into a coalition of Communists to Social Democrats.
 
-**1889**: Protests are violently suppressed by the Italian government, leading to political radicalisation of the working class and an increase in PSI popularity.
+**1898**: Protests are violently suppressed by the Italian government, leading to political radicalisation of the working class and an increase in PSI popularity.
 
 **1900**: King Umberto I is assassinated by an anarchist, further heightening tensions.
 
 **1914**: World War One begins. Parties are divided on the Italian stance towards the war, though the PSI adopts a neutrality stance against the war and opposes any intervention in the conflict.
 
-**1915**: Italy joins World War One on the side of the Entente after signing the Treaty of London The PSI fractures as more radical members supported the war whilst others remained anti-war, resulting in members like Benito Mussolini being kicked out of the party.
+**1915**: Italy joins World War One on the side of the Entente after signing the Treaty of London. The PSI fractures as more radical members support the war whilst others remained anti-war, resulting in members like Benito Mussolini being kicked out of the party.
 
 **1917**: Increased war exhaustion and discontent increases the PSI's popularity, as many become frustrated with Italy's involvement in World War One.
 
@@ -201,11 +201,11 @@ Current relations: [+ ds_relation : relationships +]
 
 Current relations: [+ ppi_relation : relationships +]
 
-**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leader of Prime Minister who ended the First World War.
+**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leadership of Vittorio Emanuele Orlando, former Prime Minister.
 
 Current relations: [+ ldr_relation : relationships +]
 
-**[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - A centre-right party that remained as the remaining members that weren't merged into the [+ ldr_name +]. 
+**[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - A centre-right party that remained as remnants of the party that refused to merge to form the [+ ldr_name +], led by Giovanni Giolitti.
 
 Current relations: [+ ul_relation : relationships +]
 
