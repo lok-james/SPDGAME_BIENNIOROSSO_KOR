@@ -5,7 +5,7 @@ view-if: ((ldr_left > ldr_right and ldr_left > ldr_moderates and not ldr_leader 
 on-arrival: ldr_emergency_timer = 18; ldr_congresses += 1; industrialists_ldr -= 1*ldr_congresses; middle_class_ldr -= 1*ldr_congresses;
 tags: event
 
-= [+ year +] [+ ldr_Name +] Emergency Congress
+= [+ year +] [+ ldr_name +] Emergency Congress
 
 It seems recent developments within the Italian political sphere has prompted a reorientation of the [+ ldr_full_name +]'s internal politics, as it seems a strong opposition towards [+ ldr_leader +]'s leadership has been challenged. On one end is Francesco Saverio Nitti, a Centrist Liberal[? if not prime_minister = "Nitti": and former Prime Minister.?][? if prime_minister = "Nitti" : and current Prime Minister.?] He aligns with the moderate to left-wing of the party, though that isn't to say he'd be willing to work with us in the slightest.
 
