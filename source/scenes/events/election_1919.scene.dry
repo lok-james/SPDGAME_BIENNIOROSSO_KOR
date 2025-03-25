@@ -132,6 +132,13 @@ for (var party of Q.parties) {
     Q[party + '_seating_disp'] = parseFloat(Q[party + '_seating_disp'].toFixed(1));
 }
 
+if (Q.abstentionist_psi) {
+    Q.vacant_seating = Q.psi_seating;
+    Q.vacant_seating_disp = Q.psi_seating_disp;
+    Q.psi_seating = 0;
+    Q.psi_seating_disp = 0;
+}
+
 // The largest party can only be the PNF or the PSI.
 Q.largest_party = 'PSI';
 if (Q.pnf_seating_disp >= Q.psi_seating_disp && Q.pnf_seating_disp >= Q.psri_seating_disp && Q.pnf_seating_disp >= Q.pcdi_seating_disp) {
@@ -336,6 +343,15 @@ data.push({
     "seats": Math.round(Q.psi_seating),
 });
 
+if (Q.abstentionist_psi) {
+    data.push({
+        "id": "vacant",
+        "legend": "Vacant",
+        "name": "Vacant",
+        "seats": Math.round(Q.vacant_seating),
+    });
+}
+
 if (Q.psu_formed && Q.psu_seating_disp) {
     data.push({
         "id": "psu",
@@ -443,7 +459,7 @@ go-to: coalition_menu
 
 {!<table>!}
 {!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td><td>% Seats</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
+[? if not abstentionist_psi : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} PSI: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
@@ -466,6 +482,8 @@ go-to: coalition_menu
 [? if not pnf_in_bn : {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +]% {!</td></tr>!}
+
+[? if abstentionist_psi : {!<tr><td><div class="box" style='background-color:#FFFFFF'> </div>!} Vacant: {!</td><td>!} N/A {!</td><td>!} N/A {!</td><td>!} [+ vacant_seating +] {!</td><td>!} [+ vacant_seating_disp +]% {!</td></tr>!} ?]
 {!</table>!}
 
 **Potential Coalitions:**
@@ -483,6 +501,8 @@ Centre-Right Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_ene
 Anti-Socialist Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_enemies: + [+ ldr_name +]?]): [+ anti_socialist_coalition_r +]%
 
 [? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in [+ pnf_name +] votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+
+[? if abstentionist_psi : In accordance with the XVI Congress, all PSI deputies will refuse to take up their seats. ?]
 
 There are some potential coalition arrangements.
 

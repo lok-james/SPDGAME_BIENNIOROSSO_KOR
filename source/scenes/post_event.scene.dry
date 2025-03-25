@@ -967,17 +967,17 @@ if (Q.week_actions >= 1) {
             Q.veterans_other += 3/12;
         }
 
-        if (Q.anti_monarchist_sentiment > 30 && Q.pri_prominent == 1) {
+        if (Q.anti_monarchist_sentiment > 30 && Q.pri_prominent == 1 && Q.pri_votes < 12) {
             Q.middle_class_pri += 2/12;
             Q.rural_pri += 1/12;
             Q.veterans_pri += 1/12;
         }
-        if (Q.anti_monarchist_sentiment > 50 && Q.pri_prominent == 1) {
+        if (Q.anti_monarchist_sentiment > 50 && Q.pri_prominent == 1 && Q.pri_votes < 12) {
             Q.middle_class_pri += 3/12;
             Q.rural_pri += 2/12;
             Q.veterans_pri += 2/12;
         }
-        if (Q.anti_monarchist_sentiment > 70 && Q.pri_prominent == 1) {
+        if (Q.anti_monarchist_sentiment > 70 && Q.pri_prominent == 1 && Q.pri_votes < 12) {
             Q.middle_class_pri += 4/12;
             Q.rural_pri += 1/12;
             Q.veterans_pri += 3/12;

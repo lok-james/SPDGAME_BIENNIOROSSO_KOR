@@ -575,6 +575,12 @@ table {
   fill: #002d6d;
 }
 
+.seat.vacant {
+  fill: #FFFFFF;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
 .tooltip-text {
     text-decoration: underline;
     text-decoration-style: dotted;
