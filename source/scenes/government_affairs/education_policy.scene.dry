@@ -79,7 +79,7 @@ if (Q.socialist_catholic_coalition == 1) {
 }
 Q.psri_relation += 2*(1-Q.dissent);
 Q.pri_relation += 5*(1-Q.dissent);
-Q.socialist_sentiment += 2;
+Q.socialist_sentiment += 1;
 Q.republican_sentiment += 3*Q.education_reformed;
 Q.ppi_right += 0.3;
 Q.ppi_left -= 0.1;

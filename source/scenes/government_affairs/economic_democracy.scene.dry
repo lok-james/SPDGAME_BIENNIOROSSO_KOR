@@ -26,7 +26,7 @@ Now that we are in control of the Labour and Social Security Ministry, we can ap
 
 @support_work_councils
 subtitle: Give factory worker's councils greater influence in their workplace.
-on-arrival: coalition_dissent += 1 if centre_left_coalition; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; labour_dissent -= 4; ldr_relation -= 9; ul_relation -= 7; labour_strength += 4; syndicalist_strength += 6; syndicalist_dissent -= 6 if syndicalist_active; work_councils += 1; industrialists_pnf += 4; industrialists_psi -= 4*(1-dissent) if not in_unstable_coalition; industrialists_clc -= 4*(1-dissent) if centre_left_coalition; industrialists_scc -= 4*(1-dissent) if socialist_catholic_coalition; psri_relation += 5*(1-dissent); socialist_sentiment += 4;
+on-arrival: coalition_dissent += 1 if centre_left_coalition; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; labour_dissent -= 4; ldr_relation -= 9; ul_relation -= 7; labour_strength += 4; syndicalist_strength += 6; syndicalist_dissent -= 6 if syndicalist_active; work_councils += 1; industrialists_pnf += 4; industrialists_psi -= 4*(1-dissent) if not in_unstable_coalition; industrialists_clc -= 4*(1-dissent) if centre_left_coalition; industrialists_scc -= 4*(1-dissent) if socialist_catholic_coalition; psri_relation += 5*(1-dissent);
 view-if: work_councils = 0 and councils_empowered = 0
 
 The Turin Factory Councils, a small group of unionised factories under worker-led governments, have received official support from the PSI-led government, granting them legitimacy across Italy. Already, demonstrations are occuring throughout Italy, as workers have begun establish workers councils in their workplaces.
@@ -35,7 +35,7 @@ The liberals, with their industrialist backers, are unsurprisingly outraged by t
 
 @support_work_councils_2
 subtitle: Continue the expansion of influence for worker's councils.
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; workers_psi += 3*(1-dissent)*work_councils if not in_unstable_coalition; workers_clc += 3*(1-dissent)*work_councils if centre_left_coalition; workers_scc += 3*(1-dissent)*work_councils if socialist_catholic_coalition; labour_dissent -= 6; syndicalist_dissent -= 9 if syndicalist_active; ldr_relation -= 7; ul_relation -= 12; ppi_relation -= 2; labour_strength += 7; syndicalist_strength += 10; work_councils += 1; radicalisation += 0.5; industrialists_pnf += 6; industrialists_psi -= 6*(1-dissent) if not in_unstable_coalition; industrialists_clc -= 6*(1-dissent) if centre_left_coalition; industrialists_scc -= 6*(1-dissent) if socialist_catholic_coalition; psri_relation += 5*(1-dissent); socialist_sentiment += 3*work_councils;
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; workers_psi += 3*(1-dissent)*work_councils if not in_unstable_coalition; workers_clc += 3*(1-dissent)*work_councils if centre_left_coalition; workers_scc += 3*(1-dissent)*work_councils if socialist_catholic_coalition; labour_dissent -= 6; syndicalist_dissent -= 9 if syndicalist_active; ldr_relation -= 7; ul_relation -= 12; ppi_relation -= 2; labour_strength += 7; syndicalist_strength += 10; work_councils += 1; radicalisation += 0.5; industrialists_pnf += 6; industrialists_psi -= 6*(1-dissent) if not in_unstable_coalition; industrialists_clc -= 6*(1-dissent) if centre_left_coalition; industrialists_scc -= 6*(1-dissent) if socialist_catholic_coalition; psri_relation += 5*(1-dissent); socialist_sentiment += 2;
 view-if: work_councils >= 1 and councils_empowered = 0
 
 Worker's councils are now given official recognition and further control of their factories, giving workers more of a voice as they are now able to have direct input into the operations. 
@@ -47,7 +47,7 @@ subtitle: This will ruin our relations with the Liberals.
 view-if: councils_empowered = 1 
 choose-if: (king_relation >= 50 or veto_removed) and not centre_left_coalition
 unavailable-subtitle: [? if king_relation < 50 : The Senate and King would kill the bill the moment it reaches them. ?][? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this is proposed. ?]
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 17; ds_relation -= 17; labour_strength += 12; syndicalist_strength += 17; labour_dissent -= 17; syndicalist_dissent -= 20 if syndicalist_active; radicalisation += 1; industrialists_pnf += 7; industrialists_ldr -= 4; industrialists_ds -= 5; industrialists_ul -= 4; workers += 3; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent); socialist_sentiment += 9; ldr_left -= 2; ds_left -= 2;
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 17; ds_relation -= 17; labour_strength += 12; syndicalist_strength += 17; labour_dissent -= 17; syndicalist_dissent -= 20 if syndicalist_active; radicalisation += 1; industrialists_pnf += 7; industrialists_ldr -= 4; industrialists_ds -= 5; industrialists_ul -= 4; workers += 3; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent); socialist_sentiment += 7; ldr_left -= 2; ds_left -= 2;
 
 The *Factory Control Act*, signed in 1922 as an agreement to end the Turin workers conflict, has made its way onto the Chamber's floor once more, proposed now to be expanded across the country, giving the worker's councils extensive power within their workplace to act against the bourgeois businessmen and the industrialists.
 
@@ -88,7 +88,7 @@ Q.ul_relation -= 7;
 Q.communist_strength += 5;
 Q.communist_dissent -= 7;
 Q.syndicalist_strength += 4;
-Q.socialist_sentiment += 4;
+Q.socialist_sentiment += 2;
 if (Q.liberal_nationalisation_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
@@ -140,7 +140,7 @@ Q.ul_relation -= 4;
 Q.communist_strength += 7; 
 Q.communist_dissent -= 9;
 Q.syndicalist_strength += 4;
-Q.socialist_sentiment += 3*Q.nationalisation_progress;
+Q.socialist_sentiment += 3;
 if (Q.liberal_nationalisation_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }

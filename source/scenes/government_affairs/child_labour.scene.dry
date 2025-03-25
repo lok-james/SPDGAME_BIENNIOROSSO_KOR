@@ -24,7 +24,7 @@ Child Labour is rampant throughout Italy, especially the Southern regions. The p
 @child_safety
 choose-if: labour_minister_party = "PSI"
 unavailable-subtitle: We do not control the Labour Ministry.
-on-arrival: child_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; capital_strike_progress += 1 if child_safety >= 3; socialist_sentiment += 1*child_safety;
+on-arrival: child_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; capital_strike_progress += 1 if child_safety >= 3; socialist_sentiment += 2 if child_safety >= 3;
 
 The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for children in the workforce. [? if child_safety >= 3 : Businesses have begun to argue that our focus on safety, even for children, is overbearing and unnecessary, interfering with the economy. ?]
 

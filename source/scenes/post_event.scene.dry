@@ -22,6 +22,8 @@ if (Q.reformist_seen == 1) {
     Q.reformist_seen = 0;
 }
 
+// funny
+
 if (Q.year == 1920 && Q.month == 6 && Q.week == 1 && Q.wacky_on == 1 && Q.mussolini_jailed == 0) {
     var chance = Math.floor(Math.random() * 101);
     if (chance == 50) {
@@ -113,7 +115,7 @@ if (Q.army_loyalty < 0) {
 
 for (var classes of Q.classes) {
     if (Q[classes+ '_clc'] != 0) {
-        Q[classes+ '_psi'] += Q[classes+ '_clc'];
+        Q[classes+ '_psi'] += Q[classes+ '_clc']/2;
         Q[classes+ '_psri'] += Q[classes+ '_clc']/8;
         Q[classes+ '_ldr'] += Q[classes+ '_clc']/8;
 
@@ -134,7 +136,7 @@ for (var classes of Q.classes) {
     }
 
     if (Q[classes+ '_scc'] != 0) {
-        Q[classes+ '_psi'] += Q[classes+ '_scc'];
+        Q[classes+ '_psi'] += Q[classes+ '_scc']/2;
         Q[classes+ '_psri'] += Q[classes+ '_scc']/8;
         Q[classes+ '_ppi'] += Q[classes+ '_scc']/8;
 
@@ -161,7 +163,7 @@ for (var c of Q.classes) {
         while (needs_scaling) {
             needs_scaling = false;
             for (var party of Q.parties) {
-                if (Q[c+'_'+party] > 250) {
+                if (Q[c+'_'+party] > 500) {
                     needs_scaling = true;
                     break; // If any value is too high, we'll rescale
                 }
@@ -411,11 +413,11 @@ if (Q.week_actions >= 1) {
 
 
         /////////////////////////////// update opinions based on economy, lets the other parties gain support if you're incompetent, turns people towards radicalisation as well
-        if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
+        if (Q.unemployment > 15 && Q.socialist_sentiment > 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
-            Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
-            Q.workers_pnf -= 4/12;
+            Q.workers_psi += 3/12*Q.revolutionary_exhaustion;
+            Q.workers_pnf += 3/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
             }
@@ -425,36 +427,36 @@ if (Q.week_actions >= 1) {
             Q.ppi_left += 1/12;
             Q.ppi_moderates -= 1/12;
         }
-        if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 0) {
+        if (Q.unemployment > 30 && Q.socialist_sentiment > 20 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
-            Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
-            Q.workers_pnf -= 4/12;
+            Q.workers_psi += 3/12*Q.revolutionary_exhaustion;
+            Q.workers_pnf += 3/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
             }
             if (Q.psu_formed == 1) {
-                Q.workers_psu += 6/12
+                Q.workers_psu += 3/12
             }
             Q.ldr_left += 1/12;
             Q.ldr_moderates -= 1/12;
         }
-        if (Q.inflation >= 12 && Q.republican_sentiment > 40 && Q.psi_in_government == 0) {
+        if (Q.inflation >= 12 && Q.socialist_sentiment > 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
-            Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
+            Q.workers_psi += 3/12*Q.revolutionary_exhaustion;
             Q.workers_pnf -= 4/12;
             if (Q.pcdi_formed == 1) {
                 Q.workers_pcdi += 6/12
             }
             if (Q.psu_formed == 1) {
-                Q.workers_psu += 6/12
+                Q.workers_psu += 3/12
             }
             Q.ds_left += 1/12;
             Q.ds_moderates -= 1/12;
         }
 
-        if (Q.unemployment > 15 && Q.republican_sentiment > 40 && Q.psi_in_government == 1) {
+        if (Q.unemployment > 15 && Q.socialist_sentiment < 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
             Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
@@ -468,7 +470,7 @@ if (Q.week_actions >= 1) {
             Q.ppi_left -= 1/12;
             Q.ppi_moderates += 1/12;
         }
-        if (Q.unemployment > 30 && Q.republican_sentiment > 20 && Q.psi_in_government == 1) {
+        if (Q.unemployment > 30 && Q.socialist_sentiment < 20 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
             Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
@@ -482,7 +484,7 @@ if (Q.week_actions >= 1) {
             Q.ldr_left -= 1/12;
             Q.ldr_moderates += 1/12; 
         }
-        if (Q.inflation >= 12 && Q.republican_sentiment > 40 && Q.psi_in_government == 1) {
+        if (Q.inflation >= 12 && Q.socialist_sentiment < 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
             Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
@@ -499,7 +501,7 @@ if (Q.week_actions >= 1) {
 
         ///////////////////////////// change party support based on socialist sentiment
         // if socialist_sentiment is less than the support of left wing parties, reduce PSI support...
-        if (Q.socialist_sentiment < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
+        if (Q.socialist_sentiment/2 < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
             if (Q.industrialists_psi > 0) {
                 Q.industrialists_psi -= 4/12*Q.revolutionary_exhaustion;
                 Q.industrialists_pnf += 2/12;
@@ -720,7 +722,7 @@ if (Q.week_actions >= 1) {
                     Q.middle_class_ppi += 6/12;
                 }
                 if (Q.rural_ppi_normalised < 20) {
-                    Q.middle_class_ppi += 6/12;
+                    Q.rural_ppi += 6/12;
                 }
                 if (Q.rural_ds_normalised < 40) {
                     Q.rural_ds += 6/12;
@@ -840,15 +842,15 @@ if (Q.week_actions >= 1) {
             Q.economic_downturn = 0;
 
             if (Q.return_to_normalcy == 0) {
-                Q.workers_psi -= 5*Q.psi_inc_strife*Q.violent_prevalence;
-                Q.middle_class_psi -= 7*Q.psi_inc_strife*Q.violent_prevalence;
-                Q.rural_psi -= 9*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.workers_psi -= 5/3*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.middle_class_psi -= 7/3*Q.psi_inc_strife*Q.violent_prevalence;
+                Q.rural_psi -= 9/3*Q.psi_inc_strife*Q.violent_prevalence;
             }
 
             if (Q.return_to_normalcy == 1) {
-                Q.workers_psi -= (5*Q.psi_inc_strife*Q.violent_prevalence)/2;
-                Q.middle_class_psi -= (7*Q.psi_inc_strife*Q.violent_prevalence)/2;
-                Q.rural_psi -= (9*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.workers_psi -= (5/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.middle_class_psi -= (7/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
+                Q.rural_psi -= (9/3*Q.psi_inc_strife*Q.violent_prevalence)/2;
             }
 
             if (Q.inflation > 5) {
@@ -868,27 +870,27 @@ if (Q.week_actions >= 1) {
             }
 
             if (Q.national_economic_recovery == 0) {
-                Q.workers_psi -= ((Q.economic_downturn))*psi_inc_economic;
-                Q.middle_class_psi -= ((Q.economic_downturn * 0.8))*psi_inc_economic;
-                Q.rural_psi -= ((Q.economic_downturn * 0.7))*psi_inc_economic;
-                Q.veterans_psi -= ((Q.economic_downturn * 1.2))*psi_inc_economic;
-                Q.industrialists_psi -= ((Q.economic_downturn * 0.3))*psi_inc_economic;
-                Q.women_psi -= ((Q.economic_downturn * 0.8))*psi_inc_economic;
-                Q.catholic_psi -= ((Q.economic_downturn * 0.6))*psi_inc_economic;
+                Q.workers_psi -= ((Q.economic_downturn)/3)*psi_inc_economic;
+                Q.middle_class_psi -= ((Q.economic_downturn * 0.8)/3)*psi_inc_economic;
+                Q.rural_psi -= ((Q.economic_downturn * 0.7)/3)*psi_inc_economic;
+                Q.veterans_psi -= ((Q.economic_downturn * 1.2)/3)*psi_inc_economic;
+                Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/3)*psi_inc_economic;
+                Q.women_psi -= ((Q.economic_downturn * 0.8)/3)*psi_inc_economic;
+                Q.catholic_psi -= ((Q.economic_downturn * 0.6)/3)*psi_inc_economic;
             }
 
             if (Q.national_economic_recovery == 1) {
-                Q.workers_psi -= (((Q.economic_downturn))*psi_inc_economic)/2;
-                Q.middle_class_psi -= (((Q.economic_downturn * 0.8))*psi_inc_economic)/2;
-                Q.rural_psi -= (((Q.economic_downturn * 0.7))*psi_inc_economic)/2;
-                Q.veterans_psi -= (((Q.economic_downturn * 1.2))*psi_inc_economic)/2;
-                Q.industrialists_psi -= (((Q.economic_downturn * 0.3))*psi_inc_economic)/2;
-                Q.women_psi -= (((Q.economic_downturn * 0.8))*psi_inc_economic)/2;
-                Q.catholic_psi -= (((Q.economic_downturn * 0.6))*psi_inc_economic)/2;
+                Q.workers_psi -= (((Q.economic_downturn)/3)*psi_inc_economic)/2;
+                Q.middle_class_psi -= (((Q.economic_downturn * 0.8)/3)*psi_inc_economic)/2;
+                Q.rural_psi -= (((Q.economic_downturn * 0.7)/3)*psi_inc_economic)/2;
+                Q.veterans_psi -= (((Q.economic_downturn * 1.2)/3)*psi_inc_economic)/2;
+                Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/3)*psi_inc_economic)/2;
+                Q.women_psi -= (((Q.economic_downturn * 0.8)/3)*psi_inc_economic)/2;
+                Q.catholic_psi -= (((Q.economic_downturn * 0.6)/3)*psi_inc_economic)/2;
             }
         }
  
-        if (Q.socialist_catholic_coalition == 1 && Q.coalition_dissent < 3 || Q.centre_left_coalition == 1 && Q.coalition_dissent < 3) {
+        if (Q.socialist_catholic_coalition == 1 && Q.coalition_dissent < 2 || Q.centre_left_coalition == 1 && Q.coalition_dissent < 3) {
             Q.king_relation += 3/6;
 
             if (Q.radicalisation > 8) {
@@ -1068,7 +1070,7 @@ if (Q.week_actions >= 1) {
                 Q.women_pcdi -= 2/12;
             }
 
-            if (Q.republican_sentiment > Q.nationalist_sentiment) {
+            if (Q.republican_sentiment > Q.nationalist_sentiment + Q.socialist_sentiment) {
                 Q.workers_psri += 1/12;
                 Q.middle_class_psri += 3/12;
                 Q.industrialists_psri += 1/12;
@@ -1083,27 +1085,27 @@ if (Q.week_actions >= 1) {
                 Q.women_psu += 1/12;
 
                 if (Q.radicalisation < 5) {
-                    Q.workers_psi += 2/12;
-                    Q.middle_class_psi += 3/12;
-                    Q.industrialists_psi += 2/12;
-                    Q.rural_psi += 3/12;
-                    Q.veterans_psi += 1/12;
-                    Q.women_psi += 1/12;
+                    Q.workers_psi += 2/24;
+                    Q.middle_class_psi += 3/24;
+                    Q.industrialists_psi += 2/24;
+                    Q.rural_psi += 2/24;
+                    Q.veterans_psi += 1/24;
+                    Q.women_psi += 1/24;
                 }
             }
 
-            if (Q.socialist_sentiment > Q.nationalist_sentiment) {
+            if (Q.socialist_sentiment > Q.nationalist_sentiment + Q.republican_sentiment) {
                 Q.workers_pcdi += 1/12;
                 Q.rural_pcdi += 1/12;
                 Q.veterans_pcdi += 4/12;
 
                 if (Q.radicalisation >= 5) {
-                    Q.workers_psi += 2/12;
-                    Q.middle_class_psi += 1/12;
-                    Q.industrialists_psi += 2/12;
-                    Q.rural_psi += 3/12;
-                    Q.veterans_psi += 3/12;
-                    Q.women_psi += 1/12;
+                    Q.workers_psi += 2/24;
+                    Q.middle_class_psi += 1/24;
+                    Q.industrialists_psi += 2/24;
+                    Q.rural_psi += 3/24;
+                    Q.veterans_psi += 3/24;
+                    Q.women_psi += 1/24;
                 }
             }
         }

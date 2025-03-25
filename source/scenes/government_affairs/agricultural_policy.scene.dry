@@ -20,14 +20,14 @@ With control of the Agricultural Ministry in the hands of the PSI, it seems ther
 
 @support_coops
 subtitle: Support cooperatives via legal means and aid them.
-on-arrival: coalition_dissent += 1 if centre_left_coalition; rural_psi += 4*(1-dissent) if not in_unstable_coalition; rural_clc += 4*(1-dissent) if centre_left_coalition; rural_scc += 4*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent); socialist_sentiment += 2;
+on-arrival: coalition_dissent += 1 if centre_left_coalition; rural_psi += 4*(1-dissent) if not in_unstable_coalition; rural_clc += 4*(1-dissent) if centre_left_coalition; rural_scc += 4*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent);
 view-if: cooperatives_support = 0
 
 We are able to utilise the Ministry to support peasants and cooperatives, protecting them using legal means.
 
 @support_coops_2
 subtitle: Continue the supporting peasant cooperatives and aiding them.
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; rural_psi += 5*(1-dissent) if not in_unstable_coalition; rural_clc += 5*(1-dissent) if centre_left_coalition; rural_scc += 5*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 5; ul_relation -= 5; ds_relation -= 3; labour_strength += 9; cooperatives_support += 1; psri_relation += 5*(1-dissent); socialist_sentiment += 3;
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; rural_psi += 5*(1-dissent) if not in_unstable_coalition; rural_clc += 5*(1-dissent) if centre_left_coalition; rural_scc += 5*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 5; ul_relation -= 5; ds_relation -= 3; labour_strength += 9; cooperatives_support += 1; psri_relation += 5*(1-dissent); socialist_sentiment += 2*(1-dissent);
 view-if: cooperatives_support >=1
 max-visits: 2
 

@@ -450,7 +450,7 @@ Q.ds_in_bn  = 0;
 Q.ul_in_bn = 0;
 Q.pnf_in_bn = 0;
 
-Q.violent_prevalence = 1;
+Q.violent_prevalence = 0.47;
 Q.psi_time_in_gov = 0;
 Q.psi_inc_strife = 1;
 Q.psi_inc_economic = 1;
