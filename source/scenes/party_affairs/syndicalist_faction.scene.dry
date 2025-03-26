@@ -14,7 +14,7 @@ The Unione Sindacale Italiana, also known as the Italian Syndicalist Union, spli
 - @support_syn: Support the syndicalist movement.
 - @no_new_ideas: We don't need any new ideas.
 
-@support_neo
+@support_syn
 on-arrival: syndicalist_strength += 10; syndicalist_active = 1; reformist_dissent += 7; maximalist_dissent += 5; communist_dissent += 7; labour_dissent *= 1.5;
 
 We support the new leaders, and start using new-style propaganda techniques in our campaigns. The results are uncertain so far...

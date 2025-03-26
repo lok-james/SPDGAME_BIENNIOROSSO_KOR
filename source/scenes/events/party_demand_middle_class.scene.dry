@@ -33,7 +33,7 @@ on-arrival: budget -= 1; ldr_relation += 5; ul_relation += 5; labour_dissent += 
 
 This is an unpopular move within the party, and is seen handouts to the petite-bourgeois. The loans however, are able to keep businesses afloat temporarily.
 
-@curriculum_reform
+@middle_class_demand_reform
 view-if: education_reformed < 3
 on-arrival: {!
 Q.education_reformed += 1;
