@@ -1,0 +1,46 @@
+title: Trade School funding gutted
+subtitle: Public Education Minister [+ public_education_minister +] is gutting our trade school funding.
+view-if: public_education_minister_party == ldr_name and budget < 0 and gov_public_education_timer <= 0 and gov_cooldown_timer <= 0 and trade_school_funded > 0
+on-arrival: {! 
+
+Q.gov_cooldown_timer = 3;
+Q.gov_public_education_timer = 9;
+
+Q.trade_school_funded -= 1; 
+Q.budget += 1;
+
+Q.workers_psi += 3*(1-Q.dissent); 
+Q.rural_psi += 1*(1-Q.dissent); 
+Q.middle_class_psi += 1*(1-Q.dissent);
+
+Q.workers_ldr -= 4*(1-Q.dissent); 
+Q.rural_ldr -= 4*(1-Q.dissent); 
+Q.middle_class_ldr -= 2*(1-Q.dissent);
+Q.industrialists_ldr += 5*(1-Q.dissent);
+
+Q.inflation -= 0.4;
+Q.economic_growth -= 0.3;
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 1.1;
+}
+
+if (Q.unemployment >= 4 && Q.unemployment < 8) {
+    Q.unemployment -= 0.4;
+}
+
+if (Q.unemployment < 4) {
+    Q.unemployment -= 0.2;
+}
+!}
+
+new-page: true
+tags: event
+
+= [+ public_education_minister +] guts funding for Trade Schools
+
+The [+ ldr_name +]-led Public Education Ministry have begun to gut funding of the already-existing Trade Schools funded by the previous government due to the budget deficit, causing another wave of unemployment.
+
+Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+
+- @root: There is nothing we can do.

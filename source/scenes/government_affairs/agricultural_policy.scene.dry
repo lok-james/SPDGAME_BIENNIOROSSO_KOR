@@ -17,6 +17,7 @@ With control of the Agricultural Ministry in the hands of the PSI, it seems ther
 - @agricultural_finance: Agricultural Financing
 - @root: Do not enact any policies for now.
 - @easy_discard
+- @cancel_advisor_action
 
 @support_coops
 subtitle: Support cooperatives via legal means and aid them.

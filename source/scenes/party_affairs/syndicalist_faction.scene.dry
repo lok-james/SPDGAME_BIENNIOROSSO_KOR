@@ -11,6 +11,19 @@ max-visits: 1
 
 The Unione Sindacale Italiana, also known as the Italian Syndicalist Union, splintered from the majority labour faction of the General Confederation of Labour in 1912, remaining more aligned with the left-wing of the party, retaining low influence amongst the party. However, it seems that recent actions have cause the USI to gain notable influence within the party.
 
-- @root: Interesting.
-- @easy_discard
+- @support_syn: Support the syndicalist movement.
+- @no_new_ideas: We don't need any new ideas.
 
+@support_neo
+on-arrival: syndicalist_strength += 10; syndicalist_active = 1; reformist_dissent += 7; maximalist_dissent += 5; communist_dissent += 7; labour_dissent *= 1.5;
+
+We support the new leaders, and start using new-style propaganda techniques in our campaigns. The results are uncertain so far...
+
+- @shuffle_leadership: We should use this opportunity to change the party's leadership.
+- @root: Continue...
+
+
+@no_new_ideas
+on-arrival: syndicalist_strength -= 10; syndicalist_active = 0; maximalist_strength += 7;
+
+We do not need these new ideas; they seem to imitate too closely those of the fascists.

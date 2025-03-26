@@ -15,12 +15,18 @@ Now that we are in control of the Foreign Ministry, we can alter Italy's relatio
 
 - @aid_soviet_union: Send aid to the Red Army.
 - @improve_balkan_ties: Establish diplomatic ties with our Yugoslav neighbour.
-- @improve_allied_relations: Improve ties with our Entente allies.
+- @improve_allied_relations: Improve ties with our european Entente allies.
+- @improve_american_relations: Improve ties with the United States.
 - @improve_soviet_relations: Establish diplomatic ties with the Russian SFSR.
 - @improve_papal_relations: Improve ties with the Papacy.
+- @negotiate_us: Negotiate regarding our war debts with the United States.
+- @negotiate_uk: Negotiate regarding our war debts with the United Kingdom.
+- @negotiate_done_us: The US is finally willing to make a deal regarding our debt!
+- @negotiate_done_uk: The UK is finally willing to make a deal regarding our debt!
 - @reopen_negotiations: Perhaps it is time to resolve the Roman Question?
 - @root: Keep the Foreign Ministry as is.
 - @easy_discard
+- @cancel_advisor_action
 
 @aid_soviet_union
 subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : Providing aid to the Russian SFSR would violate coalition agreements! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
@@ -43,6 +49,47 @@ We begin improving our relations with the newly established state of Yugoslavia,
 on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ul_relation += 4*(1-dissent); ldr_right -= 0.1; ul_giolitti += 0.1
 
 We continue improving our relations with our former allies in the Entente. [? if centre_left_coalition : Our coalition partners are pleased at our continued alignment. ?]
+
+@improve_american_relations 
+on-arrival: american_relation += 1;
+
+We continue improving our relations with our former ally in the war of the United States. 
+
+@negotiate_us
+subtitle: Debt negotiation, especially with the United States, will be a long affair.
+choose-if: american_relation >= 2
+view-if: in_default = 0 and global_economic_recovery and american_debts > 0
+unavailable-subtitle: Our relations with the United States are too poor to attempt negotiations.
+on-arrival: american_relation -= 2; american_debts -= 1;
+
+We continue negotiating the terms of the debts we have accumulated to the United States, attempting to pause or at the very least lengthen our debt payment intervals.
+
+@negotiate_uk
+subtitle: Debt negotiation will be a long affair.
+choose-if: entente_relation >= 2
+view-if: in_default = 0 and global_economic_recovery and uk_debts > 0
+unavailable-subtitle: Our relations with the Entente are too poor to attempt negotiations.
+on-arrival: entente_relation -= 2; uk_debts -= 1;
+
+We continue negotiating the terms of the debts we have accumulated to the United Kingdom, attempting to pause or at the very least lengthen our debt payment intervals.
+
+@negotiate_done_us
+subtitle: Our negotiations have been successful.
+view-if: american_debts <= 0 and us_debts_over = 0 and in_default = 0
+on-arrival: us_debts_over = 1; budget += 3; coalition_dissent -= 1 if coalition_dissent > 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 12*(1-dissent); industrialists_psi += 9*(1-dissent); middle_class_psi += 7*(1-dissent); rural_psi += 8*(1-dissent); capital_strike_progress -= 3 if capital_strike_progress > 3; economic_growth += 0.9; economic_growth += 0.7 if economic_growth < 0
+
+Finally, after perilous negotiations with the United States, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1931 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
+
+The new plan has boosted confidence of our economy, as well as allowed American investors once banned to invest into Italy once more, giving us significantly more budget to work with.
+
+@negotiate_done_uk
+subtitle: Our negotiations have been successful.
+view-if: uk_debts <= 0 and uk_debts_over = 0 and in_default = 0
+on-arrival: uk_debts_over = 1; budget += 2; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 8*(1-dissent); industrialists_psi += 5*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 5*(1-dissent); capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
+
+Finally, after perilous negotiations with the United States, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1928 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
+
+The new plan has boosted confidence of our economy, giving us more budget to work with.
 
 @improve_soviet_relations
 subtitle: [? if liberal_foreign_accepted and soviet_relation + 1 >= entente_relation : This will disrupt our alignment with the Entente! ?]

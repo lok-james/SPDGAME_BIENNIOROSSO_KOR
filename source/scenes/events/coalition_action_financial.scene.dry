@@ -1,7 +1,7 @@
 title: Tax Cuts for the Rich
 subtitle: Finance Minister [+ finance_minister +] authorises tax cuts.
 view-if: (finance_minister_party == ul_name or finance_minister_party == ldr_name) and gov_finance_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and upper_tax_rates > -5 and (economic_growth < 0 or unemployment > 8) and budget >= 2
-on-arrival: gov_cooldown_timer = 2; gov_treasury_timer = 9
+on-arrival: gov_cooldown_timer = 3; gov_treasury_timer = 9
 new-page: true
 tags: event
 

@@ -35,9 +35,9 @@ We focus on our relations with the other parties, ensuring they do not find them
 
 @fascist_votes
 subtitle: The threat comes from their seats in the Chamber, after all.
-on-arrival: fasci_urgency += 1; veterans_pnf -= 2*(1-dissent); nationalist_sentiment -= 2
+on-arrival: fasci_urgency += 1; veterans_pnf -= 2*(1-dissent); nationalist_sentiment -= 2; veterans_pnf -= 3*(1-dissent) if syndicalist_active; middle_class_pnf -= 3*(1-dissent) if syndicalist_active;
 
-We focus on their voters, campaigning towards them hard, sometimes clashing with the Fasci.
+We focus on their voters, campaigning towards them hard, sometimes clashing with the Fasci. [? if syndicalist_active : Our willingness to accept the syndicalist movement has swayed more away from the fascists. ?]
 
 @fascist_ignore
 subtitle: This is merely a post-war movement that will die down sooner or later, after all.

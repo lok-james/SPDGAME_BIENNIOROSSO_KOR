@@ -1,7 +1,7 @@
 title: Military Reshuffle
 subtitle: The Regio Esercito is conducting a sweeping reshuffle.
 view-if: gov_army_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and army_loyalty > 0.71 and king_relation < 5*radicalisation
-on-arrival: gov_cooldown_timer = 2; gov_army_timer = 6; army_loyalty -= 0.07
+on-arrival: gov_cooldown_timer = 3; gov_army_timer = 6; army_loyalty -= 0.07
 new-page: true
 tags: event
 

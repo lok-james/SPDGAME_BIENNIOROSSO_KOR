@@ -33,7 +33,7 @@ Q.crackdown_far_left = 0;
 Q.crackdown_far_right = 0;
 
 // prevents insta dismissal
-Q.king_dismissed_cooldown = 12;
+Q.king_dismissed_timer = 12;
 
 Q.ds_enemies = 0;
 Q.ds_allies = 0;
@@ -43,6 +43,7 @@ Q.in_coalition = 0;
 Q.southern_development = 0;
 
 Q.pnf_waiting = 0;
+Q.party_demands_timer = 6;
 !}
 on-departure: week_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1924
@@ -223,7 +224,7 @@ if (Q.pri_prominent == 0) {
 }
 
 if (Q.psu_formed == 1) {
-    if (Q.participating == 1 || Q.participating == 0 && Q.radicalisation < 3) {
+    if (Q.participating == 1 || Q.maximalist_participating == 1 && Q.radicalisation < 3) {
         Q.left_wing_coalition_r += Q.psu_seating_disp;
         Q.psu_coalitioning = 1;
     }
@@ -340,6 +341,10 @@ var sign = Q.bn_r > 0
 Q.change_bn_r = Math.abs(Q.change_bn_r);
 Q.str_change_bn = sign + parseFloat(Q.change_bn_r).toFixed(1);
 Q.bn_seating_disp = (Q.bn_seating_disp).toFixed(1);
+
+for (var p of Q.parties) {
+    Q[p + '_r'] = parseFloat(Q[p + '_r']).toFixed(1);
+}
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
@@ -574,12 +579,22 @@ subtitle: PSI: [+ psi_seating_disp +]%
 view-if: psi_seating_disp >= 50
 on-arrival: {!
 
-if (Q.reformists_defect == 0) {
+if (Q.reformists_defect == 0 && Q.reformist_strength > Q.communist_strength && Q.reformist_strength > Q.maximalist_strength || Q.communist_split == 1 && Q.maximalists_resign == 1) {
     Q.prime_minister = "Turati"; 
     Q.prime_minister_party = "PSI";
 }
 
-if (Q.reformists_defect == 1) {
+if (Q.communist_split == 0 && Q.communist_strength > Q.reformist_strength && Q.communist_strength > Q.maximalist_strength || Q.reformists_defect == 1 && Q.maximalists_resign == 1) {
+    Q.prime_minister = "Bordiga"; 
+    Q.prime_minister_party = "PSI";
+}
+
+if (Q.maximalists_resign == 0 && Q.maximalist_strength > Q.communist_strength && Q.maximalist_strength > Q.reformist_strength || Q.communist_split == 1 && Q.reformists_defect == 1) {
+    Q.prime_minister = "Serrati"; 
+    Q.prime_minister_party = "PSI";
+}
+
+if (Q.reformists_defect == 1 && Q.communist_split == 1 && Q.maximalists_resign == 1) {
     Q.prime_minister = "Bacci";
     Q.prime_minister_party = "PSI";
     Q.workers_psi -= 4*(1-Q.dissent);
@@ -590,7 +605,7 @@ Q.psi_in_government = 1;
 Q.in_psi_majority = 1; 
 
 Q.foreign_minister_party = "PSI"; 
-Q.foreign_minister = "Matteoti";
+Q.foreign_minister = "Matteotti";
 Q.interior_minister_party = "PSI";
 Q.interior_minister = "Turati"; 
 Q.justice_minister_party = "PSI";
@@ -611,6 +626,8 @@ Q.public_works_minister = "Vella";
 achievement: governo_monocolore; follia_di_acerbo; ritorno_trionfale
 
 Finally, the PSI can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
+
+[+ prime_minister +] is elected within the party to become Prime Minister.
 
 @left_wing_coalition
 set-bg: background.png

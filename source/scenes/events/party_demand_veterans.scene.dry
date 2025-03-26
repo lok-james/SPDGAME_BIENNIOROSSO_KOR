@@ -1,0 +1,50 @@
+title: Petition of the Unemployed
+subtitle: Our Rural support base have pushed forward demands.
+view-if: ((class1_set = 'veterans' and class1_timer <= 0) or (class2_set = 'veterans' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
+on-arrival: {! 
+
+Q.party_demands_timer = 6;
+
+if (Q.class1_set == "veterans") {
+    Q.class1_timer = 12;
+}
+
+if (Q.class2_set == "veterans") {
+    Q.class2_timer = 12;
+}
+!}
+new-page: true
+tags: event
+
+= Petition of the Unemployed
+
+The Unemployed, one of our non-traditional but now a growing and key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+
+We will have to choose one to complete, or we could refuse their demands entirely.
+
+- @veterans_demand_welfare: -1 Budget - Increase welfare to government welfare organisations.
+- @veterans_demand_public_work: -1 Budget - Continue the construction of new public works.
+- @veterans_demand_refuse: Refuse the demands.
+
+@veterans_demand_welfare
+choose-if: not national_economic_recovery or budget >= 1
+unavailable-subtitle: [? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+on-arrival: budget -= 1; veterans_psi += 2*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4;
+
+We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
+
+@veterans_demand_public_work
+choose-if: not national_economic_recovery or budget >= 1
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: public_works_funded += 1; budget -= 1; unemployment -= 1.1 if unemployment >= 8; unemployment -= 0.4 if (unemployment >= 4 and unemployment < 8); unemployment -= 0.2 if unemployment < 4; veterans_pnf -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_pnf -= 2*(1-dissent); socialist_sentiment += 1; nationalist_sentiment -= 2;
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
+
+We have increased funding to the Public Works Ministry, who have begun drafting up plans and hiring workers for further infrastructure projects.
+
+@veterans_demand_refuse
+on-arrival: {!
+Q.veterans_demand_failed += 1;
+Q.veterans_psi -= 4*Q.veterans_demand_failed;
+!}
+
+The unemployed are, unsurprisingly, outraged at our refusal to heed their demands.

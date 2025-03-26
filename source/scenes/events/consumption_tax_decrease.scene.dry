@@ -1,0 +1,90 @@
+title: Consumption Taxes
+subtitle: An immediate motion has been filed.
+tags: event
+view-if: psi_in_government and finance_minister_party = "PSI" and not national_economic_recovery
+max-visits: 1
+
+= Immediate Motion Filed
+
+In order to finance the war effort, the liberal government raised consumption taxes that affected the workers and unemployed significantly. Now that we are in power, and more importantly, control the Finance Ministry, our supporters have requested we bring consumption taxes back to pre-war levels.
+
+- @consumption_taxes_accept: -2 Budget - Bring consumption taxes down.
+- @consumption_taxes_refuse: Reject the motion.
+
+@consumption_taxes_accept
+subtitle: We must heed the will of the people.
+on-arrival: {!
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 9*(1-Q.dissent); 
+    Q.middle_class_psi -= 5*(1-Q.dissent); 
+    Q.industrialists_psi -= 4*(1-Q.dissent);
+    Q.veterans_psi += 5*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.workers_clc += 9*(1-Q.dissent); 
+    Q.middle_class_clc -= 5*(1-Q.dissent); 
+    Q.industrialists_clc -= 4*(1-Q.dissent);
+    Q.veterans_clc += 5*(1-Q.dissent);
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.workers_scc += 9*(1-Q.dissent); 
+    Q.middle_class_scc -= 5*(1-Q.dissent); 
+    Q.industrialists_scc -= 4*(1-Q.dissent);
+    Q.veterans_scc += 5*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.coalition_dissent += 1;
+}
+
+if (Q.socialist_catholic_coalition == 1 && Q.coalition_dissent > 0) {
+    Q.coalition_dissent -= 1;
+}
+
+Q.lower_tax_rates -= 2; 
+
+Q.psri_relation += 5*(1-Q.dissent);
+Q.ppi_relation += 3*(1-Q.dissent);
+Q.ldr_relation -= 5*(1-Q.dissent); 
+Q.ul_relation -= 4*(1-Q.dissent); 
+
+Q.ppi_left += 0.1;
+Q.ldr_left -= 0.1;
+
+Q.inflation += 0.3; 
+Q.economic_growth += 0.2;
+Q.budget -= 2;
+!}
+
+The liberal parties berate our actions, criticising our lack of care for the economy and the current economic situation. They use this as a recruiting tool amongst the industrialists and middle class, while we see an increase in support from our workers.
+
+@consumption_taxes_refuse
+subtitle: We can't afford to upset the economy in this time of crisis.
+on-arrival: {!
+
+Q.workers_psi -= 7*(1-Q.dissent); 
+Q.workers_ppi += 3*(1-Q.dissent);
+Q.workers_psri += 5*(1-Q.dissent);
+
+Q.veterans_psi -= 9*(1-Q.dissent); 
+Q.veterans_ppi += 4*(1-Q.dissent);
+Q.veterans_psri += 6*(1-Q.dissent);
+
+Q.psri_relation -= 5*(1-Q.dissent);
+Q.ppi_relation -= 3*(1-Q.dissent);
+Q.ldr_relation += 5*(1-Q.dissent); 
+Q.ul_relation += 4*(1-Q.dissent); 
+
+Q.ppi_left -= 0.1;
+Q.ldr_left += 0.1;
+
+Q.inflation += 0.3; 
+Q.economic_growth += 0.2;
+
+Q.labour_dissent += 7;
+!}
+
+The workers are unsurprisingly angered by this betrayal, as we see defections to the PSRI and PPI, who disapprove of our decision. The liberal parties, however, laud our decision and care to not upset or worsen the current economic situation.

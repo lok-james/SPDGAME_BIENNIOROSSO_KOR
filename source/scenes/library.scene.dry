@@ -185,7 +185,7 @@ go-to: menu
 
 [? if psu_formed : **PSU** - *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
 
-**PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PRSI are a centre-left party, advocating for socialism through the parliamentary system. 
+**PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PSRI are a centre-left party, advocating for socialism through the parliamentary system. 
 
 Current relations: [+ psri_relation : relationships +]
 

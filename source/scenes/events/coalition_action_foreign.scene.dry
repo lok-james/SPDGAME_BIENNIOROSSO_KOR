@@ -1,7 +1,7 @@
 title: Aid Cuts
 subtitle: Foreign Minister [+ foreign_minister +] authorises cuts to foreign aid.
-view-if: ((foreign_minister_party == ul_name and ul_relation <= 30) or (foreign_minister_party == ldr_name and ldr_relation <= 30)) and gov_foreign_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and soviet_aid_given > 0 and (not rcw_over or soviet_recovery_timer > 0)
-on-arrival: gov_cooldown_timer = 2; gov_foreign_timer = 9
+view-if: ((foreign_minister_party == ul_name and ul_relation <= 30) or (foreign_minister_party == ldr_name and ldr_relation <= 30) or foreign_minister_party == pnf_name) and gov_foreign_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and soviet_aid_given > 0 and (not rcw_over or soviet_recovery_timer > 0)
+on-arrival: gov_cooldown_timer = 3; gov_foreign_timer = 9
 new-page: true
 tags: event
 

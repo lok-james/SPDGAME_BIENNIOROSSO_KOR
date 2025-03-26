@@ -17,6 +17,7 @@ What do we do?
 # place in party deck as well?
 
 - @unemployment_insurance_program: Begin the funding of the Unemployment Insurance Program.
+- @expand_insurance: Expand the scope of the Unemployment Insurance Program to poor workers.
 - @veterans_organisations_gov: Increasing the funding of government welfare organisations.
 - @veterans_organisations_catholic: Increase the funding of Catholic-run welfare organisaions
 - @no_aid: Our budget limits our ability to improve welfare.
@@ -30,7 +31,7 @@ choose-if: not national_economic_recovery or budget > 1
 unavailable-subtitle: Not enough budget. (Need 2)
 on-arrival: {!
 Q.unemployment_insurance_founded = 1; 
-Q.insurance_payments_timer = 24; 
+Q.insurance_payments_veterans_timer = 24; 
 Q.budget -= 2; 
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
@@ -61,6 +62,43 @@ go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi
 Proposed by one of our deputies, the unemployment insurance program would place hundreds of thousands or even millions onto a program that would ensure they would be able to feed themselves, as well as give workers a safety net to fall upon. 
 
 Unfortunately, our current financial situation limits the scope of this welfare program to unemployed and disabled veterans.
+
+@expand_insurance
+subtitle: -2 Budget - This will expand the scope of the current program. [? if catholic_charity_accepted : The expansion of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+view-if: unemployment_insurance_founded 
+choose-if: not national_economic_recovery or budget > 1
+unavailable-subtitle: Not enough budget. (Need 2)
+on-arrival: {!
+Q.unemployment_insurance_expanded = 1; 
+Q.insurance_payments_veterans_timer = 24; 
+Q.budget -= 2; 
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+}
+if (Q.catholic_charity_accepted == 1) {
+    Q.ppi_promise_failed = 1;
+}
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 4*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.workers_clc += 4*(1-Q.dissent);
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.workers_scc += 4*(1-Q.dissent);
+}
+Q.workers_pnf -= 4*(1-Q.dissent); 
+Q.economic_growth += 0.4; 
+Q.inflation += 0.8;
+Q.psri_relation += 7*(1-Q.dissent);
+Q.nationalist_sentiment -= 3;
+!}
+go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
+
+Now that our financial situation is better, we can expand the scope of the program further, at least temporarily.
 
 [? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 [? if ppi_promise_failed : Unfortunately, the creation of the Unemployment Insurance Program has broken our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]

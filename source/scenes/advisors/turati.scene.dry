@@ -29,7 +29,7 @@ title: Negotiating with the King
 subtitle: Turati can improve our relationships with King [+ king +].
 choose-if: advisor_action_timer <= 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-on-arrival: advisor_action_timer = 9; king_relation += 7; king_dismissed_cooldown += 1;
+on-arrival: advisor_action_timer = 9; king_relation += 7; king_dismissed_timer += 1;
 
 We have improved our relations with the King and reduced tensions with him.
 

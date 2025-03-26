@@ -16,7 +16,7 @@ Though our end goal is to achieve a soviet state like the Bolsheviks in Russia, 
 - @rev_sabotage: Infiltrate and sabotage the reactionaries.
 - @rev_finish: Finish up the last of the plans.
 - @rev_begin: Mobilise the Red Guards and the workers!
-- @rev_none: Do nothing for now.
+- @root: Do nothing for now.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -53,8 +53,6 @@ view-if: preparation_done = 0
 on-arrival: preparation_done = 1; interior_police_loyalty += 0.2; army_loyalty += 0.2; rg_militancy += 0.1; revolutionary_fervour += 7; revolutionary_exhaustion += 0.01 if not_participating
 
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.
-
-@rev_none
 
 @rev_begin
 subtitle: We can begin the revolution! - This will lead us into a civil war.

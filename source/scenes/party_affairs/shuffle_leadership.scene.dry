@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor,
+tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor, syndicalist_advisor
 frequency: 1
 
 - #remove_advisor
@@ -99,6 +99,33 @@ go-to: rm_main
 
 Salvemini has been removed as an advisor. The Reformist faction disapproves.
 
+@remove_altobelli
+title: Remove Altobelli
+view-if: altobelli_advisor = 1
+tags: remove_advisor
+on-arrival: altobelli_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Altobelli has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_buozzi
+title: Remove Buozzi
+view-if: buozzi_advisor = 1
+tags: remove_advisor
+on-arrival: buozzi_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Buozzi has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_matteotti
+title: Remove Matteotti
+view-if: matteotti_advisor = 1
+tags: remove_advisor
+on-arrival: matteotti_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Matteotti has been removed as an advisor. The Reformist faction disapproves.
+
 # labour
 
 @remove_treves
@@ -118,6 +145,15 @@ on-arrival: rigola_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
 Rigola has been removed as an advisor. The Labour faction disapproves.
+
+@remove_daragona
+title: Remove D'Aragona
+view-if: daragona_advisor = 1
+tags: remove_advisor
+on-arrival: daragona_advisor = 0; labour_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+D'Aragona has been removed as an advisor. The Labour faction disapproves.
 
 # left
 
@@ -166,6 +202,36 @@ go-to: rm_main
 
 Bordiga has been removed as an advisor. The Leftist faction disapproves.
 
+# syndicalists
+
+@remove_deambris
+title: Remove De Ambris
+view-if: deambris_advisor = 1
+tags: remove_advisor
+on-arrival: deambris_advisor = 0; syndicalist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+De Ambris has been removed as an advisor. The Syndicalist faction disapproves.
+
+@remove_divittorio
+title: Remove Di Vittorio
+view-if: divittorio_advisor = 1
+tags: remove_advisor
+on-arrival: divittorio_advisor = 0; syndicalist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Di Vittorio has been removed as an advisor. The Syndicalist faction disapproves.
+
+#nonfactional
+
+@remove_picelli
+title: Remove Picelli
+view-if: picelli_advisor = 1
+tags: remove_advisor
+on-arrival: picelli_advisor = 0; n_advisors -= 1
+go-to: rm_main
+
+Picelli has been removed as an advisor.
 
 ####################### adding advisors
 
@@ -185,6 +251,8 @@ frequency: 1
 - @left: Add Leftists
 - @reformist: Add Reformists
 - @labour: Add Labour
+- @syndicalist: Add Syndicalists 
+- @nonfactional: Add Non-factional advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
 
@@ -207,6 +275,16 @@ view-if: n_advisors < 3
 view-if: n_advisors < 3
 
 - #labour_advisor
+
+@syndicalist
+view-if: n_advisors < 3 and syndicalist_active
+
+- #syndicalist_advisor
+
+@nonfactional
+view-if: n_advisors < 3
+
+- #nonfactional_advisor
 
 @add_serrati
 title: Giacinto Menotti Serrati
@@ -234,7 +312,7 @@ Constantinto Lazzari is now an advisor.
 
 @add_ferri
 title: Enrico Ferri
-subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Fundraising, Ideology, Media ?]
+subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Ideology, Media ?]
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
@@ -264,7 +342,7 @@ subtitle: Anna Kuliscioff is a Russian-born feminist, intellectual, and member o
 is-card: true
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: reformist_advisor
-view-if: kuliscioff_advisor = 0 and n_advisors < 3
+view-if: kuliscioff_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: kuliscioff_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
@@ -293,6 +371,42 @@ on-arrival: salvemini_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
 Gaetano Salvemini is now an advisor.
+
+@add_altobelli
+title: Argentina Altobelli
+subtitle: Argentina Altobelli is a trade unionist, leader of the *National Federation of Agricultural Workers*, and member of the Reformist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Women's Rights, Party Disunity, Agricultural Policy ?]
+is-card: true
+card-image: img/portraits/ArgentinaAltobelli.png
+tags: reformist_advisor
+view-if: altobelli_advisor = 0 and n_advisors < 3 and reformists_defect = 0
+on-arrival: altobelli_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Argentina Altobelli is now an advisor.
+
+@add_buozzi
+title: Bruno Buozzi
+subtitle: Buozzi is an outspoken member of the reformist faction of the PSI, as well as the leader of the *Italian Federation of Metallurgical Workers*. {!<br><br>!}[? if difficulty < 0 : Actions - Child Labour, Economic Democracy, Minimum Program Implementation ?]
+is-card: true
+card-image: img/portraits/BrunoBuozzi.jpg
+tags: reformist_advisor
+view-if: buozzi_advisor = 0 and n_advisors < 3 and reformists_defect = 0
+on-arrival: buozzi_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Bruno Buozzi is now an advisor.
+
+@add_matteotti
+title: Giacomo Matteotti
+subtitle: Matteotti is a long-time deputy of the PSI in the Chamber of Deputies, as well as a member of the reformist faction under Turati. {!<br><br>!}[? if difficulty < 0 : Actions - Constitutional Reform, Foreign Policy, Fasci Urgency ?]
+is-card: true
+card-image: img/portraits/GiacomoMatteotti.jpg
+tags: reformist_advisor
+view-if: matteotti_advisor = 0 and n_advisors < 3 and reformists_defect = 0
+on-arrival: matteotti_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Giacomo Matteotti is now an advisor.
 
 # left
 
@@ -373,7 +487,7 @@ Claudio Treves is now an advisor.
 
 @add_rigola
 title: Rinaldo Rigola
-subtitle: Rinaldo Rigola is the leader of the Italian CGIL, General Confederation of Labour. {!<br><br>!}[? if difficulty < 0 : Actions - Fundraising, Fiscal Policy, Veterans Welfare ?]
+subtitle: Rinaldo Rigola was the former Secretary of the Italian CGIL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Fiscal Policy, Veterans Welfare ?]
 is-card: true
 card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor
@@ -382,3 +496,56 @@ on-arrival: rigola_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
 Rinaldo Rigola is now an advisor.
+
+@add_daragona
+title: Ludovico D'Aragona
+subtitle: Ludovico D'Aragona is the current Secretary of the Italian CGIL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Labour Rights, Emergency Fundraising ?]
+is-card: true
+card-image: img/portraits/LudovicoDAragona.jpg
+tags: labour_advisor
+view-if: daragona_advisor = 0 and n_advisors < 3
+on-arrival: daragona_advisor = 1; n_advisors += 1; labour_strength += 5
+go-to: advisor_menu
+
+Ludovico D'Aragona is now an advisor.
+
+# syndicalists
+
+@add_deambris
+title: Alceste De Ambris
+subtitle: De Ambris is a prominent revolutionary syndicalist and a defector from [+ pnf_leader +]'s *Fasces of Combat*. {!<br><br>!}[? if difficulty < 0 : Actions - Fasci Urgency, Red Guard Ordering, Arditi del Popolo ?]
+is-card: true
+card-image: img/portraits/AlcesteDeAmbris.jpg
+tags: syndicalist_advisor
+view-if: deambris_advisor = 0 and n_advisors < 3
+on-arrival: deambris_advisor = 1; n_advisors += 1; syndicalist_strength += 5
+go-to: advisor_menu
+
+Alceste De Ambris is now an advisor.
+
+@add_divittorio
+title: Giuseppe Di Vittorio
+subtitle: DDi Vittorio is a syndicalist leader of the *Italian Syndicalist Union*. {!<br><br>!}[? if difficulty < 0 : Actions - Southern Question, Party Organisations, Revolutionary Preparations ?]
+is-card: true
+card-image: img/portraits/GiuseppeDiVittorio.jpg
+tags: syndicalist_advisor
+view-if: divittorio_advisor = 0 and n_advisors < 3 and syndicalist_break = 0
+on-arrival: divittorio_advisor = 1; n_advisors += 1; syndicalist_strength += 5
+go-to: advisor_menu
+
+Giuseppe Di Vittorio is now an advisor.
+
+# nonfactionals
+
+@add_picelli
+title: Guido Picelli
+subtitle: Picelli is a non-factional founding member of the Red Guards and a fierce anti-fascist. {!<br><br>!}[? if difficulty < 0 : Actions - Fasci Urgency, Red Guards, Arditi del Popolo ?]
+is-card: true
+card-image: img/portraits/GuidoPicelli.jpg
+tags: nonfactional_advisor
+view-if: picelli_advisor = 0 and n_advisors < 3
+on-arrival: picelli_advisor = 1; n_advisors += 1;
+go-to: advisor_menu
+
+Guido Picelli is now an advisor.
+

@@ -1,0 +1,86 @@
+title: Petition of the Rural voters
+subtitle: Our Rural support base have pushed forward demands.
+view-if: ((class1_set = 'rural' and class1_timer <= 0) or (class2_set = 'rural' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
+on-arrival: {! 
+
+Q.party_demands_timer = 6;
+
+if (Q.class1_set == "rural") {
+    Q.class1_timer = 12;
+}
+
+if (Q.class2_set == "rural") {
+    Q.class2_timer = 12;
+}
+!}
+new-page: true
+tags: event
+
+= Petition of the Rural voters
+
+The Rural voters, our traditional support base have pushed forward a series of demands we should do in order to keep their support.
+
+We will have to choose one to complete, or we could refuse their demands entirely.
+
+- @rural_demand_bordiga: Seize land from large estates to redistribute.
+- @rural_demand_serrati: Support Agricultural Cooperatives.
+- @rural_demand_turrati: -1 Budget - Increase financing for agricultural credit and insurance.
+- @rural_demand_refuse: Refuse the demands.
+
+@rural_demand_bordiga
+unavailable-subtitle: The judiciary would not support this.
+choose-if: judicial_reform >= 2
+view-if: prime_minister == "Bordiga"
+on-arrival: {!
+Q.land_seizures += 1;
+Q.agricultural_policy += 1;
+
+Q.rural_psi += 3*(1-Q.dissent);
+Q.middle_class_psi -= 2*(1-Q.dissent);
+
+Q.rural_pnf -= 2*(1-Q.dissent);
+Q.middle_class_pnf += 1*(1-Q.dissent);
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 0.2
+}
+
+Q.economic_growth += 0.2;
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
+
+Q.ldr_relation -= 5; 
+Q.ul_relation -= 4; 
+Q.communist_strength += 8; 
+Q.communist_dissent -= 5; 
+Q.agricultural_policy += 1; 
+if (Q.liberal_reform_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+}
+Q.industrialists_pnf += 3; 
+Q.psri_relation += 3*(1-Q.dissent);
+!}
+
+We are able to seize land form large estate, mostly uncultivated land and hand them out to peasants and veteran-run cooperatives, reducing unemployment.
+
+@rural_demand_serrati
+on-arrival: rural_psi += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent);
+
+We are able to utilise the Ministry to support peasants and cooperatives, protecting them using legal means.
+
+@rural_demand_turrati
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: budget -= 1; agricultural_policy += 1; rural_psi += 7*(1-dissent); rural_pnf -= 3*(1-dissent); unemployment -= 0.3 if unemployment >= 8; communist_dissent += 8; maximalist_dissent += 6; labour_dissent += 3; economic_growth += 0.2; economic_growth += 0.3 if economic_growth < 0
+
+We have increased financial support for small farmers, providing aid through credit and insurance. The left and maximalists are unsurprisingly opposed to our policies, seeing them as handouts to petite-bourgeois farmers.
+
+@rural_demand_refuse
+on-arrival: {!
+Q.rural_demand_failed += 1;
+Q.rural_psi -= 4*Q.rural_demand_failed;
+!}
+
+Our rural voters are, unsurprisingly, outraged at our refusal to heed their demands.

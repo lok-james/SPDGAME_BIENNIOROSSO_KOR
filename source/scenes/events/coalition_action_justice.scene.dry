@@ -1,7 +1,7 @@
 title: Judicial Reform rolled back
 subtitle: Justice Minister [+ justice_minister +] has begun rolling back our judicial reforms.
-view-if: ((justice_minister_party == ul_name and ul_relation <= 30) or (justice_minister_party == ldr_name and ldr_relation <= 30)) and gov_justice_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and judicial_reform > 0
-on-arrival: gov_cooldown_timer = 2; gov_justice_timer = 9; judicial_reform -= 1; workers_psi -= 3*(1-dissent) if democratisation < 3; republican_sentiment -= 3*(1-dissent);
+view-if: ((justice_minister_party == ul_name and ul_relation <= 30) or (justice_minister_party == ldr_name and ldr_relation <= 30) or justice_minister_party == pnf_name) and gov_justice_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and judicial_reform > 0
+on-arrival: gov_cooldown_timer = 3; gov_justice_timer = 9; judicial_reform -= 1; workers_psi -= 3*(1-dissent) if democratisation < 3; republican_sentiment -= 3*(1-dissent);
 new-page: true
 tags: event
 

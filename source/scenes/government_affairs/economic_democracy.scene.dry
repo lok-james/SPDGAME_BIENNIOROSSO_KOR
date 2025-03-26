@@ -23,6 +23,7 @@ Now that we are in control of the Labour and Social Security Ministry, we can ap
 - @nationalise_more: Continue nationalising key industries.
 - @root: Let's not do this for now.
 - @easy_discard
+- @cancel_advisor_action
 
 @support_work_councils
 subtitle: Give factory worker's councils greater influence in their workplace.
@@ -77,6 +78,10 @@ if (Q.socialist_catholic_coalition == 1) {
     Q.workers_scc += 3*(1-Q.dissent); 
     Q.industrialists_scc -= 4*(1-Q.dissent); 
 }
+
+Q.unemployment -= 0.3;
+Q.economic_growth += 0.2;
+Q.inflation += 0.4;
 
 Q.ul_sonnino += 0.2;
 Q.ds_right += 0.1;
@@ -133,6 +138,10 @@ if (Q.socialist_catholic_coalition == 1) {
 Q.ul_sonnino += 0.2*Q.nationalisation_progress;
 Q.ds_right += 0.1*Q.nationalisation_progress;
 Q.ldr_right += 0.1*Q.nationalisation_progress;
+
+Q.unemployment -= 0.4;
+Q.economic_growth += 0.3;
+Q.inflation += 0.4;
 
 Q.industrialists_pnf += 4; 
 Q.ldr_relation -= 4; 

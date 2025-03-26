@@ -1,0 +1,71 @@
+title: Petition of the Catholics
+subtitle: Our Catholic support base have pushed forward demands.
+view-if: ((class1_set = 'catholic' and class1_timer <= 0) or (class2_set = 'catholic' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
+on-arrival: {! 
+
+Q.party_demands_timer = 6;
+
+if (Q.class1_set == "catholic") {
+    Q.class1_timer = 12;
+}
+
+if (Q.class2_set == "catholic") {
+    Q.class2_timer = 12;
+}
+!}
+new-page: true
+tags: event
+
+= Petition of the Catholics
+
+The Catholics, one of our non-traditional but now key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+
+We will have to choose one to complete, or we could refuse their demands entirely.
+
+- @catholic_demand_secularise: Reverse our decision to secularise education.
+- @catholic_demand_reforms: Roll back our educational curriculum reforms targeting religious schools.
+- @catholic_demand_welfare: -1 Budget - Increase funding for Catholic-aligned welfare.
+- @catholic_demand_refuse: Refuse the demands.
+
+@catholic_demand_secularise
+view-if: secularised_education = 1
+on-arrival: secularised_education = 0; ppi_relation += 8*(1-dissent); catholic_psi += 12*(1-dissent); economic_growth -= 0.3; workers_psi -= 4*(1-dissent); middle_class_psi -= 7*(1-dissent); rural_psi -= 3*(1-dissent); papal_relation += 2; psri_relation -= 5*(1-dissent); ppi_moderates -= 4; ppi_right -= 2
+
+We have reversed the secularisation of education. The party, alongside our voter base is an uproar at our decision.
+
+@catholic_demand_reforms
+view-if: education_reformed > 0
+on-arrival: {!
+Q.education_reformed -= 1;
+
+Q.workers_psi -= 5*(1-Q.dissent); 
+Q.middle_class_psi -= 7*(1-Q.dissent); 
+Q.catholic_psi += 3*(1-Q.dissent);
+
+Q.papal_relation += 1; 
+Q.ppi_relation += 5*(1-Q.dissent); 
+Q.psri_relation -= 2*(1-Q.dissent);
+Q.pri_relation -= 5*(1-Q.dissent);
+
+Q.socialist_sentiment -= 1;
+Q.republican_sentiment -= 3*Q.education_reformed;
+Q.ppi_right -= 0.3;
+Q.ppi_left += 0.1;
+!}
+
+We have reversed our decision to reform the educational curriculum. 
+
+@catholic_demand_welfare
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: budget -= 1; veterans_ppi += 3*(1-dissent); veterans_psi -= 1*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4; ppi_left += 0.1
+
+We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.
+
+@catholic_demand_refuse
+on-arrival: {!
+Q.catholic_demand_failed += 1;
+Q.catholic_psi -= 4*Q.catholic_demand_failed;
+!}
+
+The catholics are, unsurprisingly, outraged at our refusal to heed their demands.

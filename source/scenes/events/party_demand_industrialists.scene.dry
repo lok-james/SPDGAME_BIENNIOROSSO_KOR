@@ -1,0 +1,107 @@
+title: Petition of the Industrialists
+subtitle: Our Industrialist & Landowner support base have pushed forward demands.
+view-if: ((class1_set = 'industrialists' and class1_timer <= 0) or (class2_set = 'industrialists' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
+on-arrival: {! 
+
+Q.party_demands_timer = 6;
+
+if (Q.class1_set == "industrialists") {
+    Q.class1_timer = 12;
+}
+
+if (Q.class2_set == "industrialists") {
+    Q.class2_timer = 12;
+}
+!}
+new-page: true
+tags: event
+
+= Petition of the Industrialists
+
+The Industrialists and Landowners, one of our non-traditional but now shockingly our key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+
+We will have to choose one to complete, or we could refuse their demands entirely.
+
+- @industrialists_demand_tax: -2 Budget - Cut taxes for the upper class.
+- @industrialists_demand_nationalisation: +1 Budget - Roll back nationalising industries.
+- @industrialists_demand_refuse: Refuse the demands.
+
+@industrialists_demand_tax
+view-if: upper_tax_rates < -5
+on-arrival: {!
+Q.upper_tax_rates -= 1; 
+Q.capital_strike_progress -= 1;
+if (Q.upper_tax_rates < 0) {
+    Q.capital_strike_progress -= 1;
+}
+
+if (Q.upper_tax_rates < -3) {
+    Q.capital_strike_progress -= 1;
+}
+
+    Q.workers_psi += 4*(1-Q.dissent); 
+    Q.middle_class_psi -= 4; 
+    Q.industrialists_psi -= 4;
+
+if (Q.centre_left_coalition == 1) {
+    Q.coalition_dissent += 1;
+}
+
+Q.communist_strength -= 7; 
+Q.communist_dissent += 9;
+Q.syndicalist_strength -= 4;
+
+Q.budget -= 2; 
+Q.ldr_relation += 4; 
+Q.unemployment -= 1; 
+Q.inflation += 0.6; 
+Q.economic_growth += 0.4; 
+Q.psri_relation -= 5*(1-Q.dissent);
+Q.ppi_relation -= 3*(1-Q.dissent);
+
+Q.ldr_left += 0.2;
+!}
+
+Raising taxes on the rich is unpopular among our traditional base, but it is supported by the bourgeoisie.
+
+@industrialists_demand_nationalisation
+view-if: nationalisation_progress > 0
+on-arrival: {!
+Q.budget += 1; 
+Q.nationalisation_progress -= 1; 
+
+Q.workers_psi -= 5*(1-Q.dissent); 
+Q.industrialists_psi += 6*(1-Q.dissent);
+
+Q.ul_sonnino -= 0.2*Q.nationalisation_progress;
+Q.ds_right -= 0.1*Q.nationalisation_progress;
+Q.ldr_right -= 0.1*Q.nationalisation_progress;
+
+Q.unemployment += 0.4;
+Q.economic_growth -= 0.3;
+Q.inflation -= 0.4;
+
+Q.industrialists_pnf -= 4; 
+Q.ldr_relation += 4; 
+Q.ul_relation += 4; 
+Q.communist_strength -= 7; 
+Q.communist_dissent += 9;
+Q.syndicalist_strength -= 4;
+Q.socialist_sentiment -= 3;
+
+Q.capital_strike_progress -= 1; 
+if (Q.centre_left_coalition == 1) {
+    Q.coalition_dissent += 1;
+}
+Q.psri_relation += 7*(1-Q.dissent);
+!}
+
+We begin privatising nationally owned companies, repurposing and organising them into corporations that we sell to the highest bidder. The workers, nor our party are not pleased at this change of course.
+
+@industrialists_demand_refuse
+on-arrival: {!
+Q.industrialists_demand_failed += 1;
+Q.industrialists_psi -= 4*Q.industrialists_demand_failed;
+!}
+
+The industrialists are, unsurprisingly, outraged at our refusal to heed their demands.

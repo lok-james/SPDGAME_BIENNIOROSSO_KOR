@@ -1,0 +1,64 @@
+title: Petition of the Middle Class
+subtitle: Our Middle Class support base have pushed forward demands.
+view-if: ((class1_set = 'middle_class' and class1_timer <= 0) or (class2_set = 'middle_class' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
+on-arrival: {! 
+
+Q.party_demands_timer = 6;
+
+if (Q.class1_set == "middle_class") {
+    Q.class1_timer = 12;
+}
+
+if (Q.class2_set == "middle_class") {
+    Q.class2_timer = 12;
+}
+!}
+new-page: true
+tags: event
+
+= Petition of the Middle Class
+
+The Middle Class, one of more non-traditional but now our key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+
+We will have to choose one to complete, or we could refuse their demands entirely.
+
+- @middle_class_demand_tax: -1 Budget - Grant tax breaks for businesses and co-operatives.
+- @middle_class_demand_reform: Continue reforms to the curriculum.
+- @middle_class_demand_refuse: Refuse the demands.
+
+@middle_class_demand_tax
+choose-if: not national_economic_recovery or budget >= 1
+unavailable-subtitle: [? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+on-arrival: budget -= 1; ldr_relation += 5; ul_relation += 5; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; communist_dissent += 10; maximalist_dissent += 10; unemployment -= 1.1 if unemployment >= 8; unemployment -= 0.4 if (unemployment > 4 and unemployment < 7); unemployment -= 0.2 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_pnf -= 3(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent); ldr_moderates += 0.2 if ldr_right > ldr_left; 
+
+This is an unpopular move within the party, and is seen handouts to the petite-bourgeois. The loans however, are able to keep businesses afloat temporarily.
+
+@curriculum_reform
+view-if: education_reformed < 3
+on-arrival: {!
+Q.education_reformed += 1;
+
+Q.workers_psi += 3*(1-Q.dissent); 
+Q.middle_class_psi += 6*(1-Q.dissent); 
+Q.catholic_psi -= 3*(1-Q.dissent);
+
+Q.papal_relation -= 1; 
+Q.ppi_relation -= 5*(1-Q.dissent); 
+
+Q.psri_relation += 2*(1-Q.dissent);
+Q.pri_relation += 5*(1-Q.dissent);
+Q.socialist_sentiment += 1;
+Q.republican_sentiment += 3*Q.education_reformed;
+Q.ppi_right += 0.3;
+Q.ppi_left -= 0.1;
+!}
+
+Our efforts to reform the curriculum is opposed every step of the way by the Catholics and the PPI, who criticise 'government overreach'.
+
+@middle_class_demand_refuse
+on-arrival: {!
+Q.middle_class_demand_failed += 1;
+Q.middle_class_psi -= 4*Q.middle_class_demand_failed;
+!}
+
+The middle class are, unsurprisingly, outraged at our refusal to heed their demands.

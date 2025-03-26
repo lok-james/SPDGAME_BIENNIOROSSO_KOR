@@ -1,0 +1,87 @@
+title: Public Works Minister [+ public_education_minister +] acts
+view-if: ((public_works_minister_party == ul_name and ((ul_leader == "Sonnino" and southern_infrastructure_funded < 2 and budget > 0) or (ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5)))) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
+on-arrival: gov_cooldown_timer = 3; gov_public_works_timer = 9
+new-page: true
+tags: event
+go-to: pw_sonnino if public_works_minister_party == ul_name and ul_leader == "Sonnino" and southern_infrastructure_funded < 2 and budget > 0; pw_giolitti if ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5); pw_ppi if public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8
+
+@pw_sonnino
+on-arrival: {!
+Q.southern_infrastructure_funded += 1; 
+Q.budget -= 1; 
+
+Q.economic_growth += 0.2;
+Q.unemployment -= 0.4;
+
+Q.rural_ul += 2;
+Q.industrialists_ul -= 3;
+Q.nationalist_sentiment -= 3;
+
+!}
+
+= [+ public_works_minister +] begins Public Works funding for the South
+
+Obviously under influence of [+ ul_leader +]'s leadership, the [+ ul_name +]-led Public Works Ministry have begun to work on resolving the *Southern Question* and begun public works in the region.
+
+This will help our efforts in the region immensely.
+
+- @root: Interesting.
+
+@pw_giolitti
+on-arrival: {!
+Q.public_works_funded -= 1; 
+Q.budget += 1; 
+Q.unemployment += 0.6; 
+
+Q.workers_psi -= 3*(1-Q.dissent);
+Q.veterans_psi -= 2*(1-Q.dissent);
+Q.rural_psi -= 2*(1-Q.dissent);
+
+Q.workers_ul -= 5*(1-Q.dissent);
+Q.veterans_ul -= 3*(1-Q.dissent);
+Q.rural_ul -= 2*(1-Q.dissent);
+Q.industrialists_ul += 3*(1-Q.dissent);
+
+Q.republican_sentiment -= 1; 
+Q.nationalist_sentiment += 2;
+!}
+
+= [+ public_works_minister +] guts funding of existing Public Works
+
+The [+ ul_name +]-led Public Works Ministry have begun to gut funding of the already-existing Public Works constructed by the previous government due to the budget deficit, causing another wave of unemployment.
+
+Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in [+ ul_full_name +] support.
+
+- @root: There is nothing we can do.
+
+@pw_ppi
+on-arrival: {!
+Q.public_works_funded += 1; 
+Q.budget -= 1; 
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 1.1;
+}
+
+if (Q.unemployment >= 4 && Q.unemployment < 8) {
+    Q.unemployment -= 0.4;
+}
+
+if (Q.unemployment < 4) {
+    Q.unemployment -= 0.2;
+}
+
+Q.workers_ppi += 1*(1-Q.dissent);
+Q.veterans_ppi += 3*(1-Q.dissent);
+Q.rural_ppi += 1*(1-Q.dissent);
+
+Q.nationalist_sentiment -= 2;
+!}
+
+= [+ public_works_minister +] begins construction of new Public Works
+
+The PPI-led Public Works Ministry have begun to plan and construct new Public Works constructed, hoping to lower inflation and utilise the current budget surplus.
+
+This will aid our efforts in reducing unemployment immensely.
+
+- @root: Interesting.

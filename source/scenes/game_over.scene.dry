@@ -123,7 +123,7 @@ if (Q.tax_reformed == 3 && Q.min_compensation == 3 && Q.min_public_works == 3 &&
     this.achieve('piano_minimo_completato');
 }
 
-if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 && Q.reformists_defect == 1) {
+if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 && Q.reformists_defect == 1 && Q.syndicalist_break == 1) {
     this.achieve('fronte_diviso');
 }
 !}
@@ -203,7 +203,7 @@ view-if: soviet_victory == 0
 tags: endings
 go-to: eg_menu
 
-Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III,[? if psi_in_government : under a government led by us,?][? if not psi_in_government : under an incompetent government,?] and under threat of the fascist [+ pnf_leader +] and his far-right bloc.
+Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III, [? if psi_in_government : under a government led by us,?][? if not psi_in_government and not pnf_in_government : under an incompetent government,?][? if pnf_in_government : under a fascist dictatorship. ?] [? if not pnf_in_government : and under threat of the fascist [+ pnf_leader +] and his far-right bloc. ?]
 
 @psi_victorious
 title: PSI still in government

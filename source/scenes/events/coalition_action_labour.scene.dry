@@ -1,0 +1,116 @@
+title: Labour Minister [+ labour_minister +] rolls back our reforms
+subtitle: Labour Minister [+ public_education_minister +] is retaliating against us.
+view-if: gov_cooldown_timer <= 0 and gov_labour_timer <= 0 and ((labour_minister_party == ldr_name and (ldr_relation <= 30 or radicalisation >= 7)) or (labour_minister_party == ul_name and (ul_relation <= 30 or radicalisation >= 7)) or (labour_minister_party == "DS" and ds_leader != "Giuffrida" and (ldr_relation <= 30 or radicalisation >= 7))) and (working_hours > 2 or workers_safety > 2 or wage_increase > 2)
+on-arrival: gov_cooldown_timer = 3 and gov_labour_timer = 9
+new-page: true
+tags: event
+
+= Labour Minister [+ labour_minister +] rolls back our Labour reforms
+
+The [+ labour_minister_party +]-led Labour Ministry have begun to gut and roll back our labour reforms that benefit our workers.
+
+- @gut_cut: Our reforms to working hours is gutted.
+- @gut_safety: Our reforms to workers safety is gutted.
+- @gut_wages: Our reforms to the minimum wage is gutted.
+
+@gut_cut
+view-if: working_hours > 2
+on-arrival: {!
+Q.working_hours -= 1; 
+Q.labour_dissent += 8;
+
+if (Q.syndicalist_active) {
+    Q.syndicalist_dissent += 3;
+}
+
+Q.workers_psi -= 5*(1-Q.dissent);
+
+if (Q.labour_minister_party == ldr_name) {
+    Q.workers_ldr -= 9;
+}
+if (Q.labour_minister_party == ul_name) {
+    Q.workers_ul -= 9;
+}
+if (Q.labour_minister_party == "DS") {
+    Q.workers_ds -= 9;
+}
+
+Q.capital_strike_progress -= 1; 
+Q.unemployment -= 0.3; 
+Q.economic_growth += 0.3;
+Q.inflation -= 0.3;
+
+Q.socialist_sentiment -= 5; 
+!}
+
+Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+
+- @root: There is nothing we can do.
+
+@gut_safety
+view-if: workers_safety > 2
+on-arrival: {!
+Q.workers_safety -= 1; 
+Q.labour_dissent += 5;
+
+if (Q.syndicalist_active) {
+    Q.syndicalist_dissent += 3;
+}
+
+Q.workers_psi -= 3*(1-Q.dissent);
+
+if (Q.labour_minister_party == ldr_name) {
+    Q.workers_ldr -= 5;
+}
+if (Q.labour_minister_party == ul_name) {
+    Q.workers_ul -= 5;
+}
+if (Q.labour_minister_party == "DS") {
+    Q.workers_ds -= 5;
+}
+
+Q.capital_strike_progress -= 1;
+Q.unemployment -= 0.1;
+Q.economic_growth += 0.2; 
+Q.inflation -= 0.3;
+
+Q.socialist_sentiment -= 2; 
+!}
+
+Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+
+- @root: There is nothing we can do.
+
+@gut_wages
+view-if: wage_increase > 2
+on-arrival: {!
+Q.wage_increase -= 1; 
+Q.labour_dissent += 5;
+
+if (Q.syndicalist_active) {
+    Q.syndicalist_dissent += 3;
+}
+
+Q.workers_psi -= 4*(1-Q.dissent);
+
+if (Q.labour_minister_party == ldr_name) {
+    Q.workers_ldr -= 7;
+}
+if (Q.labour_minister_party == ul_name) {
+    Q.workers_ul -= 7;
+}
+if (Q.labour_minister_party == "DS") {
+    Q.workers_ds -= 7;
+}
+
+Q.capital_strike_progress -= 1;
+Q.unemployment -= 0.1;
+Q.economic_growth += 0.2;
+Q.inflation -= 0.4;
+
+Q.socialist_sentiment -= 5; 
+!}
+
+Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+
+- @root: There is nothing we can do.

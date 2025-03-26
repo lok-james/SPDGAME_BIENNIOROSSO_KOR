@@ -62,7 +62,7 @@ Q.labour_strength = 15;
 Q.labour_dissent = 15;
 Q.reformist_strength = 12;
 Q.reformist_dissent = 25;
-Q.syndicalist_strength = 0;
+Q.syndicalist_strength = 0; 
 Q.syndicalist_dissent = 0;
 
 // in the event dissent gets too high
@@ -70,6 +70,7 @@ Q.unions_break = 0;
 Q.maximalists_resign = 0;
 Q.communist_split = 0;
 Q.reformists_defect = 0;
+Q.syndicalist_break = 0;
 
 // Depending on how the Congress goes
 Q.reformists_expelled = 0;
@@ -177,7 +178,7 @@ Q.sonnino_avenged = 0;
 // if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
 Q.fasci_coup_progress = 0;
 
-Q.budget = -2;
+Q.budget = -4;
 Q.in_default = 0;
 
 // Proportion of different social groups
@@ -452,12 +453,14 @@ Q.pnf_in_bn = 0;
 
 Q.violent_prevalence = 0.47;
 Q.psi_time_in_gov = 0;
+Q.psi_left_wing_time = 0;
 Q.psi_inc_strife = 1;
 Q.psi_inc_economic = 1;
 
 // International Relations
 Q.soviet_relation = 2;
 Q.entente_relation = 4;
+Q.american_relation = 6;
 Q.balkan_relation = 2;
 Q.papal_relation = 3
 Q.pope = "Della Chiesa";
@@ -489,9 +492,15 @@ Q.southern_infrastructure_funded = 0;
 Q.southern_land_reformed = 0;
 
 // Tax rates relative to 1919 baseline
-Q.lower_tax_rates = 0;
+Q.lower_tax_rates = 2;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
+
+Q.american_debts = 6;
+Q.uk_debts = 4;
+
+Q.us_debts_over = 0;
+Q.uk_debts_over = 0;
 
 // economic Plans
 Q.moderate_plan_support = 0;
@@ -516,7 +525,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'womens_rights', 'fiscal_policy', 'inter_party_relationships', 
             'international_relations', 'shuffle_leadership', 'para_funding', 
             'constitutional_reform', 'urgency', 'foreign_policy', 'shuffle_cabinet', 
-            'soviet_recovery', 'liberal_crackdown', 'catholic_papacy', 'insurance_payments', 
+            'soviet_recovery', 'liberal_crackdown', 'catholic_papacy', 'insurance_payments_veterans', 
             'fdc_ban', 'ard_ban', 'abl_ban', 'demobilise', 'soviet_end', 
             'agricultural_policy', 'coalition_affairs', 'unemployment_gov', 'welfare_gov', 
             'economic_democracy', 'education_policy', 'fiscal_policy', 'labour_rights', 
@@ -525,7 +534,8 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
             'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury',
-            'gov_army', 'gov_finance', 'rg_orders', 'child_labour', 'radicalisation', 'psu_negotiating'];
+            'gov_army', 'gov_finance', 'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
+            'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -545,7 +555,8 @@ Q.shuffle_cabinet_timer = 0;
 Q.soviet_recovery_timer = 0;
 Q.liberal_crackdown_timer = 0;
 Q.cathoic_papacy_timer = 0;
-Q.insurance_payments_timer = 0;
+Q.insurance_payments_veterans_timer = 0;
+Q.insurance_payments_workers_timer = 0;
 Q.fdc_ban_timer = 0;
 Q.ard_ban_timer = 0;
 Q.abl_ban_timer = 0;
@@ -589,14 +600,35 @@ Q.gov_justice_timer = 14;
 Q.gov_treasury_timer = 14;
 Q.gov_finance_timer = 14;
 Q.gov_army_timer = 14;
+Q.gov_public_education_timer = 14;
+Q.gov_public_works_timer = 14;
+Q.gov_labour_timer = 14;
 Q.giolitti_tenure = 0;
 Q.radicalisation_timer = 6;
 Q.psu_negotiating_timer = 0;
+Q.king_dismissed_timer = 0;
+Q.class1_timer = 0;
+Q.class2_timer = 0;
+Q.party_demands_timer = 0;
 
 // wow 
 Q.mussolini_dies = 0;
 Q.royal_coup = 0;
 Q.friendly_king = 0;
+
+// demands
+Q.class1_num = 0;
+Q.class1_set = "";
+Q.class2_num = 0;
+Q.class2_set = "";
+
+Q.workers_demand_failed = 0;
+Q.middle_class_demand_failed = 0;
+Q.rural_demand_failed = 0;
+Q.veterans_demand_failed = 0;
+Q.industrialists_demand_failed = 0;
+Q.catholic_demand_failed = 0;
+Q.women_demand_failed = 0;
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
@@ -628,10 +660,22 @@ Q.bombacci_advisor = 0; // Nicola Bombacci
 // Reformist advisors
 Q.kuliscioff_advisor = 0; // Anna Kuliscioff
 Q.salvemini_advisor = 0; // Gaetano Salvemini
+Q.altobelli_advisor = 0; // Argentina Altobelli
+Q.buozzi_advisor = 0; // Bruno Buozzi
+Q.matteotti_advisor = 0; // Giacomo Matteotti
 
-// Trade Unionist advisors
+// Labour advisors
 Q.treves_advisor = 0; // Claudio Treves
 Q.rigola_advisor = 0; // Rinaldo Rigola
+Q.daragona_advisor = 0; // Ludovico D'Aragona
+
+// Syndicalist Advisors
+Q.deambris_advisor = 0; // Alceste De Ambris
+Q.divittorio_advisor = 0; // Giuseppe Di Vittorio
+
+// Non-factional Advisors
+Q.picelli_advisor = 0; // Guido Picelli
+
 !}
 new-page: true
 
@@ -673,7 +717,7 @@ Q.maximalist_dissent = 25;
 Q.ppi_relation = 15;
 Q.ds_relation = 20;
 Q.psri_relation = 25;
-Q.budget = -4;
+Q.budget = -6;
 this.state.disableSaves = true;
 !}
 go-to: 1919_main

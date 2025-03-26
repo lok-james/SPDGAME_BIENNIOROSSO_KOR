@@ -26,6 +26,7 @@ Lower-income tax rates: [+ lower_tax_rates : taxation +]
 - @cut_overall: Cut overall taxes.
 - @regressive
 - @tariffs
+- @debts
 - @root: Do not change the tax system.
 - @easy_discard
 - @cancel_advisor_action
@@ -426,3 +427,57 @@ Lowering tariffs helps workers and the urban poor by reducing prices for basic n
 Farmers are hurt by this policy, as cheap imported grain leads to ruin for some small producers. In general, cheap imports are detrimental for small-scale industries aimed at the domestic market.
 
 [? if ldr_promise_failed : Unfortunately, lowering tariffs has led us to enter a deficit, breaking our agreement with the liberals, and their representatives have already requested a meeting with us. ?]
+
+@debts
+title: See our debt situation.
+view-if: uk_debts_over = 0 or us_debts_over = 0
+
+In order to finance the war, Italy took out massive war debts and bonds, mainly to our allies of the United Kingdom and United States.
+
+Now that the war has ended, both nations expect debt repayments, but it is abundantly clear we will not be able to support quick full debt repayments, though it might not hurt to pay off our debts slightly to reassure our allies we are committed to repaying them.
+
+Current tariff level: [+ tariffs : taxation +]
+
+- @repay_us_debts
+- @repay_uk_debts
+- @fiscal_menu: Change domestic taxes instead of tariffs.
+- @root: Do not change tariffs or taxes.
+- @easy_discard
+
+@repay_us_debts
+title: Repay American debtors.
+subtitle: -1 Budget
+view-if: american_debts > 0
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: {!
+Q.american_debts -= 1; 
+Q.budget -= 1;
+Q.american_relation += 2;
+
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+}
+!}
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
+
+Paying off some of our American debtors reaffirms our commitment to repaying American war debt, as well as makes negotiations in order to resolve those same debts smoother.
+
+@repay_uk_debts
+title: Repay British debtors.
+subtitle: -1 Budget
+view-if: uk_debts > 0
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: {!
+Q.uk_debts -= 1; 
+Q.budget -= 1;
+Q.entente_relation += 2;
+
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+}
+!}
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
+
+Paying off some of our British debtors reaffirms our commitment to repaying British war debt, as well as makes negotiations in order to resolve those same debts smoother.
