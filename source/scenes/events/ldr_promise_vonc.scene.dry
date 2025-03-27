@@ -1,5 +1,5 @@
 title: Meeting with the Liberals
-view-if: psi_in_government and centre_left_coalition and ldr_promise_failed or (liberal_crackdown_complete == 0 and liberal_crackdown_accepted == 1 and liberal_crackdown_timer <= 0)
+view-if: psi_in_government and centre_left_coalition and ldr_promise_failed or (liberal_crackdown_complete == 0 and liberal_crackdown_accepted == 1 and liberal_crackdown_timer <= 0) and ldr_in_government
 new-page: true
 tags: event
 

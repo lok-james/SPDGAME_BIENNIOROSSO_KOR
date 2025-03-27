@@ -1,5 +1,5 @@
 title: Meeting with the Catholics
-view-if: psi_in_government and socialist_catholic_coalition and ppi_promise_failed or (catholic_papacy_accepted and catholic_papacy_timer == 0 and roman_question_answered == 0)
+view-if: psi_in_government and socialist_catholic_coalition and ppi_promise_failed or (catholic_papacy_accepted and catholic_papacy_timer == 0 and roman_question_answered == 0) and ppi_in_government
 new-page: true
 tags: event
 

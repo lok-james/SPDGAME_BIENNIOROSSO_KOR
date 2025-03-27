@@ -130,6 +130,18 @@ if (Q.year >= 1921) {
     total_available_seats = 535;
 }
 
+if (Q.prime_minister_party == Q.pnf_name) {
+    Q.pnf_r += parseFloat(Q.ppi_r * 0.2);
+    Q.pnf_r += parseFloat(Q.ul_r * 0.7);
+    Q.pnf_r += parseFloat(Q.ds_r * 0.3);
+    Q.pnf_r += parseFloat(Q.ldr_r * 0.5);
+
+    Q.ppi_r -= parseFloat(Q.ppi_r * 0.2)
+    Q.ul_r -= parseFloat(Q.ul_r * 0.7);
+    Q.ds_r -= parseFloat(Q.ds_r * 0.3);
+    Q.ldr_r -= parseFloat(Q.ldr_r * 0.5); 
+}
+
 if (Q.acerbo_law_passed) {
     // acerbo law
 
@@ -543,6 +555,8 @@ Anti-Socialist Coalition (PNF + [+ ul_name +][? if ds_enemies: + DS?][? if ldr_e
 [? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in [+ pnf_name +] votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
 [? if abstentionist_psi : In accordance with the XVI Congress, all PSI deputies will refuse to take up their seats. ?]
+
+[? if prime_minister_party == pnf_name : Numerous deputies of the PPI, UL, DS and LDR have defected to the PNF. ?]
 
 There are some potential coalition arrangements.
 
