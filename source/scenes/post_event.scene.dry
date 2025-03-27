@@ -892,23 +892,23 @@ if (Q.week_actions >= 1) {
             }
 
             if (Q.national_economic_recovery == 0) {
-                Q.workers_psi -= ((Q.economic_downturn)/6)*psi_inc_economic;
-                Q.middle_class_psi -= ((Q.economic_downturn * 0.8)/6)*psi_inc_economic;
-                Q.rural_psi -= ((Q.economic_downturn * 0.7)/6)*psi_inc_economic;
-                Q.veterans_psi -= ((Q.economic_downturn * 1.2)/6)*psi_inc_economic;
-                Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/6)*psi_inc_economic;
-                Q.women_psi -= ((Q.economic_downturn * 0.8)/6)*psi_inc_economic;
-                Q.catholic_psi -= ((Q.economic_downturn * 0.6)/6)*psi_inc_economic;
+                Q.workers_psi -= ((Q.economic_downturn)/6)*Q.psi_inc_economic;
+                Q.middle_class_psi -= ((Q.economic_downturn * 0.8)/6)*Q.psi_inc_economic;
+                Q.rural_psi -= ((Q.economic_downturn * 0.7)/6)*Q.psi_inc_economic;
+                Q.veterans_psi -= ((Q.economic_downturn * 1.2)/6)*Q.psi_inc_economic;
+                Q.industrialists_psi -= ((Q.economic_downturn * 0.3)/6)*Q.psi_inc_economic;
+                Q.women_psi -= ((Q.economic_downturn * 0.8)/6)*Q.psi_inc_economic;
+                Q.catholic_psi -= ((Q.economic_downturn * 0.6)/6)*Q.psi_inc_economic;
             }
 
             if (Q.national_economic_recovery == 1) {
-                Q.workers_psi -= (((Q.economic_downturn)/6)*psi_inc_economic)/2;
-                Q.middle_class_psi -= (((Q.economic_downturn * 0.8)/6)*psi_inc_economic)/2;
-                Q.rural_psi -= (((Q.economic_downturn * 0.7)/6)*psi_inc_economic)/2;
-                Q.veterans_psi -= (((Q.economic_downturn * 1.2)/6)*psi_inc_economic)/2;
-                Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/6)*psi_inc_economic)/2;
-                Q.women_psi -= (((Q.economic_downturn * 0.8)/6)*psi_inc_economic)/2;
-                Q.catholic_psi -= (((Q.economic_downturn * 0.6)/6)*psi_inc_economic)/2;
+                Q.workers_psi -= (((Q.economic_downturn)/6)*Q.psi_inc_economic)/2;
+                Q.middle_class_psi -= (((Q.economic_downturn * 0.8)/6)*Q.psi_inc_economic)/2;
+                Q.rural_psi -= (((Q.economic_downturn * 0.7)/6)*Q.psi_inc_economic)/2;
+                Q.veterans_psi -= (((Q.economic_downturn * 1.2)/6)*Q.psi_inc_economic)/2;
+                Q.industrialists_psi -= (((Q.economic_downturn * 0.3)/6)*Q.psi_inc_economic)/2;
+                Q.women_psi -= (((Q.economic_downturn * 0.8)/6)*Q.psi_inc_economic)/2;
+                Q.catholic_psi -= (((Q.economic_downturn * 0.6)/6)*Q.psi_inc_economic)/2;
             }
         }
  
