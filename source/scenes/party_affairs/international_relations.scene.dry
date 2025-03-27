@@ -40,7 +40,7 @@ Germany is in turmoil. With memories of the Spartacist Uprising still fresh, and
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 2 if not rcw_over; soviet_recovery_timer -= 2 if rcw_over;
+on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if rcw_over;
 
 Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
 

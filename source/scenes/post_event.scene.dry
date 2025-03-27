@@ -31,8 +31,6 @@ if (Q.year == 1920 && Q.month == 6 && Q.week == 1 && Q.wacky_on == 1 && Q.mussol
     }
 }
 
-Q.mussolini_trial_timer_disp = Q.mussolini_trial_timer * 2;
-
 if (Q.revolutionary_exhaustion > 1) {
     Q.revolutionary_exhaustion = 1;
 }
@@ -564,7 +562,8 @@ if (Q.week_actions >= 1) {
 
         if (Q.year == 1919) {
             Q.workers_psi -= 9/12;
-            Q.rural_psi -= 7/12;
+            Q.rural_psi -= 5/12;
+            Q.middle_class_psi -= 7/12;
         }
 
         // initial boost for pnf for workers, before industrialists
@@ -590,6 +589,7 @@ if (Q.week_actions >= 1) {
             Q.workers_pnf += 3/12;
 
             Q.rural_psi -= 5/12;
+            Q.middle_class_psi -= 6/12;
             Q.workers_psi -= 3/12;
 
             Q.nationalist_sentiment += 10/12;
@@ -634,7 +634,8 @@ if (Q.week_actions >= 1) {
             Q.ard_militancy += 0.04/12;
             Q.abl_militancy += 0.02/12;
 
-            Q.rural_psi -= 6/12;
+            Q.rural_psi -= 4/12;
+            Q.middle_class_psi -= 5/12;
             Q.workers_psi -= 5/12;
 
             Q.nationalist_sentiment += 12/12;
@@ -957,13 +958,13 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.radicalisation > 7.5 && Q.radicalisation_timer <= 0) {
-            Q.middle_class_psi -= 5*(1-Q.dissent);
+            Q.middle_class_psi -= 7*(1-Q.dissent);
             Q.industrialists_psi -= 8*(1-Q.dissent);
             Q.catholic_psi -= 6*(1-Q.dissent);
             Q.radicalisation_timer = 6;
         }
         if (Q.radicalisation > 8.5 && Q.radicalisation_timer <= 0) {
-            Q.middle_class_psi -= 2*(1-Q.dissent);
+            Q.middle_class_psi -= 3*(1-Q.dissent);
             Q.industrialists_psi -= 3*(1-Q.dissent);
             Q.catholic_psi -= 4*(1-Q.dissent);
             Q.workers_psi -= 2*(1-Q.dissent);
@@ -1109,7 +1110,7 @@ if (Q.week_actions >= 1) {
                     Q.workers_psi += 2/24;
                     Q.middle_class_psi += 3/24;
                     Q.industrialists_psi += 2/24;
-                    Q.rural_psi += 2/24;
+                    Q.rural_psi += 4/24;
                     Q.veterans_psi += 1/24;
                     Q.women_psi += 1/24;
                 }

@@ -20,7 +20,7 @@ title: Ordering the Red Guards
 subtitle: We can use the Red Guards to act.
 choose-if: advisor_action_timer = 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: rg_orders
 
 @question_of_ideology
@@ -28,7 +28,7 @@ title: Question of Ideology
 subtitle: There are a number of ideologues from each faction which seek to direct the path of the party.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1; ideology_timer -= 9;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; ideology_timer -= 9;
 go-to: ideology
 
 @party_rally
@@ -36,7 +36,7 @@ title: Party Rally
 subtitle: We should go rally our voters and spread our message further.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: rally
 
 @rev_begin_bombacci

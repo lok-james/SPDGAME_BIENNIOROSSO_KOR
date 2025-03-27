@@ -199,7 +199,7 @@ We have won the war against the bourgeois forces and fascists, establishing a So
 
 @italy_government_lost
 title: We have failed to topple the Monarchy.
-view-if: soviet_victory == 0
+view-if: soviet_victory == 0 and monarchy_gone == 0
 tags: endings
 go-to: eg_menu
 

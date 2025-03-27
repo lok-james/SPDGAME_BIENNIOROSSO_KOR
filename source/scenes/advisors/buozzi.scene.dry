@@ -19,7 +19,7 @@ title: Child Labour
 subtitle: Now that we are in government, we can now reform the laws to improve the status of child labour, or end it entirely.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: child_labour
 
 @economic_democracy_buozzi
@@ -27,7 +27,7 @@ title: Economic Democracy
 subtitle: Now that we are in control of the Labour Ministry, we can make the economic more democratic.
 choose-if: advisor_action_timer <= 0 and psi_in_government and labour_minister_party = "PSI"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government to influence policy. ?][? if not labour_minister_party = "PSI" : The PSI does not control the Labour and Social Security Ministry. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: economic_democracy
 
 @minimum_program_implementation
@@ -35,5 +35,5 @@ title: Implementing the Minimum Plan
 subtitle: Now that we are in government, we can begin implementing our party plans.
 choose-if: advisor_action_timer <= 0 and psi_in_government and moderate_plan_adopted
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government to influence policy. ?][? if not moderate_plan_adopted : We have not yet adopted the Minimum Plan. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: minimum_program

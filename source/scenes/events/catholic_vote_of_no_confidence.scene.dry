@@ -36,7 +36,7 @@ Fine. We pull back the Red Guards from rural areas of contention with the cathol
 choose-if: resources >= 3
 unavailable-subtitle: We do not have enough resources.
 subtitle: -3 resources
-on-arrival: resources -= 3; coalition_dissent -= 1; catholic_papacy_timer += 12 if (catholic_papacy_timer == 0 and roman_question_answered == 0)
+on-arrival: resources -= 3; coalition_dissent -= 1; catholic_papacy_timer += 6 if (catholic_papacy_timer == 0 and roman_question_answered == 0)
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
@@ -125,6 +125,24 @@ if (Q.socialist_catholic_coalition == 1) {
 Q.industrialists_pnf += 4; 
 if (Q.centre_left_coalition == 1) {
     industrialists_ldr -= 4;
+}
+
+if (Q.left_wing_coalition) {
+    Q.left_wing_coalition_failed = 1;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.centre_left_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 1;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 1;
 }
 
 // resetting coalition stuff

@@ -496,8 +496,8 @@ Q.lower_tax_rates = 2;
 Q.upper_tax_rates = 0;
 Q.tariffs = 0;
 
-Q.american_debts = 6;
-Q.uk_debts = 4;
+Q.american_debts = 5;
+Q.uk_debts = 3;
 
 Q.us_debts_over = 0;
 Q.uk_debts_over = 0;
@@ -507,7 +507,7 @@ Q.moderate_plan_support = 0;
 Q.nationalisation_support = 1;
 
 // timers for the russian civil war
-Q.soviet_end_timer = 90;
+Q.soviet_end_timer = 45;
 Q.soviet_recovery_timer = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
@@ -585,10 +585,10 @@ Q.revolutionary_timer = 0;
 Q.urgency_timer = 0;
 Q.welfare_party_timer = 0;
 Q.deficit_timer = 0;
-Q.adriatic_timer = 44;
-Q.ul_emergency_timer = 18;
-Q.ldr_emergency_timer = 18;
-Q.ds_emergency_timer = 18;
+Q.adriatic_timer = 22;
+Q.ul_emergency_timer = 9;
+Q.ldr_emergency_timer = 9;
+Q.ds_emergency_timer = 9;
 Q.mussolini_trial_timer = 0;
 Q.sonnino_southern_timer = 0;
 Q.crisis_program_timer = 0;
@@ -689,10 +689,16 @@ For more information on the politics and of the Italian Kingdom, see the "Librar
 
 This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy" style="color: #900;">**here**</a> if you have not done so already.
 
+- @1919_mod: Begin (mod difficulty)
 - @1919_easy: Begin (easy difficulty)
 - @1919_main: Begin (normal difficulty)
 - @1919_hard: Begin (hard difficulty)
 - @1919_historical: Begin (historical mode)
+
+@1919_mod
+subtitle: The difficulty of a normal game, with the mechanics of an easy one.
+on-arrival: difficulty = -1; 
+go-to: 1919_main
 
 @1919_easy
 on-arrival: difficulty = -1; resources = 4; dues = 3; rg_strength = 150; ppi_relation = 55; ldr_relation = 55; psri_relation = 65; budget = -2;
@@ -707,7 +713,7 @@ subtitle: Saving, loading, and polls will be disabled. [? if not achievement_gam
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
-Q.resources = 2;
+Q.resources = 2; 
 Q.dues = 1;
 Q.rg_strength = 62;
 Q.reformist_dissent = 35;

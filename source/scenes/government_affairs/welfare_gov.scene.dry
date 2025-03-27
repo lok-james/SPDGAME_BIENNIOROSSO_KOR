@@ -31,7 +31,7 @@ choose-if: not national_economic_recovery or budget > 1
 unavailable-subtitle: Not enough budget. (Need 2)
 on-arrival: {!
 Q.unemployment_insurance_founded = 1; 
-Q.insurance_payments_veterans_timer = 24; 
+Q.insurance_payments_veterans_timer = 12; 
 Q.budget -= 2; 
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
@@ -70,7 +70,7 @@ choose-if: not national_economic_recovery or budget > 1
 unavailable-subtitle: Not enough budget. (Need 2)
 on-arrival: {!
 Q.unemployment_insurance_expanded = 1; 
-Q.insurance_payments_veterans_timer = 24; 
+Q.insurance_payments_workers_timer = 12; 
 Q.budget -= 2; 
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;

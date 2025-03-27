@@ -19,7 +19,7 @@ title: Fasci Urgency
 subtitle: We should warn the party about the growing [+ pnf_name +].
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1;
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: urgency
 
 @red_guards_picelli
@@ -27,7 +27,7 @@ title: Red Guards
 subtitle: We can fund our paramilitary.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: red_guards
 
 @arditi_picelli
@@ -36,5 +36,5 @@ subtitle: We can utilise the Arditi del Popolo.
 choose-if: advisor_action_timer = 0
 view-if: arditi_cooperation and arditi_formed
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 9; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: arditi

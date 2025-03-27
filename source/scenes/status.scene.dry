@@ -13,9 +13,6 @@ if (Q.unemployment) {
 }
 Q.dissent_percent = Math.round(Q.dissent_percent);
 Q.radicalisation = Math.round(Q.radicalisation);
-Q.liberal_crackdown_timer_disp = Q.liberal_crackdown_timer * 2;
-Q.catholic_papacy_timer_disp = Q.cathoic_papacy_timer * 2;
-Q.sonnino_southern_timer_disp = Q.sonnino_southern_timer * 2;
 Q.revolutionary_fervour = Math.round(Q.revolutionary_fervour);
 !}
 
@@ -83,7 +80,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if liberal_reform_accepted : Land Reforms disallowed ?]
 
-[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer_disp +] weeks left ?]
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer +] weeks left ?]
 
 [? if liberal_crackdown_accepted and liberal_crackdown_complete == 1: Crackdown on Paramilitaries: Completed ?]
 
@@ -99,7 +96,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if sonnino_southern_accepted and southern_development >= 1 : Improve the Southern Question: Complete ?]
 
-[? if catholic_papacy_accepted and roman_question_answered == 0 : Roman Question resolved: [+ catholic_papacy_timer_disp +] weeks left ?]
+[? if catholic_papacy_accepted and roman_question_answered == 0 : Roman Question resolved: [+ catholic_papacy_timer +] weeks left ?]
 
 [? if catholic_papacy_accepted and roman_question_answered == 1 : Roman Question resolved: Completed ?]
 
@@ -276,7 +273,6 @@ Catholics: PSI: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catho
 [? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
 
 @foreign
-on-arrival: soviet_end_display = soviet_end_timer * 2
 
 = Foreign Relations
 
@@ -290,7 +286,7 @@ Yugoslavia: [+ balkan_relation : radicalisation +]
 
 = International Situations
 
-Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_display +] Weeks Remaining ?][? if rcw_over : Soviet Victory ?]
+Russian Civil War: [? if not rcw_over : Ongoing, Estimated [+ soviet_end_timer +] Months Remaining ?][? if rcw_over : Soviet Victory ?]
 
 Fiume: [? if not resolved_adriatic : Negotiating ?][? if fiume_free : Free City ?][? if fiume_italian : Italian ?]
 
@@ -316,7 +312,9 @@ Trade Schools: [? if trade_school_funded = 0 : Unfunded ?][? if trade_school_fun
 
 = Labour
 
-Unemployment Insurance Program: [? if not unemployment_insurance_founded : Not yet founded ?][? if unemployment_insurance_founded : [+ insurance_payments_timer +] Months left before renewal ?]
+Veterans Insurance Program: [? if not unemployment_insurance_founded : Not yet founded ?][? if unemployment_insurance_founded : [+ insurance_payments_veterans_timer +] Months left before renewal ?]
+
+[? if unemployment_insurance_founded : Workers Insurance Program: [? if not unemployment_insurance_expanded : Not yet expanded ?][? if unemployment_insurance_expanded : [+ insurance_payments_workers_timer +] Months left before renewal ?] ?]
 
 Working Hours: [? if working_hours = 0 : Undeveloped ?][? if working_hours = 1 : Developed ?][? if working_hours = 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
 
@@ -326,7 +324,7 @@ Workplace Safety: [? if workers_safety = 0 : Dangerous ?][? if workers_safety = 
 
 Judicial Reforms: [? if judicial_reform <= 0 : Reactionary ?][? if judicial_reform = 1: Corrupt ?][? if judicial_reform >= 2: Reformed ?]
 
-[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer_disp +] Weeks remaining ?]
+[? if mussolini_jailed and not mussolini_convicted: Trial Date: [+ mussolini_trial_timer +] Months remaining ?]
 
 [? if mussolini_jailed and not mussolini_convicted and judicial_reform < 2: Evidence: [? if evidence < 3 : Insufficient ?][? if evidence >= 3 : Sufficient ?] ?]
 

@@ -36,6 +36,7 @@ on-arrival: democratisation += 1; workers_psi += 3*(1-dissent) if democratisatio
 We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
 
 @investigate_mussolini
+view-if: mussolini_jailed = 1 and mussolini_convicted = 0
 on-arrival: evidence += 1; 
 
 We are able to gain warrants, raiding hideouts and investigating Mussolini's closest confidants and interrogating them along the way.

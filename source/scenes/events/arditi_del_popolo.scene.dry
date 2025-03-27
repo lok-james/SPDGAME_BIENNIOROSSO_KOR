@@ -19,7 +19,7 @@ How should we respond?
 
 @adp_event_cooperation
 subtitle: They will be a valuable ally against fascism.
-choose-if: communist_strength < reformist_strength
+choose-if: communist_strength < reformist_strength or picelli_advisor
 unavailable-subtitle: The Communists are able to sway the party against this.
 on-arrival: arditi_cooperation = 1; communist_dissent += 7*(dissent); adp_strength += 20; 
 achievement: alleanza_ardita

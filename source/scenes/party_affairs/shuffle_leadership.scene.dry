@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor, syndicalist_advisor
+tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor, syndicalist_advisor, nonfactional_advisor
 frequency: 1
 
 - #remove_advisor
@@ -243,7 +243,7 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor
+tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor, syndicalist_advisor, nonfactional_advisor
 frequency: 1
 
 

@@ -1,6 +1,6 @@
 title: King dismisses government!
-view-if: king_relation < ((10*radicalisation)/government_collapse) and king_dismissed_timer <= 0 and psi_seating_disp < 50 and psi_in_government
-on-arrival: {!
+view-if: king_relation < ((10*radicalisation)/government_collapse) and king_dismissed_timer <= 0 and psi_seating_disp < 50 and (in_unstable_coalition or left_wing_coalition)
+on-departure: {!
 
 Q.rural_psi -= 3; 
 Q.middle_class_psi -= 2; 
@@ -13,6 +13,24 @@ if (Q.socialist_catholic_coalition == 1) {
 Q.industrialists_pnf += 4; 
 if (Q.centre_left_coalition == 1) {
     industrialists_ldr -= 4;
+}
+
+if (Q.left_wing_coalition) {
+    Q.left_wing_coalition_failed = 1;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.centre_left_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 1;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 1;
 }
 
 // resetting coalition stuff
@@ -74,8 +92,11 @@ Q.pnf_in_government = 0;
 
 Q.government_collapse += 1;
 Q.party_demands_timer = 6;
+
+Q.revolutionary_fervour += 10;
+Q.revolutionary_exhaustion += 0.01
+Q.leverage = Q.psi_r
 !}
-on-departure: king_dismissed_timer = 24; psi_in_government = 0; centre_left_coalition = 0; socialist_catholic_coalition = 0; left_wing_coalition = 0; republican_sentiment -= 3; leverage = psi_r
 go-to: election_1919.coalition_menu if next_election_time >= 4
 new-page: true
 tags: event
@@ -84,7 +105,7 @@ tags: event
 
 Without any warning at all, the opposition parties and dissident members of our coalition have issued a vote of no-confidence against us and have managed to succeed, resulting in the King dismissing our government.
 
-However, upon further investigation, it appears the King was the one who influenced the Chamber to vote against us, owing to our extremely poor relations. Though it seems his influence for the time being is exhausted, we should be wary if our relations are still cold by then.
+However, upon further investigation, it appears the King was the one who influenced the Chamber to vote against us, owing to our extremely poor relations. Though it seems his influence for the time being is exhausted, we should be wary if our relations are still cold by then. This revelation has reinvigorated the party against the King.
 
 Regardless, the vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.
 

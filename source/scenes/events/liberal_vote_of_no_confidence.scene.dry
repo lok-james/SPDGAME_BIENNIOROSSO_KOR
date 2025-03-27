@@ -37,7 +37,7 @@ Fine. We enacted a massive austerity program to cut welfare, in order to maintai
 choose-if: resources >= 3
 unavailable-subtitle: We do not have enough resources.
 subtitle: -3 resources
-on-arrival: resources -= 3; coalition_dissent -= 1; liberal_crackdown_timer += 12 if (liberal_crackdown_accepted and liberal_crackdown_complete == 0)
+on-arrival: resources -= 3; coalition_dissent -= 1; liberal_crackdown_timer += 6 if (liberal_crackdown_accepted and liberal_crackdown_complete == 0)
 
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
@@ -130,6 +130,24 @@ if (Q.centre_left_coalition == 1) {
 
 Q.ldr_relation -= 8;
 Q.ul_relation -= 8;
+
+if (Q.left_wing_coalition) {
+    Q.left_wing_coalition_failed = 1;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.centre_left_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 1;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 1;
+}
 
 // resetting coalition stuff
 Q.ldr_promise_failed = 0;

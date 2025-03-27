@@ -2,7 +2,7 @@ title: Chamber of Deputies Elections
 new-page: true
 tags: event
 priority: -1
-view-if: ((year = next_election_year and month >= next_election_month) or (year > next_election_year)) and acerbo_law_passed = 0
+view-if: ((year = next_election_year and month >= next_election_month) or (year > next_election_year))
 on-arrival: {!
 // resetting coalition stuff
 Q.ldr_promise_failed = 0;
@@ -44,8 +44,9 @@ Q.ul_allies = 0;
 Q.in_coalition = 0;
 Q.southern_development = 0;
 
-Q.catholic_coalition_failed = 0;
-Q.liberal_coalition_failed = 0;
+Q.left_wing_coalition_failed = 0;
+Q.centre_left_coalition_failed = 0;
+Q.socialist_catholic_coalition_failed = 0;
 
 Q.in_coalition = 0;
 Q.in_unstable_coalition = 0;
@@ -127,6 +128,39 @@ if (Q.year <= 1920) {
 }
 if (Q.year >= 1921) {
     total_available_seats = 535;
+}
+
+if (Q.acerbo_law_passed) {
+    // acerbo law
+
+    var remaining_seats = 180;
+    var party_majority = "";
+    var party_majority_num = 0;
+
+    // Find the party with at least 25% and the highest support
+    for (party of Q.parties) {
+        if (Q[party + '_r'] >= 25 && Q[party + '_r'] > party_majority_num) {
+            party_majority = party;
+            party_majority_num = Q[party + '_r'];
+        }
+    }
+
+    if (party_majority_num >= 25) {
+        var majority_seats = Math.floor((total_available_seats / 3) * 2); // 2/3 of 535
+        var remaining_seats = total_available_seats - majority_seats;
+        var remaining_votes = 100 - party_majority_num;
+
+        // Assign majority party its seats
+        Q[party_majority + '_seating'] = majority_seats;
+
+        for (party of Q.parties) {
+            if (party !== party_majority) {
+                // Distribute the remaining seats proportionally
+                var proportional_seats = (Q[party + '_r'] / remaining_votes) * remaining_seats;
+                Q[party + '_seating'] = Math.round(proportional_seats);
+            }
+        }
+    }
 }
 
 for (var party of Q.parties) {
@@ -329,7 +363,7 @@ for (var party of Q.parties) {
 }
 Q.election_records.push(election_result);
 !}
-on-departure: fasci_urgency = 1 if (fasci_urgency == 0 and pnf_seating_disp >= 15)
+on-departure: fasci_urgency += 1 if (fasci_urgency <= 2 and pnf_seating_disp >= 15)
 on-display: {!
 data = []
 
@@ -526,6 +560,7 @@ Q.anti_socialist_coalition = 0;
 
 !}
 
+- @pnf_majority
 - @psi_majority
 - @left_wing_coalition
 - @centre_left_coalition
@@ -533,6 +568,31 @@ Q.anti_socialist_coalition = 0;
 - @grand_coalition
 - @centre_right_coalition
 - @anti_socialist_coalition
+
+@pnf_majority
+title: PNF majority alone
+subtitle: PNF: [+ pnf_seating_disp +]%
+view-if: pnf_seating_disp >= 50
+on-arrival: {!
+Q.prime_minister_party = "PNF";
+Q.prime_minister = Q.pnf_leader;
+!}
+
+Our worst fears have come true. The PNF have managed to gain a majority in the elections, and secure a two-thirds majority in the Chamber of Deputies.
+
+What now?
+
+- @civil_war: We cannot wait any longer. Mobilise the Red Guards!
+- @nothing: Bide our time further.
+
+@nothing
+subtitle: This will end the game.
+
+[+ pnf_leader +] acts fast, as the Red Guards are harassed and attacked by both government and right-wing paramilitaries. In the Chamber of Deputies, the assassination of Giacomo Matteotti by government forces sparks momentary outrage while [+ pnf_leader +] seizes the opportunity and quickly consolidates Italy into one-party dictatorship.
+
+Italy is lost.
+
+- @game_over: Game over.
 
 @psi_majority
 title: PSI majority alone
@@ -559,7 +619,7 @@ if (Q.reformists_defect == 1 && Q.communist_split == 1 && Q.maximalists_resign =
     Q.prime_minister = "Bacci";
     Q.prime_minister_party = "PSI";
     Q.workers_psi -= 4*(1-Q.dissent);
-    Q.middle_class -= 5*(1-Q.dissent);
+    Q.middle_class_psi -= 5*(1-Q.dissent);
 }
 
 Q.psi_in_government = 1; 
@@ -594,8 +654,8 @@ Finally, the PSI can govern alone! Our long campaign of electioneering has paid 
 title: Can we form a Left-Wing Coalition?
 subtitle: PSI + PSRI[? if pri_prominent : + PRI?][? if psu_coalitioning : + PSU?][? if ds_allies : + DS?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: Dissident Republicans, Socialists [? if pri_prominent = 0:& the Italian Republican Party?] are willing to provide toleration to the coalition. ?]
 view-if: left_wing_coalition_r >= left_wing_minimum
-choose-if: (participating = 1 or maximalist_participating = 1) and psri_relation >= psri_min_relations
-unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if psri_relation < psri_min_relations : Our relations with the PSRI are too poor. ?]
+choose-if: (participating = 1 or maximalist_participating = 1) and psri_relation >= psri_min_relations and left_wing_coalition_failed = 0
+unavailable-subtitle: [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if psri_relation < psri_min_relations : Our relations with the PSRI are too poor. ?][? if left_wing_coalition_failed : Our coalition partners refuse to form another government so soon after the previous one failed. ?]
 on-arrival: {!
 Q.leverage = Q.leverage * 1.5;
 Q.psi_in_government = 1;
@@ -650,9 +710,9 @@ Who should we select to be Prime Minister?
 @centre_left_coalition
 title: Open negotiations with the Liberal parties.
 subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_seating_disp) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : We will have to negotiate with the [+ ul_name +] to secure a majority coalition. ?]
-unavailable-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if ldr_negotiations_failed : The liberals are unwilling to enter into talks again. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?]
+unavailable-subtitle: PSI + PSRI + [+ ldr_name +][? if pri_prominent : + PRI?][? if ds_allies : + DS?][? if ul_allies: + [+ ul_name +]?]: ([+ centre_left_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if ldr_negotiations_failed : The liberals are unwilling to enter into talks again. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?][? if centre_left_coalition_failed : Our coalition partners refuse to form another government so soon after the previous one failed. ?]
 view-if: centre_left_coalition_r >= 50 or ((centre_left_coalition_r + ul_seating_disp >= 50) and not ul_allies)
-choose-if: participating = 1 and ldr_relation >= ldr_min_relations and ldr_negotiations_failed = 0 and southern_land_reformed = 0
+choose-if: participating = 1 and ldr_relation >= ldr_min_relations and ldr_negotiations_failed = 0 and southern_land_reformed = 0 and centre_left_coalition_failed = 0
 on-arrival: {!
 if (Q.centre_left_coalition_r >= 50) {
     Q.psi_in_government = 1;
@@ -712,9 +772,9 @@ go-to: liberal_demands if centre_left_coalition_r >= 50; sonnino_demands if ((ce
 @socialist_catholic_coalition 
 title: Open negotiations with the People's Party.
 subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%).
-unavailable-subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi_relation < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?][? if papal_relation < 5 : Our relations with the Holy See are too poor. ?]
+unavailable-subtitle: PSI + PSRI + PPI[? if pri_prominent : + PRI?][? if ds_allies : + DS ?]: ([+ socialist_catholic_coalition_r +]%). [? if not participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi_relation < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?][? if papal_relation < 5 : Our relations with the Holy See are too poor. ?][? if socialist_catholic_coalition_failed : Our coalition partners refuse to form another government so soon after the previous one failed. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
-choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0 and papal_relation >= 5
+choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0 and papal_relation >= 5 and socialist_catholic_coalition_failed = 0
 on-arrival: {!
 Q.psi_in_government = 1;
 Q.psri_in_government = 1;
@@ -1000,7 +1060,7 @@ if (Q.pri_prominent == 1) {
     Q.public_education_minister_party = Q.ldr_name; 
 }
 Q.public_works_minister_party = Q.ul_name;
-Q.sonnino_southern_timer = 24;
+Q.sonnino_southern_timer = 12;
 Q.sonnino_southern_accepted = 1;
 !}
 go-to: liberal_demands
@@ -1041,7 +1101,7 @@ title: Begin a crack down of violence in the streets, including the Red Guards.
 subtitle: This will force us to rely on the loyalties of government forces.
 tags: libdem_major
 view-if: liberal_crackdown_accepted = 0
-on-arrival: liberal_crackdown_accepted = 1; liberal_negotiations += 20; liberal_crackdown_timer = 24;
+on-arrival: liberal_crackdown_accepted = 1; liberal_negotiations += 20; liberal_crackdown_timer = 12;
 go-to: l_demands_menu
 
 This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
@@ -1174,7 +1234,7 @@ title: Resolve the Roman Question with the Papacy.
 subtitle: This will benefit our Catholic bloc as well if we can form a compromise in time.
 tags: catholic_major
 view-if: catholic_papacy_accepted = 0 and roman_question_answered = 0
-on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20; catholic_papacy_timer = 24;
+on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20; catholic_papacy_timer = 12;
 go-to: c_demands_menu
 
 This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.

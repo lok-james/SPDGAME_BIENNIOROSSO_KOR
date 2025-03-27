@@ -59,7 +59,7 @@ subtitle: This will end the game.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50) and king_veto_removed = 1
 choose-if: king_relation >= 85
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: king = "N/A"
+on-arrival: king = "N/A"; monarchy_gone = 1
 
 The reform passes with the slightest of margins, removing the Statuto Albertino as the constitution of the Kingdom of Italy. A new constitutional congress is to be held in the coming weeks as the King officially abdicates the throne.
 

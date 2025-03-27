@@ -22,27 +22,11 @@ The Acerbo Law is easily repealed, reinstating the previous system of the D'Hond
 
 @keep_acerbo
 view-if: psi_seating_disp >= 50
+on-arrival: royal_coup = 1
 subtitle: Is the fallout from keeping the law really worth it?
-on-arrival: {!
-Q.psri_relation -= 10; 
-Q.ppi_relation -= 12; 
-Q.ldr_relation -= 18; 
-Q.ul_relation -= 18; 
-Q.pri_relation -= 18; 
 
-Q.reformist_dissent += 12;
+This has caused an outrage within our own party's right flank, as well with our allies in the Chamber of Deputies, calling us no better than the fascists that attempted to take over the nation.
 
-Q.radicalisation += 2;
+Already, the King has mobilised the Regio Esercito and begun raiding our offices and bases. We have to strike back.
 
-Q.workers_psi *= 0.7;
-Q.middle_class_psi *= 0.4;
-Q.rural_psi *= 0.8;
-
-Q.ppi_right += 2; 
-Q.ldr_right += 2; 
-Q.ds_right += 2;
-!}
-
-This has caused an outrage within the reformists, as well as our less radical support base, calling us no better than the fascists we beat. Already, we are seeing our support defect to the PSRI and liberal parties, who vow now to defeat us like the fascists.
-
-But hey, they're the ones who voted for it, aren't they?
+- @civil_war: Wait, wha-
