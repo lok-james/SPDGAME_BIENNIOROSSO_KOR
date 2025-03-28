@@ -14,7 +14,7 @@ In fact, there has been strong support from both sides of the party to form a un
 
 - @pldi_merge: The party votes...
 
-@pldi_merge:
+@pldi_merge
 on-arrival: {!
 
 Q.ldr_list = 0;

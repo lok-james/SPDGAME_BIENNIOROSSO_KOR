@@ -633,17 +633,17 @@ go-to: coalition_menu
 
 [? if ldr_list and view_full : {!<tr><td>Liberal Democratic Party</td></tr>!} ?]
 
-[? if ldr_list and and view_full : {!<tr><td>Democratic Liberal Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td>Democratic Liberal Party</td></tr>!} ?]
 
-[? if ldr_list and and view_full : {!<tr><td>Liberal Democrat Bloc</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td>Liberal Democrat Bloc</td></tr>!} ?]
 
-[? if ldr_list and and view_full : {!<tr><td>Liberal Democratic Bloc</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td>Liberal Democratic Bloc</td></tr>!} ?]
 
-[? if ldr_list and and view_full : {!<tr><td>Independent Liberal Democrat Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td>Independent Liberal Democrat Party</td></tr>!} ?]
 
-[? if ldr_list and and view_full : {!<tr><td>Independent Liberal Bloc</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td>Independent Liberal Bloc</td></tr>!} ?]
 
-[? if ldr_list and and view_full : {!<tr><td>Radical Liberal Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td>Radical Liberal Party</td></tr>!} ?]
 
 [? if not ul_in_bn or pnf_in_government : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} Liberal List: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
 
