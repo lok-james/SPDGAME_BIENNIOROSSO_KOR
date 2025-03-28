@@ -111,10 +111,12 @@ if (Q.army_loyalty < 0) {
 
 // ldr merging
 
-for (var classes of Q.classes) {
-    if (Q[classes+ '_ldr'] > 0 || Q[classes+ '_ldr'] < 0) {
-        Q[classes+ '_ul'] += Q[classes+ '_ldr'];
-        Q[classes+ '_ldr'] = 0;
+if (Q.ldr_list == 0 && Q.ldr_party == 0) {
+    for (var classes of Q.classes) {
+        if (Q[classes+ '_ldr'] > 0 || Q[classes+ '_ldr'] < 0) {
+            Q[classes+ '_ul'] += Q[classes+ '_ldr'];
+            Q[classes+ '_ldr'] = 0;
+        }
     }
 }
 
