@@ -1,7 +1,7 @@
 title: [+ year +] [+ ldr_name +] Emergency Congress
 subtitle: The [+ ldr_name +] is having a leadership struggle...
 new-page: true
-view-if: ((ldr_left > ldr_right and ldr_left > ldr_moderates and not ldr_leader = "Nitti") or (ldr_moderates > ldr_right and ldr_moderates > ldr_left and not ldr_leader = "Orlando") or (ldr_right > ldr_left and ldr_right > ldr_moderates and not ldr_leader = "Salandra")) and ldr_emergency_timer <= 0
+view-if: ((ldr_left > ldr_right and ldr_left > ldr_moderates and not ldr_leader = "Nitti") or (ldr_moderates > ldr_right and ldr_moderates > ldr_left and not ldr_leader = "Orlando") or (ldr_right > ldr_left and ldr_right > ldr_moderates and not ldr_leader = "Salandra")) and ldr_emergency_timer <= 0 and (ldr_list or ldr_party)
 on-arrival: ldr_emergency_timer = 9; ldr_congresses += 1; industrialists_ldr -= 1*ldr_congresses; middle_class_ldr -= 1*ldr_congresses;
 tags: event
 

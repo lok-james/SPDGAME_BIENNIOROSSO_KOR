@@ -112,9 +112,16 @@ Q.ul_full_italian = "Liberale Unione";
 Q.pnf_name = "FdC";
 Q.pnf_full_name = "Italian Fasces of Combat";
 Q.pnf_full_italian = "Fasci Italiani di Combattimento";
-Q.pli_formed = 0;
-Q.pldi_formed = 0;
 Q.pri_prominent = 0;
+
+Q.ul_party = 0;
+Q.ul_list = 1;
+
+Q.ldr_party = 0;
+Q.ldr_list = 1;
+
+Q.ds_list = 1;
+Q.ds_party = 0;
 
 // relation with the king; for snap elections and march
 Q.king_relation = 20;

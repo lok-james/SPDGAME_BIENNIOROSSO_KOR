@@ -109,6 +109,15 @@ if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
 
+// ldr merging
+
+for (var classes of Q.classes) {
+    if (Q[classes+ '_ldr'] > 0 || Q[classes+ '_ldr'] < 0) {
+        Q[classes+ '_ul'] += Q[classes+ '_ldr'];
+        Q[classes+ '_ldr'] = 0;
+    }
+}
+
 // coalition support mechanics
 
 for (var classes of Q.classes) {

@@ -1,6 +1,6 @@
 title: Formation of the Italian Liberal Party
-on-arrival: ul_name = "PLI"; ul_full_italian = "Partito Liberale Italiano"; ul_full_name = "Italian Liberal Party"; pli_formed = 1; prime_minister_party = ul_name if prime_minister_party == "UL"
-view-if: year = 1922 and month = 10 and pli_formed = 0
+on-arrival: ul_name = "PLI"; ul_full_italian = "Partito Liberale Italiano"; ul_full_name = "Italian Liberal Party"; ul_party = 1; ul_list = 0; prime_minister_party = ul_name if prime_minister_party == "UL"
+view-if: year = 1922 and month = 10 and ul_list = 1
 new-page: true
 max-visits: 1
 tags: event
@@ -8,4 +8,91 @@ face-image: img/PLI.png
 
 = Formation of the Italian Liberal Party
 
-The Liberal Union, also known as Unione Liberale, under Giovanni Giolitti, has reorganised itself under a new party, known as the Italian Liberal Party. The party still represents its former ideals, though it seems to be significantly more friendly to our enemies in the far-right.
+The Italian Liberal Party has been formed. A merger of the parties under the Liberal List, a consolidated party for the liberals has been formed, alongside the Italian Democratic Liberal Party.
+
+In fact, there has been strong support from both sides of the party to form a united party, in order to further consolidate the liberal vote in the face of the Socialists and Catholics.
+
+- @pldi_merge: The party votes...
+
+@pldi_merge:
+on-arrival: {!
+
+Q.ldr_list = 0;
+Q.ldr_party = 0;
+
+Q.workers_ul += Q.workers_ldr;
+Q.middle_class_ul += Q.middle_class_ldr;
+Q.industrialists_ul += Q.industrialists_ldr;
+Q.rural_ul += Q.rural_ldr;
+Q.veterans_ul += Q.veterans_ldr;
+Q.catholic_ul += Q.catholic_ldr;
+Q.women_ul += Q.women_ldr;
+
+Q.workers_ldr = 0;
+Q.middle_class_ldr = 0;
+Q.industrialists_ldr = 0;
+Q.rural_ldr = 0;
+Q.veterans_ldr = 0;
+Q.catholic_ldr = 0;
+Q.women_ldr = 0;
+
+Q.ul_relation = (Q.ul_relation + Q.ldr_relation)/2;
+
+Q.ldr_relation = 0;
+
+Q.ul_r += Q.ldr_r;
+Q.ldr_r = 0;
+
+Q.ul_seating_disp += Q.ldr_seating_disp;
+Q.ldr_seating_disp = 0;
+
+Q.ul_seating += Q.ldr_seating;
+Q.ldr_seating = 0;
+
+Q.ul_votes += Q.ldr_votes;
+Q.ldr_votes = 0;
+Q.ul_normalised += Q.ldr_normalised;
+Q.ldr_normalised = 0;
+
+Q.parties = Q.parties.filter(party => party !== 'ldr');
+
+if (Q.foreign_minister_party == "PLDI") {
+    Q.foreign_minister_party = "PLI";
+}
+
+if (Q.labour_minister_party == "PLDI") {
+    Q.labour_minister_party = "PLI";
+}
+
+if (Q.justice_minister_party == "PLDI") {
+    Q.justice_minister_party = "PLI";
+}
+
+if (Q.public_education_minister_party == "PLDI") {
+    Q.public_education_minister_party = "PLI";
+}
+
+if (Q.treasury_minister_party == "PLDI") {
+    Q.treasury_minister_party = "PLI";
+}
+
+if (Q.agriculture_minister_party == "PLDI") {
+    Q.agriculture_minister_party = "PLI";
+}
+
+Q.old_workers_ul += Q.old_workers_ldr;
+Q.old_middle_class_ul += old_middle_class_ldr;
+Q.old_industrialists_ul += old_industrialists_ldr;
+Q.old_rural_ul += old_rural_ldr;
+Q.old_veterans_ul += old_veterans_ldr;
+Q.old_catholic_ul += old_catholic_ldr;
+
+Q.old_workers_ldr = 0;
+Q.old_middle_class_ldr = 0;
+Q.old_industrialists_ldr = 0;
+Q.old_rural_ldr = 0;
+Q.old_veterans_ldr = 0;
+Q.old_catholic_ldr = 0;
+!}
+
+As expected, the PLDI have merged with the PLI, consolidating the liberal vote into one political party that will stand against the other parties in the Chamber of Deputies.

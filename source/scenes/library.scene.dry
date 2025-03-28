@@ -117,7 +117,6 @@ go-to: menu
 
 **Catholics**: Consisting of the clergy and those religious to the Catholic Church. They support the Catholic parties almost entirely, making up a strong foundation for the PPI. They make up about 5% of the population.
 
-
 @public_opinion
 on-arrival: {!
 Q.republican_sentiment_disp = Math.round(Q.republican_sentiment);
@@ -162,19 +161,19 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] DS: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%; PNF: [+ workers_pnf_display +]%, Others: [+ workers_other_display +]%
+Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] DS: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ workers_ldr_display +]%, ?] [+ ul_name +]: [+ workers_ul_display +]%; PNF: [+ workers_pnf_display +]%, Others: [+ workers_other_display +]%
 
-Middle Class: PSI: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] DS: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%; PNF: [+ middle_class_pnf_display +]%, Others: [+ middle_class_other_display +]%
+Middle Class: PSI: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] DS: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ middle_class_ldr_display +]%, ?] [+ ul_name +]: [+ middle_class_ul_display +]%; PNF: [+ middle_class_pnf_display +]%, Others: [+ middle_class_other_display +]%
 
-Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] DS: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%; PNF: [+ rural_pnf_display +]%, Others: [+ rural_other_display +]%
+Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] DS: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ rural_ldr_display +]%, ?] [+ ul_name +]: [+ rural_ul_display +]%; PNF: [+ rural_pnf_display +]%, Others: [+ rural_other_display +]%
 
-Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] DS: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%; PNF: [+ industrialists_pnf_display +]%, Others: [+ industrialists_other_display +]%
+Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] DS: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ industrialists_ldr_display +]%, ?] [+ ul_name +]: [+ industrialists_ul_display +]%; PNF: [+ industrialists_pnf_display +]%, Others: [+ industrialists_other_display +]%
 
-Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] DS: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%; PNF: [+ veterans_pnf_display +]%, Others: [+ veterans_other_display +]%
+Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] DS: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ veterans_ldr_display +]%, ?] [+ ul_name +]: [+ veterans_ul_display +]%; PNF: [+ veterans_pnf_display +]%, Others: [+ veterans_other_display +]%
 
-Catholics: PSI: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] DS: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%; PNF: [+ catholic_pnf_display +]%, Others: [+ catholic_other_display +]%
+Catholics: PSI: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] DS: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ catholic_ldr_display +]%, ?] [+ ul_name +]: [+ catholic_ul_display +]%; PNF: [+ catholic_pnf_display +]%, Others: [+ catholic_other_display +]%
 
-[? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
+[? if womens_suffrage = 1: Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] DS: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [? if (ldr_list or ldr_party) : [+ ldr_name +]: [+ women_ldr_display +]%, ?] [+ ul_name +]: [+ women_ul_display +]%; PNF: [+ women_pnf_display +]%, Others: [+ women_other_display +]% ?]
 
 @parties
 go-to: menu
@@ -193,7 +192,7 @@ Current relations: [+ psri_relation : relationships +]
 
 [? if pri_prominent : Current relations: [+ pri_relation : relationships +] ?]
 
-**DS** - *Democrazia Sociale* (Social Democracy) - A newly formed centre-left party under the merger of the Constitutional Democratic Party, the Democratic Party and parts of the Italian Radical Party. The party is supported mainly by the the Southern regions of Italy.
+**DS** - *Democrazia Sociale* (Social Democracy) - [? if ds_party : A newly formed centre-left party under the merger ?][? if not ds_party : A newly formed electoral list consisting ?] of the Constitutional Democratic Party, the Democratic Party and the People's Democratic Party and others. Its electoral list is supported mainly by the the Southern regions of Italy.
 
 Current relations: [+ ds_relation : relationships +]
 
@@ -201,19 +200,19 @@ Current relations: [+ ds_relation : relationships +]
 
 Current relations: [+ ppi_relation : relationships +]
 
-**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed centre party under the merger of the Liberal Union and the Italian Radical Party. They get their support mainly from the industrialists & Landowners under the leadership of Vittorio Emanuele Orlando, former Prime Minister.
+[? if ldr_list or ldr_party : **[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed [? if ldr_party : centre party ?][? if ldr_list : electoral list ?] under the merger of the Liberal Democratic Party, the Radical Liberal Party and others. They get their support mainly from the industrialists & Landowners under the leadership of Vittorio Emanuele Orlando, former Prime Minister. ?]
 
-Current relations: [+ ldr_relation : relationships +]
+[? if ldr_list or ldr_party : Current relations: [+ ldr_relation : relationships +] ?]
 
 **[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - A centre-right party that remained as remnants of the party that refused to merge to form the [+ ldr_name +], led by Giovanni Giolitti.
 
 Current relations: [+ ul_relation : relationships +]
 
-**[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed party, operating essentially as the political expression of [+ pnf_leader +]'s *Fasces of Combat*.
+**[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed organisation, operating essentially as the political expression of [+ pnf_leader +]'s *Fasces of Combat*.
 
 Current relations: [+ pnf_relation : relationships +]
 
-**Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their political position usually lies on the left. 
+**Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their political position usually covers political spectrum from the left to the right.
 
 @paramilitaries
 on-arrival: {!
@@ -491,7 +490,7 @@ data.push({
 
 {!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} DS: {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!}
+[? if (ldr_list or ldr_party) : {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#87CEFA'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!}
 

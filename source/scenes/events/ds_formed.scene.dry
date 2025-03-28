@@ -1,0 +1,11 @@
+title: Formation of the Social Democratic Party
+on-arrival: ds_party = 1; ds_list = 0; 
+view-if: year = 1921 and month = 4 and week = 1 and ldr_list = 1
+new-page: true
+max-visits: 1
+tags: event
+face-image: img/DS.png
+
+= Formation of the Social Democratic Party
+
+The Democratic List has officially dissolved. Following the establishment of the National Council of Social and Radical Democracy in January alongside the Italian Radical Party, the body has been planning the establishment of its own party, now called the Social Democratic Party; a merger of the various parties under the Democratic List, alongside the Radical Party. 
