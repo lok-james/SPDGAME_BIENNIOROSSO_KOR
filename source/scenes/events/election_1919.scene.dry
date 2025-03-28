@@ -577,119 +577,119 @@ go-to: coalition_menu
 {!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td><td>% Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Socialist List: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
-{!<tr><td>**Italian Socialist Party**</td></tr>!}
+{!<tr><td> **-Italian Socialist Party** </td></tr>!}
 
-[? if ds_joint and ds_party : {!<tr><td>Social Democratic Party</td></tr>!} ?]
+[? if ds_joint and ds_party : {!<tr><td> -Social Democratic Party </td></tr>!} ?]
 
-[? if psri_joint : {!<tr><td>Italian Reformist Socialist Party</td></tr>!} ?]
+[? if psri_joint : {!<tr><td> -Italian Reformist Socialist Party </td></tr>!} ?]
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} Communist List: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pcdi_formed : {!<tr><td>Communist Party of Italy</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td> -Communist Party of Italy </td></tr>!} ?]
 
 [? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} Socialist Unity List: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td>Socialist Unity Party</td></tr>!} ?]
+[? if psu_formed : {!<tr><td> -Socialist Unity Party </td></tr>!} ?]
 
 [? if not psri_joint : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} Reformist Socialist List: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not psri_joint : {!<tr><td>Italian Reformist Socialist Party</td></tr>!} ?]
+[? if not psri_joint : {!<tr><td> -Italian Reformist Socialist Party </td></tr>!} ?]
 
 [? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} Republican List: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pri_prominent : {!<tr><td>Italian Republican Party</td></tr>!} ?]
+[? if pri_prominent : {!<tr><td> -Italian Republican Party </td></tr>!} ?]
 
 [? if not ds_in_bn and (ds_party or ds_list) : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} Democratic List: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
 
 [? if not ds_in_bn and not ds_joint and ((ds_party and ds_leader = "Colonna") or (ds_list and not view_full) or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5))) : {!<tr><td>Social Democratic Party</td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Constitutional Democratic Party</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Constitutional Democratic Party </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Constitutional Democratic Reform Party</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Constitutional Democratic Reform Party </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Democratic Party</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Democratic Party </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Democratic Bloc</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Democratic Bloc </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Democratic Concentration Bloc</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Democratic Concentration Bloc </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Bloc of Democrats and Fighters</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Bloc of Democrats and Fighters </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Party of Independent Democrats</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Party of Independent Democrats </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>People's Democratic Party</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -People's Democratic Party </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Social Democratic Union</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Social Democratic Union </td></tr>!} ?]
 
-[? if not ds_in_bn and ds_list and view_full : {!<tr><td>Christian Democratic Party</td></tr>!} ?]
+[? if not ds_in_bn and ds_list and view_full : {!<tr><td> -Christian Democratic Party </td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} Catholic List: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td>Italian People's Party</td></tr>!}
+{!<tr><td> -Italian People's Party </td></tr>!}
 
 [? if ldr_party or ldr_list : {!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} Liberals, Democrats and Radicals: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
 
-[? if ldr_party or (ldr_list and not view_full): {!<tr><td>Italian Democratic Liberal Party</td></tr>!} ?]
+[? if ldr_party or (ldr_list and not view_full): {!<tr><td> -Italian Democratic Liberal Party </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Liberal Democratic Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Liberal Democratic Party </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Democratic Liberal Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Democratic Liberal Party </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Liberal Democrat Bloc</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Liberal Democrat Bloc </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Liberal Democratic Bloc</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Liberal Democratic Bloc </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Independent Liberal Democrat Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Independent Liberal Democrat Party </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Independent Liberal Bloc</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Independent Liberal Bloc </td></tr>!} ?]
 
-[? if ldr_list and view_full : {!<tr><td>Radical Liberal Party</td></tr>!} ?]
+[? if ldr_list and view_full : {!<tr><td> -Radical Liberal Party </td></tr>!} ?]
 
 [? if not ul_in_bn or pnf_in_government : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} Liberal List: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not ul_in_bn and (ul_party or (ul_list and not view_full)) : {!<tr><td>Italian Liberal Party</td></tr>!} ?]
+[? if not ul_in_bn and (ul_party or (ul_list and not view_full)) : {!<tr><td> -Italian Liberal Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Liberal Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Liberal Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Liberal Monarchist Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Liberal Monarchist Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Liberal Nationalist Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Liberal Nationalist Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Constitutional Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Constitutional Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Constitutional Liberal Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Constitutional Liberal Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Constitutional Concentration Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Constitutional Concentration Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Independent Liberal Party</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Independent Liberal Party </td></tr>!} ?]
 
-[? if not ul_in_bn and ul_list and view_full : {!<tr><td>Bloc of Independent Liberals</td></tr>!} ?]
+[? if not ul_in_bn and ul_list and view_full : {!<tr><td> -Bloc of Independent Liberals </td></tr>!} ?]
 
 [? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} National Bloc: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td><td>!} [+ bn_seating_disp +]% {!</td></tr>!} ?]
 
-[? if ul_in_bn and view_full : {!<tr><td>Italian Liberal Party</td></tr>!} ?]
+[? if ul_in_bn and view_full : {!<tr><td> -Italian Liberal Party </td></tr>!} ?]
 
-[? if ds_in_bn and view_full : {!<tr><td>Social Democratic Party</td></tr>!} ?]
+[? if ds_in_bn and view_full : {!<tr><td> -Social Democratic Party </td></tr>!} ?]
 
-[? if pnf_in_bn and view_full : {!<tr><td>National Fascist Party</td></tr>!} ?]
+[? if pnf_in_bn and view_full : {!<tr><td> -National Fascist Party </td></tr>!} ?]
 
 [? if not pnf_in_bn and (pnf_r >= 5): {!<tr><td><div class="box" style='background-color:#000000'> </div>!} Fascist List: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pnf_in_bn and view_full and (pnf_r >= 5) : {!<tr><td>[+ pnf_name +]</td></tr>!} ?]
+[? if pnf_in_bn and view_full and (pnf_r >= 5) : {!<tr><td> -[+ pnf_name +] </td></tr>!} ?]
 
-[? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td>Social Democratic Party</td></tr>!} ?]
+[? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td> -Social Democratic Party </td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +]% {!</td></tr>!}
 
-[? if not pri_prominent : {!<tr><td>Italian Republican Party</td></tr>!} ?]
+[? if not pri_prominent : {!<tr><td> -Italian Republican Party </td></tr>!} ?]
 
-[? if pnf_r < 5 : {!<tr><td>[+ pnf_name +]</td></tr>!} ?]
+[? if pnf_r < 5 : {!<tr><td> -[+ pnf_name +] </td></tr>!} ?]
 
-[? if not ldr_list and not ldr_party : {!<tr><td>Constitutional Opposition</td></tr>!} ?]
+[? if not ldr_list and not ldr_party : {!<tr><td> -Constitutional Opposition </td></tr>!} ?]
 
-[? if psri_joint : {!<tr><td>Dissident Socialists</td></tr>!} ?]
+[? if psri_joint : {!<tr><td> -Dissident Socialists </td></tr>!} ?]
 
-[? if pnf_in_government : {!<tr><td>Independent Liberals</td></tr>!} ?]
+[? if pnf_in_government : {!<tr><td> -Independent Liberals </td></tr>!} ?]
 
 [? if abstentionist_psi : {!<tr><td><div class="box" style='background-color:#FFFFFF'> </div>!} Vacant: {!</td><td>!} N/A {!</td><td>!} N/A {!</td><td>!} [+ vacant_seating +] {!</td><td>!} [+ vacant_seating_disp +]% {!</td></tr>!} ?]
 {!</table>!}
