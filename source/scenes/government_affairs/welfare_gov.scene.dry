@@ -52,8 +52,18 @@ if (Q.socialist_catholic_coalition == 1) {
     Q.veterans_scc += 4*(1-Q.dissent);
 }
 Q.veterans_pnf -= 4*(1-Q.dissent); 
-Q.economic_growth += 0.4; 
-Q.inflation += 0.8;
+
+Q.economic_growth += 0.4;
+Q.inflation += 0.4;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
+
 Q.psri_relation += 7*(1-Q.dissent);
 Q.nationalist_sentiment -= 3;
 !}
@@ -91,8 +101,18 @@ if (Q.socialist_catholic_coalition == 1) {
     Q.workers_scc += 4*(1-Q.dissent);
 }
 Q.workers_pnf -= 4*(1-Q.dissent); 
-Q.economic_growth += 0.4; 
-Q.inflation += 0.8;
+
+Q.economic_growth += 0.4;
+Q.inflation += 0.4;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
+
 Q.psri_relation += 7*(1-Q.dissent);
 Q.nationalist_sentiment -= 3;
 !}
@@ -107,7 +127,7 @@ Now that our financial situation is better, we can expand the scope of the progr
 subtitle: -1 Budget [? if catholic_charity_accepted :- The funding of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: labour_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
 unavailable-subtitle: [? if labour_minister_party != "PSI" : The PSI does not control the Labour & Social Security Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
-on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent) if not in_unstable_coalition; veterans_clc += 2*(1-dissent) if centre_left_coalition; veterans_scc += 2*(1-dissent) if socialist_catholic_coalition; veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4;
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent) if not in_unstable_coalition; veterans_clc += 2*(1-dissent) if centre_left_coalition; veterans_scc += 2*(1-dissent) if socialist_catholic_coalition; veterans_pnf -= 2*(1-dissent); economic_growth += 0.3; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
 We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
@@ -119,7 +139,7 @@ We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds 
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
 choose-if: treasury_minister_party = "PSI" 
 unavailable-subtitle: [? if treasury_minister_party != "PSI" : The PSI does not control the Treasury Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
-on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4; ppi_left += 0.1
+on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); ppi_left += 0.1; economic_growth += 0.3; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.

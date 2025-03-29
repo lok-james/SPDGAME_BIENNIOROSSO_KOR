@@ -32,7 +32,7 @@ The Labour Ministry works on developing and enforcing safety regulations, in ord
 choose-if: public_education_minister_party = "PSI"
 unavailable-subtitle: We do not control the Public Education Ministry.
 subtitle: This has broad popular support across the workers and middle class.
-on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; unemployment -= 0.4; unemployment -= 0.2 if unemployment >= 8;
+on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; economic_growth -= 0.1 if economic_growth > 0; unemployment -= 0.1; unemployment -= 0.1 if unemployment >= 8;
 max-visits: 3
 
 We continue enforcing the *Casati Law* further, as well as amending it further to increase the percentages necessary to qualify as 'adequate', improving attendance overall.
@@ -41,7 +41,7 @@ We continue enforcing the *Casati Law* further, as well as amending it further t
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
-on-arrival: welfare += 1; child_welfare += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; coalition_dissent += 1 if (child_welfare >= 3 and unemployment >= 15); unemployment -= 0.4; inflation += 0.2; economic_growth += 0.3; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1);
+on-arrival: welfare += 1; child_welfare += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; coalition_dissent += 1 if (child_welfare >= 3 and unemployment >= 15); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We have increased welfare spending on poorer families with children. [? if child_welfare >= 3 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
@@ -111,7 +111,9 @@ Q.ldr_right += 0.6;
 Q.ds_right += 0.2; 
 Q.ul_sonnino += 2;
 
-Q.unemployment -= 0.8;
+Q.unemployment -= 0.6;
+Q.economic_growth -= 1.2;
+Q.inflation -= 0.1;
 !}
 
 With the support of the left including the PSRI[? if pri_prominent: and the PRI?][? if ul_leader = "Sonnino" :alongside the PPI?], we have successfully passed a bill to ban child labour in Italy! This has heartened our more radical supporters, while hurting our relations with the [+ ldr_name +]. With the increasing political discourse around child labour, the [+ ldr_name +] and DS have gained landowner and industrialist votes at the expense of the [+ pnf_name +].

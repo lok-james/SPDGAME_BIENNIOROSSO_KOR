@@ -81,7 +81,19 @@ if (Q.socialist_catholic_coalition == 1) {
 
 Q.unemployment -= 0.3;
 Q.economic_growth += 0.2;
-Q.inflation += 0.4;
+Q.inflation += 0.2;
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 1;
+}
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
 
 Q.ul_sonnino += 0.2;
 Q.ds_right += 0.1;
@@ -139,9 +151,26 @@ Q.ul_sonnino += 0.2*Q.nationalisation_progress;
 Q.ds_right += 0.1*Q.nationalisation_progress;
 Q.ldr_right += 0.1*Q.nationalisation_progress;
 
-Q.unemployment -= 0.4;
-Q.economic_growth += 0.3;
-Q.inflation += 0.4;
+Q.unemployment -= 0.3;
+Q.economic_growth += 0.2;
+Q.inflation += 0.2;
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 1;
+}
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.nationalisation_progress > 2) {
+    Q.unemployment -= 0.1;
+    Q,economic_growth += 0.2;
+}
 
 Q.industrialists_pnf += 4; 
 Q.ldr_relation -= 4; 

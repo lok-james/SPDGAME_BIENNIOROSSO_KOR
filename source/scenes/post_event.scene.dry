@@ -111,12 +111,16 @@ if (Q.army_loyalty < 0) {
 
 // ldr merging
 
-if (Q.ldr_list == 0 && Q.ldr_party == 0) {
+if (Q.ldr_existing == 0) {
     for (var classes of Q.classes) {
         if (Q[classes+ '_ldr'] > 0 || Q[classes+ '_ldr'] < 0) {
             Q[classes+ '_ul'] += Q[classes+ '_ldr'];
             Q[classes+ '_ldr'] = 0;
         }
+    }
+
+    if (ldr_relation != 0) {
+        Q.ul_relation += Q.ldr_relation;
     }
 }
 
@@ -183,6 +187,10 @@ for (var c of Q.classes) {
                     Q[c+'_'+party] /= 2;
                 }
             }
+        }
+        // natural loss
+        if (Q.year >= 1923) {
+            Q[c+'_'+party] *= 0.98;
         }
     }
 

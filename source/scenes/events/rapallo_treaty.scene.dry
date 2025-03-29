@@ -54,7 +54,7 @@ At home however, our veterans are ecstatic, and we have effectively pulled the r
 @adriatic_equal
 subtitle: This will leave us with Trieste, Istria and Zadar, while leaving the outer borders under co-operative control.
 view-if: psi_in_government and foreign_minister_party == "PSI"
-choose-if: balkan_relation >= 8 and entente_relation > 2
+choose-if: balkan_relation >= 7 and entente_relation > 2
 unavailable-subtitle: [? if balkan_relation < 8 : The Yugoslavian government is too wary of us. ?][? if entente_relation < 2: The Yugoslavian government knows they can get more from us. ?]
 on-arrival: {!
 Q.veterans_psi += 4*(1-Q.dissent);
@@ -138,7 +138,7 @@ Next up on the list is Fiume. Occupied recently by Gabriele D'Annunzio, it is of
 @fiume_italy 
 subtitle: Thankfully, they seem willing to accommodate.
 view-if: psi_in_government and foreign_minister_party == "PSI"
-choose-if: entente_relation >= 8 and balkan_relation >= 8 or ceded_territories == 1
+choose-if: (entente_relation >= 7 and balkan_relation >= 7) or ceded_territories == 1
 unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
 on-arrival: {!
 Q.veterans_psi += 4;

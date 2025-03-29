@@ -76,7 +76,7 @@ We continue negotiating the terms of the debts we have accumulated to the United
 @negotiate_done_us
 subtitle: Our negotiations have been successful.
 view-if: american_debts <= 0 and us_debts_over = 0 and in_default = 0
-on-arrival: us_debts_over = 1; budget += 3; coalition_dissent -= 1 if coalition_dissent > 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 12*(1-dissent); industrialists_psi += 9*(1-dissent); middle_class_psi += 7*(1-dissent); rural_psi += 8*(1-dissent); capital_strike_progress -= 3 if capital_strike_progress > 3; economic_growth += 0.9; economic_growth += 0.7 if economic_growth < 0
+on-arrival: us_debts_over = 1; budget += 3; coalition_dissent -= 1 if coalition_dissent > 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 12*(1-dissent); industrialists_psi += 9*(1-dissent); middle_class_psi += 7*(1-dissent); rural_psi += 8*(1-dissent); capital_strike_progress -= 3 if capital_strike_progress > 3; economic_growth += 0.6; economic_growth += 0.2 if economic_growth < 0
 
 Finally, after perilous negotiations with the United States, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1931 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
 
@@ -85,7 +85,7 @@ The new plan has boosted confidence of our economy, as well as allowed American 
 @negotiate_done_uk
 subtitle: Our negotiations have been successful.
 view-if: uk_debts <= 0 and uk_debts_over = 0 and in_default = 0
-on-arrival: uk_debts_over = 1; budget += 2; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 8*(1-dissent); industrialists_psi += 5*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 5*(1-dissent); capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
+on-arrival: uk_debts_over = 1; budget += 2; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 8*(1-dissent); industrialists_psi += 5*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 5*(1-dissent); capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.4; economic_growth += 0.1 if economic_growth < 0
 
 Finally, after perilous negotiations with the United States, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1928 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
 

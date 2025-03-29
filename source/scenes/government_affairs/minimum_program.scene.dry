@@ -38,7 +38,7 @@ view-if: tax_reformed > 0
 choose-if: finance_minister_party = "PSI" or finance_minister_party = "PPI"
 unavailable-subtitle: We do not control the Financial Ministry.
 max-visits: 2
-on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if (tax_reformed = 3 and upper_tax_rates >= 5); lower_tax_rates += 1 if (tax_reformed = 3 and lower_tax_rates <= 5); ppi_moderates += 0.1 if ppi_left < ppi_right; socialist_sentiment += 1; republican_sentiment += 2;
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if (tax_reformed = 3 and upper_tax_rates >= 5); lower_tax_rates += 1 if (tax_reformed = 3 and lower_tax_rates <= 5); ppi_moderates += 0.1 if ppi_left < ppi_right; socialist_sentiment += 1; republican_sentiment += 2; economic_growth += 0.1 if economic_growth < 0 and tax_reformed = 3;
 
 [? if tax_reformed = 2: We continue reforming the tax code, slowly but surely bringing it to modern standards and improving the bureaucracy plaguing it. ?]
 
@@ -51,7 +51,7 @@ subtitle: We can redistribute unused and uncultivated land to keep the lower une
 view-if: uncultivated_redistributed = 0
 choose-if: agriculture_minister_party = "PSI" and judicial_reform > 0
 unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 0 : The judiciary would not support this. ?]
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.4 if unemployment >= 8; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; ldr_moderates += 0.2 if ldr_right > ldr_left
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; economic_growth += 0.2 if economic_growth < 0; ldr_moderates += 0.2 if ldr_right > ldr_left
 
 We begin redistributions of uncultivated lands of large estates via legal means, decreasing unemployment and increasing the rural populace.
 
@@ -61,7 +61,7 @@ view-if: uncultivated_redistributed > 0
 choose-if: agriculture_minister_party = "PSI" and judicial_reform > 1
 unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 1 : The judiciary would not support this. ?]
 max-visits: 2
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.3 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3; ldr_moderates += 0.2 if ldr_right > ldr_left
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.1 if unemployment >= 8; unemployment -= 0.2 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3; ldr_moderates += 0.2 if ldr_right > ldr_left; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0
 
 [? if uncultivated_redistributed = 2: We continue redistributing land via the judicial system, as people are able to work again, reducing unemployment. ?]
 
@@ -74,7 +74,7 @@ subtitle: -1 Budget - We can utilise our surplus to continue economic developmen
 view-if: min_public_works = 0
 choose-if: (public_works_minister_party = "PSI" or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and budget > 0
 unavailable-subtitle: [? if not public_works_minister_party = "PSI" or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not continue the Public Works Ministry. ?][? if budget <= 0 : We do not have a surplus. ?]
-on-arrival: budget -= 1; min_public_works += 1; unemployment -= 0.4 if unemployment >= 8; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); inflation += 1.4; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0;
+on-arrival: budget -= 1; min_public_works += 1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.4; unemployment -= 0.1 if unemployment >= 8
 
 We order the construction of railways, canals, streets and more, hiring unemployed workers to do so.
 
@@ -84,7 +84,7 @@ view-if: min_public_works > 0
 choose-if: (public_works_minister_party = "PSI" or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and budget >= min_public_works
 unavailable-subtitle: [? if not public_works_minister_party = "PSI" or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not continue the Public Works Ministry. ?][? if budget < min_public_works : We do not have a surplus. ?]
 max-visits: 2
-on-arrival: budget -= min_public_works; min_public_works += 1; unemployment -= 0.5 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 1.2; inflation += 0.4 if min_public_works > 1; economic_growth += 0.3; economic_growth += 0.2 if economic_growth < 0;
+on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 0.2*min_public_works; inflation += 0.3 if budget < 0; economic_growth += 0.3*min_public_works; economic_growth += 0.2 if economic_growth < 0; unemployment -= 0.4*min_public_works; unemployment -= 0.2 if unemployment >= 8
 
 [? if uncultivated_redistributed = 2: We continue constructing public works, improving the transition from the post-war economy. ?]
 

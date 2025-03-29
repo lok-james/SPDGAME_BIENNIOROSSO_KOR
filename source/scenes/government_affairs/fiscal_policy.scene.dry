@@ -121,9 +121,23 @@ if (Q.capital_strike_progress >= 5) {
 
 Q.budget += 2; 
 Q.ldr_relation -= 4; 
-Q.unemployment += 1; 
-Q.inflation -= 0.6; 
-Q.economic_growth -= 0.4; 
+
+Q.inflation -= 0.4;
+Q.economic_growth -= 0.4;
+Q.unemployment += 0.6;
+
+if (Q.budget > 0) {
+    Q.inflation -= 0.2;
+}
+
+if (Q.economic_growth > 0) {
+    Q.economic_growth -= 0.1;
+}
+
+if (Q.unemployment < 8) {
+    Q.unemployment += 0.1;
+}
+
 Q.psri_relation += 5*(1-Q.dissent);
 
 Q.ldr_left -= 0.2;
@@ -162,11 +176,21 @@ Q.ldr_relation += 5*(1-Q.dissent);
 Q.ds_relation += 3*(1-Q.dissent); 
 Q.ul_relation += 5*(1-Q.dissent); 
 
-if (Q.unemployment >= 8) {
-    Q.unemployment -= 1;
-}
-Q.inflation += 0.4; 
+Q.inflation += 0.4;
 Q.economic_growth += 0.4;
+Q.unemployment -= 0.6;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
+
+if (Q.unemployment > 8) {
+    Q.unemployment -= 0.1;
+}
 
 if (Q.upper_tax_rates < 0) {
     Q.capital_strike_progress -= 1;
@@ -216,7 +240,6 @@ if (Q.socialist_catholic_coalition == 1) {
     Q.rural_scc -= 3*(1-Q.dissent);
 }
 
-Q.unemployment += 2; 
 Q.lower_tax_rates += 1;
 Q.upper_tax_rates += 1; 
 
@@ -237,8 +260,22 @@ if (Q.lower_tax_rates > 1 && Q.socialist_catholic_coalition == 1) {
     Q.ppi_left -= 0.2;
 }
 
-Q.inflation -= 1.1; 
-Q.economic_growth -= 0.6; 
+Q.inflation -= 0.6;
+Q.economic_growth -= 0.6;
+Q.unemployment += 0.9;
+
+if (Q.budget > 0) {
+    Q.inflation -= 0.3;
+}
+
+if (Q.economic_growth > 0) {
+    Q.economic_growth -= 0.2;
+}
+
+if (Q.unemployment < 8) {
+    Q.unemployment += 0.2;
+}
+
 Q.psri_relation -= 5*(1-Q.dissent);
 !}
 
@@ -329,17 +366,21 @@ choose-if: tariffs <= 5
 on-arrival: {!
 Q.tariffs += 1; 
 
-if (Q.inflation > 0) {
-    Q.inflation += 0.5;
-}
-
-if (Q.inflation <= 0) {
-    Q.inflation += 1;
-}
-
-Q.unemployment += 1.3; 
-Q.budget += 2; 
+Q.inflation -= 0.4;
 Q.economic_growth -= 0.4;
+Q.unemployment += 0.6;
+
+if (Q.budget > 0) {
+    Q.inflation -= 0.2;
+}
+
+if (Q.economic_growth > 0) {
+    Q.economic_growth -= 0.1;
+}
+
+if (Q.unemployment < 8) {
+    Q.unemployment += 0.1;
+}
 
 if (Q.in_unstable_coalition == 0) {
     Q.workers_psi -= 5*(1-Q.dissent); 
@@ -388,8 +429,22 @@ subtitle: -2 Budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?] 
 on-arrival: {!
 Q.tariffs -= 1; 
 Q.budget -= 2; 
-Q.inflation -= 0.6; 
+
+Q.inflation += 0.4;
 Q.economic_growth += 0.4;
+Q.unemployment -= 0.6;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
+
+if (Q.unemployment > 8) {
+    Q.unemployment -= 0.1;
+};
 
 if (Q.in_unstable_coalition == 0) {
     Q.workers_psi += 4*(1-Q.dissent); 
@@ -415,6 +470,7 @@ if (Q.socialist_catholic_coalition == 0) {
 Q.entente_relation += 1; 
 Q.soviet_relation += 1; 
 Q.balkan_relation += 1;
+Q.american_relation += 1;
 
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
@@ -458,10 +514,22 @@ Q.american_relation += 2;
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
+
+Q.inflation += 0.2;
+Q.economic_growth += 0.2;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
+
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Paying off some of our American debtors reaffirms our commitment to repaying American war debt, as well as makes negotiations in order to resolve those same debts smoother.
+Paying off some of our American debtors reaffirms our commitment to repaying American war debt, as well as makes negotiations in order to resolve those same debts smoother, restoring investment confidence.
 
 @repay_uk_debts
 title: Repay British debtors.
@@ -477,7 +545,18 @@ Q.entente_relation += 2;
 if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
     Q.ldr_promise_failed = 1;
 }
+
+Q.inflation += 0.2;
+Q.economic_growth += 0.2;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 0.1;
+}
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Paying off some of our British debtors reaffirms our commitment to repaying British war debt, as well as makes negotiations in order to resolve those same debts smoother.
+Paying off some of our British debtors reaffirms our commitment to repaying British war debt, as well as makes negotiations in order to resolve those same debts smoother, restoring investment confidence.
