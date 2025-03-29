@@ -76,7 +76,7 @@ The *Turin Accord* is signed, negotiating Council control within the factories t
 subtitle: We can't afford to upset the industrialists in the economic crisis, can we?
 on-arrival: dissent += 0.1; councils_decreased = 1; workers_psi -= 5; ul_relation += 5; ldr_relation += 7; coalition_dissent -= 1; unemployment -= 0.7; industrialists_psi += 6; working_hours += 1; wage_increase += 1; ds_moderates += 0.2; ldr_moderates += 0.2; syndicalist_dissent += 10 if syndicalist_active;
 
-The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the industrialists [? if centre_left_coalition :, while our coalition members seem to be satisfied. ?][if not centre_left_coalition :. ?]
+The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the industrialists [? if centre_left_coalition :, while our coalition members seem to be satisfied. ?][? if not centre_left_coalition :. ?]
 
 @turin_conflict
 subtitle: Party disunity and lack of resources paralyses the opportunity to take decisive action. 

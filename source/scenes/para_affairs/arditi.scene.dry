@@ -33,6 +33,6 @@ on-arrival: rg_strength += adp_strength*0.15; rg_militancy += adp_militancy*0.1;
 The more experienced Arditi offer to help train the Red Guards, growing our strength and making our members more proficient.
 
 @arditi_fasci
-on-arrival: adp_strength -= 10; adp_militancy += 0.1*(1-dissent); rg_militancy += 0.05*(1-dissent); fdc_militancy -= 0.1*(1-dissent); fdc_strength += 20; ard_militancy -= 0.05*(1*dissent); ard_strength += 5; abl_strength += 7; radicalisation += 0.05; communist_strength += 7*(1-dissent); communist_dissent -= 5*(1-dissent); nationalist_sentiment -= 2; middle_class_psi -= 2*(1-dissent); rural_psi += 1*(1-dissent); 
+on-arrival: adp_strength -= 17; adp_militancy += 0.02*(1-dissent); rg_militancy += 0.02*(1-dissent); fdc_militancy -= 0.03*(1-dissent); fdc_strength += 28; ard_militancy -= 0.01*(1*dissent); ard_strength += 12; abl_strength += 9; radicalisation += 0.05; communist_strength += 7*(1-dissent); communist_dissent -= 5*(1-dissent); nationalist_sentiment -= 2; middle_class_psi -= 3*(1-dissent); rural_psi += 1*(1-dissent); strife -= 0.005;
 
 The Arditi, under our guidance, are able to carry out raids against far-right forces, seizing weapons and equipment. Our move secures weaponry for the Arditi and our own Red Guards, though the right take the opportunity to paint us as aggressive radicals to their backers, securing funding.

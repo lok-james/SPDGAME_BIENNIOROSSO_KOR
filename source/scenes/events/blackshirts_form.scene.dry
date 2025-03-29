@@ -1,6 +1,6 @@
 title: Formation of the Blackshirts
 view-if: year = 1923 and month = 3 and week = 3 and prime_minister_party = "PNF"
-on-arrival: blackshirts_formed = 1; fdc_strength *= 2; fdc_militancy += 0.1;
+on-arrival: blackshirts_formed = 1; fdc_strength *= 3; fdc_militancy += 0.17;
 max-visits: 1
 new-page: true
 tags: event

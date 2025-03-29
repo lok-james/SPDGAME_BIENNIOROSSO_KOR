@@ -17,6 +17,7 @@ Q.fdc_militancy *= 0.3;
 max-visits: 1
 tags: event
 new-page: true
+achievement: ritorno_trionfale
 
 = King rescinds support for the PNF 
 

@@ -69,6 +69,7 @@ priority: 1
 tags: event
 new-page: true
 go-to: second_rome_friendly if king_relation >= 50 and radicalisation <= 5; second_rome_antagonistic if king_relation < 50 and radicalisation > 5; second_rome_neutral if (king_relation < 50 and radicalisation < 5) or (king_relation >= 50 and radicalisation >= 5)
+achievement: ritorno_trionfale
 
 = Second March on Rome
 

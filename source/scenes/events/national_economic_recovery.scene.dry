@@ -61,6 +61,8 @@ Q.women_ppi += 7*(1-Q.dissent);
 }
 
 Q.national_economic_recovery = 1;
+Q.capital_strike_progress -= 2;
+Q.fasci_coup_progress -= 1;
 !}
 max-visits: 1
 achievement: risorgimento_economico
