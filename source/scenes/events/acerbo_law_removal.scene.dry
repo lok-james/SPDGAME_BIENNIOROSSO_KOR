@@ -4,6 +4,7 @@ priority: -1
 max-visits: 1
 new-page: true
 tags: event
+achievement: follia_di_acerbo
 
 = Repeal of the Acerbo Law
 
@@ -27,6 +28,6 @@ subtitle: Is the fallout from keeping the law really worth it?
 
 This has caused an outrage within our own party's right flank, as well with our allies in the Chamber of Deputies, calling us no better than the fascists that attempted to take over the nation.
 
-Already, the King has mobilised the Regio Esercito and begun raiding our offices and bases. We have to strike back.
+Already, the King has mobilised the Regio Esercito and begun raiding our offices, bases and arresting our deputies. We have to strike back.
 
 - @civil_war: Wait, wha-
