@@ -25,25 +25,25 @@ if (Q.ldr_right < 0) {
     Q.ldr_right = 0;
 }
 
-var merge_support = Q.ldr_moderates; 
-var merge_oppose = Q.ldr_right;
+Q.merge_support = Q.ldr_moderates; 
+Q.merge_oppose = Q.ldr_right;
 
 if (Q.ldr_r > Q.ul_r) {
-    merge_oppose *= 1.2; 
+    Q.ldr_right *= 1.2; 
 } else if (Q.ul_r > Q.ldr_r) {
-    merge_support *= 1.2;
+    Q.ldr_moderates *= 1.2;
 }
 
-if (Q.radicalisation >= 8 || Q.not_participating) {
-    merge_support *= 1.2;
-} else if (Q.participating) {
-    merge_support *= 0.8;
+if (Q.radicalisation >= 8 || Q.not_participating == 1) {
+    Q.ldr_moderates *= 1.2;
+} else if (Q.participating == 1) {
+    Q.ldr_right *= 0.8;
 }
 
 if (Q.ldr_relation >= 65) {
-    merge_support *= 0.8;
+    Q.ldr_moderates *= 0.8;
 } else if (Q.ldr_relation < 15) {
-    merge_support *= 1.2;
+    Q.ldr_moderates *= 1.2;
 }
 
 !}
