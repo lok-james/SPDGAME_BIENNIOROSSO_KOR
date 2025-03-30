@@ -1,0 +1,83 @@
+title: PSRI in Crisis!
+subtitle: The PSRI is having a crisis of leadership...
+new-page: true
+view-if: psri_stable and psri_r < 2
+on-arrival: psri_stable = 0
+tags: event
+max-visits: 
+
+= PSRI in Crisis 
+
+The PSRI, also known as the Italian Reformist Socialist Party, is in crisis following it's recent electoral results, going from [+ old_psri_r +]% to [+ psri_r +]% in just six years. The party has gone from a fairly important force, representing the left-wing of the political sphere willing to cooperate with the liberals to a now almost defunct party, as the party struggles to keep its now rapidly defecting support base. 
+
+There is significant efforts within the party, including Bonomi, who are pushing for a shift in the party's ideology in order to counteract it's association with the PSI and to allow closer collaboration with the existing liberal parties, though there is fierce opposition against such a response as well. The party will also have to figure out how to contest the next elections, without a suitable organisation to campaign for the party, it is likely that it will be forced to collaborate and form joint lists with other parties.
+
+- @psri_left: The PSRI reaffirms its commitment to social democracy.
+- @psri_moderate: The PSRI begins a shift towards social liberalism.
+
+@psri_left
+choose-if: (psu_formed and (psi_votes >= 37 or radicalisation >= 8)) or pri_prominent or pll_formed
+unavailable-subtitle: Proponents argue that the PSRI will become increasingly isolated without a shift in ideology.
+on-arrival: {!
+
+let options = [];
+
+if (Q.psu_formed && (Q.psi_votes >= 37 || Q.radicalisation >= 8) && Q.pri_prominent == 0 && Q.pll_formed == 0) {
+    options.push({ key: 'psri_joint_psu', value: Q.psu_r });
+}
+
+if (Q.pri_prominent && (Q.psu_formed == 0 || (Q.psi_votes < 37 || Q.radicalisation < 8)) && Q.pll_formed == 0) {
+    options.push({ key: 'psri_joint_pri', value: Q.pri_r });
+} 
+
+if (Q.pll_formed && (Q.psu_formed == 0 || (Q.psi_votes < 37 || Q.radicalisation < 8)) && Q.pri_prominent == 0) {
+    options.push({ key: 'psri_joint_pll', value: Q.pll_r });
+}
+
+// Reset all
+Q.psri_joint_psu = 0;
+Q.psri_joint_pri = 0;
+Q.psri_joint_pll = 0;
+
+// Pick the one with the highest ranking if multiple options exist
+if (options.length > 0) {
+    options.sort((a, b) => b.value - a.value);
+    Q[options[0].key] = 1;
+}
+
+!}
+
+The opposition is able to succeed, continuing the party's ideological commitment to social democracy and left-wing ideals.
+
+[? if psri_joint_pll : The PSRI have come to an agreement with the PLL, officially forming a joint-list with them as a junior partner and stemming the bleed of the party's support. ?]
+
+[? if psri_joint_psu : The PSRI have come to a wary agreement with the PSU, officially forming a joint-list with them as a junior partner. This has occurred primarily because of our popularity, as well as our increasing radicalisation, which has prompted a consolidation of the reformist left. ?]
+
+[? if psri_joint_pri : The PSRI have come to an agreement with the PRI, officially forming a joint-list with the them as a junior partner. and stemming the bleed of the party's support. ?]
+
+@psri_moderate
+view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) or not pri_prominent or not pll_formed
+on-arrival: {!
+Q.psri_solo = 1;
+
+
+if (Q.psu_formed) {
+    Q.workers_psu += Q.workers_psri * 0.2;
+    Q.middle_class_psu += Q.middle_class_psri * 0.2;
+    Q.rural_psu += Q.rural_psri * 0.2;
+    Q.industrialists_psu += Q.industrialists_psri * 0.2;
+    Q.veterans_psu += Q.veterans_psri * 0.2;
+    Q.catholic_psu += Q.catholic_psri * 0.2;
+    Q.women_psu += Q.women_psri * 0.2;
+}
+
+Q.workers_psri *= 0.5;
+Q.middle_class_psri *= 0.5;
+Q.rural_psri *= 0.5;
+Q.industrialists_psri *= 0.5;
+Q.veterans_psri *= 0.5;
+Q.catholic_psri *= 0.5;
+Q.women_psri *= 0.5;
+!}
+
+The exponents are able to succeed; with Bonomi's lead, the PSRI begins a change in course, pivoting to the right towards liberalism. This only seems to exacerbate the party's bleed, as members of its left defect, becoming independents or joining the other left-wing parties.

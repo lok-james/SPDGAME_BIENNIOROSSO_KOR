@@ -16,15 +16,17 @@ What should we do?
 
 @acerbo_menu
 
-- @psi_check: Check in on our own deputies.
-- @psri_check: Contact the Reformist Socialists.
+- @psi_convince: Check in on our own deputies.
+- @psu_convince: Contact the Unitary Socialist Party.
+- @pll_convince: Contact the Liberal Workers' Party.
+- @psri_convince: Contact the Reformist Socialist Party
+- @ds_convince: Contact the Social Democratic Party.
 - @ppi_convince: Contact the People's Party.
 - @ldr_convince: Contact the Democratic Liberal Party.
 - @ul_convince: Contact the Liberal Party.
-- @ds_convince: Contact the Social Democrats.
 - @acerbo_results: We have done all we can.
 
-@psi_check
+@psi_convince
 on-arrival: {!
 if (Q.fdc_strength*Q.fdc_militancy > Q.rg_strength*Q.rg_militancy) {
     Q.anti_acerbo_coalition += parseFloat(Q.psi_seating_disp/2);
@@ -39,13 +41,31 @@ go-to: acerbo_menu
 
 [? if not psi_unreliable : Thankfully, it seems the far-right paramilitaries are unable to intimidate many of our own deputies, and we can rely on their full support in voting against the law. ?]
 
-@psri_check 
+@psu_convince
+view-if: psu_formed
+on-arrival: {!
+Q.anti_acerbo_coalition += parseFloat(Q.psu_seating_disp);
+!}
+go-to: acerbo_menu
+
+The PSU has reassured us that its deputies will be voting against the Acerbo Law.
+
+@psri_convince
 on-arrival: {!
 Q.anti_acerbo_coalition += parseFloat(Q.psri_seating_disp);
 !}
 go-to: acerbo_menu
 
 The PSRI has reassured us that its deputies will be voting against the Acerbo Law.
+
+@pll_convince
+view-if: pll_formed
+on-arrival: {!
+Q.anti_acerbo_coalition += parseFloat(Q.pll_seating_disp);
+!}
+go-to: acerbo_menu
+
+The PLL has reassured us that its deputies will be voting against the Acerbo Law.
 
 @ppi_convince 
 subtitle: [? if not ppi_leader = "Sturzo": The PPI is disorganised following Sturzo's recent dismissal. ?]
@@ -56,7 +76,6 @@ go-to: acerbo_menu
 [? if not ppi_leader = "Sturzo": Unfortunately, the PPI is disorganised without Sturzo's leadership, and is seems there will be many dissident members voting in favour of the law. We cannot rely on them dissenting. ?]
 
 @ldr_convince
-subtitle: [? if ldr_leader = "Salandra" : We shouldn't be optimistic about their response. ?]
 on-arrival: {!
 if (Q.ldr_leader == "Nitti" && Q.ldr_relation > 65) {
     Q.anti_acerbo_coalition += parseFloat(Q.ldr_seating_disp);
@@ -74,8 +93,9 @@ go-to: acerbo_menu
 [? if ldr_convinced = 1: Thankfully, and moreso surprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] have agreed to support us, refusing to vote in favour of the Acerbo Law due to our good relations, combined with an at the very least ambivalent leadership. ?]
 
 @ul_convince
+subtitle: [? if ldr_leader = "Salandra" : We shouldn't be optimistic about their response. ?]
 on-arrival: {! 
-if (Q.ul_relation >= 75) {
+if (Q.ul_relation >= 75 && Q.ul_leader === "Giolitti") {
     Q.ul_convinced = 1;
     Q.anti_acerbo_coalition += parseFloat(ul_seating_disp);
 }

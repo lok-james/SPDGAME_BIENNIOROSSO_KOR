@@ -1,7 +1,7 @@
 title: Child Labour
 new-page: true
 is-card: true
-view-if: psi_in_government and child_labour_timer <= 0 amd child_labour_laws != 1
+view-if: psi_in_government and child_labour_timer <= 0 and child_labour_laws != 1
 on-arrival: week_actions += 1; child_labour_timer = 3; labour_law_support = left_wing_coalition_r; 
 card-image: img/portraits/PalmiroTogliatti.jpg
 tags: govt_affairs

@@ -1,6 +1,6 @@
 title: Minority Parties endorse the [+ pnf_full_name +]
-view-if: (radicalisation >= 8 and not_participating = 1) or (radicalisation >= 9 and participating = 1) or largest_party = "BN"
-on-arrival: rural_pnf += rural_other/2; industrialists_pnf += industrialists_other/2; rural_other *= 0.8; industrialists_other *= 0.8; rural_other -= 4 if pri_prominent; industrialists_other -= 4 if pri_prominent
+view-if: ((radicalisation >= 7 and not_participating = 1) or (radicalisation >= 8 and participating = 1) or largest_party == pnf_name) and pnf_r >= 5
+on-arrival: economic_right = 1;
 max-visits: 1
 tags: event
 new-page: true

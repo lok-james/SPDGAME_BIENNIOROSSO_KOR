@@ -91,6 +91,10 @@ Q.ds_relation = 37;
 Q.ppi_relation = 40;
 Q.psri_relation = 60;
 Q.pri_relation = 60;
+Q.pcs_relation = 10;
+Q.pll_relation = 60;
+Q.pcdi_relation = 0; 
+Q.psu_relation = 10;
 // PNF relations are invariably hostile
 Q.pnf_relation = 0;
 
@@ -100,19 +104,30 @@ Q.ds_leader = "Colonna";
 Q.ppi_leader = "Sturzo";
 Q.psri_leader = "Ciotti";
 Q.pnf_leader = "Mussolini";
-Q.pri_leader = "Chisea"
-Q.psu_leader = "Turati"
-Q.pcdi_leader = "Bordiga"
+Q.pri_leader = "Chisea";
+Q.psu_leader = "Turati";
+Q.pcdi_leader = "Bordiga";
+Q.pll_leader = "Giuffrida";
+Q.pcs_leader = "Carnazza";
+
 Q.ldr_name = "LDR";
 Q.ldr_full_name = "Liberals, Democrats and Radicals";
 Q.ldr_full_italian = "Liberali, democratici e radicali";
+
 Q.ul_name = "UL";
 Q.ul_full_name = "Liberal Union";
 Q.ul_full_italian = "Liberale Unione";
+
+Q.ds_name = "DS"
+Q.ds_full_name = "Social Democracy"
+Q.ds_full_italian = "Democrazia Sociale"
+
 Q.pnf_name = "FdC";
 Q.pnf_full_name = "Italian Fasces of Combat";
 Q.pnf_full_italian = "Fasci Italiani di Combattimento";
+
 Q.pri_prominent = 0;
+Q.psri_stable = 1;
 
 Q.ul_party = 0;
 Q.ul_list = 1;
@@ -122,6 +137,12 @@ Q.ldr_list = 1;
 
 Q.ds_list = 1;
 Q.ds_party = 0;
+
+// Christian Social Party - DS Splinter
+Q.pcs_formed = 0;
+
+// Liberal Workers Party - DS Splinter
+Q.pll_formed = 0;
 
 // relation with the king; for snap elections and march
 Q.king_relation = 20;
@@ -181,7 +202,6 @@ Q.acerbo_law_passed = 0;
 Q.capital_strike_progress = 0;
 Q.capital_strike_seen = 0;
 Q.turin_action = 0;
-Q.sonnino_avenged = 0;
 // if fasci_coup_progress reaches 10 before historical, march on rome event is triggered
 Q.fasci_coup_progress = 0;
 
@@ -225,6 +245,8 @@ Q.workers_ul = 4;
 Q.workers_pnf = 2;
 Q.workers_psri = 8;
 Q.workers_other = 12;
+Q.workers_pll = 0;
+Q.workers_pcs = 0;
 
 Q.middle_class_pcdi = 0;
 Q.middle_class_psi = 25;
@@ -237,6 +259,8 @@ Q.middle_class_ul = 13;
 Q.middle_class_pnf = 2;
 Q.middle_class_psri = 2;
 Q.middle_class_other = 18;
+Q.middle_class_pll = 0;
+Q.middle_class_pcs = 0;
 
 Q.industrialists_pcdi = 0;
 Q.industrialists_psi = 1;
@@ -249,6 +273,8 @@ Q.industrialists_ul = 28;
 Q.industrialists_pnf = 1;
 Q.industrialists_psri = 0;
 Q.industrialists_other = 1;
+Q.industrialists_pll = 0;
+Q.industrialists_pcs = 0;
 
 Q.rural_pcdi = 0;
 Q.rural_psi = 27;
@@ -261,6 +287,8 @@ Q.rural_ul = 6;
 Q.rural_pnf = 0;
 Q.rural_psri = 0;
 Q.rural_other = 5;
+Q.rural_pll = 0;
+Q.rural_pcs = 0;
 
 Q.veterans_pcdi = 0;
 Q.veterans_psi = 14;
@@ -273,6 +301,8 @@ Q.veterans_ul = 14;
 Q.veterans_pnf = 2;
 Q.veterans_psri = 3;
 Q.veterans_other = 20;
+Q.veterans_pll = 3;
+Q.veterans_pcs = 20;
 
 Q.catholic_pcdi = 0;
 Q.catholic_psi = 6;
@@ -285,6 +315,8 @@ Q.catholic_ul = 2;
 Q.catholic_pnf = 1;
 Q.catholic_psri = 1;
 Q.catholic_other = 13;
+Q.catholic_pll = 0;
+Q.catholic_pcs = 0;
 
 Q.women_pcdi = 0;
 Q.women_psi = 14;
@@ -297,6 +329,8 @@ Q.women_ul = 17;
 Q.women_pnf = 6;
 Q.women_psri = 8;
 Q.women_other = 14;
+Q.women_pll = 0;
+Q.women_pcs = 0;
 
 Q.workers_clc = 0;
 Q.middle_class_clc = 0;
@@ -317,10 +351,10 @@ Q.women_scc = 0;
 // Current Chamber of Deputies composition
 // % of Chamber of Deputies in Jan 1919
 // source: wikipedia
-// Had to do some early forming of PNF and other parties to make this easier for me + gameplay wise 
-Q.pcdi_seating_disp = 0;
+// the PPI is early formed, as is the other stuff, but only for the inital elections
+Q.pcdi_seating_disp = 0.0;
 Q.psi_seating_disp = 10.2;
-Q.psu_seating_disp = 0;
+Q.psu_seating_disp = 0.0;
 Q.ppi_seating_disp = 5.7;
 Q.pri_seating_disp = 0;
 Q.ldr_seating_disp = 12.2;
@@ -329,6 +363,8 @@ Q.ul_seating_disp = 53.1;
 Q.pnf_seating_disp = 0;
 Q.psri_seating_disp = 3.7;
 Q.other_seating_disp = 7.2;
+Q.pll_seating_disp = 0.0;
+Q.pcs_seating_disp = 0.0;
 
 Q.pcdi_r = 0;
 Q.psi_r = 17.6;
@@ -343,6 +379,8 @@ Q.psri_r = 3.9;
 Q.other_r = 6.3;
 
 Q.bn_r = 0;
+Q.pll_r = 0;
+Q.pcs_r = 0;
 
 // diff from prev
 Q.old_pcdi_r = 0;
@@ -356,6 +394,10 @@ Q.old_ul_r = 40;
 Q.old_pnf_r = 0;
 Q.old_psri_r = 4;
 Q.old_other_r = 2;
+
+Q.old_bn_r = 0;
+Q.old_pll_r = 0;
+Q.old_pcs_r = 0;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -380,6 +422,8 @@ Q.ds_in_government = 1;
 Q.ul_in_government = 1;
 Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
+Q.pcs_in_government = 0;
+Q.pll_in_government = 0;
 
 // Left-Wing Coalition = PSI + PSRI
 Q.left_wing_coalition = 0
@@ -442,19 +486,18 @@ Q.ppi_moderates = 0;
 Q.ppi_right = 0;
 
 Q.ul_giolitti = 4;
-Q.ul_sonnino = 2;
+Q.ul_salandra = 0;
 
-Q.ldr_left = 3;
-Q.ldr_moderates = 5;
-Q.ldr_right = 1;
+Q.ldr_moderates = 0;
+Q.ldr_right = 2;
 
 Q.ds_left = 0;
-Q.ds_moderates = 5;
+Q.ds_moderates = 3;
 Q.ds_right = 0;
 
 // national bloc stuff
-Q.bn_formed = 0; 
-Q.ds_in_bn  = 0;
+Q.bn_formed = 0;
+Q.ani_in_bn = 0;
 Q.ul_in_bn = 0;
 Q.pnf_in_bn = 0;
 
@@ -465,11 +508,11 @@ Q.psi_inc_strife = 1;
 Q.psi_inc_economic = 1;
 
 // International Relations
-Q.soviet_relation = 2;
-Q.entente_relation = 4;
-Q.american_relation = 6;
-Q.balkan_relation = 2;
-Q.papal_relation = 3
+Q.soviet_relation = 6;
+Q.entente_relation = 5;
+Q.american_relation = 4;
+Q.balkan_relation = 3;
+Q.papal_relation = 3;
 Q.pope = "Della Chiesa";
 Q.rcw_over = 0;
 Q.roman_question_answered = 0;
@@ -539,9 +582,9 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relation', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
-            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'sonnino_southern',
-            'crisis_program', 'economic_policy', 'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury',
-            'gov_army', 'gov_finance', 'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
+            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'crisis_program', 'economic_policy', 
+            'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
+            'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
             'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers'];
 // all timers
 Q.advisor_action_timer = 0;
@@ -597,7 +640,6 @@ Q.ul_emergency_timer = 9;
 Q.ldr_emergency_timer = 9;
 Q.ds_emergency_timer = 9;
 Q.mussolini_trial_timer = 0;
-Q.sonnino_southern_timer = 0;
 Q.crisis_program_timer = 0;
 Q.economic_policy_timer = 0;
 Q.gov_cooldown_timer = 14;
