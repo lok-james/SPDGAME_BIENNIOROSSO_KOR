@@ -128,7 +128,7 @@ As expected, the [+ ldr_name +] have merged with the [+ ul_name +], consolidatin
 - @root: Interesting.
 
 @pldi_refuse
-on-arrival: ul_congress_trigger = 1; ldr_leader = "Orlando" if ldr_leader === "Salandra"
+on-arrival: ul_congress_trigger = 1; ldr_leader = "Orlando" if ldr_leader == "Salandra"
 
 Surprisingly, whether it is because of the poor relations, the PLDI's ideological differences with the [+ ul_name +] or something else, the [+ ldr_name +] have refused to merge with the [+ ul_name +], remaining as an independent party running its own electoral list.
 
