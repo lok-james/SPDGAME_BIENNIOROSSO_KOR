@@ -122,7 +122,7 @@ if (Q.bn_formed) {
 
 // Fascist List
 
-if (Q.pnf_r >= 5 && Q.ds_leader === "Carnazza" && Q.ds_party && Q.pnf_in_bn == 0 && Q.prime_minister_party != Q.pnf_name) {
+if (Q.pnf_r >= 5 && Q.ds_leader == "Carnazza" && Q.ds_party && Q.pnf_in_bn == 0 && Q.prime_minister_party != Q.pnf_name) {
     Q.pnf_r += Q.ds_r;
     Q.ds_r = 0;
 }
@@ -426,14 +426,14 @@ if (Q.psu_formed == 1) {
     }
 }
 
-if (Q.ds_leader === "Giuffrida" && Q.ds_relation >= Q.ds_min_relations || (Q.ds_leader === "Colonna" && Q.largest_party === 'PSI' && Q.ds_relation >= Q.ds_min_relations)) {
+if (Q.ds_leader == "Giuffrida" && Q.ds_relation >= Q.ds_min_relations || (Q.ds_leader == "Colonna" && Q.largest_party === 'PSI' && Q.ds_relation >= Q.ds_min_relations)) {
     Q.left_wing_coalition_r += Q.ds_seating_disp;
     Q.centre_left_coalition_r += Q.ds_seating_disp;
     Q.socialist_catholic_coalition_r += Q.ds_seating_disp;
     Q.ds_allies = 1;
 } 
 
-if (Q.ds_leader === "Carnazza" || (Q.ds_leader === "Colonna" && Q.largest_party === "PNF" || Q.ds_relation < Q.ds_min_relations)) {
+if (Q.ds_leader == "Carnazza" || (Q.ds_leader == "Colonna" && Q.largest_party === "PNF" || Q.ds_relation < Q.ds_min_relations)) {
     Q.centre_right_coalition_r += Q.ds_seating_disp;
     Q.anti_socialist_coalition_r += Q.ds_seating_disp;
     Q.ds_enemies = 1;

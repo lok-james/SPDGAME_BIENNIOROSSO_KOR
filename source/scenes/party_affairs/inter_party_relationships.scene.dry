@@ -19,7 +19,7 @@ The PSI cannot govern by itself yet. Though we have not historically been any co
 - @easy_discard
 - @cancel_advisor_action
 
-@leftists
+@splinters
 subtitle: -1 resources
 view-if: pcdi_formed or psu_formed
 choose-if: resources >= 1

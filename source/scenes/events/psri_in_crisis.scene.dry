@@ -4,7 +4,7 @@ new-page: true
 view-if: psri_stable and psri_r < 2
 on-arrival: psri_stable = 0
 tags: event
-max-visits: 
+max-visits: 1
 
 = PSRI in Crisis 
 
