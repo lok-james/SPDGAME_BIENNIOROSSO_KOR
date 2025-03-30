@@ -679,51 +679,51 @@ go-to: coalition_menu
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} Communist List: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pcdi_formed : {!</td></tr>!} -Communist Party of Italy {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td>!} -Communist Party of Italy {!</td></tr>!} ?]
 
 [? if psu_formed and not anti_fas_psu : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} Socialist Unity List: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psu_formed and not anti_fas_psu : {!</td></tr>!} -Unitary Socialist Party {!</td></tr>!} ?]
+[? if psu_formed and not anti_fas_psu : {!<tr><td>!} -Unitary Socialist Party {!</td></tr>!} ?]
 
 [? if psu_formed and psri_joint_psu and not anti_fas_psu : {!</td></tr>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
 
 [? if pll_formed and not anti_fas_pll : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div>!} Liberal-Socialist List: {!</td><td>!} [+ pll_r +]% {!</td><td>!} [+ str_change_pll +]% {!</td><td>!} [+ pll_seating +] {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pll_formed and not anti_fas_pll : {!</td></tr>!} -Liberal Workers' Party {!</td></tr>!} ?]
+[? if pll_formed and not anti_fas_pll : {!<tr><td>!} -Liberal Workers' Party {!</td></tr>!} ?]
 
 [? if psri_stable or (psri_solo and psri_r >= 5) and not anti_fas_psri : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} Reformist Socialist List: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psri_stable or (psri_solo and psri_r >= 5) and not anti_fas_psri : {!</td></tr>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if psri_stable or (psri_solo and psri_r >= 5) and not anti_fas_psri : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
 
 [? if pri_prominent and not anti_fas_pri : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} Republican List: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pri_prominent and not anti_fas_pri : {!</td></tr>!} -Italian Republican Party {!</td></tr>!} ?]
+[? if pri_prominent and not anti_fas_pri : {!<tr><td>!} -Italian Republican Party {!</td></tr>!} ?]
 
-[? if pri_prominent and psri_joint_pri and not anti_fas_pri : {!</td></tr>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if pri_prominent and psri_joint_pri and not anti_fas_pri : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
 
 [? if (ds_party or ds_list) and not anti_fas_ds or pnf_in_government : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} Democratic List: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
 
 [? if ((ds_party and ds_leader = "Colonna") or (ds_list and not view_full) or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!</td></tr>!} -Italian Social Democratic Party {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Constitutional Democratic Party {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Constitutional Democratic Party {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Constitutional Democratic Reform Party {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Constitutional Democratic Reform Party {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Democratic Party {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Democratic Party {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Democratic Bloc {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Democratic Bloc {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Democratic Concentration Bloc {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Democratic Concentration Bloc {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Bloc of Democrats and Fighters {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Bloc of Democrats and Fighters {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Party of Independent Democrats {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Party of Independent Democrats {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -People's Democratic Party {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -People's Democratic Party {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Social Democratic Union {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Social Democratic Union {!</td></tr>!} ?]
 
-[? if ds_list and view_full : {!</td></tr>!} -Christian Democratic Party {!</td></tr>!} ?]
+[? if ds_list and view_full : {!<tr><td>!} -Christian Democratic Party {!</td></tr>!} ?]
 
 [? if not pnf_in_government or not anti_fas_ppi : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} Catholic List: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
 
@@ -795,7 +795,7 @@ go-to: coalition_menu
 
 [? if not economic_right : {!<tr><td>!} -Economic & Agrarian Party {!</td></tr>!} ?]
 
-[? if pnf_r < 5 and not pnf_in_bn : {!<tr><td>!} -[+ pnf_name +] {!</td></tr>!} ?]
+[? if pnf_r < 5 and not pnf_in_bn : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
 [? if pnf_in_government : {!<tr><td>!} -Constitutional Opposition {!</td></tr>!} ?]
 
