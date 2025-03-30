@@ -59,7 +59,7 @@ Q.economic_growth += 0.4;
 Q.psri_relation -= 5*(1-Q.dissent);
 Q.ppi_relation -= 3*(1-Q.dissent);
 
-Q.ldr_left += 0.2;
+Q.ldr_right -= 0.2;
 !}
 
 Raising taxes on the rich is unpopular among our traditional base, but it is supported by the bourgeoisie.
@@ -73,7 +73,6 @@ Q.nationalisation_progress -= 1;
 Q.workers_psi -= 5*(1-Q.dissent); 
 Q.industrialists_psi += 6*(1-Q.dissent);
 
-Q.ul_sonnino -= 0.2*Q.nationalisation_progress;
 Q.ds_right -= 0.1*Q.nationalisation_progress;
 Q.ldr_right -= 0.1*Q.nationalisation_progress;
 

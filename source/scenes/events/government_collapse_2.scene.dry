@@ -15,7 +15,7 @@ Q.government_collapse += 1;
 
 Q.psri_in_government = 0;
 
-Q.ldr_left += 0.2;
+Q.ul_nitti -= 0.2;
 !}
 tags: event
 

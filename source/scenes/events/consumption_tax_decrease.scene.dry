@@ -52,7 +52,7 @@ Q.ldr_relation -= 5*(1-Q.dissent);
 Q.ul_relation -= 4*(1-Q.dissent); 
 
 Q.ppi_left += 0.1;
-Q.ldr_left -= 0.1;
+Q.ldr_moderates -= 0.1;
 
 Q.inflation += 0.3; 
 Q.economic_growth += 0.2;
@@ -79,7 +79,7 @@ Q.ldr_relation += 5*(1-Q.dissent);
 Q.ul_relation += 4*(1-Q.dissent); 
 
 Q.ppi_left -= 0.1;
-Q.ldr_left += 0.1;
+Q.ldr_moderates += 0.1;
 
 Q.inflation += 0.3; 
 Q.economic_growth += 0.2;

@@ -62,7 +62,7 @@ Our status both controlling the Councils and in government places us in a unique
 
 @negotiate_labour_oriented
 subtitle: This might anger our coalition allies and the industrialists.
-on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment += 0.6; councils_empowered = 1; coalition_dissent += 1; worker_psi += 6; ds_left += 0.2; ldr_left += 0.2; syndicalist_strength += labour_strength/3
+on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment += 0.6; councils_empowered = 1; coalition_dissent += 1; worker_psi += 6; ds_left += 0.2; ldr_moderates += 0.2; syndicalist_strength += labour_strength/3
 
 The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industrialists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if centre_left_coalition :, while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not centre_left_coalition :. ?]
 

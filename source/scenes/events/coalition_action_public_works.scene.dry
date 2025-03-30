@@ -1,31 +1,9 @@
 title: Public Works Minister [+ public_education_minister +] acts
-view-if: ((public_works_minister_party == ul_name and ((ul_leader == "Sonnino" and southern_infrastructure_funded < 2 and budget > 0) or (ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5)))) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
+view-if: (ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5)) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
 on-arrival: gov_cooldown_timer = 3; gov_public_works_timer = 9
 new-page: true
 tags: event
-go-to: pw_sonnino if public_works_minister_party == ul_name and ul_leader == "Sonnino" and southern_infrastructure_funded < 2 and budget > 0; pw_giolitti if ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5); pw_ppi if public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8
-
-@pw_sonnino
-on-arrival: {!
-Q.southern_infrastructure_funded += 1; 
-Q.budget -= 1; 
-
-Q.economic_growth += 0.2;
-Q.unemployment -= 0.4;
-
-Q.rural_ul += 2;
-Q.industrialists_ul -= 3;
-Q.nationalist_sentiment -= 3;
-
-!}
-
-= [+ public_works_minister +] begins Public Works funding for the South
-
-Obviously under influence of [+ ul_leader +]'s leadership, the [+ ul_name +]-led Public Works Ministry have begun to work on resolving the *Southern Question* and begun public works in the region.
-
-This will help our efforts in the region immensely.
-
-- @root: Interesting.
+go-to: pw_giolitti if ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5); pw_ppi if public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8
 
 @pw_giolitti
 on-arrival: {!

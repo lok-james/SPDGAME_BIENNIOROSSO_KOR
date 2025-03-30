@@ -19,6 +19,14 @@ Q.veterans_other -= Q.veterans_other * 0.8;
 Q.catholic_other -= Q.catholic_other * 0.8;
 Q.women_other -= Q.women_other * 0.8;
 
+Q.pri_r += Q.other_r * 0.8;
+Q.pri_seating += Q.other_seating * 0.8;
+Q.pri_seating_disp += Q.other_seating_disp * 0.8;
+
+Q.other_r -= Q.other_r * 0.8;
+Q.other_seating -= Q.other_seating * 0.8;
+Q.other_seating_disp -= Q.other_seating_disp * 0.8;
+
 if (Q.not_participating == 1) {
     Q.pri_relation -= 30;
 }

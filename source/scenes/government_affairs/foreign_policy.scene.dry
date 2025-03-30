@@ -33,7 +33,7 @@ subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_
 view-if: not rcw_over or soviet_recovery_timer > 0
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; soviet_aid_given += 1; budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation)); ldr_left -= 0.2; ds_left -= 0.1;
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; soviet_aid_given += 1; budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation)); ldr_right += 0.2; ds_left -= 0.1;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if in_unstable_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]

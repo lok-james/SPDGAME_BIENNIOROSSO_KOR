@@ -54,7 +54,7 @@ on-arrival: {!
 Q.rural_psi -= 3; 
 Q.middle_class_psi -= 2; 
 Q.workers_psi -= 3; 
-Q.middle_class_pnf += 2; Q.
+Q.middle_class_pnf += 2; 
 catholic_pnf += 4; 
 if (Q.socialist_catholic_coalition == 1) {
     Q.catholic_ppi -= 4;
@@ -84,8 +84,6 @@ Q.catholic_education_accepted = 0;
 Q.catholic_nationalisation_accepted = 0;
 Q.catholic_papacy_accepted = 0;
 Q.catholic_women_accepted = 0;
-
-Q.sonnino_southern_accepted = 0;
 
 Q.coalition_dissent = 0;
 

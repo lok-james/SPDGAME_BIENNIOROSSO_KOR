@@ -51,7 +51,7 @@ subtitle: We can redistribute unused and uncultivated land to keep the lower une
 view-if: uncultivated_redistributed = 0
 choose-if: agriculture_minister_party = "PSI" and judicial_reform > 0
 unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 0 : The judiciary would not support this. ?]
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; economic_growth += 0.2 if economic_growth < 0; ldr_moderates += 0.2 if ldr_right > ldr_left
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; economic_growth += 0.2 if economic_growth < 0; ldr_moderates += 0.2;
 
 We begin redistributions of uncultivated lands of large estates via legal means, decreasing unemployment and increasing the rural populace.
 
@@ -61,7 +61,7 @@ view-if: uncultivated_redistributed > 0
 choose-if: agriculture_minister_party = "PSI" and judicial_reform > 1
 unavailable-subtitle: [? if not agriculture_minister_party = "PSI" : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 1 : The judiciary would not support this. ?]
 max-visits: 2
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.1 if unemployment >= 8; unemployment -= 0.2 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3; ldr_moderates += 0.2 if ldr_right > ldr_left; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.1 if unemployment >= 8; unemployment -= 0.2 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3; ldr_moderates += 0.2; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0
 
 [? if uncultivated_redistributed = 2: We continue redistributing land via the judicial system, as people are able to work again, reducing unemployment. ?]
 

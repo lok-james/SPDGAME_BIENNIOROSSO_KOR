@@ -98,7 +98,6 @@ Q.fasci_strength += 17;
 Q.ldr_right += 2;
 Q.ppi_right += 2;
 Q.ds_right += 2;
-Q.ul_sonnino += 0.5;
 
 Q.fasci_coup_progress += 1;
 

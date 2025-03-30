@@ -5,7 +5,7 @@ on-departure: {!
 Q.rural_psi -= 3; 
 Q.middle_class_psi -= 2; 
 Q.workers_psi -= 3; 
-Q.middle_class_pnf += 2; Q.
+Q.middle_class_pnf += 2;
 catholic_pnf += 4; 
 if (Q.socialist_catholic_coalition == 1) {
     Q.catholic_ppi -= 4;
@@ -14,6 +14,9 @@ Q.industrialists_pnf += 4;
 if (Q.centre_left_coalition == 1) {
     industrialists_ldr -= 4;
 }
+
+Q.ldr_relation -= 8;
+Q.ul_relation -= 8;
 
 if (Q.left_wing_coalition) {
     Q.left_wing_coalition_failed = 1;
@@ -54,8 +57,6 @@ Q.catholic_nationalisation_accepted = 0;
 Q.catholic_papacy_accepted = 0;
 Q.catholic_women_accepted = 0;
 
-Q.sonnino_southern_accepted = 0;
-
 Q.coalition_dissent = 0;
 
 Q.crackdown_far_left = 0;
@@ -91,11 +92,10 @@ Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
 
 Q.government_collapse += 1;
+Q.leverage = Q.psi_seating_disp;
 Q.party_demands_timer = 6;
+Q.king_dismissed_timer = 12;
 
-Q.revolutionary_fervour += 10;
-Q.revolutionary_exhaustion += 0.01
-Q.leverage = Q.psi_r
 !}
 go-to: election_1919.coalition_menu if next_election_time >= 4
 new-page: true

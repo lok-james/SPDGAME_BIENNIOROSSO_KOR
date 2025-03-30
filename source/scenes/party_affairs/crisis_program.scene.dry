@@ -33,7 +33,7 @@ We attempt to convince the party to support the Maximum Program. Leftists argue 
 We have not yet formally adopted the plan. More work needs to be done.
 
 @adopt_left
-on-arrival: syndicalist_strength += 10; communist_strength += 15; communist_dissent -= 10; reformist_dissent += 10; labour_dissent += 6; nationalisation_adopted = 1; fasci_coup_progress += 1; economic_plan = 1; ldr_left -= 0.2; ds_left -= 0.2; radicalisation += 0.1;
+on-arrival: syndicalist_strength += 10; communist_strength += 15; communist_dissent -= 10; reformist_dissent += 10; labour_dissent += 6; nationalisation_adopted = 1; fasci_coup_progress += 1; economic_plan = 1; ldr_moderates -= 0.2; ds_left -= 0.2; radicalisation += 0.1;
 
 With our hard work, we have convinced the majority of the party to adopt the socialist economic plan! Bourgeois opposition is likely to be fierce. [? if psi_in_government == 0 : It might be difficult to enact the plan, given present conditions. ?]
 
@@ -52,7 +52,7 @@ We attempt to convince the party to support the Minimum Plan. Advocates of the p
 We have not yet adopted the plan. More work needs to be done.
 
 @adopt_moderate
-on-arrival: reformist_strength += 10; reformist_dissent -= 10; left_dissent += 8; labor_dissent += 6; moderate_plan_adopted = 1; economic_plan = 1; coalition_dissent -= 1 if unemployment > 15; ldr_relation += 5; ldr_left += 0.2; ds_left += 0.2; radicalisation -= 0.1;
+on-arrival: reformist_strength += 10; reformist_dissent -= 10; left_dissent += 8; labor_dissent += 6; moderate_plan_adopted = 1; economic_plan = 1; coalition_dissent -= 1 if unemployment > 15; ldr_relation += 5; ldr_moderates += 0.2; ds_left += 0.2; radicalisation -= 0.1;
 
 With our hard work, we have convinced the majority of the party to adopt the economic and political reform plan! [? if psi_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Labour, Public Works, Agricultural or Finance ministries. ?]
 

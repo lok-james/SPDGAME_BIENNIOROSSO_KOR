@@ -111,10 +111,6 @@ if (Q.pri_prominent == 1) {
     this.achieve('ascendente_repubblicano');
 }
 
-if (Q.sonnino_avenged == 1) {
-    this.achieve('risveglio_del_sud');
-}
-
 if ((Q.max_seize == 3 && Q.max_councils == 3 && Q.max_land_seize == 3) || (Q.max_seize_factories == 3 && Q.max_seize_councils == 3 && Q.max_land_seize == 3)) {
     this.achieve('piano_massimo_completato');
 }
@@ -299,8 +295,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
 
-[? if game_achievement_risveglio_del_sud: **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
-
 [? if game_achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 
 [? if game_achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
@@ -381,8 +375,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
 
-[? if achievement_risveglio_del_sud: **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
-
 [? if achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 
 [? if achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
@@ -462,8 +454,6 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 [? if not achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
 
 [? if not achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
-
-[? if not achievement_risveglio_del_sud: **Risveglio del Sud** - Ameliorate the Southern Question before Sonnino dies. ?]
 
 [? if not achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
 

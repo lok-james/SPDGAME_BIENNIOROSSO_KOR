@@ -109,21 +109,6 @@ if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
 
-// ldr merging
-
-if (Q.ldr_existing == 0) {
-    for (var classes of Q.classes) {
-        if (Q[classes+ '_ldr'] > 0 || Q[classes+ '_ldr'] < 0) {
-            Q[classes+ '_ul'] += Q[classes+ '_ldr'];
-            Q[classes+ '_ldr'] = 0;
-        }
-    }
-
-    if (ldr_relation != 0) {
-        Q.ul_relation += Q.ldr_relation;
-    }
-}
-
 // coalition support mechanics
 
 for (var classes of Q.classes) {
@@ -187,10 +172,6 @@ for (var c of Q.classes) {
                     Q[c+'_'+party] /= 2;
                 }
             }
-        }
-        // natural loss
-        if (Q.year >= 1923) {
-            Q[c+'_'+party] *= 0.98;
         }
     }
 
@@ -472,8 +453,8 @@ if (Q.week_actions >= 1) {
             if (Q.psu_formed == 1) {
                 Q.workers_psu += 3/12
             }
-            Q.ldr_left += 1/12;
-            Q.ldr_moderates -= 1/12;
+            Q.ldr_moderates += 1/12;
+            Q.ldr_right -= 1/12;
         }
         if (Q.inflation >= 12 && Q.socialist_sentiment > 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
@@ -515,8 +496,8 @@ if (Q.week_actions >= 1) {
             if (Q.psu_formed == 1) {
                 Q.workers_psu += 6/12
             }
-            Q.ldr_left -= 1/12;
-            Q.ldr_moderates += 1/12; 
+            Q.ldr_moderates -= 1/12;
+            Q.ldr_right += 1/12; 
         }
         if (Q.inflation >= 12 && Q.socialist_sentiment < 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
@@ -1008,17 +989,17 @@ if (Q.week_actions >= 1) {
             Q.veterans_other += 3/12;
         }
 
-        if (Q.anti_monarchist_sentiment > 30 && Q.pri_prominent == 1 && Q.pri_votes < 12) {
+        if (Q.anti_monarchist_sentiment > 30 && Q.pri_prominent == 1 && Q.pri_votes < 8) {
             Q.middle_class_pri += 2/12;
             Q.rural_pri += 1/12;
             Q.veterans_pri += 1/12;
         }
-        if (Q.anti_monarchist_sentiment > 50 && Q.pri_prominent == 1 && Q.pri_votes < 12) {
+        if (Q.anti_monarchist_sentiment > 50 && Q.pri_prominent == 1 && Q.pri_votes < 8) {
             Q.middle_class_pri += 3/12;
             Q.rural_pri += 2/12;
             Q.veterans_pri += 2/12;
         }
-        if (Q.anti_monarchist_sentiment > 70 && Q.pri_prominent == 1 && Q.pri_votes < 12) {
+        if (Q.anti_monarchist_sentiment > 70 && Q.pri_prominent == 1 && Q.pri_votes < 8) {
             Q.middle_class_pri += 4/12;
             Q.rural_pri += 1/12;
             Q.veterans_pri += 3/12;
@@ -1082,13 +1063,41 @@ if (Q.week_actions >= 1) {
             Q.veterans_psri -= 1/12;
             Q.women_psri -= 6/12;
 
+            Q.workers_ppi -= 3/12;
+            Q.middle_class_ppi -= 4/12;
+            Q.industrialists_ppi -= 6/12;
+            Q.rural_ppi -= 3/12;
+            Q.veterans_ppi -= 1/12;
+            Q.women_ppi -= 6/12;
+
+            Q.workers_ppi -= 3/12;
+            Q.middle_class_ppi -= 4/12;
+            Q.industrialists_ppi -= 6/12;
+            Q.rural_ppi -= 3/12;
+            Q.veterans_ppi -= 1/12;
+            Q.women_ppi -= 6/12;
+
+            Q.workers_ldr -= 3/12;
+            Q.middle_class_ldr -= 4/12;
+            Q.industrialists_ldr -= 6/12;
+            Q.rural_ldr -= 3/12;
+            Q.veterans_ldr -= 1/12;
+            Q.women_ldr -= 6/12;
+
+            Q.workers_ul -= 3/12;
+            Q.middle_class_ul -= 4/12;
+            Q.industrialists_ul -= 6/12;
+            Q.rural_ul -= 3/12;
+            Q.veterans_ul -= 1/12;
+            Q.women_ul -= 6/12;
+
             if (Q.acerbo_law_passed) {
-                Q.workers_psi -= 9/9;
-                Q.middle_class_psi -= 12/9;
-                Q.industrialists_psi -= 21/9;
-                Q.rural_psi -= 17/9;
-                Q.veterans_psi -= 9/9;
-                Q.women_psi -= 5/9;
+                Q.workers_pnf += 9/9;
+                Q.middle_class_pnf += 12/9;
+                Q.industrialists_pnf += 21/9;
+                Q.rural_pnf += 17/9;
+                Q.veterans_pnf += 9/9;
+                Q.women_pnf += 5/9;
             }
 
             Q.nationalist_sentiment += 10/12;
@@ -1113,32 +1122,32 @@ if (Q.week_actions >= 1) {
 
             if (Q.republican_sentiment > Q.nationalist_sentiment + Q.socialist_sentiment) {
                 Q.workers_psri += 1/12;
-                Q.middle_class_psri += 3/12;
+                Q.middle_class_psri += 1/12;
                 Q.industrialists_psri += 1/12;
                 Q.rural_psri += 1/12;
-                Q.women_psri += 3/12;
+                Q.women_psri += 2/12;
 
-                Q.workers_psu += 2/12;
-                Q.middle_class_psu += 1/12;
-                Q.industrialists_psu += 1/12;
-                Q.rural_psu += 1/12;
-                Q.veterans_psu += 4/12;
-                Q.women_psu += 1/12;
+                Q.workers_psu += 3/12;
+                Q.middle_class_psu += 2/12;
+                Q.industrialists_psu += 2/12;
+                Q.rural_psu += 2/12;
+                Q.veterans_psu += 5/12;
+                Q.women_psu += 2/12;
 
-                if (Q.radicalisation < 5) {
-                    Q.workers_psi += 2/24;
-                    Q.middle_class_psi += 3/24;
-                    Q.industrialists_psi += 2/24;
-                    Q.rural_psi += 4/24;
-                    Q.veterans_psi += 1/24;
-                    Q.women_psi += 1/24;
+                if (Q.pri_prominent && Q.pri_votes < 12) {
+                    Q.workers_pri += 2/12;
+                    Q.middle_class_pri += 3/12;
+                    Q.industrialists_pri += 1/12;
+                    Q.rural_pri += 1/12;
+                    Q.veterans_pri += 3/12;
+                    Q.women_pri += 1/12;
                 }
             }
 
             if (Q.socialist_sentiment > Q.nationalist_sentiment + Q.republican_sentiment) {
-                Q.workers_pcdi += 1/12;
-                Q.rural_pcdi += 1/12;
-                Q.veterans_pcdi += 4/12;
+                Q.workers_pcdi += 3/12;
+                Q.rural_pcdi += 2/12;
+                Q.veterans_pcdi += 5/12;
 
                 if (Q.radicalisation >= 5) {
                     Q.workers_psi += 2/24;
@@ -1173,7 +1182,7 @@ if (Q.week_actions >= 1) {
             Q.radicalisation_timer = 6;
 
             if (Q.ldr_relation < 40) {
-                Q.ldr_left -= 0.1;
+                Q.ldr_moderates -= 0.1;
             }
             
             if (Q.ds_relation < 40) {
@@ -1211,14 +1220,14 @@ if (Q.week_actions >= 1) {
 
                 if (Q.middle_class_psi_normalised > 20) {
                     Q.middle_class_psi -= 9/12;
-                    Q.middle_class_psri += 3/12;
-                    Q.middle_class_ldr += 1/12;
-                    Q.middle_class_ul += 1/12;
+                    Q.middle_class_psri += 1/12;
+                    Q.middle_class_ldr += 3/12;
+                    Q.middle_class_ul += 3/12;
                 }
                 
                 if (Q.rural_psi_normalised > 45) {
                     Q.rural_psi -= 2/12;
-                    Q.rural_psri += 2/12;
+                    Q.rural_psri += 1/12;
                 }
 
             }
@@ -1226,8 +1235,8 @@ if (Q.week_actions >= 1) {
             if (Q.psu_formed == 1) {
                 if (Q.middle_class_psi_normalised > 20) {
                     Q.middle_class_psi -= 10/12;
-                    Q.middle_class_psri += 3/12;
-                    Q.middle_class_psu += 6/12;
+                    Q.middle_class_psri += 2/12;
+                    Q.middle_class_psu += 7/12;
                 }
 
                 if (Q.rural_psi_normalised > 45) {
@@ -1238,8 +1247,7 @@ if (Q.week_actions >= 1) {
 
                 if (Q.workers_psi_normalised > 60) {
                     Q.workers_psi -= 5/12;
-                    Q.workers_psri += 2/12;
-                    Q.workers_psu += 3/12;
+                    Q.workers_psu += 5/12;
                 }
 
             }
@@ -1279,6 +1287,31 @@ if (Q.week_actions >= 1) {
             Q.republican_sentiment -= 10/12;
         }
 
+        // congress checks
+
+        if ((Q.week == 1 && Q.month == 10) && (Q.year == 1924 || Q.year == 1926)) {
+            Q.ul_congress_trigger = 1;
+        }
+
+        if ((Q.week == 1 && Q.month == 4) && (Q.year == 1923 || Q.year == 1925 || Q.year == 1927)) {
+            Q.ldr_congress_trigger = 1;
+        }
+
+        if (((Q.week == 3) && ((Q.month == 3 && Q.year == 1925) || (Q.month == 2 && Q.year == 1927))) && (Q.pll_formed == 0 && Q.pcs_formed == 0)) {
+            Q.ldr_congress_trigger = 1;
+        }
+
+        // ldr merging
+
+        if (Q.ldr_defunct == 1 && Q.ldr_votes > (Q.ul_votes / 4)) {
+            Q.workers_ldr -= 3/12;
+            Q.middle_class_ldr -= 3/12;
+            Q.industrialists_ldr -= 3/12;
+            Q.rural_ldr -= 3/12;
+            Q.veterans_ldr -= 3/12;
+            Q.catholic_ldr -= 3/12;
+            Q.women_ldr -= 3/12;
+        }
     }
 }
 Q.has_event = 0;

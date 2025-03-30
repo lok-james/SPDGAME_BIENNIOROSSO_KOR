@@ -73,7 +73,7 @@ if (Q.upper_tax_rates > 3) {
     Q.capital_strike_progress += 1;
 }
 
-Q.ldr_left -= 0.2;
+Q.ldr_right += 0.2;
 !}
 
 Making the tax system more progressive is popular among our base, but it upsets our bourgeois coalition partners, as well as our minimal number of bourgeois voters.
@@ -140,7 +140,7 @@ if (Q.unemployment < 8) {
 
 Q.psri_relation += 5*(1-Q.dissent);
 
-Q.ldr_left -= 0.2;
+Q.ldr_moderates -= 0.2;
 !}
 
 Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment.
@@ -202,7 +202,7 @@ if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
 
 Q.psri_relation += 3*(1-Q.dissent);
 
-Q.ldr_left += 0.2;
+Q.ldr_moderates += 0.2;
 Q.ds_left += 0.2;
 Q.ul_giolitti += 0.3;
 !}
@@ -338,7 +338,7 @@ Q.ldr_relation += 5*(1-Q.dissent);
 Q.ul_relation += 4*(1-Q.dissent); 
 
 Q.ppi_left -= 0.1;
-Q.ldr_left += 0.1;
+Q.ldr_moderates += 0.1;
 !}
 
 Our regressive taxation policy benefits the rich while hurting the poor and working-class. [? if centre_left_coalition :Our bourgeois coalition partners approve of this orthodox economic course. ?][? if socialist_catholic_coalition :Our catholic coalition partner disapprove of this regressive tax policy. ?]
@@ -414,8 +414,7 @@ Q.entente_relation -= 1;
 Q.soviet_relation -= 1;
 Q.balkan_relation -= 1;
 
-Q.ldr_left -= 0.2;
-Q.ul_sonnino += 0.2;
+Q.ldr_moderates -= 0.2;
 !}
 
 Increasing tariffs leads to higher prices for basic goods, increasing inflation and hurting consumption among the working class. Retaliatory tariffs reduce the competitiveness of German exports, raising unemployment among workers. They also lead to an atmosphere of international suspicion, reducing our ability to negotiate with other countries.

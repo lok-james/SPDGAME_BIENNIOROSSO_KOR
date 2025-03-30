@@ -34,7 +34,7 @@ Now, with the force of the Labour Ministry, we are able to implement this work w
 @shorten_hours
 view-if: working_hours >= 2
 subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
-on-arrival: working_hours += 1; labour_dissent -= 8; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 5; workers_psi += 7*(1-dissent) if not in_unstable_coalition; workers_clc += 7*(1-dissent) if centre_left_coalition; workers_scc += 7*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; ds_relation -= 2; coalition_dissent += 1 if in_unstable_coalition; capital_strike_progress += 1; socialist_sentiment += 2; ldr_left -= 0.1; ds_right += 0.1; ul_giolitti -= 0.1; inflation -= 0.1; economic_growth -= 0.1; unemployment += 0.1
+on-arrival: working_hours += 1; labour_dissent -= 8; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 5; workers_psi += 7*(1-dissent) if not in_unstable_coalition; workers_clc += 7*(1-dissent) if centre_left_coalition; workers_scc += 7*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; ds_relation -= 2; coalition_dissent += 1 if in_unstable_coalition; capital_strike_progress += 1; socialist_sentiment += 2; ldr_right += 0.1; ds_right += 0.1; ul_giolitti -= 0.1; inflation -= 0.1; economic_growth -= 0.1; unemployment += 0.1
 
 Some in the labour movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
 

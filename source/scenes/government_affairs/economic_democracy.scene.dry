@@ -48,7 +48,7 @@ subtitle: This will ruin our relations with the Liberals.
 view-if: councils_empowered = 1 
 choose-if: (king_relation >= 50 or veto_removed) and not centre_left_coalition
 unavailable-subtitle: [? if king_relation < 50 : The Senate and King would kill the bill the moment it reaches them. ?][? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this is proposed. ?]
-on-arrival: coalition_dissent += 1 if in_unstable_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 17; ds_relation -= 17; labour_strength += 12; syndicalist_strength += 17; labour_dissent -= 17; syndicalist_dissent -= 20 if syndicalist_active; radicalisation += 1; industrialists_pnf += 7; industrialists_ldr -= 4; industrialists_ds -= 5; industrialists_ul -= 4; workers += 3; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent); socialist_sentiment += 7; ldr_left -= 2; ds_left -= 2;
+on-arrival: coalition_dissent += 1 if in_unstable_coalition; workers_psi += 12*(1-dissent); ldr_relation -= 17; ds_relation -= 17; labour_strength += 12; syndicalist_strength += 17; labour_dissent -= 17; syndicalist_dissent -= 20 if syndicalist_active; radicalisation += 1; industrialists_pnf += 7; industrialists_ldr -= 4; industrialists_ds -= 5; industrialists_ul -= 4; workers += 3; industrialists_psi -= 8*(1-dissent); psri_relation += 9*(1-dissent); socialist_sentiment += 7; ldr_right += 2; ds_left -= 2;
 
 The *Factory Control Act*, signed in 1922 as an agreement to end the Turin workers conflict, has made its way onto the Chamber's floor once more, proposed now to be expanded across the country, giving the worker's councils extensive power within their workplace to act against the bourgeois businessmen and the industrialists.
 
@@ -95,7 +95,6 @@ if (Q.budget < 0) {
     Q.inflation += 0.1;
 }
 
-Q.ul_sonnino += 0.2;
 Q.ds_right += 0.1;
 Q.ldr_right += 0.1;
 
@@ -147,7 +146,6 @@ if (Q.socialist_catholic_coalition == 1) {
     Q.industrialists_scc -= 6*(1-Q.dissent); 
 }
 
-Q.ul_sonnino += 0.2*Q.nationalisation_progress;
 Q.ds_right += 0.1*Q.nationalisation_progress;
 Q.ldr_right += 0.1*Q.nationalisation_progress;
 
@@ -169,7 +167,7 @@ if (Q.budget < 0) {
 
 if (Q.nationalisation_progress > 2) {
     Q.unemployment -= 0.1;
-    Q,economic_growth += 0.2;
+    Q.economic_growth += 0.2;
 }
 
 Q.industrialists_pnf += 4; 

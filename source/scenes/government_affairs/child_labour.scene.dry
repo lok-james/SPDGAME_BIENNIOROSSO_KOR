@@ -1,8 +1,8 @@
 title: Child Labour
 new-page: true
 is-card: true
-view-if: psi_in_government and child_labour_timer <= 0
-on-arrival: week_actions += 1; child_labour_timer = 3; labour_law_support = left_wing_coalition_r; labour_law_support += ul_seating_disp if ul_leader = "Sonnino"
+view-if: psi_in_government and child_labour_timer <= 0 amd child_labour_laws != 1
+on-arrival: week_actions += 1; child_labour_timer = 3; labour_law_support = left_wing_coalition_r; 
 card-image: img/portraits/PalmiroTogliatti.jpg
 tags: govt_affairs
 
@@ -52,14 +52,14 @@ subtitle: [? if labour_law_support < 50 : This is unlikely to succeed; we do not
 go-to: child_labour_fail if labour_law_support < 50; child_labour_success if labour_law_support >= 50
 
 @child_labour_fail
-on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 4*(1-dissent) if not in_unstable_coalition; workers_clc += 4*(1-dissent) if centre_left_coalition; workers_scc += 4*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ldr_right += 0.5; ul_sonnino += 0.8;
+on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 4*(1-dissent) if not in_unstable_coalition; workers_clc += 4*(1-dissent) if centre_left_coalition; workers_scc += 4*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ldr_right += 0.5;
 
 Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ pnf_name +]'s and [+ ldr_name +] speaking in particularly vehement opposition. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
 @child_labour_success
 on-arrival: {!
 Q.child_labour_laws = 1;
-if (Q.centre_left_coalition == 1 && ul_leader != "Sonnino") {
+if (Q.centre_left_coalition == 1) {
     Q.coalition_dissent += 1;
 }
 
@@ -109,13 +109,12 @@ Q.socialist_sentiment += 4;
 
 Q.ldr_right += 0.6; 
 Q.ds_right += 0.2; 
-Q.ul_sonnino += 2;
 
 Q.unemployment -= 0.6;
 Q.economic_growth -= 1.2;
 Q.inflation -= 0.1;
 !}
 
-With the support of the left including the PSRI[? if pri_prominent: and the PRI?][? if ul_leader = "Sonnino" :alongside the PPI?], we have successfully passed a bill to ban child labour in Italy! This has heartened our more radical supporters, while hurting our relations with the [+ ldr_name +]. With the increasing political discourse around child labour, the [+ ldr_name +] and DS have gained landowner and industrialist votes at the expense of the [+ pnf_name +].
+With the support of the left including the PSRI[? if pri_prominent: and the PRI?], we have successfully passed a bill to ban child labour in Italy! This has heartened our more radical supporters, while hurting our relations with the [+ ldr_name +]. With the increasing political discourse around child labour, the [+ ldr_name +] and DS have gained landowner and industrialist votes at the expense of the [+ pnf_name +].
 
 [? if child_welfare < 3 : Unfortunately, the bill has seemingly backfired, as the new ban on child labour has forced many into further poverty due to a lowered income. ?]

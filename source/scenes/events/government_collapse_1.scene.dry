@@ -17,7 +17,7 @@ Q.government_collapse = 1;
 
 Q.ldr_in_government = 1;
 
-Q.ldr_left += 1;
+Q.ldr_moderates -= 0.1;
 !}
 tags: event
 

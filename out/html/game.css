@@ -575,6 +575,14 @@ table {
   fill: #002d6d;
 }
 
+.seats.pcs {
+  fill: #656573;
+}
+
+.seats.pll {
+  fill: #FFD1D9;
+}
+
 .seat.vacant {
   fill: #FFFFFF;
   stroke: #000;
