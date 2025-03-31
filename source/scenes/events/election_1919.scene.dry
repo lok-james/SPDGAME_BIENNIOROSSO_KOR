@@ -414,7 +414,7 @@ if (Q.pri_prominent == 1) {
 }
 
 if (Q.pri_prominent == 0) {
-    Q.other_toleration_seating = Q.other_seating_disp * 0.7;
+    Q.other_toleration_seating = Q.other_seating_disp * 0.3;
     Q.left_wing_minimum -= Q.other_toleration_seating;
 }
 
