@@ -1,7 +1,7 @@
 title: [+ ds_name +] Fractures!
 subtitle: The party's internal machinations have caused it to fall.
 new-page: true
-view-if: ds_r > ul_r and ds_r > ldr_r and ds_party and not pll_formed and not pcs_formed
+view-if: ds_r > ul_r and ds_r > ldr_r and ds_party and ds_fractured = 0
 tags: event
 
 = [+ ds_name +] Fractures!
@@ -14,6 +14,8 @@ The party can no longer hold through compromise.
 
 @ds_collapse
 on-arrival: {!
+
+Q.ds_fractured = 1;
 
 if (Q.ds_right < 0) {
     Q.ds_right = 0;
