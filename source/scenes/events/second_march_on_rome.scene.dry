@@ -1,6 +1,6 @@
 title: Second March on Rome
 subtitle: The fascists are making their move again!
-view-if: pnf_in_power = 1 and (left_wing_coalition or psi_majority)
+view-if: pnf_in_power = 1 and (left_wing_coalition = 1 or psi_majority = 1)
 on-arrival: {!
 Q.pnf_in_power = 0;
 
@@ -106,7 +106,7 @@ What should we do?
 go-to: sr_victory if second_rome_victory; sr_civil_war if second_rome_civil_war; sr_loss if second_rome_total_defeat
 
 @sr_victory
-on-arrival: nationalist_sentiment -= 7; socialist_sentiment += 6; republican_sentiment += 3
+on-arrival: nationalist_sentiment -= 7; socialist_sentiment += 6; republican_sentiment += 3; pnf_weakened = 1
 
 Our forces easily overwhelm the far-right paramilitaries, who are forced to retreat when confronted with our own forces. The Second March on Rome is over, and we have won.
 
