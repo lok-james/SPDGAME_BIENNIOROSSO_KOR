@@ -353,9 +353,6 @@ for (var party of Q.parties) {
 Q.bn_seating_disp = (Q.bn_seating/total_available_seats)*100;
 Q.bn_seating_disp = parseFloat(Q.bn_seating_disp.toFixed(1));
 
-Q.pnf_r = Q.pnf_r.toFixed(1);
-Q.pnf_r = Q.pnf_r.toFixed(1);
-
 if (Q.abstentionist_psi) {
     Q.vacant_seating = Q.psi_seating;
     Q.vacant_seating_disp = Q.psi_seating_disp;
