@@ -4,6 +4,15 @@ view-if: pnf_in_power = 1 and (left_wing_coalition = 1 or psi_majority = 1)
 on-arrival: {!
 Q.pnf_in_power = 0;
 
+Q.anti_fas_ds = 0;
+Q.anti_fas_ldr = 0;
+Q.anti_fas_pll = 0;
+Q.anti_fas_ppi = 0;
+Q.anti_fas_pri = 0;
+Q.anti_fas_psri = 0;
+Q.anti_fas_psu = 0;
+Q.anti_fas_ul = 0;
+
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.fdc_strength = Math.round(Q.fdc_strength);
 Q.ard_strength = Math.round(Q.ard_strength);
@@ -68,14 +77,14 @@ max-visits: 1
 priority: 1
 tags: event
 new-page: true
-go-to: second_rome_friendly if king_relation >= 50 and radicalisation <= 5; second_rome_antagonistic if king_relation < 50 and radicalisation > 5; second_rome_neutral if (king_relation < 50 and radicalisation < 5) or (king_relation >= 50 and radicalisation >= 5)
+go-to: second_rome_friendly if king_relation >= 50 and radicalisation <= 5 and second_rome_results >= 0.5; second_rome_antagonistic if (king_relation < 50 and radicalisation > 5) or second_rome_results < 0.5; second_rome_neutral if (king_relation < 50 and radicalisation < 5) or (king_relation >= 50 and radicalisation >= 5) and second_rome_results >= 0.5
 achievement: ritorno_trionfale
 
 = Second March on Rome
 
 [+ pnf_leader +] has begun a Second March on Rome, threatening to violently overthrow the government once more. 
 
-The fascists have, once more, demanded a recount of the elections under "supervision" of the nationalist paramilitaries, or the immediate resignation of the government and the reappointment of [+ pnf_leader +] as Prime Minister once more. 
+The fascists have, once more, demanded a recount of the elections under "supervision" of the nationalist paramilitaries, or the immediate resignation of the government and the reappointment of [+ pnf_leader +] as Prime Minister yet again.
 
 @second_rome_friendly
 
@@ -88,14 +97,14 @@ What should we do?
 
 @second_rome_neutral
 
-The King is looking upon the proposals of the fascists favourably once more. He has requested that we resign.
+The King is looking upon the proposals of the fascists favourably. He has requested that we resign.
 
 - @new_elections_force: We will resign our positions in government.
 - @second_rome_refuse: Refuse the King's request and deploy the Red Guards!
 
 @second_rome_antagonistic
 
-The King, fearful and wary of our participation in government, has declared his full support for the second March on Rome, dismissing our government, dissolving the Chamber of Deputies and declaring a state of emergency as he has appointed Mussolini to the Prime Ministership once more, attempting a royal coup of the government in all but name.
+The King, fearful and wary of our participation in government, has declared his full support for the second March on Rome, dismissing our government, dissolving the Chamber of Deputies and declaring a state of emergency as he has reappointed [+ pnf_leader +] to the Prime Ministership, attempting a royal coup of the government in all but name.
 
 What should we do?
 
