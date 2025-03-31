@@ -36,6 +36,7 @@ if (Q.fdc_strength*Q.fdc_militancy > Q.rg_strength*Q.rg_militancy) {
 }
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 [? if psi_unreliable : Unfortunately, our forces are being harassed consistently by the far-right paramilitaries, who are able to overwhelm our forces. We will be able to rely on half of our own deputies voting against the Bloc, optimistically. ?]
 
@@ -47,6 +48,7 @@ on-arrival: {!
 Q.anti_acerbo_coalition += parseFloat(Q.psu_seating_disp);
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 The PSU has reassured us that its deputies will be voting against the Acerbo Law.
 
@@ -55,6 +57,7 @@ on-arrival: {!
 Q.anti_acerbo_coalition += parseFloat(Q.psri_seating_disp);
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 The PSRI has reassured us that its deputies will be voting against the Acerbo Law.
 
@@ -64,6 +67,7 @@ on-arrival: {!
 Q.anti_acerbo_coalition += parseFloat(Q.pll_seating_disp);
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 The PLL has reassured us that its deputies will be voting against the Acerbo Law.
 
@@ -71,6 +75,7 @@ The PLL has reassured us that its deputies will be voting against the Acerbo Law
 subtitle: [? if not ppi_leader = "Sturzo": The PPI is disorganised following Sturzo's recent dismissal. ?]
 on-arrival: anti_acerbo_coalition += ppi_seating_disp if ppi_leader = "Sturzo"
 go-to: acerbo_menu
+max-visits: 1
 
 [? if ppi_leader = "Sturzo" : Our contacts with Sturzo are mildly successful, and he informs us his party will, at the very least, abstain. ?]
 [? if not ppi_leader = "Sturzo": Unfortunately, the PPI is disorganised without Sturzo's leadership, and is seems there will be many dissident members voting in favour of the law. We cannot rely on them dissenting. ?]
@@ -87,6 +92,7 @@ if (Q.ldr_leader == "Orlando" && Q.ldr_relation > 75) {
 }
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 [? if not ldr_convinced = 1: Unfortunately, and maybe unsurprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] refuse to support us, seeing the PNF as a defense against us.  ?]
 
@@ -101,6 +107,7 @@ if (Q.ul_relation >= 75 && Q.ul_leader === "Giolitti") {
 }
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 [? if not ul_convinced = 1: Unfortunately, and maybe unsurprisingly, the [+ ul_full_name +] and Giolitti refuse to support us. ?]
 
@@ -115,6 +122,7 @@ if (Q.ds_leader == "Giuffrida") {
 }
 !}
 go-to: acerbo_menu
+max-visits: 1
 
 [? if not ds_convinced = 1: Unfortunately, and maybe unsurprisingly, the DS and [+ ds_leader +] refuse to support us. ?]
 

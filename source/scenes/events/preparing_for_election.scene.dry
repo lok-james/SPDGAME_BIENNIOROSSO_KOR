@@ -26,6 +26,7 @@ Following the passing of the Acerbo Law, it seems all but certain that the PNF w
 view-if: pcdi_formed
 choose-if: false
 unavailable-subtitle: The Communists would never form a joint list with us.
+max-visits: 1
 
 @contact_psu
 view-if: psu_formed
@@ -33,6 +34,7 @@ choose-if: psu_relation >= 55
 unavailable-subtitle: Our relations with the PSU are too poor for this.
 on-arrival: anti_fas_psu = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the PSU! This will aid our efforts in combatting fascism.
 
@@ -41,6 +43,7 @@ choose-if: not psri_joint_pll and not psri_joint_pri and not psri_joint_pri
 unavailable-subtitle: The PSRI is already in a joint list with another party.
 on-arrival: anti_fas_psri = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the PSRI! This will aid our efforts in combatting fascism.
 
@@ -50,6 +53,7 @@ choose-if: pll_relation >= 40
 unavailable-subtitle: Our relations with the PLL are too poor for this.
 on-arrival: anti_fas_pll = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the PLL! This will aid our efforts in combatting fascism.
 
@@ -59,6 +63,7 @@ choose-if: pri_relation >= 40
 unavailable-subtitle: Our relations with the PRI are too poor for this.
 on-arrival: anti_fas_pri = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the PRI! This will aid our efforts in combatting fascism.
 
@@ -67,6 +72,7 @@ choose-if: ppi_leader == "Sturzo" and ppi_relation >= 55
 unavailable-subtitle: Our relations with the PPI are too poor for this.
 on-arrival: anti_fas_ppi = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the PPI! This will aid our efforts in combatting fascism.
 
@@ -75,6 +81,7 @@ choose-if: ds_leader != "Carnazza" and ((ds_relation >= 40 and ds_leader == "Giu
 unavailable-subtitle: [? if ds_leader != "Carnazza" : Our relations with the [+ ds_name +] are too poor for this. ?][? if ds_leader == "Carnazza" : The [+ ds_name +] would never form a joint list with us. ?]
 on-arrival: anti_fas_ds = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the [+ ds_name +]! This will aid our efforts in combatting fascism.
 
@@ -83,5 +90,6 @@ choose-if: ldr_leader == "Nitti" and ldr_relation >= 55
 unavailable-subtitle: The [+ ldr_name +] would never form a joint list with us.
 on-arrival: anti_fas_ldr = 1
 go-to: list_menu
+max-visits: 1
 
 We are able to negotiate an form a joint list with the [+ ldr_name +]! This will aid our efforts in combatting fascism.

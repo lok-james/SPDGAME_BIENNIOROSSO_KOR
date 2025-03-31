@@ -655,9 +655,9 @@ go-to: coalition_menu
 
 {!<table>!}
 {!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td><td>% Seats</td></tr>!}
-[? if pnf_in_government : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Anti-Fascist List: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
+[? if acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Anti-Fascist List: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
-[? if pnf_in_government : {!<tr><td>!} **-Italian Socialist Party** {!</td></tr>!} ?]
+[? if acerbo_law_passed : {!<tr><td>!} **-Italian Socialist Party** {!</td></tr>!} ?]
 
 [? if anti_fas_psu : {!<tr><td>!} -Unitary Socialist Party  {!</td></tr>!} ?]
 
@@ -667,15 +667,15 @@ go-to: coalition_menu
 
 [? if anti_fas_pri : {!<tr><td>!} -Italian Republican Party  {!</td></tr>!} ?]
 
-[? if anti_fas_ppi : {!<tr><td>!} -Italian Popular Party  {!</td></tr>!} ?]
+[? if anti_fas_ppi : {!<tr><td>!} -Italian People's Party  {!</td></tr>!} ?]
 
 [? if anti_fas_ds : {!<tr><td>!} -[+ ds_full_name +]  {!</td></tr>!} ?]
 
 [? if anti_fas_ldr : {!<tr><td>!} -[+ ldr_full_name +]  {!</td></tr>!} ?]
 
-[? if not pnf_in_government : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Socialist List: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
+[? if not acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Socialist List: {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
-[? if not pnf_in_government : {!<tr><td>!} **-Italian Socialist Party** {!</td></tr>!} ?]
+[? if not acerbo_law_passed : {!<tr><td>!} **-Italian Socialist Party** {!</td></tr>!} ?]
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} Communist List: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
@@ -685,7 +685,7 @@ go-to: coalition_menu
 
 [? if psu_formed and not anti_fas_psu : {!<tr><td>!} -Unitary Socialist Party {!</td></tr>!} ?]
 
-[? if psu_formed and psri_joint_psu and not anti_fas_psu : {!</td></tr>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if psu_formed and psri_joint_psu and not anti_fas_psu : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
 
 [? if pll_formed and not anti_fas_pll : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div>!} Liberal-Socialist List: {!</td><td>!} [+ pll_r +]% {!</td><td>!} [+ str_change_pll +]% {!</td><td>!} [+ pll_seating +] {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
 
@@ -703,7 +703,7 @@ go-to: coalition_menu
 
 [? if (ds_party or ds_list) and not anti_fas_ds or pnf_in_government : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} Democratic List: {!</td><td>!} [+ ds_r +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
 
-[? if ((ds_party and ds_leader = "Colonna") or (ds_list and not view_full) or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!</td></tr>!} -Italian Social Democratic Party {!</td></tr>!} ?]
+[? if ((ds_party and ds_leader = "Colonna") or (ds_list and not view_full) or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td>!} -Italian Social Democratic Party {!</td></tr>!} ?]
 
 [? if ds_list and view_full : {!<tr><td>!} -Constitutional Democratic Party {!</td></tr>!} ?]
 
@@ -725,9 +725,9 @@ go-to: coalition_menu
 
 [? if ds_list and view_full : {!<tr><td>!} -Christian Democratic Party {!</td></tr>!} ?]
 
-[? if not pnf_in_government or not anti_fas_ppi : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} Catholic List: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_power and not anti_fas_ppi : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} Catholic List: {!</td><td>!} [+ ppi_r +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not pnf_in_government or not anti_fas_ppi : {!<tr><td>!} -Italian People's Party {!</td></tr>!} ?]
+[? if not pnf_in_power and not anti_fas_ppi : {!<tr><td>!} -Italian People's Party {!</td></tr>!} ?]
 
 [? if ldr_party or ldr_list and not pnf_in_government or not anti_fas_ldr : {!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} Liberals, Democrats and Radicals: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
 
@@ -781,7 +781,7 @@ go-to: coalition_menu
 
 [? if not pnf_in_bn and (pnf_r >= 5): {!<tr><td><div class="box" style='background-color:#000000'> </div>!} Fascist List: {!</td><td>!} [+ pnf_r +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5) : {!<tr><td>!} -[+ pnf_name +] {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5) : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
 [? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td>!} -Itian Social Democratic Party {!</td></tr>!} ?]
 

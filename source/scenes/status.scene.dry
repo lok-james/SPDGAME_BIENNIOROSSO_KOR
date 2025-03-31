@@ -14,7 +14,10 @@ if (Q.unemployment) {
 Q.dissent_percent = Math.round(Q.dissent_percent);
 Q.radicalisation = Math.round(Q.radicalisation);
 Q.revolutionary_fervour = Math.round(Q.revolutionary_fervour);
-Q.revolutionary_exhaustion = Q.revolutionary_exhaustion.toFixed(2);
+
+if (Q.revolutionary_exhaustion) {
+    Q.revolutionary_exhaustion_2 = Q.revolutionary_exhaustion.toFixed(2);
+}
 !}
 
 = Status
@@ -34,7 +37,7 @@ Internal Dissent: [+ dissent_percent : dissent +]
 
 Revolutionary Fervour: [+ revolutionary_fervour +]%
 
-[? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion : exhaustion +] ?]
+[? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion_2 : exhaustion +] ?]
 
 {!<span class="tooltip-text" title="The other parties view us with doubt, considering the party contains radicals advocating for the fall of the Kingdom. The question is: How radical?">Radicalisation</span>!}: [+ radicalisation : radicalisation +]
 
@@ -120,7 +123,7 @@ Unemployment: [+ unemployment_2 +]%
 
 = Inter-party Relations
 
-[? if pcdi_formed : {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_relation : relationships +] ?]\
+[? if pcdi_formed : {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_relation : relationships +] ?]
 
 [? if psu_formed : {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_relation : relationships +] ?]
 

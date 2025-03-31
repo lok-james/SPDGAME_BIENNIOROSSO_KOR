@@ -13,7 +13,6 @@ The party can no longer hold through compromise.
 - @ds_collapse: The left, led by Giuffrida, and the right, led by Carnazza, split from the party.
 
 @ds_collapse
-view-if: ds_left > ds_moderates and ds_left > ds_right
 on-arrival: {!
 
 if (Q.ds_right < 0) {
