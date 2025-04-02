@@ -582,7 +582,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relation', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
-            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'crisis_program', 'maximum_program', 'minimum_program' 
+            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'crisis_program', 'maximum_program', 'minimum_program',
             'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
             'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
             'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers'];

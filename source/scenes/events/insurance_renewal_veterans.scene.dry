@@ -49,6 +49,7 @@ Q.inflation += 0.4;
 if (Q.budget < 0) {
     Q.inflation += 0.1;
 }
+!}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
 The program is set to continue for another year, our appeal to veterans increase alongside it.
@@ -58,7 +59,7 @@ view-if: finance_minister_party = "PSI"
 subtitle: Our veterans on this program will see this as a betrayal.
 on-arrival: {!
 
-if (Q.in_unstable_coalition == 0 && Q.psi_in_government) {
+if (Q.in_unstable_coalition == 0 && Q.psi_in_government == 1) {
     Q.veterans_psi -= 6*(1-Q.dissent);
 }
 
@@ -75,7 +76,7 @@ if (Q.grand_coalition) {
     Q.veterans_ppi -= 4;
 }
 
-if (Q.pnf_in_government) {
+if (Q.pnf_in_government == 1) {
     Q.veterans_pnf += 9;
 } else {
     Q.veterans_pnf -= 4;
