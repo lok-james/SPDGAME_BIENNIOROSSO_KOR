@@ -9,28 +9,38 @@ Q.gov_public_education_timer = 9;
 Q.trade_school_funded -= 1; 
 Q.budget += 1;
 
-Q.workers_psi += 3*(1-Q.dissent); 
-Q.rural_psi += 1*(1-Q.dissent); 
-Q.middle_class_psi += 1*(1-Q.dissent);
+if (Q.psi_in_government == 0) {
+    Q.workers_psi += 2*(1-Q.dissent); 
+    Q.rural_psi += 2*(1-Q.dissent); 
+    Q.middle_class_psi += 1*(1-Q.dissent);
+
+    Q.workers_pnf += 2*(1-Q.dissent); 
+    Q.rural_pnf += 2*(1-Q.dissent); 
+    Q.middle_class_pnf += 1*(1-Q.dissent);
+}
+
+if (Q.psi_in_government == 1) {
+    Q.workers_psi -= 2*(1-Q.dissent); 
+    Q.rural_psi -= 1*(1-Q.dissent); 
+    Q.middle_class_psi -= 1*(1-Q.dissent);
+
+    Q.workers_pnf += 3*(1-Q.dissent); 
+    Q.rural_pnf += 3*(1-Q.dissent); 
+    Q.middle_class_pnf += 2*(1-Q.dissent);
+}
 
 Q.workers_ldr -= 4*(1-Q.dissent); 
 Q.rural_ldr -= 4*(1-Q.dissent); 
 Q.middle_class_ldr -= 2*(1-Q.dissent);
 Q.industrialists_ldr += 5*(1-Q.dissent);
 
-Q.inflation -= 0.4;
-Q.economic_growth -= 0.3;
+Q.inflation -= 0.2;
+Q.economic_growth -= 0.2;
 
-if (Q.unemployment >= 8) {
-    Q.unemployment -= 1.1;
-}
+Q.unemployment += 0.3
 
-if (Q.unemployment >= 4 && Q.unemployment < 8) {
-    Q.unemployment -= 0.4;
-}
-
-if (Q.unemployment < 4) {
-    Q.unemployment -= 0.2;
+if (Q.unemployment < 8) {
+    Q.unemployment += 0.1;
 }
 !}
 
@@ -41,6 +51,6 @@ tags: event
 
 The [+ ldr_name +]-led Public Education Ministry have begun to gut funding of the already-existing Trade Schools funded by the previous government due to the budget deficit, causing another wave of unemployment.
 
-Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+[? if psi_in_government : Our traditional rural and worker base criticise our inability to prevent this, as do our middle class supporters who benefit from this the most. The fascists are able to utilise both our incompetence and the [+ public_education_minister_party +]'s callousness to recruit more supporters. ?][? if not psi_in_government : We use this opportunity to recruit those disillusion with the liberal status-quo, as do the fascists. ?]
 
 - @root: There is nothing we can do.

@@ -118,9 +118,9 @@ Q.ul_name = "UL";
 Q.ul_full_name = "Liberal Union";
 Q.ul_full_italian = "Liberale Unione";
 
-Q.ds_name = "DS"
-Q.ds_full_name = "Social Democracy"
-Q.ds_full_italian = "Democrazia Sociale"
+Q.ds_name = "DS";
+Q.ds_full_name = "Social Democracy";
+Q.ds_full_italian = "Democrazia Sociale";
 
 Q.pnf_name = "FdC";
 Q.pnf_full_name = "Italian Fasces of Combat";
@@ -431,7 +431,7 @@ Q.left_wing_coalition = 0
 Q.catholic_centre_coalition = 0;
 // Centre-Left Coalition = PSI + PPI + DS + PSRI
 Q.centre_left_coalition = 0;
-Q.in_psi_majority = 0;
+Q.psi_majority = 0;
 Q.catholic_centre_failed = 0;
 Q.anti_socialist_coalition = 0; 
 
@@ -582,7 +582,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'military_influence', 'roman_question', 'southern_question', 'arditi', 'para_rally', 'preparing_revolution', 
             'red_guards', 'targeting', 'enemies', 'fundraising', 'king_relation', 
             'party_disunity', 'rally', 'revolutionary', 'urgency', 'welfare_party', 'interior_policy', 'deficit',
-            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'crisis_program', 'economic_policy', 
+            'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'crisis_program', 'maximum_program', 'minimum_program' 
             'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
             'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
             'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers'];
@@ -641,7 +641,8 @@ Q.ldr_emergency_timer = 9;
 Q.ds_emergency_timer = 9;
 Q.mussolini_trial_timer = 0;
 Q.crisis_program_timer = 0;
-Q.economic_policy_timer = 0;
+Q.maximum_program_timer = 0;
+Q.minimum_program_timer = 0;
 Q.gov_cooldown_timer = 14;
 Q.gov_foreign_timer = 14;
 Q.gov_interior_timer = 14;

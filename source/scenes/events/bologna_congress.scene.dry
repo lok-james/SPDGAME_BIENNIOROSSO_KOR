@@ -15,13 +15,13 @@ The XVI Congress of Bologna has officially begun. Though the Congress wil be hav
 The first thing on the agenda is to decide between a reformist or revolutionary approach. The right-wing of the party, the Reformists, are staunch advocates of parliamentary action to achieve a socialist state, while the Communists and majority of the Maximalists advocate for revolutionary action to achieve a Soviet Republic.
 
 -@revolutionary_approach: The Communist and Left-Maximalists sway enough of the party in their favour.
--@maximalist_approach: The Moderates and Maximalists are able to establish a compromise that forms a majority.
+-@maximalist_approach: The Moderate Maximalists are able to establish a compromise that forms a majority.
 -@reformist_approach: The Reformists are able to sway enough of the Right-Maximalists to achieve a plurality.
 
 @revolutionary_approach
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
 choose-if: communist_strength > reformist_strength
-unavailable-subtitle: The bulk of the party are opposed to this.
+unavailable-subtitle: The bulk of the party is opposed to this.
 on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; party_approach = "Revolutionary";
 go-to: @election_agenda
 
@@ -32,16 +32,16 @@ subtitle: The party will stay the course of revolution via extraparliamentary wa
 on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10;
 go-to: @election_agenda
 
-The less radical members of the Communists and Reformists accept the compromise, whilst the more radical members express their outrage over this effective 'appeasement' to keep the party together.
+The less radical members of the Communists and Reformists accept the compromise, whilst the more radical members criticise this as effective 'appeasement' to keep the party together.
 
 @reformist_approach
 choose-if: communist_strength < reformist_strength
-unavailable-subtitle: The bulk of the party are opposed to this.
+unavailable-subtitle: The bulk of the party is opposed to this.
 subtitle: The party will fully abandon extraparliamentary means and pursue a policy of parliamentary reform.
 on-arrival: reformist_dissent *= 0.5; reformist_strength *= 1.5; communist_strength *= 0.5; maximalist_strength *= 0.75; communist_dissent *= 1.5; maximalist_dissent *= 1.25; participating = 1; revolutionary_fervour -= 7; king_relation += 7*(1-(radicalisation/10)); party_approach = "Parliamentary";
 go-to: @election_agenda
 
-The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw the Reformists as having lost most of its support within the party. Already, as the vote is announced, many Communist and Maximalist members storm out of the Congress in protest, leaving the Reformists to continue the Congress.
+The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw them as having lost most of its support within the party. Already, as the vote is announced, many Communist and Maximalist members storm out of the Congress in protest, leaving the remaining members to continue the Congress.
 
 @election_agenda
 new-page: false

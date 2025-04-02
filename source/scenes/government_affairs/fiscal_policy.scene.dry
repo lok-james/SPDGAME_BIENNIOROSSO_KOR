@@ -251,7 +251,7 @@ if (Q.upper_tax_rates > 3) {
     Q.capital_strike_progress += 1;
 } 
 
-if (lower_tax_rates > 1) {
+if (Q.lower_tax_rates > 1) {
     workers_psi -= 5*(1-Q.dissent); 
 }
 

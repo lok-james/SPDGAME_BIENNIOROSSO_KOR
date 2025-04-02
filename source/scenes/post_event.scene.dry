@@ -17,8 +17,8 @@ Q.nationalist_sentiment = Math.round(Q.nationalist_sentiment);
 Q.anti_monarchist_sentiment = Q.republican_sentiment + Q.socialist_sentiment
 
 if (Q.reformist_seen == 1) {
-    Q.psi_seating_disp = (Q.psi_seating_disp).toFixed(1);
-    Q.psu_seating_disp = (Q.psu_seating_disp).toFixed(1);
+    Q.psi_seating_disp = parseFloat(Q.psi_seating_disp.toFixed(1));
+    Q.psu_seating_disp = parseFloat(Q.psu_seating_disp.toFixed(1));
     Q.reformist_seen = 0;
 }
 
@@ -208,8 +208,8 @@ for (var party of Q.parties) {
 // Normalize support (fraction)
 for (var party of Q.parties) {
     Q[party+'_normalised'] = Q[party + '_support'] / total_support;
-    Q[party+'_votes'] = (Q[party+'_normalised'] * 100).toFixed(1);
-    Q[party+'_votes_display'] = (Q[party+'_normalised'] * 100).toFixed(1);
+    Q[party+'_votes'] = ((Q[party+'_normalised'] * 100).toFixed(1));
+    Q[party+'_votes_display'] = ((Q[party+'_normalised'] * 100).toFixed(1));
 }
 
 

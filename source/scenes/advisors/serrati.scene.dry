@@ -36,5 +36,5 @@ title: Implementing our Plan
 subtitle: We can being implementing the Maximum Program.
 choose-if: advisor_action_timer = 0 and economic_plan = 1 and nationalisation_adopted = 1
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if economic_plan = 0 : We have not chosen a program yet. ?][? if economic_plan = 1 and moderate_plan_adopted : We have chosen a different plan. ?]
-on-arrival: advisor_action_timer = 6; economic_policy_timer -= 8; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; maximum_program_timer -= 8; last_advisor_action = 1
 go-to: maximum_program

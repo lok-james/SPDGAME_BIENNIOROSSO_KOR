@@ -11,6 +11,7 @@ view-if: psi_in_government = 1 and interior_minister_party = "PSI"
 
 As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organisations.
 
+- @unban_rg: Unban the Red Guards.
 - @ban_fdc: Ban the Fasci Italiani di Combattimento.
 - @unban_fdc: Unban the Fasci Italiani di Combattimento.
 - @persecute_fdc
@@ -21,6 +22,12 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @unban_abl: Unban the Anti-Bolshevik Leagues.
 - @persecute_abl
 - @root: Take no action for now. [? if fasci_urgency < 3 : It's not like the far-right pose a threat. ?]
+
+@unban_rg
+view-if: rg_banned == 1
+on-arrival: rg_banned = 0; rg_strength += 5; socialist_sentiment += 6;
+
+The Red Guards are no longer banned.
 
 @ban_fdc
 view-if: fasci_urgency >= 3 and fdc_banned == 0

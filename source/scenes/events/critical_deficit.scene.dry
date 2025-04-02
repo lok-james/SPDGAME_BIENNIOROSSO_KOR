@@ -9,6 +9,7 @@ The Banca d'Italia, our National Bank, has informed us that our debt has reached
 
 - @deficit_austerity: Cut funding to welfare in general.
 - @deficit_insurance: Cut funding to the Unemployment Insurance Program.
+- @deficit_workers: Cut the size of the Unemployment Insurance Program.
 - @deficit_taxes: Increase taxes across the board.
 - @deficit_relations: Can we convince our Entente allies to give us more time?
 - @deficit_renege: Void our debts with our international debtors.
@@ -18,13 +19,40 @@ subtitle: +2 Budget - Our voters won't be happy about this...
 view-if: unemployment_insurance_founded == 0
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: budget += 2; welfare -= 1; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; 
+on-arrival: {!
+Q.budget += 2; 
+Q.welfare -= 1; 
+
+Q.veterans_psi -= 4*(1-Q.dissent); 
+
+if (Q.centre_left_coalition) {
+    Q.veterans_ldr -= 3;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.veterans_ppi -= 3;
+} 
+
+if (Q.pcs_active) {
+    Q.veterans_pnf += 5;
+    Q.veterans_pll += 2;
+} else {
+    Q.veterans_pnf += 7;
+}
+!}
 
 We are forced to cut welfare, with workers seeing this as a betrayal.
 
 @deficit_insurance
 subtitle: +2 Budget - Our voters won't be happy about this,,,
-view-if: unemployment_insurance_founded == 1
+view-if: unemployment_insurance_founded == 1 and not unemployment_insurance_expanded
+on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
+
+We are forced to end the Unemployment Insurance Program early, regaining the injected funds, with veterans seeing this as a betrayal.
+
+@deficit_workers
+subtitle: +2 Budget - Our voters won't be happy about this,,,
+view-if: unemployment_insurance_expanded
 on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
 
 We are forced to end the Unemployment Insurance Program early, regaining the injected funds, with veterans seeing this as a betrayal.

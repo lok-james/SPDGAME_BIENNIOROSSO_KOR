@@ -4,8 +4,8 @@ view-if: year = 1919 and month = 6 and prime_minister = "Orlando"
 new-page: true
 max-visits: 1
 on-arrival: {!
-Q.prime_minister = "Nitti"
-Q.prime_minister_party = "LDR"
+Q.prime_minister = "Nitti";
+Q.prime_minister_party = Q.ldr_name;
 
 Q.republican_sentiment -= 1;
 Q.socialist_sentiment += 1;

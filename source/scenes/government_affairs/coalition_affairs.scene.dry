@@ -55,7 +55,7 @@ Q.rural_psi -= 3;
 Q.middle_class_psi -= 2; 
 Q.workers_psi -= 3; 
 Q.middle_class_pnf += 2; 
-catholic_pnf += 4; 
+Q.catholic_pnf += 4; 
 if (Q.socialist_catholic_coalition == 1) {
     Q.catholic_ppi -= 4;
 }
@@ -102,6 +102,7 @@ Q.in_unstable_coalition = 0;
 Q.southern_development = 0;
 
 // reset coalitions
+Q.psi_majority = 0;
 Q.centre_left_coalition = 0;
 Q.left_wing_coalition = 0;
 Q.socialist_catholic_coalition = 0;

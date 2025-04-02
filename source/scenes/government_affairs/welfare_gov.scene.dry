@@ -137,7 +137,7 @@ We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds 
 
 @veterans_organisations_catholic
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
-choose-if: treasury_minister_party = "PSI" 
+choose-if: treasury_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
 unavailable-subtitle: [? if treasury_minister_party != "PSI" : The PSI does not control the Treasury Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); ppi_left += 0.1; economic_growth += 0.3; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed = 1

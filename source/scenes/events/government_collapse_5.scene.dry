@@ -6,7 +6,7 @@ max-visits: 1
 on-arrival: {!
 if (Q.ppi_in_government == 1 && Q.ppi_leader == "Sturzo") {
 Q.prime_minister = "Facta";
-Q.prime_minister_party = "UL";
+Q.prime_minister_party = Q.ul_name;
 } else {
     Q.prime_minister = "Giolitti";
     Q.prime_minister_party = "UL";

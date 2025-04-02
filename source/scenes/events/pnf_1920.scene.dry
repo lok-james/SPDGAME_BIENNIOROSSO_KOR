@@ -6,7 +6,7 @@ on-arrival: pnf_reactionary = 1
 max-visits: 1
 tags: event
 
-= 1920 Fasci Congress
+= 1920 [+ pnf_full_name +] Congress
 
 The *Fasci Italiani di Combattimento*, known also as the Fasci was formed in March and have begun their second congress to decide the party's agenda. [? if not mussolini_jailed :It seems all but confirmed that Benito Mussolini will come out on top once again. ?][? if mussolini_jailed: With Mussolini in jail, the organisation's future is uncertain. ?]
 

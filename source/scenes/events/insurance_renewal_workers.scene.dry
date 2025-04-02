@@ -16,7 +16,40 @@ Funding for the Unemployment Insurance Program has once again dried up, and the 
 subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: Any funding of any non-Catholic welfare program would violate our coalition agreements! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
 choose-if: finance_minister_party = "PSI" and (not national_economic_recovery or budget >= 2)
 unavailable-subtitle: [? if finance_minister_party != "PSI" : The PSI does not control the Finance Ministry. ?][? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
-on-arrival: unemployment_insurance_workers_funded += 1; insurance_payments_workers_timer = 12; budget -= 2; ldr_promise_failed = 1 if budget < 0 and liberal_budget_accepted; ppi_promise_failed = 1 if catholic_charity_accepted; workers_psi += 4*(1-dissent)*unemployment_insurance_workers_funded if not in_unstable_coalition; workers_clc += 4*(1-dissent)*unemployment_insurance_workers_funded if centre_left_coalition; workers_scc += 4*(1-dissent)*unemployment_insurance_workers_funded if socialist_catholic_coalition; workers_pnf -= 4*(1-dissent)*unemployment_insurance_workers_funded; economic_growth += 0.4; inflation += 0.3; inflation += 0.5 if budget < 0;
+on-arrival: {!
+Q.unemployment_insurance_workers_funded += 1; 
+Q.insurance_payments_veterans_timer = 12; 
+Q.budget -= 2; 
+
+if (Q.budget < 0 && Q.liberal_budget_accepted) {
+    Q.ldr_promise_failed = 1;
+}
+
+if (Q.catholic_papacy_accepted) {
+    Q.ppi_promise_failed = 1;
+}
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 4*(1-Q.dissent)*Q.unemployment_insurance_workers_funded;
+}
+
+if (Q.centre_left_coalition) {
+    Q.workers_clc += 4*(1-Q.dissent)*Q.unemployment_insurance_workers_funded;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.workers_scc += 4*(1-Q.dissent)*Q.unemployment_insurance_workers_funded;
+}
+
+Q.veterans_pnf -= 4*(1-Q.dissent)*Q.unemployment_insurance_workers_funded; 
+
+Q.economic_growth += 0.4; 
+Q.inflation += 0.4;
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+!}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
 The program is set to continue for another year, our appeal to workers increase alongside it.
@@ -24,7 +57,37 @@ The program is set to continue for another year, our appeal to workers increase 
 @end_insurance
 view-if: finance_minister_party = "PSI"
 subtitle: Our veterans on this program will see this as a betrayal.
-on-arrival: workers_clc -= 6*(1-dissent) if centre_left_coalition; workers_scc -= 6*(1-dissent) if socialist_catholic_coalition; workers_psi -= 4*(1-dissent) if psi_in_government and not in_unstable_coalition; workers_ldr -= 4 if grand_coalition; workers_ppi -= 4 if grand_coalition; workers_pnf += 9 if not pnf_in_government; workers_pnf -= 4 if pnf_in_government; unemployment_insurance_founded = 0 if insurance_payments_veterans_timer <= 0; unemployment_insurance_expanded = 0
+on-arrival: {!
+
+if (Q.in_unstable_coalition == 0 && Q.psi_in_government) {
+    Q.workers_psi -= 6*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition) {
+    Q.workers_clc -= 6*(1-Q.dissent);
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.workers_scc -= 6*(1-Q.dissent);
+}
+
+if (Q.grand_coalition) {
+    Q.workers_ldr -= 4;
+    Q.workers_ppi -= 4;
+}
+
+if (Q.pnf_in_government) {
+    Q.workers_pnf += 9;
+} else {
+    Q.workers_pnf -= 4;
+}
+
+Q.unemployment_insurance_expanded = 0;
+
+if (Q.insurance_payments_veterans_timer <= 0) {
+    Q.unemployment_insurance_founded = 0;
+}
+!}
 
 The program's funding is gutted, as workers now without government support flock to more radical parties, bitter regarding the government's betrayal.
 

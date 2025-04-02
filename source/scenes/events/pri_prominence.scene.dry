@@ -3,32 +3,32 @@ subtitle: The Republicans rise from obscurity.
 new-page: true
 view-if: republican_sentiment > 40 and (workers_other_normalised > 10 or middle_class_other_normalised > 10 or rural_other_normalised > 5 or industrialists_other_normalised > 10 or veterans_other_normalised > 10 or catholic_other_normalised > 10)
 on-arrival: {!
-Q.workers_pri += Q.workers_other * 0.8;
-Q.middle_class_pri += Q.middle_class_other * 0.8; 
-Q.industrialists_pri = Q.industrialists_other * 0.8;
-Q.rural_pri = Q.rural_other * 0.8;
-Q.veterans_pri = Q.veterans_other * 0.8;
-Q.catholic_pri = Q.catholic_other * 0.8;
-Q.women_pri = Q.women_other * 0.8;
+Q.workers_pri += Q.workers_other * 0.7;
+Q.middle_class_pri += Q.middle_class_other * 0.7; 
+Q.industrialists_pri = Q.industrialists_other * 0.7;
+Q.rural_pri = Q.rural_other * 0.7;
+Q.veterans_pri = Q.veterans_other * 0.7;
+Q.catholic_pri = Q.catholic_other * 0.7;
+Q.women_pri = Q.women_other * 0.7;
 
-Q.workers_other -= Q.workers_other * 0.8;
-Q.middle_class_other -= Q.middle_class_other * 0.8;
-Q.industrialists_other -= Q.industrialists_other * 0.8;
-Q.rural_other -= Q.rural_other * 0.8;
-Q.veterans_other -= Q.veterans_other * 0.8;
-Q.catholic_other -= Q.catholic_other * 0.8;
-Q.women_other -= Q.women_other * 0.8;
+Q.workers_other -= Q.workers_other * 0.7;
+Q.middle_class_other -= Q.middle_class_other * 0.7;
+Q.industrialists_other -= Q.industrialists_other * 0.7;
+Q.rural_other -= Q.rural_other * 0.7;
+Q.veterans_other -= Q.veterans_other * 0.7;
+Q.catholic_other -= Q.catholic_other * 0.7;
+Q.women_other -= Q.women_other * 0.7;
 
-Q.pri_r += Q.other_r * 0.8;
-Q.pri_seating += Q.other_seating * 0.8;
-Q.pri_seating_disp += Q.other_seating_disp * 0.8;
+Q.pri_r += Q.other_r * 0.7;
+Q.pri_seating += Q.other_seating * 0.7;
+Q.pri_seating_disp += Q.other_seating_disp * 0.7;
 
-Q.other_r -= Q.other_r * 0.8;
-Q.other_seating -= Q.other_seating * 0.8;
-Q.other_seating_disp -= Q.other_seating_disp * 0.8;
+Q.other_r -= Q.other_r * 0.7;
+Q.other_seating -= Q.other_seating * 0.7;
+Q.other_seating_disp -= Q.other_seating_disp * 0.7;
 
 if (Q.not_participating == 1) {
-    Q.pri_relation -= 30;
+    Q.pri_relation -= 15;
 }
 
 Q.pri_prominent = 1;

@@ -29,9 +29,9 @@ Party: [+ resources +]
 Paramilitary: [+ para_resources +]
 
 PSI Position: [? if psi_in_government : In Government - ?][? if psi_in_government == 0 : Opposition ?]
-[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if in_psi_majority and psi_in_government: PSI majority ?][? if socialist_catholic_coalition and psi_in_government: Catholic-Socialist Coalition ?][? if left_wing_coalition and psi_in_government: Left-Wing Coalition ?]
+[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if psi_majority and psi_in_government: PSI majority ?][? if socialist_catholic_coalition and psi_in_government: Catholic-Socialist Coalition ?][? if left_wing_coalition and psi_in_government: Left-Wing Coalition ?]
 
-[? if psi_in_government and not in_psi_majority: Coalition Dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if psi_in_government and not psi_majority: Coalition Dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 Internal Dissent: [+ dissent_percent : dissent +]
 

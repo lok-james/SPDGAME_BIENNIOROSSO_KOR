@@ -58,6 +58,14 @@ Q.rural_ppi += 7*(1-Q.dissent);
 Q.veterans_ppi += 7*(1-Q.dissent);
 Q.catholic_ppi += 7*(1-Q.dissent);
 Q.women_ppi += 7*(1-Q.dissent);
+
+Q.workers_ul += 7*(1-Q.dissent);
+Q.middle_class_ul += 7*(1-Q.dissent);
+Q.industrialists_ul += 7*(1-Q.dissent);
+Q.rural_ul += 7*(1-Q.dissent);
+Q.veterans_ul += 7*(1-Q.dissent);
+Q.catholic_ul += 7*(1-Q.dissent);
+Q.women_ul += 7*(1-Q.dissent);
 }
 
 Q.national_economic_recovery = 1;

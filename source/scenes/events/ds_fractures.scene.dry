@@ -1,12 +1,12 @@
 title: [+ ds_name +] Fractures!
 subtitle: The party's internal machinations have caused it to fall.
 new-page: true
-view-if: ds_r > ul_r and ds_r > ldr_r and ds_party and ds_fractured = 0
+view-if: ds_r > ul_r and ds_r > ldr_r and ds_party and not ds_fractured
 tags: event
 
 = [+ ds_name +] Fractures!
 
-The [+ ds_name +] has always been a historically unstable party, having had members from left to right wings of the political sphere. However, these ideological differences have typically been placed in check by the party's leadership, notably Giovanni Antonio Colonna di Cesarò. However, the rise of the  [+ ds_full_name +] as the dominant party in the liberal sphere has resulted in an acceleration of these party politics.
+The [+ ds_name +] has always been a historically unstable party, having had members from left to right wings of the political sphere. However, these ideological differences have typically been placed in check by the party's leadership, notably Giovanni Antonio Colonna di Cesarò. However, the rise of the [+ ds_full_name +] as the dominant party in the liberal sphere has resulted in an worsening of these party internal politics, as arguments and fights between members break out regularly.
 
 The party can no longer hold through compromise.
 

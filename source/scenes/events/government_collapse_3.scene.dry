@@ -6,7 +6,7 @@ priority: -1
 max-visits: 1
 on-arrival: {!
 Q.prime_minister = "Giolitti";
-Q.prime_minister_party = "UL";
+Q.prime_minister_party = Q.ul_name;
 
 Q.republican_sentiment -= 6;
 Q.nationalist_sentiment += 2;

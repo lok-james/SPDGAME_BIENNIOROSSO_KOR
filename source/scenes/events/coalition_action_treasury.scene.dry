@@ -12,7 +12,59 @@ Treasury Minister [+ treasury_minister +] has authorised cuts to welfare in repo
 - @pm_nothing: There is nothing we can do.
 
 @pm_nothing
-on-arrival: workers_psi -= 2 if psi_in_government; veterans_psi -= 2 if psi_in_government; workers_psi += 2 if not psi_in_government; veterans_psi += 2 if not psi_in_government; workers_ldr -= 8 if prime_minister_party == ldr_name; workers_ul -= 8 if treasury_minister_party == ul_name; workers_pnf -= 8 if treasury_minister_party == pnf_name; veterans_ldr -= 8 if treasury_minister_party == ldr_name; veterans_ul -= 8 if treasury_minister_party == ul_name; veterans_pnf -= 8 if treasury_minister_party == pnf_name; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; welfare -= 1; budget += 1; unemployment += 3; inflation -= 0.6;
+on-arrival: {!
+
+if (Q.psi_in_government == 1) {
+    Q.workers_psi -= 2;
+    Q.veterans_psi -= 4;
+
+    if (Q.treasury_minister_party != Q.pnf_name) {
+        Q.workers_pnf += 3;
+        Q.veterans_pnf += 5;
+    }
+}
+
+if (Q.psi_in_government == 0) {
+    Q.workers_psi += 2;
+    Q.veterans_psi += 4;
+
+    if (Q.treasury_minister_party != Q.pnf_name) {
+        Q.workers_pnf += 2;
+        Q.veterans_pnf += 4;
+    }
+}
+
+if (Q.treasury_minister_party == Q.ldr_name) {
+    Q.workers_ldr -= 6;
+    Q.veterans_ldr -= 8;
+
+    Q.workers_ppi += 2;
+    Q.veterans_ppi += 3;
+}
+
+if (Q.treasury_minister_party == Q.ul_name) {
+    Q.workers_ul -= 6;
+    Q.veterans_ul -= 8;
+
+    Q.workers_ppi += 2;
+    Q.veterans_ppi += 3;
+}
+
+if (Q.treasury_minister_party == Q.pnf_name) {
+    Q.workers_pnf -= 6;
+    Q.veterans_pnf -= 8;
+
+    Q.workers_ppi += 2;
+    Q.veterans_ppi += 3;
+}
+
+Q.welfare -= 1;
+Q.budget += 1;
+
+Q.economic_growth -= 0.4; 
+Q.inflation -= 0.2;
+Q.unemployment += 0.3;
+!}
 
 [? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ treasury_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name +] are able to use this policy to recruit more members. ?]
 

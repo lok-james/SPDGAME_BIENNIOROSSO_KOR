@@ -5,7 +5,7 @@ view-if: year = 1919 and month = 10 and week = 1
 max-visits: 1
 tags: event
 
-= 1919 Fasci Congress
+= 1919 [+ pnf_full_name +] Congress
 
 The *Fasci Italiani di Combattimento*, known also as the Fasci, was formed in March and are having their first congress to decide the party's agenda. It seems all but confirmed that Benito Mussolini will come out on top.
 

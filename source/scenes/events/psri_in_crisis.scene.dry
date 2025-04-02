@@ -17,7 +17,7 @@ There is significant efforts within the party, including Bonomi, who are pushing
 
 @psri_left
 choose-if: (psu_formed and (psi_votes >= 37 or radicalisation >= 8)) or pri_prominent or pll_formed
-unavailable-subtitle: Proponents argue that the PSRI will become increasingly isolated without a shift in ideology.
+unavailable-subtitle: Proponents of the shift argue that the PSRI will become increasingly isolated without a shift in ideology.
 on-arrival: {!
 
 let options = [];
@@ -80,4 +80,4 @@ Q.catholic_psri *= 0.5;
 Q.women_psri *= 0.5;
 !}
 
-The exponents are able to succeed; with Bonomi's lead, the PSRI begins a change in course, pivoting to the right towards liberalism. This only seems to exacerbate the party's bleed, as members of its left defect, becoming independents or joining the other left-wing parties.
+The exponents are able to succeed; with Bonomi's lead, the PSRI begins a change in course, pivoting to the right towards liberalism. This only seems to exacerbate the party's bleed however, as members of its left defect, becoming independents or joining the other left-wing parties.

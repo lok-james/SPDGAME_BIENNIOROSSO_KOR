@@ -23,16 +23,22 @@ if (Q.syndicalist_active) {
     Q.syndicalist_dissent += 3;
 }
 
-Q.workers_psi -= 5*(1-Q.dissent);
+if (Q.psi_in_government) {
+    Q.workers_psi -= 4*(1-Q.dissent);
+    Q.workers_pnf += 8;
+} else if (Q.psi_in_government == 0) {
+    Q.workers_psi += 4*(1-Q.dissent);
+    Q.workers_pnf += 4;
+}
 
-if (Q.labour_minister_party == ldr_name) {
-    Q.workers_ldr -= 9;
+if (Q.labour_minister_party == Q.ldr_name) {
+    Q.workers_ldr -= 8;
 }
-if (Q.labour_minister_party == ul_name) {
-    Q.workers_ul -= 9;
+if (Q.labour_minister_party == Q.ul_name) {
+    Q.workers_ul -= 8;
 }
-if (Q.labour_minister_party == "DS") {
-    Q.workers_ds -= 9;
+if (Q.labour_minister_party == Q.ds_name) {
+    Q.workers_ds -= 8;
 }
 
 Q.capital_strike_progress -= 1; 
@@ -43,7 +49,7 @@ Q.inflation -= 0.3;
 Q.socialist_sentiment -= 5; 
 !}
 
-Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+The Labour Ministry has been rolling back our reforms to the national working hours and reinstituting regressive hours at the advice of the industrialists and landowners. [? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
 
 - @root: There is nothing we can do.
 
@@ -57,15 +63,21 @@ if (Q.syndicalist_active) {
     Q.syndicalist_dissent += 3;
 }
 
-Q.workers_psi -= 3*(1-Q.dissent);
+if (Q.psi_in_government) {
+    Q.workers_psi -= 2*(1-Q.dissent);
+    Q.workers_pnf += 4;
+} else if (Q.psi_in_government == 0) {
+    Q.workers_psi += 2*(1-Q.dissent);
+    Q.workers_pnf += 2;
+}
 
-if (Q.labour_minister_party == ldr_name) {
+if (Q.labour_minister_party == Q.ldr_name) {
     Q.workers_ldr -= 5;
 }
-if (Q.labour_minister_party == ul_name) {
+if (Q.labour_minister_party == Q.ul_name) {
     Q.workers_ul -= 5;
 }
-if (Q.labour_minister_party == "DS") {
+if (Q.labour_minister_party == Q.ds_name) {
     Q.workers_ds -= 5;
 }
 
@@ -77,7 +89,7 @@ Q.inflation -= 0.3;
 Q.socialist_sentiment -= 2; 
 !}
 
-Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+The Labour Ministry begins a overhaul of the safety regulations, gutting and removing regulations deemed 'too excessive' by them and under advice of their industrialist supporters. [? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
 
 - @root: There is nothing we can do.
 
@@ -91,15 +103,21 @@ if (Q.syndicalist_active) {
     Q.syndicalist_dissent += 3;
 }
 
-Q.workers_psi -= 4*(1-Q.dissent);
+if (Q.psi_in_government) {
+    Q.workers_psi -= 3*(1-Q.dissent);
+    Q.workers_pnf += 6;
+} else if (Q.psi_in_government == 0) {
+    Q.workers_psi += 3*(1-Q.dissent);
+    Q.workers_pnf += 3;
+}
 
-if (Q.labour_minister_party == ldr_name) {
+if (Q.labour_minister_party == Q.ldr_name) {
     Q.workers_ldr -= 7;
 }
-if (Q.labour_minister_party == ul_name) {
+if (Q.labour_minister_party == Q.ul_name) {
     Q.workers_ul -= 7;
 }
-if (Q.labour_minister_party == "DS") {
+if (Q.labour_minister_party == Q.ds_name) {
     Q.workers_ds -= 7;
 }
 
@@ -111,6 +129,6 @@ Q.inflation -= 0.4;
 Q.socialist_sentiment -= 5; 
 !}
 
-Already, our support base have criticised our inability to prevent his from occurring, and we have seen a noticable drop in liberal support.
+The Labour Ministry, though unable to decrease the minimum wage directly, alters regulation to include loopholes that the industrialists, of course, exploit for their gain. [? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
 
 - @root: There is nothing we can do.

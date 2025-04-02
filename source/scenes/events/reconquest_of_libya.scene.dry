@@ -19,7 +19,7 @@ Our sources in the Army and Navy Ministries has informed us that the High Comman
 
 @libya_majority
 subtitle: We're in control of the government after all, aren't we?
-view-if: in_psi_majority or left_wing_coalition
+view-if: psi_majority or left_wing_coalition
 on-arrival: maximalist_dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; labour_dissent -= 10; syndicalist_dissent -= 10 if syndicalist_active; veterans_psi -= 7; veterans_pnf += 12; middle_class_psi -= 6*(1-dissent); army_loyalty -= 0.1; workers_psi -= 3*(1-dissent)
 
 Being in control of the government, we force the military to drop their plans, as the factions laud our decisive action. The military, however, is less than enthused by the news, and our veteran support base is in an uproar.

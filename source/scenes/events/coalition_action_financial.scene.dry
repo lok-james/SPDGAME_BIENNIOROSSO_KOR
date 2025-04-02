@@ -12,7 +12,47 @@ Finance Minister [+ finance_minister +] has authorised tax cuts for the rich in 
 - @pm_nothing: There is nothing we can do.
 
 @pm_nothing
-on-arrival: workers_psi -= 4 if psi_in_government; veterans_psi -= 6 if psi_in_government; workers_psi += 2 if not psi_in_government; veterans_psi += 2 if not psi_in_government; workers_ldr -= 8 if finance_minister_party == ldr_name; workers_ul -= 8 if finance_minister_party == ul_name; veterans_ldr -= 8 if finance_minister_party == ldr_name; veterans_ul -= 8 if finance_minister_party == ul_name; workers_ppi += 7; workers_pnf += 3; veterans_ppi += 5; veterans_pnf += 5; budget -= 2; unemployment -= 0.2; inflation += 0.3; economic_growth += 0.2; upper_tax_rates -= 1;
+on-arrival: {!
+
+if (Q.psi_in_government == 1) {
+    Q.workers_psi -= 4;
+    Q.veterans_psi -= 6;
+
+    Q.workers_ppi += 2;
+    Q.veterans_ppi += 4;
+} else if (Q.psi_in_government == 0) {
+    Q.workers_psi += 2;
+    Q.veterans_psi += 4;
+}
+
+if (Q.finance_minister_party == Q.ldr_name) {
+    Q.workers_ldr -= 8; 
+    Q.veterans_ldr -= 10;
+} else if (Q.finance_minister_party == Q.ul_name) {
+    Q.workers_ul -= 8;
+    Q.veterans_ul -= 10;
+}
+
+Q.workers_pnf += 2;
+Q.veterans_pnf += 4;
+
+Q.budget -= 2; 
+
+Q.unemployment -= 0.6; 
+Q.inflation += 0.4; 
+Q.economic_growth += 0.4; 
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 1;
+}
+
+Q.upper_tax_rates -= 1;
+
+!}
 
 [? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ finance_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name +] are able to use this policy to recruit more members. ?]
 

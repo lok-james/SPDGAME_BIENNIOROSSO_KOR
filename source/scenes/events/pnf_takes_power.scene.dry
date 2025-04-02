@@ -3,6 +3,7 @@ set-bg: img/MussoliniBG.png
 view-if: march_succeeded = 1
 on-arrival: {!
 
+Q.psi_majority = 0;
 Q.centre_left_coalition = 0;
 Q.left_wing_coalition = 0;
 Q.socialist_catholic_coalition = 0;
