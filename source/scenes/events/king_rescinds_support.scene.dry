@@ -1,5 +1,5 @@
 title: King [+ king +] rescinds support for the PNF
-music: shuffle music/post/FischiaIlVento.mp3 music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3 music/main/QuattroSignoriAParigiVanno.mp3
+audio: shuffle music/post/FischiaIlVento.mp3 music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3 music/main/QuattroSignoriAParigiVanno.mp3
 view-if: pnf_in_power = 1 and pnf_in_government = 0
 on-arrival: {!
 Q.pnf_in_power = 0; 

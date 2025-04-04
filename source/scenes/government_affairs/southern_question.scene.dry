@@ -44,7 +44,6 @@ choose-if: para_resources >= 4
 unavailable-subtitle: Not enough paramilitary resources. (Need 4)
 view-if: southern_land_reformed == 0 and moderate_plan_adopted
 on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 17*(1-dissent); industrialists_pnf += 17*(1-dissent); middle_class_pnf += 7*(1-dissent); unemployment -= 0.9; inflation += 0.5; economic_growth += 0.2; fasci_coup_progress += 2; capital_strike_progress += 2; ldr_right += 4; rural += 4
-unavailable-subtitle: The Red Guards don't have enough manpower to do this.
 go-to: liberal_vote_of_no_confidence.let_it_happen if grand_coalition_r >= 50
 
 The Red Guard, under our orders begin forceful seizures of landowner properties and the liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. [+ ldr_leader +] and the [+ ldr_name +] vow never to work with us again, as the fascists use this opportunity to paint us as violent radicals to the middle class.
