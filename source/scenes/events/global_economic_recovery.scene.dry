@@ -30,4 +30,4 @@ tags: event
 
 = Global Economic Recovery
 
-Countries across Europe and the Americas seem to finally be recovering from the post-war recession, including us. Though it is still a long road to full recovery, this improvement bodes well for us. [? if unemployment >= 10: Our unemployment has fallen. ?]
+Countries across Europe and the Americas seem to finally be recovering from the post-war recession, including us. Though it is still a long road to full recovery, this improvement bodes well for us. [? if unemployment >= 8: Our unemployment has fallen. ?]

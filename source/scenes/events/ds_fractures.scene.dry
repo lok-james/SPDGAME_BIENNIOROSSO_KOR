@@ -29,7 +29,7 @@ if (Q.ds_left < 0) {
     Q.ds_left = 0;
 }
 
-Q,ds_moderates *= 0.5;
+Q.ds_moderates *= 0.5;
 
 Q.ds_total = Q.ds_left + Q.ds_right + Q.ds_moderates;
 Q.pcs_defectors = Q.ds_right / Q.ds_total;
@@ -114,6 +114,15 @@ Q.old_industrialists_pll_display = 0;
 Q.old_veterans_pll_display = 0;
 Q.old_catholic_pll_display = 0;
 Q.old_women_pll_display = 0;
+
+for (var record of Q.election_records) {
+    record['pcs'] = 0;
+    record['pll'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['pcs'] = 0;
+    record['pll'] = 0;
+}
 
 !}
 

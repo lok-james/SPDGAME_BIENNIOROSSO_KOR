@@ -780,7 +780,7 @@ go-to: 1919_main
 
 @1919_main
 set-bg: img/background.png
-audio: shuffle music/Innodeilavoratori.mp3 music/FraIl19FraLAnno20.mp3 music/BandieraRossa.mp3 music/Canzonieredelventorosso.mp3 music/WorkersHymn.mp3
+audio: shuffle music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 

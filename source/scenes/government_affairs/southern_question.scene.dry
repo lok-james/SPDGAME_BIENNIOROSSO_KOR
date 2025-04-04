@@ -39,8 +39,9 @@ The bill is barely able to pass the floor, and the liberals are in an uproar. Al
 [? if ldr_seating_disp + ul_seating_disp + pnf_seating_disp > 50: The liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
 
 @southern_land_reform_rg
-subtitle: -50k Red Guards - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?]
-choose-if: rg_strength >= 50
+subtitle: -4 Paramilitary Resources - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?]
+choose-if: para_resources >= 4
+unavailable-subtitle: Not enough paramilitary resources. (Need 4)
 view-if: southern_land_reformed == 0 and moderate_plan_adopted
 on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 17*(1-dissent); industrialists_pnf += 17*(1-dissent); middle_class_pnf += 7*(1-dissent); unemployment -= 0.9; inflation += 0.5; economic_growth += 0.2; fasci_coup_progress += 2; capital_strike_progress += 2; ldr_right += 4; rural += 4
 unavailable-subtitle: The Red Guards don't have enough manpower to do this.

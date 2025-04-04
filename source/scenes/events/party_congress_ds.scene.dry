@@ -95,6 +95,13 @@ Q.old_veterans_pcs_display = 0;
 Q.old_catholic_pcs_display = 0;
 Q.old_women_pcs_display = 0;
 
+
+for (var record of Q.election_records) {
+    record['pcs'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['pcs'] = 0;
+}
 !}
 
 In a surprising twist, Vincenzo Giuffrida has been elected to the leadership position. The right, in response, have left the party, establishing their own "Christian Social Party" and have begun pursuing a more closer relationship and cooperation with the [+ pnf_name +].
@@ -156,6 +163,13 @@ Q.old_industrialists_pll_display = 0;
 Q.old_veterans_pll_display = 0;
 Q.old_catholic_pll_display = 0;
 Q.old_women_pll_display = 0;
+
+for (var record of Q.election_records) {
+    record['pll'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['pll'] = 0;
+}
 
 !}
 

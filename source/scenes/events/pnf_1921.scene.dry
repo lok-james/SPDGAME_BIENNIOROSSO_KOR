@@ -6,7 +6,7 @@ on-arrival: pnf_formed = 1; pnf_name = "PNF"; pnf_full_name = "National Fascist 
 max-visits: 1
 tags: event
 
-= 1921 Fasci Congress
+= 1921 [+ pnf_full_name +] Congress
 
 The *Partito Nazionale Fascista*, known also as the PNF has been formed officially as a political party, reorganising the existing *Fasces of Combat* into a new entity. The First Congress is to be held to determine the new leader of the Fasci.
 

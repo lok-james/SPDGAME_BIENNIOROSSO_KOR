@@ -1,7 +1,7 @@
 title: PSRI in Crisis!
 subtitle: The PSRI is having a crisis of leadership...
 new-page: true
-view-if: psri_stable and psri_r < 2
+view-if: psri_stable and psri_r < 2 and psri_votes < 3
 on-arrival: psri_stable = 0
 tags: event
 max-visits: 1
@@ -56,7 +56,7 @@ The opposition is able to succeed, continuing the party's ideological commitment
 [? if psri_joint_pri : The PSRI have come to an agreement with the PRI, officially forming a joint-list with the them as a junior partner. and stemming the bleed of the party's support. ?]
 
 @psri_moderate
-view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) or not pri_prominent or not pll_formed
+view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) and not pri_prominent and not pll_formed
 on-arrival: {!
 Q.psri_solo = 1;
 
