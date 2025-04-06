@@ -1,7 +1,7 @@
 title: Veteran Insurance Funding
 new-page: true
 subtitle: It's time to fund the program once more.
-view-if: insurance_payments_veterans_timer = 0 and unemployment_insurance_founded == 1
+view-if: insurance_payments_veterans_timer = 0 and unemployment_insurance_founded == 1 and veterans_insurance = 1
 tags: event
 
 = Unemployment Insurance Funding
@@ -81,6 +81,8 @@ if (Q.pnf_in_government == 1) {
 } else {
     Q.veterans_pnf -= 4;
 }
+
+Q.veterans_insurance = 0;
 
 if (Q.unemployment_insurance_expanded) {
     Q.unemployment_insurance_founded = 0;

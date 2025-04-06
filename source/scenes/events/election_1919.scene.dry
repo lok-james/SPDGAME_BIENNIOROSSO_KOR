@@ -64,6 +64,8 @@ on-arrival: {!
 // election threshold constitutional reform
 // banning parties
 var new_party_sum = 0;
+var new_party_seating = 0;
+var new_party_seating_disp = 0;
 Q.party_banned = 0;
 for (var party of Q.parties) {
     if (Q[party + '_banned']) {
@@ -76,8 +78,12 @@ for (var party of Q.parties) {
     if (Q.party_banned == 1) {
         if (Q[party + '_banned']) {
             Q[party + '_r'] = 0;
+            Q[party + '_seating'] = 0;
+            Q[party + '_seating_disp'] = 0;
         }
         new_party_sum += Q[party + '_r'];
+        new_party_seating += Q[party + '_seating'];
+        new_party_seating_disp += Q[party + '_seating_disp'];
     } else {
         Q[party + '_r'] = Q[party + '_votes'];
     }
@@ -413,17 +419,17 @@ for (var party of Q.parties) {
 if (Q.parties_banned == 1) {
     for (var party of Q.parties) {
         if (Q[party + '_r'] > 0) {
-            if (Q.use_decimals) {
-                Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
-            } else {
-                Q[party + '_r'] = Math.round(Q[party + '_r']*100/new_party_sum);
-            }
+            Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
         }
-        if (Q.use_decimals) {
-            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-        } else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
+        if (Q[party + '_seating'] > 0) {
+            Q[party + '_seating'] = Math.round(Q[party + '_seating']*1000/new_party_seating);
         }
+        if (Q[party + '_seating_disp'] > 0) {
+            Q[party + '_seating_disp'] = Math.round(Q[party + '_seating_disp']*1000/new_party_seating_disp)/10;
+        }
+
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
     var sign = Q['change_' + party + '_r'] > 0 
                 ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
@@ -873,6 +879,8 @@ go-to: coalition_menu
 [? if pcs_formed and (pnf_r >= 5) : {!<tr><td>!} -Christian Social Party {!</td></tr>!} ?]
 
 [? if not ul_in_bn and pnf_in_power : {!<tr><td>!} -Italian Liberal Party (Def.) {!</td></tr>!} ?]
+
+[? if pnf_in_power : {!<tr><td>!} -Italian People's Party (Def.) {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r_disp +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +]% {!</td></tr>!}
 
