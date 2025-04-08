@@ -18,7 +18,7 @@ choose-if: finance_minister_party = "PSI" and (not national_economic_recovery or
 unavailable-subtitle: [? if finance_minister_party != "PSI" : The PSI does not control the Finance Ministry. ?][? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
 on-arrival: {!
 Q.unemployment_insurance_workers_funded += 1; 
-Q.insurance_payments_veterans_timer = 12; 
+Q.insurance_payments_workers_timer = 12; 
 Q.budget -= 2; 
 
 if (Q.budget < 0 && Q.liberal_budget_accepted) {
@@ -84,7 +84,7 @@ if (Q.pnf_in_government) {
 
 Q.unemployment_insurance_expanded = 0;
 
-if (Q.insurance_payments_veterans_timer <= 0) {
+if (Q.veterans_insurance == 0) {
     Q.unemployment_insurance_founded = 0;
 }
 !}

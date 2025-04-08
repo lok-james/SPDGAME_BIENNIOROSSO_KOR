@@ -556,6 +556,9 @@ Q.uk_debts_over = 0;
 Q.moderate_plan_support = 0;
 Q.nationalisation_support = 1;
 
+Q.unemployment_insurance_workers_funded = 0;
+Q.unemployment_insurance_veterans_funded = 0;
+
 // timers for the russian civil war
 Q.soviet_end_timer = 45;
 Q.soviet_recovery_timer = 0;
