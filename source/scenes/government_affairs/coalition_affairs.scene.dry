@@ -134,7 +134,7 @@ The vote succeeds, and our government has resigned. Prime Minister [+ prime_mini
 @let_it_happen_elections
 subtitle: Perhaps we can utilise our successes in government for gains in the Chamber of Deputies?
 view-if: prime_minister_party = "PSI"
-on-departure: {!
+on-arrival: {!
 
 Q.rural_psi -= 3; 
 Q.middle_class_psi -= 2; 

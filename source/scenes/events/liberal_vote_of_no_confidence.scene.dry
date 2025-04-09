@@ -221,7 +221,7 @@ The vote succeeds, and our government has resigned. Prime Minister [+ prime_mini
 
 @let_it_happen_elections
 view-if: next_election_time >= 8 and prime_minister_party = "PSI"
-on-departure: {!
+on-arrival: {!
 
 Q.rural_psi -= 3; 
 Q.middle_class_psi -= 2; 
