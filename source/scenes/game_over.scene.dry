@@ -285,7 +285,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
 
-[? if game_achievement_Far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if game_achievement_far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
 [? if game_achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
 
@@ -365,7 +365,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
 
-[? if achievement_Far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if achievement_far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
 [? if achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
 
@@ -445,7 +445,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
 
-[? if not achievement_Far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if not achievement_far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
 
 [? if not achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
 
