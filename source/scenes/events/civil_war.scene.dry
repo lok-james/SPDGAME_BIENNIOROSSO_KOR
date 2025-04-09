@@ -222,7 +222,7 @@ The battle lines hold, and the Fasci, Arditismo, and pro-coup Regio Esercito for
 
 Italy holds strong, against fascism.
 
-- @game_over: End the game.
+- @post_war_cv: It is time to decide our new agenda.
 
 @communist_victory
 on-arrival: soviet_victory = 1; prime_minister = "Bacci"; prime_minister_party = "PSI";
@@ -234,5 +234,5 @@ The bourgeois and fascists lines shatter, as their forces are quickly overwhelme
 
 Italy has toppled its bourgeois oppressors and established a revolutionary state.
 
-- @game_over: Game over.
+- @post_war_force: It is time to decide our new agenda.
 
