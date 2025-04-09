@@ -48,11 +48,7 @@ if (Q.army_loyalty < 0) {
 }
 
 Q.loyal_army_power = Q.army_strength*Q.army_militancy*Q.army_loyalty;
-if (Q.radicalisation < 10) {
-    Q.total_power += Q.loyal_army_power * (Q.radicalisation/10)/5;
-} else {
-    Q.total_power += Q.loyal_army_power/5;
-}
+Q.total_power += Q.loyal_army_power * (1 - 0.04 * Q.radicalisation);
 
 if (Q.rcw_over == 0) {
     Q.soviet_power = 50;

@@ -15,9 +15,9 @@ The Acerbo Law, passed in July 1923, has backfired immensely, as the PNF was una
 
 @remove_acerbo
 subtitle: Such an unconstitutional law needs to go.
-on-arrival: acerbo_law_passed = 0
+on-arrival: acerbo_law_passed = 0; next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
-The Acerbo Law is easily repealed, reinstating the previous system of the D'Hondt Method.
+The Acerbo Law is easily repealed, reinstating the previous system of the D'Hondt Method. Snap elections are called in three months for fairer representation.
 
 - @root: Good riddance.
 

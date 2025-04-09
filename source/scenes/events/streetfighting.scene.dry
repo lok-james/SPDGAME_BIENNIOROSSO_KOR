@@ -1,0 +1,131 @@
+title: Streetfighting
+new-page: true 
+subtitle: Our forces engage with the far-right.
+tags: event
+view-if: not return_to_normalcy and streetfighting_timer <= 0
+on-arrival: {!
+Q.rg_streetfighting = Q.rg_strength * Q.rg_militancy;
+Q.streetfighting_timer = 6;
+
+if (Q.arditi_cooperation) {
+    Q.rg_streetfighting += Q.adp_strength * Q.adp_militancy;
+}
+
+Q.fdc_streetfighting = Q.fdc_strength * Q.fdc_militancy;
+Q.ard_streetfighting = Q.ard_strength * Q.fdc_militancy;
+Q.abl_streetfighting = Q.abl_strength * Q.abl_militancy
+
+!}
+= Streetfighting
+
+Frequently, and more often than not, our forces — whether that is the Red Guards or merely workers intending to defend themselves — face off against far-right paramilitaries. Whether that is the Anti-Bolshevik Leagues, funded by their elite backers, the Arditismo, former members of the *Arditi* special forces radicalised or even the Fasci themselves, determined to eliminate us. 
+
+- @engage_fdc: Engage our forces with the Fasci.
+- @engage_ard: Engage our forces with the Arditismo.
+- @engage_abl: Engage our forces with the Anti-Bolshevik Leagues.
+
+@engage_fdc
+on-arrival: fdc_fought = 1;
+go-to: engage_victory if fdc_streetfighting <= rg_streetfighting; engage_failure if fdc_streetfighting > rg_streetfighting
+
+@engage_ard
+on-arrival: ard_fought = 1;
+go-to: engage_victory if ard_streetfighting <= rg_streetfighting; engage_failure if ard_streetfighting > rg_streetfighting
+
+@engage_abl
+on-arrival: abl_fought = 1;
+go-to: engage_victory if abl_streetfighting <= rg_streetfighting; engage_failure if abl_streetfighting > rg_streetfighting
+
+@engage_victory
+on-arrival: {!
+
+if (Q.fdc_fought == 1) {
+    Q.fdc_strength *= 0.93;
+    Q.fdc_militancy *= 0.96;
+
+    Q.rg_strength *= 0.98;
+    Q.rg_militancy *= 0.98;
+
+    if (Q.arditi_cooperation == 1) {
+        Q.adp_strength *= 0.98;
+        Q.adp_militancy *= 0.98;  
+    }
+}
+
+if (Q.ard_fought == 1) {
+    Q.ard_strength *= 0.93;
+    Q.ard_militancy *= 0.96;
+
+    Q.rg_strength *= 0.98;
+    Q.rg_militancy *= 0.98;
+
+    if (Q.arditi_cooperation == 1) {
+        Q.adp_strength *= 0.98;
+        Q.adp_militancy *= 0.98;  
+    }
+}
+
+if (Q.abl_fought == 1) {
+    Q.abl_strength *= 0.93;
+    Q.abl_militancy *= 0.96;
+
+    Q.rg_strength *= 0.98;
+    Q.rg_militancy *= 0.98;
+
+    if (Q.arditi_cooperation == 1) {
+        Q.adp_strength *= 0.98;
+        Q.adp_militancy *= 0.98;  
+    }
+}
+
+!}
+on-departure: fdc_fought = 0; ard_fought = 0; abl_fought = 0
+
+Our forces are, thankfully, able to come out victorious against our opponents. Our forces have been damaged, but the forces of the far-right are hurt significantly more.
+
+@engage_failure
+on-arrival: {!
+
+if (Q.fdc_fought == 1) {
+    Q.fdc_strength *= 0.95;
+    Q.fdc_militancy *= 0.96;
+
+    Q.rg_strength *= 0.96;
+    Q.rg_militancy *= 0.96;
+
+    if (Q.arditi_cooperation == 1) {
+        Q.adp_strength *= 0.96;
+        Q.adp_militancy *= 0.96;  
+    }
+}
+
+if (Q.ard_fought == 1) {
+    Q.ard_strength *= 0.95;
+    Q.ard_militancy *= 0.96;
+
+    Q.rg_strength *= 0.96;
+    Q.rg_militancy *= 0.96;
+
+    if (Q.arditi_cooperation == 1) {
+        Q.adp_strength *= 0.96;
+        Q.adp_militancy *= 0.96;  
+    }
+}
+
+if (Q.abl_fought == 1) {
+    Q.abl_strength *= 0.95;
+    Q.abl_militancy *= 0.96;
+
+    Q.rg_strength *= 0.96;
+    Q.rg_militancy *= 0.96;
+
+    if (Q.arditi_cooperation == 1) {
+        Q.adp_strength *= 0.96;
+        Q.adp_militancy *= 0.96;  
+    }
+}
+
+!}
+on-departure: fdc_fought = 0; ard_fought = 0; abl_fought = 0
+
+Our forces are, unfortunately, unable to come out victorious, forced to retreat. Our forces have been significantly damaged, though so have theirs at a lesser capacity.

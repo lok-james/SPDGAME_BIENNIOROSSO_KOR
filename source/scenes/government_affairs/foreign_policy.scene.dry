@@ -112,7 +112,7 @@ Our overtures to the Russian SFSR are noticed, and welcomed with open arms by ou
 @improve_papal_relations
 on-arrival: papal_relation += 1; ppi_relation += 4*(1-dissent); ppi_left += 0.1;
 
-We begin slowly mending diplomatic ties between both of our countries[? if not resolved_roman_question :, though the Roman Question still hangs above us.?][? if resolved_roman_question :. ?]
+We begin slowly mending diplomatic ties between both of our countries[? if not roman_question_answered :, though the Roman Question still hangs above us.?][? if roman_question_answered :. ?]
 
 The PPI appreciates our efforts, regardless.
 

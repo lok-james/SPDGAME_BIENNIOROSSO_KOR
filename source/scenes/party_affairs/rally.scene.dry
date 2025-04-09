@@ -35,7 +35,7 @@ Unfortunately, the Red Guards were unable to hold back the far-right mob. The fa
 @adp_defend
 view-if: arditi_cooperation
 on-arrival: adp_defend_success = adp_strength*adp_militancy - disrupt_strength
-go-to: adp_protect_win if rg_defend_success >= 0; adp_protect_lose if rg_defend_success < 0
+go-to: adp_protect_win if adp_defend_success >= 0; adp_protect_lose if adp_defend_success < 0
 
 @adp_protect_win 
 go-to: main_rally
