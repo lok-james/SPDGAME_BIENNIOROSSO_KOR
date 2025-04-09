@@ -97,7 +97,7 @@ subtitle: -2 Budget - We can buy out bankrupt or defunct companies and repurpose
 view-if: min_compensation = 0
 choose-if: labour_minister_party = "PSI" and budget > 1
 unavailable-subtitle: -2 Budget - [? if not labour_minister_party = "PSI" : We do not continue the Labour Ministry. ?][? if budget <= 1 : We do not have a surplus. ?]
-on-arrival: budget -= 2; min_compensation += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 2.3; industrialists_pnf += 2;
+on-arrival: budget -= 2; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 2.3; industrialists_pnf += 2;
 
 We begin buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion.
 
@@ -107,7 +107,7 @@ view-if: min_compensation > 0
 choose-if: labour_minister_party = "PSI" and budget >= compensation_cost
 unavailable-subtitle: -[+ compensation_cost +] Budget - [? if not labour_minister_party = "PSI" : We do not continue the Labour Ministry. ?][? if budget < compensation_cost : We do not have a surplus. ?]
 max-visits: 2
-on-arrival: budget -= compensation_cost; min_compensation += 1; unemployment -= 0.6 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation; coalition_dissent += 1 if centre_left_coalition
+on-arrival: budget -= compensation_cost; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.6 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation; coalition_dissent += 1 if centre_left_coalition
 
 [? if uncultivated_redistributed = 2: We continue buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
 
