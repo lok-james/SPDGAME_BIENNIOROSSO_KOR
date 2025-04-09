@@ -236,3 +236,20 @@ Italy has toppled its bourgeois oppressors and established a revolutionary state
 
 - @post_war_force: It is time to decide our new agenda.
 
+@post_war_cv
+
+- @pressure_ban: Ban the [+ pnf_name +].
+- @none: We have done all we can for the moment.
+
+@pressure_ban
+on-arrival: pnf_banned = 1
+go-to: post_war_cv
+
+We are able to pressure the King, as well as convince the other parties to outlaw the [+ pnf_name +] for this attempted March on Rome.
+
+@none
+on-arrival: nationalist_sentiment -= 9; republican_sentiment += 7
+
+Regardless, the failure of the March on Rome has bolstered republican opposition within the country, who view the March as the result of the King's incompetence and inability to lead this nation in crisis.
+
+Similarly, nationalist sentiments within the country have been besmirched by this failed coup attempt.
