@@ -320,9 +320,9 @@ Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? 
 
 Funding: [? if education_funded = 0 : Decrepit ?][? if education_funded = 1 : Minimal ?][? if education_funded = 2 : Adequate ?][? if education_funded = 3 : Generous ?]
 
-Curriculum: [? if education_reformed = 0 : Decrepit ?][? if education_reformed = 1 : Traditional ?][? if education_reformed = 2 : Standardised ?][? if education_reformed = 3 : Modernised ?]
+Curriculum: [? if education_reformed = 0 : Decrepit ?][? if education_reformed = 1 : Traditional ?][? if education_reformed = 2 : Standardised ?][? if education_reformed >= 3 : Modernised ?]
 
-Trade Schools: [? if trade_school_funded = 0 : Unfunded ?][? if trade_school_funded = 1 : Minimal ?][? if trade_school_funded = 2 : Adequate ?][? if trade_school_funded = 3 : Numerous ?]
+Trade Schools: [? if trade_school_funded = 0 : Unfunded ?][? if trade_school_funded = 1 : Minimal ?][? if trade_school_funded = 2 : Adequate ?][? if trade_school_funded >= 3 : Numerous ?]
 
 = Labour
 

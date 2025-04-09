@@ -91,7 +91,7 @@ if (Q.soviet_victory == 1 && Q.soviet_relation >= 9) {
     this.achieve('rivoluzione_permanente');
 }
 
-if (Q.public_works_funded > 3 || Q.min_public_works == 3) {
+if (Q.public_works_funded >= 3 || Q.min_public_works >= 3 || Q.southern_infrastructure_funded >= 2) {
     this.achieve('far_viaggiare_i_treni_in_orario');
 }
 
