@@ -399,7 +399,7 @@ if (Q.bn_formed) {
 }
 
 // Other Calculation
-if (Q.parties_banned == 0) {
+if (Q.party_banned == 0) {
     for (var party of Q.parties) {
         // if we use decimals, then we might want to truncate the numbers
         if (Q.use_decimals) {
@@ -418,7 +418,7 @@ if (Q.parties_banned == 0) {
     }
 }
 // calculate new party sum if parties are banned
-if (Q.parties_banned == 1) {
+if (Q.party_banned == 1) {
     for (var party of Q.parties) {
         if (Q[party + '_r'] > 0) {
             Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
