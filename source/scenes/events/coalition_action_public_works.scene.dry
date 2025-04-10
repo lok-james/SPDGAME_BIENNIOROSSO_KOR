@@ -1,5 +1,5 @@
 title: Public Works Minister [+ public_education_minister +] acts
-view-if: ((ul_leader == "Giolitti" and public_works_funded > 0 and public_works_minister_party == ul_name and (unemployment < 8 or inflation > 5))) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
+view-if: ((ul_leader == "Giolitti" and public_works_funded > 0 and public_works_minister_party == ul_name and (unemployment < 8 or inflation > 5)) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
 on-arrival: gov_cooldown_timer = 3; gov_public_works_timer = 9
 new-page: true
 tags: event
@@ -43,7 +43,7 @@ Q.republican_sentiment -= 1;
 Q.nationalist_sentiment += 2;
 !}
 
-= [+ public_works_minister +] guts funding of existing Public Works
+= Public Works Minister [+ public_works_minister +] guts funding of existing Public Works
 
 The [+ ul_name +]-led Public Works Ministry have begun to gut funding of the already-existing Public Works constructed by the previous government due to the budget deficit, causing another wave of unemployment.
 
@@ -82,7 +82,7 @@ Q.rural_ppi += 2*(1-Q.dissent);
 Q.nationalist_sentiment -= 2;
 !}
 
-= [+ public_works_minister +] begins construction of new Public Works
+= Public Works Minister [+ public_works_minister +] begins construction of new Public Works
 
 The PPI-led Public Works Ministry have begun to plan and construct new Public Works constructed, hoping to lower inflation and utilise the current budget surplus.
 
