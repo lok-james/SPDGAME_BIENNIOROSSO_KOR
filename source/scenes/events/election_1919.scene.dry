@@ -397,6 +397,17 @@ if (Q.bn_formed) {
     Q.str_change_bn = sign + parseFloat(Q.change_bn_r).toFixed(1);
 }
 
+// seating percentage
+
+var total_available_seats = 0;
+
+if (Q.year <= 1920) {
+    total_available_seats = 508;
+}
+if (Q.year >= 1921) {
+    total_available_seats = 535;
+}
+
 // Other Calculation
 if (Q.party_banned == 0) {
     for (var party of Q.parties) {
@@ -439,17 +450,6 @@ if (Q.party_banned == 1) {
         Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
     }
-}
-
-// seating percentage
-
-var total_available_seats = 0;
-
-if (Q.year <= 1920) {
-    total_available_seats = 508;
-}
-if (Q.year >= 1921) {
-    total_available_seats = 535;
 }
 
 if (Q.acerbo_law_passed) {
