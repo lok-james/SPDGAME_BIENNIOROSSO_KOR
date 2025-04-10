@@ -399,21 +399,23 @@ if (Q.bn_formed) {
 }
 
 // Other Calculation
-for (var party of Q.parties) {
-    // if we use decimals, then we might want to truncate the numbers
-    if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-    }  else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
+if (Q.parties_banned == 0) {
+    for (var party of Q.parties) {
+        // if we use decimals, then we might want to truncate the numbers
+        if (Q.use_decimals) {
+            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+        }  else {
+                Q[party + '_r_disp'] = Q[party+'_r'];
+        }
+        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+        var sign = Q['change_' + party + '_r'] > 0 
+                    ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
+                    : Q['change_' + party + '_r'] < 0 
+                        ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
+                        : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
+        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
     }
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 
-                ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
-                : Q['change_' + party + '_r'] < 0 
-                    ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
-                    : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
-    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
 }
 // calculate new party sum if parties are banned
 if (Q.parties_banned == 1) {
@@ -870,9 +872,9 @@ go-to: coalition_menu
 
 [? if pcs_formed and pnf_r < 5 : {!<tr><td>!} -Christian Social Party {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5): {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : Fascist List ?][? if pnf_in_power : National List ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : Fascist List ?][? if pnf_in_power : National List ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5) : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
 [? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td>!} -Italian Social Democratic Party {!</td></tr>!} ?]
 
@@ -888,7 +890,7 @@ go-to: coalition_menu
 
 [? if not economic_right : {!<tr><td>!} -Economic & Agrarian Party {!</td></tr>!} ?]
 
-[? if pnf_r < 5 and not pnf_in_bn : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
+[? if pnf_r < 5 and not pnf_in_bn and not pnf_banned : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
 [? if pnf_in_power : {!<tr><td>!} -Constitutional Opposition {!</td></tr>!} ?]
 

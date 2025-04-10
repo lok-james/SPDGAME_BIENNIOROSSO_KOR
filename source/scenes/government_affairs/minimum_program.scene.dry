@@ -86,9 +86,9 @@ unavailable-subtitle: -[+ min_public_works +] Budget - [? if not public_works_mi
 max-visits: 2
 on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 0.2*min_public_works; inflation += 0.3 if budget < 0; economic_growth += 0.3*min_public_works; economic_growth += 0.2 if economic_growth < 0; unemployment -= 0.4*min_public_works; unemployment -= 0.2 if unemployment >= 8
 
-[? if uncultivated_redistributed = 2: We continue constructing public works, improving the transition from the post-war economy. ?]
+[? if min_public_works = 2: We continue constructing public works, improving the transition from the post-war economy. ?]
 
-[? if uncultivated_redistributed = 3: We have constructed extensive public works across Italy, stimulating the economy, albeit causing some slight inflation. ?]
+[? if min_public_works = 3: We have constructed extensive public works across Italy, stimulating the economy, albeit causing some slight inflation. ?]
 
 - @root: Excellent.
 
@@ -109,8 +109,8 @@ unavailable-subtitle: -[+ compensation_cost +] Budget - [? if not labour_ministe
 max-visits: 2
 on-arrival: budget -= compensation_cost; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.6 if unemployment >= 8; unemployment -= 0.1 if min_public_works > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation; coalition_dissent += 1 if centre_left_coalition
 
-[? if uncultivated_redistributed = 2: We continue buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
+[? if min_compensation = 2: We continue buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
 
-[? if uncultivated_redistributed = 3: We expand our buyouts to idling factories and companies as well, drastically expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
+[? if min_compensation = 3: We expand our buyouts to idling factories and companies as well, drastically expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
 
 - @root: Excellent.

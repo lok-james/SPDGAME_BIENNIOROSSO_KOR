@@ -49,7 +49,7 @@ subtitle: -3 resources
 choose-if: resources >= 3
 unavailable-subtitle: Not enough resources. (Need 3)
 view-if: radio = 0
-on-arrival: radio += 1; resources -= 3; middle_class_psi += 2*(1 - dissent); industrialists_psi += 4*(1 - dissent); workers_psi += 1*(1 - dissent); labour_dissent += 5; socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent) if pacifism > 1; republican_sentiment += 3*(1-dissent) if democratisation > 1; middle_class_psi -= 1*(1-dissent) if nationalisation_adopted; industrialists_psi -= 2*(1-dissent) if nationalisation_adopted
+on-arrival: radio += 1; resources -= 3; middle_class_psi += 3*(1 - dissent); industrialists_psi += 5*(1 - dissent); workers_psi += 1*(1 - dissent); labour_dissent += 5; socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent) if pacifism > 1; republican_sentiment += 3*(1-dissent) if democratisation > 1; middle_class_psi -= 1*(1-dissent) if nationalisation_adopted; industrialists_psi -= 2*(1-dissent) if nationalisation_adopted
 
 A radio station would be one of the first of its kind in Italy, and the first socialist station in the nation. Funding is expensive, and radio's in it of itself seem only affordable to the richest of the middle class, alongside industrialists and landowners, who will be the main consumers of our content, it seems.
 
