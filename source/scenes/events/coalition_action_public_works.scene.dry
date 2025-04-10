@@ -1,5 +1,5 @@
 title: Public Works Minister [+ public_education_minister +] acts
-view-if: ((ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5)) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
+view-if: ((ul_leader == "Giolitti" and public_works_funded > 0 and (unemployment < 8 or inflation > 5 and public_works_minister_party == ul_name))) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
 on-arrival: gov_cooldown_timer = 3; gov_public_works_timer = 9
 new-page: true
 tags: event
