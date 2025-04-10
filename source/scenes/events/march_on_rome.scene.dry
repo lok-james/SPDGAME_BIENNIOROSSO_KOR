@@ -277,6 +277,7 @@ Victory is achieved, and fascism is staved off for yet another day.
 - @none: We have done all we can for the moment.
 
 @pressure_ban
+view-if: pnf_banned = 0
 on-arrival: pnf_banned = 1
 go-to: post_war_cv
 
