@@ -261,7 +261,7 @@ We are in a long, protracted war with the fascists now. This will be sure to sha
 title: Victory
 new-page: false
 view-if: rome_victory = 1
-on-arrival: march_failed = 1;
+on-arrival: march_failed = 1; ard_banned = 1; fdc_banned = 1; abl_banned = 1
 
 = Victory
 
