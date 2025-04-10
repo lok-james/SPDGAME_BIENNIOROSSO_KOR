@@ -48,6 +48,10 @@ Q.socialist_catholic_coalition_failed = 0;
 
 Q.in_coalition = 0;
 Q.in_unstable_coalition = 0;
+
+for (var party of Q.parties) {
+    Q['old_' + party + '_r'] = Q[party + '_r'];
+}
 !}
 on-departure: week_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919
@@ -73,13 +77,9 @@ for (var party of Q.parties) {
     }
 }
 
-for (var party of Q.parties) {
-    Q['old_' + party + '_r'] = Q[party + '_r'];
-    if (Q.party_banned == 1 && Q[party + '_banned']) {
-        Q[party + '_r'] = 0;
-        Q[party + '_seating'] = 0;
-        Q[party + '_seating_disp'] = 0;
-    }
+if (Q.party_banned == 1 && Q[party + '_banned']) {
+    Q[party + '_r'] = 0;
+    Q[party + '_seating'] = 0;
 }
 
 if (Q.party_banned == 1) {
@@ -434,9 +434,6 @@ if (Q.party_banned == 1) {
         }
         if (Q[party + '_seating'] > 0) {
             Q[party + '_seating'] = Math.round((Q[party + '_r'] / 100) * total_available_seats);
-        }
-        if (Q[party + '_seating_disp'] > 0) {
-            Q[party + '_seating_disp'] = Math.round(Q[party + '_seating'] / total_available_seats) / 10;
         }
 
         Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
