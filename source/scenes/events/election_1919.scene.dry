@@ -76,11 +76,11 @@ for (var party of Q.parties) {
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
     Q[party + '_r'] = Q[party + '_votes'];
-}
 
-if (Q.party_banned == 1 && Q[party + '_banned']) {
-    Q[party + '_r'] = 0;
-    Q[party + '_seating'] = 0;
+    if (Q.party_banned == 1 && Q[party + '_banned']) {
+        Q[party + '_r'] = 0;
+        Q[party + '_seating'] = 0;
+    }   
 }
 
 if (Q.party_banned == 1) {
