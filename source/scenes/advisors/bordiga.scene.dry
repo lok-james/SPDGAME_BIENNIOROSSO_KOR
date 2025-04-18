@@ -19,6 +19,7 @@ Bordiga is one of the prominent figures of the Communist faction of the PSI.
 title: Ordering the Red Guards
 subtitle: We can use the Red Guards to act.
 choose-if: advisor_action_timer = 0 
+view-if: not national_congress_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: rg_orders
@@ -27,6 +28,7 @@ go-to: rg_orders
 title: Revolutionary Preparations
 subtitle: Continue our revolutionary planning.
 choose-if: advisor_action_timer = 0 and participating = 0
+view-if: not national_congress_seen
 on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolution_timer = 5; 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not_participating = 0 and maximalist_participating = 0 : We have chosen to abandon extraparliamentary means. ?]
 go-to: preparing_revolution
@@ -35,6 +37,7 @@ go-to: preparing_revolution
 title: Choosing Our Targets
 subtitle: We need to choose who we are mainly aiming for.
 choose-if: advisor_action_timer <= 0 
+view-if: not national_congress_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; 
 go-to: enemies
@@ -43,7 +46,7 @@ go-to: enemies
 title: Revolution!
 subtitle: We can begin the revolution! - This will lead us into a civil war.
 on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
-view-if: year > 1922 or (year = 1922 and month > 11)
+view-if: year > 1922 or (year = 1922 and month > 11) and not national_congress_seen
 choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervour < 65 : The bulk of the party does not support this. ?]
 go-to: civil_war

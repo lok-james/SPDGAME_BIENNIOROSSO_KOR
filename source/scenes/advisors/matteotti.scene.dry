@@ -19,6 +19,7 @@ title: Constitutional Reform
 subtitle: Having gathered enough support in the Chamber, it is time to reform the Italian Constitution into one more suited to our likeness.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not psi_in_government : The PSI is not in government. ?] [? if psi_in_government and coalition_dissent > 3 : Coalition dissent is too high for us to even suggest reforming the Constitution. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government
+view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; constitutional_reform_timer -= 9; last_advisor_action = 1
 go-to: constitutional_reform
 
@@ -35,5 +36,6 @@ title: Fasci Urgency
 subtitle: We should warn the party about the growing [+ pnf_name +].
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
+view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: urgency

@@ -34,6 +34,7 @@ go-to: party_organisations
 title: Revolutionary Preparations
 subtitle: Continue our revolutionary planning.
 choose-if: advisor_action_timer = 0 and participating = 0
+view-if: not national_congress_seen
 on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolution_timer = 5; 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if participating = 1 : We have chosen to abandon extraparliamentary means. ?]
 go-to: preparing_revolution

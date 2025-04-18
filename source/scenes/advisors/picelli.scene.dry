@@ -19,6 +19,7 @@ title: Fasci Urgency
 subtitle: We should warn the party about the growing [+ pnf_name +].
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
+view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: urgency
 
@@ -26,6 +27,7 @@ go-to: urgency
 title: Red Guards
 subtitle: We can fund our paramilitary.
 choose-if: advisor_action_timer = 0
+view-if: not national_congress_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: red_guards

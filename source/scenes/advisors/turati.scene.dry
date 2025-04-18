@@ -28,6 +28,7 @@ We have improved our relations with our coalition partners and reduced tensions 
 title: Negotiating with the King
 subtitle: Turati can improve our relationships with King [+ king +].
 choose-if: advisor_action_timer <= 0 
+view-if: not national_congress_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 on-arrival: advisor_action_timer = 6; king_relation += 7; king_dismissed_timer += 1;
 
