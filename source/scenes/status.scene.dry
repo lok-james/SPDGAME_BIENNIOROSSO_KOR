@@ -203,7 +203,7 @@ Streetfighting: [+ violent_prevalence : violence +]
 
 [? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Popolo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
 
-[? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +]?]
+[? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +] ?]
 
 [? if not national_congress_seen : {!<span class="tooltip-text" title="The Fasci is a right-wing organisation of war veterans associated with the PNF.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand ?]
 
@@ -217,11 +217,11 @@ Streetfighting: [+ violent_prevalence : violence +]
 
 [? if not national_congress_seen : Anti-Bolshevik Leagues Militarization: [+ abl_militancy : militancy +] ?]
 
-[? if communist_terror : {!<span class="tooltip-text" title="The new Red Guards are a radical paramilitary group asscoiated with the PCd'I.">New Red Guards</span>!} ]
+[? if communist_terror : {!<span class="tooltip-text" title="The new Red Guards are a radical paramilitary group asscoiated with the PCd'I.">New Red Guards</span>!} ?]
 
 [? if communist_terror: NRG Attack Likelihood : [+ communist_bomb_timer : warnings +] ?]
 
-[? if republican_terror : {!<span class="tooltip-text" title="The Anti-Communist Brigades are a republican paramilitary group asscoiated with the former liberal parties.">Anti-Communist Brigades</span>!} ]
+[? if republican_terror : {!<span class="tooltip-text" title="The Anti-Communist Brigades are a republican paramilitary group asscoiated with the former liberal parties.">Anti-Communist Brigades</span>!} ?]
 
 [? if republican_terror: ACB Attack Likelihood : [+ republican_bomb_timer : warnings +] ?]
 
