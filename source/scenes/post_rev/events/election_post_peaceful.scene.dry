@@ -75,17 +75,17 @@ for (var party of Q.parties) {
 
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
-    if (Q.party_banned == 1) {
-        if (Q[party + '_banned']) {
-            Q[party + '_r'] = 0;
-            Q[party + '_seating'] = 0;
-            Q[party + '_seating_disp'] = 0;
-        }
+    Q[party + '_r'] = Q[party + '_votes'];
+
+    if (Q.party_banned == 1 && Q[party + '_banned']) {
+        Q[party + '_r'] = 0;
+        Q[party + '_seating'] = 0;
+    }   
+}
+
+if (Q.party_banned == 1) {
+    for (var party of Q.parties) {
         new_party_sum += Q[party + '_r'];
-        new_party_seating += Q[party + '_seating'];
-        new_party_seating_disp += Q[party + '_seating_disp'];
-    } else {
-        Q[party + '_r'] = Q[party + '_votes'];
     }
 }
 
@@ -398,49 +398,6 @@ if (Q.bn_formed) {
     Q.str_change_bn = sign + parseFloat(Q.change_bn_r).toFixed(1);
 }
 
-// Other Calculation
-for (var party of Q.parties) {
-    // if we use decimals, then we might want to truncate the numbers
-    if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-    }  else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
-    }
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 
-                ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
-                : Q['change_' + party + '_r'] < 0 
-                    ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
-                    : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
-    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-}
-// calculate new party sum if parties are banned
-if (Q.parties_banned == 1) {
-    for (var party of Q.parties) {
-        if (Q[party + '_r'] > 0) {
-            Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
-        }
-        if (Q[party + '_seating'] > 0) {
-            Q[party + '_seating'] = Math.round(Q[party + '_seating']*1000/new_party_seating);
-        }
-        if (Q[party + '_seating_disp'] > 0) {
-            Q[party + '_seating_disp'] = Math.round(Q[party + '_seating_disp']*1000/new_party_seating_disp)/10;
-        }
-
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 
-                ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
-                : Q['change_' + party + '_r'] < 0 
-                    ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
-                    : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
-    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-    }
-}
-
 // seating percentage
 
 var total_available_seats = 0;
@@ -450,6 +407,47 @@ if (Q.year <= 1920) {
 }
 if (Q.year >= 1921) {
     total_available_seats = 535;
+}
+
+// Other Calculation
+if (Q.party_banned == 0) {
+    for (var party of Q.parties) {
+        if (Q.use_decimals) {
+            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+        } else {
+            Q[party + '_r_disp'] = Q[party+'_r'];
+        }
+        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+        var sign = Q['change_' + party + '_r'] > 0 
+                    ? '<img style="height: 11px; width: 11px;" src="img/Increase2.png">' 
+                    : Q['change_' + party + '_r'] < 0 
+                        ? '<img style="height: 11px; width: 11px;" src="img/Decrease2.png">' 
+                        : '<img style="height: 11px; width: 11px;" src="img/Steady2.png">';
+        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
+    }
+}
+
+if (Q.party_banned == 1) {
+    for (var party of Q.parties) {
+        if (Q[party + '_r'] > 0) {
+            Q[party + '_r'] = Math.round(Q[party + '_r'] * 1000 / new_party_sum) / 10;
+        }
+        if (Q[party + '_seating'] > 0) {
+            Q[party + '_seating'] = Math.round((Q[party + '_r'] / 100) * total_available_seats);
+        }
+
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+
+        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+        var sign = Q['change_' + party + '_r'] > 0 
+                    ? '<img style="height: 11px; width: 11px;" src="img/Increase2.png">' 
+                    : Q['change_' + party + '_r'] < 0 
+                        ? '<img style="height: 11px; width: 11px;" src="img/Decrease2.png">' 
+                        : '<img style="height: 11px; width: 11px;" src="img/Steady2.png">';
+        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
+    }
 }
 
 if (Q.acerbo_law_passed) {
