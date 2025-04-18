@@ -1,0 +1,15 @@
+title: Paramilitary Coup!
+subtitle: The paramilitaries have spiralled out of control.
+tags: event
+view-if: fascist_coup_progress >= 5 or republican_coup_progress >= 5 or communist_coup_progress >= 7
+max-visits: 1
+
+= Paramilitary Coup!
+
+Protests have been growing louder and louder across Italy. In cities, farms, factories, people are calling for your resignation. For the fall of the state it once desperately looked up to in hope, the same state that failed them. The state unable to prevent tragedy after tragedy from occurring. 
+
+So they turned. Desperate once more, the masses turned to ideologies far flung, promising them stability, prosperity that the current government — your government – could not give. And thus it came to a climax. The paramilitaries; whether communist, republican or fascist, now with public support behind them, have overthrown your government. Your forces are disarmed, your leadership arrested and shot. Italy plunges into darkness once more; a greater darkness than the one before you.
+
+You had your chance. Now it's someone else's turn.
+
+- @game_over: Game over.

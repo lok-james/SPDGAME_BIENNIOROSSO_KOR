@@ -24,9 +24,11 @@ At the Labour and Socialist International, we can forge contacts with our frater
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5;
+on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5; foreign_invasion_time += 6
 
 The socialists of France and Britain can influence their governments to be friendlier towards Italy.
+
+[? if violent_revolution : We are able to delay any plans that have towards us, as well. ?]
 
 @germany
 subtitle: -1 resources

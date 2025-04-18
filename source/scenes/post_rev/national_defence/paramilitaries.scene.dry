@@ -1,0 +1,57 @@
+title: Paramilitary Policy
+new-page: true
+is-card: true
+view-if: psi_in_government and paramilitary_policy_timer <= 0 and national_congress_seen and (fascist_terror or republican_terror or communist_terror)
+frequency: 500
+on-arrival: week_actions += 1; paramilitary_policy_timer = 3
+card-image: img/RedGuards.jpg
+tags: national_def
+
+= Paramilitary Policy
+
+The beginning of our rule has not certainly been stable. Paramilitaries, such as the far-right *Fasci* [? if republican_terror : and the republican *Anti-Communist Brigade* ?] [? if communist_terror : and the communist *Red Guards* ?] have begun plaguing the nation, vowing to overthrow us. 
+
+Naturally, however, we are not alone in the fight. The Carabinieri, alongside the Interior Ministry have been tasked with eliminating the paramilitary violence plaguing the streets and stabilisng the nation.
+
+Current Budget allocated is [+ yearly_interior_gain +]. Current Budget remaining is [+ interior_budget +], which is replenished at the start of the year.
+
+- @increase_budget: -1 Budget - Increase budget allocated to dealing with paramilitaries.
+- @decrease_budget: +1 Budget - Decrease budget allocated to dealing with paramilitaries.
+- @investigate_fascists: Investigate the far-right *Fasci*.
+- @investigate_republican: Investigate the republican *Anti-Communist Brigades*
+- @investigate_communist: Investigate the new communist *Red Guards*
+
+@increase_budget
+on-arrival: yearly_interior_gain += 1;
+
+We increase the budget allocated dealing with the paramilitaries. This will be reflected in the next annual budget.
+
+@decrease_budget
+on-arrival: yearly_interior_gain -= 1;
+view-if: yearly_interior_gain > 0
+
+We decrease the budget allocated dealing with the paramilitaries. This will be reflected in the next annual budget.
+
+@investigate_fascists
+view-if: fascist_terror
+on-arrival: interior_budget -= 1; fascist_bomb_timer += 12; 
+choose-if: interior_budget >= 1
+unavailable-subtitle: Not enough Interior Budget.
+
+We begin investigating the fascist paramilitaries, raiding their bases, arresting their forces and are able to substantially delay their plans.
+
+@investigate_republican
+view-if: republican_terror
+on-arrival: interior_budget -= 1; republican_bomb_timer += 12; 
+choose-if: interior_budget >= 1
+unavailable-subtitle: Not enough Interior Budget.
+
+We begin investigating the republican paramilitaries, raiding their bases, arresting their forces and are able to substantially delay their plans.
+
+@investigate_communist
+view-if: communist_terror
+on-arrival: interior_budget -= 1; communist_bomb_timer += 12; 
+choose-if: interior_budget >= 1
+unavailable-subtitle: Not enough Interior Budget.
+
+We begin investigating the communist paramilitaries, raiding their bases, arresting their forces and are able to substantially delay their plans.

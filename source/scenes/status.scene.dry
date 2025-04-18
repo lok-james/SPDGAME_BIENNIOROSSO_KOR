@@ -45,9 +45,9 @@ Our Approach: [+ party_approach +]
 
 = Government
 
-King: [+ king +]
+[? if not king_abolished : King: [+ king +] ?]
 
-King Approval: [+ king_relation : relationships +]
+[? if not king_abolished and not king_figurehead : King Approval: [+ king_relation : relationships +] ?]
 
 Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
@@ -179,47 +179,65 @@ if (Q.abl_strength) {
 }
 !}
 
+[? if violent_revolution: Foreign intervention Likelihood : [+ foreign_invasion_time : warnings +] ?]
+
 Streetfighting: [+ violent_prevalence : violence +]
 
 = Legality
 
-Fasci: [? if not fdc_banned : Operating?][? if fdc_banned : Banned?][? if fasci_adp_active or fasci_rg_active :, Under Attack ?]
+[? if not national_congress_seen : Fasci: [? if not fdc_banned : Operating?][? if fdc_banned : Banned?][? if fasci_adp_active or fasci_rg_active :, Under Attack ?] ?]
 
-Arditismo: [? if not ard_banned : Operating?][? if ard_banned : Banned?][? if arditi_adp_active or arditi_rg_active :, Under Attack ?]
+[? if not national_congress_seen : Arditismo: [? if not ard_banned : Operating?][? if ard_banned : Banned?][? if arditi_adp_active or arditi_rg_active :, Under Attack ?] ?]
 
-Anti-Bolshevik Leagues: [? if not abl_banned : Operating?][? if abl_banned : Banned?][? if abl_adp_active or abl_rg_active :, Under Attack ?]
+[? if not national_congress_seen : Anti-Bolshevik Leagues: [? if not abl_banned : Operating?][? if abl_banned : Banned?][? if abl_adp_active or abl_rg_active :, Under Attack ?] ?]
 
-Red Guards: [? if not rg_banned : Operating ?][? if rg_banned : Banned ?]
+[? if not national_congress_seen : Red Guards: [? if not rg_banned : Operating ?][? if rg_banned : Banned ?] ?]
 
 [? if arditi_formed : Arditi del Popolo: Operating ?]
 
 = Paramilitary Forces
 
-{!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group asscoiated with the PSI.">Red Guards</span>!} Strength: [+ rg_strength_2 +] thousand
+[? if not national_congress_seen : {!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group asscoiated with the PSI.">Red Guards</span>!} Strength: [+ rg_strength_2 +] thousand ?]
 
-Red Guard Militarization: [+ rg_militancy : militancy +]
+[? if not national_congress_seen : Red Guard Militarization: [+ rg_militancy : militancy +] ?]
 
 [? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Popolo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
 
 [? if arditi_formed: Arditi del Popolo Militarization: [+ adp_militancy : militancy +]?]
 
-{!<span class="tooltip-text" title="The Fasci is a right-wing organisation of war veterans associated with the PNF.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand
+[? if not national_congress_seen : {!<span class="tooltip-text" title="The Fasci is a right-wing organisation of war veterans associated with the PNF.">Fasci</span>!} Strength: [+ fdc_strength_2 +] thousand ?]
 
-Fasci Militarization: [+ fdc_militancy : militancy +]
+[? if not national_congress_seen : Fasci Militarization: [+ fdc_militancy : militancy +] ?]
 
-{!<span class="tooltip-text" title="The Arditismo are an organisation associated with the Fasci, comprised of former members of the 'Arditi' in the Italian Army.">Arditismo</span>!} Strength: [+ ard_strength_2 +] thousand
+[? if not national_congress_seen : {!<span class="tooltip-text" title="The Arditismo are an organisation associated with the Fasci, comprised of former members of the 'Arditi' in the Italian Army.">Arditismo</span>!} Strength: [+ ard_strength_2 +] thousand ?]
 
-Arditismo Militarization: [+ ard_militancy : militancy +]
+[? if not national_congress_seen : Arditismo Militarization: [+ ard_militancy : militancy +] ?]
 
-{!<span class="tooltip-text" title="The Anti-Bolshevik Leagues are local organisations across Italy formed to combat socialist ideologies, funded by landowners and industrialists. ">Anti-Bolshevik Leagues</span>!} Strength: [+ abl_strength_2 +] thousand
+[? if not national_congress_seen : {!<span class="tooltip-text" title="The Anti-Bolshevik Leagues are local organisations across Italy formed to combat socialist ideologies, funded by landowners and industrialists. ">Anti-Bolshevik Leagues</span>!} Strength: [+ abl_strength_2 +] thousand ?]
 
-Anti-Bolshevik Leagues Militarization: [+ abl_militancy : militancy +]
+[? if not national_congress_seen : Anti-Bolshevik Leagues Militarization: [+ abl_militancy : militancy +] ?]
+
+[? if communist_terror : {!<span class="tooltip-text" title="The new Red Guards are a radical paramilitary group asscoiated with the PCd'I.">New Red Guards</span>!} ]
+
+[? if communist_terror: NRG Attack Likelihood : [+ communist_bomb_timer : warnings +] ?]
+
+[? if republican_terror : {!<span class="tooltip-text" title="The Anti-Communist Brigades are a republican paramilitary group asscoiated with the former liberal parties.">Anti-Communist Brigades</span>!} ]
+
+[? if republican_terror: ACB Attack Likelihood : [+ republican_bomb_timer : warnings +] ?]
+
+[? if fascist_terror : {!<span class="tooltip-text" title="The new Fasci are a radical paramilitary group asscoiated with the former PNF..">Fasci</span>!} ]
+
+[? if fascist_terror: FdC Attack Likelihood : [+ fascist_bomb_timer : warnings +] ?]
 
 = Government Forces
 
-Regio Esercito: [+ army_strength +] thousand troops.
+[? if not national_congress_seen : Regio Esercito: ?] [+ army_strength +] thousand troops.
 
-Regio Esercito Loyalty: [+ army_loyalty : loyalty +]
+[? if not national_congress_seen : Regio Esercito Loyalty: ?] [+ army_loyalty : loyalty +]
+
+[? if national_congress_seen : Esercito Italiano: ?] [+ army_strength +] thousand troops.
+
+[? if national_congress_seen : Esercito Italiano Loyalty: ?] [+ army_loyalty : loyalty +]
 
 [? if psi_in_government : Carabinieri: [+ interior_police_strength +] thousand officers ?]
 

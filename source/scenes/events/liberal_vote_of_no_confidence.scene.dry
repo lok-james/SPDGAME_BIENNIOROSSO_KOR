@@ -40,7 +40,7 @@ unavailable-subtitle: We do not have enough resources.
 subtitle: -3 resources
 on-arrival: resources -= 3; coalition_dissent -= 1; liberal_crackdown_timer += 6 if (liberal_crackdown_accepted and liberal_crackdown_complete == 0); middle_class_ldr += 4*(1-dissent); middle_class_ul += 4*(1-dissent) if ul_in_government; 
 
-By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
+By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution. Some, however, are questioning our action as effectively funding the campaigning efforts of our enemies.
 
 @support_psri
 choose-if: psri_relation >= 40 and left_wing_coalition >= 50
@@ -221,7 +221,7 @@ The vote succeeds, and our government has resigned. Prime Minister [+ prime_mini
 
 @let_it_happen_elections
 view-if: next_election_time >= 8 and prime_minister_party = "PSI"
-on-arrival: {!
+on-arrival: next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; {!
 
 Q.rural_psi -= 3; 
 Q.middle_class_psi -= 2; 

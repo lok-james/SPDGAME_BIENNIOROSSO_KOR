@@ -1,7 +1,7 @@
 title: Further Military demobilisation set to occur
 subtitle: The Military will continue its post-war demobilisation.
 new-page: true
-view-if: demobilise_timer = 0 and army_strength > 692 and stopped_mobilisation == 0
+view-if: demobilise_timer = 0 and army_strength > 692 and stopped_mobilisation == 0 and not violent_revolution
 tags: event
 
 = Military Demobilisation to Continue

@@ -423,8 +423,8 @@ On the other hand, agricultural producers and some small businesses benefit from
 
 @lower_tariffs
 title: Lower tariffs on imports.
-choose-if: tariffs > -5
-subtitle: -2 Budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?] [? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+choose-if: tariffs > -5 and (not national_economic_recovery or budget > 1)
+subtitle: -2 Budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?] [? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?] [? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
 on-arrival: {!
 Q.tariffs -= 1; 
 Q.budget -= 2; 

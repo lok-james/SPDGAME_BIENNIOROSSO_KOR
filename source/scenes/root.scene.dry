@@ -588,7 +588,8 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'adriatic', 'ul_emergency', 'ldr_emergency', 'ds_emergency', 'mussolini_trial', 'crisis_program', 'maximum_program', 'minimum_program',
             'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
             'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
-            'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers', 'streetfighting'];
+            'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers', 'streetfighting',
+            'colonial_policy'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -664,6 +665,7 @@ Q.class1_timer = 0;
 Q.class2_timer = 0;
 Q.party_demands_timer = 0;
 Q.streetfighting_timer = 6;
+Q.colonial_policy_timer = 0;
 
 // wow 
 Q.mussolini_dies = 0;

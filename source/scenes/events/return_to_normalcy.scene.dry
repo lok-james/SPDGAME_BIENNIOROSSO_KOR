@@ -12,7 +12,7 @@ Italy is finally recovering from the post-war crisis. As the economy gradually i
 
 Finally, the PNF has fallen. From a massive party threatening to end Italian democracy, the party has fallen into infighting and strife following the collapse of its party leadership.
 
-[? if not communist_split : However, the Left-wing of the party has begun advocating to begin the revolutionary process, citing the return to normalcy as the final window of opportunity closing on us. ?]
+[? if not communist_split and not national_congress_seen : However, the Left-wing of the party has begun advocating to begin the revolutionary process, citing the return to normalcy as the final window of opportunity closing on us. ?]
 
 - @celebrate: This is an occasion to celebrate.
 - @complacency: The fascists are still a threat. We must not be too complacent.
@@ -20,7 +20,7 @@ Finally, the PNF has fallen. From a massive party threatening to end Italian dem
 - @normalcy_refuse: Refuse the communist demands.
 
 @normalcy_civil_war
-view-if: not communist_split
+view-if: not communist_split and not national_congress_seen
 choose-if: revolutionary_fervour >= 65
 unavailable-subtitle: The bulk of the party does not support this.
 on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
@@ -28,7 +28,7 @@ go-to: civil_war
 
 @normalcy_refuse
 subtitle: It is likely the left will split from the party.
-view-if: not communist_split
+view-if: not communist_split and not national_congress_seen
 on-arrival: communist_dissent += 60; communist_strength -= 17; revolutionary_fervour -= 7
 
 The communists are outraged by this, accusing us of betraying our ideals and threatening a full-on party split.

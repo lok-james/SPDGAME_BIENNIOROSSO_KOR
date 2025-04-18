@@ -1,6 +1,6 @@
 title: Whispers of a Plot
 subtitle: Our sources have gathered crucial information...
-view-if: (year = 1922 and month = 8) or (fasci_coup_progress > 8 and year = 1922 and month < 8) 
+view-if: (year = 1922 and month = 8) or (fasci_coup_progress > 8 and year = 1922 and month < 8) and not national_congress_seen
 new-page: true
 on-arrival: fdc_strength += 25; plot_whispers_seen = 1
 max-visits: 1 

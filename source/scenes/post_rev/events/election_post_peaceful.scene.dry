@@ -2,7 +2,7 @@ title: Chamber of Deputies Elections
 new-page: true
 tags: event
 priority: -1
-view-if: ((year = next_election_year and month >= next_election_month) or (year > next_election_year)) and not national_congress_seen
+view-if: ((year = next_election_year and month >= next_election_month) or (year > next_election_year)) and national_congress_seen and peaceful_revolution
 on-arrival: {!
 // resetting coalition stuff
 Q.ldr_promise_failed = 0;
@@ -75,17 +75,17 @@ for (var party of Q.parties) {
 
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
-    Q[party + '_r'] = Q[party + '_votes'];
-
-    if (Q.party_banned == 1 && Q[party + '_banned']) {
-        Q[party + '_r'] = 0;
-        Q[party + '_seating'] = 0;
-    }   
-}
-
-if (Q.party_banned == 1) {
-    for (var party of Q.parties) {
+    if (Q.party_banned == 1) {
+        if (Q[party + '_banned']) {
+            Q[party + '_r'] = 0;
+            Q[party + '_seating'] = 0;
+            Q[party + '_seating_disp'] = 0;
+        }
         new_party_sum += Q[party + '_r'];
+        new_party_seating += Q[party + '_seating'];
+        new_party_seating_disp += Q[party + '_seating_disp'];
+    } else {
+        Q[party + '_r'] = Q[party + '_votes'];
     }
 }
 
@@ -398,6 +398,49 @@ if (Q.bn_formed) {
     Q.str_change_bn = sign + parseFloat(Q.change_bn_r).toFixed(1);
 }
 
+// Other Calculation
+for (var party of Q.parties) {
+    // if we use decimals, then we might want to truncate the numbers
+    if (Q.use_decimals) {
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+    }  else {
+            Q[party + '_r_disp'] = Q[party+'_r'];
+    }
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0 
+                ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
+                : Q['change_' + party + '_r'] < 0 
+                    ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
+                    : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
+    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
+}
+// calculate new party sum if parties are banned
+if (Q.parties_banned == 1) {
+    for (var party of Q.parties) {
+        if (Q[party + '_r'] > 0) {
+            Q[party + '_r'] = Math.round(Q[party + '_r']*1000/new_party_sum)/10;
+        }
+        if (Q[party + '_seating'] > 0) {
+            Q[party + '_seating'] = Math.round(Q[party + '_seating']*1000/new_party_seating);
+        }
+        if (Q[party + '_seating_disp'] > 0) {
+            Q[party + '_seating_disp'] = Math.round(Q[party + '_seating_disp']*1000/new_party_seating_disp)/10;
+        }
+
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+
+    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+    var sign = Q['change_' + party + '_r'] > 0 
+                ? '<img style ="height: 11px; width: 11px;" src="img/Increase2.png"> ' 
+                : Q['change_' + party + '_r'] < 0 
+                    ? '<img style ="height: 11px; width: 11px;" src="img/Decrease2.png"> ' 
+                    : '<img style ="height: 11px; width: 11px;" src="img/Steady2.png"> ';
+    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
+    }
+}
+
 // seating percentage
 
 var total_available_seats = 0;
@@ -407,47 +450,6 @@ if (Q.year <= 1920) {
 }
 if (Q.year >= 1921) {
     total_available_seats = 535;
-}
-
-// Other Calculation
-if (Q.party_banned == 0) {
-    for (var party of Q.parties) {
-        if (Q.use_decimals) {
-            Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-        } else {
-            Q[party + '_r_disp'] = Q[party+'_r'];
-        }
-        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-        var sign = Q['change_' + party + '_r'] > 0 
-                    ? '<img style="height: 11px; width: 11px;" src="img/Increase2.png">' 
-                    : Q['change_' + party + '_r'] < 0 
-                        ? '<img style="height: 11px; width: 11px;" src="img/Decrease2.png">' 
-                        : '<img style="height: 11px; width: 11px;" src="img/Steady2.png">';
-        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-    }
-}
-
-if (Q.party_banned == 1) {
-    for (var party of Q.parties) {
-        if (Q[party + '_r'] > 0) {
-            Q[party + '_r'] = Math.round(Q[party + '_r'] * 1000 / new_party_sum) / 10;
-        }
-        if (Q[party + '_seating'] > 0) {
-            Q[party + '_seating'] = Math.round((Q[party + '_r'] / 100) * total_available_seats);
-        }
-
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
-
-        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-        var sign = Q['change_' + party + '_r'] > 0 
-                    ? '<img style="height: 11px; width: 11px;" src="img/Increase2.png">' 
-                    : Q['change_' + party + '_r'] < 0 
-                        ? '<img style="height: 11px; width: 11px;" src="img/Decrease2.png">' 
-                        : '<img style="height: 11px; width: 11px;" src="img/Steady2.png">';
-        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-    }
 }
 
 if (Q.acerbo_law_passed) {
@@ -794,24 +796,6 @@ go-to: coalition_menu
 
 {!<table>!}
 {!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td><td>% Seats</td></tr>!}
-[? if acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Anti-Fascist List: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
-
-[? if acerbo_law_passed : {!<tr><td>!} **-Italian Socialist Party** {!</td></tr>!} ?]
-
-[? if anti_fas_psu and acerbo_law_passed : {!<tr><td>!} -Unitary Socialist Party  {!</td></tr>!} ?]
-
-[? if anti_fas_psri and acerbo_law_passed : {!<tr><td>!} -Italian Reformist Socialist Party  {!</td></tr>!} ?]
-
-[? if anti_fas_pll and acerbo_law_passed : {!<tr><td>!} -Liberal Workers' Party  {!</td></tr>!} ?]
-
-[? if anti_fas_pri and acerbo_law_passed : {!<tr><td>!} -Italian Republican Party  {!</td></tr>!} ?]
-
-[? if anti_fas_ppi and acerbo_law_passed : {!<tr><td>!} -Italian People's Party  {!</td></tr>!} ?]
-
-[? if anti_fas_ds and acerbo_law_passed : {!<tr><td>!} -[+ ds_full_name +]  {!</td></tr>!} ?]
-
-[? if anti_fas_ldr and acerbo_law_passed : {!<tr><td>!} -[+ ldr_full_name +]  {!</td></tr>!} ?]
-
 [? if not acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Socialist List: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
 [? if not acerbo_law_passed : {!<tr><td>!} **-Italian Socialist Party** {!</td></tr>!} ?]
@@ -854,7 +838,7 @@ go-to: coalition_menu
 
 [? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} Liberal List: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not ul_in_bn and (ul_party or (ul_list and not view_full)) and not pnf_in_government or not anti_fas_ul : {!<tr><td>!} -Italian Liberal Party {!</td></tr>!} ?]
+[? if not ul_in_bn and (ul_party or (ul_list and not view_full)) and not pnf_in_government and not anti_fas_ul : {!<tr><td>!} -Italian Liberal Party {!</td></tr>!} ?]
 
 [? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} National Bloc: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td><td>!} [+ bn_seating_disp +]% {!</td></tr>!} ?]
 
@@ -868,17 +852,13 @@ go-to: coalition_menu
 
 [? if pcs_formed and pnf_r < 5 : {!<tr><td>!} -Christian Social Party {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : Fascist List ?][? if pnf_in_power : National List ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5): {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : Fascist List ?][? if pnf_in_power : National List ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5) : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
 [? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td>!} -Italian Social Democratic Party {!</td></tr>!} ?]
 
 [? if pcs_formed and (pnf_r >= 5) : {!<tr><td>!} -Christian Social Party {!</td></tr>!} ?]
-
-[? if not ul_in_bn and pnf_in_power : {!<tr><td>!} -Italian Liberal Party (Def.) {!</td></tr>!} ?]
-
-[? if pnf_in_power : {!<tr><td>!} -Italian People's Party (Def.) {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r_disp +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +]% {!</td></tr>!}
 
@@ -886,13 +866,9 @@ go-to: coalition_menu
 
 [? if not economic_right : {!<tr><td>!} -Economic & Agrarian Party {!</td></tr>!} ?]
 
-[? if pnf_r < 5 and not pnf_in_bn and not pnf_banned : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
-
-[? if pnf_in_power : {!<tr><td>!} -Constitutional Opposition {!</td></tr>!} ?]
+[? if pnf_r < 5 and not pnf_in_bn : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
 [? if psri_solo and psri_r < 5 : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
-
-[? if pnf_in_power : {!<tr><td>!} -Independent Liberals {!</td></tr>!} ?]
 
 [? if abstentionist_psi : {!<tr><td><div class="box" style='background-color:#FFFFFF'> </div>!} Vacant: {!</td><td>!} N/A {!</td><td>!} N/A {!</td><td>!} [+ vacant_seating +] {!</td><td>!} [+ vacant_seating_disp +]% {!</td></tr>!} ?]
 {!</table>!}
@@ -933,39 +909,12 @@ Q.anti_socialist_coalition = 0;
 
 !}
 
-- @pnf_majority
 - @psi_majority
 - @left_wing_coalition
 - @centre_left_coalition
 - @socialist_catholic_coalition
 - @grand_coalition
 - @centre_right_coalition
-- @anti_socialist_coalition
-
-@pnf_majority
-title: PNF majority alone
-subtitle: PNF: [+ pnf_seating_disp +]%
-view-if: pnf_seating_disp >= 50
-on-arrival: {!
-Q.prime_minister_party = "PNF";
-Q.prime_minister = Q.pnf_leader;
-!}
-
-Our worst fears have come true. The PNF have managed to gain a majority in the elections, and secure a two-thirds majority in the Chamber of Deputies.
-
-What now?
-
-- @civil_war: We cannot wait any longer. Mobilise the Red Guards!
-- @nothing: Bide our time further.
-
-@nothing
-subtitle: This will end the game.
-
-[+ pnf_leader +] acts fast, as the Red Guards are harassed and attacked by both government and right-wing paramilitaries. In the Chamber of Deputies, the assassination of Giacomo Matteotti by government forces sparks momentary outrage while [+ pnf_leader +] seizes the opportunity and quickly consolidates Italy into one-party dictatorship.
-
-Italy is lost.
-
-- @game_over: Game over.
 
 @psi_majority
 title: PSI majority alone
@@ -1254,61 +1203,6 @@ Q.public_works_minister_party = "PNF";
 !}
 view-if: centre_right_coalition_r >= 50 and ul_seating_disp + ldr_seating_disp >= pnf_seating_disp 
 
-@anti_socialist_coalition
-title: Anti-Socialist Coalition
-subtitle: PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?]  [? if pcs_formed :+ PCS ?]: ([+ anti_socialist_coalition_r +]%)..
-on-arrival: {!
-Q.anti_socialist_coalition = 1;
-Q.pnf_in_government = 1;
-Q.ul_in_government = 1;
-
-if (Q.ds_enemies == 1) {
-    Q.ds_in_government = 1;
-}
-
-if (Q.ldr_enemies == 1) {
-    Q.ldr_in_government = 1;
-}
-
-if (Q.pnf_leader == "Grand Council") {
-    Q.prime_minister = "Balbo";
-    Q.pnf_leader == "Balbo";
-}
-Q.prime_minister_party = Q.pnf_name;
-
-Q.foreign_minister_party = Q.ul_name; 
-if (Q.ds_enemies == 1) {
-    Q.interior_minister_party = Q.ds_name;
-} else {
-    Q.interior_minister_party = "PNF"; 
-}
-Q.justice_minister_party = Q.ul_name;
-if (Q.ds_enemies == 1) {
-    Q.labour_minister_party = Q.ds_name; 
-} else {
-    Q.labour_minister_party = "UL";
-}
-Q.finance_minister_party = "PNF";
-if (Q.ldr_enemies == 1) {
-    Q.treasury_minister_party = Q.ldr_name; 
-} else {
-    Q.treasury_minister_party = Q.ul_name; 
-}
-Q.treasury_minister_party = Q.ul_name; 
-Q.agriculture_minister_party = "PNF"; 
-if (Q.ldr_enemies == 1) {
-    Q.public_education_minister_party = Q.ldr_name; 
-} else {
-    Q.public_education_minister_party = "PNF"; 
-}
-Q.public_works_minister_party = "PNF";
-!}
-view-if: anti_socialist_coalition_r >= 50 and pnf_seating_disp > ul_seating_disp + ldr_seating_disp and prime_minister_party != "PNF"
-
-It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Fascist Party, as a junior partner to their list. [+ pnf_leader +] has made himself crucial to this coalition, and been able to come out on top in the inter-party struggle, being appointed Prime Minister by the King.
-
-- @pnf_prime_minister: What now?
-
 @grand_coalition_yes
 subtitle: [? if participating = 1 : This is extremely unpopular with the reformists. ?]
 on-arrival: {!
@@ -1402,108 +1296,6 @@ While some minor ones are: Budget Surplus, Foreign Affairs and Soviet Aid.
 - #drop_libdem_major
 - #drop_libdem_minor
 
-@liberal_reform
-title: End our violent seizure of land in the South and reject any form of land reform.
-subtitle: This will be a major setback if we are to solve the Southern Question anytime soon.
-tags: libdem_major
-view-if: liberal_reform_accepted = 0
-on-arrival: liberal_reform_accepted = 1; liberal_negotiations += 20;
-go-to: l_demands_menu
-
-This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
-
-@liberal_crackdown
-title: Begin a crack down of violence in the streets, including the Red Guards.
-subtitle: This will force us to rely on the loyalties of government forces.
-tags: libdem_major
-view-if: liberal_crackdown_accepted = 0
-on-arrival: liberal_crackdown_accepted = 1; liberal_negotiations += 20; liberal_crackdown_timer = 12;
-go-to: l_demands_menu
-
-This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
-
-@liberal_nationalisation
-title: Reject any form of nationalisation to the Italian economy.
-subtitle: This will limit our ability to reform the current economic system.
-tags: libdem_major
-view-if: liberal_nationalisation_accepted = 0
-on-arrival: liberal_nationalisation_accepted = 1; liberal_negotiations += 20;
-go-to: l_demands_menu
-
-This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
-
-@liberal_budget
-title: Maintain a budget surplus.
-subtitle: This will limit our ability to conduct government policy. [? if budget < 0 : We will be inheriting a deficit, so we will have to implement temporary austerity. ?]
-tags: libdem_minor
-view-if: liberal_budget_accepted = 0
-on-arrival: liberal_budget_accepted = 1; liberal_negotiations += 10;
-go-to: l_demands_menu
-
-This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
-
-@liberal_foreign
-title: Maintain our current alignment with the Entente.
-subtitle: This will hamper our actions if we are to control the Foreign Ministry.
-tags: libdem_minor
-view-if: liberal_foreign_accepted = 0
-on-arrival: liberal_foreign_accepted = 1; liberal_negotiations += 10;
-go-to: l_demands_menu
-
-This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
-
-@liberal_aid
-title: Reject any form of aid to the Soviet Union.
-subtitle: This will limit our ability to improve relations with the Soviet Union.
-tags: libdem_minor
-view-if: liberal_aid_accepted = 0
-on-arrival: liberal_aid_accepted = 1; liberal_negotiations += 10;
-go-to: l_demands_menu
-
-This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
-
-@drop_liberal_reform
-title: Drop our promise to reject land reform.
-tags: drop_libdem_major
-view-if: liberal_reform_accepted = 1
-on-arrival: liberal_reform_accepted = 0; liberal_negotiations -= 20;
-go-to: l_demands_menu
-
-@drop_liberal_crackdown
-title: Drop our promise to crack down on street violence.
-tags: drop_libdem_major
-view-if: liberal_crackdown_accepted = 1
-on-arrival: liberal_crackdown_accepted = 0; liberal_negotiations -= 20; liberal_crackdown_timer = 0;
-go-to: l_demands_menu
-
-@drop_liberal_nationalisation
-title: Drop our promise to reject nationalisation.
-tags: drop_libdem_major
-view-if: liberal_nationalisation_accepted = 1
-on-arrival: liberal_nationalisation_accepted = 0; liberal_negotiations -= 20;
-go-to: l_demands_menu
-
-@drop_liberal_budget
-title: Drop our promise to maintain a surplus.
-tags: drop_libdem_minor
-view-if: liberal_budget_accepted = 1
-on-arrival: liberal_budget_accepted = 0; liberal_negotiations -= 10;
-go-to: liberal_demands
-
-@drop_liberal_foreign
-title: Drop our promise to keep alignment with the Entente.
-tags: drop_libdem_minor
-view-if: liberal_foreign_accepted = 1
-on-arrival: liberal_foreign_accepted = 0; liberal_negotiations -= 10;
-go-to: l_demands_menu
-
-@drop_liberal_aid
-title: Drop our promise to reject aid to the Soviet Union.
-tags: drop_libdem_minor
-view-if: liberal_aid_accepted = 1
-on-arrival: liberal_aid_accepted = 0; liberal_negotiations -= 10;
-go-to: l_demands_menu
-
 @refuse_libdem
 title: It seems we cannot come to an agreement.
 subtitle: Maybe one with the Catholics might work?
@@ -1545,91 +1337,6 @@ While some minor ones are Charity and Nationalisations.
 - #drop_catholic_major
 - #drop_catholic_minor
 
-@catholic_papacy
-title: Resolve the Roman Question with the Papacy.
-subtitle: This will benefit our Catholic bloc as well if we can form a compromise in time.
-tags: catholic_major
-view-if: catholic_papacy_accepted = 0 and roman_question_answered = 0
-on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20; catholic_papacy_timer = 12;
-go-to: c_demands_menu
-
-This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
-
-@catholic_education
-title: Reject any changes to Catholic schools.
-subtitle: This will limit our abilities to secularise education.
-tags: catholic_major
-view-if: catholic_education_accepted = 0
-on-arrival: catholic_education_accepted = 1; catholic_negotiations += 20;
-go-to: c_demands_menu
-
-This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
-
-@catholic_women
-title: Reject any changes to the traditional family structure and women's rights.
-subtitle: This will limit our ability to institute reforms to laws as divorce or marriage.
-tags: catholic_major
-view-if: catholic_women_accepted = 0
-on-arrival: catholic_women_accepted = 1; catholic_negotiations += 20;
-go-to: c_demands_menu
-
-This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
-
-@catholic_charity
-title: Expand welfare only through Catholic-aligned welfare programs.
-subtitle: This will solely increase the support for the People's Party if we are to fund welfare.
-tags: catholic_minor
-view-if: catholic_charity_accepted = 0
-on-arrival: catholic_charity_accepted = 1; catholic_negotiations += 10;
-go-to: c_demands_menu
-
-This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
-
-@catholic_nationalisation
-title: Protect Church-owned lands from nationalisation or seizure.
-subtitle: This will undermine our ability for land redistribution.
-tags: catholic_minor
-view-if: catholic_nationalisation_accepted = 0
-on-arrival: catholic_nationalisation_accepted = 1; catholic_negotiations += 10;
-go-to: c_demands_menu
-
-This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
-
-@drop_catholic_papacy
-title: Drop our promise to resolve the Roman Question.
-tags: drop_catholic_major
-view-if: catholic_papacy_accepted = 1 and roman_question_answered = 0
-on-arrival: catholic_papacy_accepted = 0; catholic_negotiations -= 20; catholic_papacy_timer = 0;
-go-to: c_demands_menu
-
-@drop_catholic_education
-title: Drop our promise to reject changes to Catholic schools.
-tags: drop_catholic_major
-view-if: catholic_education_accepted = 1
-on-arrival: catholic_education_accepted = 0; catholic_negotiations -= 20;
-go-to: c_demands_menu
-
-@drop_catholic_women
-title: Drop our promise to reject changes to the traditional family structure.
-tags: drop_catholic_major
-view-if: catholic_women_accepted = 1
-on-arrival: catholic_women_accepted = 0; catholic_negotiations -= 20;
-go-to: c_demands_menu
-
-@drop_catholic_charity
-title: Drop our promise to expand Catholic-aligned welfare.
-tags: drop_catholic_minor
-view-if: catholic_charity_accepted = 1
-on-arrival: catholic_charity_accepted = 0; catholic_negotiations -= 10;
-go-to: c_demands_menu
-
-@drop_catholic_nationalisation
-title: Drop our promise to protect Church-owned lands.
-tags: drop_catholic_minor
-view-if: catholic_nationalisation_accepted = 1
-on-arrival: catholic_nationalisation_accepted = 0; catholic_negotiations -= 10;
-go-to: c_demands_menu
-
 @refuse_catholic
 title: It seems we cannot come to an agreement.
 subtitle: Maybe one with the Liberals might work?
@@ -1654,183 +1361,3 @@ We can pick from any number of ministries. Controlling a ministry allows us to d
 
 - #mins_1919
 - #drop_mins_1919
-
-@labour
-title: Labour and Social Security Ministry
-subtitle: Taking the Labour Ministry is expected of us.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1919
-choose-if: leverage >= 5
-view-if: labour_minister_party != "PSI"
-on-arrival: leverage -= 5; labour_minister_party = "PSI"; labour_minister = "Rigola"
-go-to: ministries
-
-Rinaldo Rigola of the PSI has been appointed Labour and Social Security minister.
-
-@interior
-title: Interior Ministry
-subtitle: The Interior Ministry controls domestic security.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1919
-choose-if: leverage >= 10
-view-if: interior_minister_party != "PSI"
-on-arrival: leverage -= 10; interior_minister_party = "PSI"; interior_minister = "Turati"
-go-to: ministries
-
-Filippo Turati of the PSI has been appointed Interior Minister.
-
-@finance
-title: Finance Ministry
-subtitle: The Finance Ministry controls the government budget and taxes.
-unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
-tags: mins_1919
-choose-if: leverage >= 10 and king_relation >= 30
-view-if: finance_minister_party != "PSI"
-on-arrival: leverage -= 10; finance_minister_party = "PSI"; finance_minister = "Lazzari"
-go-to: ministries
-
-Constantinto Lazzari of the PSI has been appointed Finance Minister.
-
-@treasury
-title: Treasury Ministry
-subtitle: The Treasury Ministry controls broader economic policy.
-unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
-tags: mins_1919
-choose-if: leverage >= 10 and king_relation >= 30
-view-if: treasury_minister_party != "PSI"
-on-arrival: leverage -= 10; treasury_minister_party = "PSI"; treasury_minister = "Modigliani"
-go-to: ministries
-
-Emanuele Modigliani of the PSI has been appointed Treasury Minister.
-
-@justice
-title: Justice Ministry
-subtitle: The Justice Ministry controls the courts.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1919
-choose-if: leverage >= 10 
-view-if: justice_minister_party != "PSI"
-on-arrival: leverage -= 10; justice_minister_party = "PSI"; justice_minister = "Treves"
-go-to: ministries
-
-Claudio Treves of the PSI has been appointed Justice Minister.
-
-@public_works
-title: Public Works Ministry
-subtitle: The Public Works Ministry control our national public works.
-unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
-tags: mins_1919
-choose-if: leverage >= 10 and king_relation >= 30
-view-if: public_works_minister_party != "PSI"
-on-arrival: leverage -= 10; public_works_minister_party = "PSI"; public_works_minister = "Vella"
-go-to: ministries
-
-Arturo Vella of the PSI has been appointed Public Works Minister.
-
-@public_education
-title: Public Education Ministry
-subtitle: The Public Education Ministry manages the education system.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1919
-choose-if: leverage >= 10 
-view-if: public_education_minister_party != "PSI"
-on-arrival: leverage -= 5; public_education_minister_party = "PSI"; public_education_minister = "Togliatti"
-go-to: ministries
-
-Palmiro Togliatti of the PSI has been appointed Public Education Minister.
-
-@foreign
-title: Foreign Ministry
-subtitle: The Foreign Ministry dictates our foreign policy.
-unavailable-subtitle: We do not have enough leverage.
-tags: mins_1919
-choose-if: leverage >= 10 
-view-if: foreign_minister_party != "PSI"
-on-arrival: leverage -= 10; foreign_minister_party = "PSI"; foreign_minister = "Matteotti"
-go-to: ministries
-
-Giacomo Matteotti of the PSI has been appointed Foreign Minister.
-
-@agriculture
-title: Agricultural Ministry
-subtitle: The Agricultural Ministry dictates our agricultural policy, - Taking this is expected of us to strengthen our traiditonal voting bloc.
-unavailable-subtitle: We do not have enough leverage.
-choose-if: leverage >= 5 
-view-if: agriculture_minister_party != "PSI"
-on-arrival: leverage -= 5; agriculture_minister_party = "PSI"; agriculture_minister = "Graziadei"
-go-to: ministries
-tags: mins_1919
-
-Antonio Graziadei of the PSI has been appointed Agriculture Minister.
-
-@no_more
-title: No more ministries.
-subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?] 
-on-arrival: election_seen = 1;
-tags: mins_1919
-
-This coalition arrangement is tolerable to all.
-
-@drop_labour
-title: Drop the Labour & Social Security Ministry.
-view-if: labour_minister_party = "PSI"
-on-arrival: labour_minister_party = ds_name if ds_allies; labour_minister_party = ldr_name if centre_left_coalition; labour_minister_party = "PSRI" if left_wing_coalition; labour_minister_party = "PPI" if socialist_catholic_coalition; labour_minister_party = "DS" if not ds_allies and not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 5;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_interior
-title: Drop the Interior Ministry.
-view-if: interior_minister_party = "PSI"
-on-arrival: interior_minister_party = ldr_name if centre_left_coalition; interior_minister_party = "PSRI" if left_wing_coalition; interior_minister_party = "PPI" if socialist_catholic_coalition; interior_minister_party = ldr_name if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_finance
-title: Drop the Finance Ministry.
-view-if: finance_minister_party = "PSI"
-on-arrival: finance_minister_party = ds_name if ds_allies; finance_minister_party = ldr_name if centre_left_coalition; finance_minister_party = "PSRI" if left_wing_coalition; finance_minister_party = "PPI" if socialist_catholic_coalition; finance_minister_party = "DS" if not ds_allies and not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_treasury
-title: Drop the Treasury Ministry.
-view-if: treasury_minister_party = "PSI"
-on-arrival: treasury_minister_party = ds_name if ds_allies; treasury_minister_party = ldr_name if centre_left_coalition; treasury_minister_party = "PSRI" if left_wing_coalition; treasury_minister_party = "PPI" if socialist_catholic_coalition; treasury_minister_party = "DS" if not ds_allies and not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_justice
-title: Drop the Justice Ministry.
-view-if: justice_minister_party = "PSI"
-on-arrival: justice_minister_party = ldr_name if centre_left_coalition; justice_minister_party = "PSRI" if left_wing_coalition; justice_minister_party = "PPI" if socialist_catholic_coalition; justice_minister_party = "PPI" if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_public_works
-title: Drop the Public Works Ministry.
-view-if: public_works_minister_party = "PSI"
-on-arrival: public_works_minister_party = ldr_name if centre_left_coalition; public_works_minister_party = "PSRI" if left_wing_coalition; public_works_minister_party = "PPI" if socialist_catholic_coalition; public_works_minister_party = "PPI" if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_public_education
-title: Drop the Public Education Ministry.
-view-if: public_education_minister_party = "PSI"
-on-arrival: public_education_minister_party = ldr_name if not left_wing_coalition or not socialist_catholic_coalition; public_education_minister_party = "PSRI" if left_wing_coalition; public_education_minister_party = "PPI" if socialist_catholic_coalition; leverage += 5;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_foreign
-title: Drop the Foreign Ministry.
-view-if: foreign_minister_party = "PSI"
-on-arrival: foreign_minister_party = "PSRI" if not centre_left_coalition or not socialist_catholic_coalition; foreign_minister_party = ldr_name if centre_left_coalition; foreign_minister_party = "PPI" if socialist_catholic_coalition; leverage += 10;
-tags: drop_mins_1919
-go-to: ministries
-
-@drop_agriculture
-title: Drop the Agriculture Ministry.
-view-if: agriculture_minister_party = "PSI"
-on-arrival: agriculture_minister_party = ds_name if ds_allies; agriculture_minister_party = ldr_name if centre_left_coalition; agriculture_minister_party = "PSRI" if left_wing_coalition; agriculture_minister_party = "PPI" if socialist_catholic_coalition; leverage += 5;
-tags: drop_mins_1919
-go-to: ministries
-
