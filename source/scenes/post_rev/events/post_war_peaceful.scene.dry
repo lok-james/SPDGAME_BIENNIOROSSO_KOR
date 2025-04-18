@@ -136,7 +136,7 @@ go-to: peaceful_party
 The left-wing of the party is understandably outraged by our willingness to betray the parties on the left, as many leave the party and call on other members to leave as well. More noticably, we see a drop in Red Guard membership. 
 
 @peaceful_elections
-on-arrival: peaceful_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_in_government = 0; in_popular_front = 0; in_left_front = 0; chancellor = "Brüning"; chancellor_party = "Z "; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; coalition_dissent = 0; kpd_coalitipn_dissent = 0; pro_republic -= 5; old_middle_spd -= 3; new_middle_spd -= 2; workers_spd -= 3 if pro_republic < 50; workers_spd -= 4 if pro_republic < 40; old_middle_nsdap += 4 if pro_republic < 50; new_middle_nsdap += 3 if pro_republic < 50
+on-arrival: peaceful_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 go-to: peaceful_menu
 max-visits: 1
 
