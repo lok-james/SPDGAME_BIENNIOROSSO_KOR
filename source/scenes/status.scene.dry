@@ -225,7 +225,7 @@ Streetfighting: [+ violent_prevalence : violence +]
 
 [? if republican_terror: ACB Attack Likelihood : [+ republican_bomb_timer : warnings +] ?]
 
-[? if fascist_terror : {!<span class="tooltip-text" title="The new Fasci are a radical paramilitary group asscoiated with the former PNF..">Fasci</span>!} ]
+[? if fascist_terror : {!<span class="tooltip-text" title="The new Fasci are a radical paramilitary group asscoiated with the former PNF..">Fasci</span>!} ?]
 
 [? if fascist_terror: FdC Attack Likelihood : [+ fascist_bomb_timer : warnings +] ?]
 

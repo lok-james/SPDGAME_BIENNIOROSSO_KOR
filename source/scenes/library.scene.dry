@@ -18,6 +18,7 @@ Herein contains relevant information about the government and politics of the It
 - @paramilitaries: Paramilitary groups
 - @factions: Internal factions
 - @figures: Figures and charts
+- @figures_rev: Figures and charts
 - @backSpecialScene: Exit library.
 
 @government
@@ -562,7 +563,7 @@ data.push({
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
 # TODO: maybe add textual histories too? some accessibility stuff as well...
 
-@figures
+@figures_rev
 title: Figures and Charts
 go-to: menu
 view-if: violent_revolution

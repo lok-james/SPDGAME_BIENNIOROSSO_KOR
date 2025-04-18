@@ -51,7 +51,7 @@ on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ul_relation +=
 
 We continue improving our relations with our former allies in the Entente. [? if centre_left_coalition : Our coalition partners are pleased at our continued alignment. ?]
 
-@aid_soviet_union
+@aid_entente
 subtitle: -1 Budget - We will provide support to the Entente. [? if liberal_aid_accepted : Providing aid to the Russian SFSR would violate coalition agreements! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
 view-if: violent_revolution
 choose-if: not national_economic_recovery or budget > 0

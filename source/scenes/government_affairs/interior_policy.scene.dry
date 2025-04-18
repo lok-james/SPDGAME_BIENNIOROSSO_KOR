@@ -46,7 +46,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5 or (liberal_crackdown_accepted and not interior_minister_party = "PSI"); crackdown_far_right_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
 
 @crackdown_far_right_success
-on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; fascist_bomb_timer += 6 ard_strength -= 5; fdc_strength -= 7; abl_strength -= 3; liberal_crackdown_complete = 1 if crackdown_far_left > 0; democratisation += 1; nationalist_sentiment -= 3; violent_prevalence -= 0.01
+on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; fascist_bomb_timer += 6; ard_strength -= 5; fdc_strength -= 7; abl_strength -= 3; liberal_crackdown_complete = 1 if crackdown_far_left > 0; democratisation += 1; nationalist_sentiment -= 3; violent_prevalence -= 0.01
 
 A number of coordinated raids and arrests have slightly paralysed the far-right paramilitaries.
 
