@@ -1,10 +1,10 @@
-title: Paramilitary Coup!
+title: [? if fascist_coup_progress >= 7 : Fasci Coup! ?] [? if republican_coup_progress >= 5 : Anti-Communist Brigade Coup! ?] [? if communist_coup_progress >= 7 : New Red Guard Coup! ?]
 subtitle: The paramilitaries have spiralled out of control.
 tags: event
-view-if: fascist_coup_progress >= 5 or republican_coup_progress >= 5 or communist_coup_progress >= 7
+view-if: fascist_coup_progress >= 7 or republican_coup_progress >= 5 or communist_coup_progress >= 7
 max-visits: 1
 
-= Paramilitary Coup!
+= [? if fascist_coup_progress >= 7 : Fasci Coup! ?] [? if republican_coup_progress >= 5 : Anti-Communist Brigade Coup! ?] [? if communist_coup_progress >= 7 : New Red Guard Coup! ?]
 
 Protests have been growing louder and louder across Italy. In cities, farms, factories, people are calling for your resignation. For the fall of the state it once desperately looked up to in hope, the same state that failed them. The state unable to prevent tragedy after tragedy from occurring. 
 
