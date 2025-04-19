@@ -6,7 +6,7 @@ Q.game_over = true;
 // Achievements:
 
 // civil war
-if (Q.civil_war_seen == 0 && Q.rome_civil_war == 0) {
+if (Q.civil_war_seen != 1 && Q.rome_civil_war != 1) {
     if (Q.difficulty == -1) {
         this.achieve('stella_rossa');
     }
