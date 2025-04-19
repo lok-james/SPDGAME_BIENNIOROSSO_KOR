@@ -58,7 +58,7 @@ We have increased welfare spending on women and children. [? if welfare >= 1 and
 @liberalize
 max-visits: 1
 subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?] [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
-go-to: liberalize_fail if left_wing_coalition_r < 50; liberalize_success if left_wing_coalition_r >= 50
+go-to: liberalize_fail if left_wing_coalition_r < 50 and not violent_revolution; liberalize_success if left_wing_coalition_r >= 50 or violent_revolution
 
 @liberalize_fail
 on-arrival: ppi_relation -= 4; coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; catholic_psi -= 5 if not in_unstable_coalition; catholic_clc -= 5 if centre_left_coalition; catholic_scc -= 5 if socialist_catholic_coalition; ppi_moderates += 1 if ppi_right < ppi_left; ppi_right += 1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
@@ -75,7 +75,7 @@ With the support of the left including the PSI and PSRI, we have successfully pa
 @suffrage
 max-visits: 1
 subtitle: [? if suffrage_support < 50 : This is unlikely to succeed; we do not have majority support. ?]
-go-to: suffrage_fail if suffrage_support < 50; suffrage_success if suffrage_support >= 50
+go-to: suffrage_fail if suffrage_support < 50 and not violent_revolution; suffrage_success if suffrage_support >= 50 or violent_revolution
 
 @suffrage_fail
 on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ppi_left += 1; ldr_right += 0.6;

@@ -712,7 +712,7 @@ if (Q.benevolence) {
 
 {!<tr><td><div class="box" style='background-color:#FF6961; outline: 2px; outline-style: solid;'> </div>!} Reformists: {!</td><td>!} [+ reformist_r +]% {!</td></tr>!} 
 
-[? if (opposition or benevolence) : {!<tr><td>!} **Constitutional Opposition** {!</td><td>!} **[+ opposition_r +]%** {!</td><td>!} N/A {!</td></tr>!} ?]
+[? if (opposition or benevolence) : {!<tr><td>!} **Constitutional Opposition** {!</td><td>!} **[+ opposition_r +]%** {!</td></tr>!} ?]
 
 [? if (opposition or benevolence) and pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35; outline: 2px; outline-style: solid;'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
 

@@ -59,7 +59,7 @@ unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: coalition_dissent += 1 if in_unstable_coalition; budget -= 1; entente_relation += 2; ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation)); foreign_invasion_time += 12 
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if in_unstable_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
+We are able to send aid to the Entente via our diplomatic channels, and they thank us for the aid, hopefully delaying any plans regarding us as well. [? if in_unstable_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
 
 [? if ldr_promise_failed : Unfortunately, our decision to send aid has violated our agreement with the liberals, who have already requested a meeting with us. ?]
 
@@ -70,7 +70,7 @@ We continue improving our relations with our former ally in the war of the Unite
 
 @negotiate_us
 subtitle: Debt negotiation, especially with the United States, will be a long affair.
-choose-if: american_relation >= 2
+choose-if: (american_relation >= 2 and not violent_revolution) or (american_relation >= 3)
 view-if: in_default = 0 and global_economic_recovery and american_debts > 0
 unavailable-subtitle: Our relations with the United States are too poor to attempt negotiations.
 on-arrival: american_relation -= 2; american_debts -= 1;
@@ -79,7 +79,7 @@ We continue negotiating the terms of the debts we have accumulated to the United
 
 @negotiate_uk
 subtitle: Debt negotiation will be a long affair.
-choose-if: entente_relation >= 2
+choose-if: (entente_relation >= 2 and not violent_revolution) or (entente_relation >= 3)
 view-if: in_default = 0 and global_economic_recovery and uk_debts > 0
 unavailable-subtitle: Our relations with the Entente are too poor to attempt negotiations.
 on-arrival: entente_relation -= 2; uk_debts -= 1;

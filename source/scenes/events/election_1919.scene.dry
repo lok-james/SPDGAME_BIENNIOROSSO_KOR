@@ -854,7 +854,7 @@ go-to: coalition_menu
 
 [? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} Liberal List: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not ul_in_bn and (ul_party or (ul_list and not view_full)) and not pnf_in_government or not anti_fas_ul : {!<tr><td>!} -Italian Liberal Party {!</td></tr>!} ?]
+[? if if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td>!} -Italian Liberal Party {!</td></tr>!} ?]
 
 [? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} National Bloc: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td><td>!} [+ bn_seating_disp +]% {!</td></tr>!} ?]
 

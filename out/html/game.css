@@ -586,6 +586,26 @@ table {
   stroke-width: 1.5px;
 }
 
+.seat.communist {
+  fill: #8B0000;
+}
+
+.seat.maximalist {
+  fill: #DC143C;
+}
+
+.seat.labour {
+  fill: #B22222;
+}
+
+.seat.syndicalist {
+  fill: #2F2F2F;
+}
+
+.seat.reformist {
+  fill: #FF6961;
+}
+
 .tooltip-text {
     text-decoration: underline;
     text-decoration-style: dotted;

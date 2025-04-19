@@ -589,7 +589,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
             'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
             'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers', 'streetfighting',
-            'colonial_policy'];
+            'colonial_policy', 'paramilitary_policy'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
