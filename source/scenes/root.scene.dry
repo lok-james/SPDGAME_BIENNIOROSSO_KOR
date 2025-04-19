@@ -671,6 +671,7 @@ Q.colonial_policy_timer = 0;
 Q.mussolini_dies = 0;
 Q.royal_coup = 0;
 Q.friendly_king = 0;
+Q.participating = 0;
 
 // demands
 Q.class1_num = 0;
