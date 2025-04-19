@@ -35,6 +35,6 @@ go-to: education_policy
 title: Shuffle Cabinet 
 subtitle: Perhaps it is time we renegotiate the terms of the coalition with our partners.
 choose-if: advisor_action_timer = 0 and (centre_left_coalition or socialist_catholic_coalition or left_wing_coalition) and coalition_dissent < 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not centre_left_coalition or socialist_catholic_coalition or left_wing_coalition : The PSI is not currently in a coalition. ?][? if coalition_dissent => 3 : Coalition dissent is far too high for us to negotiate with our partners. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not centre_left_coalition or socialist_catholic_coalition or left_wing_coalition : The PSI is not currently in a coalition. ?][? if coalition_dissent >= 3 : Coalition dissent is far too high for us to negotiate with our partners. ?]
 on-arrival: advisor_action_timer = 6; shuffle_cabinet_timer -= 5; last_advisor_action = 1
 go-to: shuffle_cabinet
