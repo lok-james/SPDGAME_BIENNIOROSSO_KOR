@@ -24,7 +24,7 @@ Though our end goal is to achieve a soviet state like the Bolsheviks in Russia, 
 subtitle: -1 Paramilitary Budget
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1)
-on-arrival: weaponry_rg += 1; para_resources -= 1; rg_militancy += 0.05*(1-dissent);
+on-arrival: weaponry_rg += 1; para_resources -= 1; rg_militancy += 0.07*(1-dissent);
 max-visits: 3
 
 We continue arming the Red Guards, turning them into a true fighting force.
@@ -33,7 +33,7 @@ We continue arming the Red Guards, turning them into a true fighting force.
 subtitle: -1 Paramilitary Budget
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1)
-on-arrival: loyalty_rg += 1; para_resources -= 1; army_loyalty += 0.03*(1-dissent); interior_police_loyalty += 0.04*(1-dissent); socialist_sentiment += 1*(1-dissent)
+on-arrival: loyalty_rg += 1; para_resources -= 1; army_loyalty += 0.032*(1-dissent); interior_police_loyalty += 0.045*(1-dissent); socialist_sentiment += 1*(1-dissent)
 max-visits: 3
 
 Via some...unconventional means, we are able to sway some of the Regio Esercito and Carabinieri to our side.
@@ -42,7 +42,7 @@ Via some...unconventional means, we are able to sway some of the Regio Esercito 
 subtitle: -1 Paramilitary Budget
 choose-if: para_resources > 0
 unavailable-subtitle: Not enough paramilitary resources. (Need 1)
-on-arrival: sabotage_rg += 1; para_resources -= 1; fdc_strength -= 14*(1-dissent); abl_strength -= 14*(1-dissent); ard_strength -= 14*(1-dissent); 
+on-arrival: sabotage_rg += 1; para_resources -= 1; fdc_strength -= 15*(1-dissent); abl_strength -= 15*(1-dissent); ard_strength -= 15*(1-dissent); 
 max-visits: 3
 
 Through some carefully placed information and contacts, the Carabinieri 'discover' far-right paramilitary bases, raiding them and arresting their forces.
@@ -50,7 +50,7 @@ Through some carefully placed information and contacts, the Carabinieri 'discove
 @rev_finish
 choose-if: weaponry_rg == 3 and loyalty_rg == 3 and sabotage_rg == 3
 view-if: preparation_done = 0
-on-arrival: preparation_done = 1; interior_police_loyalty += 0.2; army_loyalty += 0.2; rg_militancy += 0.1; revolutionary_fervour += 7; revolutionary_exhaustion += 0.01 if not_participating
+on-arrival: preparation_done = 1; interior_police_loyalty += 0.3; army_loyalty += 0.25; rg_militancy += 0.12; revolutionary_fervour += 7; revolutionary_exhaustion += 0.01 if not_participating
 
 Our preparations seem to have borne fruit, as it seems will be have an advantage if we ever have to utilise our preparations in the near future.
 
