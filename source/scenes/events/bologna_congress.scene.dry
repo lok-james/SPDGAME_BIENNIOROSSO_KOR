@@ -22,14 +22,14 @@ The first thing on the agenda is to decide between a reformist or revolutionary 
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
 choose-if: communist_strength > reformist_strength
 unavailable-subtitle: The bulk of the party is opposed to this.
-on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; party_approach = "Revolutionary";
+on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; party_approach = "Revolutionary"; preparing_rev_active = 1
 go-to: @election_agenda
 
 This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress in protest as the results of the votes is announced.
 
 @maximalist_approach
 subtitle: The party will stay the course of revolution via extraparliamentary ways, but will not fully abandon parliamentary means.
-on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10;
+on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10; preparing_rev_active = 1
 go-to: @election_agenda
 
 The less radical members of the Communists and Reformists accept the compromise, whilst the more radical members criticise this as effective 'appeasement' to keep the party together.
