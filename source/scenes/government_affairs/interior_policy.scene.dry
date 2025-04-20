@@ -57,7 +57,7 @@ Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumo
 
 @crackdown_republican
 view-if: violent_revolution and republican_terror
-go-to: crackdown_republican_success if interior_police_loyalty >= 0.5 crackdown_republican_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
+go-to: crackdown_republican_success if interior_police_loyalty >= 0.5; crackdown_republican_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
 
 @crackdown_republican_success
 on-arrival: republican_bomb_timer += 6 if fascist_terror; 
