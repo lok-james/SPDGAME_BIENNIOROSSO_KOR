@@ -1,5 +1,5 @@
 title: [+ ds_name +] Fractures!
-subtitle: The party's internal machinations have caused it to fall.
+subtitle: The party's internal machinations have caused its collapse.
 new-page: true
 view-if: ds_r > ul_r and ds_r > ldr_r and ds_party and not ds_fractured
 tags: event

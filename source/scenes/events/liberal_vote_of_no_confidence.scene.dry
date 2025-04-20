@@ -127,7 +127,7 @@ if (Q.socialist_catholic_coalition == 1) {
     Q.catholic_pnf += 4; 
 }
 if (Q.centre_left_coalition == 1) {
-    industrialists_ldr -= 4;
+    Q.industrialists_ldr -= 4;
     Q.industrialists_pnf += 4; 
 }
 
@@ -233,7 +233,7 @@ if (Q.socialist_catholic_coalition == 1) {
 }
 Q.industrialists_pnf += 4; 
 if (Q.centre_left_coalition == 1) {
-    industrialists_ldr -= 4;
+    Q.industrialists_ldr -= 4;
 }
 
 if (Q.left_wing_coalition) {

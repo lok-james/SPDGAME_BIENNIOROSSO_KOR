@@ -11,6 +11,7 @@ D'Aragona is a long-serving member of the Italian Socialist Party, founding the 
 
 - @labour_rights_daragona
 - @emergency_fundraising_daragona
+- @end_game
 - @root: Return to main
 
 @labour_rights_daragona
@@ -29,3 +30,9 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: advisor_action_timer = 6; resources += dues;
 
 We have gained +[+ dues +] resources.
+
+@end_game
+view-if: no_content = 1
+subtitle: This will end your game.
+
+- @game_over: Game over.

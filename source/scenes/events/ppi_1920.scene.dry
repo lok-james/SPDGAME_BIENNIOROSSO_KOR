@@ -1,7 +1,7 @@
 title: 1920 Congress of the Partito Popolare Italiano
 subtitle: The PPI elects its Secretary General.
 new-page: true
-view-if: year = 1920 and month = 4 and week = 1
+view-if: year = 1920 and month = 4 and week = 1 and not ppi_banned
 on-arrival: {!
 
 if (Q.socialist_catholic_coalition == 1) {

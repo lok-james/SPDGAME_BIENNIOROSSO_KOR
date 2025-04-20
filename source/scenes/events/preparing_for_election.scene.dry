@@ -49,7 +49,7 @@ We are able to negotiate an form a joint list with the PSRI! This will aid our e
 
 @contact_pll
 view-if: pll_formed
-choose-if: pll_relation >= 40
+choose-if: pll_relation >= 55
 unavailable-subtitle: Our relations with the PLL are too poor for this.
 on-arrival: anti_fas_pll = 1
 go-to: list_menu
@@ -59,7 +59,7 @@ We are able to negotiate an form a joint list with the PLL! This will aid our ef
 
 @contact_pri
 view-if: pri_prominent
-choose-if: pri_relation >= 40
+choose-if: pri_relation >= 45
 unavailable-subtitle: Our relations with the PRI are too poor for this.
 on-arrival: anti_fas_pri = 1
 go-to: list_menu
@@ -68,7 +68,7 @@ max-visits: 1
 We are able to negotiate an form a joint list with the PRI! This will aid our efforts in combatting fascism.
 
 @contact_ppi
-choose-if: ppi_leader == "Sturzo" and ppi_relation >= 55
+choose-if: ppi_leader == "Sturzo" and ppi_relation >= 60
 unavailable-subtitle: Our relations with the PPI are too poor for this.
 on-arrival: anti_fas_ppi = 1
 go-to: list_menu
@@ -77,7 +77,7 @@ max-visits: 1
 We are able to negotiate an form a joint list with the PPI! This will aid our efforts in combatting fascism.
 
 @contact_ds
-choose-if: ds_leader != "Carnazza" and ((ds_relation >= 40 and ds_leader == "Giuffrida") or (ds_relation >= 55 and ds_leader == "Colonna"))
+choose-if: ds_leader != "Carnazza" and ((ds_relation >= 55 and ds_leader == "Giuffrida") or (ds_relation >= 70 and ds_leader == "Colonna"))
 unavailable-subtitle: [? if ds_leader != "Carnazza" : Our relations with the [+ ds_name +] are too poor for this. ?][? if ds_leader == "Carnazza" : The [+ ds_name +] would never form a joint list with us. ?]
 on-arrival: anti_fas_ds = 1
 go-to: list_menu
@@ -86,7 +86,7 @@ max-visits: 1
 We are able to negotiate an form a joint list with the [+ ds_name +]! This will aid our efforts in combatting fascism.
 
 @contact_ldr
-choose-if: ldr_leader == "Nitti" and ldr_relation >= 55
+choose-if: ldr_leader == "Nitti" and ldr_relation >= 65
 unavailable-subtitle: The [+ ldr_name +] would never form a joint list with us.
 on-arrival: anti_fas_ldr = 1
 go-to: list_menu

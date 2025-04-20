@@ -497,6 +497,11 @@ if (Q.abstentionist_psi) {
     Q.vacant_seating_disp = Q.psi_seating_disp;
     Q.psi_seating = 0;
     Q.psi_seating_disp = 0;
+
+    if (Q.vacant_seating_disp >= 35) {
+        Q.revolutionary_fervour += 7;
+        Q.revolutionary_exhaustion -= 0.01;
+    }
 }
 
 // The largest party can only be the PNF or the PSI.
@@ -914,6 +919,8 @@ Anti-Socialist Coalition (PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?]
 [? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in [+ pnf_name +] votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
 
 [? if abstentionist_psi : In accordance with the XVI Congress, all PSI deputies will refuse to take up their seats. ?]
+
+[? if vacant_seating_disp >= 35 : Our strong showing even without taking up seats has reinviograted the party towards revolutionary means. ?]
 
 [? if prime_minister_party == pnf_name : Numerous deputies of the PPI, [+ ul_name +], [+ ds_name +] and [+ ldr_name +] have defected to the PNF. ?]
 

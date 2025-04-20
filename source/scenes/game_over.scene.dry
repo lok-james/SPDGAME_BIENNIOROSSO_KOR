@@ -219,7 +219,6 @@ go-to: eg_menu
 
 @achievements
 title: Achievements
-view-if: achievement_game_completed == 1
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
@@ -271,7 +270,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
 
-[? if game_achievement_resistenza_a_Roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if game_achievement_resistenza_a_roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
 
 [? if game_achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
 
@@ -351,7 +350,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
 
-[? if achievement_resistenza_a_Roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if achievement_resistenza_a_roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
 
 [? if achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
 
@@ -431,7 +430,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
 
-[? if not achievement_resistenza_a_Roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if not achievement_resistenza_a_roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
 
 [? if not achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
 

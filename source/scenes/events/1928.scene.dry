@@ -12,4 +12,11 @@ We have come a long way from 1919. The March on Rome, the relentless strife of s
 
 Only time will tell how we go from here.
 
+- @one_more_turn: Just one more turn...
 - @game_over: Game over.
+
+@one_more_turn
+subtitle: There is no content past this point.
+on-arrival: no_content = 1
+
+Very well. D'Aragona will have an 'End Game' option now when you're done. 
