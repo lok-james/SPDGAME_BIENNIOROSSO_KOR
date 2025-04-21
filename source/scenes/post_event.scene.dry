@@ -643,6 +643,7 @@ if (Q.week_actions >= 1) {
             Q.workers_psi -= 5/12;
 
             Q.nationalist_sentiment += 12/12;
+            Q.violent_prevalence += 0.1/12;
 
             if (Q.psi_in_government == 0) {
                 Q.economic_growth += 0.3/12;
@@ -686,6 +687,7 @@ if (Q.week_actions >= 1) {
             Q.middle_class_other -= 3/12;
 
             Q.nationalist_sentiment += 14/12;
+            Q.violent_prevalence += 0.1/12;
 
             if (Q.psi_in_government == 0) {
                 Q.economic_growth += 0.2/12;
@@ -771,6 +773,8 @@ if (Q.week_actions >= 1) {
                 Q.adp_militancy -= 0.1/12;
                 Q.abl_militancy -= 0.1/12;
                 Q.fdc_militancy -= 0.1/12;
+
+                Q.violent_prevalence -= 0.1/12;
 
             }
             if (Q.unemployment > 15) {
