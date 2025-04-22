@@ -171,7 +171,7 @@ Q.soviet_relation += 3;
 Q.entente_relation -= 3;
 
 Q.army_loyalty = 0.8;
-Q.interior_budget = 2;
+Q.interior_budget = 4;
 Q.yearly_interior_gain = 1;
 !}
 max-visits: 1

@@ -177,6 +177,9 @@ if (Q.adp_strength) {
 if (Q.abl_strength) {
     Q.abl_strength_2 = Math.round(Q.abl_strength);
 }
+Q.communist_bomb_display = Q.time - Q.communist_bomb_timer;
+Q.republican_bomb_display = Q.time - Q.republican_bomb_timer;
+Q.fascist_bomb_display = Q.time - Q.fascist_bomb_timer
 !}
 
 [? if violent_revolution: Foreign intervention Likelihood : [+ foreign_invasion_time : warnings +] ?]
@@ -219,15 +222,15 @@ Streetfighting: [+ violent_prevalence : violence +]
 
 [? if communist_terror : {!<span class="tooltip-text" title="The new Red Guards are a radical paramilitary group asscoiated with the PCd'I.">New Red Guards</span>!} ?]
 
-[? if communist_terror: NRG Attack Likelihood : [+ communist_bomb_timer : warnings +] ?]
+[? if communist_terror: NRG Attack Likelihood : [+ communist_bomb_display : warnings +] ?]
 
 [? if republican_terror : {!<span class="tooltip-text" title="The Anti-Communist Brigades are a republican paramilitary group asscoiated with the former liberal parties.">Anti-Communist Brigades</span>!} ?]
 
-[? if republican_terror: ACB Attack Likelihood : [+ republican_bomb_timer : warnings +] ?]
+[? if republican_terror: ACB Attack Likelihood : [+ republican_bomb_display : warnings +] ?]
 
 [? if fascist_terror : {!<span class="tooltip-text" title="The new Fasci are a radical paramilitary group asscoiated with the former PNF..">Fasci</span>!} ?]
 
-[? if fascist_terror: FdC Attack Likelihood : [+ fascist_bomb_timer : warnings +] ?]
+[? if fascist_terror: FdC Attack Likelihood : [+ fascist_bomb_display : warnings +] ?]
 
 = Government Forces
 

@@ -48,7 +48,7 @@ We have increased welfare spending on poorer families with children. [? if child
 
 @child_ban
 max-visits: 1
-subtitle: [? if labour_law_support < 50 : This is unlikely to succeed; we do not have majority support. ?][? if child_welfare < 3 : Enacting a ban without financial aid to poorer families might backfire. ?]
+subtitle: [? if labour_law_support < 50 and not violent_revolution : This is unlikely to succeed; we do not have majority support. ?][? if child_welfare < 3 : Enacting a ban without financial aid to poorer families might backfire. ?]
 go-to: child_labour_fail if labour_law_support < 50 and not violent_revolution; child_labour_success if labour_law_support >= 50 or violent_revolution
 
 @child_labour_fail

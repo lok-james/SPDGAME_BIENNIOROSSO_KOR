@@ -365,6 +365,7 @@ subtitle: +2 Budget. Other countries will retaliate by increasing tariffs of the
 choose-if: tariffs <= 5
 on-arrival: {!
 Q.tariffs += 1; 
+Q.budget += 2;
 
 Q.inflation -= 0.4;
 Q.economic_growth -= 0.4;
@@ -490,8 +491,6 @@ view-if: uk_debts_over = 0 or us_debts_over = 0
 In order to finance the war, Italy took out massive war debts and bonds, mainly to our allies of the United Kingdom and United States.
 
 Now that the war has ended, both nations expect debt repayments, but it is abundantly clear we will not be able to support quick full debt repayments, though it might not hurt to pay off our debts slightly to reassure our allies we are committed to repaying them.
-
-Current tariff level: [+ tariffs : taxation +]
 
 - @repay_us_debts
 - @repay_uk_debts

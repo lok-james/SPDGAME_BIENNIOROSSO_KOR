@@ -64,7 +64,7 @@ Q.party_demands_timer = 6;
 
 Q.fascists_adapt = Q.time + 4;
 Q.yearly_interior_gain = 1;
-Q.interior_budget = 2;
+Q.interior_budget = 4;
 !}
 max-visits: 1
 go-to: peaceful_menu
@@ -141,6 +141,8 @@ go-to: peaceful_menu
 max-visits: 1
 
 In an agreed upon measure, elections have been scheduled following the end of the National Congress in order to elect a new set of deputies, and if needed, replace deputies from parties that have now been outlawed.
+
+The Chamber of Deputies has been dissolved, and we have resigned our positions in government.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 

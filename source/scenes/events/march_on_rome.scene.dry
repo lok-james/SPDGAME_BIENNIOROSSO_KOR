@@ -43,8 +43,6 @@ go-to: rome_menu
 max-visits: 1
 subtitle: The army themselves seem to be willing to cooperate, now we have to convince the King...
 view-if: psi_in_government
-choose-if: army_loyalty >= 0.71 
-unavailable-subtitle: [? if army_loyalty < 0.71 : Army loyalty is too low, they refuse to mobilise. ?]
 on-arrival: army_convinced = 1; rome_army_visited = 1
 go-to: rome_army_checks
 
@@ -75,8 +73,6 @@ The King refuses to authorise the order, but a number of our loyal forces within
 max-visits: 1
 subtitle: The Carabinieri themselves seem to be willing to cooperate, now we have to convince the King...
 view-if: psi_in_government
-choose-if: interior_police_loyalty >= 0.54
-unavailable-subtitle: [? if interior_police_loyalty < 0.71 : Carabinieri loyalty is too low. ?]
 on-arrival: police_convinced = 1; rome_police_visited = 1
 go-to: rome_police_checks
 

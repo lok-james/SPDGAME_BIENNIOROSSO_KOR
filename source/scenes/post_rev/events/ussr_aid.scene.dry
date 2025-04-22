@@ -2,7 +2,7 @@ title: USSR offers aid
 subtitle: The Soviets are willing to help us economically.
 tags: event
 view-if: violent_revolution = 1 and soviet_aid_timer <= time
-on-arrival: soviet_aid_timer = time + 12
+on-arrival: soviet_aid_timer = time + 16
 
 = Soviet Ambassador offers Financial Aid
 

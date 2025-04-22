@@ -20,6 +20,7 @@ Current Budget allocated is [+ yearly_interior_gain +]. Current Budget remaining
 - @investigate_fascists: Investigate the far-right *Fasci*.
 - @investigate_republican: Investigate the republican *Anti-Communist Brigades*
 - @investigate_communist: Investigate the new communist *Red Guards*
+- @root: Do nothing for now. 
 
 @increase_budget
 on-arrival: yearly_interior_gain += 1;
