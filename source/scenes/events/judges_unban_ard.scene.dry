@@ -2,7 +2,6 @@ title: Arditismo unbanned
 subtitle: The judges have re-legalized the Arditismo.
 new-page: true
 view-if: ard_banned == 1 and ard_ban_timer == 0 and (judicial_reform < 2 or pnf_in_government) and not national_congress_seen and not pnf_banned and not march_failed
-new-page: true
 on-arrival: ard_banned = 0; ard_strength += 20; ard_militancy += 0.04; nationalist_sentiment += 6;
 tags: event
 
