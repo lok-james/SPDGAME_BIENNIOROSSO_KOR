@@ -130,7 +130,7 @@ Q.syndicalist_seating_disp = 0;
 
 Q.fascists_adapt = parseFloat(Q.time + 4);
 Q.soviet_aid_timer = parseFloat(Q.time + 8);
-Q.foreign_invasion_time = parseFloat(Q.time + 24);
+Q.foreign_invasion_time = parseFloat(Q.time + 36);
 
 if (Q.pri_prominent != 1) {
     Q.workers_pri += Q.workers_other * 0.6;

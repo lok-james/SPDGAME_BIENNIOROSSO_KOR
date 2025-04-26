@@ -16,14 +16,14 @@ The former Regio Esercito, now merely called the Esercito Italiano, is a deeply 
 - @root: Keep the Esercito Italiano as is.
 
 @increase_size
-on-arrival: foreign_invasion_time += 12; budget -= 1; army_strength += 75; army_loyalty += 0.02; unemployment -= 0.2;
+on-arrival: foreign_invasion_time += 12; budget -= 1; army_strength += 60; army_loyalty += 0.02; unemployment -= 0.2;
 choose-if: budget >= 1 or not national_economic_recovery
 subtitle: -1 Budget - This will help deter any foreign threats.
 
 We bolster the funding of the Army further, developing our forces to adequately ensure we are able to defend ourselves. This also, naturally, deters any foreign invasions.
 
 @decrease_size
-on-arrival: foreign_invasion_time -= 6; budget += 1; army_strength -= 75; army_loyalty -= 0.02; unemployment += 0.2;
+on-arrival: foreign_invasion_time -= 6; budget += 1; army_strength -= 60; army_loyalty -= 0.02; unemployment += 0.2;
 choose-if: army_strength >= 75
 unavailable-subtitle: There is not much army left to defund.
 subtitle: +1 Budget - This will free up funds needed elsewhere.
