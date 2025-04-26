@@ -61,19 +61,19 @@ unavailable-subtitle: Not enough Interior Budget.
 We begin investigating the communist paramilitaries, raiding their bases, arresting their forces and are able to substantially delay their plans.
 
 @eliminate_fascists
-view-if: fascists_investigated >= 3
+view-if: fascists_investigated >= 5 and fascist_terror
 on-arrival: fascist_terror = 0; fascist_bomb_timer += 1000
 
 We launch a final raid on the fascist paramilitaries, rounding up their leaders and finally getting rid of them once and for all.
 
 @eliminate_republican
-view-if: republican_investigated >= 3
+view-if: republican_investigated >= 5 and republican_terror
 on-arrival: republican_terror = 0; republican_bomb_timer += 1000
 
 We launch a final raid on the *Anti-Communist Brigade*, rounding up their leaders and finally getting rid of them once and for all.
 
 @eliminate_communist
-view-if: communist_investigated >= 3
+view-if: communist_investigated >= 5 and communist_terror
 on-arrival: communist_terror = 0; communist_bomb_timer += 1000
 
 We launch a final raid on the new *Red Guards*, rounding up their leaders and finally getting rid of them once and for all.
