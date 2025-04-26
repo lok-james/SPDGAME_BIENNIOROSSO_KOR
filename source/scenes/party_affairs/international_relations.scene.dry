@@ -34,7 +34,7 @@ The socialists of France and Britain can influence their governments to be frien
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04*revolutionary_exhaustion; resources -= 1;
+on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04*revolutionary_exhaustion; resources -= 1; pcdi_bordiga += 1;
 
 Germany is in turmoil. With memories of the Spartacist Uprising still fresh, and the Spartacus League higher command under threat from right-wing forces, we can offer them refuge, welcoming them as exiles to Italy and training our forces with their experience in the Spartakusbund.
 
@@ -42,7 +42,7 @@ Germany is in turmoil. With memories of the Spartacist Uprising still fresh, and
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if rcw_over;
+on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if rcw_over; pcdi_gramsci += 1;
 
 Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
 

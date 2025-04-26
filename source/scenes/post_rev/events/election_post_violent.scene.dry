@@ -395,7 +395,9 @@ go-to: coalition_menu
 
 {!</table>!}
 
-There is, naturally, one formable government.
+[? if psi_seating_disp >= 50 : There is, naturally, one formable government. ?]
+
+[? if psi_seating_disp < 50 : There is, naturally, on- Oh? Interesting. ?]
 
 @coalition_menu
 on-arrival: {!
@@ -412,10 +414,11 @@ Q.anti_socialist_coalition = 0;
 !}
 
 - @psi_majority
+- @left_wing_coalition
 
 @psi_majority
-title: Left-wing Majority
-subtitle: Left-wing Bloc: 100.0%
+title: PSI Majority
+subtitle: PSI Majority: [+ psi_seating_disp +]
 on-arrival: {!
 
 Q.prime_minister_party = "PSI";
@@ -496,3 +499,55 @@ subtitle: Giovanni Bacci will lead as a compromise Secretary-General and Prime M
 on-arrival: prime_minister = "Bacci"
 
 Giovanni Bacci is elected as Secretary-General of the PSI, and Prime Minister of Italy.
+
+@left_wing_coalition
+title: Left-wing Coalition
+subtitle: A coalition of all parties; from communist to reformist: 100%
+on-arrival: {!
+
+Q.prime_minister_party = "PSI";
+
+Q.psi_in_government = 1; 
+Q.psi_majority = 1; 
+
+Q.foreign_minister_party = "PSI"; 
+Q.foreign_minister = "Matteotti";
+Q.interior_minister_party = "PSI";
+Q.interior_minister = "Turati"; 
+Q.justice_minister_party = "PSI";
+Q.justice_minister = "Treves";
+Q.labour_minister_party = "PSI"; 
+Q.labour_minister = "Rigola";
+Q.finance_minister_party = "PSI";
+Q.finance_minister = "Lazzari";
+Q.treasury_minister_party = "PSI";
+Q.treasury_minister = "Modigliani";
+Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister = "Graziadei"; 
+Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister = "Togliatti";
+Q.public_works_minister_party = "PSI";
+Q.public_works_minister = "Vella";
+
+Q.bordiga_support = parseFloat(Q.communist_seating_disp) + parseFloat(Q.maximalist_seating_disp) + parseFloat(Q.pcdi_seating_disp);
+Q.serrati_support = parseFloat(Q.communist_seating_disp) + parseFloat(Q.maximalist_seating_disp) + parseFloat(Q.labour_seating_disp);
+Q.turati_support = parseFloat(Q.reformist_seating_disp) + parseFloat(Q.labour_seating_disp) + parseFloat(Q.psu_seating_disp) + parseFloat(Q.pri_seating_disp);
+Q.daragona_support = parseFloat(Q.labour_seating_disp) + parseFloat(Q.reformist_seating_disp) + parseFloat(Q.psu_seating_disp) + parseFloat(Q.pri_seating_disp);
+Q.chisea_support = parseFloat(Q.pri_seating_disp) + parseFloat(Q.reformist_seating_disp) + parseFloat(Q.psu_seating_disp) + parseFloat(Q.psri_seating_disp);
+
+!}
+
+The Left-wing coalition will continue its rule over Italy. The Ministries are shared collaboratively within the coalition.
+
+- @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
+- @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
+- @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.
+- @turati: Filippo Turati is elected Secretary-General and Prime Minister.
+- @chisea: Eugenio Chisea of the Italian Republican Party is elected Prime Minister!
+- @bacci: No leader is able to secure a majority!
+
+@chisea
+view-if: benevolence
+choose-if: chisea_support >= 50
+unavailable-subtitle: The Republicans and Reformists do not have have enough votes.
+on-arrival: prime_minister = "Chisea"; prime_minister_party = "PRI"

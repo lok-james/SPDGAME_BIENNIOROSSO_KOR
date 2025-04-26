@@ -14,6 +14,7 @@ What should we do?
 - @refuse_aid: Politely refuse aid temporarily.
 
 @accept_aid
+subtitle: +1 Budget
 on-arrival: soviet_influence += 1; economic_growth += 1.8; budget += 2;
 
 We accept the offer of aid, as a substantial financial package is sent our way that we are able to utilise to resolve the gaps the withdrawal of foreign funding left.

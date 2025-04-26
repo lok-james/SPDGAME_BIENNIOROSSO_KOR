@@ -288,7 +288,7 @@ view-if: n_advisors < 3
 
 @add_serrati
 title: Giacinto Menotti Serrati
-subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Inter-Party Relationships, Implementing our Program ?]
+subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Party Discipline, Implementing our Program ?]
 is-card: true
 card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: maximalist_advisor
@@ -312,7 +312,7 @@ Constantinto Lazzari is now an advisor.
 
 @add_ferri
 title: Enrico Ferri
-subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Ideology, Media ?]
+subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Editorial Line, Media ?]
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
@@ -412,7 +412,7 @@ Giacomo Matteotti is now an advisor.
 
 @add_tasca
 title: Angelo Tasca
-subtitle: Angelo Tasca is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Inter-Party Relationships, Paramilitary Funding ?]
+subtitle: Angelo Tasca is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Implementing the Maximum Plan, Paramilitary Funding ?]
 is-card: true
 card-image: img/portraits/AngeloTasca.jpg
 view-if: tasca_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -448,7 +448,7 @@ Palmiro Togliatti is now an advisor.
 
 @add_gramsci
 title: Antonio Gramsci
-subtitle: Antonio Gramsci leads the *L'Ordine Nuovo* bloc, advocating for differing ideals than the rest of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Party Organisations, Ideology ?]
+subtitle: Antonio Gramsci leads the *L'Ordine Nuovo* bloc, advocating for differing ideals than the rest of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Party Organisations, Organising Workers ?]
 is-card: true
 card-image: img/portraits/AntonioGramsci.png
 view-if: gramsci_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -460,7 +460,7 @@ Antonio Gramsci is now an advisor.
 
 @add_bordiga
 title: Amadeo Bordiga
-subtitle: Amadeo Bordiga leads the Left-wing faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Revolutionary Planning, Choosing our Targets ?]
+subtitle: Amadeo Bordiga leads the Left-wing faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Revolutionary Planning, Rural Campaign ?]
 is-card: true
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -487,7 +487,7 @@ Claudio Treves is now an advisor.
 
 @add_rigola
 title: Rinaldo Rigola
-subtitle: Rinaldo Rigola was the former Secretary of the Italian CGIL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Fiscal Policy, Veterans Welfare ?]
+subtitle: Rinaldo Rigola was the former Secretary of the Italian CGIL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Implementing the Minimum Plan, Veterans Welfare ?]
 is-card: true
 card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor

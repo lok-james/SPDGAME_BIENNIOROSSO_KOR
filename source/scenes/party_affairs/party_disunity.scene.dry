@@ -57,14 +57,14 @@ We have promised to take more policy suggestions from the maximalists. Both the 
 @concessions_left
 title: Give concessions to the left.
 view-if: communist_dissent > 30
-on-arrival: communist_dissent -= 7; reformist_dissent += 5
+on-arrival: communist_dissent -= 7; reformist_dissent += 5; pcdi_bordiga += 1;
 
-We have promised that we will listen to the left wing of the party. Of course, this leads to increased dissent from the centrists.
+We have promised that we will listen to the left wing of the party. Of course, this leads to increased dissent from the maximalists.
 
 @concessions_labour
 title: Give concessions to labour.
 view-if: labour_dissent > 30
-on-arrival: labour_dissent -= 7; maximalist_dissent += 5
+on-arrival: labour_dissent -= 7; maximalist_dissent += 5; pcdi_bordiga += 1;
 
 The trade unions will be granted more influence in party decision making. This upsets the maximalists, who would prefer to centralize political decision making within the party.
 

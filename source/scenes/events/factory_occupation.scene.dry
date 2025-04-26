@@ -36,7 +36,7 @@ subtitle: -1 Paramilitary Resources - The Red Guards will defend the Councils fr
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: para_resources >= 1
 unavailable-subtitle: [? if para_resources < 1 : Not enough paramilitary resources. (Need 1) ?]
-on-arrival: para_resources -= 1; communist_dissent -= 7; labour_dissent -= 7; workers_psi += 2; work_councils += 1; middle_class_psi -= 3; ul_relation -= 5; ldr_relation -= 5; syndicalist_strength += labour_strength/4
+on-arrival: para_resources -= 1; communist_dissent -= 7; labour_dissent -= 7; workers_psi += 2; work_councils += 1; middle_class_psi -= 3; ul_relation -= 5; ldr_relation -= 5; syndicalist_strength += labour_strength/4; pcdi_bordiga += 2;
 
 The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation, though our violent actions aren't welcomed by the other parties.
 
@@ -45,7 +45,7 @@ subtitle: *-1 Party Resources* - The Party will fund the Councils to defend them
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: resources > 0
 unavailable-subtitle: [? if resources < 1 : Not enough party resources. (Need 1) ?]
-on-arrival: workers_psi += 2; resources -= 1; work_councils += 1; syndicalist_strength += labour_strength/4
+on-arrival: workers_psi += 2; resources -= 1; work_councils += 1; syndicalist_strength += labour_strength/4; pcdi_gramsci += 2;
 
 The Councils are able to utilise our aid for their own defence, their faith in our party renewed.
 
@@ -54,6 +54,7 @@ subtitle: Hopefully we can come to an agreement for both sides...
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: psi_in_government
 unavailable-subtitle: [? if not psi_in_government : The PSI are not in government. ?]
+on-arrival: pcdi_bordiga += 1;
 
 Our status both controlling the Councils and in government places us in a unique situation, and we are tasked with negotiating an end to the strike,
 

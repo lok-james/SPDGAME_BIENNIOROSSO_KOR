@@ -1681,10 +1681,12 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1919
 choose-if: leverage >= 10
 view-if: interior_minister_party != "PSI"
-on-arrival: leverage -= 10; interior_minister_party = "PSI"; interior_minister = "Turati"
+on-arrival: leverage -= 10; interior_minister_party = "PSI"; interior_minister = "Turati" if not reformists_defect; interior_minister = "Bacci" if reformists_defect;
 go-to: ministries
 
-Filippo Turati of the PSI has been appointed Interior Minister.
+[? if not reformists_defect : Filippo Turati of the PSI has been appointed Interior Minister. ?]
+
+[? if reformists_defect : Giovanni Bacci of the PSI has been appointed Interior Minister. ?]
 
 @finance
 title: Finance Ministry
@@ -1741,10 +1743,12 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1919
 choose-if: leverage >= 10 
 view-if: public_education_minister_party != "PSI"
-on-arrival: leverage -= 5; public_education_minister_party = "PSI"; public_education_minister = "Togliatti"
+on-arrival: leverage -= 5; public_education_minister_party = "PSI"; public_education_minister = "Togliatti" if not communist_split; public_education_minister = "Zibordi" if communist_split;
 go-to: ministries
 
-Palmiro Togliatti of the PSI has been appointed Public Education Minister.
+[? if not communist_split : Palmiro Togliatti of the PSI has been appointed Public Education Minister. ?]
+
+[? if communist_split : Giovanni Zibordi of the PSI has been appointed Public Education Minister. ?]
 
 @foreign
 title: Foreign Ministry
@@ -1753,10 +1757,12 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1919
 choose-if: leverage >= 10 
 view-if: foreign_minister_party != "PSI"
-on-arrival: leverage -= 10; foreign_minister_party = "PSI"; foreign_minister = "Matteotti"
+on-arrival: leverage -= 10; foreign_minister_party = "PSI"; foreign_minister = "Matteotti" if not reformists_defect; foreign_minister = "Morgari" if reformists_defect;
 go-to: ministries
 
-Giacomo Matteotti of the PSI has been appointed Foreign Minister.
+[? if not reformists_defect : Giacomo Matteotti of the PSI has been appointed Foreign Minister. ?]
+
+[? if reformists_defect : Oddino Morgari of the PSI has been appointed Foreign Minister. ?]
 
 @agriculture
 title: Agricultural Ministry

@@ -495,6 +495,9 @@ Q.ds_left = 0;
 Q.ds_moderates = 3;
 Q.ds_right = 0;
 
+Q.pcdi_bordiga = 0;
+Q.pcdi_gramsci = 0;
+
 // national bloc stuff
 Q.bn_formed = 0;
 Q.ani_in_bn = 0;

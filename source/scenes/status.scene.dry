@@ -179,10 +179,11 @@ if (Q.abl_strength) {
 }
 Q.communist_bomb_display = Q.time - Q.communist_bomb_timer;
 Q.republican_bomb_display = Q.time - Q.republican_bomb_timer;
-Q.fascist_bomb_display = Q.time - Q.fascist_bomb_timer
+Q.fascist_bomb_display = Q.time - Q.fascist_bomb_timer;
+Q.foreign_invasion_display = Q.time - Q.foreign_invasion_time;
 !}
 
-[? if violent_revolution: Foreign intervention Likelihood : [+ foreign_invasion_time : warnings +] ?]
+[? if violent_revolution: Foreign intervention Likelihood : [+ foreign_invasion_display : warnings +] ?]
 
 Streetfighting: [+ violent_prevalence : violence +]
 
@@ -331,7 +332,7 @@ Roman Question: [? if roman_question_answered : Complete ?][? if not roman_quest
 
 Work Councils: [? if work_councils = 0 and councils_empowered = 0: Non-existent ?][? if work_councils >= 1 and councils_empowered = 0: Influential ?][? if councils_empowered = 1 : Empowered ?]
 
-Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? if nationalisation_progress = 1: Minor ?][? if nationalisation_progress = 2: Moderate ?][? if nationalisation_progress >= 3: Major ?]
+Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? if nationalisation_progress = 1: Minor ?][? if nationalisation_progress = 2: Moderate ?][? if nationalisation_progress = 3 or nationalisation_progress = 4: Major ?][? if nationalisation_progress >= 5 : Majority-Seized ?]
 
 = Education
 

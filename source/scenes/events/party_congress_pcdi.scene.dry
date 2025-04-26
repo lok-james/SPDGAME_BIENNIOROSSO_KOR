@@ -1,0 +1,28 @@
+title: [+ year +] PCd'I Party Congress
+subtitle: The PCd'I holds its first Congress.
+new-page: true
+view-if: communist_split and pcdi_congress_time <= time
+tags: event
+
+= [+ year +] [+ ul_name +] Party Congress
+
+The first Party Congress of the PCd'I have begun, following their recent split from the PSI. Bordiga has emerged as temporary leader of the party, pending the new party elections which might result in his resignation.
+
+The two factions within the PCd'I are Amadeo Bordiga, leading the traditional leftist faction within the party and Antonio Gramsci, leading the *L'Ordino Nuovo* faction in Turin. Bordiga advocates for a more centralised position amongst the party, viewing the party as necessary to have power over the workers' party. Gramsci, on the other hand, is more supportive of workers' councils, pushing for a mass movement, and more importantly, *viewed more positively by the Soviet Union.*
+
+- @bordiga_elected: Amadeo Bordiga retains his position as Party Secretary.
+- @gramsci_elected: Antonio Gramsci is able to ascend to the position of Party Secretary.
+
+
+@bordiga_elected
+choose-if: pcdi_bordiga >= pcdi_gramsci
+unavailable-subtitle: Our actions have pushed the party towards the right.
+on-arrival: pcdi_leader = "Bordiga"
+
+Amadeo Bordiga is able to continue his role within the party as Secretary, consolidating his influence over the party for the foreseeable future. Time will only tell what this entails.
+
+@gramsci_elected
+view-if: pcdi_bordiga < pcdi_gramsci
+on-arrival: pcdi_leader = "Gramsci"
+
+Antonio Gramsci successfully pushes his agenda and is elected as Secretary, ousting Bordiga from power. Time will only tell what this entails.

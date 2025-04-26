@@ -11,7 +11,7 @@ Bordiga is one of the prominent figures of the Communist faction of the PSI.
 
 - @bordiga_orders
 - @bordiga_revolution
-- @choosing_our_targets
+- @rural_campaign_bordiga
 - @rev_begin_bordiga
 - @root: Return to main
 
@@ -33,14 +33,14 @@ on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolut
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not_participating = 0 and maximalist_participating = 0 : We have chosen to abandon extraparliamentary means. ?]
 go-to: preparing_revolution
 
-@choosing_our_targets
-title: Choosing Our Targets
-subtitle: We need to choose who we are mainly aiming for.
-choose-if: advisor_action_timer <= 0 
-view-if: not national_congress_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1; 
-go-to: enemies
+@rural_campaign_bordiga
+title: Rural Campaign
+subtitle: Try to campaign among the southern rural populace.
+choose-if: advisor_action_timer == 0 and rural_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
+on-arrival: advisor_action_timer = 6; rural_psi += 5*(1-dissent); 
+
+We have increased our campaigning among farmers and the rural populace, especially amongst the South.
 
 @rev_begin_bordiga
 title: Revolution!

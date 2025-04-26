@@ -10,7 +10,7 @@ face-image: img/ArditidelPopolo.jpg
 
 Reports have been flowing in about a new organisation forming in Rome. The Arditi del Popolo, formed as an anti-fascist militant organisation by former 'Arditi' members has gained significant popularity, attracting a broad popular front from the Communists of the Far-Left to the Republicans of the Centre.
 
-The party is split on how we should react to this new organisation. The reformists advocate for broader cooperation, seeing the group as an ally against fascism and far-right paramilitaries that have been plaguing us, while the Left wing of the party has criticised the groups willingness to cooperate with non-communists in its ranks. [? if pcdi_formed : The PCd'I has officially adopted a non-cooperative stance towards the group, ordering its members to quit the organisation and threatening those who support it with disciplinary action. ?] 
+The party is split on how we should react to this new organisation. The reformists advocate for broader cooperation, seeing the group as an ally against fascism and far-right paramilitaries that have been plaguing us, while the Left wing of the party has criticised the groups willingness to cooperate with non-communists in its ranks. [? if pcdi_formed and pcdi_leader = "Bordiga" : The PCd'I has officially adopted a non-cooperative stance towards the group, ordering its members to quit the organisation and threatening those who support it with disciplinary action. ?] [? if pcdi_formed and pcdi_leader = "Gramsci" : The PCd'I has officially adopted a cooperative stance towards the group, allowing its members to join, albeit warily. ?] 
 
 How should we respond?
 
@@ -21,7 +21,7 @@ How should we respond?
 subtitle: They will be a valuable ally against fascism.
 choose-if: communist_strength < reformist_strength or picelli_advisor
 unavailable-subtitle: The Communists are able to sway the party against this.
-on-arrival: arditi_cooperation = 1; communist_dissent += 7*(dissent); adp_strength += 20; 
+on-arrival: arditi_cooperation = 1; communist_dissent += 7*(dissent); adp_strength += 20; adp_strength += 20 if communist_split and pcdi_leader = "Gramsci"; adp_militancy += 0.07 if communist_split and pcdi_leader = "Gramsci"
 achievement: alleanza_ardita
 
 The Ariti respond warmly to our efforts, and are willing to entertain further cooperation with us and the Red Guards.

@@ -74,7 +74,7 @@ on-arrival: deficit_timer = 6; deficit_extension = 1;
 We are able to convince the Entente to grant us another 6 months to resolve this.
 
 @deficit_renege
-view-if: welfare < 1 and unemployment_insurance_founded == 0 and upper_tax_rates > 5 and lower_tax_rates > 5 and ((entente_relation < 6 and deficit_extension == 0) or deficit_extension == 1)
+view-if: welfare < 1 and not unemployment_insurance_founded and not unemployment_insurance_expanded and upper_tax_rates > 5 and lower_tax_rates > 5 and ((entente_relation < 6 and deficit_extension == 0) or deficit_extension == 1)
 subtitle: This won't end well...
 on-arrival: {!
 Q.budget = 0;

@@ -1,7 +1,7 @@
 title: Foreign Intervention!
 subtitle: Our former allies have turned on us...
 tags: event
-view-if: foreign_invasion_time <= 0 and violent_revolution
+view-if: foreign_invasion_time <= time and violent_revolution
 max-visits: 1
 
 = Entente Invasion
