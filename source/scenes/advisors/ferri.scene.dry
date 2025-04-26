@@ -58,7 +58,7 @@ on-arrival: reformist_dissent -= 8; reformist_strength += 8;
 
 *Avanti!* prints editorials in support of the reformist policies.
 
-@support_neorev
+@support_synd
 view-if: syndicalist_active
 on-arrival: syndicalist_dissent -= 8; syndicalist_strength += 8
 
