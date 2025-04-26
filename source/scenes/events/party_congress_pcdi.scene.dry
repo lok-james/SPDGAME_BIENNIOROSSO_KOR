@@ -3,8 +3,9 @@ subtitle: The PCd'I holds its first Congress.
 new-page: true
 view-if: communist_split and pcdi_congress_time <= time
 tags: event
+max-visits: 1
 
-= [+ year +] [+ ul_name +] Party Congress
+= [+ year +] PCd'I Party Congress
 
 The first Party Congress of the PCd'I have begun, following their recent split from the PSI. Bordiga has emerged as temporary leader of the party, pending the new party elections which might result in his resignation.
 

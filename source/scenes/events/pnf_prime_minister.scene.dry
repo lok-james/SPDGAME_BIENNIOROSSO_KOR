@@ -2,7 +2,6 @@ title: [+ pnf_leader +] appointed Prime Minister!
 set-bg: img/MussoliniBG.png
 audio: shuffle music/pnf_power/FischiaIlVento.mp3 music/pnf_power/CanzoneDeiPartigianiReggiani.mp3 music/pnf_power/ChiNonVuolChinarLaTesta.mp3 music/pnf_power/EIoEroSandokan.mp3 music/pnf_power/SonProletariIPartigiani.mp3
 view-if: anti_socialist_coalition = 1
-on-arrival: next_election_year = 1924; next_election_month = 4; pnf_in_power = 1
 max-visits: 1
 tags: event
 new-page: true
@@ -28,5 +27,6 @@ Do we realize that this means civil war, against the full force of the state?
 
 @keep_on
 subtitle: This will not end the game.
+on-arrival: next_election_year = 1924; next_election_month = 4; pnf_in_power = 1
 
 We will continue onwards, biding our time. We are facing an extremely uphill battle, and will have to act fast.
