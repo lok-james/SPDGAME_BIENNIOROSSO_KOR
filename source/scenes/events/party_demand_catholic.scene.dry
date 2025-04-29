@@ -24,7 +24,7 @@ We will have to choose one to complete, or we could refuse their demands entirel
 
 - @catholic_demand_secularise: Reverse our decision to secularise education.
 - @catholic_demand_reforms: Roll back our educational curriculum reforms targeting religious schools.
-- @catholic_demand_welfare: -1 Budget - Increase funding for Catholic-aligned welfare.
+- @catholic_demand_welfare: Increase funding for Catholic-aligned welfare.
 - @catholic_demand_refuse: Refuse the demands.
 
 @catholic_demand_secularise
@@ -56,6 +56,7 @@ Q.ppi_left += 0.1;
 We have reversed our decision to reform the educational curriculum. 
 
 @catholic_demand_welfare
+subtitle: -1 Budget
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: budget -= 1; veterans_ppi += 3*(1-dissent); veterans_psi -= 1*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4; ppi_left += 0.1

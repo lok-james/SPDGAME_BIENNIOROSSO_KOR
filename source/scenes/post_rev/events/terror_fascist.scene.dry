@@ -2,7 +2,7 @@ title: Fascist Paramilitaries Adapt
 subtitle: Our enemies have taken a more...*radical* approach.
 tags: event
 view-if: fascists_adapt <= time and violent_revolution
-on-arrival: fascist_terror = 1; fascist_bomb_timer = time + 12
+on-arrival: fascist_terror = 1; fascist_bomb_timer = time + 12; terror_active = 1
 max-visits: 1
 
 = Fascist Paramilitaries Adapt

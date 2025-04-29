@@ -23,7 +23,7 @@ The Workers, our traditional and key voting support bloc have pushed forward a s
 We will have to choose one to complete, or we could refuse their demands entirely.
 
 - @workers_demand_bordiga: Nationalise industries without compensation.
-- @workers_demand_serrati: -2 Budget - Expand the scope of the Unemployment Insurance Program.
+- @workers_demand_serrati: Expand the scope of the Unemployment Insurance Program.
 - @workers_demand_turati: Cut taxes for the lower class.
 - @workers_demand_wages: Develop and enforce a minimum wage.
 - @workers_demand_safety: Develop and enforce safety regulations.
@@ -36,6 +36,7 @@ on-arrival: max_seize += 1; unemployment -= 0.4 if unemployment >= 8; workers_ps
 We begin forcefully seizing idle industries, nationalising vast sums of the economy without compensating the greedy industrialists a single cent. They are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
 
 @workers_demand_serrati
+subtitle: -2 Budget
 view-if: unemployment_insurance_founded and prime_minister = "Serrati"
 choose-if: not national_economic_recovery or budget > 1
 unavailable-subtitle: Not enough budget. (Need 2)

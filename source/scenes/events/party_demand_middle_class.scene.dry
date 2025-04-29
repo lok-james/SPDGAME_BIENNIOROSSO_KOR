@@ -22,11 +22,12 @@ The Middle Class, one of more non-traditional but now our key voting blocs have 
 
 We will have to choose one to complete, or we could refuse their demands entirely.
 
-- @middle_class_demand_tax: -1 Budget - Grant tax breaks for businesses and co-operatives.
+- @middle_class_demand_tax: Grant tax breaks for businesses and co-operatives.
 - @middle_class_demand_reform: Continue reforms to the curriculum.
 - @middle_class_demand_refuse: Refuse the demands.
 
 @middle_class_demand_tax
+subtitle: -1 Budget
 choose-if: not national_economic_recovery or budget >= 1
 unavailable-subtitle: [? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: budget -= 1; ldr_relation += 5; ul_relation += 5; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; communist_dissent += 10; maximalist_dissent += 10; unemployment -= 1.1 if unemployment >= 8; unemployment -= 0.4 if (unemployment > 4 and unemployment < 7); unemployment -= 0.2 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_pnf -= 3*(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent); ldr_moderates += 0.2;

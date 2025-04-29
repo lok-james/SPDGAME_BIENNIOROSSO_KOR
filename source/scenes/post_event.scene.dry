@@ -295,7 +295,7 @@ if (Q.week_actions >= 1) {
         if (Q.tax_reformed >= 3) {
             Q.budget += 1;
         }
-        if (Q.national_congress_seen == 1) {
+        if (Q.terror_active == 1) {
             Q.interior_budget += Q.yearly_interior_gain;
             Q.budget -= Q.yearly_interior_gain;
         }

@@ -24,7 +24,7 @@ We will have to choose one to complete, or we could refuse their demands entirel
 
 - @rural_demand_bordiga: Seize land from large estates to redistribute.
 - @rural_demand_serrati: Support Agricultural Cooperatives.
-- @rural_demand_turrati: -1 Budget - Increase financing for agricultural credit and insurance.
+- @rural_demand_turrati: Increase financing for agricultural credit and insurance.
 - @rural_demand_refuse: Refuse the demands.
 
 @rural_demand_bordiga
@@ -71,6 +71,7 @@ on-arrival: rural_psi += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; coo
 We are able to utilise the Ministry to support peasants and cooperatives, protecting them using legal means.
 
 @rural_demand_turrati
+subtitle -1 Budget
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: budget -= 1; agricultural_policy += 1; rural_psi += 7*(1-dissent); rural_pnf -= 3*(1-dissent); unemployment -= 0.3 if unemployment >= 8; communist_dissent += 8; maximalist_dissent += 6; labour_dissent += 3; economic_growth += 0.2; economic_growth += 0.3 if economic_growth < 0

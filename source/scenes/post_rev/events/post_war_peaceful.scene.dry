@@ -4,6 +4,7 @@ set-bg: img/DemBg.jpg
 on-arrival: {!
 Q.national_congress_seen = 1;
 Q.peaceful_revolution = 1;
+Q.pnf_in_power = 0;
 
 Q.ldr_promise_failed = 0;
 Q.ppi_promise_failed = 0;

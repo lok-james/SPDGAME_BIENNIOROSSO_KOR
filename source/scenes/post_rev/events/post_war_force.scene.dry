@@ -4,6 +4,7 @@ set-bg: img/RevBg.jpg
 on-arrival: {!
 Q.national_congress_seen = 1;
 Q.violent_revolution = 1;
+Q.pnf_in_power = 0;
 
 Q.ldr_promise_failed = 0;
 Q.ppi_promise_failed = 0;
@@ -187,6 +188,7 @@ We have done it. Like our Russian allies to the east, we too have overthrown our
 - @violent_party: The Political Parties.
 - @violent_chamber: The Chamber of Deputies.
 - @violent_elections: The Elections.
+- @violent_bank: The Banks.
 - @violent_done: We have done all that we can.
 
 @violent_monarchy
@@ -242,11 +244,26 @@ on-arrival: republicans_adapt = time + 48; violent_seen += 1; benevolence = 1; p
 go-to: violent_menu
 
 @violent_chamber
+on-arrival: violent_seen += 1;
 max-visits: 1
 
 Another thing on the list is the Chamber of Deputies. The party suggests that it be replaced by a Supreme Soviet, emulating the governing bodies of the Russian Soviet Federative Socialist Republic.
 
 - @violent_menu: The Chamber of Deputies will be abolished and a Supreme Soviet will take its place.
+
+@violent_bank
+on-arrival: violent_seen += 1
+max-visits: 1
+
+With the socialist revolution, one subject that is brought up is regarding the assets of the rich. Many on the left advocate for a mass seizure of assets belonging to the rich, alongside the banks and distributing it to strengthen the transition between a capitalist and socialist economy.
+
+- @bank_seize: Seize the assets of the Banca d'Italia and the rich.
+- @violent_menu: Allow the bank and rich to retain their assets.
+
+@bank_seize
+subtitle: +6 Budget
+on-arrival: upper_tax_rates += 3; workers_psi += 6*(1-dissent); veterans_psi += 6*(1-dissent); ppi_relation -= 10; ul_relation -= 16; ldr_relation -= 12; socialist_sentiment -= 8; budget += 6; capital_strike_progress = 10; industrialists_psi *= 0.25; middle_class_psi *= 0.6
+go-to: violent_menu
 
 @violent_elections
 on-arrival: violent_seen += 1; violent_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_in_government = 0; in_popular_front = 0; in_left_front = 0; 
@@ -257,7 +274,7 @@ Snap elections will be called in order to bring new, sweeping members of the Sov
 - @violent_menu: Excellent.
 
 @violent_done
-view-if: violent_seen >= 4
+view-if: violent_seen >= 5
 
 We have done all we can to bring revolution to Italy, and we have succeeded. What lies ahead is uncertain, but at the very least, we are certain we will succeed.
 

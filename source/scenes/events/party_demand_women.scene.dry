@@ -24,7 +24,7 @@ We will have to choose one to complete, or we could refuse their demands entirel
 
 - @women_demand_work: Institute policies that help women in the workforce.
 - @women_demand_law: Reform marriage, divorce, and property law. 
-- @women_demand_welfare: -1 Budget - Improve welfare for single mothers and children.
+- @women_demand_welfare: Improve welfare for single mothers and children.
 - @women_demand_refuse: Refuse the demands.
 
 @women_demand_work
@@ -38,6 +38,7 @@ on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissen
 These policies aim to ensure that women have equal rights within a marriage, including the right to divorce. The more conservative segments of society treat our reforms as deleterious to the social fabric.
 
 @women_demand_welfare
+subtitle: -1 Budget
 choose-if: not national_economic_recovery or budget >= 1
 unavailable-subtitle: Not enough budget. (Need 1)
 on-arrival: welfare += 1; workers_psi += 5*(1-dissent); veterans_psi += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1 if (welfare >= 3 and unemployment >= 15); unemployment -= 0.4; inflation += 0.2; economic_growth += 0.3;

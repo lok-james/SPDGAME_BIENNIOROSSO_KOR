@@ -22,11 +22,12 @@ The Industrialists and Landowners, one of our non-traditional but now shockingly
 
 We will have to choose one to complete, or we could refuse their demands entirely.
 
-- @industrialists_demand_tax: -2 Budget - Cut taxes for the upper class.
-- @industrialists_demand_nationalisation: +1 Budget - Roll back nationalising industries.
+- @industrialists_demand_tax: Cut taxes for the upper class.
+- @industrialists_demand_nationalisation: Roll back nationalising industries.
 - @industrialists_demand_refuse: Refuse the demands.
 
 @industrialists_demand_tax
+subtitle: -2 Budget
 view-if: upper_tax_rates < -5
 on-arrival: {!
 Q.upper_tax_rates -= 1; 
@@ -65,6 +66,7 @@ Q.ldr_right -= 0.2;
 Raising taxes on the rich is unpopular among our traditional base, but it is supported by the bourgeoisie.
 
 @industrialists_demand_nationalisation
+subtitle: +1 Budget
 view-if: nationalisation_progress > 0
 on-arrival: {!
 Q.budget += 1; 

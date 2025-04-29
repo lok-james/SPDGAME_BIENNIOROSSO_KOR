@@ -367,7 +367,7 @@ on-arrival: {!
 Q.tariffs += 1; 
 Q.budget += 2;
 
-Q.inflation -= 0.4;
+Q.inflation += 0.4;
 Q.economic_growth -= 0.4;
 Q.unemployment += 0.6;
 
@@ -430,7 +430,7 @@ on-arrival: {!
 Q.tariffs -= 1; 
 Q.budget -= 2; 
 
-Q.inflation += 0.4;
+Q.inflation -= 0.4;
 Q.economic_growth += 0.4;
 Q.unemployment -= 0.6;
 

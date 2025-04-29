@@ -2,7 +2,7 @@ title: Emergence of *Red Guards*
 subtitle: An ironic twist of fate.
 tags: event
 view-if: communists_adapt <= time and peaceful_revolution and pcdi_banned 
-on-arrival: communist_terror = 1; communist_bomb_timer = time + 12; rg_strength *= 0.3; rg_militancy *= 0.4; ussr_enemy_timer = time + 8
+on-arrival: communist_terror = 1; communist_bomb_timer = time + 12; rg_strength *= 0.3; rg_militancy *= 0.4; ussr_enemy_timer = time + 8; terror_active = 1
 max-visits: 1
 
 = Emergence of the new *Red Guards*
