@@ -115,11 +115,11 @@ if ((Q.max_seize == 3 && Q.max_councils == 3 && Q.max_land_seize == 3) || (Q.max
     this.achieve('piano_massimo_completato');
 }
 
-if (Q.tax_reformed == 3 && Q.min_compensation == 3 && Q.min_public_works == 3 && Q.uncultivated_redistributed == 3) {
+if (Q.tax_reformed >= 3 && Q.min_compensation >= 3 && Q.min_public_works >= 3 && Q.uncultivated_redistributed >= 3) {
     this.achieve('piano_minimo_completato');
 }
 
-if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 && Q.reformists_defect == 1 && Q.syndicalist_break == 1) {
+if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 && Q.reformists_defect == 1) {
     this.achieve('fronte_diviso');
 }
 !}
@@ -216,6 +216,15 @@ tags: endings
 go-to: eg_menu
 
 [? if psi_in_government: With our lead, the economic crisis has been brought to a slow, as both unemployment and inflation have reached acceptable levels. ?][? if not psi_in_government: Surprisingly, the bourgeois governments have been able to contain the crisis to a minimal amount. ?]
+
+@paramilitary_plagued
+title: Italy is still plagued by the paramilitaries...
+view-if: terror_active = 1
+tags: endings
+go-to: eg_menu
+
+The PSI and Italy is still under attack from paramilitary forces seeking to overthrow this country.
+
 
 @achievements
 title: Achievements
