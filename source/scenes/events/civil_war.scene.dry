@@ -222,7 +222,7 @@ Italy holds strong, against fascism.
 - @post_war_cv: It is time to decide our new agenda.
 
 @communist_victory
-on-arrival: soviet_victory = 1; prime_minister = "Bacci"; prime_minister_party == psi_name; 
+on-arrival: soviet_victory = 1; prime_minister = "Bacci"; prime_minister_party = psi_name; 
 achievement: vittoria_sovietica
 
 = Victory for the Socialists
