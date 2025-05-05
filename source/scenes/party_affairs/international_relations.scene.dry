@@ -49,7 +49,7 @@ Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in 
 
 @papacy
 subtitle: -2 resources
-choose-if: resources >= 2; ppi_relation >= 55
+choose-if: resources >= 2 and ppi_relation >= 55
 unavailable-subtitle: [? if resources < 2 : Not enough resources. (Need 2) ?][? if ppi_relation < 55 : Our influence within the PPI is too low. ?]
 on-arrival: papal_relation += 1; ppi_relation -= 10; resources -= 2; 
 
