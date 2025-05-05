@@ -519,7 +519,7 @@ if (Q.week_actions >= 1) {
         }
 
         ///////////////////////////// change party support based on socialist sentiment
-        // if socialist_sentiment is less than the support of left wing parties, reduce PSI support...
+        // if socialist_sentiment is less than the support of left wing parties, reduce [+ psi_name +] support...
         if (Q.socialist_sentiment/2 < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
             if (Q.industrialists_psi > 0) {
                 Q.industrialists_psi -= 4/12*Q.revolutionary_exhaustion;
@@ -812,30 +812,30 @@ if (Q.week_actions >= 1) {
 
         if (Q.psi_in_government == 1) {
             if (Q.economic_growth > 0) {
-                Q.economic_progress += 4;
+                Q.economic_progress += 5;
             }
             if (Q.economic_growth > 5) {
-                Q.economic_progress += 2;
+                Q.economic_progress += 3;
             }
             if (Q.economic_growth > 10) {
-                Q.economic_progress += 1;
+                Q.economic_progress += 2;
             }
             if (Q.inflation < 10 && Q.inflation > 0) {
-                Q.economic_progress += 2;
+                Q.economic_progress += 3;
             }
             if (Q.inflation < 5 && Q.inflation > 0) {
-                Q.economic_progress += 1;
+                Q.economic_progress += 2;
             }
             if (Q.unemployment < 10) {
-                Q.economic_progress += 2;
+                Q.economic_progress += 3;
             }       
             if (Q.unemployment < 5) {
-                Q.economic_progress += 1;
+                Q.economic_progress += 2;
             } 
 
 
             if (Q.economic_growth < 0) {
-                Q.economic_progress -= 4;
+                Q.economic_progress -= 5;
             }
             if (Q.economic_growth < -5) {
                 Q.economic_progress -= 2;
@@ -847,13 +847,13 @@ if (Q.week_actions >= 1) {
                 Q.economic_progress -= 2;
             }
             if (Q.inflation > 5) {
-                Q.economic_progress -= 1;
+                Q.economic_progress -= 2;
             }
             if (Q.unemployment > 10) {
                 Q.economic_progress -= 2;
             }       
             if (Q.unemployment > 5) {
-                Q.economic_progress -= 1;
+                Q.economic_progress -= 2;
             
             }
 
@@ -1195,7 +1195,7 @@ if (Q.week_actions >= 1) {
         if (Q.radicalisation_timer <= 0) {
             Q.rg_strength *= Q.revolutionary_exhaustion;
             Q.rg_militancy *= Q.revolutionary_exhaustion;
-            Q.radicalisation_timer = 6;
+            Q.radicalisation_timer = 12;
 
             if (Q.ldr_relation < 40) {
                 Q.ldr_moderates -= 0.1;
@@ -1236,14 +1236,14 @@ if (Q.week_actions >= 1) {
 
                 if (Q.middle_class_psi_normalised > 20) {
                     Q.middle_class_psi -= 9/12;
-                    Q.middle_class_psri += 1/12;
-                    Q.middle_class_ldr += 3/12;
-                    Q.middle_class_ul += 3/12;
+                    Q.middle_class_psri += 4/12;
+                    Q.middle_class_ldr += 2/12;
+                    Q.middle_class_ul += 2/12;
                 }
                 
-                if (Q.rural_psi_normalised > 45) {
-                    Q.rural_psi -= 2/12;
-                    Q.rural_psri += 1/12;
+                if (Q.rural_psi_normalised > 35) {
+                    Q.rural_psi -= 3/12;
+                    Q.rural_psri += 3/12;
                 }
 
             }
@@ -1269,21 +1269,21 @@ if (Q.week_actions >= 1) {
             }
         }
 
-        if (Q.radicalisation < 4 && Q.pcdi_formed == 1 && Q.socialist_sentiment > Q.republican_sentiment) {
+        if (Q.radicalisation < 5 && Q.pcdi_formed == 1 && Q.socialist_sentiment > Q.republican_sentiment) {
 
             if (Q.workers_pcdi_normalised < 20) {
-                Q.workers_psi -= 4/12;
-                Q.workers_pcdi += 2/12;
+                Q.workers_psi -= 6/12;
+                Q.workers_pcdi += 6/12;
             }
 
             if (Q.veterans_pcdi_normalised < 25) {
                 Q.veterans_psi -= 9/12;
-                Q.veterans_pcdi += 5/12;
+                Q.veterans_pcdi += 9/12;
             }
 
             if (Q.rural_pcdi_normalised < 7) {
-                Q.rural_psi -= 2/12;
-                Q.rural_pcdi += 2/12;
+                Q.rural_psi -= 3/12;
+                Q.rural_pcdi += 3/12;
             }
         }
 

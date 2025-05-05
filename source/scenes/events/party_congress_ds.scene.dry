@@ -42,6 +42,7 @@ And in the middle lies Giovanni Antonio Colonna di Cesarò, who has for the most
 view-if: ds_left > ds_moderates and ds_left > ds_right
 on-arrival: {!
 
+Q.ds_leader = "Giuffrida";
 Q.ds_total = Q.ds_left + Q.ds_right + Q.ds_moderates;
 Q.pcs_defectors = Q.ds_right / Q.ds_total;
 
@@ -116,6 +117,8 @@ As expected, Carnazza has continued his role in the leadership position. Though 
 view-if: ds_right >= ds_moderates and ds_right >= ds_left
 on-arrival: {!
 
+
+Q.ds_leader = "Carnazza";
 Q.ds_total = Q.ds_left + Q.ds_right + Q.ds_moderates;
 Q.pll_defectors = Q.ds_left / Q.ds_total;
 

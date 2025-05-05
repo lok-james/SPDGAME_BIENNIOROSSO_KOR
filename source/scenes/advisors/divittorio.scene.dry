@@ -18,7 +18,7 @@ Di Vittorio is a leader of the syndicalist *Italian Syndicalist Union*. He is a 
 title: Southern Question
 subtitle: Now that we are in government, we will be able to deal with the Mezzogiorno, plagued by economic stagnation.
 choose-if: advisor_action_timer = 0 and psi_in_government
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not in government. ?]
 on-arrival: advisor_action_timer = 6; southern_question_timer -= 5; last_advisor_action = 1
 go-to: southern_question
 

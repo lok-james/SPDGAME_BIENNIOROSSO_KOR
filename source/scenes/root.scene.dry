@@ -75,7 +75,7 @@ Q.syndicalist_break = 0;
 // Depending on how the Congress goes
 Q.reformists_expelled = 0;
 
-// fasci_urgency indicates how seriously the PSI takes the fasci - scale from 0 to 10.
+// fasci_urgency indicates how seriously the [+ psi_name +] takes the fasci - scale from 0 to 10.
 Q.fasci_urgency = 0;
 // radicalisation indicates how radical the PSI's rhetoric is - scale from 0 to 10.
 Q.radicalisation = 5;
@@ -125,6 +125,10 @@ Q.ds_full_italian = "Democrazia Sociale";
 Q.pnf_name = "FdC";
 Q.pnf_full_name = "Italian Fasces of Combat";
 Q.pnf_full_italian = "Fasci Italiani di Combattimento";
+
+Q.psi_name = "PSI";
+Q.psi_full_name = "Italian Socialist Party";
+Q.psi_full_italian = "Partito Socialista Italiano";
 
 Q.pri_prominent = 0;
 Q.psri_stable = 1;
@@ -425,11 +429,11 @@ Q.pnf_in_government = 0;
 Q.pcs_in_government = 0;
 Q.pll_in_government = 0;
 
-// Left-Wing Coalition = PSI + PSRI
+// Left-Wing Coalition = [+ psi_name +] + PSRI
 Q.left_wing_coalition = 0
 // Catholic-Centre Coalition = PPI + LDR + UL + DS
 Q.catholic_centre_coalition = 0;
-// Centre-Left Coalition = PSI + PPI + DS + PSRI
+// Centre-Left Coalition = [+ psi_name +] + PPI + DS + PSRI
 Q.centre_left_coalition = 0;
 Q.psi_majority = 0;
 Q.catholic_centre_failed = 0;
@@ -567,9 +571,9 @@ Q.soviet_end_timer = 45;
 Q.soviet_recovery_timer = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
-// did the PSI vote against the previous government in a vote of no confidence?
+// did the [+ psi_name +] vote against the previous government in a vote of no confidence?
 Q.psi_no_confidence = 0;
-// was the last PSI government taken down in a vote of no confidence by our coalition partners?
+// was the last [+ psi_name +] government taken down in a vote of no confidence by our coalition partners?
 Q.no_confidence_against_psi = 0;
 
 // Advisors/Leaders
@@ -748,6 +752,8 @@ This is a game of alternate history. While historical accuracy is a major concer
 For more information on the politics and of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
 
 This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy" style="color: #900;">**here**</a> if you have not done so already.
+
+**If you are playing this mod via the Mod Loader in base game, there will be various items missing (Election Colours, Card Images, Status Bar, etc.). For the intented experience, please play using <a href="https://awesdes.github.io/biennio_rosso_alternate_history/" style='color: #66b2b2">**this**</a> link.**
 
 - @1919_mod: Begin (mod difficulty)
 - @1919_easy: Begin (easy difficulty)

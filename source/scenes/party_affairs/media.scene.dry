@@ -9,7 +9,7 @@ card-image: img/Media.jpg
 
 = Media
 
-The PSI runs a veritable media empire, with many newspapers throughout every Italian city and region. We could use the media for various purposes...
+The [+ psi_name +] runs a veritable media empire, with many newspapers throughout every Italian city and region. We could use the media for various purposes...
 
 - @commercial
 - @campaign

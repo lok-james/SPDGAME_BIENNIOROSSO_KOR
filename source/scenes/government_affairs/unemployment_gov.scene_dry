@@ -1,7 +1,7 @@
 title: Dealing with Unemployment
 new-page: true
 is-card: true
-view-if: psi_in_government and (public_works_minister_party = "PSI" or finance_minister_party = "PSI") and unemployment_gov_timer <= 0
+view-if: psi_in_government and (public_works_minister_party = psi_name or finance_minister_party = psi_name) and unemployment_gov_timer <= 0
 frequency: 250
 on-arrival: week_actions += 1; unemployment_gov_timer = 2;
 card-image: img/UnemploymentGov.jpg
@@ -22,8 +22,8 @@ There are various ways we are able to tackle this problem now that we are in gov
 
 @public_works_program
 subtitle: -1 Budget - Expand our current infrastructural commitments further. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-choose-if: public_works_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if public_works_minister_party != "PSI" : The PSI does not control the Public Works Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+choose-if: public_works_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
+unavailable-subtitle: [? if public_works_minister_party != psi_name : The [+ psi_name +] does not control the Public Works Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: public_works_funded += 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); unemployment -= 0.4 if unemployment >= 8; unemployment -= 0.2 if unemployment >= 8; veterans_pnf -= 3*(1-dissent); veterans_psi += 3*(1-dissent) if not in_unstable_coalition; veterans_clc += 3*(1-dissent) if centre_left_coalition; veterans_scc += 3*(1-dissent) if socialist_catholic_coalition; rural_pnf -= 2*(1-dissent); socialist_sentiment += 1; nationalist_sentiment -= 2; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0; inflation += 0.2; inflation += 0.1 if budget < 0;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
@@ -33,8 +33,8 @@ We have increased funding to the Public Works Ministry, who have begun drafting 
 
 @tax_breaks
 subtitle: -1 Budget - Offer financial aid to small businesses and the like to alleviate their economic burden. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-choose-if: finance_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if finance_minister_party != "PSI" : The PSI does not control the Financial Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+choose-if: finance_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
+unavailable-subtitle: [? if finance_minister_party != psi_name : The [+ psi_name +] does not control the Financial Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); ldr_relation += 5; ul_relation += 5; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; communist_dissent += 10; maximalist_dissent += 10; middle_class_psi += 3*(1-dissent) if not in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_pnf -= 3(1*dissent); workers_psi -= 4 if not in_unstable_coalition; workers_clc -= 4 if centre_left_coalition; workers_scc -= 4 if not socialist_catholic_coalition; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent); ldr_moderates += 0.2; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed = 1; 
 

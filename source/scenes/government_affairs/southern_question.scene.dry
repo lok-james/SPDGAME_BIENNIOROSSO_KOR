@@ -1,7 +1,7 @@
 title: Southern Question
 new-page: true
 is-card: true
-view-if: psi_in_government = 1 and (public_works_minister_party = "PSI" or public_education_minister_party = "PSI" or interior_minister_party = "PSI") and southern_question_timer <= 0 and southern_resolved = 0
+view-if: psi_in_government = 1 and (public_works_minister_party = psi_name or public_education_minister_party = psi_name or interior_minister_party = psi_name) and southern_question_timer <= 0 and southern_resolved = 0
 on-arrival: week_actions += 1; southern_question_timer += 3;
 card-image: img/SouthernQuestion.jpg
 tags: govt_affairs
@@ -39,8 +39,8 @@ The bill is barely able to pass the floor, and the liberals are in an uproar. Al
 [? if ldr_seating_disp + ul_seating_disp + pnf_seating_disp > 50: The liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
 
 @southern_land_reform_rg
-subtitle: -4 Paramilitary Resources - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?]
-choose-if: para_resources >= 4
+subtitle: [? if not national_congress_seen : -4 Paramilitary Resources ?][? if national_congress_seen : -4 Resources : ?] - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?]
+choose-if: para_resources >= 4 or (national_congress_seen and resources >= 4)
 unavailable-subtitle: Not enough paramilitary resources. (Need 4)
 view-if: southern_land_reformed == 0 and moderate_plan_adopted
 on-arrival: southern_land_reformed = 1; rg_strength -= 50; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 17*(1-dissent); industrialists_pnf += 17*(1-dissent); middle_class_pnf += 7*(1-dissent); unemployment -= 0.9; inflation += 0.5; economic_growth += 0.2; fasci_coup_progress += 2; capital_strike_progress += 2; ldr_right += 4; rural += 4
@@ -52,8 +52,8 @@ The Red Guard, under our orders begin forceful seizures of landowner properties 
 
 @southern_infrastructure
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
-choose-if: public_works_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if public_works_minister_party != "PSI" : The PSI does not control the Public Works Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+choose-if: public_works_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
+unavailable-subtitle: [? if public_works_minister_party != psi_name : The [+ psi_name +] does not control the Public Works Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
 on-arrival: {!
 Q.southern_infrastructure_funded += 1; 
 Q.budget -= 1; 
@@ -101,8 +101,8 @@ We begin a series of infrastructural projects directed by the Public Works Minis
 
 @southern_literacy
 subtitle: -1 Budget [? if budget = 0 and liberal_budget_accepted :- This will put us into a deficit! ?]
-choose-if: public_education_minister_party = "PSI" and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if public_education_minister_party != "PSI" : The PSI does not control the Public Education Ministry. ?][? if national_economic_recovery and budget < 1: Not enough budget. (Need 1) ?]
+choose-if: public_education_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
+unavailable-subtitle: [? if public_education_minister_party != psi_name : The [+ psi_name +] does not control the Public Education Ministry. ?][? if national_economic_recovery and budget < 1: Not enough budget. (Need 1) ?]
 on-arrival: {!
 Q.southern_education_funded += 1; 
 Q.budget -= 1; 
@@ -158,8 +158,8 @@ We expand education institutes, targeting the South, hiring teachers, building s
 [? if ldr_promise_failed : Unfortunately, our expansion of the education system has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
 
 @southern_mafia
-choose-if: interior_minister_party = "PSI" and mafia_strength > 0
-unavailable-subtitle: [? if not interior_minister_party = "PSI": The PSI does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are too disorganised to be a threat to us. ?]
+choose-if: interior_minister_party = psi_name and mafia_strength > 0
+unavailable-subtitle: [? if not interior_minister_party = psi_name: The [+ psi_name +] does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are too disorganised to be a threat to us. ?]
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success

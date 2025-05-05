@@ -57,7 +57,7 @@ The Constitutional Amendment makes it to the King, who is convinced to approve t
 @constitution_removal
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and king_veto_removed = 1
 choose-if: king_relation >= 85 and return_to_normalcy
-unavailable-subtitle: [? if king_relation >= 85 : The King & Senate would not approve this. ?][? if not return_to_normalcy : It is too turbulent of a time to attempt this. ?]
+unavailable-subtitle: [? if king_relation >= 85 : The King & Senate would not approve this. ?][? if not return_to_normalcy : It is too turbulent of a time to present this. Perhaps it would be better upon a return to normalcy. ?]
 on-arrival: king = "N/A"; monarchy_gone = 1
 
 The reform passes with the slightest of margins, removing the Statuto Albertino as the constitution of the Kingdom of Italy. A new constitutional congress is to be held in the coming weeks as the King officially abdicates the throne.

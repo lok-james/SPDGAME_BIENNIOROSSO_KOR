@@ -1,0 +1,13 @@
+title: The Death of Leonida Bissolati
+view-if: year == 1920 and month >= 5
+frequency: 1000
+max-visits: 1
+on-arrival: bissolati_dead = 1;
+tags: event
+new-page: true
+
+= The Death of Leonida Bissolati
+
+Leonida Bissolati, right-reformist and leader of the Italian Reformist Socialist Party has passed away. His death represents the weakening of social democracy in the party, and he is succeeded by Ivanoe Bonomi.
+
+He will be missed.

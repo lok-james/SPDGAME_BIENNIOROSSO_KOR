@@ -33,21 +33,21 @@ Italy is divided into a number of states, each of which have their own governmen
 @weimar_timeline
 go-to: menu
 
-= Timeline of the PSI and the Kingdom (until 1919)
+= Timeline of the [+ psi_name +] and the Kingdom (until 1919)
 
 **1861**: The Kingdom of Italy is officially unified and established as a nation-state under a Constitutional Monarch.
 
-**1892**: The PSI is officially founded in Genoa, caused by the rise of labour, socialism and dissatisfaction with the political system. It is divided between the Reformists & Revolutionaries, growing throughout the rest of the Century into a coalition of Communists to Social Democrats.
+**1892**: The [+ psi_name +] is officially founded in Genoa, caused by the rise of labour, socialism and dissatisfaction with the political system. It is divided between the Reformists & Revolutionaries, growing throughout the rest of the Century into a coalition of Communists to Social Democrats.
 
-**1898**: Protests are violently suppressed by the Italian government, leading to political radicalisation of the working class and an increase in PSI popularity.
+**1898**: Protests are violently suppressed by the Italian government, leading to political radicalisation of the working class and an increase in [+ psi_name +] popularity.
 
 **1900**: King Umberto I is assassinated by an anarchist, further heightening tensions.
 
-**1914**: World War One begins. Parties are divided on the Italian stance towards the war, though the PSI adopts a neutrality stance against the war and opposes any intervention in the conflict.
+**1914**: World War One begins. Parties are divided on the Italian stance towards the war, though the [+ psi_name +] adopts a neutrality stance against the war and opposes any intervention in the conflict.
 
-**1915**: Italy joins World War One on the side of the Entente after signing the Treaty of London. The PSI fractures as more radical members support the war whilst others remained anti-war, resulting in members like Benito Mussolini being kicked out of the party.
+**1915**: Italy joins World War One on the side of the Entente after signing the Treaty of London. The [+ psi_name +] fractures as more radical members support the war whilst others remained anti-war, resulting in members like Benito Mussolini being kicked out of the party.
 
-**1917**: Increased war exhaustion and discontent increases the PSI's popularity, as many become frustrated with Italy's involvement in World War One.
+**1917**: Increased war exhaustion and discontent increases the [+ psi_name +]'s popularity, as many become frustrated with Italy's involvement in World War One.
 
 **1919**: World War One ends.
 
@@ -62,7 +62,7 @@ Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
 
 Chamber of Deputies composition:
 
-PSI: [+ psi_seating_disp +]%
+[+ psi_name +]: [+ psi_seating_disp +]%
 [? if pcdi_formed : PCd'I: [+ pcdi_seating_disp +] ?]
 [? if psu_formed : PSU: [+ psu_seating_disp +] ?]
 [? if not psri_collapse : PSRI: [+ psri_seating_disp +]% ?]
@@ -76,8 +76,8 @@ PPI: [+ ppi_seating_disp +]%
 [? if not pnf_banned : [+ pnf_name +]: [+ pnf_seating_disp +]% ?]
 Others: [+ other_seating_disp +]%
 
-PSI position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
-[? if left_wing_coalition and psi_in_government : Left-Wing Coalition ?][? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if psi_majority and psi_in_government: PSI majority ?][? if in_minority_government and psi_in_government: Minority government ?]
+[+ psi_name +] position: [? if psi_in_government : in government - ?][? if psi_in_government == 0 : opposition ?]
+[? if left_wing_coalition and psi_in_government : Left-Wing Coalition ?][? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if psi_majority and psi_in_government: [+ psi_name +] majority ?][? if in_minority_government and psi_in_government: Minority government ?]
 
 [? if psi_in_government and not psi_majority : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
@@ -109,15 +109,15 @@ go-to: menu
 
 **Demographic Groups**
 
-**Urban Workers**: Consisting of blue-collar workers in factories, workshops, mines, et cetera. Most are socialists, supporting the PSI or any other communist faction. They make up about 20 to 25% of the population.
+**Urban Workers**: Consisting of blue-collar workers in factories, workshops, mines, et cetera. Most are socialists, supporting the [+ psi_name +] or any other communist faction. They make up about 20 to 25% of the population.
 
-**Small Business Owners**: Consisting of shopkeepers, artisans, small business workers and the like. They are divided between the Catholic Parties, Liberal Parties and a small minority to the PSI. They make up about 15-20% of the population.
+**Small Business Owners**: Consisting of shopkeepers, artisans, small business workers and the like. They are divided between the Catholic Parties, Liberal Parties and a small minority to the [+ psi_name +]. They make up about 15-20% of the population.
 
-**Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the PSI and the Catholic PPI. They make up about 50% of the population.
+**Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the [+ psi_name +] and the Catholic PPI. They make up about 50% of the population.
 
 **Industrialists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
 
-**Veterans & Unemployed**: Consisting of veterans who felt betrayed by the government for their gains in the First World War. They are fierce supporters of nationalist and fascist movements, though some opted to support the PSI instead. They make up about 5% of the population.
+**Veterans & Unemployed**: Consisting of veterans who felt betrayed by the government for their gains in the First World War. They are fierce supporters of nationalist and fascist movements, though some opted to support the [+ psi_name +] instead. They make up about 5% of the population.
 
 **Catholics**: Consisting of the clergy and those religious to the Catholic Church. They support the Catholic parties almost entirely, making up a strong foundation for the PPI. They make up about 5% of the population.
 
@@ -143,7 +143,7 @@ go-to: menu
 
 **Projected election results** (if the election were to be held now):
 
-PSI: [+ psi_votes +]%
+[+ psi_name +]: [+ psi_votes +]%
 
 [? if pcdi_formed : PCd'I: [+ pcdi_votes +]% ?]
 
@@ -171,34 +171,34 @@ Others: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
-Urban Workers: PSI: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pll_formed : PLL: [+ workers_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] [+ ds_name +]: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ workers_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ workers_pnf_display +]%, ?] Others: [+ workers_other_display +]%
+Urban Workers: [+ psi_name +]: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pll_formed : PLL: [+ workers_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] [+ ds_name +]: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ workers_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ workers_pnf_display +]%, ?] Others: [+ workers_other_display +]%
 
-Middle Class: PSI: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pll_formed : PLL: [+ middle_class_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] [+ ds_name +]: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ middle_class_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ middle_class_pnf_display +]%, ?] Others: [+ middle_class_other_display +]%
+Middle Class: [+ psi_name +]: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pll_formed : PLL: [+ middle_class_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] [+ ds_name +]: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ middle_class_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ middle_class_pnf_display +]%, ?] Others: [+ middle_class_other_display +]%
 
-Rural Workers & Farmers: PSI: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pll_formed : PLL: [+ rural_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] [+ ds_name +]: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ rural_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ rural_pnf_display +]%, ?] Others: [+ rural_other_display +]%
+Rural Workers & Farmers: [+ psi_name +]: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pll_formed : PLL: [+ rural_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] [+ ds_name +]: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ rural_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ rural_pnf_display +]%, ?] Others: [+ rural_other_display +]%
 
-Industrialists & Landowners: PSI: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pll_formed : PLL: [+ industrialists_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] [+ ds_name +]: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ industrialists_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ industrialists_pnf_display +]%, ?] Others: [+ industrialists_other_display +]%
+Industrialists & Landowners: [+ psi_name +]: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pll_formed : PLL: [+ industrialists_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] [+ ds_name +]: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ industrialists_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ industrialists_pnf_display +]%, ?] Others: [+ industrialists_other_display +]%
 
-Veterans & Unemployed: PSI: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ veterans_pnf_display +]%, ?] Others: [+ veterans_other_display +]%
+Veterans & Unemployed: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ veterans_pnf_display +]%, ?] Others: [+ veterans_other_display +]%
 
-Catholics: PSI: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pll_formed : PLL: [+ catholic_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] [+ ds_name +]: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ catholic_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ catholic_pnf_display +]%, ?] Others: [+ catholic_other_display +]%
+Catholics: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pll_formed : PLL: [+ catholic_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] [+ ds_name +]: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ catholic_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ catholic_pnf_display +]%, ?] Others: [+ catholic_other_display +]%
 
-[? if womens_suffrage = 1 : Women: PSI: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pll_formed : PLL: [+ women_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] [+ ds_name +]: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ women_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ women_pnf_display +]%, ?] Others: [+ women_other_display +]% ?]
+[? if womens_suffrage = 1 : Women: [+ psi_name +]: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pll_formed : PLL: [+ women_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] [+ ds_name +]: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ women_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ women_pnf_display +]%, ?] Others: [+ women_other_display +]% ?]
 
 @parties
 go-to: menu
 
-**PSI** - *Partito Socialista Italiano* (Italian Socialist Party) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution.
+**[+ psi_name +]** - *[+ psi_full_italian +]* ([+ psi_full_name +]) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution.
 
-[? if pcdi_formed : **PCd'I** - *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the PSI, formed after the left wing of the party and its leaders split. ?]
+[? if pcdi_formed : **PCd'I** - *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the [+ psi_name +], formed after the left wing of the party and its leaders split. ?]
 
 [? if pcdi_formed : Current relations: [+ pcdi_relation : relationships +] ?]
 
-[? if psu_formed : **PSU** - *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the PSI, formed after the reformist wing of the party and its leaders split. ?]
+[? if psu_formed : **PSU** - *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the [+ psi_name +], formed after the reformist wing of the party and its leaders split. ?]
 
 [? if psu_formed : Current relations: [+ psu_relation : relationships +] ?]
 
-[? if not psri_collapse : **PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the PSI, the PSRI are a centre-left party, advocating for socialism through the parliamentary system. ?]
+[? if not psri_collapse : **PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the [+ psi_name +], the PSRI are a centre-left party, advocating for socialism through the parliamentary system. ?]
 
 [? if not psri_collapse : Current relations: [+ psri_relation : relationships +] ?]
 
@@ -246,7 +246,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-[? if not national_congress_seen : **Red Guards**: The Red Guards are a paramilitary group most associated with the PSI, organising strikes, factory occupations as well as conflict with right-wing militias, most active in the Northern regions of Italy. ?]
+[? if not national_congress_seen : **Red Guards**: The Red Guards are a paramilitary group most associated with the [+ psi_name +], organising strikes, factory occupations as well as conflict with right-wing militias, most active in the Northern regions of Italy. ?]
 
 [? if not national_congress_seen : Strength: [+ rg_strength +] thousand ?]
 
@@ -291,7 +291,7 @@ Loyalty: [+ interior_police_loyalty : loyalty +]
 @factions
 go-to: menu
 
-= Internal factions of the PSI
+= Internal factions of the [+ psi_name +]
 
 The party is an amalgamation of the left-wing of the Italian political sphere, ranging from the Reformists on the right, to the Communists to the left, to the radicals espousing Anarchism, Syndicalism and everything in between. However, only a select few have enough sway in the party to matter.
 
@@ -519,7 +519,7 @@ data.push({
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **PSI:** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **[+ psi_name +]:** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} PCd'I: {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
@@ -700,7 +700,7 @@ if (Q.benevolence) {
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>!} **Italian Socialist Party** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!} 
+{!<tr><td>!} **[+ psi_full_name +]** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!} 
 
 {!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} Communists: {!</td><td>!} [+ communist_r +]% {!</td></tr>!} 
 

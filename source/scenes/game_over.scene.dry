@@ -202,12 +202,12 @@ go-to: eg_menu
 Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III, [? if psi_in_government : under a government led by us,?][? if not psi_in_government and not pnf_in_government : under an incompetent government,?][? if pnf_in_government : under a fascist dictatorship. ?] [? if not pnf_in_government : and under threat of the fascist [+ pnf_leader +] and his far-right bloc. ?]
 
 @psi_victorious
-title: PSI still in government
-view-if: psi_in_government == 1 and prime_minister_party == "PSI" and total_defeat == 0 and long_war == 0
+title: [+ psi_name +] still in government
+view-if: psi_in_government == 1 and prime_minister_party == psi_name and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The PSI is in government, under Prime Minister [+ prime_minister +]. Given the circumstances, this is a substantial accomplishment.
+The [+ psi_name +] is in government, under Prime Minister [+ prime_minister +]. Given the circumstances, this is a substantial accomplishment.
 
 @economic_crisis_resolved
 title: Economic crisis resolved!
@@ -216,14 +216,6 @@ tags: endings
 go-to: eg_menu
 
 [? if psi_in_government: With our lead, the economic crisis has been brought to a slow, as both unemployment and inflation have reached acceptable levels. ?][? if not psi_in_government: Surprisingly, the bourgeois governments have been able to contain the crisis to a minimal amount. ?]
-
-@paramilitary_plagued
-title: Italy is still plagued by the paramilitaries...
-view-if: terror_active = 1
-tags: endings
-go-to: eg_menu
-
-The PSI and Italy is still under attack from paramilitary forces seeking to overthrow this country.
 
 
 @achievements
@@ -307,7 +299,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
 
-[? if game_achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
+[? if game_achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
 
 [? if game_achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
@@ -387,7 +379,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
 
-[? if achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
+[? if achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
 
 [? if achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
@@ -467,7 +459,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_piano_minimo_completato: **Piano Minimo Completato** - Complete the objectives of the Minimum Plan. ?]
 
-[? if not achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the PSI break away. ?]
+[? if not achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
 
 [? if not achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 

@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: govt_affairs
 on-arrival: shuffle_cabinet_timer = 4;
-view-if: psi_in_government == 1 and shuffle_cabinet_timer <= 0 and prime_minister_party == "PSI" and not psi_majority
+view-if: psi_in_government == 1 and shuffle_cabinet_timer <= 0 and prime_minister_party == psi_name and not psi_majority
 card-image: img/ShuffleCabinet.jpg
 
 Do we wish to shuffle our cabinet? This might upset our current coalition.

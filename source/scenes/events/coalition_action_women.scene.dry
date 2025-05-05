@@ -5,7 +5,7 @@ on-arrival: gov_cooldown_timer = 3; gov_justice_timer = 9; womens_rights -= 1; p
 new-page: true
 tags: event
 
-= PPI Leader [+ ppi_leader +] criticises PSI policies
+= PPI Leader [+ ppi_leader +] criticises [+ psi_name +] policies
 
 In a recent speech to the assembly, [+ ppi_leader +] has issued a scathing criticism of our policies, particularly in regards to women's rights, deeming our reforms as too radical.
 

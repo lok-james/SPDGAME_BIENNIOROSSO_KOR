@@ -65,22 +65,22 @@ Q.party_demands_timer = 6;
 
 if (Q.reformists_defect == 0 && Q.reformist_strength > Q.communist_strength && Q.reformist_strength > Q.maximalist_strength || Q.communist_split == 1 && Q.maximalists_resign == 1) {
     Q.prime_minister = "Turati"; 
-    Q.prime_minister_party = "PSI";
+    Q.prime_minister_party = Q.psi_name;
 }
 
 if (Q.communist_split == 0 && Q.communist_strength > Q.reformist_strength && Q.communist_strength > Q.maximalist_strength || Q.reformists_defect == 1 && Q.maximalists_resign == 1) {
     Q.prime_minister = "Bordiga"; 
-    Q.prime_minister_party = "PSI";
+    Q.prime_minister_party = Q.psi_name;
 }
 
 if (Q.maximalists_resign == 0 && Q.maximalist_strength > Q.communist_strength && Q.maximalist_strength > Q.reformist_strength || Q.communist_split == 1 && Q.reformists_defect == 1) {
     Q.prime_minister = "Serrati"; 
-    Q.prime_minister_party = "PSI";
+    Q.prime_minister_party = Q.psi_name;
 }
 
 if (Q.reformists_defect == 1 && Q.communist_split == 1 && Q.maximalists_resign == 1) {
     Q.prime_minister = "Bacci";
-    Q.prime_minister_party = "PSI";
+    Q.prime_minister_party = Q.psi_name;
     Q.workers_psi -= 4*(1-Q.dissent);
     Q.middle_class_psi -= 5*(1-Q.dissent);
 }
@@ -88,23 +88,23 @@ if (Q.reformists_defect == 1 && Q.communist_split == 1 && Q.maximalists_resign =
 Q.psi_in_government = 1; 
 Q.psi_majority = 1; 
 
-Q.foreign_minister_party = "PSI"; 
+Q.foreign_minister_party = Q.psi_name; 
 Q.foreign_minister = "Matteotti";
-Q.interior_minister_party = "PSI";
+Q.interior_minister_party = Q.psi_name;
 Q.interior_minister = "Turati"; 
-Q.justice_minister_party = "PSI";
+Q.justice_minister_party = Q.psi_name;
 Q.justice_minister = "Treves";
-Q.labour_minister_party = "PSI"; 
+Q.labour_minister_party = Q.psi_name; 
 Q.labour_minister = "Rigola";
-Q.finance_minister_party = "PSI";
+Q.finance_minister_party = Q.psi_name;
 Q.finance_minister = "Lazzari";
-Q.treasury_minister_party = "PSI";
+Q.treasury_minister_party = Q.psi_name;
 Q.treasury_minister = "Modigliani";
-Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister_party = Q.psi_name;
 Q.agriculture_minister = "Graziadei"; 
-Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister_party = Q.psi_name; 
 Q.public_education_minister = "Togliatti";
-Q.public_works_minister_party = "PSI";
+Q.public_works_minister_party = Q.psi_name;
 Q.public_works_minister = "Vella";
 
 Q.violent_seen = 0;
@@ -174,6 +174,10 @@ Q.entente_relation -= 3;
 Q.army_loyalty = 0.8;
 Q.interior_budget = 4;
 Q.yearly_interior_gain = 1;
+
+Q.resources += Q.para_resources;
+Q.para_resources = 0;
+
 !}
 max-visits: 1
 go-to: violent_menu
@@ -220,9 +224,9 @@ go-to: violent_menu
 on-arrival: violent_seen += 1;
 max-visits: 1
 
-Next up on the list is political parties of Italy, ranging from us all the way to the far-right PNF. Naturally and agreed upon by all factions, Italy and the PSI will need a strong mandate to govern and stabilise the nation. Some on the left are in favour of a one-party state, while others on the right are more in favour of keeping an constitutional opposition to allow at least some freedom of choice.
+Next up on the list is political parties of Italy, ranging from us all the way to the far-right PNF. Naturally and agreed upon by all factions, Italy and the [+ psi_name +] will need a strong mandate to govern and stabilise the nation. Some on the left are in favour of a one-party state, while others on the right are more in favour of keeping an constitutional opposition to allow at least some freedom of choice.
 
-- @all_banned: All parties with the exception of the PSI are to be outlawed.
+- @all_banned: All parties with the exception of the [+ psi_name +] are to be outlawed.
 - @right_banned: The Chamber of Deputies will allow a permanent percentage of seats dedicated to the opposition, including only the PSRI and other leftists.
 - @none_banned: The Chamber of Deputies will allow a permanent percentage of seats dedicated to the opposition, including the PSRI, leftists and the PRI.
 

@@ -1,6 +1,6 @@
 title: Investigating Domestic Enemies
 on-arrival: week_actions += 1
-view-if: psi_in_government = 1 and interior_minister_party = "PSI" and not national_congress_seen
+view-if: psi_in_government = 1 and interior_minister_party = psi_name and not national_congress_seen
 #card-image: img/portraits/SeveringCarl.jpg
 #is-card: true
 #new-page: true

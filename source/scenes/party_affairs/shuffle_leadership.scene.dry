@@ -386,7 +386,7 @@ Argentina Altobelli is now an advisor.
 
 @add_buozzi
 title: Bruno Buozzi
-subtitle: Buozzi is an outspoken member of the reformist faction of the PSI, as well as the leader of the *Italian Federation of Metallurgical Workers*. {!<br><br>!}[? if difficulty < 0 : Actions - Child Labour, Economic Democracy, Minimum Program Implementation ?]
+subtitle: Buozzi is an outspoken member of the reformist faction of the [+ psi_name +], as well as the leader of the *Italian Federation of Metallurgical Workers*. {!<br><br>!}[? if difficulty < 0 : Actions - Child Labour, Economic Democracy, Minimum Program Implementation ?]
 is-card: true
 card-image: img/portraits/BrunoBuozzi.jpg
 tags: reformist_advisor
@@ -398,7 +398,7 @@ Bruno Buozzi is now an advisor.
 
 @add_matteotti
 title: Giacomo Matteotti
-subtitle: Matteotti is a long-time deputy of the PSI in the Chamber of Deputies, as well as a member of the reformist faction under Turati. {!<br><br>!}[? if difficulty < 0 : Actions - Constitutional Reform, Foreign Policy, Fasci Urgency ?]
+subtitle: Matteotti is a long-time deputy of the [+ psi_name +] in the Chamber of Deputies, as well as a member of the reformist faction under Turati. {!<br><br>!}[? if difficulty < 0 : Actions - Constitutional Reform, Foreign Policy, Fasci Urgency ?]
 is-card: true
 card-image: img/portraits/GiacomoMatteotti.jpg
 tags: reformist_advisor

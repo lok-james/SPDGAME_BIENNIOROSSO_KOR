@@ -133,7 +133,7 @@ The vote succeeds, and our government has resigned. Prime Minister [+ prime_mini
 
 @let_it_happen_elections
 subtitle: Perhaps we can utilise our successes in government for gains in the Chamber of Deputies?
-view-if: prime_minister_party = "PSI"
+view-if: prime_minister_party = psi_name
 on-arrival: next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; {!
 
 Q.rural_psi -= 3; 

@@ -3,14 +3,14 @@ new-page: true
 is-card: true
 tags: govt_affairs, national_def
 on-arrival: interior_policy_timer = 3 if not national_congress_seen; week_actions += 1; interior_policy_timer = 6 if national_congress_seen
-view-if: psi_in_government = 1 and (interior_minister_party = "PSI" or (liberal_crackdown_accepted and not crackdown_done)) and interior_policy_timer <= 0
+view-if: psi_in_government = 1 and (interior_minister_party = psi_name or (liberal_crackdown_accepted and not crackdown_done)) and interior_policy_timer <= 0
 card-image: img/portraits/FilippoTurati.jpg
 
 = Internal Security
 
-[? if interior_minister_party = "PSI": Being in control of the Interior Ministry, we hold control of the Carabinieri, the national gendarmerie, alongside the War Ministry, we can take care of the unstable internal situation of Italy. ?]
+[? if interior_minister_party = psi_name: Being in control of the Interior Ministry, we hold control of the Carabinieri, the national gendarmerie, alongside the War Ministry, we can take care of the unstable internal situation of Italy. ?]
 
-[? if liberal_crackdown_accepted and not interior_minister_party = "PSI" : Although not in control of the Interior Ministry, our coalition partners have given us temporary control over matters of the Carabinieri. ?]
+[? if liberal_crackdown_accepted and not interior_minister_party = psi_name : Although not in control of the Interior Ministry, our coalition partners have given us temporary control over matters of the Carabinieri. ?]
 
 - @loyalty_interior: Improve the loyalty of the Carabinieri.
 - @investigate_corruption: Investigate corruption by big businesses.
@@ -23,7 +23,7 @@ card-image: img/portraits/FilippoTurati.jpg
 - @cancel_advisor_action
 
 @loyalty_interior
-view-if: interior_minister_party = "PSI"
+view-if: interior_minister_party = psi_name
 on-arrival: interior_police_loyalty += 0.1;
 
 With some specific reassignments and improved training methods, we can root out reactionary and sympathetic fascist influence within the Carabinieri.
@@ -31,20 +31,20 @@ With some specific reassignments and improved training methods, we can root out 
 Current Carabinieri loyalty: [+ interior_police_loyalty : loyalty +]
 
 @investigate_corruption
-view-if: interior_minister_party = "PSI"
+view-if: interior_minister_party = psi_name
 go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
 
 @investigate_corruption_success
 on-arrival: investigate_corruption += 1; workers_psi += 5*(1-dissent) if not in_unstable_coalition; middle_class_psi += 2*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; middle_class_clc += 2*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 2*(1-dissent) if socialist_catholic_coalition; inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
 
-Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the PSI.
+Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the [+ psi_name +].
 
 @investigate_corruption_failure
 
 Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
 
 @crackdown_far_right
-go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5 or (liberal_crackdown_accepted and not interior_minister_party = "PSI"); crackdown_far_right_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
+go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5 or (liberal_crackdown_accepted and not interior_minister_party = psi_name); crackdown_far_right_failure if interior_police_loyalty < 0.5 and interior_minister_party = psi_name
 
 @crackdown_far_right_success
 on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; fascist_bomb_timer += 6 if fascist_terror; ard_strength -= 5; fdc_strength -= 7; abl_strength -= 3; liberal_crackdown_complete = 1 if crackdown_far_left > 0; democratisation += 1; nationalist_sentiment -= 3; violent_prevalence -= 0.01
@@ -57,7 +57,7 @@ Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumo
 
 @crackdown_republican
 view-if: violent_revolution and republican_terror
-go-to: crackdown_republican_success if interior_police_loyalty >= 0.5; crackdown_republican_failure if interior_police_loyalty < 0.5 and interior_minister_party = "PSI"
+go-to: crackdown_republican_success if interior_police_loyalty >= 0.5; crackdown_republican_failure if interior_police_loyalty < 0.5 and interior_minister_party = psi_name
 
 @crackdown_republican_success
 on-arrival: republican_bomb_timer += 6 if fascist_terror; 

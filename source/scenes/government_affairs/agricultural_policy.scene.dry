@@ -2,14 +2,14 @@ title: Agricultural Policy
 new-page: true
 is-card: true
 on-arrival: week_actions += 1; agricultural_policy_timer = 3;
-view-if: psi_in_government and agriculture_minister_party = "PSI" and agricultural_policy_timer <= 0
+view-if: psi_in_government and agriculture_minister_party = psi_name and agricultural_policy_timer <= 0
 frequency: 500
 card-image: img/portraits/AntonioGraziadei.jpg
 tags: govt_affairs
 
 = Agricultural Policy
 
-With control of the Agricultural Ministry in the hands of the PSI, it seems there is much work to be done in regards to reform. Many in the party are calling for land seizures, and some of our rural voters are requesting aid and financing to help in relieving their economic burden. What do we do?
+With control of the Agricultural Ministry in the hands of the [+ psi_name +], it seems there is much work to be done in regards to reform. Many in the party are calling for land seizures, and some of our rural voters are requesting aid and financing to help in relieving their economic burden. What do we do?
  
 - @support_coops: Support Agricultural cooperatives.
 - @support_coops_2: Continue supporting Agricultural cooperatives.

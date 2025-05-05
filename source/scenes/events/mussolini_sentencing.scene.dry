@@ -39,6 +39,6 @@ The Judge has ruled in favour of Mussolini, acquitting him of all charges we hav
 @mussolini_pardoned
 on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.8; industrialists_pnf *= 1.4; fdc_strength += 23; fdc_militancy += 0.06; middle_class_psi *= 1.5; pnf_leader = "Mussolini";
 
-= King [+ king +] saves innocent man from PSI's authoritarianism
+= King [+ king +] saves innocent man from [+ psi_name +]'s authoritarianism
 
 In an unexpected twist, the King has exercised his constitutional rights, pardoning Mussolini and forcing the Ministry to release him. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.

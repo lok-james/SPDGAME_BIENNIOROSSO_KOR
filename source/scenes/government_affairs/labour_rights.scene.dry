@@ -1,7 +1,7 @@
 title: Labour Rights
 new-page: true
 is-card: true
-view-if: psi_in_government and labour_minister_party = "PSI" and labour_rights_timer <= 0 
+view-if: psi_in_government and labour_minister_party = psi_name and labour_rights_timer <= 0 
 frequency: 500
 on-arrival: week_actions += 1; labour_rights_timer = 3
 card-image: img/portraits/RinaldoRigola.png

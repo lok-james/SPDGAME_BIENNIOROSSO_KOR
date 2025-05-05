@@ -7,7 +7,7 @@ new-page: true
 
 = Gaetano Salvemini
 
-Serrati is a teacher, historian, writer and member of the reformist wing of the PSI.
+Serrati is a teacher, historian, writer and member of the reformist wing of the [+ psi_name +].
 
 - @southern_question_salvemini
 - @public_education_salvemini
@@ -18,7 +18,7 @@ Serrati is a teacher, historian, writer and member of the reformist wing of the 
 title: Southern Question
 subtitle: Now that we are in government, we will be able to deal with the Mezzogiorno, plagued by economic stagnation.
 choose-if: advisor_action_timer = 0 and psi_in_government
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not in government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not in government. ?]
 on-arrival: advisor_action_timer = 6; southern_question_timer -= 5; last_advisor_action = 1
 go-to: southern_question
 
@@ -27,8 +27,8 @@ We are able to sway some of the more left-wing members of the party to our cause
 @public_education_salvemini
 title: Public Education
 subtitle: As we control the Public Education Ministry, we are able to direct policy, potentially benefitting us.
-choose-if: advisor_action_timer = 0 and psi_in_government and public_education_minister_party = "PSI"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The PSI is not currently in government. ?][? if not public_education_minister_party = "PSI" : The PSI is not in control of the Public Education Ministry. ?]
+choose-if: advisor_action_timer = 0 and psi_in_government and public_education_minister_party == psi_name
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not currently in government. ?][? if not public_education_minister_party == psi_name : The [+ psi_name +] is not in control of the Public Education Ministry. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_policy
 

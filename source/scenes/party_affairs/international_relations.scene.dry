@@ -15,6 +15,7 @@ At the Labour and Socialist International, we can forge contacts with our frater
 - @fr_uk: Build relationships with the French SFIO and British Labour Party to keep their governments aligned with Italy.
 - @germany: Learn organisation and street fighting from the German communists.
 - @comintern: Expand our contacts and influence with the Soviets through the Comintern.
+- @papacy: Expand our contacts with the Papacy utilising our influence within the PPI.
 - @america: Contact the Socialist party of America.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
@@ -45,6 +46,14 @@ unavailable-subtitle: Not enough resources. (Need 1)
 on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if rcw_over; pcdi_gramsci += 1;
 
 Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
+
+@papacy
+subtitle: -2 resources
+choose-if: resources >= 2; ppi_relation >= 55
+unavailable-subtitle: [? if resources < 2 : Not enough resources. (Need 2) ?][? if ppi_relation < 55 : Our influence within the PPI is too low. ?]
+on-arrival: papal_relation += 1; ppi_relation -= 10; resources -= 2; 
+
+We utilise our influence within the PPI to expand our contact amongst the PPI. We notice an increase in attitude with the Holy See.
 
 @america
 subtitle: -1 resources

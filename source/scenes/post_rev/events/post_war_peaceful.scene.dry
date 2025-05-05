@@ -66,6 +66,9 @@ Q.party_demands_timer = 6;
 Q.fascists_adapt = Q.time + 4;
 Q.yearly_interior_gain = 1;
 Q.interior_budget = 4;
+
+Q.resources += Q.para_resources;
+Q.para_resources = 0;
 !}
 max-visits: 1
 go-to: peaceful_menu
@@ -87,7 +90,7 @@ max-visits: 1
 
 The main, and perhaps most important of the matters is the issue of the Italian throne, the House of Savoy, and Vittorio Emanuele III. The King, during this period of crisis, has shown not only inaction, but incompetence, as violence erupts in the streets, unemployment skyrocketed and poverty and crime run rampant.
 
-There are two main factions of the National Congress regarding the King. The first, simply, is to abolish the Monarchy and transfer the majority of its powers to the Office of the Prime Minister. This would finally bring hundreds of years of autocratic rule to an end, freeing Italy. This is, naturally, supported by the PSI, [? if psu_formed : the PSU, ?] [? if pcdi_formed : the PCd'I, ?] [? if pri_prominent : the PRI, ?] the PSRI, alongside some left-wing liberals and catholics.
+There are two main factions of the National Congress regarding the King. The first, simply, is to abolish the Monarchy and transfer the majority of its powers to the Office of the Prime Minister. This would finally bring hundreds of years of autocratic rule to an end, freeing Italy. This is, naturally, supported by the [+ psi_name +], [? if psu_formed : the PSU, ?] [? if pcdi_formed : the PCd'I, ?] [? if pri_prominent : the PRI, ?] the PSRI, alongside some left-wing liberals and catholics.
 
 The other faction has instead offered a compromise; to keep the Monarchy as a figurehead of stability, forcing Vittorio Emanuele III to abdicate in favour of his son and stripping the powers of the throne. This is a less radical option, supported by the right-wing of the political sphere as a compromise to the question of the Monarchy.
 

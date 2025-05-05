@@ -1,4 +1,4 @@
-title: XVI Congress of the Italian Socialist Party
+title: XVI Congress of the [+ psi_full_name +]
 new-page: true
 subtitle: It is time to decide our path for the future.
 view-if: year = 1919 and month = 10
@@ -6,7 +6,7 @@ max-visits: 1
 face-image: img/portraits/NicolaBombacci.jpg
 tags: event
 
-= XVI Congress of the Italian Socialist Party
+= XVI Congress of the [+ psi_full_name +]
 
 The XVI Congress of Bologna has officially begun. Though the Congress wil be have many debates and discussions on the future of the party, there are two main things to be discussed: deciding on an approach to advance the proletarian revolution and participation in the new November elections. Nicola Bombacci has, at least temporarily, been elected and appointed General-Secretary of the Party.
 
@@ -46,7 +46,7 @@ The Reformists, having lost leadership in 1912, are able to achieve a plurality 
 @election_agenda
 new-page: false
 
-The second and final thing on the agenda is whether or not the PSI should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full abstention.
+The second and final thing on the agenda is whether or not the [+ psi_name +] should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full abstention.
 
 - @communist_arguments: The Communists are able to convince the rest of the party against the bourgeois elections.
 - @maximalist_arguments: The Maximalists utilise their majority to convince the rest of the party to compromise.

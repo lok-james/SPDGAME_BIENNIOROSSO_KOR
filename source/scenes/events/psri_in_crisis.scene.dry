@@ -1,7 +1,7 @@
 title: PSRI in Crisis!
 subtitle: The PSRI is having a crisis of leadership...
 new-page: true
-view-if: psri_stable and psri_r < 2 and psri_votes < 3 and year < 1924
+view-if: psri_stable and psri_r < 2 and psri_votes < 3 and year < 1924 and not national_congress_seen
 on-arrival: psri_stable = 0
 tags: event
 max-visits: 1
@@ -10,13 +10,13 @@ max-visits: 1
 
 The PSRI, also known as the Italian Reformist Socialist Party, is in crisis following it's recent electoral results, going from [+ old_psri_r +]% to [+ psri_r +]% in just six years. The party has gone from a fairly important force, representing the left-wing of the political sphere willing to cooperate with the liberals to a now almost defunct party, as the party struggles to keep its now rapidly defecting support base. 
 
-There is significant efforts within the party, including Bonomi, who are pushing for a shift in the party's ideology in order to counteract it's association with the PSI and to allow closer collaboration with the existing liberal parties, though there is fierce opposition against such a response as well. The party will also have to figure out how to contest the next elections, without a suitable organisation to campaign for the party, it is likely that it will be forced to collaborate and form joint lists with other parties.
+There is significant efforts within the party, including Bonomi, who are pushing for a shift in the party's ideology in order to counteract it's association with the [+ psi_name +] and to allow closer collaboration with the existing liberal parties, though there is fierce opposition against such a response as well. The party will also have to figure out how to contest the next elections, without a suitable organisation to campaign for the party, it is likely that it will be forced to collaborate and form joint lists with other parties.
 
 - @psri_left: The PSRI reaffirms its commitment to social democracy.
 - @psri_moderate: The PSRI begins a shift towards social liberalism.
 
 @psri_left
-choose-if: (psu_formed and (psi_votes >= 37 or radicalisation >= 8)) or pri_prominent or pll_formed
+choose-if: (psu_formed and (psi_votes >= 37 or radicalisation >= 8)) or ((pri_prominent or pll_formed) and bissolati_dead != 1)
 unavailable-subtitle: Proponents of the shift argue that the PSRI will become increasingly isolated without a shift in ideology.
 on-arrival: {!
 
@@ -56,7 +56,7 @@ The opposition is able to succeed, continuing the party's ideological commitment
 [? if psri_joint_pri : The PSRI have come to an agreement with the PRI, officially forming a joint-list with the them as a junior partner. and stemming the bleed of the party's support. ?]
 
 @psri_moderate
-view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) and not pri_prominent and not pll_formed
+view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) and ((not pri_prominent and not pll_formed) or bissolati_dead = 1)
 on-arrival: {!
 Q.psri_solo = 1;
 

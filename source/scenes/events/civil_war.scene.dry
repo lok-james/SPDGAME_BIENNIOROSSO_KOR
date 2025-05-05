@@ -210,7 +210,7 @@ The war settles into fixed battle lines. This will not be a quick coup, but a lo
 - @game_over: Game over.
 
 @socialist_victory
-on-arrival: prime_minister = "Bacci" if prime_minister_party = "PNF"; prime_minister_party = "PSI" if prime_minister_party = "PNF"; ard_banned = 1; fdc_banned = 1; abl_banned = 1
+on-arrival: prime_minister = "Bacci" if prime_minister_party = "PNF"; prime_minister_party == psi_name if prime_minister_party = "PNF"; ard_banned = 1; fdc_banned = 1; abl_banned = 1
 achievement: vittoria_monarchica
 
 = Victory for the Kingdom
@@ -222,7 +222,7 @@ Italy holds strong, against fascism.
 - @post_war_cv: It is time to decide our new agenda.
 
 @communist_victory
-on-arrival: soviet_victory = 1; prime_minister = "Bacci"; prime_minister_party = "PSI"; 
+on-arrival: soviet_victory = 1; prime_minister = "Bacci"; prime_minister_party == psi_name; 
 achievement: vittoria_sovietica
 
 = Victory for the Socialists

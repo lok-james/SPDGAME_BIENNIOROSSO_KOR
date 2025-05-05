@@ -221,7 +221,7 @@ for (var faction of Q.factions) {
 }
 
 // The largest party can only be the PNF or the PSI.
-Q.largest_party = 'PSI';
+Q.largest_party = Q.psi_name;
 if (Q.pnf_seating_disp >= Q.psi_seating_disp && Q.pnf_seating_disp >= Q.psri_seating_disp && Q.pnf_seating_disp >= Q.pcdi_seating_disp) {
     Q.largest_party = 'PNF';
 }
@@ -244,23 +244,23 @@ Q.psri_in_government = 0;
 Q.pnf_in_government = 0; 
 
 // based on starting coalition
-Q.foreign_minister_party = "PSI"; 
+Q.foreign_minister_party = Q.psi_name; 
 Q.foreign_minister = "Matteotti";
-Q.interior_minister_party = "PSI";
+Q.interior_minister_party = Q.psi_name;
 Q.interior_minister = "Turati"; 
-Q.justice_minister_party = "PSI";
+Q.justice_minister_party = Q.psi_name;
 Q.justice_minister = "Treves";
-Q.labour_minister_party = "PSI"; 
+Q.labour_minister_party = Q.psi_name; 
 Q.labour_minister = "Rigola";
-Q.finance_minister_party = "PSI";
+Q.finance_minister_party = Q.psi_name;
 Q.finance_minister = "Lazzari";
-Q.treasury_minister_party = "PSI";
+Q.treasury_minister_party = Q.psi_name;
 Q.treasury_minister = "Modigliani";
-Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister_party = Q.psi_name;
 Q.agriculture_minister = "Graziadei"; 
-Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister_party = Q.psi_name; 
 Q.public_education_minister = "Togliatti";
-Q.public_works_minister_party = "PSI";
+Q.public_works_minister_party = Q.psi_name;
 Q.public_works_minister = "Vella";
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
@@ -370,7 +370,7 @@ go-to: coalition_menu
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>!} **Italian Socialist Party** {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
+{!<tr><td>!} **[+ psi_full_name +]** {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} Communists: {!</td><td>!} [+ communist_r +]% {!</td><td>!} [+ str_change_communist +]% {!</td><td>!} [+ communist_seating +] {!</td><td>!} [+ communist_seating_disp +]% {!</td></tr>!}
 
@@ -417,32 +417,32 @@ Q.anti_socialist_coalition = 0;
 - @left_wing_coalition
 
 @psi_majority
-title: PSI Majority
-subtitle: PSI Majority: [+ psi_seating_disp +]
+title: [+ psi_name +] Majority
+subtitle: [+ psi_name +] Majority: [+ psi_seating_disp +]
 on-arrival: {!
 
-Q.prime_minister_party = "PSI";
+Q.prime_minister_party = Q.psi_name;
 
 Q.psi_in_government = 1; 
 Q.psi_majority = 1; 
 
-Q.foreign_minister_party = "PSI"; 
+Q.foreign_minister_party = Q.psi_name; 
 Q.foreign_minister = "Matteotti";
-Q.interior_minister_party = "PSI";
+Q.interior_minister_party = Q.psi_name;
 Q.interior_minister = "Turati"; 
-Q.justice_minister_party = "PSI";
+Q.justice_minister_party = Q.psi_name;
 Q.justice_minister = "Treves";
-Q.labour_minister_party = "PSI"; 
+Q.labour_minister_party = Q.psi_name; 
 Q.labour_minister = "Rigola";
-Q.finance_minister_party = "PSI";
+Q.finance_minister_party = Q.psi_name;
 Q.finance_minister = "Lazzari";
-Q.treasury_minister_party = "PSI";
+Q.treasury_minister_party = Q.psi_name;
 Q.treasury_minister = "Modigliani";
-Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister_party = Q.psi_name;
 Q.agriculture_minister = "Graziadei"; 
-Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister_party = Q.psi_name; 
 Q.public_education_minister = "Togliatti";
-Q.public_works_minister_party = "PSI";
+Q.public_works_minister_party = Q.psi_name;
 Q.public_works_minister = "Vella";
 
 Q.bordiga_support = parseFloat(Q.communist_seating_disp) + parseFloat(Q.maximalist_seating_disp) + parseFloat(Q.pcdi_seating_disp);
@@ -453,7 +453,7 @@ Q.daragona_support = parseFloat(Q.labour_seating_disp) + parseFloat(Q.reformist_
 !}
 achievement: governo_monocolore
 
-The PSI will continue its rule over Italy.
+The [+ psi_name +] will continue its rule over Italy.
 
 - @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
 - @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
@@ -467,7 +467,7 @@ subtitle: Bordiga leads the Communist faction and is able to sway the Maximalist
 unavailable-subtitle: The Communists and Maximalists do not have enough votes.
 on-arrival: prime_minister = "Bordiga"
 
-Amadeo Bordiga is elected as Secretary-General of the PSI, and Prime Minister of Italy.
+Amadeo Bordiga is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
 
 @serrati
 choose-if: serrati_support >= 50
@@ -475,7 +475,7 @@ subtitle: Serrati leads the Maximalists and is able to sway the Communists and L
 unavailable-subtitle: The Maximalists, Communists and Labour do not have enough votes.
 on-arrival: prime_minister = "Serrati"
 
-Giacinto Menotti Serrati is elected as Secretary-General of the PSI, and Prime Minister of Italy.
+Giacinto Menotti Serrati is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
 
 @daragona
 choose-if: daragona_support >= 50
@@ -483,7 +483,7 @@ subtitle: D'Aragona leads the Labour faction, and is able to sway the Reformists
 unavailable-subtitle: Labour and Reformists doesn't have have enough votes.
 on-arrival: prime_minister = "D'Aragona"
 
-Ludovico D'Aragona is elected as Secretary-General of the PSI, and Prime Minister of Italy.
+Ludovico D'Aragona is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
 
 @turati
 choose-if: turati_support >= 50
@@ -491,42 +491,42 @@ subtitle: Turati leads the Reformists, and is able to sway Labour.
 unavailable-subtitle: The Reformists and Labour do not have have enough votes.
 on-arrival: prime_minister = "Turati"
 
-Filippo Turati is elected as Secretary-General of the PSI, and Prime Minister of Italy.
+Filippo Turati is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
 
 @bacci
 view-if: bordiga_support < 50 and serrati_support < 50 and daragona_support < 50 and turati_support < 50
 subtitle: Giovanni Bacci will lead as a compromise Secretary-General and Prime Minister.
 on-arrival: prime_minister = "Bacci"
 
-Giovanni Bacci is elected as Secretary-General of the PSI, and Prime Minister of Italy.
+Giovanni Bacci is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
 
 @left_wing_coalition
 title: Left-wing Coalition
 subtitle: A coalition of all parties; from communist to reformist: 100%
 on-arrival: {!
 
-Q.prime_minister_party = "PSI";
+Q.prime_minister_party = Q.psi_name;
 
 Q.psi_in_government = 1; 
 Q.psi_majority = 1; 
 
-Q.foreign_minister_party = "PSI"; 
+Q.foreign_minister_party = Q.psi_name; 
 Q.foreign_minister = "Matteotti";
-Q.interior_minister_party = "PSI";
+Q.interior_minister_party = Q.psi_name;
 Q.interior_minister = "Turati"; 
-Q.justice_minister_party = "PSI";
+Q.justice_minister_party = Q.psi_name;
 Q.justice_minister = "Treves";
-Q.labour_minister_party = "PSI"; 
+Q.labour_minister_party = Q.psi_name; 
 Q.labour_minister = "Rigola";
-Q.finance_minister_party = "PSI";
+Q.finance_minister_party = Q.psi_name;
 Q.finance_minister = "Lazzari";
-Q.treasury_minister_party = "PSI";
+Q.treasury_minister_party = Q.psi_name;
 Q.treasury_minister = "Modigliani";
-Q.agriculture_minister_party = "PSI";
+Q.agriculture_minister_party = Q.psi_name;
 Q.agriculture_minister = "Graziadei"; 
-Q.public_education_minister_party = "PSI"; 
+Q.public_education_minister_party = Q.psi_name; 
 Q.public_education_minister = "Togliatti";
-Q.public_works_minister_party = "PSI";
+Q.public_works_minister_party = Q.psi_name;
 Q.public_works_minister = "Vella";
 
 Q.bordiga_support = parseFloat(Q.communist_seating_disp) + parseFloat(Q.maximalist_seating_disp) + parseFloat(Q.pcdi_seating_disp);
