@@ -142,7 +142,7 @@ max-visits: 1
 [? if ldr_convinced = 1: Thankfully, the Giuffrida's left-wing leadership have agreed to support us, rallying the party against the Acerbo Law. ?]
 
 @other_convince
-view-if: not pri_prominent or psri_collapse
+view-if: not pri_prominent or not psri_collapse
 on-arrival: {!
 if (Q.pri_prominent == 0) {
     Q.anti_acerbo_coalition += parseFloat(Q.other_seating_disp * 0.3);

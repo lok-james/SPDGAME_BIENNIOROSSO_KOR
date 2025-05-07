@@ -1,13 +1,14 @@
 title: Abolishment of Price Controls
-subtitle: The Nitti Government floors a controversial bill.
+subtitle: The Liberals floor a controversial bill.
 tags: event, govt_affairs
 is-card: true
-view-if: year = 1920 and month = 6 and week = 1 and prime_minister = "Nitti"
+view-if: year = 1920 and month = 6 and week = 1 and psi_in_government
+on-arrival: bread_price_seen = 1
 new-page: true
 
 = Price Control Measures
 
-The Nitti government has floored a bill that would abolish price controls on essential goods, including a controversial abolishing of price controls on bread. Our support base, allies and the vast majority of our leadership has demanded we vote against the bill, as a general strike has seemingly begun once more in response to this.
+The [+ ul_full_name +] has floored a bill that would abolish price controls on essential goods, including a controversial abolishing of price controls on bread. Our support base, allies and the vast majority of our leadership has demanded we vote against the bill, as a general strike has seemingly begun once more in response to this.
 
 What should we do?
 
@@ -20,12 +21,12 @@ on-arrival: communist_dissent += 10; labour_dissent += 5; maximalist_dissent += 
 
 Our grassroots party members are shocked by our intransigence! Many party branches have begun agitating against the cabinet, and our own delegation members even plan a full vote on the proposal, contravening the government's decision.
 
-The workers view this as betrayal, as do the unions. The bill is voted down anyways by a slight margin in fear of the ongoing general strike. The coalition government does not seem that it will last, but it unclear if we will benefit following our betrayal.
+The workers view this as betrayal, as do the unions. The bill is voted down anyways by a slight margin in fear of the ongoing general strike.
 
 @vote_no
-on-arrival: ul_relation -= 10; ldr_relation -= 5; communist_dissent -= 5; labour_dissent -= 5; workers_psi += 3*(1-dissent);
+on-arrival: ul_relation -= 10; ldr_relation -= 5; communist_dissent -= 5; labour_dissent -= 5; workers_psi += 3*(1-dissent); coalition_dissent += 1;
 
-Regardless of our vote, the bill is voted down a significant measure in fear of the ongoing general strike. The coalition government does not seem that it will last.
+Our coalition partners are angered by our defiance! Regardless of our vote, the bill is voted down a significant measure in fear of the ongoing general strike. The coalition government does not seem that it will last.
 
 @abstain
 on-arrival: ul_relation -= 5; ldr_relation -= 3; communist_dissent += 5; labour_dissent += 5; workers_psi -= 3*(1-dissent)
