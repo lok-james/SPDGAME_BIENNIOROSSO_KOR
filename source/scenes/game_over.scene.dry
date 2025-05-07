@@ -66,7 +66,7 @@ if (Q.workers_psi_normalised >= 80 && Q.middle_class_psi_normalised < 40 && Q.ru
 }
 
 // economy
-if (Q.nationalisation_progress == 4 && Q.work_councils >= 3) {
+if (Q.nationalisation_progress >= 4 && Q.work_councils >= 3) {
     this.achieve('trasformazione_socialista');
 }
 
