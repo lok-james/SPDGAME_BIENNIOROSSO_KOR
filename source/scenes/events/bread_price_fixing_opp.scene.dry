@@ -4,6 +4,7 @@ tags: event, govt_affairs
 is-card: true
 view-if: year = 1920 and month = 6 and week = 1 and prime_minister = "Nitti"
 on-arrival: bread_price_seen = 1
+max-visits: 1
 new-page: true
 
 = Price Control Measures
