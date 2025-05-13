@@ -29,6 +29,6 @@ on-arrival: army_loyalty -= 0.05; communist_dissent += 6; maximalist_dissent += 
 Perhaps for the best, the higher officers are executed, while minor and less-guilty officers are exiled. The military continues its recovery, albeit at a slower pace.
 
 @mercy
-foreign_invasion_time += 3; communist_dissent += 6; maximalist_dissent += 6; reformist_dissent += 6;
+on-arrival: foreign_invasion_time += 3; communist_dissent += 6; maximalist_dissent += 6; reformist_dissent += 6;
 
 Perhaps for the best, minor officers are rehabilitated back into the army. The party is naturally outraged, of course, but the expertise of the military remains fairly intact.

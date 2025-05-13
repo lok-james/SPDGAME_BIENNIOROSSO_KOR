@@ -123,7 +123,7 @@ on-arrival: para_resources -= 2 if not violent_revolution; budget -= 2 if violen
 subtitle: -[+ occupation_cost +] [? if not violent_revolution : Paramilitary ?] Resources - We can encourage and aid workers in seizing the means of production. [? if rg_militancy >= 0.44 : The high militancy of the Red Guards have reduced the cost of this action. ?]
 view-if: not psi_in_government and max_seize_factories = 0
 unavailable-subtitle: [? if not violent_revolution : Not enough paramilitary resources. (Need 3) ?] [? if violent_revolution : Not enough resources. (Need 3) ?]
-choose-if: (para_resources >= occupation_cost and not violent_revolution) or (resources >= >= occupation_cost and violent_revolution)
+choose-if: (para_resources >= occupation_cost and not violent_revolution) or (resources >= occupation_cost and violent_revolution)
 on-arrival: para_resources -= occupation_cost if not violent_revolution; resources -= occupation_cost if violent_revolution; max_seize_factories += 1; unemployment -= 0.8 if unemployment >= 8; workers_psi += 7*(1-dissent); veterans_psi += 5*(1-dissent); middle_class_pnf += 6; radicalisation += 0.6; industrialists_pnf += 7; inflation += 1.3; fasci_coup_progress += 2; ldr_relation -= 15; ul_relation -= 15; ppi_relation -= 10; ppi_right += 1; ldr_right += 1.2; socialist_sentiment += 5;
 
 We begin forcefully seizing idle industries, arming and aiding workers in seizing their workplaces. Industrialists are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.

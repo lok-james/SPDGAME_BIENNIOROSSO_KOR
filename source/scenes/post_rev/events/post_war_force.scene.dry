@@ -291,7 +291,7 @@ With the socialist revolution, one subject that is brought up is regarding the a
 
 @judiciary_reform
 subtitle: -1 Budget
-on-arrival: budget -= 1; democratisation += 2; workers_psi += 5*(1-dissent) if democratisation >= 3 judicial_reform += 2; republican_sentiment += 5*(1-dissent);
+on-arrival: budget -= 1; democratisation += 2; workers_psi += 5*(1-dissent) if democratisation >= 3; judicial_reform += 2; republican_sentiment += 5*(1-dissent);
 
 We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratic and socialist-align judges.
 
