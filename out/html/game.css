@@ -3,7 +3,7 @@ body {
   --border-color: #000;
   --content-bg-color: #f3f3f3;
   --text-color: #431;
-  --link-color: #900;
+  --link-color: #1B5E20;
   --link-hover-color: rgba(0, 0, 0, 0.05);
   --unavailable-bg-color: rgba(0, 0, 0, 0.1);
   --unavailable-color: #999;
@@ -25,7 +25,7 @@ body.dark-mode {
   --border-color: #fff;
   --content-bg-color: #242424;
   --text-color: #fff;
-  --link-color: #ff8080;
+  --link-color: #37c240;
   --link-hover-color: rgba(100, 100, 100, 0.1);
   --tab-bg-color: #555555;
   --tab-color: #505050;
@@ -116,7 +116,7 @@ header h2:before {
                rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 a {
-  color: #1B5E20;
+  color: var(--link-color);
   text-decoration: none;
 }
 p {
