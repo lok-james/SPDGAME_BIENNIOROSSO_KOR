@@ -520,9 +520,9 @@ if (Q.week_actions >= 1) {
 
         ///////////////////////////// change party support based on socialist sentiment
         // if socialist_sentiment is less than the support of left wing parties, reduce [+ psi_name +] support...
-        if (Q.socialist_sentiment/2 < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
+        if (Q.socialist_sentiment/1.5 < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
             if (Q.industrialists_psi > 0) {
-                Q.industrialists_psi -= 4/12*Q.revolutionary_exhaustion;
+                Q.industrialists_psi -= 2/12*Q.revolutionary_exhaustion;
                 Q.industrialists_pnf += 2/12;
             }
             if (Q.middle_class_psi > 0) {

@@ -1,6 +1,7 @@
 title: [+ year +] National Congress
 new-page: true
 set-bg: img/DemBg.jpg
+audio: clear shuffle music/post_rev/GuardaGiuDallaPianura.mp3 music/post_rev/Innodeilavoratoridelmare.mp3 music/post_rev/InnodeiPezzenti.mp3 music/post_rev/InnodelleBarricate.mp3 music/post_rev/LaBrigataGaribaldi.mp3 music/post_rev/Sonlamondina.mp3
 on-arrival: {!
 Q.national_congress_seen = 1;
 Q.peaceful_revolution = 1;

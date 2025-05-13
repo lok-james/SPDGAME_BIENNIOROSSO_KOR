@@ -13,7 +13,7 @@ The [+ psi_name +] cannot govern by itself yet. Though we have not historically 
 - @liberals: Strengthen our bonds with the liberal [+ ldr_name +] and [+ ul_name +] parties.
 - @catholic_party: Strengthen our bonds with the Catholic People's Party.
 - @leftists: Strengthen our bonds with our ideological allies in the PSRI and [+ ds_name +][? if pll_formed :, as well as the PLL ?][? if not pri_prominent :.?] [? if pri_prominent : and the PRI. ?]
-- @splinters: Strengthen our bonds with our splinter parties.
+- @splinters: Strengthen our bonds with our splinter parties; [? if pcdi_formed : the PCd'I ?] [? if pcdi_formed and psu_formed : and ?] [? if psu_formed : the PSU ?].
 - @psi_alone: The [+ psi_name +] can stand alone for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -31,7 +31,7 @@ We reach out to our former comrades in the splinter parties, and they, at the ve
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: resources -= 1; psri_relation += 8; ds_relation += 8; ds_relation += 5 if ds_leader = "Giuffrida"; ds_relation -= 5 if ds_leader = "Carnazza"; communist_dissent += 4*(1-dissent); pri_relation += 5 if pri_prominent; ds_left += 0.2; pll_relation += 8;
+on-arrival: resources -= 1; psri_relation += 8; ds_relation += 8; ds_relation += 5 if ds_leader = "Giuffrida"; ds_relation -= 5 if ds_leader = "Carnazza"; communist_dissent += 4*(1-dissent); pri_relation += 5 if pri_prominent; ds_left += 0.5; pll_relation += 8;
 
 We strengthen our contacts with the PSRI and the [+ ds_name +][? if pll_formed :, as well as the PLL ?], improving relations.
 
@@ -45,12 +45,12 @@ on-arrival: resources -= 1;
 go-to: catholic_op if socialist_catholic_coalition == 0; catholic_coalition if socialist_catholic_coalition == 1
 
 @catholic_op
-on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent); ppi_right -= 0.5; republican_sentiment += 1; radicalisation -= 0.05;
+on-arrival: ppi_relation += 5; communist_dissent += 4*(1-dissent); ppi_right -= 0.25; ppi_left += 0.25; republican_sentiment += 1; radicalisation -= 0.05;
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 
 @catholic_coalition
-on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent); ppi_left += 0.5; republican_sentiment += 3; radicalisation -= 0.1;
+on-arrival: ppi_relation += 8; communist_dissent += 4*(1-dissent); ppi_left += 0.3; ppi_right -= 0.3; republican_sentiment += 3; radicalisation -= 0.1;
 
 We are currently coalition partners with them, so improving relations comes naturally.
 
@@ -62,7 +62,7 @@ on-arrival: resources -= 1;
 go-to: liberal_op if psi_in_government == 0; liberal_coalition if centre_left_coalition == 1
 
 @liberal_op
-on-arrival: ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent); ldr_right -= 0.5; ul_nitti += 0.2; republican_sentiment += 1; radicalisation -= 0.05;
+on-arrival: ldr_relation += 5; ul_relation += 5; communist_dissent += 4*(1-dissent); ldr_right -= 0.3; ul_nitti += 0.3; republican_sentiment += 1; radicalisation -= 0.05;
 
 We are currently in opposition to their governing coalition, but that does not preclude the general building of feelings of good will.
 

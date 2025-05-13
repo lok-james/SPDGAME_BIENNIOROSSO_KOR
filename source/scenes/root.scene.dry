@@ -49,7 +49,6 @@ Q.dues = 2;
 // overall dissent reduces every increase in party support.
 Q.dissent = 0.05;
 Q.dissent_percent = 5;
-Q.party_approach = "Unclear";
 
 // factions
 Q.factions = ['communist', 'maximalist', 'syndicalist', 'reformist', 'labour'];
@@ -596,7 +595,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
             'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
             'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers', 'streetfighting',
-            'colonial_policy', 'paramilitary_policy'];
+            'colonial_policy', 'paramilitary_policy', 'gov_education'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -664,6 +663,7 @@ Q.gov_army_timer = 14;
 Q.gov_public_education_timer = 14;
 Q.gov_public_works_timer = 14;
 Q.gov_labour_timer = 14;
+Q.gov_education_timer = 14;
 Q.giolitti_tenure = 0;
 Q.radicalisation_timer = 6;
 Q.psu_negotiating_timer = 0;

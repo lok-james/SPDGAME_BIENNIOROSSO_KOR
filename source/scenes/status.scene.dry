@@ -41,8 +41,6 @@ Revolutionary Fervour: [+ revolutionary_fervour +]%
 
 {!<span class="tooltip-text" title="The other parties view us with doubt, considering the party contains radicals advocating for the fall of the Kingdom. The question is: How radical?">Radicalisation</span>!}: [+ radicalisation : radicalisation +]
 
-Our Approach: [+ party_approach +]
-
 = Government
 
 [? if not king_abolished : King: [+ king +] ?]

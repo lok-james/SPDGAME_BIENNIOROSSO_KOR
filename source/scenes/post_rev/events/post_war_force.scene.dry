@@ -1,5 +1,6 @@
 title: [+ year +] National Congress
 new-page: true
+audio: clear shuffle music/post_rev/GuardaGiuDallaPianura.mp3 music/post_rev/Innodeilavoratoridelmare.mp3 music/post_rev/InnodeiPezzenti.mp3 music/post_rev/InnodelleBarricate.mp3 music/post_rev/LaBrigataGaribaldi.mp3 music/post_rev/Sonlamondina.mp3
 set-bg: img/RevBg.jpg
 on-arrival: {!
 Q.national_congress_seen = 1;
@@ -178,6 +179,7 @@ Q.yearly_interior_gain = 1;
 Q.resources += Q.para_resources;
 Q.para_resources = 0;
 
+Q.officer_trial = Q.time + 2;
 !}
 max-visits: 1
 go-to: violent_menu
@@ -192,6 +194,7 @@ We have done it. Like our Russian allies to the east, we too have overthrown our
 - @violent_party: The Political Parties.
 - @violent_chamber: The Chamber of Deputies.
 - @violent_elections: The Elections.
+- @violent_judiciary: The Judiciary.
 - @violent_bank: The Banks.
 - @violent_done: We have done all that we can.
 
@@ -277,8 +280,25 @@ Snap elections will be called in order to bring new, sweeping members of the Sov
 
 - @violent_menu: Excellent.
 
+@violent_judiciary
+on-arrival: violent_seen += 1
+max-visits: 1
+
+With the socialist revolution, one subject that is brought up is regarding the assets of the rich. Many on the left advocate for a mass seizure of assets belonging to the rich, alongside the banks and distributing it to strengthen the transition between a capitalist and socialist economy.
+
+- @judiciary_reform: Remove reactionary judges and conduct extensive reforms.
+- @violent_menu: Keep the Judiciary as is.
+
+@judiciary_reform
+subtitle: -1 Budget
+on-arrival: budget -= 1; democratisation += 2; workers_psi += 5*(1-dissent) if democratisation >= 3 judicial_reform += 2; republican_sentiment += 5*(1-dissent);
+
+We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratic and socialist-align judges.
+
+- @violent_menu: Excellent.
+
 @violent_done
-view-if: violent_seen >= 5
+view-if: violent_seen >= 6
 
 We have done all we can to bring revolution to Italy, and we have succeeded. What lies ahead is uncertain, but at the very least, we are certain we will succeed.
 

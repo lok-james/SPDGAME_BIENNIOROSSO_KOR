@@ -60,6 +60,24 @@ The elections of the Supreme Soviet are to be held now.
 
 @post_election_1919
 on-arrival: {!
+
+Q.ds_seating_disp = 0; 
+Q.ppi_seating_disp = 0;
+Q.ldr_seating_disp = 0;
+Q.ul_seating_disp = 0;
+Q.pcs_seating_disp = 0;
+Q.pnf_seating_disp = 0;
+Q.other_seating_disp = 0;
+
+if (Q.benevolence != 1) {
+    Q.pri_seating_disp = 0;
+}
+
+if (Q.opposition != 1) {
+    Q.pcdi_seating_disp = 0;
+    Q.psu_seating_disp = 0;
+    Q.psri_seating_disp = 0;
+}
 // set old results
 // election threshold constitutional reform
 // banning parties
@@ -455,14 +473,25 @@ achievement: governo_monocolore
 
 The [+ psi_name +] will continue its rule over Italy.
 
+- @gramsci: Antonio Gramsci is elected Secretary-General and Prime Minister.
 - @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
 - @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
 - @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.
 - @turati: Filippo Turati is elected Secretary-General and Prime Minister.
 - @bacci: No leader is able to secure a majority!
 
+@gramsci
+choose-if: bordiga_support >= 50
+view-if: pcdi_gramsci > pcdi_bordiga
+subtitle: Gramsci leads the Communist faction and is able to sway the Maximalists.
+unavailable-subtitle: The Communists and Maximalists do not have enough votes.
+on-arrival: prime_minister = "Gramsci"
+
+Antonio Gramsci is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+
 @bordiga
 choose-if: bordiga_support >= 50
+view-if: pcdi_gramsci <= pcdi_bordiga
 subtitle: Bordiga leads the Communist faction and is able to sway the Maximalists.
 unavailable-subtitle: The Communists and Maximalists do not have enough votes.
 on-arrival: prime_minister = "Bordiga"
@@ -539,6 +568,7 @@ Q.chisea_support = parseFloat(Q.pri_seating_disp) + parseFloat(Q.reformist_seati
 
 The Left-wing coalition will continue its rule over Italy. The Ministries are shared collaboratively within the coalition.
 
+- @gramsci: Antonio Gramsci is elected Secretary-General and Prime Minister.
 - @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
 - @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
 - @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.

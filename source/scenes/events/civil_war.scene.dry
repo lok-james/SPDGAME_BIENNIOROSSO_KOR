@@ -1,5 +1,6 @@
 title: Civil War
 new-page: true
+audio: clear music/civil_war/BellaCiao.mp3
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
 Q.adp_strength = Math.round(Q.adp_strength);
@@ -48,13 +49,13 @@ if (Q.army_loyalty < 0) {
 }
 
 Q.loyal_army_power = Q.army_strength*Q.army_militancy*Q.army_loyalty;
-Q.total_power += Q.loyal_army_power * (1 - 0.04 * Q.radicalisation);
+Q.total_power += (Q.loyal_army_power * (1 - 0.04 * Q.radicalisation))/2;
 
 if (Q.rcw_over == 0) {
-    Q.soviet_power = 50;
+    Q.soviet_power = 60;
 }
 if (Q.rcw_over == 1 && Q.soviet_recovery_timer > 0) {
-    Q.soviet_power = 75;
+    Q.soviet_power = 80;
 }
 if (Q.rcw_over == 1 && Q.soviet_recovery_timer < 1) {
     Q.soviet_power = 100;
@@ -84,11 +85,17 @@ Q.total_power += Q.soviet_power;
 // use normalised workers_psi instead of labour_strength?
 Q.normalised_workers_psi = 100*Q.workers_psi/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
 Q.normalised_workers_psri = 100*Q.workers_psri/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
+Q.normalised_workers_psu = 100*Q.workers_psu/(Q.workers_psi + Q.workers_psri + Q.workers_ppi + Q.workers_other + Q.workers_pnf + Q.workers_ds + Q.workers_ul + Q.workers_ldr + Q.workers_pcdi + Q.workers_psu);
 Q.normalised_workers_total = Q.normalised_workers_psi;
 if (Q.psri_relation >= 50) {
     Q.normalised_workers_total += Q.normalised_workers_psri;
 } else if (Q.psri_relation >= 45) {
     Q.normalised_workers_total += Q.normalised_workers_psri*0.5;
+}
+if (Q.psu_relation >= 50) {
+    Q.normalised_workers_total += Q.normalised_workers_psu;
+} else if (Q.psu_relation >= 45) {
+    Q.normalised_workers_total += Q.normalised_workers_psu*0.5;
 }
 Q.total_power += (2 - Q.labour_dissent/100)*Q.normalised_workers_total*(2 - Q.unemployment/100)*2.5*total_fervour;
 console.log("Supporter strength:", Q.total_power);
@@ -114,7 +121,7 @@ if (Q.abl_banned == 1) {
 } else {
     Q.enemy_power += Q.abl_power;
 }
-Q.hostile_army_power = Q.army_strength*Q.army_militancy*(1-Q.army_loyalty);
+Q.hostile_army_power = (Q.army_strength*Q.army_militancy*(1-Q.army_loyalty))/2;
 Q.enemy_power += Q.hostile_army_power;
 console.log("Enemy strength:", Q.enemy_power);
 
@@ -210,6 +217,7 @@ The war settles into fixed battle lines. This will not be a quick coup, but a lo
 - @game_over: Game over.
 
 @socialist_victory
+audio: shuffle music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3 music/main/QuattroSignoriAParigiVanno.mp3
 on-arrival: prime_minister = "Bacci" if prime_minister_party = "PNF"; prime_minister_party = psi_name if prime_minister_party = "PNF"; ard_banned = 1; fdc_banned = 1; abl_banned = 1
 achievement: vittoria_monarchica
 

@@ -22,7 +22,7 @@ The first thing on the agenda is to decide between a reformist or revolutionary 
 subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
 choose-if: communist_strength > reformist_strength
 unavailable-subtitle: The bulk of the party is opposed to this.
-on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; party_approach = "Revolutionary"; preparing_rev_active = 1
+on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; preparing_rev_active = 1
 go-to: @election_agenda
 
 This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress in protest as the results of the votes is announced.
@@ -38,7 +38,7 @@ The less radical members of the Communists and Reformists accept the compromise,
 choose-if: communist_strength < reformist_strength
 unavailable-subtitle: The bulk of the party is opposed to this.
 subtitle: The party will fully abandon extraparliamentary means and pursue a policy of parliamentary reform.
-on-arrival: reformist_dissent *= 0.5; reformist_strength *= 1.5; communist_strength *= 0.5; maximalist_strength *= 0.75; communist_dissent *= 1.5; maximalist_dissent *= 1.25; participating = 1; revolutionary_fervour -= 7; king_relation += 7*(1-(radicalisation/10)); party_approach = "Parliamentary";
+on-arrival: reformist_dissent *= 0.5; reformist_strength *= 1.5; communist_strength *= 0.5; maximalist_strength *= 0.75; communist_dissent *= 1.5; maximalist_dissent *= 1.25; participating = 1; revolutionary_fervour -= 7; king_relation += 7*(1-(radicalisation/10));
 go-to: @election_agenda
 
 The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw them as having lost most of its support within the party. Already, as the vote is announced, many Communist and Maximalist members storm out of the Congress in protest, leaving the remaining members to continue the Congress.

@@ -7,7 +7,7 @@ face-image: img/YugoslavCommittee.jpg
 
 = Adriatic Negotiations
 
-Our allegiance with the Entente was secured via the *Treaty of London*, signed in secret by the liberal government. The Treaty promised a series of terms, most importantly however, were the lands of *South Tyrol*, *Austrian Littoral*, *Dalmatia* and *Snežnik Plateau*.
+Our allegiance with the Entente was secured via the *Treaty of London*, signed in secret by the liberal government. The Treaty promised a series of terms, the most important of which however, were the lands of *South Tyrol*, *Austrian Littoral*, *Dalmatia* and *Snežnik Plateau*.
 
 Following the end of the war, however, the *Paris Peace Conference* saw the Entente refusing to support Italian claims as given, leaving us to rely on our own. 
 
@@ -94,6 +94,12 @@ Q.ul_relation -= 7;
 Q.veterans_psi -= 9;
 Q.veterans_pnf += 7;
 
+Q.middle_class_psi -= 6;
+Q.middle_class_pnf += 4;
+
+Q.workers_psi -= 9;
+Q.workers_pnf += 7;
+
 Q.fasci_strength += 17;
 Q.ldr_right += 2;
 Q.ppi_right += 2;
@@ -108,7 +114,7 @@ go-to: fiume_question
 
 The Yugoslav Delegation is surprised at our willingness to accede to them, and happily accept, as are our Entente allies, wanting to maintain the balance of power.
 
-Our allies at home, however, bring down hell upon us. The Liberals and Catholics berate us in the Chamber of Deputies, the Fasci utilise our weakness to run a national campaign, and we are painted as 'traitors', as nationalist sentiment is riled up even further, as veteran voters lose complete faith in us.
+Our allies at home, however, bring down hell upon us. The Liberals and Catholics berate us in the Chamber of Deputies, the Fasci utilise our weakness to run a national campaign, and we are painted as 'traitors', as nationalist sentiment is riled up even further.
 
 It seems we might need to invest in more security for the Foreign Minister.
 
@@ -142,6 +148,13 @@ unavailable-subtitle: The British and French are already placing immense pressur
 on-arrival: {!
 Q.veterans_psi += 4;
 Q.veterans_pnf -= 6;
+
+Q.middle_class_psi += 3;
+Q.middle_class_pnf -= 1;
+
+Q.workers_psi += 4;
+Q.workers_pnf -= 2;
+
 Q.nationalist_sentiment -= 7;
 Q.socialist_sentiment += 2;
 
@@ -154,6 +167,12 @@ Q.fiume_italian = 1;
 Q.workers += 4;
 Q.middle_class += 5;
 Q.rural += 1;
+
+if (Q.ceded_territories == 1) {
+    Q.veterans_psi -= 4;
+    Q.workers_psi -= 2;
+    Q.middle_class_psi -= 2;
+}
 !}
 
 Yugoslavia agrees to hand over Fiume to us, as D'Annunzio and his forces celebrate as our troops enter the city. [? if ceded_territories == 1: The popularity at home isn't as happy to hear this, considering what they lost to earn Fiume. ?]

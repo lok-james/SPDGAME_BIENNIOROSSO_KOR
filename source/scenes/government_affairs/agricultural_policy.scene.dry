@@ -42,7 +42,7 @@ on-arrival: {!
 Q.land_seizures += 1;
 Q.agricultural_policy += 1;
 
-if (Q.in_unstable_coalition == 1) {
+if (Q.centre_left_coalition == 1) {
     Q.coalition_dissent += 1;
 }
 

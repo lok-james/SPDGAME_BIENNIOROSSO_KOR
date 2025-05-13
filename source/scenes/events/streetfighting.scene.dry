@@ -45,7 +45,7 @@ if (Q.fdc_fought == 1) {
     Q.fdc_militancy *= 0.96;
 
     Q.rg_strength *= 0.98;
-    Q.rg_militancy *= 0.98;
+    Q.rg_militancy *= 0.97;
 
     if (Q.arditi_cooperation == 1) {
         Q.adp_strength *= 0.98;
@@ -58,7 +58,7 @@ if (Q.ard_fought == 1) {
     Q.ard_militancy *= 0.96;
 
     Q.rg_strength *= 0.98;
-    Q.rg_militancy *= 0.98;
+    Q.rg_militancy *= 0.97;
 
     if (Q.arditi_cooperation == 1) {
         Q.adp_strength *= 0.98;
@@ -71,7 +71,7 @@ if (Q.abl_fought == 1) {
     Q.abl_militancy *= 0.96;
 
     Q.rg_strength *= 0.98;
-    Q.rg_militancy *= 0.98;
+    Q.rg_militancy *= 0.97;
 
     if (Q.arditi_cooperation == 1) {
         Q.adp_strength *= 0.98;
@@ -92,7 +92,7 @@ if (Q.fdc_fought == 1) {
     Q.fdc_militancy *= 0.96;
 
     Q.rg_strength *= 0.96;
-    Q.rg_militancy *= 0.96;
+    Q.rg_militancy *= 0.95;
 
     if (Q.arditi_cooperation == 1) {
         Q.adp_strength *= 0.96;
@@ -105,7 +105,7 @@ if (Q.ard_fought == 1) {
     Q.ard_militancy *= 0.96;
 
     Q.rg_strength *= 0.96;
-    Q.rg_militancy *= 0.96;
+    Q.rg_militancy *= 0.95;
 
     if (Q.arditi_cooperation == 1) {
         Q.adp_strength *= 0.96;
@@ -118,7 +118,7 @@ if (Q.abl_fought == 1) {
     Q.abl_militancy *= 0.96;
 
     Q.rg_strength *= 0.96;
-    Q.rg_militancy *= 0.96;
+    Q.rg_militancy *= 0.95;
 
     if (Q.arditi_cooperation == 1) {
         Q.adp_strength *= 0.96;
