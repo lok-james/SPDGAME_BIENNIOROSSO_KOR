@@ -132,7 +132,7 @@ We begin forcefully seizing idle industries, arming and aiding workers in seizin
 subtitle: -[+ occupation_cost +] [? if not violent_revolution : Paramilitary ?] Resources - This will deepen our conflict with the industrialists and the governing coalition. [? if rg_militancy >= 0.44 : The high militancy of the Red Guards have reduced the cost of this action. ?]
 view-if: not psi_in_government and max_seize_factories > 0
 unavailable-subtitle: [? if not violent_revolution : Not enough paramilitary resources. (Need [+ occupation_cost +]) ?] [? if violent_revolution : Not enough resources. (Need [+ occupation_cost +]) ?]
-choose-if: (para_resources >= occupation_cost and not violent_revolution) or (resources >= >= occupation_cost and violent_revolution)
+choose-if: (para_resources >= occupation_cost and not violent_revolution) or (resources >= occupation_cost and violent_revolution)
 max-visits: 2
 on-arrival: para_resources -= occupation_cost if not violent_revolution; resources -= occupation_cost if violent_revolution; max_seize_factories += 1; unemployment -= 0.7 if unemployment >= 8; unemployment -= 0.2 if max_seize_factories > 1; workers_psi += 7*(1-dissent)*max_seize_factories; veterans_psi += 4*(1-dissent)*max_seize_factories; radicalisation += 0.6; inflation += 0.2; industrialists_pnf += 6*max_seize_factories; middle_class_pnf += 3*max_seize_factories; fasci_coup_progress += 1; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 5; ppi_moderates += 0.3; ldr_right += 0.4; socialist_sentiment += 2;
 
