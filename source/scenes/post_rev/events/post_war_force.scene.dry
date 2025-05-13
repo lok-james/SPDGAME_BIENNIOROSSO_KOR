@@ -284,7 +284,7 @@ Snap elections will be called in order to bring new, sweeping members of the Sov
 on-arrival: violent_seen += 1
 max-visits: 1
 
-With the socialist revolution, one subject that is brought up is regarding the assets of the rich. Many on the left advocate for a mass seizure of assets belonging to the rich, alongside the banks and distributing it to strengthen the transition between a capitalist and socialist economy.
+With our successful revolution against the Kingdom, the reactionaries have begun to entrench themselves in the judiciary, posing a threat to any socialist reform that the PSI might desire to implement. All but a few people within the Party have supported a complete overhaul of the judicial apparatus, sacking any judges with potential sympathies to the reactionaries and radically reforming the courts into a more equitable system. This usurpation of the reactionary’s presence in government will certainly come with a price, but one that will make our rule ever more secure.
 
 - @judiciary_reform: Remove reactionary judges and conduct extensive reforms.
 - @violent_menu: Keep the Judiciary as is.
