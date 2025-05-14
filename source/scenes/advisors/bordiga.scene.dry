@@ -36,8 +36,8 @@ go-to: preparing_revolution
 @rural_campaign_bordiga
 title: Rural Campaign
 subtitle: Try to campaign among the southern rural populace.
-choose-if: advisor_action_timer == 0 and rural_policy > 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
+choose-if: advisor_action_timer == 0 and agricultural_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if agricultural_policy == 0 : We have not enacted any rural policies. ?]
 on-arrival: advisor_action_timer = 6; rural_psi += 5*(1-dissent); 
 
 We have increased our campaigning among farmers and the rural populace, especially amongst the South.
