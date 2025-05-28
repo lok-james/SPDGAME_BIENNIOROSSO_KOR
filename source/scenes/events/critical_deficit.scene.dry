@@ -61,7 +61,68 @@ We are forced to end the Unemployment Insurance Program early, regaining the inj
 subtitle: +3 Budget - We should be prepared for a support hit...
 choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
 unavailable-subtitle: Tax Rates are already too high.
-on-arrival: budget += 3; middle_class_psi -= 4; industrialists_psi -= 4; workers_psi -= 3; rural_psi -= 3; unemployment += 2; lower_tax_rates += 1; upper_tax_rates += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 2; workers_psi -= 5 if lower_tax_rates > 1; inflation -= 1.1; economic_growth -= 0.6; psri_relation -= 5*(1-dissent);
+on-arrival: {!
+Q.budget += 3; 
+
+if (Q.in_unstable_coalition == 0) {
+    Q.middle_class_psi -= 4*(1-Q.dissent); 
+    Q.industrialists_psi -= 4*(1-Q.dissent); 
+    Q.workers_psi -= 3*(1-Q.dissent); 
+    Q.rural_psi -= 3*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.middle_class_clc -= 4*(1-Q.dissent); 
+    Q.industrialists_clc -= 4*(1-Q.dissent); 
+    Q.workers_clc -= 3*(1-Q.dissent); 
+    Q.rural_clc -= 3*(1-Q.dissent);
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.middle_class_scc -= 4*(1-Q.dissent); 
+    Q.industrialists_scc -= 4*(1-Q.dissent); 
+    Q.workers_scc -= 3*(1-Q.dissent); 
+    Q.rural_scc -= 3*(1-Q.dissent);
+}
+
+Q.lower_tax_rates += 1;
+Q.upper_tax_rates += 1; 
+
+if (Q.upper_tax_rates > 1) {
+    Q.capital_strike_progress += 1;
+}
+
+if (Q.upper_tax_rates > 3) {
+    Q.capital_strike_progress += 1;
+} 
+
+if (Q.lower_tax_rates > 1) {
+    workers_psi -= 5*(1-Q.dissent); 
+}
+
+if (Q.lower_tax_rates > 1 && Q.socialist_catholic_coalition == 1) {
+    Q.coalition_dissent += 1;
+    Q.ppi_left -= 0.2;
+}
+
+Q.inflation -= 0.6;
+Q.economic_growth -= 0.6;
+Q.unemployment += 0.9;
+
+if (Q.budget > 0) {
+    Q.inflation -= 0.3;
+}
+
+if (Q.economic_growth > 0) {
+    Q.economic_growth -= 0.2;
+}
+
+if (Q.unemployment < 8) {
+    Q.unemployment += 0.2;
+}
+
+Q.psri_relation -= 5*(1-Q.dissent);
+!}
 
 Raising taxes hurts our support among all those who pay taxes. [? if centre_left_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
 

@@ -36,7 +36,7 @@ title: Organising workers
 subtitle: Improve our standing among the workers.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers_psi += 4*(1-dissent); workers_psi += 3*(1-dissent) if work_councils >= 2; labour_strength += 2;
+on-arrival: advisor_action_timer = 6; workers_psi += 4*(1-dissent); workers_psi += 3*(1-dissent) if work_councils >= 2; labour_strength += 2; syndicalist_strength += 2
 
 We have increased our organising among the workers. [? if work_councils >= 2 : Our continued support for the work councils has made organising easier. ?]
 

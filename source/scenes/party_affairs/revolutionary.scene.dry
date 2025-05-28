@@ -9,7 +9,11 @@ tags: party_affairs
 
 = Revolution or Reform?
 
-Our party is wracked as to how to deal with the bourgeois and the monarchy. The Maximalists advocate for Centrist Marxism, caught between the revolutionary rhetoric of the Left-wing of the party and the reformist alignment of the Right-wing of the party. The party is fairly evenly split, though we can change that.
+Our party is wracked as to how to deal with the bourgeois and the monarchy. The Left-wing Maximalists advocate for direct, revolutionary action, seeking to overthrow the autocratic Monarchy utilising the paramilitaries and with popular support. On the other hand, the Reformists advocate for governmental participation in government, seeking to advocate and reform the political system within parliamentary means, while the Maximalists, caught in the middle, advocate for Centre Marxism, situating themselves between the revolutionary rhetoric of the Left-wing of the party and the reformist alignment of the Right-wing of the party. 
+
+[if communist_strength > reformist_strength : The party is currently leaning more into its revolutionary support. ?]
+
+[? if reformist_strength > communist_strength : The party is currently leaning more into parliamentary means as a cause. ?]
 
 - @support_reformists: Sway sympathetic members towards reformism.
 - @support_revolutionaries: Sway sympathetic members towards revolutionary ideals.

@@ -2,7 +2,7 @@ title: Streetfighting
 new-page: true 
 subtitle: Our forces engage with the far-right.
 tags: event
-view-if: not return_to_normalcy and streetfighting_timer <= 0 and not national_congress_seen
+view-if: not return_to_normalcy and streetfighting_timer <= 0 and not national_congress_seen and not pacification_pact
 on-arrival: {!
 Q.rg_streetfighting = Q.rg_strength * Q.rg_militancy;
 Q.streetfighting_timer = 6;

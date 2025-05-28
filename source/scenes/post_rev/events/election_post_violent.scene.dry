@@ -467,6 +467,7 @@ Q.bordiga_support = parseFloat(Q.communist_seating_disp) + parseFloat(Q.maximali
 Q.serrati_support = parseFloat(Q.communist_seating_disp) + parseFloat(Q.maximalist_seating_disp) + parseFloat(Q.labour_seating_disp);
 Q.turati_support = parseFloat(Q.reformist_seating_disp) + parseFloat(Q.labour_seating_disp) + parseFloat(Q.psu_seating_disp) + parseFloat(Q.pri_seating_disp);
 Q.daragona_support = parseFloat(Q.labour_seating_disp) + parseFloat(Q.reformist_seating_disp) + parseFloat(Q.psu_seating_disp) + parseFloat(Q.pri_seating_disp);
+Q.deambris_support = parseFloat(Q.labour_seating_disp) + parseFloat(Q.syndicalist_seating_disp);
 
 !}
 achievement: governo_monocolore
@@ -477,6 +478,7 @@ The [+ psi_name +] will continue its rule over Italy.
 - @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
 - @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
 - @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.
+- @deambris: Alceste De Ambris is elected Secretary-General and Prime Minister.
 - @turati: Filippo Turati is elected Secretary-General and Prime Minister.
 - @bacci: No leader is able to secure a majority!
 
@@ -513,6 +515,14 @@ unavailable-subtitle: Labour and Reformists doesn't have have enough votes.
 on-arrival: prime_minister = "D'Aragona"
 
 Ludovico D'Aragona is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+
+@deambris
+choose-if: deambris_support >= 50
+subtitle: De Ambris leads the Syndicalists, and is able to sway Labour.
+unavailable-subtitle: The Syndicalists and Labour don't have enough votes.
+on-arrival: prime_minister = "De Ambris"
+
+Alceste De Ambris is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy. Some are skeptical of his prior affiliation and ties with fascism, however.
 
 @turati
 choose-if: turati_support >= 50
@@ -572,6 +582,7 @@ The Left-wing coalition will continue its rule over Italy. The Ministries are sh
 - @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
 - @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
 - @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.
+- @deambris: Alceste De Ambris is elected Secretary-General and Prime Minister.
 - @turati: Filippo Turati is elected Secretary-General and Prime Minister.
 - @chisea: Eugenio Chisea of the Italian Republican Party is elected Prime Minister!
 - @bacci: No leader is able to secure a majority!
@@ -581,3 +592,4 @@ view-if: benevolence
 choose-if: chisea_support >= 50
 unavailable-subtitle: The Republicans and Reformists do not have have enough votes.
 on-arrival: prime_minister = "Chisea"; prime_minister_party = "PRI"
+achievement: il_sogno_mazziniano

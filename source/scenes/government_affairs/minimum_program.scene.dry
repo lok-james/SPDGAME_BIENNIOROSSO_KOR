@@ -73,7 +73,7 @@ on-arrival: uncultivated_redistributed += 1; unemployment -= 0.1 if unemployment
 subtitle: -1 Budget - We can utilise our surplus to continue economic development and reduce unemployment. [? if public_works_minister_party != psi_name :- Thankfully, the [+ public_works_minister_party +] seems willing to help us. ?]
 view-if: min_public_works = 0
 choose-if: (public_works_minister_party = psi_name or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and (budget > 0 or violent_revolution)
-unavailable-subtitle: -1 Budget - [? if not public_works_minister_party = psi_name or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not continue the Public Works Ministry. ?][? if budget <= 0 : We do not have a surplus. ?]
+unavailable-subtitle: -1 Budget - [? if not public_works_minister_party = psi_name or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not control the Public Works Ministry. ?][? if budget <= 0 : We do not have a surplus. ?]
 on-arrival: budget -= 1; min_public_works += 1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.4; unemployment -= 0.1 if unemployment >= 8
 
 We order the construction of railways, canals, streets and more, hiring unemployed workers to do so.
@@ -82,7 +82,7 @@ We order the construction of railways, canals, streets and more, hiring unemploy
 subtitle: -[+ min_public_works +] - We can continue utilising our surplus to continue economic development and reduce unemployment. [? if public_works_minister_party != psi_name :- Thankfully, the [+ public_works_minister_party +] seems willing to help us. ?]
 view-if: min_public_works > 0
 choose-if: (public_works_minister_party = psi_name or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and (budget >= min_public_works or violent_revolution)
-unavailable-subtitle: -[+ min_public_works +] Budget - [? if not public_works_minister_party = psi_name or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not continue the Public Works Ministry. ?][? if budget < min_public_works : We do not have a surplus. ?]
+unavailable-subtitle: -[+ min_public_works +] Budget - [? if not public_works_minister_party = psi_name or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not control the Public Works Ministry. ?][? if budget < min_public_works : We do not have a surplus. ?]
 max-visits: 2
 on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 0.2*min_public_works; inflation += 0.3 if budget < 0; economic_growth += 0.3*min_public_works; economic_growth += 0.2 if economic_growth < 0; unemployment -= 0.4*min_public_works; unemployment -= 0.2 if unemployment >= 8
 
@@ -96,7 +96,7 @@ on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3
 subtitle: -2 Budget - We can buy out bankrupt or defunct companies and repurpose them.
 view-if: min_compensation = 0
 choose-if: labour_minister_party = psi_name and (budget > 1 or violent_revolution)
-unavailable-subtitle: -2 Budget - [? if not labour_minister_party = psi_name : We do not continue the Labour Ministry. ?][? if budget <= 1 : We do not have a surplus. ?]
+unavailable-subtitle: -2 Budget - [? if not labour_minister_party = psi_name : We do not control the Labour Ministry. ?][? if budget <= 1 : We do not have a surplus. ?]
 on-arrival: budget -= 2; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 2.3; industrialists_pnf += 2;
 
 We begin buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion.
@@ -105,7 +105,7 @@ We begin buying up companies who have gone bankrupt or defunct due to the curren
 subtitle: -[+ compensation_cost +] - We can continue buying up idling factories to repurpose them.
 view-if: min_compensation > 0
 choose-if: labour_minister_party = psi_name and (budget >= compensation_cost or violent_revolution)
-unavailable-subtitle: -[+ compensation_cost +] Budget - [? if not labour_minister_party = psi_name : We do not continue the Labour Ministry. ?][? if budget < compensation_cost : We do not have a surplus. ?]
+unavailable-subtitle: -[+ compensation_cost +] Budget - [? if not labour_minister_party = psi_name : We do not control the Labour Ministry. ?][? if budget < compensation_cost : We do not have a surplus. ?]
 max-visits: 2
 on-arrival: budget -= compensation_cost; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.6 if unemployment >= 8; unemployment -= 0.1 if min_compensation > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation; coalition_dissent += 1 if centre_left_coalition
 

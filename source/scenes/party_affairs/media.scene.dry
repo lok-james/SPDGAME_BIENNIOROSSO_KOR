@@ -30,7 +30,7 @@ on-arrival: resources += 1; middle_class_psi += 4*(1 - dissent); communist_disse
 Our commercialized newspapers are able to bring in more funds. However, the left and labour factions express their displeasure.
 
 @campaign
-title: The purpose of our media is to elect more Social Democrats.
+title: The purpose of our media is to elect more Socialists
 subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: campaign_media += 1; workers_psi += 4*(1 - dissent); socialist_sentiment += 1*(1-dissent);
 
@@ -59,7 +59,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
 view-if: radio > 0 and radio <= 3
-on-arrival: radio += 1; resources -= 1; industrialists_psi += 4*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 1*(1 - dissent); socialist_sentiment += 1*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted; industrialists_psi -= 3*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
+on-arrival: radio += 1; resources -= 1; industrialists_psi += 4*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 1*(1 - dissent); socialist_sentiment += 1*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted; industrialists_psi -= 2*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
 
 Our new radio network has a mix of popular and political programming, and is proving a success.
 
@@ -67,7 +67,7 @@ Our new radio network has a mix of popular and political programming, and is pro
 title: We must keep on building up our radio network.
 subtitle: It is now financially self-sufficient, and does not require any more resources.
 view-if: radio > 3 and radio <= 5 and year <= 1921
-on-arrival: radio += 1; industrialists_psi += 5*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 4*(1 - dissent); rural_psi += 3*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted; industrialists_psi -= 2*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
+on-arrival: radio += 1; industrialists_psi += 5*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 4*(1 - dissent); rural_psi += 3*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted; industrialists_psi -= 1*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
 
 Our radio network has become a successful tool for spreading our message.
 

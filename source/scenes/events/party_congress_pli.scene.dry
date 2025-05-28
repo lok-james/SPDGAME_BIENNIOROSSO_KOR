@@ -1,5 +1,5 @@
 title: [+ year +] [+ ul_name +] Party Congress
-subtitle: The [+ ul_name +] holds its Biannual Congress.
+subtitle: The [+ ul_name +] holds its Biennial Congress.
 new-page: true
 view-if: ul_congress_trigger = 1 and not ul_banned
 on-arrival: {!
@@ -28,7 +28,7 @@ tags: event
 
 = [+ year +] [+ ul_name +] Party Congress
 
-The Biannual Party Congress of the [+ ul_full_name +] has begun in order to elect the party's next leader. Alberto Giovannini has continued his role as Secretary-General, though a vote will be held on electing the party's leadership to represent it for the next two years.
+The Biennial Party Congress of the [+ ul_full_name +] has begun in order to elect the party's next leader. Alberto Giovannini has continued his role as Secretary-General, though a vote will be held on electing the party's leadership to represent it for the next two years.
 
 The party is split into two factions; [? if not ldr_defunct : Following the failure of the merger of the PLDI and the PLI and his subsequent defection, ?][? if ldr_defunct : Following the merger of the PLDI with the PLI, ?] Antonio Salandra, former leader of the PLDI, has been able to secure influence within the right of party, advocating for further and deepened cooperation with [+ pnf_leader +]'s [+ pnf_full_name +] in order to combat the left-wing radicals.
 

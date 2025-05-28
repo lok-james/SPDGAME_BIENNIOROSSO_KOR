@@ -180,6 +180,7 @@ Q.resources += Q.para_resources;
 Q.para_resources = 0;
 
 Q.officer_trial = Q.time + 2;
+Q.rev_year = Q.year;
 !}
 max-visits: 1
 go-to: violent_menu
@@ -237,17 +238,17 @@ Next up on the list is political parties of Italy, ranging from us all the way t
 choose-if: communist_strength > (maximalist_strength + reformist_strength)
 unavailable-subtitle: The Communists do not have enough influence.
 subtitle: This might result in our opposition taking more extreme measures.
-on-arrival: republicans_adapt = time + 6; dictatorship = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
+on-arrival: republicans_adapt = time + 3; dictatorship = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
 go-to: violent_menu
 
 @right_banned
-subtitle: This might weaken our ability to effectively govern, though appeases the republicans.
-on-arrival: republicans_adapt = time + 24; opposition = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
+subtitle: This might weaken our ability to effectively govern, though grants some concessions to the republicans.
+on-arrival: republicans_adapt = time + 12; opposition = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
 go-to: violent_menu
 
 @none_banned
 subtitle: This will significantly weaken our ability to effectively govern, but will ensure republican dissent is minimal.
-on-arrival: republicans_adapt = time + 48; violent_seen += 1; benevolence = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
+on-arrival: violent_seen += 1; benevolence = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
 go-to: violent_menu
 
 @violent_chamber
@@ -273,7 +274,7 @@ on-arrival: upper_tax_rates += 3; workers_psi += 6*(1-dissent); veterans_psi += 
 go-to: violent_menu
 
 @violent_elections
-on-arrival: violent_seen += 1; violent_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_in_government = 0; in_popular_front = 0; in_left_front = 0; 
+on-arrival: violent_seen += 1; violent_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 max-visits: 1
 
 Snap elections will be called in order to bring new, sweeping members of the Soviet to power who will be able to govern the country and will be held on [+ next_election_month : month +] [+ year +].

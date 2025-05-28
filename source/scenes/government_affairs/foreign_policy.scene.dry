@@ -100,7 +100,7 @@ subtitle: Our negotiations have been successful.
 view-if: uk_debts <= 0 and uk_debts_over = 0 and in_default = 0
 on-arrival: uk_debts_over = 1; budget += 2; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 8*(1-dissent); industrialists_psi += 5*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 5*(1-dissent); capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.6; economic_growth += 0.1 if economic_growth < 0
 
-Finally, after perilous negotiations with the United States, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1928 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
+Finally, after perilous negotiations with the United Kingdom, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1928 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
 
 The new plan has boosted confidence of our economy, giving us more budget to work with.
 

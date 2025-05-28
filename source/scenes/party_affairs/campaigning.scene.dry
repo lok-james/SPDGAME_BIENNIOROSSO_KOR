@@ -41,9 +41,9 @@ We have increased our campaigning among the middle class. [? if socialist_sentim
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: industrialists_psi += 5*(1-dissent); resources -= 1; industrialists_psi -= 1 if nationalist_sentiment >= 51; industrialists_psi -= 3 if nationalisation_adopted
+on-arrival: industrialists_psi += 5*(1-dissent); resources -= 1; industrialists_psi -= 1 if nationalist_sentiment >= 51; industrialists_psi -= 3 if nationalisation_adopted; industrialists_psi += 2 if welfare < 0
 
-We have increased our campaigning among the industrialists. Our ideals are diametrically opposed to them, making campaigning harder. [? if nationalisation_adopted : Our campaign is worsened by our radical political & economic plan. ?]
+We have increased our campaigning among the industrialists. Our ideals are diametrically opposed to them, making campaigning harder. [? if nationalisation_adopted : Our campaign is worsened by our radical political & economic plan. ?] [? if welfare < 0 : Our campaign is made easier by the gutting of the welfare system. ?]
 
 @rural
 subtitle: -1 resources
@@ -65,9 +65,11 @@ We have increased our campaigning among the unemployed. [? if welfare < 0: The w
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: catholic_psi += 6*(1-dissent); resources -= 1; catholic_psi -= 5*(1-dissent) if secularised_education;
+on-arrival: catholic_psi += 6*(1-dissent); resources -= 1; catholic_psi -= 5*(1-dissent) if secularised_education; catholic_psi += 2*(1-dissent) if roman_question_answered; catholic_psi += 1 if pope = "Gasppari" and roman_question_answered; catholic_psi -= 1 if pope = "Del Val" and roman_question_answered
 
-We have increased our campaigning among Catholics.
+We have increased our campaigning among Catholics. [? if secularised_education : Our campaign is made harder due to our decision to secularise education. ?] [? if roman_question_answered : The signing of the Lateran Treaty under our Foreign Minister makes building support easier. ?]
+
+[? if pope = "Del Val" and roman_question_answered: A Pope antagonistic to our cause has made campaigning slightly harder. ?] [? if pope = "Gasppari" and roman_question_answered: A Pope sympathetic to our cause has made campaigning easier. ?]
 
 @women
 subtitle: -1 resources

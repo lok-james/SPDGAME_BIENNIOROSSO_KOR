@@ -527,7 +527,7 @@ if (Q.economic_growth < 0) {
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Paying off some of our American debtors reaffirms our commitment to repaying American war debt, as well as makes negotiations in order to resolve those same debts smoother, restoring investment confidence.
+Paying off some of our American debtors reaffirms our commitment to repaying American war debt while making negotiations in order to resolve those same debts smoother, restoring investment confidence.
 
 @repay_uk_debts
 title: Repay British debtors.
@@ -557,4 +557,4 @@ if (Q.economic_growth < 0) {
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Paying off some of our British debtors reaffirms our commitment to repaying British war debt, as well as makes negotiations in order to resolve those same debts smoother, restoring investment confidence.
+Paying off some of our British debtors reaffirms our commitment to repaying British war debt while making negotiations in order to resolve those same debts smoother, restoring investment confidence.

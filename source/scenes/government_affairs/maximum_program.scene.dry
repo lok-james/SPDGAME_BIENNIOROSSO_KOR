@@ -2,8 +2,9 @@ title: Maximum Program
 new-page: true
 is-card: true
 tags: govt_affairs, party_affairs
+frequency: 50
 on-arrival: maximum_program_timer += 4; week_actions += 1; occupation_cost = 3; occupation_cost -= 1 if rg_militancy >= 0.44
-view-if: maximum_program_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and ((max_seize < 3 and max_councils < 3 and max_land_seize < 3 and psi_in_government) or (max_seize_factories < 3 and max_seize_councils < 3 and max_land_seize > 3 and not psi_in_government))
+view-if: maximum_program_timer <= 0 and economic_plan = 1 and nationalisation_adopted = 1 and ((maximum_done_gov < 6 and psi_in_government) or (maximum_done_opp < 6 and not psi_in_government)) and max_land_seize < 3
 card-image: img/portraits/GiacintoMenottiSerrati.png
 #subtitle: Policies to address the economic crisis.
 
@@ -32,7 +33,7 @@ subtitle: Neither our allies in the Chamber of Deputies, nor the industrialists 
 view-if: max_seize = 0 and psi_in_government
 unavailable-subtitle: [? if not labour_minister_party = psi_name: The [+ psi_name +] does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
 choose-if: judicial_reform > 2 and labour_minister_party = psi_name
-on-arrival: max_seize += 1; unemployment -= 0.2 if unemployment >= 8; workers_psi += 6*(1-dissent); veterans_psi += 4*(1-dissent); middle_class_pnf += 3; radicalisation += 0.3; unemployment -= 0.5; economic_growth -= 0.2; industrialists_pnf += 8; capital_strike_progress += 3; fasci_coup_progress += 2; coalition_dissent += 2 if in_unstable_coalition; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 4; ds_right += 1; ldr_right += 1; ppi_right += 0.5; socialist_sentiment += 3;
+on-arrival: maximum_done_gov += 1; max_seize += 1; unemployment -= 0.2 if unemployment >= 8; workers_psi += 6*(1-dissent); veterans_psi += 4*(1-dissent); middle_class_pnf += 3; radicalisation += 0.3; unemployment -= 0.5; economic_growth -= 0.2; industrialists_pnf += 8; capital_strike_progress += 3; fasci_coup_progress += 2; coalition_dissent += 2 if in_unstable_coalition; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 4; ds_right += 1; ldr_right += 1; ppi_right += 0.5; socialist_sentiment += 3;
 
 We begin forcefully seizing idle industries, nationalising vast sums of the economy without compensating the greedy industrialists a single cent. They are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
 
@@ -42,7 +43,7 @@ view-if: max_seize > 0 and psi_in_government
 choose-if: labour_minister_party = psi_name 
 unavailable-subtitle: [? if not labour_minister_party = psi_name: The [+ psi_name +] does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
 max-visits: 2
-on-arrival: max_seize += 1; unemployment -= 0.1 if unemployment >= 8; unemployment -= 0.2 if max_seize > 1; workers_psi += 4*(1-dissent)*max_seize; veterans_psi += 2*(1-dissent)*max_seize; radicalisation += 0.4; economic_growth -= 0.2; industrialists_pnf += 4*max_seize; middle_class_pnf += 2*max_seize; capital_strike_progress += 2; fasci_coup_progress += 1; coalition_dissent += 1 if in_unstable_coalition; ldr_relation -= 5; ul_relation -= 5; ppi_relation -= 2; ds_right += 0.8; ldr_right += 0.8; ppi_right += 0.3; socialist_sentiment += 2
+on-arrival: maximum_done_gov += 1; max_seize += 1; unemployment -= 0.1 if unemployment >= 8; unemployment -= 0.2 if max_seize > 1; workers_psi += 4*(1-dissent)*max_seize; veterans_psi += 2*(1-dissent)*max_seize; radicalisation += 0.4; economic_growth -= 0.2; industrialists_pnf += 4*max_seize; middle_class_pnf += 2*max_seize; capital_strike_progress += 2; fasci_coup_progress += 1; coalition_dissent += 1 if in_unstable_coalition; ldr_relation -= 5; ul_relation -= 5; ppi_relation -= 2; ds_right += 0.8; ldr_right += 0.8; ppi_right += 0.3; socialist_sentiment += 2
 
 [? if max_seize = 2: We continue seizing factories from idling companies, being able to repurpose them and hand over the means of production to the workers. ?]
 
@@ -55,7 +56,7 @@ subtitle: We can use our position to strengthen representative bodies of factory
 view-if: max_councils = 0 and psi_in_government 
 unavailable-subtitle: [? if not labour_minister_party = psi_name: The [+ psi_name +] does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
 choose-if: judicial_reform > 1 and labour_minister_party = psi_name
-on-arrival: max_councils += 1; workers_psi += 7*(1-dissent); labour_dissent -= 4; syndicalist_dissent -= 6 if syndicalist_active; labour_strength += 4; syndicalist_strength += 6; ldr_relation -= 5; coalition_dissent += 1 if centre_left_coalition; ldr_right += 0.2; socialist_sentiment += 2;
+on-arrival: maximum_done_gov += 1; max_councils += 1; workers_psi += 7*(1-dissent); labour_dissent -= 4; syndicalist_dissent -= 6 if syndicalist_active; labour_strength += 4; syndicalist_strength += 6; ldr_relation -= 5; coalition_dissent += 1 if centre_left_coalition; ldr_right += 0.2; socialist_sentiment += 2;
 
 We encourage and allow workers' councils to develop, utilising Soviet-style and Turin-style councils as inspiration, giving workers a larger voice in their workplace.
 
@@ -65,7 +66,7 @@ view-if: max_councils > 0 and psi_in_government
 unavailable-subtitle: [? if not labour_minister_party = psi_name: The [+ psi_name +] does not control the Labour & Social Security Ministry. ?][? if judicial_reform <= 2: The judiciary would oppose this action. ?]
 choose-if: judicial_reform > 1 and labour_minister_party = psi_name
 max-visits: 2
-on-arrival: max_councils += 1; workers_psi += 4*(1-dissent); capital_strike_progress += 1; labour_dissent -= 2; syndicalist_dissent -= 5 if syndicalist_active; labour_strength += 2; syndicalist_strength += 5; ldr_relation -= 3; coalition_dissent += 1 if centre_left_coalition; economic_growth += 0.1 if economic_growth < 3; unemployment -= 2 if unemployment > 5 and max_councils = 3; workers += 2 if max_councils = 3; ldr_right += 0.1; socialist_sentiment += 1;
+on-arrival: maximum_done_gov += 1; max_councils += 1; workers_psi += 4*(1-dissent); capital_strike_progress += 1; labour_dissent -= 2; syndicalist_dissent -= 5 if syndicalist_active; labour_strength += 2; syndicalist_strength += 5; ldr_relation -= 3; coalition_dissent += 1 if centre_left_coalition; economic_growth += 0.1 if economic_growth < 3; unemployment -= 2 if unemployment > 5 and max_councils = 3; workers += 2 if max_councils = 3; ldr_right += 0.1; socialist_sentiment += 1;
 
 [? if max_councils = 2: We grant workers further power over their workplaces, allowing them to pursue their demands to the fullest and decreasing the industrialists chokehold on the economy. ?]
 
@@ -101,7 +102,7 @@ subtitle: -2 [? if not violent_revolution : Paramilitary ?] Resources - We can u
 view-if: not psi_in_government and max_seize_councils = 0
 unavailable-subtitle: [? if not violent_revolution : Not enough paramilitary resources. (Need 2) ?] [? if violent_revolution : Not enough budget. (Need 2) ?]
 choose-if: (para_resources >= 2 and not violent_revolution) or violent_revolution
-on-arrival: para_resources -= 2 if not violent_revolution; budget -= 2 if violent_revolution; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 2; labour_dissent -= 6; syndicalist_dissent -= 6 if syndicalist_active; labour_strength += 6; syndicalist_strength += 8; ldr_relation -= 10; ul_relation -= 7; fasci_coup_progress += 1; ldr_right += 0.4; workers += 1; socialist_sentiment += 2; unemployment -= 0.2; unemployment -= 0.1 if unemployment >= 8
+on-arrival: maximum_done_opp += 1; para_resources -= 2 if not violent_revolution; budget -= 2 if violent_revolution; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 2; labour_dissent -= 6; syndicalist_dissent -= 6 if syndicalist_active; labour_strength += 6; syndicalist_strength += 8; ldr_relation -= 10; ul_relation -= 7; fasci_coup_progress += 1; ldr_right += 0.4; workers += 1; socialist_sentiment += 2; unemployment -= 0.2; unemployment -= 0.1 if unemployment >= 8
 
 We order the Red Guards to support and establish new workers' councils, utilising Soviet-style and Turin-style councils as inspiration, giving workers a larger voice in their workplace.
 
@@ -111,7 +112,7 @@ view-if: not psi_in_government and max_seize_councils > 0
 unavailable-subtitle: [? if not violent_revolution : Not enough paramilitary resources. (Need 2) ?]
 choose-if: (para_resources >= 2 and not violent_revolution) or violent_revolution
 max-visits: 2
-on-arrival: para_resources -= 2 if not violent_revolution; budget -= 2 if violent_revolution; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 1; labour_dissent -= 6; labour_strength += 8; ldr_relation -= 10; economic_growth += 0.1 if economic_growth < 3; unemployment -= 1.2 if unemployment > 5 and max_seize_councils = 3; workers += 2 if max_seize_councils = 3; fasci_coup_progress += 1; ldr_right += 0.2; socialist_sentiment += 3; unemployment -= 0.2; unemployment -= 0.1 if unemployment >= 8; economic_growth += 0.1; economic_growth += 0.1 if economic_growth < 0
+on-arrival: maximum_done_opp += 1; para_resources -= 2 if not violent_revolution; budget -= 2 if violent_revolution; max_seize_councils += 1; workers_psi += 7*(1-dissent); capital_strike_progress += 1; labour_dissent -= 6; labour_strength += 8; ldr_relation -= 10; economic_growth += 0.1 if economic_growth < 3; unemployment -= 1.2 if unemployment > 5 and max_seize_councils = 3; workers += 2 if max_seize_councils = 3; fasci_coup_progress += 1; ldr_right += 0.2; socialist_sentiment += 3; unemployment -= 0.2; unemployment -= 0.1 if unemployment >= 8; economic_growth += 0.1; economic_growth += 0.1 if economic_growth < 0
 
 [? if max_seize_councils = 2: We seize more factories and grant workers further power over their workplaces, allowing them to pursue their demands to the fullest and decreasing the industrialists chokehold on the economy. ?]
 
@@ -124,7 +125,7 @@ subtitle: -[+ occupation_cost +] [? if not violent_revolution : Paramilitary ?] 
 view-if: not psi_in_government and max_seize_factories = 0
 unavailable-subtitle: [? if not violent_revolution : Not enough paramilitary resources. (Need 3) ?] [? if violent_revolution : Not enough resources. (Need 3) ?]
 choose-if: (para_resources >= occupation_cost and not violent_revolution) or (resources >= occupation_cost and violent_revolution)
-on-arrival: para_resources -= occupation_cost if not violent_revolution; resources -= occupation_cost if violent_revolution; max_seize_factories += 1; unemployment -= 0.8 if unemployment >= 8; workers_psi += 7*(1-dissent); veterans_psi += 5*(1-dissent); middle_class_pnf += 6; radicalisation += 0.6; industrialists_pnf += 7; inflation += 1.3; fasci_coup_progress += 2; ldr_relation -= 15; ul_relation -= 15; ppi_relation -= 10; ppi_right += 1; ldr_right += 1.2; socialist_sentiment += 5;
+on-arrival: maximum_done_opp += 1; para_resources -= occupation_cost if not violent_revolution; resources -= occupation_cost if violent_revolution; max_seize_factories += 1; unemployment -= 0.8 if unemployment >= 8; workers_psi += 7*(1-dissent); veterans_psi += 5*(1-dissent); middle_class_pnf += 6; radicalisation += 0.6; industrialists_pnf += 7; inflation += 1.3; fasci_coup_progress += 2; ldr_relation -= 15; ul_relation -= 15; ppi_relation -= 10; ppi_right += 1; ldr_right += 1.2; socialist_sentiment += 5;
 
 We begin forcefully seizing idle industries, arming and aiding workers in seizing their workplaces. Industrialists are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
 
@@ -134,7 +135,7 @@ view-if: not psi_in_government and max_seize_factories > 0
 unavailable-subtitle: [? if not violent_revolution : Not enough paramilitary resources. (Need [+ occupation_cost +]) ?] [? if violent_revolution : Not enough resources. (Need [+ occupation_cost +]) ?]
 choose-if: (para_resources >= occupation_cost and not violent_revolution) or (resources >= occupation_cost and violent_revolution)
 max-visits: 2
-on-arrival: para_resources -= occupation_cost if not violent_revolution; resources -= occupation_cost if violent_revolution; max_seize_factories += 1; unemployment -= 0.7 if unemployment >= 8; unemployment -= 0.2 if max_seize_factories > 1; workers_psi += 7*(1-dissent)*max_seize_factories; veterans_psi += 4*(1-dissent)*max_seize_factories; radicalisation += 0.6; inflation += 0.2; industrialists_pnf += 6*max_seize_factories; middle_class_pnf += 3*max_seize_factories; fasci_coup_progress += 1; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 5; ppi_moderates += 0.3; ldr_right += 0.4; socialist_sentiment += 2;
+on-arrival: maximum_done_opp += 1; para_resources -= occupation_cost if not violent_revolution; resources -= occupation_cost if violent_revolution; max_seize_factories += 1; unemployment -= 0.7 if unemployment >= 8; unemployment -= 0.2 if max_seize_factories > 1; workers_psi += 7*(1-dissent)*max_seize_factories; veterans_psi += 4*(1-dissent)*max_seize_factories; radicalisation += 0.6; inflation += 0.2; industrialists_pnf += 6*max_seize_factories; middle_class_pnf += 3*max_seize_factories; fasci_coup_progress += 1; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 5; ppi_moderates += 0.3; ldr_right += 0.4; socialist_sentiment += 2;
 
 [? if max_seize_factories = 2: We continue seizing factories from idling companies, being able to repurpose them and hand over the means of production to the workers. ?]
 

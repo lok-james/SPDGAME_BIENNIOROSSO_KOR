@@ -21,7 +21,7 @@ What do we do?
 - @easy_discard
 
 @veterans_organisations_party
-subtitle: -1 resource 
+subtitle: -[+ party_welfare_cost +] resource 
 choose-if: resources >= party_welfare_cost
 unavailable-subtitle: Not enough resources. (Need [+ party_welfare_cost +])
 on-arrival: party_welfare += 1; resources -= party_welfare_cost; veterans_psi += 1*(1-dissent)*party_welfare; veterans_pnf -= 1*(1-dissent)*party_welfare; unemployment -= 0.2; unemployment -= 0.1 if party_welfare > 2; unemployment -= 0.1 if party_welfare > 4; unemployment -= 0.1 if party_welfare > 6; unemployment -= 0.1 if party_welfare > 8

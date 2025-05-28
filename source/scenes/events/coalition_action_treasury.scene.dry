@@ -17,45 +17,55 @@ on-arrival: {!
 if (Q.psi_in_government == 1) {
     Q.workers_psi -= 2;
     Q.veterans_psi -= 4;
+    Q.women_psi -= 3;
 
     if (Q.treasury_minister_party != Q.pnf_name) {
         Q.workers_pnf += 3;
         Q.veterans_pnf += 5;
+        Q.women_pnf += 3;
     }
 }
 
 if (Q.psi_in_government == 0) {
     Q.workers_psi += 2;
     Q.veterans_psi += 4;
+    Q.women_psi += 3;
 
     if (Q.treasury_minister_party != Q.pnf_name) {
         Q.workers_pnf += 2;
         Q.veterans_pnf += 4;
+        Q.women_psi += 2;
     }
 }
 
 if (Q.treasury_minister_party == Q.ldr_name) {
     Q.workers_ldr -= 6;
     Q.veterans_ldr -= 8;
+    Q.women_ldr -= 4;
 
     Q.workers_ppi += 2;
     Q.veterans_ppi += 3;
+    Q.women_ppi -= 3;
 }
 
 if (Q.treasury_minister_party == Q.ul_name) {
     Q.workers_ul -= 6;
     Q.veterans_ul -= 8;
+    Q.women_ul -= 4;
 
     Q.workers_ppi += 2;
     Q.veterans_ppi += 3;
+    Q.women_ppi -= 3;
 }
 
 if (Q.treasury_minister_party == Q.pnf_name) {
     Q.workers_pnf -= 6;
     Q.veterans_pnf -= 8;
+    Q.women_pnf -= 3;
 
     Q.workers_ppi += 2;
     Q.veterans_ppi += 3;
+    Q.women_ppi -= 3;
 }
 
 Q.welfare -= 1;

@@ -1,5 +1,5 @@
 title: [+ year +] [+ ds_name +] Party Congress
-subtitle: The [+ ds_name +] holds its Biannual Congress.
+subtitle: The [+ ds_name +] holds its Biennial Congress.
 new-page: true
 view-if: ds_congress_trigger = 1 and not (pll_formed or pcs_formed) and not ds_banned
 on-arrival: {!
@@ -28,7 +28,7 @@ tags: event
 
 = [+ year +] [+ ds_name +] Party Congress
 
-The Biannual Party Congress of the [+ ds_full_name +] has begun in order to elect the party's next leader. 
+The Biennial Party Congress of the [+ ds_full_name +] has begun in order to elect the party's next leader. 
 
 Three factions make up the [+ ds_name +]. The left of the party, led by Vincenzo Giuffrida, supports collaboration with the socialist parties, having been elected himself on a joint Socialist-Liberal list. On the other end of the party lies Gabriello Carnazza, advocating for collaboration with the right; more specifically the [+ pnf_full_name +], viewing them as being able to combat the left.
 

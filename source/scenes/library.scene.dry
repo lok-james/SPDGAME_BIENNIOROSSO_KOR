@@ -10,7 +10,7 @@ Herein contains relevant information about the government and politics of the It
 @menu
 
 - @government: Italy's system of government
-- @weimar_timeline: Timeline of the Kingdom of Italy before 1919
+- @italy_timeline: Timeline of the Kingdom of Italy before 1919
 - @curr_gov: Current government details
 - @demographics: Demographics
 - @parties: Parties
@@ -30,7 +30,7 @@ The Chamber of Deputies is elected based on a proportional representation voting
 
 Italy is divided into a number of states, each of which have their own governments with some responsibilities, albeit insignificant.
 
-@weimar_timeline
+@italy_timeline
 go-to: menu
 
 = Timeline of the [+ psi_name +] and the Kingdom (until 1919)
@@ -50,6 +50,10 @@ go-to: menu
 **1917**: Increased war exhaustion and discontent increases the [+ psi_name +]'s popularity, as many become frustrated with Italy's involvement in World War One.
 
 **1919**: World War One ends.
+
+[? if peaceful_revolution : **[+ rev_year +]** - Italy abolishes the Monarchy via constitutional reformation and establishes a republic. ?]
+
+[? if violent_revolution : **[+ rev_year +]** - The Kingdom of Italy is violently overthrown by left-wing forces that establish a Italian socialist republic. ?]
 
 @curr_gov
 go-to: cabinet if psi_in_government; menu if not psi_in_government
@@ -188,7 +192,7 @@ Catholics: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'
 @parties
 go-to: menu
 
-**[+ psi_name +]** - *[+ psi_full_italian +]* ([+ psi_full_name +]) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. [? if not communist_split and reformists_defect : Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution. ?] [? if reformists_defect and not communist_split and not violent_revolution : Currently, the party’s direction has shifted towards the end of the bourgeois state through revolutionary action. What shall become of the revolution beyond the current state’s collapse, however, is not yet decided. ?] [? if not reformists_defect and communist_split and not violent_revolution : Currently, the party’s direction has shifted towards a parliamentary reformist movement towards socialism, working with the opposition to democratize and socialize society. With both the King’s approval and the Senate, the party will push for a complete constitutional overhaul. ?] [? if reformists_defect and communist_split and not violent_revolution : Currently, the party is merely struggling to survive, a husk of its former self. What remains of the party is scrambling towards whatever path will save them, while some have already left the seemingly sinking ship. ?] [? if violent_revolution : Embracing the ideological line of the Communist International, the party has morphed into a revolutionary vanguard which steers the Italian nation to a new socialist future. ?]
+**[+ psi_name +]** - *[+ psi_full_italian +]* ([+ psi_full_name +]) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. [? if not communist_split and not reformists_defect and not violent_revolution : Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution. ?] [? if reformists_defect and not communist_split and not violent_revolution : Currently, the party’s direction has shifted towards the end of the bourgeois state through revolutionary action. What shall become of the revolution beyond the current state’s collapse, however, is not yet decided. ?] [? if not reformists_defect and communist_split and not violent_revolution : Currently, the party’s direction has shifted towards a parliamentary reformist movement towards socialism, working with the opposition to democratize and socialize society. With both the King’s approval and the Senate, the party will push for a complete constitutional overhaul. ?] [? if reformists_defect and communist_split and not violent_revolution : Currently, the party is merely struggling to survive, a husk of its former self. What remains of the party is scrambling towards whatever path will save them, while some have already left the seemingly sinking ship. ?] [? if violent_revolution : Embracing the ideological line of the Communist International, the party has morphed into a revolutionary vanguard which steers the Italian nation to a new socialist future. ?]
 
 [? if pcdi_formed : **PCd'I** - *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the [+ psi_name +], formed after the left wing of the party and its leaders split. ?]
 

@@ -27,7 +27,7 @@ Cutting taxes for the upper brackets improves our relationship with the capitali
 @welfare
 choose-if: welfare > 0
 unavailable-subtitle: There is no welfare left to cut.
-on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; middle_class_psi += 4*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi -= 6*(unemployment/10); veterans_psi -= 5; unemployment -= 0.6; veterans += 1; communist_dissent += 7; labour_dissent += 6; maximalist_dissent += 3; reformist_dissent += 5; inflation -= 0.8;
+on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; middle_class_psi += 4*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi -= 6*(unemployment/10); veterans_psi -= 5; unemployment -= 0.6; veterans += 1; communist_dissent += 7; labour_dissent += 6; maximalist_dissent += 3; reformist_dissent += 5; inflation -= 0.8; women_psi -= 4*(1-dissent);
 
 Cutting welfare improves our relationship with the capitalists, but it hurts our working-class base.
 

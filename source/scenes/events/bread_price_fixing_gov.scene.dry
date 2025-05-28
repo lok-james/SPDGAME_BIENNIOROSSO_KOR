@@ -3,7 +3,9 @@ subtitle: The Liberals floor a controversial bill.
 tags: event, govt_affairs
 is-card: true
 view-if: year = 1920 and month = 6 and week = 1 and psi_in_government
-on-arrival: bread_price_seen = 1
+on-arrival: bread_price_seen = 1 {!
+Q.bread_success = parseFloat((Q.psi_seating_disp)*0.6) + parseFloat(Q.ul_seating_disp) + parseFloat((Q.ldr_seating_disp)*0.8) + parseFloat((Q.ppi_seating_disp)*0.2);
+!}
 max-visits: 1
 new-page: true
 
@@ -13,21 +15,31 @@ The [+ ul_full_name +] has floored a bill that would abolish price controls on e
 
 What should we do?
 
-- @vote_yes: Vote yes, abolishing the price controls on bread.
+- @vote_yes_pm: Vote yes, abolishing the price controls on bread.
+- @vote_yes_nopm: Vote yes, abolishing the price controls on bread.
 - @vote_no: Vote no, against abolishing the price controls on bread.
 - @abstain: Abstain from the vote.
 
-@vote_yes
-on-arrival: communist_dissent += 10; labour_dissent += 5; maximalist_dissent += 5; reformist_dissent += 5; syndicalist_dissent += 5; workers_pcdi += 6 if pcdi_formed; workers_psi -= 7
+@vote_yes_pm
+on-arrival: communist_dissent += 10; labour_dissent += 5; maximalist_dissent += 5; reformist_dissent += 5; syndicalist_dissent += 5; workers_pcdi += 6 if pcdi_formed; workers_psi -= 7; budget += 1 if bread_success >= 50; workers_pcdi += 3 if bread_success; workers_psi -= 4 if bread_success;
+view-if: prime_minister_party = psi_name
 
 Our grassroots party members are shocked by our intransigence! Many party branches have begun agitating against the cabinet, and our own delegation members even plan a full vote on the proposal, contravening the government's decision.
 
-The workers view this as betrayal, as do the unions. The bill is voted down anyways by a slight margin in fear of the ongoing general strike.
+The workers view this as betrayal, as do the unions. [? if bread_success < 50 : The bill is voted down anyways by a slight margin in fear of the ongoing general strike. ?][? if bread_success >= 50 : The bill passes the Chamber of Deputies via party whips, with [+ bread_success +]% voting in favour of the bill. The workers condemn us for placing them through hardship once more, while the budget is freed up for other matters. ?]
+
+@vote_yes_nopm
+on-arrival: communist_dissent += 10; labour_dissent += 5; maximalist_dissent += 5; reformist_dissent += 5; syndicalist_dissent += 5; workers_pcdi += 6 if pcdi_formed; workers_psi -= 7
+view-if: prime_minister_party != psi_name
+
+Our grassroots party members are shocked by our intransigence! Many party branches have begun agitating against the cabinet, and our own delegation members even plan a full vote on the proposal, contravening the government's decision.
+
+The workers view this as betrayal, as do the unions. The bill is dropped by the liberals regardless in fear of the ongoing general strike.
 
 @vote_no
 on-arrival: ul_relation -= 10; ldr_relation -= 5; communist_dissent -= 5; labour_dissent -= 5; workers_psi += 3*(1-dissent); coalition_dissent += 1;
 
-Our coalition partners are angered by our defiance! Regardless of our vote, the bill is voted down a significant measure in fear of the ongoing general strike. The coalition government does not seem that it will last.
+[? if in_unstable_coalition : Our coalition partners are angered by our defiance! ?] Regardless of our vote, the bill is voted down a significant measure in fear of the ongoing general strike. The coalition government does not seem that it will last.
 
 @abstain
 on-arrival: ul_relation -= 5; ldr_relation -= 3; communist_dissent += 5; labour_dissent += 5; workers_psi -= 3*(1-dissent)

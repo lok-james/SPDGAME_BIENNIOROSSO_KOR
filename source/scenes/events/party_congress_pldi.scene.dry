@@ -1,5 +1,5 @@
 title: [+ year +] [+ ldr_name +] Party Congress
-subtitle: The [+ ldr_name +] holds its Biannual Congress.
+subtitle: The [+ ldr_name +] holds its Biennial Congress.
 new-page: true
 view-if: ldr_congress_trigger = 1 and not ldr_banned
 on-arrival: {!
@@ -36,7 +36,7 @@ tags: event
 
 = [+ year +] [+ ldr_name +] Party Congress
 
-The Biannual Party Congress of the [+ ldr_full_name +] has begun in order to elect the party's next leader. 
+The Biennial Party Congress of the [+ ldr_full_name +] has begun in order to elect the party's next leader. 
 
 [? if ldr_defunct : Following the merger of the PLDI and PLI, the remnants of the PLDI have remained as a defunct party. though still participating in elections via its own national electoral lists. ?]
 

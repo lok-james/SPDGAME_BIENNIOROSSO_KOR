@@ -15,8 +15,8 @@ Naturally, however, we are not alone in the fight. The Carabinieri, alongside th
 
 Current Budget allocated is [+ yearly_interior_gain +]. Current Budget remaining is [+ interior_budget +], which is replenished at the start of the year.
 
-- @increase_budget: -1 Budget - Increase budget allocated to dealing with paramilitaries.
-- @decrease_budget: +1 Budget - Decrease budget allocated to dealing with paramilitaries.
+- @increase_budget: Increase budget allocated to dealing with paramilitaries.
+- @decrease_budget: Decrease budget allocated to dealing with paramilitaries.
 - @investigate_fascists: Investigate the far-right *Fasci*.
 - @eliminate_fascists: Round up fascist leaders and put an end to *Fasci* terror!
 - @investigate_republican: Investigate the republican *Anti-Communist Brigades*
@@ -26,11 +26,13 @@ Current Budget allocated is [+ yearly_interior_gain +]. Current Budget remaining
 - @root: Do nothing for now. 
 
 @increase_budget
+subtitle: -1 Budget
 on-arrival: yearly_interior_gain += 1;
 
 We increase the budget allocated dealing with the paramilitaries. This will be reflected in the next annual budget.
 
 @decrease_budget
+subtitle: +1 Budget
 on-arrival: yearly_interior_gain -= 1;
 view-if: yearly_interior_gain > 0
 

@@ -61,7 +61,9 @@ max-cards: 3
 
 [? if year = 1920 and month = 9 and week = 1: D'Annunzio proclaims the establishment of the *Italian Regency of Carnaro* in Fiume, with himself as *Duce*. ?]
 
-[? if year = 1920 and month = 9 and week = 3: The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
+
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : The Republic of Poland sues for peace with the Russian SFSR following the fall of Warsaw to advancing Soviet forces. ?]
 
 [? if year = 1920 and month = 11 and week = 1: Warren G. Harding defeats Democrat James M. Cox and Socialist Eugene V. Debs in the 1920 United States Presidential Election. ?]
 
@@ -76,8 +78,6 @@ max-cards: 3
 [? if year = 1921 and month = 6 and week = 3: The Third Congress of the Communist International takes place. ?]
 
 [? if year = 1921 and month = 7 and week = 3: Adolf Hitler assumes power of the *National Socialist German Workers' Party*, becoming *Führer*. ?]
-
-[? if year = 1921 and month = 11 and week = 1: [+ pnf_leader +] forms the *Partito Nazionale Fascista*. ?]
 
 [? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
 
@@ -125,7 +125,13 @@ max-cards: 3
 
 [? if year = 1924 and month = 10 and week = 1 : The *Geneva Protocol* is adopted by the League of Nations for compulsory arbitration of disputes. It is set to be ratified. ?]
 
-[? if year = 1924 and month = 11 and week = 1 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in the 1924 United States Presidential Election. ?]
+[? if year = 1924 and month = 10 and week = 3 and supported_entente < 2 : The Conservative Party of the United Kingdom succeeds in obtaining a majority landslide victory over the Labour and Liberal Parties following the reveal of the *Zinoviev Letter*. ?]
+
+[? if year = 1924 and month = 10 and week = 3 and supported_entente >= 2 : The Labour Party of the United Kingdom is able to maintain its control of the government following its most recent election, gaining seats at the expense of the Liberal Party. ?]
+
+[? if year = 1924 and month = 11 and week = 1 and supported_usa < 2 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in the 1924 United States Presidential Election. ?]
+
+[? if year = 1924 and month = 11 and week = 1 and supported_usa >= 2 : The United States Presidential Election is deadlocked following Progressive nominee Robert M. La Follette's victory in various states. ?]
 
 [? if year = 1924 and month = 12 and week = 3 : Adolf Hitler is released from prison, serving out only 9 months of the 5 years sentenced due to his involvement in the *Beer Hall Putsch*. ?]
 
@@ -156,8 +162,6 @@ max-cards: 3
 [? if year = 1927 and month = 5 and week = 3 : Due to revelations of espionage and underground agitation, the United Kingdom cuts diplomatic ties with the Union of Soviet Socialist Republics. ?]
 
 [? if year = 1927 and month = 6 and week = 1 : The Kingdom of Serbs, Croats and Slovenes cuts diploatic ties with the Kingdom of Albania. ?]
-
-[? if year = 1927 and month = 11 and week = 1 : Leon Trotsky is expelled from the Communist Party of the Soviet Union. ?]
 
 - @party
 - @paramilitary
@@ -197,7 +201,9 @@ max-cards: 4
 
 [? if year = 1919 and month = 6 and week = 1: The *Treaty of Versailles* is signed, ending the state of war between the Weimar Republic and the Entente. ?]
 
-[? if year = 1919 and month = 8 and week = 1: The Hungarian Soviet Republic collapses after Romanian intervention, leading to a power vacuum. ?]
+[? if year = 1919 and month = 8 and week = 1 and supported_hungary < 2 : The Hungarian Soviet Republic collapses after Romanian intervention, leading to a power vacuum. ?]
+
+[? if year = 1919 and month = 8 and week = 1 and supported_hungary >= 2 : Soviet Hungarian forces are barely able to repel Romanian troops during the Battle of *Tisza River*, resulting in the signing of a ceasefire between the two nations. ?]
 
 [? if year = 1919 and month = 9 and week = 1: The *Treaty of Saint-Germain-en-Laye* is signed, ceding Austrian Littoral, South Tyrol alongside various Dalmatian islands to Italy. The remainder goes to the newly established Kingdom of Serbs, Croats and Slovenes, in violation of the 1915 *Treaty of London*. ?]
 
@@ -229,7 +235,9 @@ max-cards: 4
 
 [? if year = 1920 and month = 9 and week = 1: D'Annunzio proclaims the establishment of the *Italian Regency of Carnaro* in Fiume, with himself as *Duce*. ?]
 
-[? if year = 1920 and month = 9 and week = 3: The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
+
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : The Republic of Poland sues for peace with the Russian SFSR following the fall of Warsaw to advancing Soviet forces. ?]
 
 [? if year = 1920 and month = 11 and week = 1: Warren G. Harding defeats Democrat James M. Cox and Socialist Eugene V. Debs in the 1920 United States Presidential Election. ?]
 
@@ -244,8 +252,6 @@ max-cards: 4
 [? if year = 1921 and month = 6 and week = 3: The Third Congress of the Communist International takes place. ?]
 
 [? if year = 1921 and month = 7 and week = 3: Adolf Hitler assumes power of the *National Socialist German Workers' Party*, becoming *Führer*. ?]
-
-[? if year = 1921 and month = 11 and week = 1: [+ pnf_leader +] forms the *Partito Nazionale Fascista*. ?]
 
 [? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
 
@@ -293,7 +299,13 @@ max-cards: 4
 
 [? if year = 1924 and month = 10 and week = 1 : The *Geneva Protocol* is adopted by the League of Nations for compulsory arbitration of disputes. It is set to be ratified. ?]
 
-[? if year = 1924 and month = 11 and week = 1 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in the 1924 United States Presidential Election. ?]
+[? if year = 1924 and month = 10 and week = 3 and supported_entente < 2 : The Conservative Party of the United Kingdom succeeds in obtaining a majority landslide victory over the Labour and Liberal Parties following the reveal of the *Zinoviev Letter*. ?]
+
+[? if year = 1924 and month = 10 and week = 3 and supported_entente >= 2 : The Labour Party of the United Kingdom is able to maintain its control of the government following its most recent election, gaining seats at the expense of the Liberal Party. ?]
+
+[? if year = 1924 and month = 11 and week = 1 and supported_usa < 2 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in the 1924 United States Presidential Election. ?]
+
+[? if year = 1924 and month = 11 and week = 1 and supported_usa >= 2 : The United States Presidential Election is deadlocked following Progressive nominee Robert M. La Follette's victory in various states. ?]
 
 [? if year = 1924 and month = 12 and week = 3 : Adolf Hitler is released from prison, serving out only 9 months of the 5 years sentenced due to his involvement in the *Beer Hall Putsch*. ?]
 
@@ -325,8 +337,6 @@ max-cards: 4
 
 [? if year = 1927 and month = 6 and week = 1 : The Kingdom of Serbs, Croats and Slovenes cuts diploatic ties with the Kingdom of Albania. ?]
 
-[? if year = 1927 and month = 11 and week = 1 : Leon Trotsky is expelled from the Communist Party of the Soviet Union. ?]
-
 - @party
 - @paramilitary
 - @govt
@@ -343,7 +353,7 @@ is-deck: true
 
 @paramilitary
 title: Paramilitary Affairs
-view-if: not national_congress_seen
+view-if: not national_congress_seen and pacification_pact
 card-image: img/redguarddeck.jpg
 is-deck: true
 

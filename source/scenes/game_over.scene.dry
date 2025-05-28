@@ -303,6 +303,12 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
+[? if game_achievement_il_sogno_mazziniano: **Il Sogno Mazziniano** - Elect Eugenio Chisea as Prime Minister. ?]
+
+[? if game_achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
+
+[? if game_achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
+
 = Completed Achievements Overall
 
 [? if achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
@@ -383,6 +389,12 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
 
+[? if achievement_il_sogno_mazziniano: **Il Sogno Mazziniano** - Elect Eugenio Chisea as Prime Minister. ?]
+
+[? if achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
+
+[? if achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
+
 = Incomplete Achievements
 
 [? if not achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
@@ -462,6 +474,12 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 [? if not achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
 
 [? if not achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
+
+[? if not achievement_il_sogno_mazziniano: **Il Sogno Mazziniano** - Elect Eugenio Chisea as Prime Minister. ?]
+
+[? if not achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
+
+[? if not achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
 
 @end_game
 game-over: true

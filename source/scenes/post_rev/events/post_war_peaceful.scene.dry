@@ -70,6 +70,8 @@ Q.interior_budget = 4;
 
 Q.resources += Q.para_resources;
 Q.para_resources = 0;
+
+Q.rev_year = Q.year;
 !}
 max-visits: 1
 go-to: peaceful_menu
@@ -138,7 +140,7 @@ subtitle: The left-wing of the party won't be happy about this.
 on-arrival: pcdi_banned = 1; pnf_banned = 1 if pcdi_formed; maximalist_dissent += 10; communist_dissent += 20; rg_strength *= 0.8; communists_adapt = time + 4;
 go-to: peaceful_party
 
-The left-wing of the party is understandably outraged by our willingness to betray the parties on the left, as many leave the party and call on other members to leave as well. More noticably, we see a drop in Red Guard membership. 
+The left-wing of the party is understandably outraged by our willingness to betray our ideological allies, comparing us to *Gustav Noske*. Many leave the party and call on other members to leave as well. Notably, we see a drop in Red Guard membership. 
 
 @peaceful_elections
 on-arrival: peaceful_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;

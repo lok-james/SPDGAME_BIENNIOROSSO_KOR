@@ -4,6 +4,7 @@ tags: event
 view-if: terror_active = 1 and fascist_terror != 1 and communist_terror != 1 and republican_terror != 1
 on-arrival: budget += interior_budget; yearly_interior_gain = 0
 max-visits: 1
+achievement: andate_in_pace
 
 = Fall of Paramilitary Resistance
 
