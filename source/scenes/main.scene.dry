@@ -353,7 +353,7 @@ is-deck: true
 
 @paramilitary
 title: Paramilitary Affairs
-view-if: not national_congress_seen and pacification_pact
+view-if: not national_congress_seen and not pacification_pact
 card-image: img/redguarddeck.jpg
 is-deck: true
 
