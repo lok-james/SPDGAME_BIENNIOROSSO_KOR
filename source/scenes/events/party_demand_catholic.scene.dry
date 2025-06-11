@@ -67,6 +67,10 @@ We begin distributing funds to Catholic-aligned organisations such as Churches, 
 on-arrival: {!
 Q.catholic_demand_failed += 1;
 Q.catholic_psi -= 4*Q.catholic_demand_failed;
+
+if (Q.left_wing_coalition) {
+    Q.coalition_dissent += 1;
+}
 !}
 
-The catholics are, unsurprisingly, outraged at our refusal to heed their demands.
+The catholics are, unsurprisingly, outraged at our refusal to heed their demands. 

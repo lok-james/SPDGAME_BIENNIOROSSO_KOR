@@ -11,13 +11,6 @@ if (Q.economic_growth) {
 if (Q.unemployment) {
     Q.unemployment_2 = Q.unemployment.toFixed(1);
 }
-Q.dissent_percent = Math.round(Q.dissent_percent);
-Q.radicalisation = Math.round(Q.radicalisation);
-Q.revolutionary_fervour = Math.round(Q.revolutionary_fervour);
-
-if (Q.revolutionary_exhaustion) {
-    Q.revolutionary_exhaustion_2 = Q.revolutionary_exhaustion.toFixed(2);
-}
 !}
 
 = Status
@@ -118,6 +111,10 @@ Economic Growth: [+ economic_growth_2 +]%
 
 Unemployment: [+ unemployment_2 +]%
 
+British Debts: [? if uk_debts > 0 : Significant ?] [? if uk_debts_over : Amortisation Plan ?]
+
+American Debts: [? if american_debts > 0 : Significant ?] [? if us_debts_over : Amortisation Plan ?]
+
 @politics
 
 = Inter-party Relations
@@ -157,7 +154,6 @@ Unemployment: [+ unemployment_2 +]%
 [? if syndicalist_active : {!<span class="tooltip-text" title="Syndicalist's are a splinter faction of Labour, advocating for radical strikes and workers' councils.">Syndicalists</span>!} strength: [+ syndicalist_strength : strength +], dissent: [+ syndicalist_dissent : dissent +] ?]
 
 {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformists</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
-
 
 @paramilitaries
 on-arrival: {!
@@ -331,6 +327,8 @@ Roman Question: [? if roman_question_answered : Complete ?][? if not roman_quest
 
 Work Councils: [? if work_councils = 0 and councils_empowered = 0: Non-existent ?][? if work_councils >= 1 and councils_empowered = 0: Influential ?][? if councils_empowered = 1 : Empowered ?]
 
+[? if syndicalist_active : Worker Syndicates: [? if syndicate_progress = 0: Non-existent ?][? if syndicate_progress = 1: Minor ?][? if syndicate_progress = 2: Moderate ?][? if syndicate_progress = 3 or syndicate_progress = 4: Major ?][? if syndicate_progress >= 5 : Majority-Established ?] ?]
+
 Economic Nationalisation: [? if nationalisation_progress = 0: Non-existent ?][? if nationalisation_progress = 1: Minor ?][? if nationalisation_progress = 2: Moderate ?][? if nationalisation_progress = 3 or nationalisation_progress = 4: Major ?][? if nationalisation_progress >= 5 : Majority-Seized ?]
 
 = Education
@@ -347,9 +345,11 @@ Veterans Insurance Program: [? if not unemployment_insurance_founded : Not yet f
 
 [? if unemployment_insurance_founded : Workers Insurance Program: [? if not unemployment_insurance_expanded : Not yet expanded ?][? if unemployment_insurance_expanded : [+ insurance_payments_workers_timer +] Months left before renewal ?] ?]
 
-Working Hours: [? if working_hours = 0 : Undeveloped ?][? if working_hours = 1 : Developed ?][? if working_hours = 2 : Unenforced ?][? if working_hours >= 3 : Enforced ?]
+Working Hours: [? if working_hours = 0 : Unlimited ?][? if working_hours = 1 : 80 Hour Weeks ?][? if working_hours = 2 : 60 Hour Weeks ?][? if working_hours >= 3 : 40 Hour Weeks ?]
 
 Workplace Safety: [? if workers_safety = 0 : Dangerous ?][? if workers_safety = 1 : Safe ?][? if workers_safety >= 2 : Monitored ?]
+
+Minimum Wage: [? if wage_increase = 0 : Non-existent ?][? if wage_increase = 1 : Minimal ?][? if wage_increase = 2 : Basic ?][? if wage_increase >= 3 : Living ?]
 
 = Judiciary
 
@@ -379,7 +379,7 @@ Upper-Class: [+ upper_tax_rates : taxation +]
 
 Lower-Class: [+ lower_tax_rates : taxation +]
 
-Tarrifs: [+ tarrifs : taxation +]
+Tariffs: [+ tariffs : taxation +]
 
 = Child Labour
 

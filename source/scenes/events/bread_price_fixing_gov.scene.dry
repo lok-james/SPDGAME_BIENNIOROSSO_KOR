@@ -4,7 +4,7 @@ tags: event, govt_affairs
 is-card: true
 view-if: year = 1920 and month = 6 and week = 1 and psi_in_government
 on-arrival: bread_price_seen = 1 {!
-Q.bread_success = parseFloat((Q.psi_seating_disp)*0.6) + parseFloat(Q.ul_seating_disp) + parseFloat((Q.ldr_seating_disp)*0.8) + parseFloat((Q.ppi_seating_disp)*0.2);
+Q.bread_success = parseFloat((Q.psi_seating_disp)*0.7) + parseFloat(Q.ul_seating_disp) + parseFloat((Q.ldr_seating_disp)*0.9) + parseFloat((Q.ppi_seating_disp)*0.3) + parseFloat((Q.other_seating_disp)*0.6);
 !}
 max-visits: 1
 new-page: true

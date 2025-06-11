@@ -39,7 +39,7 @@ The bill is barely able to pass the floor, and the liberals are in an uproar. Al
 [? if ldr_seating_disp + ul_seating_disp + pnf_seating_disp > 50: The liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
 
 @southern_land_reform_rg
-subtitle: [? if not national_congress_seen : -[+ reform_cost +] Paramilitary Resources ?][? if national_congress_seen : -[+ reform_cost +] Resources : ?] - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 and not violent_revolution : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?] [? if rg_militancy >= 0.44 : The high militancy of the Red Guards have reduced the cost of this action. ?]
+subtitle: [? if not national_congress_seen : -[+ reform_cost +] Paramilitary Resources ?][? if national_congress_seen : -[+ reform_cost +] Resources ?] - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 and not violent_revolution : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?] [? if rg_militancy >= 0.44 : The high militancy of the Red Guards have reduced the cost of this action. ?]
 choose-if: para_resources >= 4 or (national_congress_seen and resources >= 4)
 unavailable-subtitle: [? if not national_congress_seen : Not enough paramilitary resources. (Need [+ reform_cost +]) ?] [? if national_congress_seen : Not enough resources. (Need [+ reform_cost +]) ?]
 view-if: southern_land_reformed == 0 and nationalisation_adopted

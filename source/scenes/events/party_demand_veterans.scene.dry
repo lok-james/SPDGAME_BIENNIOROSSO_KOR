@@ -47,6 +47,10 @@ We have increased funding to the Public Works Ministry, who have begun drafting 
 on-arrival: {!
 Q.veterans_demand_failed += 1;
 Q.veterans_psi -= 4*Q.veterans_demand_failed;
+
+if (Q.left_wing_coalition) {
+    Q.coalition_dissent += 1;
+}
 !}
 
 The unemployed are, unsurprisingly, outraged at our refusal to heed their demands.

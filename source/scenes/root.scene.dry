@@ -11,7 +11,6 @@ go-to: start_menu_2
 @start_menu_2
 
 - @start: Start game
-- @election_simulation: Election Simulation
 - @mod_info: Mod Info & Settings
 - @credits: Credits
 - @achievements: Achievements
@@ -108,6 +107,9 @@ Q.psu_leader = "Turati";
 Q.pcdi_leader = "Bordiga";
 Q.pll_leader = "Giuffrida";
 Q.pcs_leader = "Carnazza";
+
+Q.soviet_leader = "Lenin";
+Q.soviet_germany = 0;
 
 Q.ldr_name = "LDR";
 Q.ldr_full_name = "Liberals, Democrats and Radicals";
@@ -244,9 +246,9 @@ Q.workers_pri = 0;
 Q.workers_ppi = 3;
 Q.workers_ldr = 9;
 Q.workers_ds = 6;
-Q.workers_ul = 4;
+Q.workers_ul = 6;
 Q.workers_pnf = 2;
-Q.workers_psri = 8;
+Q.workers_psri = 6;
 Q.workers_other = 12;
 Q.workers_pll = 0;
 Q.workers_pcs = 0;
@@ -300,9 +302,9 @@ Q.veterans_ppi = 10;
 Q.veterans_ldr = 20;
 Q.veterans_pri = 0;
 Q.veterans_ds = 18;
-Q.veterans_ul = 14;
+Q.veterans_ul = 15;
 Q.veterans_pnf = 2;
-Q.veterans_psri = 3;
+Q.veterans_psri = 2;
 Q.veterans_other = 20;
 Q.veterans_pll = 3;
 Q.veterans_pcs = 20;
@@ -340,7 +342,7 @@ Q.middle_class_clc = 0;
 Q.industrialists_clc = 0;
 Q.rural_clc = 0;
 Q.veterans_clc = 0;
-Q.catholic_clc = 0;
+Q.catholic_clc = 0; 
 Q.women_clc = 0;
 
 Q.workers_scc = 0;
@@ -470,6 +472,7 @@ Q.womens_rights = 0;
 Q.womens_work = 0;
 Q.family_law = 0;
 Q.nationalisation_progress = 0;
+Q.syndicate_progress = 0;
 Q.councils_empowered = 0;
 
 // level of welfare relative to 1919 (can go negative)
@@ -477,7 +480,6 @@ Q.welfare = 0;
 Q.unemployment_insurance_founded = 0;
 Q.work_councils = 0;
 Q.workers_safety = 0; 
-Q.judicial_reform = 0;
 
 // level of support for farmers 
 Q.agricultural_policy = 0;
@@ -561,6 +563,10 @@ Q.uk_debts_over = 0;
 // economic Plans
 Q.moderate_plan_support = 0;
 Q.nationalisation_support = 1;
+
+Q.minimum_done_gov = 0;
+Q.maximum_done_gov = 0;
+Q.maximum_done_opp = 0;
 
 Q.unemployment_insurance_workers_funded = 0;
 Q.unemployment_insurance_veterans_funded = 0;
@@ -674,8 +680,7 @@ Q.party_demands_timer = 0;
 Q.streetfighting_timer = 6;
 Q.colonial_policy_timer = 0;
 
-// wow 
-Q.mussolini_dies = 0;
+// wow  
 Q.royal_coup = 0;
 Q.friendly_king = 0;
 Q.participating = 0;
@@ -755,14 +760,14 @@ This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate Hi
 
 **If you are playing this mod via the Mod Loader in base game, there will be various items missing (Election Colours, Card Images, Status Bar, etc.). For the intented experience, please play using <a href="https://awesdes.github.io/biennio_rosso_alternate_history/" style="color: #66b2b2">this</a> link.**
 
-- @1919_mod: Begin (mod difficulty)
-- @1919_easy: Begin (easy difficulty)
-- @1919_main: Begin (normal difficulty)
-- @1919_hard: Begin (hard difficulty)
-- @1919_historical: Begin (historical mode)
+- @1919_mod: Begin (Biennio Rosso difficulty)
+- @1919_easy: Begin (Easy difficulty)
+- @1919_main: Begin (Normal difficulty)
+- @1919_hard: Begin (Hard difficulty)
+- @1919_historical: Begin (Historical mode)
 
 @1919_mod
-subtitle: The difficulty of a normal game, with the mechanics of an easy one.
+subtitle: The difficulty of a normal game with the mechanics of an easy one; The intended way to play the game.
 on-arrival: difficulty = -1; 
 go-to: 1919_main
 

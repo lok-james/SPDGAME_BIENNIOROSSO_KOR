@@ -1,0 +1,249 @@
+title: The Left-wing Parties calls a vote of no confidence against the current government!
+subtitle: We have angered our coalition partners too much...
+new-page: true
+view-if: psi_in_government = 1 and left_wing_coalition and coalition_dissent >= 4 and psi_seating_disp < 50
+tags: event
+go-to: vonc_menu
+
+# Options: spend relations to reduce coalition_dissent
+
+= Vote of No Confidence
+
+Our leftist coalition partners have called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be a new government formed.
+
+@vonc_menu
+
+- @try_assuage: Try to assuage our partners.
+- @let_it_happen: Let the vote happen.
+
+@try_assuage
+
+How do we assuage our partners?
+
+- @welfare: Enact a massive welfare plan.
+- @resources: Use our resources to reduce dissent within the coalition.
+- @let_it_happen: Never mind. Let the vote happen.
+- @let_it_happen_elections: Never mind. Let the vote happen and call for snap elections.
+
+@welfare
+subtitle: -2 Budget
+choose-if: not national_economic_recovery or budget >= 2
+unavailable-subtitle: Not enough budget. (Need 2)
+on-arrival: coalition_dissent = 0; budget -= 2; workers_psi -= 10; veterans_psi -= 5; workers_psri += 5; veterans_psi += 5; veterans_psu += 5 if psu_in_government; workers_psu += 5 if psu_in_government; ul_relation -= 7; ldr_relation -= 5; labour_dissent -= 5; welfare += 2; unemployment -= 10.5; psri_relation += 7; inflation += 0.6;
+
+Fine. We enact a massive welfare program to expand benefits, in order to maintain the stability of our coalition. The vote has been called off, and the credit for the expansion of our welfare system goes mainly to our allies.
+
+@resources
+choose-if: resources >= 3
+unavailable-subtitle: We do not have enough resources.
+subtitle: -3 resources
+on-arrival: resources -= 3; coalition_dissent -= 1; middle_class_psri += 4*(1-dissent); middle_class_psu += 4*(1-dissent) if psu_in_government; 
+
+By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution. Some, however, are questioning our action as effectively funding the campaigning efforts of our left-wing competitors.
+
+@let_it_happen
+on-departure: {!
+
+Q.rural_psi -= 3; 
+Q.middle_class_psi -= 2; 
+Q.workers_psi -= 3; 
+Q.middle_class_pnf += 2;
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.catholic_ppi -= 4;
+    Q.catholic_pnf += 4; 
+}
+if (Q.centre_left_coalition == 1) {
+    Q.industrialists_ldr -= 4;
+    Q.industrialists_pnf += 4; 
+}
+
+Q.ldr_relation -= 8;
+Q.ul_relation -= 8;
+
+if (Q.left_wing_coalition) {
+    Q.left_wing_coalition_failed = 1;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.centre_left_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 1;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 1;
+}
+
+// resetting coalition stuff
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
+
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
+
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
+
+Q.coalition_dissent = 0;
+
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
+// prevents insta dismissal
+Q.king_dismissed_timer = 12;
+
+Q.ds_enemies = 0;
+Q.ds_allies = 0;
+Q.ldr_enemies = 0;
+Q.ul_allies = 0;
+Q.in_coalition = 0;
+Q.in_unstable_coalition = 0;
+Q.southern_development = 0;
+
+// reset coalitions
+Q.psi_majority = 0;
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+Q.anti_socialist_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.ds_in_government = 0;
+Q.ul_in_government = 0;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0; 
+
+Q.government_collapse += 1;
+Q.leverage = Q.psi_seating_disp;
+Q.party_demands_timer = 6;
+!}
+go-to: election_1919.coalition_menu if next_election_time >= 8
+
+The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.
+
+[? if next_election_time >= 8 : A new government will be formed within the scope of the current composition of the Chamber of Deputies. ?]
+[? if next_election_time < 8 : A new government will be formed within the scope of the next composition of the Chamber of Deputies within the next 4 months. ?]
+
+@let_it_happen_elections
+view-if: next_election_time >= 8 and prime_minister_party = psi_name
+on-arrival: next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; {!
+
+Q.rural_psi -= 3; 
+Q.middle_class_psi -= 2; 
+Q.workers_psi -= 3; 
+Q.middle_class_pnf += 2;
+Q.catholic_pnf += 4; 
+if (Q.socialist_catholic_coalition == 1) {
+    Q.catholic_ppi -= 4;
+}
+Q.industrialists_pnf += 4; 
+if (Q.centre_left_coalition == 1) {
+    Q.industrialists_ldr -= 4;
+}
+
+if (Q.left_wing_coalition) {
+    Q.left_wing_coalition_failed = 1;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.centre_left_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 1;
+    Q.socialist_catholic_coalition_failed = 0;
+}
+
+if (Q.socialist_catholic_coalition) {
+    Q.left_wing_coalition_failed = 0;
+    Q.centre_left_coalition_failed = 0;
+    Q.socialist_catholic_coalition_failed = 1;
+}
+
+// resetting coalition stuff
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
+
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
+
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
+
+Q.coalition_dissent = 0;
+
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
+// prevents insta dismissal
+Q.king_dismissed_timer = 12;
+
+Q.ds_enemies = 0;
+Q.ds_allies = 0;
+Q.ldr_enemies = 0;
+Q.ul_allies = 0;
+Q.in_coalition = 0;
+Q.in_unstable_coalition = 0;
+Q.southern_development = 0;
+
+// reset coalitions\
+Q.psi_majority = 0;
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+Q.anti_socialist_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.ds_in_government = 0;
+Q.ul_in_government = 0;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0; 
+
+Q.government_collapse += 1;
+Q.ppi_relation -= 10;
+Q.party_demands_timer = 6;
+
+Q.leverage = parseFloat(Q.psi_seating_disp);
+!}
+on-departure: next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+
+The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies. Snap elections have been called and will occur in the next three months.
+

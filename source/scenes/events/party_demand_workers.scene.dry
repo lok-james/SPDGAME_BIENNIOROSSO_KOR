@@ -94,6 +94,12 @@ The Labour Ministry works on developing and enforcing safety regulations, in ord
 on-arrival: {!
 Q.workers_demand_failed += 1;
 Q.workers_psi -= 4*Q.workers_demand_failed;
+
+if (Q.left_wing_coalition) {
+    Q.coalition_dissent += 1;
+}
+
+Q.labour_dissent += 5;
 !}
 
-The workers are, unsurprisingly, outraged at our refusal to heed their demands.
+The workers are, unsurprisingly, outraged at our refusal to heed their demands, as is the Labour faction.

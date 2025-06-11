@@ -1,7 +1,7 @@
 title: PSRI in Crisis!
 subtitle: The PSRI is having a crisis of leadership...
 new-page: true
-view-if: psri_stable and psri_r < 2 and psri_votes < 3 and year < 1924 and not national_congress_seen
+view-if: psri_stable and psri_r < 3 and psri_votes < 4 and year < 1924 and not national_congress_seen
 on-arrival: psri_stable = 0
 tags: event
 max-visits: 1

@@ -593,3 +593,5 @@ choose-if: chisea_support >= 50
 unavailable-subtitle: The Republicans and Reformists do not have have enough votes.
 on-arrival: prime_minister = "Chisea"; prime_minister_party = "PRI"
 achievement: il_sogno_mazziniano
+
+Surprisingly, the Constitutional Opposition, who have pushed forward the PRI’s candidate of Eugenio Chisea, has successfully taken the post of Prime Minister! With a resurgent Reformist faction after the initial socialist revolution tilting the scales towards the PRI, he is expected to represent cooperation between the ruling PSI and the more moderate Republicans. 

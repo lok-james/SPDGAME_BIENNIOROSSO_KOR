@@ -1,7 +1,7 @@
 title: Emergence of Republican Paramilitaries
 subtitle: We have seen broad anti-communist organisations appear.
 tags: event
-view-if: republicans_adapt <= time and violent_revolution
+view-if: republicans_adapt <= time and violent_revolution and not benevolence
 on-arrival: republican_terror = 1; republican_bomb_timer = time + 12; terror_active = 1
 max-visits: 1
 

@@ -49,6 +49,10 @@ We have increased welfare spending on women and children. [? if welfare >= 1 and
 on-arrival: {!
 Q.women_demand_failed += 1;
 Q.women_psi -= 4*Q.women_demand_failed;
+
+if (Q.left_wing_coalition) {
+    Q.coalition_dissent += 1;
+}
 !}
 
 Our women voters are, unsurprisingly, outraged at our refusal to heed their demands.

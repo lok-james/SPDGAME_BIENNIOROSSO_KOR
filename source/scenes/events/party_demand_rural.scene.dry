@@ -82,6 +82,10 @@ We have increased financial support for small farmers, providing aid through cre
 on-arrival: {!
 Q.rural_demand_failed += 1;
 Q.rural_psi -= 4*Q.rural_demand_failed;
+
+if (Q.left_wing_coalition) {
+    Q.coalition_dissent += 1;
+}
 !}
 
 Our rural voters are, unsurprisingly, outraged at our refusal to heed their demands.

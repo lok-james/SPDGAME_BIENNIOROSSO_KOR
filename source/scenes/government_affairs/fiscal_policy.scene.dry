@@ -407,7 +407,7 @@ if (Q.socialist_catholic_coalition == 1) {
 Q.ldr_relation -= 5; 
 Q.ul_relation -= 2; 
 
-if (Q.tarrifs >= 3) {
+if (Q.tariffs >= 3) {
     Q.capital_strike_progress += 1;
 }
 
@@ -453,14 +453,14 @@ if (Q.in_unstable_coalition == 0) {
     Q.middle_class_psi -= 3*(1-Q.dissent);
 } 
 
-if (Q.centre_left_coalition == 0) {
+if (Q.centre_left_coalition == 1) {
     Q.workers_clc += 4*(1-Q.dissent); 
     Q.veterans_clc += 4*(1-Q.dissent); 
     Q.rural_clc -= 5*(1-Q.dissent); 
     Q.middle_class_clc -= 3*(1-Q.dissent);
 } 
 
-if (Q.socialist_catholic_coalition == 0) {
+if (Q.socialist_catholic_coalition == 1) {
     Q.workers_scc += 4*(1-Q.dissent); 
     Q.veterans_scc += 4*(1-Q.dissent); 
     Q.rural_scc -= 5*(1-Q.dissent); 

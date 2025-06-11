@@ -60,6 +60,10 @@ Our efforts to reform the curriculum is opposed every step of the way by the Cat
 on-arrival: {!
 Q.middle_class_demand_failed += 1;
 Q.middle_class_psi -= 4*Q.middle_class_demand_failed;
+
+if (Q.left_wing_coalition) {
+    Q.coalition_dissent += 1;
+}
 !}
 
 The middle class are, unsurprisingly, outraged at our refusal to heed their demands.
