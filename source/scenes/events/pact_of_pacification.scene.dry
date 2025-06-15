@@ -1,6 +1,6 @@
 title: Pact of Pacification
 subtitle: Mussolini approaches us with an offer.
-view-if: year == 1921 and month == 8 and week == 1 and pnf_leader = "Mussolini"
+view-if: year == 1921 and month == 8 and week == 1 and pnf_leader = "Mussolini" and not national_congress_seen
 max-visits: 1
 tags: event
 new-page: true

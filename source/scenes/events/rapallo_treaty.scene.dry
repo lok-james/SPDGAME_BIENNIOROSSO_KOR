@@ -26,9 +26,9 @@ view-if: psi_in_government and foreign_minister_party == psi_name
 choose-if: entente_relation >= 7
 unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
 on-arrival: {!
-Q.unemployment += 5.7;
-Q.economic_growth -= 4.2;
-Q.inflation += 7.4;
+Q.unemployment += 4.3;
+Q.economic_growth -= 2.9;
+Q.inflation += 6.4;
 
 Q.workers += 5;
 Q.middle_class += 7;
@@ -36,7 +36,7 @@ Q.rural += 2;
 
 Q.entente_relation -= 3;
 Q.veterans_psi += 17*(1-Q.dissent);
-Q.veterans_pnf -= 19*(1-Q.dissent);
+Q.veterans_pnf -= 14*(1-Q.dissent);
 Q.nationalist_sentiment -= 10;
 Q.socialist_sentiment += 4;
 

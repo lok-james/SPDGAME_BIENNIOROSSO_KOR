@@ -58,7 +58,7 @@ unavailable-subtitle: [? if para_resources < 1 : We do not have enough to suppor
 subtitle: +1 Party Resources, -1 Paramilitary Resources
 on-arrival: resources += 1; para_resources -= 1;
 
-Large amounts of funds are transferred back to the party coffers.
+Small amounts of funds are transferred back to the party coffers.
 
 @all_decrease
 subtitle: +[+ para_resources +] Party Resources, +[+ para_resources +] Paramilitary Resources - This will increase communist dissent.

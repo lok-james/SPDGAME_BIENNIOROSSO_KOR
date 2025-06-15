@@ -146,15 +146,15 @@ Q.coalition_dissent += 5;
 Q.in_default = 1;
 
 Q.workers_psi -= 10;
-Q.middle_class_psi -= 10;
-Q.industrialists_psi -= 10;
-Q.rural_psi -= 10;
-Q.veterans_psi -= 10;
-Q.catholic_psi -= 10;
+Q.middle_class_psi -= 12;
+Q.industrialists_psi -= 15;
+Q.rural_psi -= 6;
+Q.veterans_psi -= 3;
+Q.catholic_psi -= 5;
 
-Q.unemployment += 9.5;
-Q.economic_growth -= 12.7;
-Q.inflation += 27;
+Q.unemployment += 3.5;
+Q.economic_growth -= 5.9;
+Q.inflation += 13.6;
 !}
 
 We are immediately plunged into a deeper financial crisis, as businesses and banks pull out of the country. We are forced to print excessive amounts of money, resulting in hyperinflation. There is no telling how we will be able to get out of this.

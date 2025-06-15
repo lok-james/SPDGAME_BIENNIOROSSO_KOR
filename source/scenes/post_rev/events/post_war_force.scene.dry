@@ -214,15 +214,21 @@ on-arrival: reformist_strength += 10;
 subtitle: The Reformists will benefit from this.
 go-to: violent_menu
 
+Taking such a lax approach to the abolishment of the Italian Monarchy draws the suspicion of our more hardline members, who would have preferred execution of Vittorio Emanuele III or even be willing to exile him. Leniency might be seen as a betrayal of the revolution’s more radical aims, and our more radical groups within the party and population have become agitated. However, the remnants of Italy’s parliamentary underground begin to look more closely at our decisions, and the Reformists’ fortitude in their position has discredited the Communists to some.
+
 @king_exile
 on-arrival: maximalist_strength += 10;
 subtitle: The Maximalists will benefit from this.
 go-to: violent_menu
 
+Our Maximalist comrades have brought a compromise, and as such have experienced a degree of growth. Communists and Reformists along with most of our working population, though not entirely satisfied, are willing to accept this proposal. Discontent still lingers within the more radicalized labourers, however. Possibilities of cooperation with the left-wings of the Republican Opposition have contracted somewhat, though opportunities still exist.
+
 @king_shot
 on-arrival: communist_strength += 10;
 subtitle: The Communists will benefit from this.
 go-to: violent_menu
+
+Reformists have become disgruntled with that they see as an unnecessary act against the King, one that will supposedly only make the revolution appear less appealing to the masses. Nonetheless, the Communists’ fervour for their arguments for Emanuele’s execution has radicalized some members of the other factions, who join their ranks. Our acts have been met with jubilant praise from the proletarians, unemployed, and farmers, now free from the head of the Kingdom that had oppressed them for so long. As expected, the Republican Opposition despises our act of brutality against the symbol of the old Italy, and has organized several protests and demonstrations against the regime, all of them crushed, yet leaving a bitter taste in the national consciousness.
 
 @violent_party
 on-arrival: violent_seen += 1;
@@ -241,15 +247,21 @@ subtitle: This might result in our opposition taking more extreme measures.
 on-arrival: republicans_adapt = time + 3; dictatorship = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
 go-to: violent_menu
 
+With the ever-increasing influence of the Communists, they have pushed forward the political suppression of all non-[+ psi_name +] parties, bringing forth a dictatorship of the proletariat and farmer. Our party’s own Reformists are horrified with the complete takeover that the PSI has undertaken, though do not actively resist. The Carabinieri has noted a marked increase in Republican agitation, and further spying into their operations has seen a concerning rise in cooperation between the Republican-Reformists and Republican-Liberals. We expect that their tactics, having been deprived of parliamentary action, will instead turn into paramilitary violence.
+
 @right_banned
 subtitle: This might weaken our ability to effectively govern, though grants some concessions to the republicans.
 on-arrival: republicans_adapt = time + 12; opposition = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
 go-to: violent_menu
 
+Opening the door to some members of the Opposition secures us a sense of legitimacy internationally, while not necessarily surrendering any power away from the state. While the Republican Opposition’s radicalization has been somewhat abated, the PRI’s exclusion from being part of the Constitutional Opposition, as the leading party of the Republican-Reformists, has garnered their distrust. The banned members of the Republican Opposition will still work to ensure that our revolutionary state does not run uncontested through legal and illegal means, though with some more sympathetic members to the regime delaying the process.
+
 @none_banned
 subtitle: This will significantly weaken our ability to effectively govern, but will ensure republican dissent is minimal.
 on-arrival: violent_seen += 1; benevolence = 1; pcdi_banned = 1; psu_banned = 1; psri_banned = 1; pll_banned = 1; pri_banned = 1; ds_banned = 1; ppi_banned = 1; ldr_banned = 1; ul_banned = 1; pcs_banned = 1; pnf_banned = 1; other_banned = 1
 go-to: violent_menu
+
+Utter surprise has rippled throughout the Republican Opposition, with all of its Reformist members being included in the Constitutional Opposition. The Liberals have maintained their anti-government stance, as the Republican-Reformists, while still suspicious of the PSI’s regime, have taken a conciliatory approach. Given the divisions within the Republican Opposition, we can expect any strong anti-regime reactions to be heavily delayed, as the Republican-Reformists have cut down their involvement.
 
 @violent_chamber
 on-arrival: violent_seen += 1;
@@ -270,7 +282,7 @@ With the socialist revolution, one subject that is brought up is regarding the a
 
 @bank_seize
 subtitle: +6 Budget
-on-arrival: upper_tax_rates += 3; workers_psi += 6*(1-dissent); veterans_psi += 6*(1-dissent); ppi_relation -= 10; ul_relation -= 16; ldr_relation -= 12; socialist_sentiment -= 8; budget += 6; capital_strike_progress = 10; industrialists_psi *= 0.25; middle_class_psi *= 0.6
+on-arrival: upper_tax_rates += 3; workers_psi += 6*(1-dissent); veterans_psi += 6*(1-dissent); ppi_relation -= 10; ul_relation -= 16; ldr_relation -= 12; socialist_sentiment -= 8; budget += 6; capital_strike_progress = 10; industrialists_psi *= 0.25; middle_class_psi *= 0.6; republicans_adapt -= 1;
 go-to: violent_menu
 
 @violent_elections
