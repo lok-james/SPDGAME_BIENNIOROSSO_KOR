@@ -555,7 +555,7 @@ Q.anti_socialist_coalition_r = Q.pnf_seating_disp + Q.ul_seating_disp + Q.pcs_se
 
 Q.left_wing_minimum = 50;
 
-if (Q.psri_solo != 1) {
+if (Q.psri_solo != 1 || Q.psri_r >= 5) {
     Q.left_wing_coalition_r += Q.psri_seating_disp;
 }
 
@@ -570,6 +570,11 @@ if (Q.pri_prominent == 1 && Q.pri_relation >= Q.pri_min_relations) {
 
 if (Q.pri_prominent == 0) {
     Q.other_toleration_seating = Q.other_seating_disp * 0.3;
+    Q.left_wing_minimum -= Q.other_toleration_seating;
+}
+
+if (Q.psri_r < 5 && Q.psri_solo == 1) {
+    Q.other_toleration_seating = Q.other_seating_disp * 0.2;
     Q.left_wing_minimum -= Q.other_toleration_seating;
 }
 
