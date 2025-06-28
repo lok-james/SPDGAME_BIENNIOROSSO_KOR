@@ -2,7 +2,7 @@ title: Syndicalism
 new-page: true 
 is-card: true
 tags: party_affairs
-view-if: (syndicalist_strength >= labour_strength*1.5) and unions_break = 0 and syndicalist_active = 0
+view-if: (syndicalist_strength >= labour_strength*1.5) and unions_break = 0 and syndicalist_active = 0 and pnf_leader != "D'Annunzio"
 card-image: img/ItalianSyndicalistUnion.jpg
 on-arrival: shuffle_leadership_timer = 0; syndicalist_active = 1;
 max-visits: 1
@@ -21,7 +21,6 @@ We support the new leaders, and start using new-style propaganda techniques in o
 
 - @shuffle_leadership: We should use this opportunity to change the party's leadership.
 - @root: Continue...
-
 
 @no_new_ideas
 on-arrival: syndicalist_strength -= 10; syndicalist_active = 0; maximalist_strength += 7;

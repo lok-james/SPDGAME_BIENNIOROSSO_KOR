@@ -1,6 +1,6 @@
 title: Emergency Budget Cuts
 subtitle: Treasury Minister [+ treasury_minister +] authorises cuts to social spending.
-view-if: (treasury_minister_party == ul_name or treasury_minister_party == ldr_name or treasury_minister_party == pnf_name) and gov_treasury_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and ((welfare > 0 and (budget < 0 or inflation > unemployment) and not national_economic_recovery) or treasury_minister_party == pnf_name) and prime_minister != "D'Annunzio"
+view-if: (treasury_minister_party == ul_name or treasury_minister_party == ldr_name or (treasury_minister_party == pnf_name and pnf_leader = "Mussolini")) and gov_treasury_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and ((welfare > 0 and (budget < 0 or inflation > unemployment) and not national_economic_recovery) or treasury_minister_party == pnf_name) and prime_minister != "D'Annunzio"
 on-arrival: gov_cooldown_timer = 3; gov_treasury_timer = 9
 new-page: true
 tags: event

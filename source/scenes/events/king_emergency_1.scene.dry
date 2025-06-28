@@ -1,0 +1,232 @@
+title: King Emanuele III begins taking action against us
+subtitle: The King makes his move.
+view-if: king_emergency <= time and not national_congress_seen and (king_relation < 40 or not_participating = 1) and (pnf_weakened or pnf_collapse_seen) and not king_allies
+on-arrival: king_enemies = 1; king_event = 1; king_timer_1 = time + 2; next_election_time = time + 12 if next_election_time >= time + 12; next_election_month = month + 6 if next_election_time >= time + 12; next_election_year = year if next_election_time >= time+12; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+max-visits: 1
+tags: event
+new-page: true
+
+= Vittorio Emanuele III invokes Constitutional Power
+
+Following the fall of fascism, seemingly the only real power able to impede us, we have seen King Vittorio Emanuele taking an active role in attempting to rid Italy of socialism. The once passive King has been seen doing speeches, touring the nation with notably anti-socialist undertones, as well as utilising his political influence to wedge a rift between any goodwill we have left with the other parties.
+
+To the reformists within the party, this spells ruin; an actively aggressive Monarch, combined with conservative backing will bring progress to a screeching halt, while reaffirming the Left-wing of the party. A violent revolution seems to be the only way forward, at this point.
+
+- @king_limited: [? if socialist_catholic_coalition : The Catholics ?][? if centre_left_coalition : The Liberals ?] collapse the coalition!
+- @king_limited_nogov: Prime Minister [+ prime_minister +] reshuffles the Cabinet.
+- @king_gov: The King invokes Article 65, dismissing the current government.
+
+@king_limited
+view-if: pm_appointed and prime_minister_party = psi_name
+on-arrival: {!
+
+// resetting coalition stuff
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
+
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
+
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
+
+Q.coalition_dissent = 0;
+
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
+// prevents insta dismissal
+Q.king_dismissed_timer = 12;
+
+Q.ds_enemies = 0;
+Q.ds_allies = 0;
+Q.ldr_enemies = 0;
+Q.ul_allies = 0;
+Q.in_coalition = 0;
+Q.in_unstable_coalition = 0;
+Q.southern_development = 0;
+
+// reset Coalitions
+Q.psi_majority = 0;
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+Q.anti_socialist_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.ds_in_government = 0;
+Q.ul_in_government = 0;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0; 
+
+Q.prime_minister = Q.ul_leader;
+Q.prime_minister_party = Q.ul_name;
+!}
+
+Seemingly out of nowhere, our coalition partners have brought a Vote-of-Confidence onto the floor, and with numerous dissenters amongst the ranks of our allies, the vote fails. The current government is dissolved, until a new one is to be found.
+
+As negotiations between parties have begun, however, the King has, for the first time in his reign, intervened within the process and while though completely within his constitutional rights, is of grave concern. Presiding over the Chamber the Deputies, Vittorio Emanuele III has granted a mandate of rule over to the [+ ul_full_name +].
+
+Within days, and as if planned, [+ ul_leader +] has been able to draft a Cabinet, comprised of the most anti-socialist, reactionary men we have seen. Pietro Badoglio as Minister of the Interior. Armando Diaz as Minister of War. The list continues. 
+
+The curtains open on a new act. The actors begin their roles.
+
+- @root: A war is coming.
+
+@king_limited_nogov
+view-if: pm_appointed and prime_minister_party != psi_name
+on-arrival: {!
+
+// resetting coalition stuff
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
+
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
+
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
+
+Q.coalition_dissent = 0;
+
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
+// prevents insta dismissal
+Q.king_dismissed_timer = 12;
+
+Q.ds_enemies = 0;
+Q.ds_allies = 0;
+Q.ldr_enemies = 0;
+Q.ul_allies = 0;
+Q.in_coalition = 0;
+Q.in_unstable_coalition = 0;
+Q.southern_development = 0;
+
+// reset Coalitions
+Q.psi_majority = 0;
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+Q.anti_socialist_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.ds_in_government = 0;
+Q.ul_in_government = 0;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0;
+!}
+
+Seemingly out of nowhere, Prime Minister [+ prime_minister +] has reshuffled Cabinet positions with powers granted to him following our recent constitutional reform; notably expelling all [+ psi_name +] Cabinet members.
+
+Most notably, Italian general Pietro Badoglio has been elevated to the Minister of the Interior, while Marshal Armando Diaz has been elevated to Minister of War. Both men, staunch anti-socialists have promised a harsh crackdown on socialist unrest within the country, promising to stabilise the country.
+
+The board is set up. The hourglass turns.
+
+- @root: The pieces begin to move.
+
+@king_gov
+view-if: not pm_appointed
+on-arrival: {!
+
+// resetting coalition stuff
+Q.ldr_promise_failed = 0;
+Q.ppi_promise_failed = 0;
+
+Q.ppi_total_broken = 0;
+Q.ldr_total_broken = 0;
+Q.ul_total_broken = 0;
+
+Q.liberal_aid_accepted = 0;
+Q.liberal_budget_accepted = 0;
+Q.liberal_crackdown_accepted = 0;
+Q.liberal_foreign_accepted = 0;
+Q.liberal_nationalisation_accepted = 0;
+Q.liberal_reform_accepted = 0;
+
+Q.catholic_charity_accepted = 0;
+Q.catholic_education_accepted = 0;
+Q.catholic_nationalisation_accepted = 0;
+Q.catholic_papacy_accepted = 0;
+Q.catholic_women_accepted = 0;
+
+Q.coalition_dissent = 0;
+
+Q.crackdown_far_left = 0;
+Q.crackdown_far_right = 0;
+
+// prevents insta dismissal
+Q.king_dismissed_timer = 12;
+
+Q.ds_enemies = 0;
+Q.ds_allies = 0;
+Q.ldr_enemies = 0;
+Q.ul_allies = 0;
+Q.in_coalition = 0;
+Q.in_unstable_coalition = 0;
+Q.southern_development = 0;
+
+// reset Coalitions
+Q.psi_majority = 0;
+Q.centre_left_coalition = 0;
+Q.left_wing_coalition = 0;
+Q.socialist_catholic_coalition = 0;
+Q.grand_coalition = 0;
+Q.centre_right_coalition = 0;
+Q.anti_socialist_coalition = 0;
+
+Q.pcdi_in_government = 0;
+Q.psi_in_government = 0;
+Q.psu_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.ds_in_government = 0;
+Q.ul_in_government = 0;
+Q.psri_in_government = 0;
+Q.pnf_in_government = 0; 
+
+Q.prime_minister = "Giolitti";
+Q.prime_minister_party = Q.ul_name;
+!}
+
+Citing matters of national urgency and defense, King Vittorio Emanuele III has decided to dissolve the sitting government, deciding to appoint an 'Emergency Cabinet' of his own in order to preside over this 'crisis'. The King, though within his constitutional rights, has only intensified the situation with his actions. On the left, threats and vindication of those who have called for revolution come, while on the right, praise of reactionaries swarm in, thanking the King for bringing order to the nation.
+
+The new Cabinet tells the same story. Giovanni Giolitti as Prime Minister. Pietro Badoglio as Interior Minister, Armando Diaz as Minister of War. Men poised against socialism, longing to kill its ideology now as the highest positions of the land. 
+
+The Chamber of Deputies is in disarray. The left-half of the Chamber of Deputies, the reactionaries, conservatives. All in thunderous applause. Cheers echo through the chamber. The right-half of the Chamber of Deputies, the socialists, progressives. Empty. Plans and schemes trade hands.
+
+- @root: Democracy dies in darkness.

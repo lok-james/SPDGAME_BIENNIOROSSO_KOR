@@ -21,6 +21,8 @@ Now that we are in control of the Labour and Social Security Ministry, we can ap
 - @enforce_turin_agreement: Enforce the Factory Control Act across the country!
 - @nationalise_industries: Begin nationalising key industries.
 - @nationalise_more: Continue nationalising key industries.
+- @worker_syndicates: Begin establishing worker syndicates.
+- @syndicates_more: Continue establishing worker syndicates.
 - @root: Let's not do this for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -200,5 +202,151 @@ We continue buying out now-defunct or bankrupt companies, repurposing and organi
 
 [? if ldr_promise_failed and budget < 0 : Unfortunately, our spending has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
 [? if ldr_promise_failed and liberal_nationalisation_accepted: Unfortunately, our decision to nationalise has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+
+@worker_syndicates
+subtitle: -1 Budget - We should begin buying out businesses and establish worker syndicates in their place. [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : Nationalising parts of the economy would violate our coalition agreements! ?]
+view-if: syndicate_progress = 0 and syndicalist_active
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: {!
+Q.budget -= 1; 
+Q.syndicate_progress += 1;
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 5*(1-Q.dissent); 
+    Q.industrialists_psi -= 3*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.workers_clc += 5*(1-Q.dissent); 
+    Q.industrialists_clc -= 2*(1-Q.dissent);
+    Q.coalition_dissent += 1;
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.workers_scc += 5*(1-Q.dissent); 
+    Q.industrialists_scc -= 2*(1-Q.dissent); 
+}
+
+Q.unemployment -= 0.2;
+Q.economic_growth += 0.3;
+Q.inflation += 0.2;
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 1;
+}
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+Q.ds_right += 0.1;
+Q.ldr_right += 0.1;
+
+Q.industrialists_pnf += 3; 
+Q.ldr_relation -= 7; 
+Q.ul_relation -= 7;
+Q.communist_strength += 5;
+Q.communist_dissent -= 7;
+Q.syndicalist_strength += 8;
+Q.socialist_sentiment += 2;
+if (Q.liberal_nationalisation_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+}
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+} 
+Q.capital_strike_progress += 1;
+Q.psri_relation += 5*(1-Q.dissent);
+!}
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
+
+We begin buying out now-defunct or bankrupt companies, repurposing and organising them into syndicates controlled by the workers. The industrialists are not pleased at our intrusion into the economy.
+
+[? if ldr_promise_failed and budget < 0 : Unfortunately, our spending has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed and liberal_nationalisation_accepted: Unfortunately, our decision to nationalise has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+
+@syndicates_more
+subtitle: -1 Budget - We can continue buying out businesses and empower worker syndicates to govern. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?][? if liberal_nationalisation_accepted : Nationalising parts of the economy would violate our coalition agreements! ?]
+view-if: syndicate_progress > 0 and syndicalist_active
+choose-if: not national_economic_recovery or budget > 0
+unavailable-subtitle: Not enough budget. (Need 1)
+on-arrival: {!
+Q.budget -= 1; 
+Q.syndicate_progress += 1; 
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 6*(1-Q.dissent); 
+    Q.industrialists_psi -= 8*(1-Q.dissent);
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.workers_clc += 6*(1-Q.dissent); 
+    Q.industrialists_clc -= 4*(1-Q.dissent);
+    Q.coalition_dissent += 1;
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.workers_scc += 6*(1-Q.dissent); 
+    Q.industrialists_scc -= 4*(1-Q.dissent); 
+}
+
+Q.ds_right += 0.1*Q.syndicate_progress;
+Q.ldr_right += 0.1*Q.syndicate_progress;
+
+Q.unemployment -= 0.2;
+Q.economic_growth += 0.3;
+Q.inflation += 0.2;
+
+if (Q.unemployment >= 8) {
+    Q.unemployment -= 0.1;
+}
+
+if (Q.economic_growth < 0) {
+    Q.economic_growth += 1;
+}
+
+if (Q.budget < 0) {
+    Q.inflation += 0.1;
+}
+
+if (Q.syndicate_progress > 2) {
+    Q.economic_growth += 0.3;
+}
+
+Q.industrialists_pnf += 6; 
+Q.ldr_relation -= 8; 
+Q.ul_relation -= 8; 
+Q.communist_strength += 7; 
+Q.communist_dissent -= 9;
+Q.syndicalist_strength += 8;
+Q.socialist_sentiment += 4;
+if (Q.liberal_nationalisation_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+}
+if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
+    Q.ldr_promise_failed = 1;
+} 
+Q.capital_strike_progress += 1; 
+if (Q.syndicate_progress > 1) {
+    Q.capital_strike_progress += 1;
+}
+if (Q.syndicate_progress >= 2 && Q.in_unstable_coalition == 1) {
+    Q.coalition_dissent += 1;
+}
+Q.psri_relation += 7*(1-Q.dissent);
+!}
+go-to: ldr_promise_vonc if ldr_promise_failed = 1
+max-visits: 3
+
+We continue buying out now-defunct or bankrupt companies, repurposing and organising them into syndicates controlled by workers. The industrialists are not pleased at our continued intrusion into the economy.
+
+[? if ldr_promise_failed and budget < 0 : Unfortunately, our spending has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed and liberal_nationalisation_accepted: Unfortunately, our decision to nationalise has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+
 
 

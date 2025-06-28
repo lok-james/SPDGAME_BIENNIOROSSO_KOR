@@ -72,6 +72,9 @@ Q.resources += Q.para_resources;
 Q.para_resources = 0;
 
 Q.rev_year = Q.year;
+Q.abortion_attempted = 0;
+Q.suffrage_attempted = 0;
+Q.labour_attempted = 0;
 !}
 max-visits: 1
 go-to: peaceful_menu

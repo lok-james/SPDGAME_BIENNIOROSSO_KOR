@@ -48,6 +48,16 @@ if (Q.army_loyalty < 0) {
     Q.army_loyalty = 0;
 }
 
+if (Q.pcdi_formed) {
+    Q.sov_rg_power = Q.sov_rg_strength*Q.sov_rg_militancy;
+    if (Q.friendly_king != 1 && (Q.not_participating == 1 || Q.maximalist_participating == 1 || Q.royal_coup == 1))
+        if (Q.rg_banned == 1 && Q.pcdi_relation >= 60) {
+            Q.total_power += Q.sov_rg_power * 0.75;
+        } else if (Q.pcdi_relation >= 60) {
+            Q.total_power += Q.sov_rg_power;
+        } 
+}
+
 Q.loyal_army_power = Q.army_strength*Q.army_militancy*Q.army_loyalty;
 Q.total_power += (Q.loyal_army_power * (1 - 0.04 * Q.radicalisation))/2;
 
@@ -80,6 +90,11 @@ if (Q.soviet_relation >= 8) {
     Q.soviet_multiplier = 1.2;
 }
 Q.soviet_power *= Q.soviet_multiplier;
+
+if (Q.soviet_germany == 1) {
+    Q.soviet_power *= 2;
+}
+
 Q.total_power += Q.soviet_power;
 
 // use normalised workers_psi instead of labour_strength?
@@ -142,7 +157,7 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies are the paramilitary Arditismo, with [+ ard_strength +] thousand troops, the Far-right Fasci, with [+ fdc_strength +] thousand troops and the Anti-Bolshevik Leagues, with [+ abl_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ interior_police_strength +] thousand members, are unclear.
+Our enemies are the paramilitary Arditismo, with [+ ard_strength +] thousand troops, the Far-right Fasci, with [+ fdc_strength +] thousand troops and the Anti-Bolshevik Leagues, with [+ abl_strength +] thousand troops. The loyalties of the Regio Esercito, with its [+ army_strength +] thousand regular soldiers, and Carabinieri, with [+ interior_police_strength +] thousand members, are unclear. [? if pcdi_formed : It is unclear whether we can count on the radical forces of the Red Guards to aid us. ?]
 
 On our side, we have the Red Guards, at [+ rg_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
@@ -156,6 +171,7 @@ What else do we have?
 
 - @re_help: Appeal to the Regio Esercito to join our side.
 - @soviet_help: Call for support from the Soviet Union.
+- @pcdi_aid: Will the PCd'I help us?
 - @general_strike: Call a general strike!
 - @loyal_police: Call up the loyal portions of the Carabinieri.
 - @war_outcome: Now, the battle...
@@ -175,6 +191,18 @@ on-arrival: war_choices += 1;
 We have request aid from the Soviet Union to fight against the far-right groups, [? if participating = 0 :as well as the bourgeois parties,?] [? if not rcw_over : though not much can be sent as they are in their own civil war as well. ?]
 
 [? if soviet_relation < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if (soviet_relation > 2 and soviet_relation < 6) : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if (soviet_relation > 5 and soviet_relation < 8) : The Soviet Union sends us a force of willing volunteers, aiding our cause. ?][? if soviet_relation >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
+
+[? if soviet_germany : International Aid is further strengthened by volunteers from Soviet Germany. ?]
+
+@pcdi_aid
+view-if: friendly_king = 0 and (not_participating = 1 or maximalist_participating = 1 or royal_coup = 1)
+max-visits: 1
+go-to: war_menu
+on-arrival: war_choices += 1;
+
+[? if pcdi_relation >= 60 : Though reluctant, the PCd'I are willing to put aside their differences to aid us in the fight against the reactionaries. ?]
+
+[? if pcdi_relation < 60 : The PCd'I refuse to aid us in our fight, primarily due to our strained relations. ?]
 
 @general_strike
 max-visits: 1

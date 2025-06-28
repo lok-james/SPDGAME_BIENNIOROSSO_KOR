@@ -1,0 +1,15 @@
+title: Collapse of the National Coalition
+subtitle: Checkmate.
+view-if: king_event = 1 and psi_in_government
+on-arrival: king_event = 0; national_coalition = 0; national_coalition_ds = 0; national_coalition_ldr = 0; national_coalition_ppi = 0; king_timer_4 = time + 3; next_election_time = time + 8 if next_election_time >= time + 8; next_election_month = month + 4 if next_election_time >= time + 8; next_election_year = year if next_election_time >= time+8; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_psi += 7; middle_class_psi += 4; rural_psi += 7;
+max-visits: 1
+tags: event
+new-page: true
+
+= Collapse of the National Coalition
+
+The failure of the National Coalition to form government – the King's 'all-or-nothing' option to squash socialism – has collapsed the coalition. With popular support turning against the King, the various right-wing parties within the coalition have fallen into infighting, with the ANI blaming the [+ ul_name +] for its failure to take over the government.
+
+Whatever the case, any credible threat to socialism within Italy has seemingly fallen; the fascists are powerless, without a leader, while the King has exhausted his political capital and turned public opinion against him with his recent attempts to intervene in the parliamentary system. 
+
+- @root: The worst is over once more, and perhaps this time, for good.

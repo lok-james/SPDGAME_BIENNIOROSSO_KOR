@@ -154,6 +154,9 @@ Q.king_relation = 20;
 
 // The array of forces - paramilitary groups
 // Number of members in 1919 (in thousands)
+Q.sov_rg_militancy = 0;
+Q.sov_rg_strength = 0;
+
 Q.rg_strength = 100;
 Q.rg_militancy = 0.20;
 Q.rg_banned = 0;
@@ -470,10 +473,15 @@ Q.public_education_minister_party = 'PSRI';
 Q.judicial_reform = 0;
 Q.womens_rights = 0;
 Q.womens_work = 0;
+Q.abortion_rights = 0;
 Q.family_law = 0;
 Q.nationalisation_progress = 0;
 Q.syndicate_progress = 0;
 Q.councils_empowered = 0;
+ 
+Q.abortion_attempted = 0;
+Q.suffrage_attempted = 0;
+Q.labour_attempted = 0;
 
 // level of welfare relative to 1919 (can go negative)
 Q.welfare = 0;
@@ -601,7 +609,7 @@ Q.timers = ['advisor_action', 'ideology', 'media', 'judiciary_reform', 'party_or
             'gov_cooldown', 'gov_foreign', 'gov_interior', 'gov_justice', 'gov_treasury','gov_army', 'gov_finance', 
             'gov_public_works', 'gov_public_education', 'gov_labour', 'rg_orders', 'child_labour', 
             'radicalisation', 'psu_negotiating', 'party_demands', 'class1', 'class2', 'king_dismissed', 'insurance_payments_workers', 'streetfighting',
-            'colonial_policy', 'paramilitary_policy', 'gov_education'];
+            'colonial_policy', 'paramilitary_policy', 'gov_education', 'rally_dannunzio', 'rally_mussolini', 'rally_grandi', 'voter_truce', 'para_truce'];
 // all timers
 Q.advisor_action_timer = 0;
 Q.ideology_timer = 0;
@@ -679,11 +687,18 @@ Q.class2_timer = 0;
 Q.party_demands_timer = 0;
 Q.streetfighting_timer = 6;
 Q.colonial_policy_timer = 0;
+Q.voter_truce_timer = 0;
+Q.para_truce_timer = 0;
+Q.rally_dannunzio_timer = 0;
+Q.rally_grandi_timer = 0;
+Q.rally_mussolini_timer = 0;
 
 // wow  
 Q.royal_coup = 0;
 Q.friendly_king = 0;
 Q.participating = 0;
+
+Q.dannunzio_relation = 0;
 
 // demands
 Q.class1_num = 0;
@@ -698,6 +713,11 @@ Q.veterans_demand_failed = 0;
 Q.industrialists_demand_failed = 0;
 Q.catholic_demand_failed = 0;
 Q.women_demand_failed = 0;
+
+for (var classes of Q.classes) {
+    Q[classes+ '_clc'] = 0;
+    Q[classes+ '_scc'] = 0;
+}
 
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;

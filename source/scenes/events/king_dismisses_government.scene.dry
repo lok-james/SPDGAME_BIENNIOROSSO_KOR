@@ -1,5 +1,5 @@
 title: King dismisses government!
-view-if: king_relation < ((10*radicalisation)/government_collapse) and king_dismissed_timer <= 0 and psi_seating_disp < 50 and (in_unstable_coalition) and not national_congress_seen and ((socialist_catholic_coalition and ppi_relation < 50) or (centre_left_coalition and ldr_relation < 50))
+view-if: king_relation < ((10*radicalisation)/government_collapse) and king_dismissed_timer <= 0 and psi_seating_disp < 50 and (in_unstable_coalition) and not national_congress_seen and ((socialist_catholic_coalition and ppi_relation < 50) or (centre_left_coalition and ldr_relation < 50)) and not king_allies
 on-departure: {!
 
 Q.rural_psi -= 3; 

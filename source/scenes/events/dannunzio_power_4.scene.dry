@@ -1,0 +1,17 @@
+title: The Labour & Corporative Charter of [+ year +]
+subtitle: D'Annunzio begins his plan of economic consolidation.
+view-if: pnf_in_power and pnf_leader = "D'Annunzio" and (dannunzio_suffrage_seen or (womens_suffrage and dannunzio_education_seen)) and time >= dannunzio_time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: dannunzio_corporative_seen = 1; dannunzio_time = time + 3; industrialists_pnf -= 12; industrialists_ul += 8; industrialists_ldr += 4; industrialists_pcs += 2 if pcs_formed; workers_psi -= 7; workers_pnf += 9; workers_psri -= 2; workers_pcdi -= 3 if pcdi_formed; workers_psu -= 1 if psu_formed; inflation += 0.7; economic_growth += 0.4; unemployment += 0.4; working_hours = 3 if working_hours < 3; workers_safety = 2 if workers_safety < 2; wage_increase = 3 if wage_increase < 3; upper_tax_rates += 1 if upper_tax_rates <= 5; budget += 3 if upper_tax_rates <= 5; budget += 1 if upper_tax_rates > 5;
+
+= The Labour & Corporative Charter
+
+In an effort to replicate the economic success of the Italian Regency of Carnaro, Prime Minister D'Annunzio has passed the Labour & Corporative Charter, organising and consolidating the Italian economy into nine corporations, dividing them up by sectors. The bill also introduces mandatory membership to all labour and industries, subordinating private profit to state planning and levying high profit taxes on oligarchic wealth to fund social programs.
+
+In regards to labour policy, in both a surprising and unsurprising sense, D'Annunzio has established numerous progressive labour laws, [? if working_hours < 3 : passing a ?][? if working_hours >= 3 : enshrining the already-established ?] 8-hour workday into law, empowering labour councils and improving labour protection laws comprehensively.
+
+The reaction to these laws have been mixed; former backers of the fascists, the Industrialists, Oligarchs and Radical Nationalists have lambasted D'Annunzio for his 'reckless' policy, while winning the support of radical workers and some of our voters, concerningly. Some of the other left-wing parties have welcomed D'Annunzio's attitude and policies towards workers, while the conservative parties remain suspicious of D'Annunzio's goals.
+
+- @root: A realignment of voters within the PNF?

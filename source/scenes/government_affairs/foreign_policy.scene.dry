@@ -82,7 +82,7 @@ subtitle: Debt negotiation will be a long affair.
 choose-if: (entente_relation >= 2 and not violent_revolution) or (entente_relation >= 3)
 view-if: in_default = 0 and global_economic_recovery and uk_debts > 0
 unavailable-subtitle: Our relations with the Entente are too poor to attempt negotiations.
-on-arrival: entente_relation -= 2; uk_debts -= 1;
+on-arrival: entente_relation -= 2; uk_debts -= 1; entente_relation += 1 if labour_government;
 
 We continue negotiating the terms of the debts we have accumulated to the United Kingdom, attempting to pause or at the very least lengthen our debt payment intervals.
 

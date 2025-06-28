@@ -1,0 +1,15 @@
+title: Syndicalists defect!
+subtitle: Our syndicalist wing have defected!
+view-if: syndicalist_active and dannunzio_tour_seen
+on-arrival: syndicalist_break = 1; workers_psi *= 0.9; rg_strength *= 0.8; veterans_psi *= 0.9; workers_psri += 5; workers_pnf *= 0.05; n_advisors -= 1 if divittorio_advisor == 1; divittorio_advisor = 0; n_advisors -= 1 if deambris_advisor == 1; deambris_advisor = 0; syndicalist_strength *= 0.5
+new-page: true
+max-visits: 1
+tags: event
+
+= Syndicalists defect!
+
+The *Unione Sindacale Italiana*, and as a whole a large majority of our syndicalist wing have defected to the newly formed [+ pnf_full_name +], with Gabriele D'Annunzio leading the party. Having close ties with D'Annunzio, the USI's leadership led by Alceste De Ambris have decided to join the party, throwing the weight of the union behind them.
+
+This was, unfortunately, expected, seeming as the two men both played a significant role in the occupation of Fiume and the sole reason of their estranged relation with the party was due to Mussolini and his *Ras*.
+
+- @root: Unfortunate.

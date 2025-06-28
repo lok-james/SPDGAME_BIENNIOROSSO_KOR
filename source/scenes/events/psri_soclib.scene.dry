@@ -1,0 +1,15 @@
+title: The Social Liberalism of the PSRI
+subtitle: The PSRI completes its shift rightwards.
+new-page: true
+view-if: psri_solo and psri_time <= time and not national_congress_seen
+on-arrival: psri_soclib = 1
+tags: event
+max-visits: 1
+
+= Social Liberalism of the PSRI
+
+Following the PSRI's decision to move to the right and a reshuffling of its leadership, the PSRI has finally completed its shift to the right, opting instead to be elected on Liberal lists to its right rather than the socialist lists it has historically participated in. 
+
+Adding to such, our relations with the PSRI have deteriorated slightly as well, as we can no longer count on the party to join in any Leftist coalitions within the Chamber of Deputies.
+
+- @root: Expected, but a shame nevertheless.

@@ -1,0 +1,15 @@
+title: Chamber of Deputies dissolved
+subtitle: The Gambit is made.
+view-if: king_timer_3 <= time and not national_congress_seen and king_event = 1 and king_2_seen
+on-arrival: king_timer_4 = time + 3; king_3_seen = 1; next_election_time = time + 8 if next_election_time >= time + 8; next_election_month = month + 4 if next_election_time >= time + 8; next_election_year = year if next_election_time >= time+8; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
+max-visits: 1
+tags: event
+new-page: true
+
+= New Elections Scheduled
+
+King Vittorio Emanuele III has dissolved the sitting Chamber of Deputies in accordance with Article 9 and scheduled new elections set to occur in [+ next_election_month : month +] [+ next_election_year +], the longest allowed to be set. This comes at a time following a vicious crackdown by the King, and it is obvious the Cabinet is seeking to garner enough seats to turn the 'Emergency Cabinet' into a legitimate government.
+
+On the other hand, if we are able to hold back and succeed in retaining enough of a plurality to prevent the formation of a government or force the parties into a coalition with us, the 'Emergency Cabinet' will be unable to sustain its legitimacy, even with the support of the King. 
+
+- @root: We must prepare for the worst.

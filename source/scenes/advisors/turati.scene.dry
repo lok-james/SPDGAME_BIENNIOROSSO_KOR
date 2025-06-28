@@ -49,4 +49,6 @@ unavailable-subtitle: [? if prime_minister != "Turati": Turati must be the Prime
 choose-if: advisor_action_timer == 0 and prime_minister = "Turati" and king_relation >= 20 and psi_in_government
 on-arrival: advisor_action_timer = 6; next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
-The King, under advice, has dissolved the Chamber and called for new elections, set for [+ next_election_month : month +] [+ next_election_year +].
+[? if not king_abolished : The King, under advice, has dissolved the Chamber and called for new elections, set for [+ next_election_month : month +] [+ next_election_year +]. ?]
+
+[? if king_abolished : Prime Minister [+ prime_minister +] has dissolved the Chamber and called for new elections, set for [+ next_election_month : month +] [+ next_election_year +]. ?]

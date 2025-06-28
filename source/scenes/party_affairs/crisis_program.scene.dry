@@ -42,7 +42,7 @@ subtitle: Support the call for extensive economic and labour reforms - This will
 view-if: not_participating = 0
 unavailable-subtitle: The Reformist and Labour factions are not strong enough.
 choose-if: historical_mode == 0 or (reformist_strength + labour_strength >= maximalist_strength + communist_strength)
-on-arrival: moderate_plan_support += 1; reformist_strength += 7; labour_strength += 3; maximalist_dissent += 5; left_dissent += 5; syndicalist_dissent += 5 if syndicalist_active
+on-arrival: moderate_plan_support += 1; reformist_strength += 7; labour_strength += 3; maximalist_dissent += 5; communist_dissent += 5; syndicalist_dissent += 5 if syndicalist_active
 go-to: adopt_moderate if moderate_plan_support >= 2; support_moderate_progress if moderate_plan_support < 2
 
 @support_moderate_progress
@@ -52,7 +52,7 @@ We attempt to convince the party to support the Minimum Plan. Advocates of the p
 We have not yet adopted the plan. More work needs to be done.
 
 @adopt_moderate
-on-arrival: reformist_strength += 10; reformist_dissent -= 10; left_dissent += 8; labour_dissent += 6; moderate_plan_adopted = 1; economic_plan = 1; coalition_dissent -= 1 if unemployment > 15; ldr_relation += 5; ldr_moderates += 0.2; ds_left += 0.2; radicalisation -= 0.1;
+on-arrival: reformist_strength += 10; reformist_dissent -= 10; communist_dissent += 8; labour_dissent += 6; moderate_plan_adopted = 1; economic_plan = 1; coalition_dissent -= 1 if unemployment > 15; ldr_relation += 5; ldr_moderates += 0.2; ds_left += 0.2; radicalisation -= 0.1;
 
 With our hard work, we have convinced the majority of the party to adopt the economic and political reform plan! [? if psi_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Labour, Public Works, Agricultural or Finance ministries. ?]
 

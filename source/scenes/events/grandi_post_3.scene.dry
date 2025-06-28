@@ -1,0 +1,23 @@
+title: The Economic Elites pull the PNF’s rug...
+view-if: pnf_weakened = 1 and pnf_leader = "Grandi" and not grandi_dead
+on-arrival: {!
+
+Q.industrialists_ldr += Q.industrialists_pnf * 0.3;
+Q.industrialists_ul += Q.industrialists_pnf * 0.5;
+Q.industrialists_pnf *= 0.2;
+
+Q.ard_strength *= 0.7;
+Q.ard_militancy *= 0.3;
+
+Q.abl_strength *= 0.4;
+Q.abl_militancy *= 0.2;
+!}
+max-visits: 1
+tags: event
+new-page: true
+
+= The Economic Elites pull the PNF’s rug
+
+Once a mighty threat to Italian democracy, the Partito Nazionale Fascista has crumbled with the retraction of King Vittorio Emanuele III’s support, following a grand anti-fascist coalition of left-wing and even moderates opposing the Fascists in Italy’s most recent elections. [+ pnf_leader +]’s efforts to court the right-wing vote through mutual anti-socialist sentiments and political violence have isolated them of any political allies aside from the right-wing of the [+ ul_name +], [+ ldr_name +], and other minor right-wing parties, which do not have the power to overturn the newfound progressive coalition. However, the constituents of the liberal parties, those being the southern landowners and Italian industrialists, have begun to retract their support for the PNF. 
+
+Citing their reasons as the extremism that has descended upon Italy through the fault of the PNF, along with the electoral defeat, this suspension of Fascist support has crippled their fundraising efforts. With the sudden drought of funding for the Fascists, and their greatest potential allies in the liberal parties quickly losing ground, party dissent within the PNF is rapidly eroding its foundations. The collapse of the PNF is imminent, and [+ pnf_leader +]’s dreams of an Italian nationalist future have taken a sudden downturn.

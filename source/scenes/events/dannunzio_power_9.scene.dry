@@ -1,0 +1,22 @@
+title: D'Annunzio consolidates control over the PNF
+subtitle: The Squadrismo are purged.
+view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_coup_seen and dannunzio_time <= time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: {!
+Q.fdc_strength *= 0.7;
+Q.fdc_militancy *= 0.9;
+
+Q.ard_strength *= 0.7;
+Q.ard_militancy *= 0.3;
+
+Q.abl_strength *= 0.4;
+Q.abl_militancy *= 0.2;
+!}
+
+= Squadrismo Purged
+
+Following the coup attempt, a purge of the Squadrismo has occurred, removing disloyal *Ras* and officers from their position. This has thankfully, weakened them severely too, as inexperienced men take their place. Our ability to control the streets with the Red Guards will be easier.
+
+- @root: Excellent.

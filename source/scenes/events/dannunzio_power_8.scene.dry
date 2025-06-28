@@ -1,0 +1,52 @@
+title: Grandi makes his move!
+subtitle: The Squadrismo attempt to coup D'Annunzio!
+view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_struggle_seen and dannunzio_time <= time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: dannunzio_coup_seen = 1; dannunzio_time = time + 1
+
+The rivalry between Grandi and D'Annunzio has reached its peak. Forces loyal to Grandi have attempted to kidnap and bring down D'Annunzio. Brazen streetfighting has begun to occur across Italy, as members of the [+ pnf_full_italian +] turn against each other, both on the streets and in the Chamber of Deputies.
+
+The Unione Sindacale Italiana has, naturally, thrown its weight behind D'Annunzio, rallying its forces to oppose Grandi and his coup, while the Squadrismo and Ras are supporting Grandi. 
+
+In the legislative, A vote-of-no-confidence within the Grand Council of Fascism has begun in an attempt to oust D'Annunzio. 
+
+Eventually, as the dust settles...
+
+- @dannunzio_wins: D'Annunzio secures support of the King and repels the coup!
+- @grandi_wins: Grandi and his supporters secure a majority vote, removing D'Annunzio as Prime Minister!
+
+@dannunzio_wins
+view-if: pnf_left >= pnf_right
+on-arrival: fdc_strength *= 0.7; fdc_militancy *= 0.6;
+
+The vote-of-no-confidence within the Grand Council fails, as the Army is called to quell the unrest on the streets under orders of the King. The Squadrismo are forcefully suppressed, as prominent Ras leaders flee. Grandi himself decides to flee north to Switzerland.
+
+The coup is over. D'Annunzio consolidates his control over the party.
+
+@grandi_wins
+view-if: pnf_right > pnf_left
+on-arrival: {!
+Q.prime_minister = "Grandi";
+Q.pnf_leader = "Grandi";
+
+Q.foreign_minister_party = "PNF"; 
+Q.interior_minister_party = "PNF";
+Q.justice_minister_party = "PNF";
+Q.labour_minister_party = "PNF"; 
+Q.finance_minister_party = "PNF";
+Q.treasury_minister_party = "PNF";
+Q.agriculture_minister_party = "PNF";
+Q.public_education_minister_party = "PNF";
+Q.public_works_minister_party = "PNF";
+
+Q.pnf_in_government = 1;
+Q.ul_in_government = 0;
+Q.ds_in_government = 0;
+Q.ppi_in_government = 0;
+!}
+
+The King turns a blind eye to Grandi's actions as the vote to oust D'Annunzio succeeds. The Squadrismo occupy the streets as the USI is forced to go into hiding. D'Annunzio himself 'willingly' enters exile, deciding to retire from politics entirely.
+
+The coup is over. The party returns to its roots.

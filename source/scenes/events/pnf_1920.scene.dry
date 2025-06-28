@@ -2,7 +2,6 @@ title: 1920 Congress of the Fasci Italiani di Combattimento
 subtitle: The Fasci decides its political agenda. 
 new-page: true
 view-if: year = 1920 and month = 5 and week = 1 and not pnf_banned
-on-arrival: pnf_reactionary = 1
 max-visits: 1
 tags: event
 

@@ -1,0 +1,26 @@
+title: D'Annunzio's Control increases...
+subtitle: The Syndicalists within the party are acting strange...
+view-if: dannunzio_influence < 10 and dannunzio_influence >= 1 and pnf_in_government and pnf_leader = "D'Annunzio" and influence_time <= time
+new-page: true
+on-arrival: influence_time = time + 12
+max-visits: 1
+tags: event
+
+= D'Annunzio's Influence
+
+- @influence_money: Remove D'Annunzio's influence through funding.
+- @influence_purge: Remove D'Annunzio's influence through a purge.
+- @root: Do nothing for now.
+
+@influence_money
+subtitle: - 1 Resources
+choose-if: resources >= 1
+on-arrival: dannunzio_influence -= 1; resources -= 1
+
+We are able to root out D'Annunzio's influence slightly by funding supporters loyal to us instead.
+
+@influence_purge
+subtitle: This will weaken the party's popularity.
+on-arrival: dannunzio_influence -= 1; workers_psi -= 6; rural_psi -= 4;
+
+We are able to root out D'Annunzio's influence slightly by purging members loyal to him.

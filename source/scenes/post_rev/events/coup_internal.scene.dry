@@ -1,7 +1,7 @@
 title: Internal Coup!
 subtitle: The Bolsheviks are trying to oust us!
 tags: event
-view-if: (soviet_influence >= 5 or (soviet_influence >= 3 and soviet_relation <= 3) or (soviet_influence >= 4 and soviet_relation <= 2)) and (prime_minister != "Gramsci" or (opposition = 1 or benevolence = 1))
+view-if: (soviet_influence >= 5 or (soviet_influence >= 3 and soviet_relation <= 3) or (soviet_influence >= 4 and soviet_relation <= 2)) and (prime_minister != "Gramsci" or (opposition = 1 or benevolence = 1)) and soviet_leader = "Stalin"
 on-arrival: soviet_aid_timer = time + 12
 max-visits: 1
 

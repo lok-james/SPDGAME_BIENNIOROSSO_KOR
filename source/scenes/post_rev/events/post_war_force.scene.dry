@@ -181,6 +181,10 @@ Q.para_resources = 0;
 
 Q.officer_trial = Q.time + 2;
 Q.rev_year = Q.year;
+
+Q.abortion_attempted = 0;
+Q.suffrage_attempted = 0;
+Q.labour_attempted = 0;
 !}
 max-visits: 1
 go-to: violent_menu
@@ -197,6 +201,7 @@ We have done it. Like our Russian allies to the east, we too have overthrown our
 - @violent_elections: The Elections.
 - @violent_judiciary: The Judiciary.
 - @violent_bank: The Banks.
+- @violent_legislation: Legislation.
 - @violent_done: We have done all that we can.
 
 @violent_monarchy
@@ -269,7 +274,12 @@ max-visits: 1
 
 Another thing on the list is the Chamber of Deputies. The party suggests that it be replaced by a Supreme Soviet, emulating the governing bodies of the Russian Soviet Federative Socialist Republic.
 
-- @violent_menu: The Chamber of Deputies will be abolished and a Supreme Soviet will take its place.
+- @abolish_chamber: The Chamber of Deputies will be abolished and a Supreme Soviet will take its place.
+
+@abolish_chamber
+go-to: violent_menu
+
+Though the factions of the PSI may bicker over various issues, the party’s radicalization following the Revolution has made the dismantling and replacement of the Chamber of Deputies into a foregone conclusion. While there may be dissenting voices towards this proposal, they are minuscule enough to not provide any meaningful resistance. Made in the likeness of the RSFSR’s approach, the Supreme Soviet now lies as the sole governing body within the new Italian Union, serving as the vanguard of the people through the Party’s will.
 
 @violent_bank
 on-arrival: violent_seen += 1
@@ -284,6 +294,10 @@ With the socialist revolution, one subject that is brought up is regarding the a
 subtitle: +6 Budget
 on-arrival: upper_tax_rates += 3; workers_psi += 6*(1-dissent); veterans_psi += 6*(1-dissent); ppi_relation -= 10; ul_relation -= 16; ldr_relation -= 12; socialist_sentiment -= 8; budget += 6; capital_strike_progress = 10; industrialists_psi *= 0.25; middle_class_psi *= 0.6; republicans_adapt -= 1;
 go-to: violent_menu
+
+Our undisputed power over the nation has finally given us an opportunity to break the power of the landowners and other members of the bourgeoisie, as we nationalize their assets for the good of the nation and bring the Banca d’Italia under state control. A sense of victory has swept over most of our party, as the working classes and farmers celebrate their win over the landowning elite. However, only a marginal portion of the middle class is supportive, with most business owners utterly reviled by our takeover of finance and property. While a fraction of the Reformists decry their fellow party members for accepting such a radical approach to the rich, most simply see it as an unfortunately necessary evil. 
+
+With the sudden surpluses gained from the acquisition of previously private property, a shockwave has also rippled across the business world. Capitalists flee en masse to more business-friendly nations in our West, and the nations of the Entente look upon our war on finance with fear and suspicion. Soviet envoys to our nation begin to look more favourably at our approach, and could entrench their support of us. The Liberals of the Republican Opposition are utterly disgusted by our supposed crackdown of liberty, beginning to pressure the Republican-Reformists to purge any sympathizers within their ranks, and to take further measures to rebel against us.
 
 @violent_elections
 on-arrival: violent_seen += 1; violent_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
@@ -309,6 +323,87 @@ on-arrival: budget -= 1; democratisation += 2; workers_psi += 5*(1-dissent) if d
 We investigate jurists who have shown themselves to have biased or corrupt behavior, and try to remove them, replacing them with more democratic and socialist-align judges.
 
 - @violent_menu: Excellent.
+
+@violent_legislation
+view-if: (womens_suffrage = 0 or abortion_rights = 0 or child_labour_laws = 0) and violent_legislation_seen = 0
+on-arrival: violent_legislation_seen = 1; violent_seen += 1
+
+We also have the opportunity to mold social legislation to our whims. Various deputies have suggested some laws to be passed to ensure a more equal and fair Italy to continue onwards.
+
+- @violent_abortion: Liberalise abortion laws.
+- @violent_suffrage: Pass women's suffrage.
+- @violent_labour: Raise the minimum working age to 16, outlawing child labour.
+
+@violent_abortion
+view-if: not abortion_rights 
+on-arrival: abortion_rights += 1; womens_rights += 1; ppi_relation -= 5*ppi_right; catholic_psi -= 10; ul_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; veterans_pnf -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent); socialist_sentiment += 5; republican_sentiment += 3; ppi_left -= 2; ds_right += 1.2;
+go-to: violent_legislation
+
+@violent_suffrage
+view-if: not womens_suffrage
+on-arrival: womens_suffrage = 1; women += 27; womens_rights += 1; ldr_relation -= 5*ldr_right; middle_class_psi -= 7; ul_relation -= 8; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ds += 3; industrialists_ldr += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; middle_class_pnf -= 2; women_ppi += 3; middle_class_ul += 3*(1-dissent); ppi_left += 2; ldr_right += 0.6; ds_right += 0.2; socialist_sentiment += 3;
+go-to: violent_legislation
+
+@violent_labour
+view-if: not child_labour_laws
+on-arrival: {!
+Q.child_labour_laws = 1;
+if (Q.centre_left_coalition == 1) {
+    Q.coalition_dissent += 1;
+}
+
+if (Q.in_unstable_coalition == 0) {
+    Q.workers_psi += 9*(1-Q.dissent);
+    Q.rural_psi += 3*(1-Q.dissent);
+    Q.industrialists_psi -= 5*(1-Q.dissent);
+
+    if (Q.child_welfare < 3) {
+        Q.workers_psi -= 10*(1-Q.dissent);
+    }
+}
+
+if (Q.centre_left_coalition == 1) {
+    Q.workers_clc += 9*(1-Q.dissent);
+    Q.rural_clc += 3*(1-Q.dissent);
+    Q.industrialists_clc -= 5*(1-Q.dissent);
+
+    if (Q.child_welfare < 3) {
+        Q.workers_clc -= 10*(1-Q.dissent);
+    }
+}
+
+if (Q.socialist_catholic_coalition == 1) {
+    Q.workers_scc += 9*(1-Q.dissent);
+    Q.rural_scc += 3*(1-Q.dissent);
+    Q.industrialists_scc -= 5*(1-Q.dissent);
+
+    if (Q.child_welfare < 3) {
+        Q.workers_scc -= 10*(1-Q.dissent);
+    }
+}
+
+Q.industrialists_ds += 3;
+Q.industrialists_ldr += 3; 
+Q.industrialists_ul += 3; 
+Q.rural_ul += 5;
+Q.middle_class_ul += 3*(1-Q.dissent); 
+
+Q.workers_pnf -= 3; 
+Q.industrialists_pnf -= 2; 
+Q.middle_class_pnf -= 2; 
+Q.rural_pnf -= 2; 
+Q.middle_class_pnf -= 2; 
+
+Q.socialist_sentiment += 4; 
+
+Q.ldr_right += 0.6; 
+Q.ds_right += 0.2; 
+
+Q.unemployment -= 0.6;
+Q.economic_growth -= 1.2;
+Q.inflation -= 0.1;
+!}
+go-to: violent_legislation
 
 @violent_done
 view-if: violent_seen >= 6

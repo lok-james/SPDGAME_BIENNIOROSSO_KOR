@@ -47,8 +47,9 @@ go-to: ldr_promise_vonc if ldr_promise_failed = 1
 We have increased welfare spending on poorer families with children. [? if child_welfare >= 3 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
 
 @child_ban
-max-visits: 1
+view-if: not child_labour_laws and labour_attempted = 0
 subtitle: [? if labour_law_support < 50 and not violent_revolution : This is unlikely to succeed; we do not have majority support. ?][? if child_welfare < 3 : Enacting a ban without financial aid to poorer families might backfire. ?]
+on-arrival: labour_attempted = 1;
 go-to: child_labour_fail if labour_law_support < 50 and not violent_revolution; child_labour_success if labour_law_support >= 50 or violent_revolution
 
 @child_labour_fail

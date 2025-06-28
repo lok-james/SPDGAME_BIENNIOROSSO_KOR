@@ -31,11 +31,13 @@ We reach out to our former comrades in the splinter parties, and they, at the ve
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources. (Need 1)
-on-arrival: resources -= 1; psri_relation += 8; ds_relation += 8; ds_relation += 5 if ds_leader = "Giuffrida"; ds_relation -= 5 if ds_leader = "Carnazza"; communist_dissent += 4*(1-dissent); pri_relation += 5 if pri_prominent; ds_left += 0.5; pll_relation += 8;
+on-arrival: resources -= 1; psri_relation += 8; ds_relation += 8; ds_relation += 5 if ds_leader = "Giuffrida"; ds_relation -= 5 if ds_leader = "Carnazza"; communist_dissent += 4*(1-dissent); pri_relation += 5 if pri_prominent; ds_left += 0.5; pll_relation += 8; pri_relation -= 5 if pri_denounced and pri_prominent
 
 We strengthen our contacts with the PSRI and the [+ ds_name +][? if pll_formed :, as well as the PLL ?], improving relations.
 
-[? if pri_prominent: We also reach out to the PRI, which respond warmly. ?]
+[? if pri_prominent and not pri_denounced : We also reach out to the PRI, which respond warmly. ?]
+
+[? if pri_prominent and pri_denounced : We reach out to the PRI, who coldly respond to our outreach. ?]
 
 @catholic_party
 subtitle: -1 resources

@@ -1,0 +1,28 @@
+title: Pact of Pacification
+subtitle: Mussolini approaches us with an offer.
+view-if: year == 1921 and month == 8 and week == 1 and pnf_leader = "Mussolini" and not national_congress_seen
+max-visits: 1
+tags: event
+new-page: true
+
+= Pact of Pacification
+
+Benito Mussolini, leader of the [+ pnf_name +] and the *Italian Fasces of Combat*, the paramilitary forces that have been plaguing us, have come to us for an offer of peace. The peace, known as the *Pacification Pact*, would end hostilities between the Red Guards and the Fascists, calling to an end assaults, threats and violence of any sorts.
+
+Many within the party are conflicted; the left-wing is wary of a trap by our enemies, while the right is supportive of the pact, willing to place down arms in favour of peace. Even from the fascists, rumors of numerous *Ras* up in arms regarding Mussolini's offer is widespread, as an internal coup might be on the horizon.
+
+What should we do?
+
+- @querfront: Accept the offer.
+- @fuck_off: No deals with fascists!
+
+@querfront
+subtitle: This will prevent us from using the Red Guards.
+on-arrival: fdc_militancy -= 0.05; abl_militancy -= 0.02; ard_militancy -= 0.03; rg_militancy -= 0.1; pacification_pact = 1; reformist_strength += 5; syndicalist_strength += 12; communist_dissent += 5
+
+The *Pacification Pact* is signed, and we see an immediate decrease in paramilitary violent in the following days. The right-wing of the party reassures us that this is the right course of action.
+
+@fuck_off
+on-arrival: communist_strength += 5; reformist_dissent += 3; syndicalist_dissent += 5 if syndicalist_active; fdc_militancy += 0.02; abl_militancy += 0.02; ard_militancy += 0.01;
+
+We refuse to sign the *Pacification Pact*, much to the delight of Mussolini's deputies and his *Ras*. Mussolini utilises the opportunity to paint us as radicals, refusing to even sign peace. The left-wing of the party reassures us that this is the right course of action.

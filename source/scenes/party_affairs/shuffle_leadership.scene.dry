@@ -316,7 +316,7 @@ subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maxima
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
-view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathiser_expelled = 0
+view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sympathiser_expelled = 0 and advisor_arrested != 1
 on-arrival: ferri_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
@@ -427,7 +427,7 @@ title: Umberto Terracini
 subtitle: Umberto Terracini is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Comintern Relations, Constitutional Reform, Fasci Urgency ?]
 is-card: true
 card-image: img/portraits/UmbertoTerracini.jpg
-view-if: terracini_advisor = 0 and n_advisors < 3 and communist_split = 0
+view-if: terracini_advisor = 0 and n_advisors < 3 and communist_split = 0 and advisor_arrested != 1
 on-arrival: terracini_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor
@@ -487,7 +487,7 @@ Claudio Treves is now an advisor.
 
 @add_rigola
 title: Rinaldo Rigola
-subtitle: Rinaldo Rigola was the former Secretary of the Italian CGIL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Implementing the Minimum Plan, Veterans Welfare ?]
+subtitle: Rinaldo Rigola was the former Secretary of the Italian CGdL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Implementing the Minimum Plan, Veterans Welfare ?]
 is-card: true
 card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor
@@ -499,7 +499,7 @@ Rinaldo Rigola is now an advisor.
 
 @add_daragona
 title: Ludovico D'Aragona
-subtitle: Ludovico D'Aragona is the current Secretary of the Italian CGIL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Labour Rights, Emergency Fundraising ?]
+subtitle: Ludovico D'Aragona is the current Secretary of the Italian CGdL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Labour Rights, Emergency Fundraising ?]
 is-card: true
 card-image: img/portraits/LudovicoDAragona.jpg
 tags: labour_advisor
@@ -543,7 +543,7 @@ subtitle: Picelli is a non-factional founding member of the Red Guards and a fie
 is-card: true
 card-image: img/portraits/GuidoPicelli.jpg
 tags: nonfactional_advisor
-view-if: picelli_advisor = 0 and n_advisors < 3
+view-if: picelli_advisor = 0 and n_advisors < 3 and advisor_arrested != 1
 on-arrival: picelli_advisor = 1; n_advisors += 1;
 go-to: advisor_menu
 

@@ -7,7 +7,7 @@ Thanks for taking the time to check out the mod.
 
 Special thanks to: 
 
-Not_KGBread for providing, translating Italian sources, as well as playtesting & feedback,
+Not_KGBread for providing, translating Italian sources, coming up with achievement names as well as playtesting & feedback,
 
 Luis Duh Fifth for playtesting & feedback,
 
@@ -20,8 +20,6 @@ and notmitsukiyolol for writing some of the events in the mod.
 - @ideas_and_feedback: Ideas & Feedback
 - @update_log: Update Log
 - @future_plans: Future Plans
-- @enable_wacky: Enable the more insane options in game.
-- @disable_wacky: Disable the more insane options in game.
 - @root: Back
 
 @ideas_and_feedback
@@ -44,18 +42,6 @@ If you have any ideas, feedback or bug reports (even the tiniest spelling error)
 
 @future_plans
 
-I'll probably be doing QoL stuff mainly, maybe adding some other features if any receives overwhelming support.
+I'll probably be solely bug fixes from now on.
 
 - @mod_info_menu: Back
-
-@enable_wacky
-subtitle: :3
-view-if: wacky_on = 0
-on-arrival: wacky_on = 1
-go-to: mod_info_menu
-
-@disable_wacky
-subtitle: 3:
-view-if: wacky_on = 1
-on-arrival: wacky_on = 0
-go-to: mod_info_menu

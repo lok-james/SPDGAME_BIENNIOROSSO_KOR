@@ -1,0 +1,116 @@
+title: The Second Turin Strike
+subtitle: Turin breaks out in flames once more.
+view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_arts_seen and time >= dannunzio_time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: dannunzio_strike_seen = 1; dannunzio_time = time + 1; inflation -= 0.4; economic_growth += 0.4; unemployment += 1.1;
+
+= The Second Turin Strike
+
+In a cruel twist of events, Turin has once more broken out in a strike, this time led by the industrialists. The industrialists have refused to comply with D'Annunzio's 'Labour and Corporative Charter', deciding to shut down production and establishing a lockout of the factories and the layoff of thousands of workers.
+
+Public opinion of the strike is split; Workers and voters of the left condemn the strike as unlawful and harming workers, with some unionists and syndicalist leaders pressuring D'Annunzio to act, while conservatives and nationalists praise industrialist bravery against the 'reckless' Charter.
+
+Unfortunately, our paramilitary forces are unfortunately weakened from the ascendance of the PNF, with violence towards Red Guard affiliated workers becoming more common, thus making us unable to act with force. What should we do, and more importantly, what will D'Annunzio do?
+
+- @strike_condemn: Condemn the strikes, supporting the workers.
+- @strike_condemn_together: Could we issue a joint statement with the PNF to condemn the strikes?
+- @strike_support: Utilise the strikes to campaign against D'Annunzio's incompetence.
+- @strike_nothing: We should stay out of this.
+
+@strike_condemn
+subtitle: This is our expected response.
+on-arrival: workers_psi += 2
+go-to: strike_menu
+
+We condemn the industrialists for the loss of jobs, criticising the strike as illegal alongside our aligned unions. 
+
+@strike_condemn_together
+subtitle: The Unions are warming up to D'Annunzio too...
+choose-if: dannunzio_relation >= 2
+view-if: not unions_break
+unavailable-subtitle: A joint statement with the Syndicalists would be an outrage.
+on-arrival: dannunzio_influence += 1; workers_psi += 6; workers_pnf += 4; rural_psi += 4; rural_pnf += 3; industrialists_pnf -= 4;
+
+In a joint statement by both the Italian Syndicalist Union and General Confederation of Labour, alongside their affiliated parties, the [+ pnf_full_name +] and the [+ psi_full_name +], all four parties have condemned the strike as reckless and disruptive, demanding an end to the strike and the rehiring of the fired workers. 
+
+@strike_support
+subtitle: -1 Resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources. (Need 1)
+on-arrival: workers_psi += 4; workers_pnf -= 3; middle_class_pnf -= 1; rural_pnf -= 3; dannunzio_relation -= 1;
+go-to: strike_menu
+
+We campaign against D'Annunzio's incompetence, utilising *Avanti!* to portray him as a weak leader unable to stand up to the industrialists, swaying some workers back to our side.
+
+@strike_nothing
+go-to: strike_menu
+
+Very well. We stay out of the matter, merely watching the moves of D'Annunzio and the strikers.
+
+@strike_menu
+
+Eventually, the stalemate between D'Annunzio and the industrialist strikers is broken, as D'Annunzio acts against the industrialists.
+
+- @army_suppress: The Army suppresses the strike.
+- @squadrismo_suppress: The Squadrismo forcefully suppress the strike.
+- @negotiation_suppress: D'Annunzio opens negotiations with the strikers.
+
+@army_suppress
+view-if: army_loyalty > 0.54 and industrialists_pnf_normalised <= workers_pnf_normalised
+on-arrival: pnf_right += 1 {!
+Q.industrialists_ldr += Q.industrialists_pnf * 0.1;
+Q.industrialists_ul += Q.industrialists_pnf * 0.2;
+Q.industrialists_pnf *= 0.7;
+
+Q.workers_psi -= 7;
+Q.workers_psri -= 2;
+Q.workers_pnf += 9;
+
+Q.ard_strength *= 1.3;
+Q.ard_militancy *= 0.9;
+
+Q.abl_strength *= 1.4;
+Q.abl_militancy *= 0.8;
+!}
+
+The Regio Esercito is mobilised and deployed to Italy, the strikes forcefully ended as prominent industrialists and strikers are arrested. The factories are placed under state control as workers return to their employment, though this solidifies the industrialists opposition to D'Annunzio.
+
+Rumors of unrest from the *Ras* are more often too, seemingly left out of the responsibility of quelling unrest which they expected to perform.
+
+@squadrismo_suppress
+view-if: army_loyalty < 0.54 and industrialists_pnf_normalised <= workers_pnf_normalised
+on-arrival: pnf_right += 2; {!
+Q.industrialists_ldr += Q.industrialists_pnf * 0.1;
+Q.industrialists_ul += Q.industrialists_pnf * 0.1;
+Q.industrialists_pnf *= 0.8;
+
+Q.workers_psi -= 4;
+Q.workers_psri -= 1;
+Q.workers_pnf += 5;
+
+Q.ard_strength *= 1.2;
+Q.ard_militancy *= 0.95;
+
+Q.abl_strength *= 1.3;
+Q.abl_militancy *= 0.9;
+!}
+
+With the loyalties of the Regio Esercito called into question, the Squadrismo have assumed responsibility of quelling unrest, forcefully breaking up the strike, though surprisingly not employing its usually cruel tactics. The factories have reopened, placed under state control as workers are rehired once more.
+
+@negotiation_suppress
+view-if: industrialists_pnf_normalised > workers_pnf_normalised
+on-arrival: pnf_right -= 1; working_hours -= 1; workers_safety -= 1; {!
+Q.industrialists_ul += Q.industrialists_pnf * 0.1;
+Q.industrialists_pnf *= 0.9;
+
+Q.workers_pnf -= 7;
+Q.unemployment += 0.7;
+Q.inflation += 0.2;
+!}
+achievement: il_mio_nome_e_storpiato_percio
+
+With mediation from conservative leaders, the PNF and business leaders are able to come to an agreement to end the strike. Labour law changes are curtailed slightly, as are changes to levies on taxes in exchange for ending the strike.
+
+Though an amicable end to the strike, this has certainly placed D'Annunzio against the industrialists, once backing the PNF under Mussolini's control. 

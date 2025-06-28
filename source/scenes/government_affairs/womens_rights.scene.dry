@@ -56,8 +56,9 @@ go-to: ldr_promise_vonc if ldr_promise_failed = 1
 We have increased welfare spending on women and children. [? if welfare >= 1 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
 
 @liberalize
-max-visits: 1
+view-if: not abortion_rights and abortion_attempted != 1
 subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?] [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+on-arrival: abortion_attempted = 1;
 go-to: liberalize_fail if left_wing_coalition_r < 50 and not violent_revolution; liberalize_success if left_wing_coalition_r >= 50 or violent_revolution
 
 @liberalize_fail
@@ -73,9 +74,9 @@ go-to: catholic_promise_vonc if ppi_promise_failed == 1
 With the support of the left including the [+ psi_name +] and PSRI, we have successfully passed a bill to legalize abortion in Italy! This has heartened our more progressive supporters, while hurting our relations with the People's Party. With the increasing political discourse around abortion, the religiously-oriented People's Party and [+ ul_full_name +] have gained conservative votes at the expense of the [+ pnf_name +].
 
 @suffrage
-max-visits: 1
-view-if: not womens_suffrage
+view-if: not womens_suffrage and suffrage_attempted != 1
 subtitle: [? if suffrage_support < 50 : This is unlikely to succeed; we do not have majority support. ?]
+on-arrival: suffrage_attempted = 1;
 go-to: suffrage_fail if suffrage_support < 50 and not violent_revolution; suffrage_success if suffrage_support >= 50 or violent_revolution
 
 @suffrage_fail

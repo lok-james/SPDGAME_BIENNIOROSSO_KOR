@@ -1,0 +1,34 @@
+title: The Assassination of Dino Grandi!
+subtitle: Più Grandi sono... 
+view-if: pnf_in_power and pnf_leader = "Grandi" and dannunzio_king_seen and time >= dannunzio_time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: grandi_dead = 1; pnf_leader = "Unorganised"
+achievement: piu_fanno_rumore_quando_cadono
+
+In a regular scheduled speech at the *Palazzo Venezia* to a crowd of people, Dino Grandi, Prime Minister of Italy, was shot thrice in the chest by an assassin within the crowd, being able to flee successfully amongst the chaos. Though no suspects have been found, the Squadrismo have immediately issued blame on the left, promising a renewed crackdown on the Red Guards and socialism forces.
+
+However, with both the waning confidence of the Monarchy, rising pressure from other Squadrismo leaders seeking to oust him, as well as discontent workers and industrialists who have lost faith in Grandi, it is truly uncertain who planned for his assassination, or if it were merely through a man upset with Grandi's failure.
+
+Whatever the case, the PNF has fallen back into a leadership crisis, with the fall of two separate leaders in such a short term, as what remains of the party make up various disloyal *Ras*, seeking to consolidate their own power through violent force rather than political maneuvering.
+
+- @pnf_collapse: The PNF collapses without a suitable leader.
+
+@pnf_collapse
+on-arrival: workers_pnf *= 0.35; rural_pnf *= 0.35; industrialists_pnf *= 0.1; veterans_pnf *= 0.5; middle_class_pnf *= 0.4; pnf_collapse_seen = 1;
+
+Naturally, without a suitable leader, the National Fascist Party collapses. The initial party, comprised of Nationalists, Syndicalists and Futurists have seen both the Syndicalists and Futurists purged by Grandi, and now the Nationalists squabbling to keep control of whatever individual power they have left.
+
+As fierce and sporadic streetfighting breaks out across Italy, both the conservatives and liberals have beckoned the King to restore order to Italy.
+
+- @king_dissolve: The King dissolves the Grand Council of Fascism, rescinding confidence in the party and declares new elections.
+
+@king_dissolve
+on-arrival: next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
+
+Utilising his constitutional powers, the King has dissolved the Grand Council of Fascism, deploying both the Regio Esercito and the Carabinieri to restore order in Italy and suppress the rowdy Squadrismo. New elections have been called and scheduled, as parties begin to campaign. 
+
+Fascism, with three leaders across its lifespan, from Mussolini to D'Annunzio to Grandi, has fallen. Its ideology discredited amongst the people and internationally as a failure, as it seems unlikely such an ideology will come to fruition inside nor outside Italy for a long time.
+
+- @root: Fascism, from cradle to grave.

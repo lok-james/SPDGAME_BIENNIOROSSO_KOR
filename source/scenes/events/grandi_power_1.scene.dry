@@ -1,0 +1,49 @@
+title: The Prime Minister's Address to the Nation
+subtitle: Grandi begins his first moves.
+view-if: pnf_in_power and pnf_leader = "Grandi" and dannunzio_coup_seen and time >= dannunzio_time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: grandi_address_seen = 1; dannunzio_time = time + 2; paranoia_stat = 0; paranoia_stat += 1 if ((fdc_strength*fdc_militancy) + (ard_strength*ard_militancy) + (abl_strength*abl_militancy)) <= (rg_strength*rg_militancy); next_election_time = time + 18 if next_election_time > time+18; next_election_month = month + 9 if next_election_time >= time+18; next_election_year = year if next_election_time >= time+18; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; {!
+if (Q.psi_votes >= Q.pnf_votes) {
+    Q.paranoia_stat += 1;
+}
+
+if (Q.king_relation >= 60) {
+    Q.paranoia_stat -= 1;
+} else {
+    Q.paranoia_stat += 1;
+}
+
+if (Q.rg_banned == 1) {
+    Q.paranoia_stat -= 1;
+}
+!}
+
+= Address to the Nation
+
+Prime Minister Dino Grandi has officially assumed power following the fall of Gabriele D'Annunzio, beginning his first address to the nation. Grandi has emphasised the need for unity, order and respect across the nation, vowing to quell forces causing the instability plaguing Italy today. 
+
+More specifically, Grandi has called out our own paramilitary, the Red Guard as the main culprits of lawlessness and disorder plaguing the streets, vowing to eliminate reckless violence unsanctioned by the state. Already, we have seen a crackdown of our forces within Italy, as Red Guard leaders and workers are arrested on trumped up charges. Fortunately, our forces are able to adequately defend themselves and minimal losses have occurred.
+
+The PNF has, naturally, not taken to this well, and Grandi's own allies are seemingly pressuring the new Prime Minister to act further to crush dissent and begin his term with stability.
+
+- @grandi_blackshirts: The Squadrismo are organised into a National Militia placed under the state.
+- @grandi_violent: The Squadrismo are granted expanded powers to suppress dissent.
+
+@grandi_blackshirts
+view-if: paranoia_stat <= 0
+on-arrival: grandi_good += 1; rg_strength *= 0.8; rg_militancy *= 0.9; blackshirts_formed = 1
+
+The *Squadrismo* are been reorganised into the MVSN, or *Milizia Volontaria per la Sicurezza Nazionale*, integrating the organisation into the Regio Esercito under [+ pnf_leader +]'s orders. 
+
+This has given a significant boost to the strength of the paramilitary, effectively legalising violence that can be used against us, sanctioned by the King. The Red Guards are hit hard as our bases are raided.
+
+@grandi_violent
+view-if: paranoia_stat > 0
+on-arrival: grandi_bad += 1; rg_strength *= 0.7; rg_militancy *= 0.8;
+
+In an effort to suppress us, Grandi has authorised more 'unconventional' powers to suppress the Red Guards. We have seen an uptick in violent attacks on workers affiliated with the Red Guards, even socialists in general in an effort to undermine left-wing support within the country.
+
+Murmurs of discontent within some have not gone unnoticed, however, as many are skeptical of these powers granted to a non-governmental force, especially following Grandi's speech emphasising the curtailment of reckless violence on the streets. Nevertheless, the Red Guards, and even some of our support will take a significant hit as long as the Squadrismo remains active.
+

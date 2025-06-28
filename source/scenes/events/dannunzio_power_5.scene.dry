@@ -1,0 +1,13 @@
+title: The Establishment of the Ministry of the Arts
+subtitle: D'Annunzio pushes his own agenda forwards.
+view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_corporative_seen and time >= dannunzio_time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: dannunzio_arts_seen = 1; dannunzio_time = time + 5; budget -= 1; middle_class_pnf += 3; industrialists_pnf -= 4; industrialists_ul += 1; industrialists_ldr += 2; workers_psi -= 3; workers_pnf += 4; workers_psri -= 1; workers_pcdi -= 2 if pcdi_formed; workers_psu -= 1 if psu_formed; inflation += 0.2; economic_growth += 0.1; unemployment -= 0.2;
+
+= The Office of the Arts
+
+D'Annunzio has established an 'Ministry of the Arts', introducing the Ministry as a means to promote fine art, music and Italian culture. Significant funding has been allocated to the Ministry to aid in the construction of new schools of music and art, much to the concern and dismay of conservatives concerned about public spending.
+
+- @root: Unsurprising.

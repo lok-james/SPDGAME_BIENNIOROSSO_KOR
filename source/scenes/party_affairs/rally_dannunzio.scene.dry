@@ -1,0 +1,93 @@
+title: Rallying against D'Annunzio
+new-page: true
+view-if: rally_dannunzio_timer = 0 and pnf_in_government and pnf_leader = "D'Annunzio"
+on-arrival: rally_dannunzio_timer = 5; week_actions += 1
+frequency: 150
+is-card: true
+card-image: img/portraits/GabrieleDAnnunzio.jpg
+tags: party_affairs
+go-to: main_menu
+
+= Rallying against D'Annunzio
+
+Our worst fears have come true. A fascist is in control of Italy, though not the way we expected it. Gabriele D'Annunzio. Poet, Military leader, leader of the Italian Regency of Carnaro, and now, Prime Minister. D'Annunzio receives support from the left-wing of the party, supported by the Syndicalists of De Ambris and his Futurists. Surprisingly, though we are ideological enemies, there is seemingly more in common that connects us than we had initially thought.
+
+What should we do?
+
+@main_menu
+
+- @dannunzio_closer: Pursue closer ties with the D'Annunzio.
+- @dannunzio_rally: Rally against D'Annunzio's policies and failures.
+- @dannunzio_fund: Fund the mounting opposition against D'Annunzio.
+- @dannunzio_relation: Reaffirm ties with the other parties.
+- @favours_menu: Maybe we could utilise our ties with D'Annunzio...
+- @root: Do nothing for now.
+- @easy_discard
+
+@dannunzio_closer
+subtitle: Perhaps getting a closer relationship with D'Annunzio might not be a bad idea...
+on-arrival: dannunzio_relation += 1; communist_dissent += 4; maximalist_dissent += 3; reformist_dissent += 3; labour_dissent -= 3; workers_psi -= 2; workers_pcdi += 2 if pcdi_formed
+
+Though perhaps unsettling to most of the party, D'Annunzio's syndicalist tendencies have not gone unnoticed by some of our allies, who recommend we pursue closer bonds with him rather than oppose the Prime Minister outright.
+
+Pursing close relations with the current Prime Minister as well might grant us enough leverage to influence government policy too.
+
+@dannunzio_rally
+subtitle: D'Annunzio's economic policies have been swaying some of our voters towards him...
+on-arrival: maximalist_dissent -= 3; reformist_dissent -= 3; labour_dissent += 2; workers_pnf -= 3; rural_pnf -= 2; socialist_sentiment += 2;
+
+D'Annunzio's economic policies, primarily his extended labour protections and rights granted to workers have granted them a second look towards the once business-oriented and friendly party, concerningly. Thus, we have redoubled our efforts to campaign against D'Annunzio's policies, reminding workers of his failures and making sure none of our voters fall for his charm.
+
+@dannunzio_fund
+subtitle: -1 Resources - This is a risky gamble, and could backfire on us.
+view-if: dannunzio_struggle_seen
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources. (Need 1)
+on-arrival: resources -= 1; pnf_right += 1; industrialists_pnf += 3;
+
+Though stable on the surface, the right flank of the PNF, its Nationalist wing, is actively conspiring to remove D'Annunzio, seeing his reforms as a step too far towards ironically, socialism. 
+
+Through back channels, we can fund the right flank instead, aiding to oust D'Annunzio and replace him with a more Nationalistic, yet inexperienced and weak leader that will hopefully lead to the downfall of the party.
+
+@dannunzio_relation
+subtitle: D'Annunzio's radicalism mean we might be able to sway the other parties against supporting him.
+on-arrival: ds_relation += 5; ul_relation += 5; ldr_relation += 5; ppi_relation += 5;
+
+D'Annunzio's policies have, surprisingly, antagonised a not so insignificant portion of the Italian political establishment, viewing his erratic leadership as destabilising.
+
+Though naturally wary of us too, we are able to at least convince the parties against siding with D'Annunzio nor trusting him, reaffirming our relations with the other parties.
+
+@favours_menu
+view-if: dannunzio_relation > 0
+
+With at least some goodwill between the [+ psi_name +] and D'Annunzio, we could attempt to influence policy utilising 
+
+- @favour_vote: Negotiate a deal with D'Annunzio regarding workers.
+- @favour_squadrismo: Negotiate a deal regarding the Red Guards.
+- @favour_king: Negotiate a deal regarding the King
+- @favour_paramilitary: Negotiate a deal regarding the Squadrismo.
+- @main_menu: Return back to rallying.
+
+@favour_vote
+subtitle: Could we use convince D'Annunzio to focus on other voters instead?
+on-arrival: voter_truce_timer += 8; dannunzio_relation -= 1; dannunzio_influence += 1; workers_pnf -= 9; workers_psi += 7;
+
+We are able to negotiate a deal with D'Annunzio, as campaigning towards union workers by D'Annunzio reaches a screeching halt all of a sudden. Syndicalists within the party praise our pragmatism and willingness to plan accordingly.
+
+@favour_squadrismo
+subtitle: Could we convince D'Annunzio to relax suppression on our paramilitaries?
+on-arrival: dannunzio_relation -= 1; dannunzio_influence += 1; rg_strength *= 1.1; rg_militancy += 0.01;
+
+Through a series of deals, we convince the D'Annunzio to pull back the leash on the Squadrismo, allowing the Red Guards to breathe and regroup, with additional promises not to utilise them maliciously.
+
+@favour_king
+subtitle: Could we use our influence to sway the King?
+on-arrival: dannunzio_relation -= 1; dannunzio_influence += 1; king_relation += 7;
+
+We are able to convince D'Annunzio to put a good word in for us with the King, meeting often due to the weekly meetings between King and Prime Minister.
+
+@favour_paramilitary
+subtitle: Perhaps we could convince D'Annunzio is right flank is a bigger threat than us?
+on-arrival: para_truce_timer += 8; dannunzio_relation -= 1; dannunzio_influence += 1; fdc_strength *= 0.9; fdc_militancy *= 0.8; pnf_right -= 1
+
+Through evidence presented, we are able to convince D'Annunzio that the right flank represents a larger threat to him rather than us, turning his attention towards pacifying and eliminating disloyal forces, which inadvertently weakens them too.

@@ -59,6 +59,7 @@ The opposition is able to succeed, continuing the party's ideological commitment
 view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) and ((not pri_prominent and not pll_formed) or bissolati_dead = 1)
 on-arrival: {!
 Q.psri_solo = 1;
+Q.psri_time = Q.time + 7;
 
 
 if (Q.psu_formed) {

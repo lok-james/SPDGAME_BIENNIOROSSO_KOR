@@ -1,0 +1,35 @@
+title: Rumors of a Struggle
+subtitle: The PNF isn't as stable as it seems...
+view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_strike_seen and dannunzio_time <= time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: pnf_right += 1; dannunzio_struggle_seen = 1; dannunzio_time = time + 6
+
+= Rumors of a Internal Struggle
+
+Reports of an internal factional struggle within the PNF have reached our ears as disagreements regarding policy matters and actions taken by D'Annunzio continues, as two factions forming; The Left-wing of the party, comprised of National Syndicalists and Futurists, follow the lead of Prime Minister Gabriele D'Annunzio, supporting his policies and ideals as established in the Italian Regency of Carnaro. On the other end, the Nationalists have turned on D'Annunzio, comprised of leaders of the *Ras* once loyal to Mussolini, seeing his policies as too socialist and left-wing and supported by industrialists and conservatives who have seen D'Annunzio's policies as a betrayal.
+
+Dino Grandi, formerly one of the many leaders of the *Ras*, has risen to lead the faction opposing D'Annunzio, seeking to oust the Poet and assume control over the PNF – and the position of Prime Minister himself.
+
+Though we clearly do not have a horse in this race, there are, naturally, benefits for helping either side. Keeping D'Annunzio in power who, at least partly, aligns with us ideologically would naturally be optimal, combined with being able to weaken the paramilitaries would allow our own Red Guards to dominate the streets. On the other hand, though risky, allowing Grandi, a man with no political experience and under influence of the *Ras*, to seize control would severely weaken the King's trust in the PNF, potentially ousting him.
+
+What should we do, if anything?
+
+- @support_dannunzio: Covertly support Gabriele D'Annunzio and the left. 
+- @support_grandi: Covertly support Dino Grandi and the right.
+- @root: We shouldn't meddle in their affairs.
+
+@support_dannunzio
+subtitle: -1 Party Resource - Are we sure we want to interfere in a internal squabble?
+choose-if: resources >= 1
+on-arrival: pnf_left += 1;
+
+We are able to covertly funnel resources to aid D'Annunzio without his knowledge, hopefully keeping him in power and weakening the right wing of the party.
+
+@support_grandi
+subtitle: -1 Party Resource - Are we sure we want to interfere in a internal squabble?
+choose-if: resources >= 1
+on-arrival: pnf_right += 1;
+
+We are able to covertly, both to our allies and Grandi, funnel resources to aid the right wing of the party, hopefully quickening the collapse of the party and its rule.

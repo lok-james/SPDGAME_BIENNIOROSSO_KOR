@@ -1,0 +1,253 @@
+title: Political Consolidation
+subtitle: The PNF reaches out to the Conservatives.
+view-if: pnf_in_power and pnf_leader = "Grandi" and (grandi_foreign_seen or (us_debts_over and uk_debts_over)) and time >= dannunzio_time
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: grandi_coalition_seen = 1; dannunzio_time = time + 4 {!
+
+// general changes
+
+Q.ul_sway = 0;
+Q.ppi_sway = 0;
+Q.ldr_sway = 0;
+Q.pcs_sway = 0;
+Q.ds_sway = 0;
+
+if (Q.grandi_bad >= Q.grandi_good) {
+    Q.ul_sway -= 1;
+    Q.ppi_sway -= 1;
+    Q.ldr_sway -= 1;
+    Q.pcs_sway -= 1;
+    Q.ds_sway -= 1;
+} else {
+    Q.ul_sway += 1;
+    Q.ppi_sway += 1;
+    Q.ldr_sway += 1;
+    Q.pcs_sway += 1;
+    Q.ds_sway += 1;
+}
+
+// liberal union
+
+if (Q.ul_relation >= 65) {
+    Q.ul_sway -= 1;
+} else {
+    Q.ul_sway += 1;
+}
+
+if (Q.ul_leader == "Giolitti") {
+    Q.ul_sway -= 1;
+} else if (Q.ul_leader == "Salandra") {
+    Q.ul_sway += 1;
+}
+
+if (Q.ul_votes <= Q.pnf_votes) {
+    Q.ul_sway += 1;
+}
+
+// people's party
+
+if (Q.ppi_relation >= 65) {
+    Q.ppi_sway -= 1;
+} else {
+    Q.ppi_sway += 1;
+}
+
+if (Q.ppi_leader == "Sturzo") {
+    Q.ppi_sway -= 1;
+} else if (Q.ppi_leader == "De Gasperi") {
+    Q.ppi_sway += 1;
+} else if (Q.ppi_leader == "Triumvirate") {
+    Q.ppi_sway += 2;
+}
+
+if (Q.ppi_votes <= Q.pnf_votes) {
+    Q.ppi_sway += 1;
+}
+
+if (Q.pope == "Del Val") {
+    Q.ppi_sway += 1;
+} else if (Q.pope == "Gasparri") {
+    Q.ppi_sway -= 1;
+}
+
+// liberal democrats and Republicans
+
+if (Q.ldr_relation >= 65) {
+    Q.ldr_sway -= 1;
+} else {
+    Q.ldr_sway += 1;
+}
+
+if (Q.ldr_leader == "Orlando") {
+    Q.ldr_sway += 1;
+} else if (Q.ldr_leader == "Salandra") {
+    Q.ldr_sway += 2;
+} else if (Q.ldr_leader == "Nitti") {
+    Q.ldr_sway -= 2
+}
+
+if (Q.ldr_votes <= Q.pnf_votes) {
+    Q.ldr_sway += 1;
+}
+
+// pcs 
+
+Q.pcs_sway = 1000;
+
+// ds
+
+if (Q.ds_relation >= 65) {
+    Q.ds_sway -= 1;
+} else {
+    Q.ds_sway += 1;
+}
+
+if (Q.ds_leader == "Giuffrida") {
+    Q.ds_sway -= 1000;
+} else if (Q.ds_leader == "Colonna") {
+    if (Q.ds_votes <= Q.pnf_votes) {
+        Q.ds_sway += 2;
+    } else {
+        Q.ds_sway -= 1;
+    }
+} else if (Q.ds_leader == "Carnazza") {
+    Q.ds_sway += 1000;
+}
+
+
+Q.grandi_coalition = parseFloat(Q.pnf_seating_disp);
+!}
+go-to: coalition_menu
+
+Currently, the PNF is in power only via an Emergency Government as authorised by King Vittorio Emanuele III following the ousting of Gabriele D'Annunzio. However, the King has recently announced his intention to revoke his decree, forcing the PNF to begin forming coalitions once more.
+
+Though D'Annunzio's economic policies had alienated the conservative right, Grandi's pivot back towards the right has warmed the party back up with the Conservatives, and though some skeptical, it is likely at least some of the parties are willing to coalition with the PNF. It is unclear whether it will be enough to form a majority government once more, but being unable to do so will significantly harm Grandi's influence and control as Prime Minister.
+
+@coalition_menu
+
+- @grandi_ul: The [+ ul_full_name +] enters the National Coalition.
+- @grandi_ppi: The Italian People's Party enters the National Coalition.
+- @grandi_ldr: The [+ ldr_full_name +] enters the National Coalition.
+- @grandi_pcs: The Christian Social Party enters the National Coalition.
+- @grandi_ds: The [+ ds_full_name +] enters the National Coalition.
+- @grandi_no: The National Coalition is unable to secure a majority in the Chamber of Deputies.
+- @grandi_yes: The National Coalition is able to form a stable government, with Dino Grandi as Prime Minister.
+
+@grandi_ul
+choose-if: ul_sway >= 0
+unavailable-subtitle: The [+ ul_full_name +] are unwilling to join the National Coalition.
+on-arrival: {!
+Q.grandi_coalition += parseFloat(Q.ul_seating_disp);
+Q.ul_seen = 1;
+Q.ul_in_government = 1;
+!}
+max-visits: 1
+go-to: coalition_menu
+
+With [+ ul_leader +] leading the [+ ul_full_name +], Grandi is able to negotiate the [+ ul_name +]'s entry into the National Coalition.
+
+@grandi_ppi
+choose-if: ppi_sway >= 0
+unavailable-subtitle: The Italian People's Party are unwilling to join the National Coalition.
+
+on-arrival: {!
+Q.grandi_coalition += parseFloat(Q.ppi_seating_disp);
+Q.ppi_seen = 1;
+Q.ppi_in_government = 1;
+!}
+max-visits: 1
+go-to: coalition_menu
+
+With reassurances to respect religious freedoms within Italy, the Italian People's Party enters the National Coalition.
+
+@grandi_ldr
+choose-if: ldr_sway >= 0
+unavailable-subtitle: The [+ ldr_full_name +] are unwilling to join the National Coalition.
+on-arrival: {!
+Q.grandi_coalition += parseFloat(Q.ldr_seating_disp);
+Q.ldr_seen = 1;
+Q.ldr_in_government = 1;
+!}
+max-visits: 1
+go-to: coalition_menu
+
+The [+ ldr_full_name +] enters the National Coalition, influenced by the leadership of [+ ldr_leader +] with promises to restore the Italian economy.
+
+@grandi_pcs
+choose-if: pcs_sway >= 0
+view-if: pcs_formed
+on-arrival: {!
+Q.grandi_coalition += parseFloat(Q.pcs_seating_disp);
+Q.pcs_seen = 1;
+Q.pcs_in_government = 1;
+!}
+max-visits: 1
+go-to: coalition_menu
+
+The Christian Social Party, ideologically aligned with the PNF, joins the National Coalition to support them.
+
+@grandi_ds
+choose-if: ds_sway >= 0
+unavailable-subtitle: The [+ ds_full_name +] are unwilling to join the National Coalition.
+on-arrival: {!
+Q.grandi_coalition += parseFloat(Q.ds_seating_disp);
+Q.ds_seen = 1;
+Q.ds_in_government = 1;
+!}
+max-visits: 1
+go-to: coalition_menu
+
+The [+ ds_full_name +] enter the National Coalition. influenced by [+ ds_leader +] who is seemingly ideologically aligned or opportunistically aligned with the PNF in an effort to side with the winning party.
+
+@grandi_no
+choose-if: (ul_sway < 0 or ul_seen) and (ppi_sway < 0 or ppi_seen) and (ldr_sway < 0 or ldr_seen) and (pcs_sway < 0 or pcs_seen or not pcs_formed) and (ds_sway < 0 or ds_seen)
+view-if: grandi_coalition < 50
+on-arrival: grandi_bad += 2; {!
+Q.ul_in_government = 0;
+Q.ppi_in_government = 0;
+Q.ldr_in_government = 0;
+Q.pcs_in_government = 0;
+Q.ds_in_government = 0;
+!}
+
+The Fascists are, thankfully, unable to form a majority coalition with the other parties. Unfortunately, Grandi is able to convince the King to allow the Emergency Government to continue at the very least until new elections in which a new government majority can be formed.
+
+@grandi_yes
+choose-if: (ul_sway < 0 or ul_seen) and (ppi_sway < 0 or ppi_seen) and (ldr_sway < 0 or ldr_seen) and (pcs_sway < 0 or pcs_seen or not pcs_formed) and (ds_sway < 0 or ds_seen)
+view-if: grandi_coalition >= 50
+on-arrival: grandi_good += 2 {!
+
+Q.foreign_minister_party = "PNF"; 
+Q.foreign_minister = "Grandi";
+Q.interior_minister_party = "PNF";
+Q.interior_minister = "Federzoni";
+if (Q.ldr_in_government == 1) {
+    Q.justice_minister_party = Q.ldr_name;
+    Q.justice_minister = Q.ldr_leader;
+} else {
+    Q.justice_minister_party = "PNF";
+    Q.justice_minister = "Oviglio";
+}
+Q.labour_minister_party = "PPI"; 
+Q.labour_minister = "Cavazzoni";
+Q.finance_minister_party = "I";
+Q.finance_minister = "de' Stefani";
+Q.treasury_minister_party = "PPI";
+Q.treasury_minister = "Tangorra";
+Q.agriculture_minister_party = "PNF";
+Q.agriculture_minister = "Acerbo";
+Q.public_education_minister_party = "I";
+Q.public_education_minister = "Gentile";
+if (Q.ds_in_government == 1) {
+    Q.public_works_minister_party = Q.ds_name;
+    Q.public_works_minister = "Carnazza";
+} else {
+    Q.public_works_minister_party = "PNF";
+    Q.public_works_minister = "Sarrocchi";
+}
+
+!}
+
+Shockingly, the PNF is able to reconcile with the other conservative parties, allowing it to form a stable majority coalition and the revocation of the King's emergency government, granting Grandi's government significant legitimacy in the eyes of the people.

@@ -1,0 +1,43 @@
+title: King [+ king +] rescinds support for the PNF
+audio: clear shuffle music/post/FischiaIlVento.mp3 music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3 music/main/QuattroSignoriAParigiVanno.mp3
+set-bg: img/background.png
+view-if: pnf_in_power = 1 and pnf_in_government = 0 and pnf_leader = "Grandi" and not grandi_dead
+on-arrival: {!
+Q.pnf_in_power = 0; 
+Q.pnf_weakened = 1;
+
+Q.anti_fas_ds = 0;
+Q.anti_fas_ldr = 0;
+Q.anti_fas_pll = 0;
+Q.anti_fas_ppi = 0;
+Q.anti_fas_pri = 0;
+Q.anti_fas_psri = 0;
+Q.anti_fas_psu = 0;
+Q.anti_fas_ul = 0;
+
+Q.workers_pnf *= 0.5;
+Q.middle_class_pnf *= 0.3;
+Q.industrialists_pnf *= 0.2;
+Q.rural_pnf *= 0.4;
+Q.veterans_pnf *= 0.6;
+Q.women_pnf *= 0.4;
+
+Q.fdc_strength *= 0.7;
+Q.fdc_militancy *= 0.3;
+
+Q.king_emergency = Q.time + 2;
+!}
+max-visits: 1
+tags: event
+new-page: true
+achievement: ritorno_trionfale
+
+= King rescinds support for the PNF 
+
+Following the recent elections & the fascists' failure to consolidate power, King [+ king +] has rescinded his support for the PNF, denouncing [+ pnf_leader +] and the party for its ineffectiveness and failures to stabilise the country.
+
+Already, we have seen a significant drop in support for the fascists, as voters return to less radical parties, alongside a drop in far-right paramilitary strength.
+
+Fascism is dead, at least in Italy.
+
+- @root: Thus falls the failed experiment.

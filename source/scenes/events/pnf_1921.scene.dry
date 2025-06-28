@@ -32,7 +32,7 @@ on-arrival: pnf_leader = "Grand Council"; veterans_pnf -= 5; veterans_other += 5
 With the continued absence of Mussolini, alongside no other prominent leadership, the Grand Council continues to lead, while the Fascist movement continues to weaken, as other Futurist and Fascist parties appear to fill the political vacuum the PNF have left.
 
 @dannunzio_1921
-on-arrival: pnf_leader = "D'Annunzio"; veterans_pnf += 17; middle_class_pnf += 6;
+on-arrival: pnf_leader = "D'Annunzio"; veterans_pnf += 17; middle_class_pnf += 6; dannunzio_time = time + 2; pnf_left = 0; pnf_right = 0
 face-image: img/portraits/GabrieleDAnnunzio.jpg
 achievement: quis_contra_nos
 

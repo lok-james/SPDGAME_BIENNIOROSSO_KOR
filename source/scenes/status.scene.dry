@@ -34,6 +34,10 @@ Revolutionary Fervour: [+ revolutionary_fervour +]%
 
 {!<span class="tooltip-text" title="The other parties view us with doubt, considering the party contains radicals advocating for the fall of the Kingdom. The question is: How radical?">Radicalisation</span>!}: [+ radicalisation : radicalisation +]
 
+[? if prime_minister = "D'Annunzio" : Our relationship with D'Annunzio is [+ dannunzio_relation : radicalisation +] ?]
+
+[? if prime_minister = "D'Annunzio" : D'Annunzio's influence within the party is [+ dannunzio_influence : influence +] ?]
+
 = Government
 
 [? if not king_abolished : King: [+ king +] ?]
@@ -157,6 +161,9 @@ American Debts: [? if american_debts > 0 and not in_default : Significant ?] [? 
 
 @paramilitaries
 on-arrival: {!
+if (Q.sov_rg_strength) {
+    Q.sov_rg_strength_2 = Math.round(Q.sov_rg_strength);
+}
 if (Q.rg_strength) {
     Q.rg_strength_2 = Math.round(Q.rg_strength);
 }
@@ -196,9 +203,17 @@ Streetfighting: [+ violent_prevalence : violence +]
 
 = Paramilitary Forces
 
-[? if not national_congress_seen : {!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group asscoiated with the PSI.">Red Guards</span>!} Strength: [+ rg_strength_2 +] thousand ?]
+[? if not national_congress_seen and not pcdi_formed : {!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group asscoiated with the PSI.">Red Guards</span>!} Strength: [+ rg_strength_2 +] thousand ?]
 
-[? if not national_congress_seen : Red Guard Militarization: [+ rg_militancy : militancy +] ?]
+[? if not national_congress_seen and not pcdi_formed : Red Guard Militarization: [+ rg_militancy : militancy +] ?]
+
+[? if not national_congress_seen and pcdi_formed : {!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group, its radical wing asscoiated with the PCd'I.">Red Guards - PCd'I</span>!} Strength: [+ sov_rg_strength_2 +] thousand ?]
+
+[? if not national_congress_seen and pcdi_formed : Red Guard - PCd'I Militarization: [+ sov_rg_militancy : militancy +] ?]
+
+[? if not national_congress_seen and pcdi_formed : {!<span class="tooltip-text" title="The Red Guards are a paramilitary socialist group, its moderate wing asscoiated with the PSI.">Red Guards - PSI</span>!} Strength: [+ rg_strength_2 +] thousand ?]
+
+[? if not national_congress_seen and pcdi_formed : Red Guard - PSI Militarization: [+ rg_militancy : militancy +] ?]
 
 [? if arditi_formed : {!<span class="tooltip-text" title="The Arditi del Popolo is a anti-fascist group composed of anarchists to communists to republicans.">Arditi del Popolo</span>!} Strength: [+ adp_strength_2 +] thousand ?]
 
@@ -306,6 +321,8 @@ Catholics: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'
 Holy See: [+ papal_relation : radicalisation +]
 
 Entente: [+ entente_relation : radicalisation +]
+
+United States: [+ american_relation : radicalisation +]
 
 Russian SFSR: [+ soviet_relation : radicalisation +]
 

@@ -1,0 +1,13 @@
+title: King Emanuele III adopts a conciliatory attitude
+subtitle: The King will no longer impede us.
+view-if: king_emergency <= time and not national_congress_seen and king_relation >= 40 and (pnf_weakened or pnf_collapse_seen) and not_participating = 0 and not king_enemies
+on-arrival: king_allies = 1; king_timer_1 = time + 2;
+max-visits: 1
+tags: event
+new-page: true
+
+= Vittorio Emanuele III adopts a conciliatory attitude
+
+Following the fall of fascism, the only threat impeding us, the King has opted to adopt a more friendly approach towards us, seeing from our formerly strong relations. Though not allies in the slightest, the King will no longer impede our efforts, nor actively work against us and influence the Chamber of Deputies.
+
+- @root: An odd turn of events.

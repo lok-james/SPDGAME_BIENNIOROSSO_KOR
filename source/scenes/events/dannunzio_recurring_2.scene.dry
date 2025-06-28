@@ -1,0 +1,17 @@
+title: D'Annunzio seizes control of the [+ psi_full_name +]
+subtitle: We have handed too much power to D'Annunzio.
+view-if: dannunzio_influence >= 10 and pnf_in_government and pnf_leader = "D'Annunzio"
+new-page: true
+max-visits: 1
+tags: event
+achievement: lunico_rivoluzionario_in_italia
+
+= D'Annunzio seizes the [+ psi_full_name +]
+
+As relations with D'Annunzio slowly deepened, so did our ties with the PNF. Forces loyal, or at the very least supportive, of an alliance with D'Annunzio climbed the ranks of the party, eventually ousting and seizing leadership of the party, handing it to one man. Gabriele D'Annunzio.
+
+Syndicalists like De Ambris now head the party, fully collaborating with the fascists as its new ally in the fight to consolidate Italy under a dictatorship. The General Confederation of Labour is merged into the Italian Syndicalist Union as a junior party, firmly entrenching the remnants of labour into syndicalism.
+
+It's out of our hands now.
+
+- @game_over: Game over.

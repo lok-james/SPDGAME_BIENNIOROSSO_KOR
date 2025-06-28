@@ -122,6 +122,10 @@ if (Q.tax_reformed >= 3 && Q.min_compensation >= 3 && Q.min_public_works >= 3 &&
 if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 && Q.reformists_defect == 1) {
     this.achieve('fronte_diviso');
 }
+
+if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory == 1 && Q.us_close == 1 && Q.soviet_germany == 1) {
+    this.achieve('rivoluzione_permanente_tranne_qui');
+}
 !}
 
 = End
@@ -309,6 +313,16 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
 
+[? if game_achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
+
+[? if game_achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Germany, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+
+[? if game_achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
+
+[? if game_achievement_il_mio_nome_e_storpiato_percio: **Il Mio Nome è Storpiato Perciò** - Bring the strikers in Turin to the negotiating table. Twice. ?]
+
+[? if game_achievement_lunico_rivoluzionario_in_italia: **L'unico rivoluzionario in Italia.** - Lose control of the party. ?]
+
 = Completed Achievements Overall
 
 [? if achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
@@ -395,6 +409,16 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
 
+[? if achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
+
+[? if achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Germany, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+
+[? if achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
+
+[? if achievement_il_mio_nome_e_storpiato_percio: **Il Mio Nome è Storpiato Perciò** - Bring the strikers in Turin to the negotiating table. Twice. ?]
+
+[? if achievement_lunico_rivoluzionario_in_italia: **L'unico rivoluzionario in Italia.** - Lose control of the party. ?]
+
 = Incomplete Achievements
 
 [? if not achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
@@ -480,6 +504,16 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 [? if not achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
 
 [? if not achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
+
+[? if not achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
+
+[? if not achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Germany, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+
+[? if not achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
+
+[? if not achievement_il_mio_nome_e_storpiato_percio: **Il Mio Nome è Storpiato Perciò** - Bring the strikers in Turin to the negotiating table. Twice. ?]
+
+[? if not achievement_lunico_rivoluzionario_in_italia: **L'unico rivoluzionario in Italia.** - Lose control of the party. ?]
 
 @end_game
 game-over: true

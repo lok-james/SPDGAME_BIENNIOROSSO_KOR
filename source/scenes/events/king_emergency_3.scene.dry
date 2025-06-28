@@ -1,0 +1,61 @@
+title: Army Crackdown on Strongholds
+subtitle: The Rook captures.
+view-if: king_timer_2 <= time and not national_congress_seen and king_event = 1 and king_1_seen
+on-arrival: king_timer_3 = time + 2; king_2_seen = 1; {!
+Q.workers_psi -= 6;
+Q.middle_class_psi -= 9;
+Q.women_psi -= 3;
+Q.catholic_psi -= 2;
+
+Q.rg_strength *= 0.8;
+Q.rg_militancy *= 0.7;
+!}
+max-visits: 1
+tags: event
+new-page: true
+go-to: action_menu
+
+= Turin & Bologna Headquarters Raided
+
+A series of military crackdowns have wracked the country in recent days. The Regio Esercito, under command of Armando Diaz, have raided our offices and headquarters, particularly in Turin and Bologna. Our offices at *Avanti!* have been hit, members of the *Red Guards* [? if arditi_cooperation : and Arditi del Popolo ?] have been arrested, including leading members of the party.
+
+Though we naturally protest and argue that this is unconstitutional, the King and Cabinet have declared the locations and members are traitors to the Kingdom, in which their rights are no longer guaranteed. Unfortunately, our actions for the time being will be severely limited, and the influence of *Avanti* in these affected regions will also be significantly impacted.
+
+@action_menu
+
+- @advisor_deactivate: Our advisors are arrested.
+- @avanti_deactivate: *Avanti!* will be temporarily out of commission.
+- @red_guard_deactivate: The Red Guards are outlawed by the Interior Ministry.
+- @council_deactivate: The Factory Councils are placed under military occupation.
+
+@advisor_deactivate
+subtitle: Enrico Ferri, Guido Picelli and Umberto Terracini will be temporarily unavailable due to arrests.
+on-arrival: advisor_arrested = 1; n_advisors -= 1 if ferri_advisor == 1; n_advisors -= 1 if picelli_advisor == 1; n_advisors -= 1 if terracini_advisor == 1; ferri_advisor = 0; picelli_advisor = 0; terracini_advisor = 0;
+max-visits: 1
+go-to: action_menu
+
+Many high-profile members of the party are arrested, whether on trumped up charges or merely caught for questioning, it is at the very least, clear that they'll be unavailable to us for some time.
+
+@avanti_deactivate
+subtitle: The seizure of the newspaper will limit our reach substantially.
+on-arrival: newspaper_seized = 1;
+max-visits: 1
+go-to: action_menu
+
+The regional branches of *Avanti!* are ransacked, raided by the Carabinieri, editors dragged off and arrested and branches left in ruins. Whatever the case, *Avanti!*'s capacity to reach workers and readers will be limited until operations are brought back to life.
+
+@red_guard_deactivate
+view-if: rg_banned != 1
+on-arrival: rg_banned = 1
+max-visits: 1
+go-to: action_menu
+
+In an unsurprising move, the Interior Ministry has outlawed the Red Guards, supported by the Judicial System. It seems our paramilitary force will be weakened for the time being.
+
+@council_deactivate
+view-if: work_councils > 0
+on-arrival: work_councils -= 1; workers_psi -= 4;
+max-visits: 1
+go-to: action_menu
+
+The Factory Councils, the pride of Turin and its workers, have been put down. The Army has launched assaults, recapturing the factories and placing them under their control for the foreseeable future, despite protests from the factory owners.

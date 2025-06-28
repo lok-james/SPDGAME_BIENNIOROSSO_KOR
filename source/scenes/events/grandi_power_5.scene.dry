@@ -1,0 +1,13 @@
+title: Grandi faces mounting pressure
+subtitle: A series of missteps from an inexperienced man.
+view-if: pnf_in_power and pnf_leader = "Grandi" and (grandi_coalition_seen) and time >= dannunzio_time and grandi_good < grandi_bad
+max-visits: 1
+tags: event
+new-page: true
+on-arrival: dannunzio_king_seen = 1; dannunzio_time = time + 4;
+
+Rumors of a discontent has reached our ears, from both the King and the Squadrismo. King Vittorio Emanuele III has expressed his displeasure at a series of missteps taken by Dino Grandi, destabilising the country further with reckless reforms. 
+
+On the other end, the Squadrismo and fellow *Ras* are seemingly conspiring against him, citing his incompetence as it seems yet another fierce power struggle is set to occur. Both workers and industrialists have been antagonised against Grandi's policies, as it seems the only thing most can agree on is the fall of him as Prime Minister.
+
+- @root: Excellent.
