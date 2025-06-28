@@ -123,7 +123,7 @@ if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 &
     this.achieve('fronte_diviso');
 }
 
-if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory == 1 && Q.us_close == 1 && Q.soviet_germany == 1) {
+if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory == 1 && Q.us_close == 1 && Q.soviet_germany == 1 && Q.violent_revolution != 1) {
     this.achieve('rivoluzione_permanente_tranne_qui');
 }
 !}
