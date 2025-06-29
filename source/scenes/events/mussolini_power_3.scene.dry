@@ -68,7 +68,7 @@ We are able to negotiate an form a joint list with the PRI! This will aid our ef
 
 @contact_ppi
 choose-if: ppi_leader == "Sturzo" and ppi_relation >= 60
-unavailable-subtitle: Our relations with the PPI are too poor for this.
+unavailable-subtitle: [? if ppi_relation < 60 : Our relations with the PPI are too poor for this. ?] [? if ppi_leader != "Sturzo" : [+ ppi_leader +] is too wary of us. ?]
 on-arrival: anti_fas_ppi = 1
 go-to: list_menu
 max-visits: 1
