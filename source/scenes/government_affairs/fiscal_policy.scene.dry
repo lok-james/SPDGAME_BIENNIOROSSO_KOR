@@ -74,6 +74,7 @@ if (Q.upper_tax_rates > 3) {
 }
 
 Q.ldr_right += 0.2;
+Q.socialist_sentiment += 2;
 !}
 
 Making the tax system more progressive is popular among our base, but it upsets our bourgeois coalition partners, as well as our minimal number of bourgeois voters.

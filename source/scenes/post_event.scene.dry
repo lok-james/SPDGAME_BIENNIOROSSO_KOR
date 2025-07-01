@@ -646,7 +646,7 @@ if (Q.week_actions >= 1) {
             Q.middle_class_psi -= 8/12;
             Q.workers_psi -= 7/12;
 
-            Q.socialist_sentiment -= 6/12;
+            Q.socialist_sentiment -= 4/12;
             Q.nationalist_sentiment += 10/12;
 
             if (Q.psi_in_government == 0) {
@@ -693,7 +693,7 @@ if (Q.week_actions >= 1) {
             Q.middle_class_psi -= 10/12;
             Q.workers_psi -= 12/12;
 
-            Q.socialist_sentiment -= 8/12;
+            Q.socialist_sentiment -= 6/12;
             Q.nationalist_sentiment += 12/12;
             Q.violent_prevalence += 0.1/12;
 
@@ -738,7 +738,7 @@ if (Q.week_actions >= 1) {
             Q.rural_ppi -= 3/12;
             Q.middle_class_other -= 3/12;
 
-            Q.socialist_sentiment -= 9/12;
+            Q.socialist_sentiment -= 6/12;
             Q.nationalist_sentiment += 14/12;
             Q.violent_prevalence += 0.1/12;
 
@@ -1184,7 +1184,7 @@ if (Q.week_actions >= 1) {
             Q.veterans_ul -= 1/12;
             Q.women_ul -= 6/12;
 
-            Q.socialist_sentiment -= 7/12;
+            Q.socialist_sentiment -= 4/12;
             Q.nationalist_sentiment += 12/12;
 
             if (Q.acerbo_law_passed) {
@@ -1384,7 +1384,7 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.socialist_sentiment > Q.socialist_soft_cap) {
-            Q.socialist_sentiment -= 10/12;
+            Q.socialist_sentiment -= 5/12;
         }
 
         if (Q.republican_sentiment > Q.republican_soft_cap) {

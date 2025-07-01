@@ -68,7 +68,6 @@ A number of coordinated raids and arrests have slightly paralysed the republican
 
 Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
 
-
 @crackdown_far_left
 view-if: liberal_crackdown_accepted or communist_terror
 go-to: crackdown_far_left_success

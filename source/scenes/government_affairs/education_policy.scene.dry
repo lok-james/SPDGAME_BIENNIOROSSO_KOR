@@ -36,7 +36,7 @@ Our decision to secularise education is met with immense backlash from [+ ppi_le
 
 @education_funding 
 subtitle: -1 Budget - This has broad popular support across the workers and middle class. [? if budget < 0 and liberal_budget_accepted : This will put us into a deficit! ?]
-on-arrival: budget -= 1; education_funded += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 3*(1-dissent) if not in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_pnf += 3*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.3; unemployment -= 0.1 if unemployment >= 8
+on-arrival: budget -= 1; education_funded += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 3*(1-dissent) if not in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_pnf += 3*(1-dissent); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.3; unemployment -= 0.1 if unemployment >= 8; socialist_sentiment += 1
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
@@ -139,6 +139,7 @@ if (Q.budget < 0) {
 }
 
 Q.ds_left += 0.1;
+Q.socialist_sentiment += 1;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 

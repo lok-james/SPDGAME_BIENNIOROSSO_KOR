@@ -31,7 +31,7 @@ subtitle: Remove the appointed Senate's ability to reject bills.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and veto_removed = 0
 choose-if: king_relation > 70
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2; republican_sentiment += 4*democratisation
+on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2; republican_sentiment += 4*democratisation; socialist_sentiment ++ 3
 achievement: riforma_costituzionale
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting the powers of the Senate and further democratising the Kingdom.
@@ -41,7 +41,7 @@ subtitle: Make the Prime Minister choose and appoint his own ministers.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and veto_removed = 1 and pm_appointed = 0
 choose-if: king_relation > 70
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1; republican_sentiment += 4*democratisation
+on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1; republican_sentiment += 4*democratisation; socialist_sentiment += 4;
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
 
@@ -50,7 +50,7 @@ subtitle: Remove the King's ability to veto bills.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and pm_appointed = 1 and king_veto_removed = 0
 choose-if: king_relation > 80
 unavailable-subtitle: The King & Senate would not approve this.
-on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1; republican_sentiment += 4*democratisation
+on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1; republican_sentiment += 4*democratisation; socialist_sentiment += 2
 
 The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
 
@@ -58,7 +58,7 @@ The Constitutional Amendment makes it to the King, who is convinced to approve t
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and king_veto_removed = 1
 choose-if: king_relation >= 85 and return_to_normalcy
 unavailable-subtitle: [? if king_relation >= 85 : The King would not approve this. ?][? if not return_to_normalcy : It is too turbulent of a time to present this. Perhaps it would be better upon a return to normalcy. ?]
-on-arrival: king = "N/A"; monarchy_gone = 1
+on-arrival: king = "N/A"; monarchy_gone = 1; socialist_sentiment += 9
 
 The reform passes with the slightest of margins, removing the Statuto Albertino as the constitution of the Kingdom of Italy. A new constitutional congress is to be held in the coming weeks as the King officially abdicates the throne.
 

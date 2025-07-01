@@ -28,7 +28,7 @@ subtitle: [? if finance_minister_party = "PPI": Thankfully, the PPI seems willin
 view-if: tax_reformed = 0
 choose-if: finance_minister_party = psi_name or finance_minister_party = "PPI"
 unavailable-subtitle: We do not control the Financial Ministry.
-on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; ppi_moderates += 0.2 if ppi_left < ppi_right; socialist_sentiment += 1; republican_sentiment += 2;
+on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; ppi_moderates += 0.2 if ppi_left < ppi_right; socialist_sentiment += 2; republican_sentiment += 2;
 
 We begin the slow and arduous process of reviewing and revising the tax code, removing loopholes and making it more progressive, albeit not our only goal.
 
@@ -51,7 +51,7 @@ subtitle: We can redistribute unused and uncultivated land to keep the lower une
 view-if: uncultivated_redistributed = 0
 choose-if: agriculture_minister_party = psi_name and judicial_reform > 0
 unavailable-subtitle: [? if not agriculture_minister_party = psi_name : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 0 : The judiciary would not support this. ?]
-on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; economic_growth += 0.2 if economic_growth < 0; ldr_moderates += 0.2;
+on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; economic_growth += 0.2 if economic_growth < 0; ldr_moderates += 0.2; socialist_sentiment += 4;
 
 We begin redistributions of uncultivated lands of large estates via legal means, decreasing unemployment and increasing the rural populace.
 
@@ -84,7 +84,7 @@ view-if: min_public_works > 0
 choose-if: (public_works_minister_party = psi_name or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and (budget >= min_public_works or violent_revolution)
 unavailable-subtitle: -[+ min_public_works +] Budget - [? if not public_works_minister_party = psi_name or not public_works_minister_party == ldr_name or not public_education_minister_party = ul_name : We do not control the Public Works Ministry. ?][? if budget < min_public_works : We do not have a surplus. ?]
 max-visits: 2
-on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 0.2*min_public_works; inflation += 0.3 if budget < 0; economic_growth += 0.3*min_public_works; economic_growth += 0.2 if economic_growth < 0; unemployment -= 0.4*min_public_works; unemployment -= 0.2 if unemployment >= 8
+on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 0.2*min_public_works; inflation += 0.3 if budget < 0; economic_growth += 0.3*min_public_works; economic_growth += 0.2 if economic_growth < 0; unemployment -= 0.4*min_public_works; unemployment -= 0.2 if unemployment >= 8; socialist_sentiment += 3
 
 [? if min_public_works = 2: We continue constructing public works, improving the transition from the post-war economy. ?]
 
@@ -97,7 +97,7 @@ subtitle: -2 Budget - We can buy out bankrupt or defunct companies and repurpose
 view-if: min_compensation = 0
 choose-if: labour_minister_party = psi_name and (budget > 1 or violent_revolution)
 unavailable-subtitle: -2 Budget - [? if not labour_minister_party = psi_name : We do not control the Labour Ministry. ?][? if budget <= 1 : We do not have a surplus. ?]
-on-arrival: budget -= 2; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 2.3; industrialists_pnf += 2;
+on-arrival: budget -= 2; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 2.3; industrialists_pnf += 2; socialist_sentiment += 2
 
 We begin buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion.
 

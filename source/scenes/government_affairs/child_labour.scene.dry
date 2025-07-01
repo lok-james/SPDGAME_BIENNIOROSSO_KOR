@@ -32,7 +32,7 @@ The Labour Ministry works on developing and enforcing safety regulations, in ord
 choose-if: public_education_minister_party = psi_name
 unavailable-subtitle: We do not control the Public Education Ministry.
 subtitle: This has broad popular support across the workers and middle class.
-on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; economic_growth -= 0.1 if economic_growth > 0; unemployment -= 0.1; unemployment -= 0.1 if unemployment >= 8;
+on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; economic_growth -= 0.1 if economic_growth > 0; unemployment -= 0.1; unemployment -= 0.1 if unemployment >= 8; socialist_sentiment += 1;
 max-visits: 3
 
 We continue enforcing the *Casati Law* further, as well as amending it further to increase the percentages necessary to qualify as 'adequate', improving attendance overall.
@@ -41,7 +41,7 @@ We continue enforcing the *Casati Law* further, as well as amending it further t
 subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
 choose-if: not national_economic_recovery or budget > 0
 unavailable-subtitle: Not enough budget. (Need 1)
-on-arrival: welfare += 1; child_welfare += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; coalition_dissent += 1 if (child_welfare >= 3 and unemployment >= 15); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0
+on-arrival: welfare += 1; child_welfare += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; coalition_dissent += 1 if (child_welfare >= 3 and unemployment >= 15); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0; socialist_sentiment += 3
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
 We have increased welfare spending on poorer families with children. [? if child_welfare >= 3 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
@@ -53,7 +53,7 @@ on-arrival: labour_attempted = 1;
 go-to: child_labour_fail if labour_law_support < 50 and not violent_revolution; child_labour_success if labour_law_support >= 50 or violent_revolution
 
 @child_labour_fail
-on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 4*(1-dissent) if not in_unstable_coalition; workers_clc += 4*(1-dissent) if centre_left_coalition; workers_scc += 4*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ldr_right += 0.5;
+on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 4*(1-dissent) if not in_unstable_coalition; workers_clc += 4*(1-dissent) if centre_left_coalition; workers_scc += 4*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ldr_right += 0.5; socialist_sentiment -= 3
 
 Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ pnf_name +]'s and [+ ldr_name +] speaking in particularly vehement opposition. The activists, feeling demoralized from this attempt, have decided to bide their time.
 
@@ -71,6 +71,7 @@ if (Q.in_unstable_coalition == 0) {
 
     if (Q.child_welfare < 3) {
         Q.workers_psi -= 10*(1-Q.dissent);
+        Q.socialist_sentiment -= 6;
     }
 }
 
@@ -81,6 +82,7 @@ if (Q.centre_left_coalition == 1) {
 
     if (Q.child_welfare < 3) {
         Q.workers_clc -= 10*(1-Q.dissent);
+        Q.socialist_sentiment -= 6;
     }
 }
 
@@ -91,6 +93,7 @@ if (Q.socialist_catholic_coalition == 1) {
 
     if (Q.child_welfare < 3) {
         Q.workers_scc -= 10*(1-Q.dissent);
+        Q.socialist_sentiment -= 6;
     }
 }
 

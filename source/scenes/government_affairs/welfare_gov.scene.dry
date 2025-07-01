@@ -67,6 +67,7 @@ if (Q.economic_growth < 0) {
 
 Q.psri_relation += 7*(1-Q.dissent);
 Q.nationalist_sentiment -= 3;
+Q.socialist_sentiment += 2;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
@@ -116,6 +117,7 @@ if (Q.economic_growth < 0) {
 
 Q.psri_relation += 7*(1-Q.dissent);
 Q.nationalist_sentiment -= 3;
+Q.socialist_sentiment += 2;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
