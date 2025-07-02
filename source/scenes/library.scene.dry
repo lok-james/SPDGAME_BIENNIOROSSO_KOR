@@ -237,7 +237,7 @@ Current relations: [+ ldr_relation : relationships +]
 
 Current relations: [+ ul_relation : relationships +]
 
-[? if pcs_formed : **PCS** - *Partito Cristiano Sociale* (Christian Social Party) - A splinter of the right-wing of the [+ ds_name +]. The PCS are a right-wing liberal party under Gabriello Carnazza and adovcates of cooperaton with the far-right against the left. ?]
+[? if pcs_formed : **PCS** - *Partito Cristiano Sociale* (Christian Social Party) - A splinter of the right-wing of the [+ ds_name +]. The PCS are a right-wing liberal party under Gabriello Carnazza and adovcates for cooperation with the far-right against the left. ?]
 
 [? if not pnf_banned : **[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed organisation, operating essentially as the political expression of [+ pnf_leader +]'s *Fasces of Combat*. ?]
 

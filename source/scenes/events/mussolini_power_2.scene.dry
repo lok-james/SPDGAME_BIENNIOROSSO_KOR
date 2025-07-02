@@ -1,5 +1,5 @@
 title: Introduction of the Acerbo Law
-view-if: ((year >= 1923 and month >= 7 and week = 3) or year >= 1924) and prime_minister_party = "PNF" and not pnf_struggle and pnf_leader = "Mussolini"
+view-if: ((year >= 1923 and month >= 7 and week = 3) or year >= 1924) and prime_minister_party = "PNF" and not pnf_struggle and (pnf_leader = "Mussolini" or pnf_leader = "Balbo")
 max-visits: 1
 on-arrival: anti_acerbo_coalition = 0
 new-page: true

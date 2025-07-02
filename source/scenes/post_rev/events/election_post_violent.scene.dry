@@ -436,7 +436,7 @@ Q.anti_socialist_coalition = 0;
 
 @psi_majority
 title: [+ psi_name +] Majority
-subtitle: [+ psi_name +] Majority: [+ psi_seating_disp +]
+subtitle: [+ psi_name +] Majority: [+ psi_seating_disp +]%
 on-arrival: {!
 
 Q.prime_minister_party = Q.psi_name;
@@ -542,6 +542,7 @@ Giovanni Bacci is elected as Secretary-General of the [+ psi_name +], and Prime 
 @left_wing_coalition
 title: Left-wing Coalition
 subtitle: A coalition of all parties; from communist to reformist: 100%
+view-if: psi_seating_disp < 50
 on-arrival: {!
 
 Q.prime_minister_party = Q.psi_name;

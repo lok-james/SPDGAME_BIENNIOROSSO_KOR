@@ -2,7 +2,7 @@ title: Electoral List Preparations
 subtitle: The Acerbo Law looms above the upcoming election.
 new-page: true 
 tags: event
-view-if: pnf_in_power and acerbo_law_passed and (year = next_election_year and month >= next_election_month - 1) and pnf_leader = "Mussolini"
+view-if: pnf_in_power and acerbo_law_passed and (year = next_election_year and month >= next_election_month - 1) and (pnf_leader = "Mussolini" or pnf_leader = "Balbo")
 max-visits: 1
 go-to: list_menu
 

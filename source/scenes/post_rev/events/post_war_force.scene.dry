@@ -339,10 +339,14 @@ view-if: not abortion_rights
 on-arrival: abortion_rights += 1; womens_rights += 1; ppi_relation -= 5*ppi_right; catholic_psi -= 10; ul_relation -= 5; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; veterans_pnf -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent); socialist_sentiment += 5; republican_sentiment += 3; ppi_left -= 2; ds_right += 1.2;
 go-to: violent_legislation
 
+Religious principles have constrained the liberties of the opposite sex for too long, and though we cannot truly repay for the transgressions of our forebears, we will do as much as we can to burn away the stigmas of the past. No longer will women be trapped by the hands of the abuser or of the violator, as all deserve the protections to their own lives against those who would seek to harm them. Without resistance, the bill passes through the Supreme Soviet. Some of our more conservative minded citizens may bring criticisms such as the abuse of a less restricted abortion policy, but we cannot let fear deprive our women from the tools to protect them from unwanted pregnancies.
+
 @violent_suffrage
 view-if: not womens_suffrage
 on-arrival: womens_suffrage = 1; women += 27; womens_rights += 1; ldr_relation -= 5*ldr_right; middle_class_psi -= 7; ul_relation -= 8; workers_psi += 3*(1-dissent); middle_class_psi += 3*(1-dissent); workers_ppi += 3; industrialists_ds += 3; industrialists_ldr += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; middle_class_pnf -= 2; women_ppi += 3; middle_class_ul += 3*(1-dissent); ppi_left += 2; ldr_right += 0.6; ds_right += 0.2; socialist_sentiment += 3;
 go-to: violent_legislation
+
+Every citizen that lives within this new Italy must be granted true equality, not the twisted ideals that the Liberals and Popularists have built! They have toiled and yearned for freedom in the same manner as their male counterparts, and they too must be rewarded for their efforts. Finally, the right to vote has been grasped by the ladies of the revolution, as women’s suffrage passes unanimously under the Supreme Soviet’s control. Though our society might not be entirely ready, as misogyny still lives in the shadows, we must push towards the socialist dream of a truly free and fair society.
 
 @violent_labour
 view-if: not child_labour_laws
@@ -404,6 +408,8 @@ Q.economic_growth -= 1.2;
 Q.inflation -= 0.1;
 !}
 go-to: violent_legislation
+
+Why should a child be subjected to a life without education, toiling away for the sake of another human so they don’t have to work? This injustice must be remedied, and with our revolutionary state at the helm, it shall. Children will now be allowed to learn freely, unchained of the cycle that child labour perpetuates. No one votes against the eradication of this unsightly blemish on our society, and though the more business-minded individuals that remain may balk at us, we will let the lack of their humanity be shown to the common man.
 
 @violent_done
 view-if: violent_seen >= 6

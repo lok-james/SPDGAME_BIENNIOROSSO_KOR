@@ -195,7 +195,7 @@ We have request aid from the Soviet Union to fight against the far-right groups,
 [? if soviet_germany : International Aid is further strengthened by volunteers from Soviet Germany. ?]
 
 @pcdi_aid
-view-if: friendly_king = 0 and (not_participating = 1 or maximalist_participating = 1 or royal_coup = 1)
+view-if: friendly_king = 0 and (not_participating = 1 or maximalist_participating = 1 or royal_coup = 1) and pcdi_formed
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1;

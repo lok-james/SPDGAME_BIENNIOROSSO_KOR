@@ -220,7 +220,7 @@ if (Q.economic_right) {
 
 // National List & Anti-Fascist List - DO NOT TOUCH
 
-if (Q.prime_minister_party == "PNF") {
+if (Q.acerbo_law_passed == 1) {
     if (Q.anti_fas_ds) {
         Q.psi_r += Q.ds_r;
         Q.psi_seating += Q.ds_seating;
