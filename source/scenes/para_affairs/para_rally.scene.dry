@@ -101,7 +101,7 @@ on-arrival: pacifism += 1; nationalist_sentiment -= 5; workers_psi += 5*(1-disse
 The Red Guards toes the party line, advocating for pacifism and our anti-war stance.
 
 @republic
-on-arrival: republican_sentiment += 5*(1-dissent); democratisation += 1; workers_psi += 5*(1-dissent) if democratisation >= 4; veterans_psi += 4*(1-dissent) if democratisation >= 4; middle_class_psi += 4*(1-dissent) if democratisation >= 4; king_relation -= 5*(1-dissent);
+on-arrival: republican_sentiment += 5*(1-dissent); democratisation += 1; workers_psi += 5*(1-dissent) if democratisation >= 4; veterans_psi += 4*(1-dissent) if democratisation >= 4; middle_class_psi += 4*(1-dissent) if democratisation >= 4; king_relation -= 5*(1-dissent); socialist_sentiment += 2*(1-dissent);
 
 The Red Guards rallies for republicanism and against the monarchy, earning us some support from the Italian Republican Party.
 

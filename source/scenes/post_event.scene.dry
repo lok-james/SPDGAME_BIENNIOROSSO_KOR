@@ -482,7 +482,7 @@ if (Q.week_actions >= 1) {
 
 
         /////////////////////////////// update opinions based on economy, lets the other parties gain support if you're incompetent, turns people towards radicalisation as well
-        if (Q.unemployment > 15 && Q.socialist_sentiment > 40 && Q.psi_in_government == 0) {
+        if (Q.unemployment > 15 && Q.socialist_sentiment < 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
             Q.workers_psi += 3/12*Q.revolutionary_exhaustion;
@@ -496,7 +496,7 @@ if (Q.week_actions >= 1) {
             Q.ppi_left += 1/12;
             Q.ppi_moderates -= 1/12;
         }
-        if (Q.unemployment > 30 && Q.socialist_sentiment > 20 && Q.psi_in_government == 0) {
+        if (Q.unemployment > 30 && Q.socialist_sentiment < 20 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
             Q.workers_psi += 4/12*Q.revolutionary_exhaustion;
@@ -510,7 +510,7 @@ if (Q.week_actions >= 1) {
             Q.ldr_moderates += 2/12;
             Q.ldr_right -= 2/12;
         }
-        if (Q.inflation >= 12 && Q.socialist_sentiment > 40 && Q.psi_in_government == 0) {
+        if (Q.inflation >= 12 && Q.socialist_sentiment < 40 && Q.psi_in_government == 0) {
             Q.republican_sentiment -= 1;
             Q.socialist_sentiment += 1;
             Q.workers_psi += 3/12*Q.revolutionary_exhaustion;
@@ -525,7 +525,7 @@ if (Q.week_actions >= 1) {
             Q.ds_moderates -= 1/12;
         }
 
-        if (Q.unemployment > 15 && Q.socialist_sentiment < 40 && Q.psi_in_government == 1) {
+        if (Q.unemployment > 15 && Q.socialist_sentiment > 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
             Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
@@ -539,7 +539,7 @@ if (Q.week_actions >= 1) {
             Q.ppi_left -= 1/12;
             Q.ppi_moderates += 1/12;
         }
-        if (Q.unemployment > 30 && Q.socialist_sentiment < 20 && Q.psi_in_government == 1) {
+        if (Q.unemployment > 30 && Q.socialist_sentiment > 20 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
             Q.workers_psi -= 6/12*Q.revolutionary_exhaustion;
@@ -553,7 +553,7 @@ if (Q.week_actions >= 1) {
             Q.ldr_moderates -= 1/12;
             Q.ldr_right += 1/12; 
         }
-        if (Q.inflation >= 12 && Q.socialist_sentiment < 40 && Q.psi_in_government == 1) {
+        if (Q.inflation >= 12 && Q.socialist_sentiment > 40 && Q.psi_in_government == 1) {
             Q.socialist_sentiment -= 1;
             Q.nationalist_sentiment += 1;
             Q.workers_psi -= 4/12*Q.revolutionary_exhaustion;
@@ -570,7 +570,7 @@ if (Q.week_actions >= 1) {
 
         ///////////////////////////// change party support based on socialist sentiment
         // if socialist_sentiment is less than the support of left wing parties, reduce [+ psi_name +] support...
-        if (Q.socialist_sentiment/1.5 < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
+        if (Q.socialist_sentiment/1.2 < (Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes)) {
             if (Q.industrialists_psi > 0) {
                 Q.industrialists_psi -= 2/12*Q.revolutionary_exhaustion;
                 Q.industrialists_pnf += 2/12;
@@ -602,12 +602,12 @@ if (Q.week_actions >= 1) {
 
         // support should be based on sentiment
 
-        if (Q.socialist_sentiment < Q.psi_votes) {
+        if (Q.socialist_sentiment < Q.psi_votes + Q.psri_votes + Q.pcdi_votes + Q.psu_votes) {
             Q.socialist_sentiment += (Q.psi_votes/10)/6;
             Q.workers_psi -= (Q.socialist_sentiment/10)/6;
         }
 
-        if (Q.nationalist_sentiment < Q.pnf_votes) {
+        if (Q.nationalist_sentiment < Q.pnf_votes + Q.ul_votes) {
             Q.nationalist_sentiment += (Q.psi_votes/10)/6;
             Q.veterans_pnf -= (Q.nationalist_sentiment/10)/6;
         }
@@ -1388,7 +1388,7 @@ if (Q.week_actions >= 1) {
         }
 
         if (Q.republican_sentiment > Q.republican_soft_cap) {
-            Q.republican_sentiment -= 10/12;
+            Q.republican_sentiment -= 5/12;
         }
 
         // congress checks

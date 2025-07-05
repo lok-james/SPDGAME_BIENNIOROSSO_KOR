@@ -138,7 +138,7 @@ if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory
 - @end_game: End game.
 
 @mussolini_wins
-view-if: prime_minister = "Mussolini" 
+view-if: prime_minister_party = pnf_name
 title: The Fascists have seized control.
 tags: endings
 go-to: eg_menu
@@ -156,7 +156,7 @@ go-to: eg_menu
 [+ pnf_leader +] has taken power in Italy, however, we have rallied to oppose him through violent means.
 
 @no_mussolini
-view-if: prime_minister != pnf_leader
+view-if: prime_minister != pnf_leader and not pnf_collapse_seen
 title: [+ pnf_leader +] does not yet control Italy...
 tags: endings
 go-to: eg_menu
@@ -203,7 +203,7 @@ view-if: soviet_victory == 0 and monarchy_gone == 0
 tags: endings
 go-to: eg_menu
 
-Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III, [? if psi_in_government : under a government led by us,?][? if not psi_in_government and not pnf_in_government : under an incompetent government,?][? if pnf_in_government : under a fascist dictatorship. ?] [? if not pnf_in_government : and under threat of the fascist [+ pnf_leader +] and his far-right bloc. ?]
+Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III, [? if psi_in_government : under a government led by us,?][? if not psi_in_government and not pnf_in_government : under an incompetent government,?][? if pnf_in_government : under a fascist dictatorship. ?] [? if not pnf_collapse_seen : and under threat of the fascist [+ pnf_leader +] and his far-right bloc. ?]
 
 @psi_victorious
 title: [+ psi_name +] still in government
@@ -220,7 +220,6 @@ tags: endings
 go-to: eg_menu
 
 [? if psi_in_government: With our lead, the economic crisis has been brought to a slow, as both unemployment and inflation have reached acceptable levels. ?][? if not psi_in_government: Surprisingly, the bourgeois governments have been able to contain the crisis to a minimal amount. ?]
-
 
 @achievements
 title: Achievements

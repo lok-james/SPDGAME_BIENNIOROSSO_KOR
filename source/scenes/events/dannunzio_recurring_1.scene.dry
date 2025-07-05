@@ -2,11 +2,15 @@ title: D'Annunzio's Control increases...
 subtitle: The Syndicalists within the party are acting strange...
 view-if: dannunzio_influence < 10 and dannunzio_influence >= 1 and pnf_in_government and pnf_leader = "D'Annunzio" and influence_time <= time
 new-page: true
-on-arrival: influence_time = time + 12
+on-arrival: influence_time = time + 6
 max-visits: 1
 tags: event
 
 = D'Annunzio's Influence
+
+Having taken at least active steps to cultivate relations with D'Annunzio, we have seen an uptick in our supporters and party members warming up to the idea to collaborating with the Futurist, much to the chagrin of party leadership, who merely view connections as opportunistic.
+
+Though it seems like murmurs of collaboration are merely whispers for now, it might be best to act quickly to suppress D'Annunzio's influence within the party.
 
 - @influence_money: Remove D'Annunzio's influence through funding.
 - @influence_purge: Remove D'Annunzio's influence through a purge.
