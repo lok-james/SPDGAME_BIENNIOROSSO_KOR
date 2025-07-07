@@ -123,7 +123,7 @@ if (Q.unions_break == 1 && Q.maximalists_resign == 1 && Q.communist_split == 1 &
     this.achieve('fronte_diviso');
 }
 
-if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory == 1 && Q.us_close == 1 && Q.soviet_germany == 1 && Q.violent_revolution != 1) {
+if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory == 1 && Q.us_close == 1 && Q.violent_revolution != 1) {
     this.achieve('rivoluzione_permanente_tranne_qui');
 }
 !}
@@ -314,7 +314,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
 
-[? if game_achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Germany, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+[? if game_achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
 
 [? if game_achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
 
@@ -410,7 +410,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
 
-[? if achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Germany, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+[? if achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
 
 [? if achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
 
@@ -506,7 +506,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
 
-[? if not achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Germany, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+[? if not achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
 
 [? if not achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
 
