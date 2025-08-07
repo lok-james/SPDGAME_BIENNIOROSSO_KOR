@@ -1,7 +1,7 @@
 title: Arditi del Popolo dissolves!
 subtitle: The fascists have become less of a threat.
 tags: event
-view-if: (violent_revolution or pnf_collapse_seen) and arditi_cooperation
+view-if: (violent_revolution or pnf_collapse_seen)
 on-arrival: arditi_cooperation = 0; adp_strength = 0; adp_militancy = 0
 max-visits: 1
 
