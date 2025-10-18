@@ -1,4 +1,4 @@
-title: Election
+title: 선거
 on-arrival: {!
 // calculate normalised class voting amounts (0 to 100)
 for (var c of Q.classes) {

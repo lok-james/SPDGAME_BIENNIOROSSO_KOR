@@ -1,50 +1,50 @@
-title: Nicola Bombacci
+title: 니콜라 봄바치
 is-pinned-card: true
 tags: advisor, maximalist
 card-image: img/portraits/NicolaBombacci.jpg
 view-if: bombacci_advisor = 1
 new-page: true 
 
-= Nicola Bombacci
+= 니콜라 봄바치
 
-Bombacci is one of the prominent figures of the Maximalist faction of the [+ psi_name +].
+봄바치는 [+ psi_name +]의 최대강령주의파 파벌 소속 저명인사 중 한 명입니다.
 
 - @bombacci_orders
 - @question_of_ideology
 - @party_rally
 - @rev_begin_bombacci
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @bombacci_orders
-title: Ordering the Red Guards
-subtitle: We can use the Red Guards to act.
-choose-if: advisor_action_timer = 0 
+title: 적위대 지휘
+subtitle: 적위대를 동원하여 행동에 나설 수 있습니다.
+choose-if: advisor_action_timer = 0
 view-if: not national_congress_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: rg_orders
 
 @question_of_ideology
-title: Question of Ideology
-subtitle: There are a number of ideologues from each faction which seek to direct the path of the party.
+title: 이념 문제
+subtitle: 각 파벌에는 당의 노선을 결정하려는 여러 이념가들이 존재합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; ideology_timer -= 9;
 go-to: ideology
 
 @party_rally
-title: Party Rally
-subtitle: We should go rally our voters and spread our message further.
-choose-if: advisor_action_timer == 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 당 집회
+subtitle: 유권자들을 결집하고 우리의 메시지를 더 널리 퍼뜨려야 합니다.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: rally
 
 @rev_begin_bombacci
-title: Revolution!
-subtitle: We can begin the revolution! - This will lead us into a civil war.
+title: 혁명!
+subtitle: 혁명을 시작할 수 있습니다! - 이는 내전으로 이어질 것입니다.
 on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
 view-if: year > 1922 or (year = 1922 and month > 11) and not national_congress_seen
-choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervour < 65 : The bulk of the party does not support this. ?]
+choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?] [? if revolutionary_fervour < 65 : 당의 대다수가 이를 지지하지 않습니다. ?]
 go-to: civil_war

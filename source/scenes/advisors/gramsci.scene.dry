@@ -1,50 +1,50 @@
-title: Antonio Gramsci
+title: 안토니오 그람시
 is-pinned-card: true
 tags: advisor, communist
 card-image: img/portraits/AntonioGramsci.png
 view-if: gramsci_advisor = 1
 new-page: true 
 
-= Antonio Gramsci
+= 안토니오 그람시
 
-Gramsci is a member of the Communist faction of the [+ psi_name +]. Widely unpopular amongst the other factions, Gramsci was a writer for Avanti!, and is now a founder and writer for *L'Ordine Nuovo*, a far-left newspaper.
+그람시는 [+ psi_name +]의 공산주의 파벌 소속입니다. 다른 파벌들에게는 인기가 없지만, 그는 *아반티!*의 필진이었고, 지금은 극좌 신문 신 질서의 창립자이자 필진입니다.
 
 - @media_gramsci
 - @party_organisations_gramsci
 - @organising
 - @rev_begin_gramsci
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @media_gramsci
-title: Media
-subtitle: Organise our media to spread our message further.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 언론 활동
+subtitle: 언론을 조직하여 우리의 메시지를 더 널리 퍼뜨립니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
 go-to: media
 
 @party_organisations_gramsci
-title: Party Organisation
-subtitle: Expand our organisation further to spread our message.
+title: 당 조직화
+subtitle: 우리의 메시지를 확산시키기 위해 당 조직을 더욱 확장합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; party_organisations_timer -= 6; last_advisor_action = 1
 go-to: party_organisations
 
 @organising
-title: Organising workers
-subtitle: Improve our standing among the workers.
+title: 노동자 조직화
+subtitle: 노동자들 사이에서 우리의 입지를 강화합니다.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; workers_psi += 4*(1-dissent); workers_psi += 3*(1-dissent) if work_councils >= 2; labour_strength += 2; syndicalist_strength += 2
 
-We have increased our organising among the workers. [? if work_councils >= 2 : Our continued support for the work councils has made organising easier. ?]
+노동자들 사이에서 조직 활동을 강화했습니다. [? if work_councils >= 2 : 노동자 평의회를 계속 지원한 덕분에 조직화가 더 수월해졌습니다. ?]
 
 @rev_begin_gramsci
-title: Revolution!
-subtitle: We can begin the revolution! - This will lead us into a civil war.
+title: 혁명!
+subtitle: 혁명을 시작할 수 있습니다! - 이는 내전으로 이어질 것입니다.
 on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
 view-if: year > 1922 or (year = 1922 and month > 11) and not national_congress_seen
-choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervour < 65 : The bulk of the party does not support this. ?]
+choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?] [? if revolutionary_fervour < 65 : 당의 대다수가 이를 지지하지 않습니다. ?]
 go-to: civil_war

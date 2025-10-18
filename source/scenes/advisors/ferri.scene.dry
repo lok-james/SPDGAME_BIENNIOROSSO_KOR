@@ -1,73 +1,73 @@
-title: Enrico Ferri
+title: 엔리코 페리
 is-pinned-card: true
 tags: advisor, maximalist
 card-image: img/portraits/EnricoFerri.jpg
 view-if: ferri_advisor = 1
 new-page: true 
 
-= Enrico Ferri
+= 엔리코 페리
 
-Ferri is a member of the Maximalist faction of the [+ psi_name +]. Having served as the editor of *Avanti!* and a criminologist, he has influence in writing.
+페리는 [+ psi_name +]의 최대강령주의파 파벌 소속입니다. *아반티!*의 편집장이자 범죄학자로서, 그는 집필 활동에 상당한 영향력을 지니고 있습니다.
 
-- @emergency_fundraising_ferri
+ @emergency_fundraising_ferri
 - @faction_support_ferri
 - @media_ferri
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @emergency_fundraising_ferri
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 모금 활동
+subtitle: 긴급 자원을 보충합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; resources += dues;
 
-We have gained +[+ dues +] resources.
++[+ dues +]의 자원을 획득했습니다.
 
 @faction_support_ferri
-title: Editorial Line
-subtitle: We can change the editorial line of *Avanti!* to support a particular faction.
+title: 편집 노선
+subtitle: *아반티!*의 편집 노선을 변경하여 특정 파벌을 지원할 수 있습니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6
 
-Which faction should we support?
+어느 파벌을 지지하시겠습니까?
 
-- @support_left: Communists
-- @support_center: Maximalist
-- @support_labor: Labour
-- @support_reform: Reformists
-- @support_synd: Syndicalists
+- @support_left: 공산주의파
+- @support_center: 최대강령주의파
+- @support_labor: 노동파
+- @support_reform: 개혁주의파
+- @support_synd: 생디칼리스트파
 
 @support_left
 on-arrival: communist_dissent -= 8;  communist_strength += 8
 
-*Avanti!* prints editorials in support of Communist positions.
+*아반티!*가 공산주의파 입장을 지지하는 사설을 게재합니다.
 
 @support_center
 on-arrival: maximalist_dissent -= 8; maximalist_strength += 8
 
-*Avanti!* prints editorials in support of Maximalist positions.
+*아반티!*가 최대강령주의파 입장을 지지하는 사설을 게재합니다.
 
 @support_labor
 on-arrival: labour_dissent -= 8; labour_strength += 8
 
-*Avanti!* prints editorials in support of the policies of the trade unions.
+*아반티!*가 노동조합 정책을 지지하는 사설을 게재합니다.
 
 @support_reform
 on-arrival: reformist_dissent -= 8; reformist_strength += 8;
 
-*Avanti!* prints editorials in support of the reformist policies.
+*아반티!*가 개혁주의 정책을 지지하는 사설을 게재합니다.
 
 @support_synd
 view-if: syndicalist_active
 on-arrival: syndicalist_dissent -= 8; syndicalist_strength += 8
 
-*Avanti!* prints editorials in support of syndicalist ideas.
+*아반티!*가 생디칼리스트 사상을 지지하는 사설을 게재합니다.
 
 @media_ferri
-title: Media
-subtitle: Organise our media to spread our message further.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 언론 활동
+subtitle: 언론을 조직하여 우리의 메시지를 더 널리 퍼뜨립니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
 go-to: media

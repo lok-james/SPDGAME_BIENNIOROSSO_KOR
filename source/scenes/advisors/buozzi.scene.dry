@@ -1,39 +1,39 @@
-title: Bruno Buozzi
+title: 브루노 부오치
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/BrunoBuozzi.jpg
 view-if: buozzi_advisor = 1
 new-page: true 
 
-= Bruno Buozzi
+= 브루노 부오치
 
-Buozzi is an outspoken member of the reformist faction of the [+ psi_name +], as well as the leader of the *Italian Federation of Metallurgical Workers*.
+부오치는 [+ psi_name +]의 개혁주의 파벌 소속의 거침없는 연설가이자, 이탈리아 야금 노동자 연맹의 지도자입니다.
 
 - @child_labour_buozzi
 - @economic_democracy_buozzi
 - @minimum_program_implementation
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @child_labour_buozzi
-title: Child Labour
-subtitle: Now that we are in government, we can now reform the laws to improve the status of child labour, or end it entirely.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not currently in government. ?]
+title: 아동 노동
+subtitle: 이제 우리가 정부에 있으니, 아동 노동의 실태를 개선하거나 완전히 종식시키기 위해 법률을 개혁할 수 있습니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]은(는) 현재 정부에 속해 있지 않습니다. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: child_labour
 
 @economic_democracy_buozzi
-title: Economic Democracy
-subtitle: Now that we are in control of the Labour Ministry, we can make the economic more democratic.
+title: 경제 민주화
+subtitle: 노동부를 장악했으니, 경제를 더욱 민주적으로 만들 수 있습니다.
 choose-if: advisor_action_timer <= 0 and psi_in_government and labour_minister_party == psi_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not in government to influence policy. ?][? if not labour_minister_party == psi_name : The [+ psi_name +] does not control the Labour and Social Security Ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not labour_minister_party == psi_name : [+ psi_name +]가 노동사회보장부를 장악하지 않았습니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: economic_democracy
 
 @minimum_program_implementation
-title: Implementing the Minimum Plan
-subtitle: Now that we are in government, we can begin implementing our party plans.
+title: 최소 강령 이행
+subtitle: 이제 우리가 정부에 있으니, 우리 당의 계획을 이행하기 시작할 수 있습니다.
 choose-if: advisor_action_timer <= 0 and psi_in_government and moderate_plan_adopted
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not in government to influence policy. ?][? if not moderate_plan_adopted : We have not yet adopted the Minimum Plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not moderate_plan_adopted : 우리는 아직 최소 강령을 채택하지 않았습니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: minimum_program

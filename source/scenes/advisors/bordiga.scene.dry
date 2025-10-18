@@ -1,11 +1,11 @@
-title: Amadeo Bordiga
+title: 아마데오 보르디가
 is-pinned-card: true
 tags: advisor, communist
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 1
 new-page: true 
 
-= Amadeo Bordiga
+= 아마데오 보르디가
 
 Bordiga is one of the prominent figures of the Communist faction of the [+ psi_name +].
 
@@ -13,40 +13,40 @@ Bordiga is one of the prominent figures of the Communist faction of the [+ psi_n
 - @bordiga_revolution
 - @rural_campaign_bordiga
 - @rev_begin_bordiga
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @bordiga_orders
-title: Ordering the Red Guards
-subtitle: We can use the Red Guards to act.
-choose-if: advisor_action_timer = 0 
+title: 적위대 지휘
+subtitle: 적위대를 동원하여 행동에 나설 수 있습니다.
+choose-if: advisor_action_timer = 0
 view-if: not national_congress_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: rg_orders
 
 @bordiga_revolution
-title: Revolutionary Preparations
-subtitle: Continue our revolutionary planning.
+title: 혁명 준비
+subtitle: 혁명 계획을 계속 진행합니다.
 choose-if: advisor_action_timer = 0 and (participating = 0 or preparing_rev_active = 1)
 view-if: not national_congress_seen
-on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolution_timer = 5; 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not_participating = 0 and maximalist_participating = 0 : We have chosen to abandon extraparliamentary means. ?]
+on-arrival: last_advisor_action = 1; advisor_action_timer = 6; preparing_revolution_timer = 5;
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not_participating = 0 and maximalist_participating = 0 : 우리는 의회 밖 수단을 포기하기로 했습니다. ?]
 go-to: preparing_revolution
 
 @rural_campaign_bordiga
-title: Rural Campaign
-subtitle: Try to campaign among the southern rural populace.
+title: 농촌 유세
+subtitle: 남부 농촌 주민들을 대상으로 유세를 벌입니다.
 choose-if: advisor_action_timer == 0 and agricultural_policy > 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if agricultural_policy == 0 : We have not enacted any rural policies. ?]
-on-arrival: advisor_action_timer = 6; rural_psi += 5*(1-dissent); 
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if agricultural_policy == 0 : 우리는 아직 어떤 농촌 관련 정책도 제정하지 않았습니다. ?]
+on-arrival: advisor_action_timer = 6; rural_psi += 5*(1-dissent);
 
-We have increased our campaigning among farmers and the rural populace, especially amongst the South.
+농민과 농촌 주민들, 특히 남부 지역을 대상으로 한 유세를 강화했습니다.
 
 @rev_begin_bordiga
-title: Revolution!
-subtitle: We can begin the revolution! - This will lead us into a civil war.
+title: 혁명!
+subtitle: 혁명을 시작할 수 있습니다! - 이는 내전으로 이어질 것입니다.
 on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
 view-if: year > 1922 or (year = 1922 and month > 11) and not national_congress_seen
-choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if revolutionary_fervour < 65 : The bulk of the party does not support this. ?]
+choose-if: revolutionary_fervour >= 65 and advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?] [? if revolutionary_fervour < 65 : 당의 대다수가 이를 지지하지 않습니다. ?]
 go-to: civil_war

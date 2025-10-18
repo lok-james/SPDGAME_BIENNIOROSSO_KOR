@@ -1,4 +1,4 @@
-title: Game Over.
+title: 게임 끝.
 new-page: true
 go-to: eg_menu
 on-arrival: {!
@@ -135,384 +135,384 @@ if (Q.soviet_hungary == 1 && Q.labour_government == 1 && Q.soviet_polish_victory
 
 - #endings
 - @achievements
-- @end_game: End game.
+- @end_game: 게임 끝.
 
 @mussolini_wins
 view-if: prime_minister_party = pnf_name
-title: The Fascists have seized control.
+title: 파시스트가 권력을 장악했습니다.
 tags: endings
 go-to: eg_menu
 
-[+ pnf_leader +] is in control of the Prime Ministership. [if not march_failed: Considering his violent means to power,] There is no doubt he will lead this nation down a dark path.
+[+ pnf_leader +]가 총리직을 장악했습니다. [if not march_failed: 그가 권력을 잡기 위해 동원한 폭력적인 수단을 고려하면,] 이 나라를 암울한 길로 이끌 것이 분명합니다.
 
-[? if civil_war_seen == 1: At the very least, we fought back. Perhaps our resistance will be celebrated in an impossible-to-forsee future. ?]
+[? if civil_war_seen == 1: 하지만 우리는 끝까지 저항했습니다. 어쩌면 이 저항은 먼 미래에 기억될지도 모릅니다. ?]
 
 @war_against_mussolini
 view-if: (prime_minister == pnf_leader) and (long_war == 1)
-title: [+ pnf_leader +] is in power, but we are fighting to stop him.
+title: [+ pnf_leader +]가 집권했지만, 우리는 그를 막기 위해 싸우고 있습니다.
 tags: endings
 go-to: eg_menu
 
-[+ pnf_leader +] has taken power in Italy, however, we have rallied to oppose him through violent means.
+[+ pnf_leader +]가 이탈리아의 권력을 잡았지만, 우리는 무력으로 그에게 맞서기 위해 봉기했습니다.
 
 @no_mussolini
 view-if: prime_minister != pnf_leader and not pnf_collapse_seen
-title: [+ pnf_leader +] does not yet control Italy...
+title: [+ pnf_leader +]는 아직 이탈리아를 지배하지 못했습니다…
 tags: endings
 go-to: eg_menu
 
-[+ pnf_leader +] does not yet control Italy.
+[+ pnf_leader +]는 아직 이탈리아를 장악하지 못했습니다.
 
 @reformist_civil_war_won
-title: We have won the civil war.
+title: 내전에서 승리했습니다.
 view-if: kingdom_victory == 1
 tags: endings
 go-to: eg_menu
 
-We have won the civil war against the reactionary forces. Italy will be changed forever, but it is too early to know how.
+우리는 반동 세력과의 내전에서 승리했습니다. 이탈리아는 영원히 변화할 것이지만, 그 미래가 어떨지는 아직 알 수 없습니다.
 
 @reformist_civil_war_lost
-title: We lost the civil war.
+title: 내전에서 패배했습니다.
 view-if: total_defeat == 1
 tags: endings
 go-to: eg_menu
 
-We have lost the civil war. At least it was a quick coup, and ended before Italy could be plunged into total war.
+내전에서 패배했습니다. 적어도 신속한 쿠데타 덕분에 이탈리아가 전면전의 참화에 빠지기 전에 끝났다는 점이 다행입니다.
 
 @long_war
-title: Italy is gripped by civil war.
+title: 이탈리아가 내전의 소용돌이에 휘말렸습니다.
 view-if: long_war == 1
 tags: endings
 go-to: eg_menu
 
-Italy is currently in the grip of a civil war, a brutal affair that has no obvious end. Thousands of lives have already been extinguished, and it is likely that the war will not stop until Italy's cities are reduced to ruins. 
+이탈리아는 현재 끝이 보이지 않는 잔혹한 내전에 휩싸여 있습니다. 이미 수천 명의 목숨이 희생되었고, 이탈리아의 도시들이 잿더미가 될 때까지 전쟁은 멈추지 않을 것입니다.
 
-[? if soviet_aid >= 1: The Soviet Union has sent limited aid to us, still in the midst of its own civil war. ?][? if entente_relation < 3: Anti-communist sentiment has gripped our former allies, as they are aiding the fascists. ?]
+[? if soviet_aid >= 1: 소비에트 연방은 스스로도 내전을 치르고 있는 와중에 우리에게 제한적인 원조를 보냈습니다. ?][? if entente_relation < 3: 과거의 동맹국들은 반공 정서에 휩싸여 파시스트를 돕고 있습니다. ?]
 
 @italy_government_won
-title: We have toppled the Monarchy!
+title: 군주제를 타도했습니다!
 view-if: soviet_victory == 1
 tags: endings
 go-to: eg_menu
 
-We have won the war against the bourgeois forces and fascists, establishing a Soviet Republic, the first of its kind in the Mediterranean.
+우리는 부르주아 세력과 파시스트에 맞선 전쟁에서 승리하고, 지중해 최초의 소비에트 공화국을 수립했습니다.
 
 @italy_government_lost
-title: We have failed to topple the Monarchy.
+title: 군주제 타도에 실패했습니다.
 view-if: soviet_victory == 0 and monarchy_gone == 0
 tags: endings
 go-to: eg_menu
 
-Italy remains a Kingdom, gripped by the autocrat Vittorio Emanuele III, [? if psi_in_government : under a government led by us,?][? if not psi_in_government and not pnf_in_government : under an incompetent government,?][? if pnf_in_government : under a fascist dictatorship. ?] [? if not pnf_collapse_seen : and under threat of the fascist [+ pnf_leader +] and his far-right bloc. ?]
+이탈리아는 여전히 권위주의자 비토리오 에마누엘레 3세가 지배하는 왕국으로 남아있습니다. [? if psi_in_government : 현재 국정은 우리가 이끌고 있지만 말입니다. ?][? if not psi_in_government and not pnf_in_government : 무능한 정부 아래에서 말입니다. ?][? if pnf_in_government : 파시스트 독재 아래에서 말입니다. ?] [? if not pnf_collapse_seen : 게다가 파시스트 [+ pnf_leader +]와 그의 극우 연합의 위협을 받고 있습니다. ?]
 
 @psi_victorious
-title: [+ psi_name +] still in government
+title: [+ psi_name +] 정권 유지
 view-if: psi_in_government == 1 and prime_minister_party == psi_name and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The [+ psi_name +] is in government, under Prime Minister [+ prime_minister +]. Given the circumstances, this is a substantial accomplishment.
+[+ psi_name +]는 [+ prime_minister +] 총리가 이끄는 정부의 일원으로 활동하고 있습니다. 지금의 상황을 고려하면 이는 대단한 성과입니다.
 
 @economic_crisis_resolved
-title: Economic crisis resolved!
+title: 경제 위기 극복!
 view-if: national_economic_recovery = 1
 tags: endings
 go-to: eg_menu
 
-[? if psi_in_government: With our lead, the economic crisis has been brought to a slow, as both unemployment and inflation have reached acceptable levels. ?][? if not psi_in_government: Surprisingly, the bourgeois governments have been able to contain the crisis to a minimal amount. ?]
+[? if psi_in_government: 우리의 주도 아래 실업률과 인플레이션이 모두 안정세에 접어들면서, 경제 위기가 서서히 해소되었습니다. ?][? if not psi_in_government: 놀랍게도 부르주아 정부가 위기를 최소한으로 억제하는 데 성공했습니다. ?]
 
 @achievements
 title: Achievements
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
-= Completed Achievements in this Playthrough
+= 이번 회차에 달성한 업적
 
-[? if game_achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
+[? if game_achievement_alleanza_ardita: **대담한 동맹** - '인민의 결사대’와 동맹을 맺으십시오 ?]
 
-[? if game_achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
+[? if game_achievement_guerra_civile: **내전** - 장기 내전에 돌입하십시오. ?]
 
-[? if game_achievement_stella_rossa: **Stella Rossa** - Reach the end of the game without a civil war on Easy. ?]
+[? if game_achievement_stella_rossa: **붉은 별** - 쉬움 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if game_achievement_sol_dell_avenire: **Sol dell'Avenire** - Reach the end of the game without a civil war on Normal. ?]
+[? if game_achievement_sol_dell_avenire: **미래의 태양** - 보통 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if game_achievement_rossa_primavera: **Rossa Primavera** - Reach the end of the game without a civil war on Hard. ?]
+[? if game_achievement_rossa_primavera: **붉은 봄** - 어려움 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if game_achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if game_achievement_verde_bianco_rosso: **녹색, 백색, 적색** - 역사적 난이도에서 내전 없이 승리하십시오. ?]
 
-[? if game_achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
+[? if game_achievement_vittoria_sovietica: **소비에트의 승리** - 내전에서 승리하여 소비에트 공화국을 수립하십시오. ?]
 
-[? if game_achievement_vittoria_monarchica: **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if game_achievement_vittoria_monarchica: **왕정의 승리** - 왕국의 깃발 아래 내전에서 승리하십시오. ?]
 
-[? if game_achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
+[? if game_achievement_sinistra_ascendente: **떠오르는 좌파** - 좌파 연립 정부를 구성하십시오. ?]
 
-[? if game_achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
+[? if game_achievement_governo_monocolore: **단색 정부** - 이탈리아 사회당 단독 정부를 구성하십시오. ?]
 
-[? if game_achievement_il_traditore_e_sempre_un_infame: **Il Traditore è Sempre un Infame** - Imprison Mussolini. ?]
+[? if game_achievement_il_traditore_e_sempre_un_infame: **배신자는 언제나 치욕스러울 뿐** - 무솔리니를 투옥하십시오. ?]
 
-[? if game_achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
+[? if game_achievement_risorgimento_economico: **경제 부흥** - 경제 위기를 해결하십시오. ?]
 
-[? if game_achievement_diritti_delle_donne: **Diritti delle Donne** - Pass reforms for women's rights. ?]
+[? if game_achievement_diritti_delle_donne: **여성의 권리** - 여성 인권 개선 법안을 통과시키십시오. ?]
 
-[? if game_achievement_suffragio_universale: **Suffragio Universale** - Pass suffrage for women. ?]
+[? if game_achievement_suffragio_universale: **보통 선거** - 여성 참정권 법안을 통과시키십시오. ?]
 
-[? if game_achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
+[? if game_achievement_borghesia_rossa: **붉은 부르주아** - 중산층의 지지율 50%를 달성하십시오. ?]
 
-[? if game_achievement_i_gracchi_riscattati: **I Gracchi Riscattati** - Have Rural support over 50%. ?]
+[? if game_achievement_i_gracchi_riscattati: **그라쿠스의 부활** - 농민층의 지지율 50%를 달성하십시오. ?]  
 
-[? if game_achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
+[? if game_achievement_rivoluzione_industriale: **산업 혁명** - 산업 자본가의 지지율 50%를 달성하십시오. ?]
 
-[? if game_achievement_redenzione_dei_veterani: **Redenzione dei Veterani** - Have Veteran support over 50%. ?]
+[? if game_achievement_redenzione_dei_veterani: **참전용사의 구원** - 참전용사의 지지율 50%를 달성하십시오. ?]
 
-[? if game_achievement_bolscevismo_bianco: **Bolscevismo Bianco** - Have Catholic support over 50%. ?]
+[? if game_achievement_bolscevismo_bianco: **하얀 볼셰비즘** - 가톨릭계의 지지율 50%를 달성하십시오. ?]
 
-[? if game_achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
+[? if game_achievement_partito_del_popolo: **인민의 정당** -  모든 계층의 지지율 40%를 달성하십시오. ?]
 
-[? if game_achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80%, Middle Class & Rural support below 40%. ?]
+[? if game_achievement_lotta_di_classe: **계급 투쟁** - 노동자 지지율 80% 이상, 중산층과 농민층 지지율 40% 미만을 달성하십시오. ?]
 
-[? if game_achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
+[? if game_achievement_trasformazione_socialista: **사회주의적 전환** - 사회주의 경제로의 전환을 시작하십시오. ?]
 
-[? if game_achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
+[? if game_achievement_resistenza_duplice: **이중 저항** - 자본 파업과 로마 진군에서 모두 살아남으십시오. ?]
 
-[? if game_achievement_resistenza_a_roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if game_achievement_resistenza_a_roma: **로마에서의 저항** - 내전 없이 로마 진군을 저지하십시오. ?]
 
-[? if game_achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
+[? if game_achievement_riforma_costituzionale: **헌법 개혁** - 헌법 개정안을 통과시키십시오. ?]
 
-[? if game_achievement_follia_di_acerbo: **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
+[? if game_achievement_follia_di_acerbo: **아체르보의 광기** - 아체르보 법이 시행 중인 선거에서 승리하십시오. ?]
 
-[? if game_achievement_ritorno_trionfale: **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
+[? if game_achievement_ritorno_trionfale: **화려한 귀환** - '로마 진군’의 위기를 넘기고 정권을 재창출하십시오 ?]
 
-[? if game_achievement_la_rivoluzione_torinese: **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
+[? if game_achievement_la_rivoluzione_torinese: **토리노 혁명** - 토리노에서 혁명을 시작하여 승리하십시오. ?]
 
-[? if game_achievement_seconda_era_giolitti: **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
+[? if game_achievement_seconda_era_giolitti: **제2의 지올리티 시대** - 게임이 끝날 때까지 지올리티를 총리직에 유임시키십시오. ?]
 
-[? if game_achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
+[? if game_achievement_rivoluzione_permanente: **영구 혁명** - 러시아 소비에트 연방 사회주의 공화국과 완전한 우호 관계를 유지하며 소비에트 공화국을 성공적으로 수립하십시오. ?]
 
-[? if game_achievement_far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if game_achievement_far_viaggiare_i_treni_in_orario: **기차는 제시간에 달려야지** - 공공사업을 획기적으로 개선하십시오. ?]
 
-[? if game_achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
+[? if game_achievement_nemico_di_tutti: **만인의 적** - 모든 정당의 지도부와 적대 관계를 맺으십시오. ?]
 
-[? if game_achievement_fronte_unito: **Fronte Unito** - Reconcile every party's leadership. ?]
+[? if game_achievement_fronte_unito: **통일 전선** - 모든 정당의 지도부와 우호 관계를 맺으십시오 ?]
 
-[? if game_achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
+[? if game_achievement_debiti_in_fumo: **연기 속의 빚** - 해외 부채에 대한 채무 불이행을 선언하십시오. ?]
 
-[? if game_achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
+[? if game_achievement_ascendente_repubblicano: **떠오르는 공화정** - 이탈리아 공화당을 유력 정당으로 만드십시오. ?]
 
-[? if game_achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
+[? if game_achievement_piano_massimo_completato: **최대 강령 달성** - 최대 강령의 목표를 완수하십시오. ?]
 
-[? if game_achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if game_achievement_piano_minimo_completato: **최소 강령 달성** - 최소 강령의 목표를 완수하십시오. ?]
 
-[? if game_achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
+[? if game_achievement_fronte_diviso: **분열된 전선** - [+ psi_name +]의 모든 파벌이 탈당하게 만드십시오. ?]
 
-[? if game_achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
+[? if game_achievement_follia_di_sinistra: **좌파의 광기** - 내전에서 패배하십시오. ?]
 
-[? if game_achievement_il_sogno_mazziniano: **Il Sogno Mazziniano** - Elect Eugenio Chisea as Prime Minister. ?]
+[? if game_achievement_il_sogno_mazziniano: **마지니의 꿈** - 에우제니오 키에사를 총리로 선출하십시오. ?]
 
-[? if game_achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
+[? if game_achievement_andate_in_pace: **평안히 쉬시길** - 혁명 이후 모든 준군사조직을 성공적으로 해체하십시오. ?]
 
-[? if game_achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
+[? if game_achievement_quis_contra_nos: **누가 우리에게 대적하겠는가?** - 단눈치오를 파시스트 지도자로 선출되게 하십시오. ?]
 
-[? if game_achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
+[? if game_achievement_spartaco_marcia_ancora: **스파르타쿠스의 행진은 계속된다** - 독일 10월 혁명을 성공시키십시오. ?]
 
-[? if game_achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+[? if game_achievement_rivoluzione_permanente_tranne_qui: **영원한 혁명, 여기만 빼고** - 폴란드, 헝가리, 영국, 미국에서 사회주의의 흐름을 바꾸고, 이탈리아에서는 사회주의 혁명에 실패하십시오. ?]
 
-[? if game_achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
+[? if game_achievement_piu_fanno_rumore_quando_cadono: **사람은 떨어질 때 더 큰 소리를 낸다** - 디노 그란디를 죽게 하십시오. ?]
 
-[? if game_achievement_il_mio_nome_e_storpiato_percio: **Il Mio Nome è Storpiato Perciò** - Bring the strikers in Turin to the negotiating table. Twice. ?]
+[? if game_achievement_il_mio_nome_e_storpiato_percio: **내 이름을 먹칠했기 때문에** - 토리노의 파업 참가자들을 두 번이나 협상 테이블로 이끄십시오. ?]
 
-[? if game_achievement_lunico_rivoluzionario_in_italia: **L'unico rivoluzionario in Italia.** - Lose control of the party. ?]
+[? if game_achievement_lunico_rivoluzionario_in_italia: **이탈리아의 유일한 혁명가** - 당의 통제권을 상실하십시오. ?]
 
-= Completed Achievements Overall
+= 전체 달성 업적
 
-[? if achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
+[? if achievement_alleanza_ardita: **대담한 동맹** - '인민의 결사대’와 동맹을 맺으십시오 ?]
 
-[? if achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
+[? if achievement_guerra_civile: **내전** - 장기 내전에 돌입하십시오. ?]
 
-[? if achievement_stella_rossa: **Stella Rossa** - Reach the end of the game without a civil war on Easy. ?]
+[? if achievement_stella_rossa: **붉은 별** - 쉬움 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if achievement_sol_dell_avenire: **Sol dell'Avenire** - Reach the end of the game without a civil war on Normal. ?]
+[? if achievement_sol_dell_avenire: **미래의 태양** - 보통 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if achievement_rossa_primavera: **Rossa Primavera** - Reach the end of the game without a civil war on Hard. ?]
+[? if achievement_rossa_primavera: **붉은 봄** - 어려움 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if achievement_verde_bianco_rosso: **녹색, 백색, 적색** - 역사적 난이도에서 내전 없이 승리하십시오. ?]
 
-[? if achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
+[? if achievement_vittoria_sovietica: **소비에트의 승리** - 내전에서 승리하여 소비에트 공화국을 수립하십시오. ?]
 
-[? if achievement_vittoria_monarchica: **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if achievement_vittoria_monarchica: **왕정의 승리** - 왕국의 깃발 아래 내전에서 승리하십시오. ?]
 
-[? if achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
+[? if achievement_sinistra_ascendente: **떠오르는 좌파** - 좌파 연립 정부를 구성하십시오. ?]
 
-[? if achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
+[? if achievement_governo_monocolore: **단색 정부** - 이탈리아 사회당 단독 정부를 구성하십시오. ?]
 
-[? if achievement_il_traditore_e_sempre_un_infame: **Il Traditore è Sempre un Infame** - Imprison Mussolini. ?]
+[? if achievement_il_traditore_e_sempre_un_infame: **배신자는 언제나 치욕스러울 뿐** - 무솔리니를 투옥하십시오. ?]
 
-[? if achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
+[? if achievement_risorgimento_economico: **경제 부흥** - 경제 위기를 해결하십시오. ?]
 
-[? if achievement_diritti_delle_donne: **Diritti delle Donne** - Pass reforms for women's rights. ?]
+[? if achievement_diritti_delle_donne: **여성의 권리** - 여성 인권 개선 법안을 통과시키십시오. ?]
 
-[? if achievement_suffragio_universale: **Suffragio Universale** - Pass suffrage for women. ?]
+[? if achievement_suffragio_universale: **보통 선거** - 여성 참정권 법안을 통과시키십시오. ?]
 
-[? if achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
+[? if achievement_borghesia_rossa: **붉은 부르주아** - 중산층의 지지율 50%를 달성하십시오. ?]
 
-[? if achievement_i_gracchi_riscattati: **I Gracchi Riscattati** - Have Rural support over 50%. ?]
+[? if achievement_i_gracchi_riscattati: **그라쿠스의 부활** - 농민층의 지지율 50%를 달성하십시오. ?]  
 
-[? if achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
+[? if achievement_rivoluzione_industriale: **산업 혁명** - 산업 자본가의 지지율 50%를 달성하십시오. ?]
 
-[? if achievement_redenzione_dei_veterani: **Redenzione dei Veterani** - Have Veteran support over 50%. ?]
+[? if achievement_redenzione_dei_veterani: **참전용사의 구원** - 참전용사의 지지율 50%를 달성하십시오. ?]
 
-[? if achievement_bolscevismo_bianco: **Bolscevismo Bianco** - Have Catholic support over 50%. ?]
+[? if achievement_bolscevismo_bianco: **하얀 볼셰비즘** - 가톨릭계의 지지율 50%를 달성하십시오. ?]
 
-[? if achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
+[? if achievement_partito_del_popolo: **인민의 정당** -  모든 계층의 지지율 40%를 달성하십시오. ?]
 
-[? if achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80%, Middle Class & Rural support below 40%. ?]
+[? if achievement_lotta_di_classe: **계급 투쟁** - 노동자 지지율 80% 이상, 중산층과 농민층 지지율 40% 미만을 달성하십시오. ?]
 
-[? if achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
+[? if achievement_trasformazione_socialista: **사회주의적 전환** - 사회주의 경제로의 전환을 시작하십시오. ?]
 
-[? if achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
+[? if achievement_resistenza_duplice: **이중 저항** - 자본 파업과 로마 진군에서 모두 살아남으십시오. ?]
 
-[? if achievement_resistenza_a_roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if achievement_resistenza_a_roma: **로마에서의 저항** - 내전 없이 로마 진군을 저지하십시오. ?]
 
-[? if achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
+[? if achievement_riforma_costituzionale: **헌법 개혁** - 헌법 개정안을 통과시키십시오. ?]
 
-[? if achievement_follia_di_acerbo: **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
+[? if achievement_follia_di_acerbo: **아체르보의 광기** - 아체르보 법이 시행 중인 선거에서 승리하십시오. ?]
 
-[? if achievement_ritorno_trionfale: **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
+[? if achievement_ritorno_trionfale: **화려한 귀환** - '로마 진군’의 위기를 넘기고 정권을 재창출하십시오 ?]
 
-[? if achievement_la_rivoluzione_torinese: **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
+[? if achievement_la_rivoluzione_torinese: **토리노 혁명** - 토리노에서 혁명을 시작하여 승리하십시오. ?]
 
-[? if achievement_seconda_era_giolitti: **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
+[? if achievement_seconda_era_giolitti: **제2의 지올리티 시대** - 게임이 끝날 때까지 지올리티를 총리직에 유임시키십시오. ?]
 
-[? if achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
+[? if achievement_rivoluzione_permanente: **영구 혁명** - 러시아 소비에트 연방 사회주의 공화국과 완전한 우호 관계를 유지하며 소비에트 공화국을 성공적으로 수립하십시오. ?]
 
-[? if achievement_far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if achievement_far_viaggiare_i_treni_in_orario: **기차는 제시간에 달려야지** - 공공사업을 획기적으로 개선하십시오. ?]
 
-[? if achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
+[? if achievement_nemico_di_tutti: **만인의 적** - 모든 정당의 지도부와 적대 관계를 맺으십시오. ?]
 
-[? if achievement_fronte_unito: **Fronte Unito** - Reconcile every party's leadership. ?]
+[? if achievement_fronte_unito: **통일 전선** - 모든 정당의 지도부와 우호 관계를 맺으십시오 ?]
 
-[? if achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
+[? if achievement_debiti_in_fumo: **연기 속의 빚** - 해외 부채에 대한 채무 불이행을 선언하십시오. ?]
 
-[? if achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
+[? if achievement_ascendente_repubblicano: **떠오르는 공화정** - 이탈리아 공화당을 유력 정당으로 만드십시오. ?]
 
-[? if achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
+[? if achievement_piano_massimo_completato: **최대 강령 달성** - 최대 강령의 목표를 완수하십시오. ?]
 
-[? if achievement_piano_minimo_completato: **Piano Minamo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if achievement_piano_minimo_completato: **최소 강령 달성** - 최소 강령의 목표를 완수하십시오. ?]
 
-[? if achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
+[? if achievement_fronte_diviso: **분열된 전선** - [+ psi_name +]의 모든 파벌이 탈당하게 만드십시오. ?]
 
-[? if achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
+[? if achievement_follia_di_sinistra: **좌파의 광기** - 내전에서 패배하십시오. ?]
 
-[? if achievement_il_sogno_mazziniano: **Il Sogno Mazziniano** - Elect Eugenio Chisea as Prime Minister. ?]
+[? if achievement_il_sogno_mazziniano: **마지니의 꿈** - 에우제니오 키에사를 총리로 선출하십시오. ?]
 
-[? if achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
+[? if achievement_andate_in_pace: **평안히 쉬시길** - 혁명 이후 모든 준군사조직을 성공적으로 해체하십시오. ?]
 
-[? if achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
+[? if achievement_quis_contra_nos: **누가 우리에게 대적하겠는가?** - 단눈치오를 파시스트 지도자로 선출되게 하십시오. ?]
 
-[? if achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
+[? if achievement_spartaco_marcia_ancora: **스파르타쿠스의 행진은 계속된다** - 독일 10월 혁명을 성공시키십시오. ?]
 
-[? if achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+[? if achievement_rivoluzione_permanente_tranne_qui: **영원한 혁명, 여기만 빼고** - 폴란드, 헝가리, 영국, 미국에서 사회주의의 흐름을 바꾸고, 이탈리아에서는 사회주의 혁명에 실패하십시오. ?]
 
-[? if achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
+[? if achievement_piu_fanno_rumore_quando_cadono: **사람은 떨어질 때 더 큰 소리를 낸다** - 디노 그란디를 죽게 하십시오. ?]
 
-[? if achievement_il_mio_nome_e_storpiato_percio: **Il Mio Nome è Storpiato Perciò** - Bring the strikers in Turin to the negotiating table. Twice. ?]
+[? if achievement_il_mio_nome_e_storpiato_percio: **내 이름을 먹칠했기 때문에** - 토리노의 파업 참가자들을 두 번이나 협상 테이블로 이끄십시오. ?]
 
-[? if achievement_lunico_rivoluzionario_in_italia: **L'unico rivoluzionario in Italia.** - Lose control of the party. ?]
+[? if achievement_lunico_rivoluzionario_in_italia: **이탈리아의 유일한 혁명가** - 당의 통제권을 상실하십시오. ?]
 
-= Incomplete Achievements
+= 미달성 업적
 
-[? if not achievement_alleanza_ardita: **Allenza Ardita** - Cooperate with the Arditi del Popolo. ?]
+[? if not achievement_alleanza_ardita: **대담한 동맹** - '인민의 결사대’와 동맹을 맺으십시오 ?]
 
-[? if not achievement_guerra_civile: **Guerra Civile** - Enter a long civil war. ?]
+[? if not achievement_guerra_civile: **내전** - 장기 내전에 돌입하십시오. ?]
 
-[? if not achievement_stella_rossa: **Stella Rossa** - Reach the end of the game without a civil war on Easy. ?]
+[? if not achievement_stella_rossa: **붉은 별** - 쉬움 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if not achievement_sol_dell_avenire: **Sol dell'Avenire** - Reach the end of the game without a civil war on Normal. ?]
+[? if not achievement_sol_dell_avenire: **미래의 태양** - 보통 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if not achievement_rossa_primavera: **Rossa Primavera** - Reach the end of the game without a civil war on Hard. ?]
+[? if not achievement_rossa_primavera: **붉은 봄** - 어려움 난이도에서 내전 없이 게임을 완료하십시오. ?]
 
-[? if not achievement_verde_bianco_rosso: **Verde-Bianco-Rosso** - Reach the end of the game without a civil war on Historical. ?]
+[? if not achievement_verde_bianco_rosso: **녹색, 백색, 적색** - 역사적 난이도에서 내전 없이 승리하십시오. ?]
 
-[? if not achievement_vittoria_sovietica: **Vittoria Sovietica** - Win the Civil War and establish a Soviet Republic. ?]
+[? if not achievement_vittoria_sovietica: **소비에트의 승리** - 내전에서 승리하여 소비에트 공화국을 수립하십시오. ?]
 
-[? if not achievement_vittoria_monarchica: **Vittoria Monarchica** - Win the Civil War under the banner of the Kingdom. ?]
+[? if not achievement_vittoria_monarchica: **왕정의 승리** - 왕국의 깃발 아래 내전에서 승리하십시오. ?]
 
-[? if not achievement_sinistra_ascendente: **Sinistra Ascendente** - Form a Left-Wing Coalition. ?]
+[? if not achievement_sinistra_ascendente: **떠오르는 좌파** - 좌파 연립 정부를 구성하십시오. ?]
 
-[? if not achievement_governo_monocolore: **Governo Monocolore** - Form a PSI-Only Government. ?]
+[? if not achievement_governo_monocolore: **단색 정부** - 이탈리아 사회당 단독 정부를 구성하십시오. ?]
 
-[? if not achievement_il_traditore_e_sempre_un_infame: **Il Traditore è Sempre un Infame** - Imprison Mussolini. ?]
+[? if not achievement_il_traditore_e_sempre_un_infame: **배신자는 언제나 치욕스러울 뿐** - 무솔리니를 투옥하십시오. ?]
 
-[? if not achievement_risorgimento_economico: **Risorgimento Economico** - Resolve the Economic Crisis. ?]
+[? if not achievement_risorgimento_economico: **경제 부흥** - 경제 위기를 해결하십시오. ?]
 
-[? if not achievement_diritti_delle_donne: **Diritti delle Donne** - Pass reforms for women's rights. ?]
+[? if not achievement_diritti_delle_donne: **여성의 권리** - 여성 인권 개선 법안을 통과시키십시오. ?]
 
-[? if not achievement_suffragio_universale: **Suffragio Universale** - Pass suffrage for women. ?]
+[? if not achievement_suffragio_universale: **보통 선거** - 여성 참정권 법안을 통과시키십시오. ?]
 
-[? if not achievement_borghesia_rossa: **Borghesia Rossa** - Have Middle Class support over 50%. ?]
+[? if not achievement_borghesia_rossa: **붉은 부르주아** - 중산층의 지지율 50%를 달성하십시오. ?]
 
-[? if not achievement_i_gracchi_riscattati: **I Gracchi Riscattati** - Have Rural support over 50%. ?]
+[? if not achievement_i_gracchi_riscattati: **그라쿠스의 부활** - 농민층의 지지율 50%를 달성하십시오. ?]  
 
-[? if not achievement_rivoluzione_industriale: **Rivoluzione Industriale** - Have Industrialist support over 50%. ?]
+[? if not achievement_rivoluzione_industriale: **산업 혁명** - 산업 자본가의 지지율 50%를 달성하십시오. ?]
 
-[? if not achievement_redenzione_dei_veterani: **Redenzione dei Veterani** - Have Veteran support over 50%. ?]
+[? if not achievement_redenzione_dei_veterani: **참전용사의 구원** - 참전용사의 지지율 50%를 달성하십시오. ?]
 
-[? if not achievement_bolscevismo_bianco: **Bolscevismo Bianco** - Have Catholic support over 50%. ?]
+[? if not achievement_bolscevismo_bianco: **하얀 볼셰비즘** - 가톨릭계의 지지율 50%를 달성하십시오. ?]
 
-[? if not achievement_partito_del_popolo: **Partito del Popolo** - Have all demographic support over 40%. ?]
+[? if not achievement_partito_del_popolo: **인민의 정당** -  모든 계층의 지지율 40%를 달성하십시오. ?]
 
-[? if not achievement_lotta_di_classe: **Lotta di Classe** - Have Worker support over 80%, Middle Class & Rural support below 40%. ?]
+[? if not achievement_lotta_di_classe: **계급 투쟁** - 노동자 지지율 80% 이상, 중산층과 농민층 지지율 40% 미만을 달성하십시오. ?]
 
-[? if not achievement_trasformazione_socialista: **Trasformazione Socialista** - Begin the transition to a socialist economy. ?]
+[? if not achievement_trasformazione_socialista: **사회주의적 전환** - 사회주의 경제로의 전환을 시작하십시오. ?]
 
-[? if not achievement_resistenza_duplice: **Resistenza Duplice** - Survive both a Capital Strike and the March on Rome. ?]
+[? if not achievement_resistenza_duplice: **이중 저항** - 자본 파업과 로마 진군에서 모두 살아남으십시오. ?]
 
-[? if not achievement_resistenza_a_roma: **Resistenza a Roma** - Defeat the March on Rome without a Civil War. ?]
+[? if not achievement_resistenza_a_roma: **로마에서의 저항** - 내전 없이 로마 진군을 저지하십시오. ?]
 
-[? if not achievement_riforma_costituzionale: **Riforma Costituzionale** - Pass a Constitutional Amendment. ?]
+[? if not achievement_riforma_costituzionale: **헌법 개혁** - 헌법 개정안을 통과시키십시오. ?]
 
-[? if not achievement_follia_di_acerbo: **Follia di Acerbo** - Win an election with the Acerbo Law in effect. ?]
+[? if not achievement_follia_di_acerbo: **아체르보의 광기** - 아체르보 법이 시행 중인 선거에서 승리하십시오. ?]
 
-[? if not achievement_ritorno_trionfale: **Ritorno Trionfale** - Return back to power after the March on Rome. ?]
+[? if not achievement_ritorno_trionfale: **화려한 귀환** - '로마 진군’의 위기를 넘기고 정권을 재창출하십시오 ?]
 
-[? if not achievement_la_rivoluzione_torinese: **La Rivoluzione Torinese** - Begin the revolution in Turin and win. ?]
+[? if not achievement_la_rivoluzione_torinese: **토리노 혁명** - 토리노에서 혁명을 시작하여 승리하십시오. ?]
 
-[? if not achievement_seconda_era_giolitti: **Seconda Era Giolitti** - Keep Giolitti as Prime Minister for the entire game. ?]
+[? if not achievement_seconda_era_giolitti: **제2의 지올리티 시대** - 게임이 끝날 때까지 지올리티를 총리직에 유임시키십시오. ?]
 
-[? if not achievement_rivoluzione_permanente: **Rivoluzione Permanente** - Successfully establish a Soviet Republic while having full relations with the RSFSR. ?]
+[? if not achievement_rivoluzione_permanente: **영구 혁명** - 러시아 소비에트 연방 사회주의 공화국과 완전한 우호 관계를 유지하며 소비에트 공화국을 성공적으로 수립하십시오. ?]
 
-[? if not achievement_far_viaggiare_i_treni_in_orario: **Far Viaggiare i Treni in Orario** - Significantly improve Public Works. ?]
+[? if not achievement_far_viaggiare_i_treni_in_orario: **기차는 제시간에 달려야지** - 공공사업을 획기적으로 개선하십시오. ?]
 
-[? if not achievement_nemico_di_tutti: **Nemico di Tutti** - Antagonise every party's leadership. ?]
+[? if not achievement_nemico_di_tutti: **만인의 적** - 모든 정당의 지도부와 적대 관계를 맺으십시오. ?]
 
-[? if not achievement_fronte_unito: **Fronte Unito** - Reconcile every party's leadership. ?]
+[? if not achievement_fronte_unito: **통일 전선** - 모든 정당의 지도부와 우호 관계를 맺으십시오 ?]
 
-[? if not achievement_debiti_in_fumo: **Debiti in Fumo** - Default on foreign debts. ?]
+[? if not achievement_debiti_in_fumo: **연기 속의 빚** - 해외 부채에 대한 채무 불이행을 선언하십시오. ?]
 
-[? if not achievement_ascendente_repubblicano: **Ascendente Repubblicano** - Have the PRI become prominent. ?]
+[? if not achievement_ascendente_repubblicano: **떠오르는 공화정** - 이탈리아 공화당을 유력 정당으로 만드십시오. ?]
 
-[? if not achievement_piano_massimo_completato: **Piano Massimo Completato** - Complete the objectives of the Maximum Plan. ?]
+[? if not achievement_piano_massimo_completato: **최대 강령 달성** - 최대 강령의 목표를 완수하십시오. ?]
 
-[? if not achievement_piano_minimo_completato: **Piano Minimo Completato** - Complete the objectives of the Minimum Plan. ?]
+[? if not achievement_piano_minimo_completato: **최소 강령 달성** - 최소 강령의 목표를 완수하십시오. ?]
 
-[? if not achievement_fronte_diviso: **Fronte Diviso** - Have all factions of the [+ psi_name +] break away. ?]
+[? if not achievement_fronte_diviso: **분열된 전선** - [+ psi_name +]의 모든 파벌이 탈당하게 만드십시오. ?]
 
-[? if not achievement_follia_di_sinistra: **Follia di Sinistra** - Lose the Civil War. ?]
+[? if not achievement_follia_di_sinistra: **좌파의 광기** - 내전에서 패배하십시오. ?]
 
-[? if not achievement_il_sogno_mazziniano: **Il Sogno Mazziniano** - Elect Eugenio Chisea as Prime Minister. ?]
+[? if not achievement_il_sogno_mazziniano: **마지니의 꿈** - 에우제니오 키에사를 총리로 선출하십시오. ?]
 
-[? if not achievement_andate_in_pace: **Andate In Pace** - Successfully eliminate the paramilitaries after revolution. ?]
+[? if not achievement_andate_in_pace: **평안히 쉬시길** - 혁명 이후 모든 준군사조직을 성공적으로 해체하십시오. ?]
 
-[? if not achievement_quis_contra_nos: **Quis Contra Nos** - Get D'Annunzio elected as leader of the Fascists. ?]
+[? if not achievement_quis_contra_nos: **누가 우리에게 대적하겠는가?** - 단눈치오를 파시스트 지도자로 선출되게 하십시오. ?]
 
-[? if not achievement_spartaco_marcia_ancora: **Spartaco Marcia Ancora** - Cause German October to succeed. ?]
+[? if not achievement_spartaco_marcia_ancora: **스파르타쿠스의 행진은 계속된다** - 독일 10월 혁명을 성공시키십시오. ?]
 
-[? if not achievement_rivoluzione_permanente_tranne_qui: **Rivoluzione Permanente, Tranne Qui** - Alter the course of socialism in Poland, Hungary, the United Kingdom and the United States, but fail to bring socialism to Italy. ?]
+[? if not achievement_rivoluzione_permanente_tranne_qui: **영원한 혁명, 여기만 빼고** - 폴란드, 헝가리, 영국, 미국에서 사회주의의 흐름을 바꾸고, 이탈리아에서는 사회주의 혁명에 실패하십시오. ?]
 
-[? if not achievement_piu_fanno_rumore_quando_cadono: **Più Fanno Rumore Quando Cadono** - Have Dino Grandi die. ?]
+[? if not achievement_piu_fanno_rumore_quando_cadono: **사람은 떨어질 때 더 큰 소리를 낸다** - 디노 그란디를 죽게 하십시오. ?]
 
-[? if not achievement_il_mio_nome_e_storpiato_percio: **Il Mio Nome è Storpiato Perciò** - Bring the strikers in Turin to the negotiating table. Twice. ?]
+[? if not achievement_il_mio_nome_e_storpiato_percio: **내 이름을 먹칠했기 때문에** - 토리노의 파업 참가자들을 두 번이나 협상 테이블로 이끄십시오. ?]
 
-[? if not achievement_lunico_rivoluzionario_in_italia: **L'unico rivoluzionario in Italia.** - Lose control of the party. ?]
+[? if not achievement_lunico_rivoluzionario_in_italia: **이탈리아의 유일한 혁명가** - 당의 통제권을 상실하십시오. ?]
 
 @end_game
 game-over: true

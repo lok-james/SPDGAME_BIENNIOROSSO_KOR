@@ -1,42 +1,42 @@
-title: Alceste De Ambris
+title: 알체스테 데 암브리스
 is-pinned-card: true
 tags: advisor, syndicalist
 card-image: img/portraits/AlcesteDeAmbris.jpg
 view-if: deambris_advisor = 1
 new-page: true
 
-= Alceste De Ambris
+= 알체스테 데 암브리스
 
-De Ambris is a prominent revolutionary syndicalist and a defector from [+ pnf_leader +]'s *Fasces of Combat*. He is a member of the party's newly prominent syndicalist faction.
+데 암브리스는 저명한 혁명적 생디칼리스트이자 [+ pnf_leader +]의 전투 파시에서 이탈한 인물입니다. 그는 당에서 새롭게 떠오르는 생디칼리스트 파벌의 일원입니다.
 
 - @fasci_urgency_deambris
 - @rg_ordering_deambris
 - @arditi_deambris
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @fasci_urgency_deambris
-title: Fasci Urgency
-subtitle: We should warn the party about the growing [+ pnf_name +].
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 파시 세력의 위협
+subtitle: 세력을 키우는 [+ pnf_name +]의 위험성을 당에 경고해야 합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 choose-if: advisor_action_timer == 0
 view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: urgency
 
 @rg_ordering_deambris
-title: Red Guard Ordering
-subtitle: We can order the Red Guards to act.
+title: 적위대 지휘
+subtitle: 적위대를 동원하여 행동하도록 명령할 수 있습니다.
 choose-if: advisor_action_timer = 0
 view-if: not national_congress_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: rg_orders
 
 @arditi_deambris
-title: Arditi del Popolo
-subtitle: We can utilise the Arditi del Popolo.
+title: 인민의 결사대
+subtitle: 인민의 결사대를 활용할 수 있습니다.
 choose-if: advisor_action_timer = 0
 view-if: arditi_cooperation and arditi_formed
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: arditi
