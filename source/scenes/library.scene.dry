@@ -95,42 +95,42 @@ go-to: cabinet if psi_in_government; menu if not psi_in_government
 @cabinet
 go-to: menu
 
-Current cabinet:
+현 내각 구성:
 
-Labour: [+ labour_minister_party +]
+노동부 장관: [+ labour_minister_party +]
 
-Interior: [+ interior_minister_party +]
+내무부 장관: [+ interior_minister_party +]
 
-Finance: [+ finance_minister_party +]
+재무부 장관: [+ finance_minister_party +]
 
-Treasury: [+ treasury_minister_party +]
+국고부 장관: [+ treasury_minister_party +]
 
-Justice: [+ justice_minister_party +]
+법무부 장관: [+ justice_minister_party +]
 
-Foreign: [+ foreign_minister_party +]
+외무부 장관: [+ foreign_minister_party +]
 
-Agriculture: [+ agriculture_minister_party +]
+농업부 장관: [+ agriculture_minister_party +]
 
-Public Works: [+ public_works_minister_party +]
+공공사업부 장관: [+ public_works_minister_party +]
 
-Public Education: [+ public_education_minister_party +]
+공교육부 장관: [+ public_education_minister_party +]
 
 @demographics
 go-to: menu
 
-**Demographic Groups**
+**주요 사회 계층**
 
-**Urban Workers**: Consisting of blue-collar workers in factories, workshops, mines, et cetera. Most are socialists, supporting the [+ psi_name +] or any other communist faction. They make up about 20 to 25% of the population.
+**도시 노동자**: 공장, 작업장, 광산 등에서 일하는 육체노동자로 구성됩니다. 대다수가 사회주의자이며 [+ psi_name +]나 다른 공산주의 계열 파벌을 지지합니다. 전체 인구의 약 20~25%를 차지합니다.
 
-**Small Business Owners**: Consisting of shopkeepers, artisans, small business workers and the like. They are divided between the Catholic Parties, Liberal Parties and a small minority to the [+ psi_name +]. They make up about 15-20% of the population.
+**소상공인**: 상점주, 장인, 소규모 자영업자 등으로 구성됩니다. 주로 가톨릭 계열 정당이나 자유주의 계열 정당을 지지하며, 소수만이 [+ psi_name +]를 지지합니다. 전체 인구의 약 15~20%를 차지합니다.
 
-**Rural Workers & Farmers**: Consisting of those who lived in the unindustrialised south who work as farmers, agricultural workers, et cetera. They are fairly evenly split between the [+ psi_name +] and the Catholic PPI. They make up about 50% of the population.
+**농촌 노동자 및 농민**: 미개발된 남부 지역에 거주하는 농부와 농업 노동자들로 구성됩니다. [+ psi_name +]와 가톨릭 계열 정당인 이탈리아 인민당에 대한 지지가 양분되어 있습니다. 전체 인구의 약 50%를 차지합니다.
 
-**Industrialists & Landowners**: Consisting of the elite holding significant economic power. They are the bedrock of the liberal parties, seeing them as stable and protecting their wealth, though some more religious prefer the Catholic parties. They make up about 5-10% of the population.
+**산업 자본가 및 지주**: 막강한 경제력을 가진 엘리트 계층입니다. 이들은 자유주의 계열 정당을 자신들의 부를 안정적으로 지켜주는 보호자로 여기며 핵심적인 지지 기반 역할을 합니다. 일부 독실한 신자들은 가톨릭 계열 정당을 선호하기도 합니다. 전체 인구의 약 5~10%를 차지합니다.
 
-**Veterans & Unemployed**: Consisting of veterans who felt betrayed by the government for their gains in the First World War. They are fierce supporters of nationalist and fascist movements, though some opted to support the [+ psi_name +] instead. They make up about 5% of the population.
+**참전용사 및 실업자**: 제1차 세계 대전의 결과에 대해 정부로부터 배신감을 느끼는 퇴역 군인들로 구성됩니다. 이들은 민족주의 운동과 파시스트 운동의 강력한 지지자들이지만, 일부는 [+ psi_name +]를 지지하기도 합니다. 전체 인구의 약 5%를 차지합니다.
 
-**Catholics**: Consisting of the clergy and those religious to the Catholic Church. They support the Catholic parties almost entirely, making up a strong foundation for the PPI. They make up about 5% of the population.
+**가톨릭계**: 성직자와 독실한 가톨릭 신자들로 구성됩니다. 거의 절대적으로 가톨릭 계열 정당을 지지하며, 이는 이탈리아 인민당의 강력한 기반이 됩니다. 전체 인구의 약 5%를 차지합니다.
 
 @public_opinion
 on-arrival: {!
@@ -142,108 +142,108 @@ view-if: (not historical_mode) or game_over
 go-to: election_algorithm
 set-jump: election_projections
 
-Support for Republicanism: [+ republican_sentiment_disp +]%
+공화주의 지지 여론: [+ republican_sentiment_disp +]%
 
-Support for Socialism: [+ socialist_sentiment_disp +]%
+사회주의 지지 여론: [+ socialist_sentiment_disp +]%
 
-Support for Nationalism: [+ nationalist_sentiment_disp +]%
+민족주의 지지 여론: [+ nationalist_sentiment_disp +]%
 
 @election_projections
 view-if: (not historical_mode) or game_over
 go-to: menu
 
-**Projected election results** (if the election were to be held now):
+**총선 예상 결과** (현재 선거를 치를 경우):
 
 [+ psi_name +]: [+ psi_votes +]%
 
-[? if pcdi_formed : PCd'I: [+ pcdi_votes +]% ?]
+[? if pcdi_formed : 이탈리아 공산당(PCd'I): [+ pcdi_votes +]% ?]
 
-[? if psu_formed : PSU: [+ psu_votes +]% ?]
+[? if psu_formed : 통합사회당(PSU): [+ psu_votes +]% ?]
 
-[? if not psri_collapse : PSRI : [+ psri_votes +]% ?]
+[? if not psri_collapse : 이탈리아 개혁사회당(PSRI) : [+ psri_votes +]% ?]
 
-[? if pll_formed : PLL: [+ pll_votes +]% ?]
+[? if pll_formed : 자유노동당(PLL): [+ pll_votes +]% ?]
 
-[? if pri_prominent = 1: PRI: [+ pri_votes +]% ?]
+[? if pri_prominent = 1: 이탈리아 공화당(PRI): [+ pri_votes +]% ?]
 
 [+ ds_name +]: [+ ds_votes +]%
 
-PPI: [+ ppi_votes +]%
+이탈리아 인민당(PPI): [+ ppi_votes +]%
 
 [+ ldr_name +]: [+ ldr_votes +]%
 
 [+ ul_name +]: [+ ul_votes +]%
 
-[? if pcs_formed : PCS: [+ pcs_votes +]% ?]
+[? if pcs_formed : 기독교사회당(PCS): [+ pcs_votes +]% ?]
 
 [? if not pnf_banned : [+ pnf_name +]: [+ pnf_votes +]% ?]
 
-Others: [+ other_votes +]%
+기타: [+ other_votes +]%
 
-**Detailed results for each demographic**
+**주요 사회 계층별 상세 지지율**
 
-Urban Workers: [+ psi_name +]: [+ workers_psi_display +]%, [? if pcdi_formed : PCd'I: [+ workers_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ workers_psu_display +]%, ?] PSRI: [+ workers_psri_display +]%, [? if pll_formed : PLL: [+ workers_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ workers_pri_display +]%, ?] [+ ds_name +]: [+ workers_ds_display +]%, PPI: [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ workers_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ workers_pnf_display +]%, ?] Others: [+ workers_other_display +]%
+도시 노동자: [+ psi_name +]: [+ workers_psi_display +]%, [? if pcdi_formed : 이탈리아 공산당 (PCd'I): [+ workers_pcdi_display +]%, ?] [? if psu_formed : 통합사회당 (PSU): [+ workers_psu_display +]%, ?] 이탈리아 개혁사회당(PSRI): [+ workers_psri_display +]%, [? if pll_formed : 자유노동당 (PLL): [+ workers_pll_display +]%, ?] [? if pri_prominent = 1 : 이탈리아 공화당 (PRI): [+ workers_pri_display +]%, ?] [+ ds_name +]: [+ workers_ds_display +]%, 이탈리아 인민당(PPI): [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%, [?if pcs_formed = 1 : 기독교사회당 (PCS): [+ workers_pcs_display +]%, ?] [? if not pnf_banned: [+ pnf_name +]: [+ workers_pnf_display +]%, ?] 기타: [+ workers_other_display +]%
 
-Middle Class: [+ psi_name +]: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pll_formed : PLL: [+ middle_class_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] [+ ds_name +]: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ middle_class_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ middle_class_pnf_display +]%, ?] Others: [+ middle_class_other_display +]%
+중산층: [+ psi_name +]: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pll_formed : PLL: [+ middle_class_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] [+ ds_name +]: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ middle_class_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ middle_class_pnf_display +]%, ?] 기타: [+ middle_class_other_display +]%
 
-Rural Workers & Farmers: [+ psi_name +]: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pll_formed : PLL: [+ rural_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] [+ ds_name +]: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ rural_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ rural_pnf_display +]%, ?] Others: [+ rural_other_display +]%
+농촌 노동자 및 농부: [+ psi_name +]: [+ rural_psi_display +]%, [? if pcdi_formed : PCd'I: [+ rural_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ rural_psu_display +]%, ?] PSRI: [+ rural_psri_display +]%, [? if pll_formed : PLL: [+ rural_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ rural_pri_display +]%, ?] [+ ds_name +]: [+ rural_ds_display +]%, PPI: [+ rural_ppi_display +]%, [+ ldr_name +]: [+ rural_ldr_display +]%, [+ ul_name +]: [+ rural_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ rural_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ rural_pnf_display +]%, ?] 기타: [+ rural_other_display +]%
 
-Industrialists & Landowners: [+ psi_name +]: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pll_formed : PLL: [+ industrialists_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] [+ ds_name +]: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ industrialists_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ industrialists_pnf_display +]%, ?] Others: [+ industrialists_other_display +]%
+산업 자본가 및 지주: [+ psi_name +]: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pll_formed : PLL: [+ industrialists_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] [+ ds_name +]: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ industrialists_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ industrialists_pnf_display +]%, ?] 기타: [+ industrialists_other_display +]%
 
-Veterans & Unemployed: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ veterans_pnf_display +]%, ?] Others: [+ veterans_other_display +]%
+참전용사 및 실업자: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ veterans_pnf_display +]%, ?] 기타: [+ veterans_other_display +]%
 
-Catholics: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pll_formed : PLL: [+ catholic_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] [+ ds_name +]: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ catholic_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ catholic_pnf_display +]%, ?] Others: [+ catholic_other_display +]%
+가톨릭계: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pll_formed : PLL: [+ catholic_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] [+ ds_name +]: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ catholic_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ catholic_pnf_display +]%, ?] 기타: [+ catholic_other_display +]%
 
-[? if womens_suffrage = 1 : Women: [+ psi_name +]: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pll_formed : PLL: [+ women_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] [+ ds_name +]: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ women_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ women_pnf_display +]%, ?] Others: [+ women_other_display +]% ?]
+[? if womens_suffrage = 1: 여성 유권자: [+ psi_name +]: [+ women_psi_display +]%, [? if pcdi_formed : PCd'I: [+ women_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ women_psu_display +]%, ?] PSRI: [+ women_psri_display +]%, [? if pll_formed : PLL: [+ women_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ women_pri_display +]%, ?] [+ ds_name +]: [+ women_ds_display +]%, PPI: [+ women_ppi_display +]%, [+ ldr_name +]: [+ women_ldr_display +]%, [+ ul_name +]: [+ women_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ women_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ women_pnf_display +]%, ?] 기타: [+ women_other_display +]% ?]
 
 @parties
 go-to: menu
 
-**[+ psi_name +]** - *[+ psi_full_italian +]* ([+ psi_full_name +]) - This is you. You are the major socialist party of the working class, founded by labour movements and socialist ideas. [? if not communist_split and not reformists_defect and not violent_revolution : Currently, the party is split between those who wish to preserve the parliamentary system and those who wish to achieve socialism through a revolution. ?] [? if reformists_defect and not communist_split and not violent_revolution : Currently, the party’s direction has shifted towards the end of the bourgeois state through revolutionary action. What shall become of the revolution beyond the current state’s collapse, however, is not yet decided. ?] [? if not reformists_defect and communist_split and not violent_revolution : Currently, the party’s direction has shifted towards a parliamentary reformist movement towards socialism, working with the opposition to democratize and socialize society. With both the King’s approval and the Senate, the party will push for a complete constitutional overhaul. ?] [? if reformists_defect and communist_split and not violent_revolution : Currently, the party is merely struggling to survive, a husk of its former self. What remains of the party is scrambling towards whatever path will save them, while some have already left the seemingly sinking ship. ?] [? if violent_revolution and not communist_split : Embracing the ideological line of the Communist International, the party has morphed into a revolutionary vanguard which steers the Italian nation to a new socialist future. ?] [? if violent_revolution and communist_split : Embracing a more independent ideological line diverging from that of the Communist International, the party seeks to emulate it's own variant of a socialist republic instead of following Moscow's vision. ?]
+**[+ psi_name +]** - *[+ psi_full_italian +]* ([+ psi_full_name +]) - 플레이어의 정당입니다. 노동 운동과 사회주의 사상을 기반으로 탄생한, 노동 계급을 대표하는 주요 사회주의 정당입니다. [? if not communist_split and not reformists_defect and not violent_revolution: 현재 당은 현행 의회 제도를 유지하려는 세력과 혁명을 통해 사회주의를 달성하려는 세력으로 나뉘어 있습니다. ?] [? if reformists_defect and not communist_split and not violent_revolution: 당의 노선이 혁명적 행동을 통해 부르주아 국가를 종식하는 방향으로 전환되었습니다. 그러나 현 체제가 붕괴한 이후 혁명이 어떠한 길을 걸을지는 아직 미지수입니다. ?] [? if not reformists_defect and communist_split and not violent_revolution: 당의 노선이 사회를 민주화하고 사회주의 가치를 실현하기 위해 다른 정당과 협력하는 점진적 의회 개혁 운동으로 전환되었습니다. 국왕과 상원의 동의를 얻어, 당은 전면적인 헌법 개정을 추진할 것입니다. ?] [? if reformists_defect and communist_split and not violent_revolution: 당은 과거의 영광을 잃고 생존을 위해 몸부림치는 처지입니다. 남은 당원들은 당을 구원할 길을 필사적으로 모색하고 있으며, 일부는 이미 가라앉는 배를 떠났습니다. ?] [? if violent_revolution and not communist_split: 당은 코민테른의 이념 노선을 받아들여, 이탈리아를 새로운 사회주의 미래로 이끌 혁명적 전위 정당으로 거듭났습니다. ?] [? if violent_revolution and communist_split: 코민테른과는 다른 독자 노선을 채택한 당은 모스크바의 청사진을 따르기보다, 이탈리아 고유의 사회주의 공화국 모델을 수립하고자 합니다. ?]
 
-[? if pcdi_formed : **PCd'I** - *Partito Comunista d'Italia* (Communist Party of Italy) - A splinter party of the [+ psi_name +], formed after the left wing of the party and its leaders split. ?]
+[? if pcdi_formed : **이탈리아 공산당(PCd'I)** - *Partito Comunista d'Italia* - [+ psi_name +]에서 당의 좌익 세력이 지도부와 함께 탈당하여 창당한 분파 정당입니다. ?]
 
-[? if pcdi_formed : Current relations: [+ pcdi_relation : relationships +] ?]
+[? if pcdi_formed : 현재 관계: [+ pcdi_relation : relationships +] ?]
 
-[? if psu_formed : **PSU** - *Partito Socialista Unitario* (Unitary Socialist Party) - A splinter party of the [+ psi_name +], formed after the reformist wing of the party and its leaders split. ?]
+[? if psu_formed : **통합사회당(PSU)** - *Partito Socialista Unitario* - [+ psi_name +]에서 당의 개혁주의 세력이 지도부와 함께 탈당하여 창당한 분파 정당입니다. ?]
 
-[? if psu_formed : Current relations: [+ psu_relation : relationships +] ?]
+[? if psu_formed : 현재 관계: [+ psu_relation : relationships +] ?]
 
-[? if not psri_collapse : **PSRI** - *Partito Socialista Riformista Italiano* (Italian Reformist Socialist Party) - A splinter of reformists from the [+ psi_name +], the PSRI are a centre-left party, advocating for socialism through the parliamentary system. ?]
+[? if not psri_collapse : **이탈리아 개혁사회당(PSRI)** - *Partito Socialista Riformista Italiano* - [+ psi_name +]에서 분리된 개혁주의자들의 정당으로, 의회 제도를 통한 점진적 사회주의를 추구하는 중도좌파 정당입니다. ?]
 
-[? if not psri_collapse : Current relations: [+ psri_relation : relationships +] ?]
+[? if not psri_collapse : 현재 관계: [+ psri_relation : relationships +] ?]
 
-[? if pll_formed : **PLL** - *Partito Liberale dei Lavoratori* (Liberal Workers' Party) - A splinter of the left-wing of the [+ ds_name +]. The PLL are a left-wing liberal party under the leadership of Vincenzo Giuffrida, attempting to uphold the legacy of Giuseppe De Felice Giuffrida's *Fasci Siciliani*. ?]
+[? if pll_formed : **자유노동당(PLL)** - *Partito Liberale dei Lavoratori* - [+ ds_name +]의 좌파가 분리되어 창당한 정당입니다. 빈첸초 주프리다가 이끄는 좌파 자유주의 정당으로, 주세페 데 펠리체 주프리다가 주도했던 '시칠리아 파스키'(*Fasci Siciliani*)의 정신을 계승하고자 합니다. ?]
 
-[? if pll_formed : Current relations: [+ pll_relation : relationships +] ?]
+[? if pll_formed : 현재 관계: [+ pll_relation : relationships +] ?]
 
-[? if pri_prominent : **PRI** - *Partito Repubblicano Italiano* (Italian Republican Party) - A centre-left party formed in 1895, the party holds its roots in Republicanism and the ideals of men such as Giuseppe Mazzini and Giuseppe Garibaldi. ?]
+[? if pri_prominent : **이탈리아 공화당(PRI)** - *Partito Repubblicano Italiano* - 1895년에 창당된 중도좌파 정당으로, 당의 이념은 공화주의와 주세페 마치니, 주세페 가리발디와 같은 인물들의 사상에 깊이 뿌리내리고 있습니다. ?]
 
-[? if pri_prominent : Current relations: [+ pri_relation : relationships +] ?]
+[? if pri_prominent : 현재 관계: [+ pri_relation : relationships +] ?]
 
-**[+ ds_name +]** - *[+ ds_full_italian +]* ([+ ds_full_name +]) - [? if ds_party : A newly formed centre-left party under the merger ?][? if not ds_party : A newly formed electoral list consisting ?] of the Constitutional Democratic Party, the Democratic Party and the People's Democratic Party and others. Its electoral list is supported mainly by the the Southern regions of Italy.
+**[+ ds_name +]** - *[+ ds_full_italian +]* ([+ ds_full_name +]) - [? if ds_party : 헌법민주당, 민주당, 인민민주당 등이 합당하여 새롭게 창당된 중도좌파 정당입니다. ?][? if not ds_party : 헌법민주당, 민주당, 인민민주당 등이 참여하여 새롭게 결성된 선거 연합입니다. ?] 주로 이탈리아 남부 지역에서 폭넓은 지지를 받고 있습니다.
 
-Current relations: [+ ds_relation : relationships +]
+현재 관계: [+ ds_relation : relationships +]
 
-**PPI** - *Partito Popolare Italiano* (Italian People's Party) - A newly formed Christian Democratic party under the merger of UECI, FUCI, CC and the PPT. The party has its support rooted in the Clergy, Rural Workers and Middle Class.
+**이탈리아 인민당(PPI)** - *Partito Popolare Italiano* - UECI, FUCI, CC, PPT가 통합하여 창당된 신생 기독교 민주주의 정당입니다. 성직자, 농촌 노동자, 중산층을 핵심 지지 기반으로 삼고 있습니다.
 
-Current relations: [+ ppi_relation : relationships +]
+현재 관계: [+ ppi_relation : relationships +]
 
-**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - A recently formed [? if ldr_party : centre party ?][? if ldr_list : electoral list ?] under the merger of the Liberal Democratic Party, the Radical Liberal Party and others. They get their support mainly from the industrialists & Landowners under the leadership of Vittorio Emanuele Orlando, former Prime Minister.
+**[+ ldr_name +]** - *[+ ldr_full_italian +]* ([+ ldr_full_name +]) - 자유민주당, 급진자유당 등이 통합하여 최근 창당한 [? if ldr_party : 중도 정당입니다. ?][? if ldr_list : 선거 연합입니다. ?] 전직 총리인 비토리오 에마누엘레 오를란도의 지도 아래, 주로 산업 자본가와 지주들의 지지를 받습니다.
 
-Current relations: [+ ldr_relation : relationships +] 
+현재 관계: [+ ldr_relation : relationships +] 
 
-**[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - A centre-right party that remained as remnants of the party that refused to merge to form the [+ ldr_name +], led by Giovanni Giolitti.
+**[+ ul_name +]** - *[+ ul_full_italian +]* ([+ ul_full_name +]) - [+ ldr_name +] 창당을 위한 합당을 거부하고 남은 세력으로 구성된 중도우파 정당으로, 조반니 졸리티가 이끌고 있습니다.
 
-Current relations: [+ ul_relation : relationships +]
+현재 관계: [+ ul_relation : relationships +]
 
-[? if pcs_formed : **PCS** - *Partito Cristiano Sociale* (Christian Social Party) - A splinter of the right-wing of the [+ ds_name +]. The PCS are a right-wing liberal party under Gabriello Carnazza and adovcates for cooperation with the far-right against the left. ?]
+[? if pcs_formed : **기독교사회당(PCS)** - *Partito Cristiano Sociale* - [+ ds_name +]의 우익이 분리되어 창당한 우파 자유주의 정당입니다. 가브리엘로 카르나차의 지도 아래 있으며, 좌파에 맞서기 위한 극우 세력과의 협력을 주장합니다. ?]
 
-[? if not pnf_banned : **[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - A newly formed organisation, operating essentially as the political expression of [+ pnf_leader +]'s *Fasces of Combat*. ?]
+[? if not pnf_banned : **[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - 새롭게 결성된 조직으로, [+ pnf_leader +]가 이끄는 '전투 파스케스'(*Fasci di Combattimento*)의 정치적 대변인 역할을 수행합니다. ?]
 
-[? if not pnf_banned : Current relations: [+ pnf_relation : relationships +] ?]
+[? if not pnf_banned : 현재 관계: [+ pnf_relation : relationships +] ?]
 
-**Other parties** - There is a multitude of small parties, such as the Economic Party, the Italian Republican Party, Independent Socialists, and others. Their positions usually covers the political spectrum from the left to the right.
+**기타 정당** - 경제당, 이탈리아 공화당, 무소속 사회주의자 등 다수의 군소 정당이 활동하고 있으며, 이들은 좌파부터 우파까지 다양한 정치적 입장을 대변합니다.
 
 @paramilitaries
 on-arrival: {!
@@ -255,101 +255,101 @@ Q.abl_strength = Math.round(Q.abl_strength);
 !}
 go-to: menu
 
-**Paramilitary groups:**
+**준군사조직:**
 
-[? if not national_congress_seen : **Red Guards**: The Red Guards are a paramilitary group most associated with the [+ psi_name +], organising strikes, factory occupations as well as conflict with right-wing militias, most active in the Northern regions of Italy. ?]
+[? if not national_congress_seen : **적위대**: [+ psi_name +]와 가장 밀접한 관계를 맺고 있는 준군사조직입니다. 파업과 공장 점거를 주도하고 우익 민병대와 무력 충돌을 벌이며, 주로 이탈리아 북부에서 활동합니다. ?]
 
-[? if not national_congress_seen : Strength: [+ rg_strength +] thousand ?]
+[? if not national_congress_seen : 규모: 약 [+ rg_strength +]천 명 ?]
 
-[? if not national_congress_seen : Militarization: [+ rg_militancy : militancy +] ?]
+[? if not national_congress_seen : 무장 수준: [+ rg_militancy : militancy +] ?]
 
-[? if arditi_formed : **Arditi del Popolo**: The Arditi del Popolo are a broad anti-fascist group, formed to combat the Fasci. They are made up of anarchists, communists, socialists, republicans, syndicalists, and everything in between. ?]
+[? if arditi_formed : **인민의 결사대**: 파시즘에 저항하기 위해 결성된 광범위한 반파시스트 연합 조직입니다. 무정부주의자, 공산주의자, 사회주의자, 공화주의자, 생디칼리스트 등 다양한 이념적 배경을 가진 이들이 참여하고 있습니다. ?]
 
-[? if arditi_formed : Strength: [+ adp_strength +] thousand ?]
+[? if arditi_formed : 규모: 약 [+ adp_strength +]천 명 ?]
 
-[? if arditi_formed : Militarization: [+ adp_militancy : militancy +]?]
+[? if arditi_formed : 무장 수준: [+ adp_militancy : militancy +]?]
 
-[? if not national_congress_seen : **Fasci Italiani di Combattimento**: The Fasci are a paramilitary group headed by [+ pnf_leader +], and frequently come into conflict with the Red Guards. ?]
+[? if not national_congress_seen : **이탈리아 전투 파스케스**: [+ pnf_leader +]가 이끄는 준군사조직으로, 적위대와 빈번하게 충돌합니다. ?]
 
-[? if not national_congress_seen : Strength: [+ fdc_strength +] thousand ?]
+[? if not national_congress_seen : 규모: 약 [+ fdc_strength +]천 명 ?]
 
-[? if not national_congress_seen : Militarization: [+ fdc_militancy : militancy +] ?]
+[? if not national_congress_seen : 무장 수준: [+ fdc_militancy : militancy +] ?]
 
-[? if not national_congress_seen : **Arditismo**: The Arditismo are a paramilitary group allied with the Fasci, operating as an independent group frequently coming into conflict with the Red Guards as well. ?]
+[? if not national_congress_seen : **아르디티즈모**: 전투 파스케스와 연계된 준군사조직으로, 독자적으로 활동하며 적위대와 자주 무력 충돌을 일으킵니다. ?]
 
-[? if not national_congress_seen : Strength: [+ ard_strength +] thousand ?]
+[? if not national_congress_seen : 규모: 약 [+ ard_strength +]천 명 ?]
 
-[? if not national_congress_seen : Militarization: [+ ard_militancy : militancy +] ?]
+[? if not national_congress_seen : 무장 수준: [+ ard_militancy : militancy +] ?]
 
-[? if not national_congress_seen : **Anti-Bolshevik Leagues**: The Anti-Bolshevik Leagues are a group of local organisations opposed to socialism and created in direct response to the Biennio Rosso, funded primarily by landowners and industrialists. ?]
+[? if not national_congress_seen : **반볼셰비키 연맹**: 사회주의에 반대하며 '붉은 2년'에 대한 반작용으로 결성된 지역 단체들의 연합체입니다. 주로 지주와 산업 자본가들로부터 자금을 지원받습니다. ?]
 
-[? if not national_congress_seen : Strength: [+ abl_strength +] thousand ?]
+[? if not national_congress_seen : 규모: 약 [+ abl_strength +]천 명 ?]
 
-[? if not national_congress_seen : Militarization: [+ abl_militancy : militancy +] ?]
+[? if not national_congress_seen : 무장 수준: [+ abl_militancy : militancy +] ?]
 
-**Official military/paramilitary groups:**
+**정규 군사·치안 조직:**
 
-[? if not national_congress_seen : **Regio Esercito**: ?][? if national_congress_seen : **Esercito Italiano**: ?] [+ army_strength +] thousand troops. This is Italy's army, still mobilised after the First World War.
+[? if not national_congress_seen : **왕국 육군**: ?][? if national_congress_seen : **이탈리아 육군**: ?] 병력 [+ army_strength +]천 명. 이탈리아의 정규군으로, 제1차 세계 대전 이후에도 동원 체제를 유지하고 있습니다.
 
-Loyalty: [+ army_loyalty : loyalty +]
+충성도: [+ army_loyalty : loyalty +]
 
-**Carabinieri**: [+ interior_police_strength +] thousand members. This is the forces of the Interior Ministry.
+**카라비니에리**: 병력 [+ interior_police_strength +]천 명. 내무부 소속의 국가 헌병대입니다.
 
-Loyalty: [+ interior_police_loyalty : loyalty +]
+충성도: [+ interior_police_loyalty : loyalty +]
 
 
 
 @factions
 go-to: menu
 
-= Internal factions of the [+ psi_name +]
+= [+ psi_name +] 내부 파벌 현황
 
-The party is an amalgamation of the left-wing of the Italian political sphere, ranging from the Reformists on the right, to the Communists to the left, to the radicals espousing Anarchism, Syndicalism and everything in between. However, only a select few have enough sway in the party to matter.
+우리 당은 이탈리아 좌파 정치 지형의 축소판과 같습니다. 온건한 개혁주의파부터 급진적인 공산주의파, 그리고 무정부주의와 생디칼리즘을 신봉하는 강경파까지 다양한 이념이 공존하고 있습니다. 그러나 이들 중 당의 노선에 실질적인 영향력을 행사하는 것은 소수 파벌에 불과합니다.
 
-Overall dissent: [+ dissent_percent : dissent +]
+전체 불만도: [+ dissent_percent : dissent +]
 
-**Communists**
+**공산주의파**
 
-The Communists, known also as the Comunisti, are a faction that advocate for a more far-left stance against the Kingdom, favouring extraparliamentary action and the establishment of a communist state and alignment towards the Comintern, in contrast to the other factions.
+코무니스티라고도 불리는 좌파 파벌입니다. 다른 파벌들과 달리 왕정에 대해 더욱 강경한 입장을 취하며, 의회 외부에서의 투쟁, 공산주의 국가 수립, 그리고 코민테른과의 연대를 최우선 과제로 삼습니다.
 
-Strength: [+ communist_strength : strength +]
+세력: [+ communist_strength : strength +]
 
-Dissent: [+ communist_dissent : dissent +]
+불만도: [+ communist_dissent : dissent +]
 
-**Maximalists**
+**최대강령주의파**
 
-The Centre, also known as the Maximalists, are the majority faction, advocating for a revolutionary approach to socialism and the establishment of a socialist state. They currently control party leadership.
+중도파 또는 최대강령주의파로 불리는 당내 최대 파벌입니다. 사회주의를 향한 혁명적 접근과 사회주의 국가 건설을 목표로 하며, 현재 당 지도부를 장악하고 있습니다.
 
-Strength: [+ maximalist_strength : strength +]
+세력: [+ maximalist_strength : strength +]
 
-Dissent: [+ maximalist_dissent : dissent +]
+불만도: [+ maximalist_dissent : dissent +]
 
-**Labour**
+**노동파**
 
-Labour, more primarily the General Confederation of Labour, are a minority faction in the party, generally advocating for further workers' control and the strengthening of unions.
+주로 노동 총동맹을 중심으로 한 소수 파벌입니다. 노동자의 경영 참여 확대와 노동조합의 권익 강화를 핵심 강령으로 삼고 있습니다.
 
-Strength: [+ labour_strength : strength +]
+세력: [+ labour_strength : strength +]
 
-Dissent: [+ labour_dissent : dissent +]
+불만도: [+ labour_dissent : dissent +]
 
-[? if syndicalist_active : **Syndicalists** ?]
+[? if syndicalist_active : **생디칼리스트파** ?]
 
-[? if syndicalist_active : The Syndicalists are a minority faction within the party, splintering from Labour to advocate for strikes and workers' councils. ?]
+[? if syndicalist_active : 노동파에서 분리되어 파업과 노동자 평의회 설립을 주장하는 소수 강경파입니다. ?]
 
-[? if syndicalist_active : Strength: [+ syndicalist_strength : strength +] ?]
+[? if syndicalist_active : 세력: [+ syndicalist_strength : strength +] ?]
 
-[? if syndicalist_active : Dissent: [+ syndicalist_dissent : dissent +] ?]
+[? if syndicalist_active : 불만도: [+ syndicalist_dissent : dissent +] ?]
 
-**Reformists**
+**개혁주의파**
 
-The Reformists. also known as the Riformisti, are a minority faction in the party, weakened by the split to the PSRI and favouring the establishment of socialism through parliamentary means unlike the other factions. 
+리포르미스티라고도 불리는 우파 파벌입니다. 과거 이탈리아 개혁사회당(PSRI)의 분당 사태로 세력이 약화되었으며, 다른 파벌들과는 달리 의회 제도를 통한 점진적인 사회주의 실현을 추구합니다.
 
-Strength: [+ reformist_strength : strength +]
+세력: [+ reformist_strength : strength +]
 
-Dissent: [+ reformist_dissent : dissent +]
+내분: [+ reformist_dissent : dissent +]
 
 @figures
-title: Figures and Charts
+title: 현황 및 도표
 go-to: menu
 view-if: not violent_revolution
 on-display: {!
@@ -525,57 +525,57 @@ data.push({
     }
 !}
 
-= Chamber of Deputies composition
+= 하원 의석 분포
 
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div></td><td>!} **[+ psi_name +]:** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} PCd'I: {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} 이탈리아 공산당 (PCd'I): {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} PSU: {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} 통합사회당 (PSU): {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not psri_collapse : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td><td>!} PSRI: {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
+[? if not psri_collapse : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td><td>!} 이탈리아 개혁사회당 (PSRI): {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pll_formed : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div></td><td>!} PLL: {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
+[? if pll_formed : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div></td><td>!} 자유노동당 (PLL): {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div></td> <td>!} PRI: {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
+[? if pri_prominent : {!<tr><td><div class="box" style='background-color:#3CB371'> </div></td> <td>!} 이탈리아 공화당 (PRI): {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#1E99C5'> </div></td><td>!} [+ ds_name +]: {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#87CEFA'> </div></td><td>!} PPI: {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#87CEFA'> </div></td><td>!} 이탈리아 인민당 (PPI): {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#DCCA4A'> </div></td><td>!} [+ ldr_name +]: {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#00008B'> </div></td><td>!} [+ ul_name +]: {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!}
 
-[? if pcs_formed : {!<tr><td><div class="box" style='background-color:#656573'> </div></td><td>!} PCS: {!</td><td>!} [+ pcs_seating_disp +]% {!</td></tr>!} ?]
+[? if pcs_formed : {!<tr><td><div class="box" style='background-color:#656573'> </div></td><td>!} 기독교사회당 (PCS): {!</td><td>!} [+ pcs_seating_disp +]% {!</td></tr>!} ?]
 
 [? if pnf_banned != 1 : {!<tr><td><div class="box" style='background-color:#000000'> </div></td><td>!} [+ pnf_name +]: {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_seating_disp +] % {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} 기타 정당: {!</td><td>!} [+ other_seating_disp +] % {!</td></tr>!}
 {!</table>!}
 
-= Election history
+= 역대 선거 결과
 
-[? if year = 1919 and month < 11 : No new elections yet. ?]
+[? if year = 1919 and month < 11 : 아직 선거가 치러지지 않았습니다. ?]
 
 {!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
 
-= Party support history
+= 정당 지지율 변동 추이
 
-[? if historical_mode: Not available in historical mode. ?]
+[? if historical_mode: 역사적 모드에서는 제공되지 않습니다. ?]
 
 {!<svg id="party_support_history" style="width: 500px; height: 400px;"> </svg>!}
 
-= Economic history
+= 경제 지표 변동 추이
 
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
-# TODO: maybe add textual histories too? some accessibility stuff as well...
+# TODO: 텍스트 기반의 역사 기록과 접근성 개선 기능 추가 고려.
 
 @figures_rev
-title: Figures and Charts
+title: 현황 및 도표
 go-to: menu
 view-if: violent_revolution
 on-display: {!
@@ -706,48 +706,48 @@ if (Q.benevolence) {
     }
 !}
 
-= Supreme Soviet composition
+= 최고 소비에트 의석 분포
 
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td>!} **[+ psi_full_name +]** {!</td><td>!} **[+ psi_r +]%** {!</td></tr>!} 
 
-{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} Communists: {!</td><td>!} [+ communist_r +]% {!</td></tr>!} 
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} 공산주의파: {!</td><td>!} [+ communist_r +]% {!</td></tr>!} 
 
-{!<tr><td><div class="box" style='background-color:#DC143C; outline: 2px; outline-style: solid;'> </div>!} Maximalists: {!</td><td>!} [+ maximalist_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DC143C; outline: 2px; outline-style: solid;'> </div>!} 최대강령주의파: {!</td><td>!} [+ maximalist_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#B22222; outline: 2px; outline-style: solid;'> </div>!} Labour: {!</td><td>!} [+ labour_r +]% {!</td></tr>!} 
+{!<tr><td><div class="box" style='background-color:#B22222; outline: 2px; outline-style: solid;'> </div>!} 노동파: {!</td><td>!} [+ labour_r +]% {!</td></tr>!} 
 
-[? if syndicalist_active : {!<tr><td><div class="box" style='background-color:#2F2F2F; outline: 2px; outline-style: solid;'> </div>!} Syndicalists: {!</td></tr>!} ?]
+[? if syndicalist_active : {!<tr><td><div class="box" style='background-color:#2F2F2F; outline: 2px; outline-style: solid;'> </div>!} 생디칼리스트파: {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FF6961; outline: 2px; outline-style: solid;'> </div>!} Reformists: {!</td><td>!} [+ reformist_r +]% {!</td></tr>!} 
+{!<tr><td><div class="box" style='background-color:#FF6961; outline: 2px; outline-style: solid;'> </div>!} 개혁주의파: {!</td><td>!} [+ reformist_r +]% {!</td></tr>!} 
 
-[? if (opposition or benevolence) : {!<tr><td>!} **Constitutional Opposition** {!</td><td>!} **[+ opposition_r +]%** {!</td></tr>!} ?]
+[? if (opposition or benevolence) : {!<tr><td>!} **체제 수호 야당** {!</td><td>!} **[+ opposition_r +]%** {!</td></tr>!} ?]
 
-[? if (opposition or benevolence) and pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35; outline: 2px; outline-style: solid;'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
+[? if (opposition or benevolence) and pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 공산당 (PCd'I): {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
 
-[? if (opposition or benevolence) and psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A; outline: 2px; outline-style: solid;'> </div>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
+[? if (opposition or benevolence) and psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A; outline: 2px; outline-style: solid;'> </div>!} 통합사회당 (PSU): {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
 
-[? if opposition or benevolence :  {!<tr><td><div class="box" style='background-color:#FFC0CB; outline: 2px; outline-style: solid;'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td></tr>!} ?]
+[? if opposition or benevolence :  {!<tr><td><div class="box" style='background-color:#FFC0CB; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 개혁사회당 (PSRI): {!</td><td>!} [+ psri_r +]% {!</td></tr>!} ?]
 
-[? if benevolence : {!<tr><td><div class="box" style='background-color:#3CB371; outline: 2px; outline-style: solid;'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td></tr>!} ?]
+[? if benevolence : {!<tr><td><div class="box" style='background-color:#3CB371; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 공화당 (PRI): {!</td><td>!} [+ pri_r +]% {!</td></tr>!} ?]
 
 {!</table>!}
 
-= Election history
+= 역대 선거 결과
 
-[? if year = 1919 and month < 11 : No new elections yet. ?]
+[? if year = 1919 and month < 11 : 아직 선거가 치러지지 않았습니다. ?]
 
 {!<svg id="election_history" style="width: 500px; height: 400px;"> </svg>!}
 
-= Party support history
+= 정당 지지율 변동 추이
 
-[? if historical_mode: Not available in historical mode. ?]
+[? if historical_mode: 역사적 모드에서는 제공되지 않습니다. ?]
 
 {!<svg id="party_support_history" style="width: 500px; height: 400px;"> </svg>!}
 
-= Economic history
+= 경제 지표 변동 추이
 
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
-# TODO: maybe add textual histories too? some accessibility stuff as well...
+# TODO: 텍스트 기반의 역사 기록과 접근성 개선 기능 추가 고려.
