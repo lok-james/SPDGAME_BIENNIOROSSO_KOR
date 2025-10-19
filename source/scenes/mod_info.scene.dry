@@ -1,9 +1,9 @@
-title: Mod Info
+title: 모드 정보
 go-to: mod_info_menu
 
-This is an overhaul mod for the game Social Democracy: An Alternate History. The mod takes place in 1919, where you play as the Partito Socialista Italiano in the Kingdom of Italy.
+이 모드는 <사회민주주의: 대안 역사> 게임의 전면 개편 모드입니다. 1919년 이탈리아 왕국을 배경으로, 플레이어는 이탈리아 사회당을 이끌게 됩니다.
 
-Thanks for taking the time to check out the mod.
+모드를 플레이해주셔서 진심으로 감사합니다.
 
 Special thanks to: 
 
@@ -15,33 +15,35 @@ Vuk for playtesting & feedback,
 
 and notmitsukiyolol for writing some of the events in the mod.
 
+한국어 변역: 카를 카우츠키 갤러리 한패위원회
+
 @mod_info_menu
 
-- @ideas_and_feedback: Ideas & Feedback
-- @update_log: Update Log
-- @future_plans: Future Plans
-- @root: Back
+- @ideas_and_feedback: 아이디어 및 피드백
+- @update_log: 업데이트 내역
+- @future_plans: 향후 계획
+- @root: 돌아가기
 
 @ideas_and_feedback
 
-If you have any ideas, feedback or bug reports (even the tiniest spelling error), please don't hesitate to contact me on Discord under 'AwesDes' or on Reddit under 'u/Alternative-Dig-944'.
+새로운 아이디어나 피드백, 또는 버그 제보(사소한 오탈자라도 좋습니다)가 있다면 망설이지 말고 디스코드 'AwesDes' 또는 레딧 'u/Alternative-Dig-944'로 연락 주세요.
 
-- @mod_info_menu: Back
+- @mod_info_menu: 돌아가기
 
 @update_log
 
-25/01/2025 - v0.0.1: Initial Mod Concept & Mockup
+2025/01/25 - v0.0.1: 모드 초기 컨셉 및 구상
 
-23/02/2025 - v0.2.0: Initial Playtesting Release
+2025/02/23 - v0.2.0: 초기 플레이 테스트 버전 공개
 
-22/03/2025 - v0.4.0: Discord Playtesting Release
+2025/03/22 - v0.4.0: 디스코드 플레이 테스트 버전 공개
 
-19/04/2025 - v0.6.0: Full Mod Release & Post-Revolutionary Content
+2025/04/19 - v0.6.0: 모드 정식 출시 및 혁명 이후 콘텐츠 추가
 
-- @mod_info_menu: Back
+- @mod_info_menu: 돌아가기
 
 @future_plans
 
 :3
 
-- @mod_info_menu: Back
+- @mod_info_menu: 돌아가기

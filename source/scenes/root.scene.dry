@@ -6,14 +6,14 @@ go-to: post_event if started = 1; start_menu if started = 0
 new-page: true
 go-to: start_menu_2
 
-= Biennio Rosso: An Alternate History
+= 비엔뇨 로쏘: 대체 역사
 
 @start_menu_2
 
-- @start: Start game
-- @mod_info: Mod Info & Settings
-- @credits: Credits
-- @achievements: Achievements
+- @start: 게임 시작
+- @mod_info: 모드 정보 및 설정
+- @credits: 제작진 및 도움 주신 분들
+- @achievements: 도전 과제
 
 @achievements
 go-to: game_over.achievements
@@ -96,40 +96,40 @@ Q.psu_relation = 10;
 // PNF relations are invariably hostile
 Q.pnf_relation = 0;
 
-Q.ul_leader = "Giolitti";
-Q.ldr_leader = "Orlando";
-Q.ds_leader = "Colonna";
-Q.ppi_leader = "Sturzo";
-Q.psri_leader = "Ciotti";
-Q.pnf_leader = "Mussolini";
-Q.pri_leader = "Chisea";
-Q.psu_leader = "Turati";
-Q.pcdi_leader = "Bordiga";
-Q.pll_leader = "Giuffrida";
-Q.pcs_leader = "Carnazza";
+Q.ul_leader = "지올리티";
+Q.ldr_leader = "올란도";
+Q.ds_leader = "콜로나";
+Q.ppi_leader = "스트루초";
+Q.psri_leader = "치오티";
+Q.pnf_leader = "무솔리니";
+Q.pri_leader = "키세아";
+Q.psu_leader = "투라티";
+Q.pcdi_leader = "보르디가";
+Q.pll_leader = "주프리다";
+Q.pcs_leader = "카르나차";
 
-Q.soviet_leader = "Lenin";
+Q.soviet_leader = "레닌";
 Q.soviet_germany = 0;
 
 Q.ldr_name = "LDR";
-Q.ldr_full_name = "Liberals, Democrats and Radicals";
-Q.ldr_full_italian = "Liberali, democratici e radicali";
+Q.ldr_full_name = "자유민주급진당";
+Q.ldr_full_italian = "자유당, 민주당, 급진당";
 
 Q.ul_name = "UL";
-Q.ul_full_name = "Liberal Union";
-Q.ul_full_italian = "Liberale Unione";
+Q.ul_full_name = "자유 연합";
+Q.ul_full_italian = "연합 자유당";
 
 Q.ds_name = "DS";
-Q.ds_full_name = "Social Democracy";
-Q.ds_full_italian = "Democrazia Sociale";
+Q.ds_full_name = "사회민주주의";
+Q.ds_full_italian = "사회민주주의";
 
 Q.pnf_name = "FdC";
-Q.pnf_full_name = "Italian Fasces of Combat";
-Q.pnf_full_italian = "Fasci Italiani di Combattimento";
+Q.pnf_full_name = "이탈리아 전투 파시";
+Q.pnf_full_italian = "이탈리아 전투 파시";
 
 Q.psi_name = "PSI";
-Q.psi_full_name = "Italian Socialist Party";
-Q.psi_full_italian = "Partito Socialista Italiano";
+Q.psi_full_name = "이탈리아 사회당";
+Q.psi_full_italian = "이탈리아 사회당";
 
 Q.pri_prominent = 0;
 Q.psri_stable = 1;
@@ -416,9 +416,9 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.king = "Vittorio Emanuele III";
+Q.king = "비토리오 에마누엘레 3세";
 // starting prime minister: Vittorio Emanuele Orlando
-Q.prime_minister = "Orlando";
+Q.prime_minister = "오를란도";
 Q.prime_minister_party = Q.ldr_name;
 Q.pcdi_in_government = 0;
 Q.psi_in_government = 0;
@@ -450,23 +450,23 @@ Q.coalition_dissent = 0;
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
-Q.foreign_minister = 'Sonnino';
+Q.foreign_minister = '손니노';
 Q.foreign_minister_party = Q.ul_name;
-Q.interior_minister = 'Orlando';
+Q.interior_minister = '오를란도';
 Q.interior_minister_party = Q.ldr_name;
-Q.justice_minister = 'Sacchi';
+Q.justice_minister = '사키';
 Q.justice_minister_party = 'DS';
-Q.labour_minister = 'Ferraris';
+Q.labour_minister = '페라리스';
 Q.labour_minister_party = Q.ul_name;
-Q.public_works_minister = 'Dari';
+Q.public_works_minister = '다리';
 Q.public_works_minister_party = Q.ul_name;
-Q.treasury_minister = 'Nitti';
+Q.treasury_minister = '니티';
 Q.treasury_minister_party = 'DS';
-Q.finance_minister = 'Meda';
+Q.finance_minister = '메다';
 Q.finance_minister_party = 'PPI';
-Q.agriculture_minister = 'Miliani';
+Q.agriculture_minister = '밀리아니';
 Q.agriculture_minister_party = Q.ldr_name;
-Q.public_education_minister = 'Berenini';
+Q.public_education_minister = '베레니니';
 Q.public_education_minister_party = 'PSRI';
 
 // have we reformed these institutions to be more democratic?
@@ -529,7 +529,7 @@ Q.entente_relation = 5;
 Q.american_relation = 4;
 Q.balkan_relation = 3;
 Q.papal_relation = 3;
-Q.pope = "Della Chiesa";
+Q.pope = "델라 키에사";
 Q.rcw_over = 0;
 Q.roman_question_answered = 0;
 Q.soviet_aid_given = 0;
@@ -768,26 +768,26 @@ Q.picelli_advisor = 0; // Guido Picelli
 !}
 new-page: true
 
-> *"Irresponsible groups of armed men, no longer bound by any State discipline or controlled by any responsible central authority, who are striving to establish local Praetorian powers and possibly a national military dictatorship; coalitions of pseudo-political forces, who have no vital and long-term interests to defend or aims to propagate, but only their own individual and contingent interests and goals … This is the hour of the charlatans, of the confidence tricksters, of the grand promises that will never be fulfilled."*
+> *"책임 있는 중앙 권력의 통제를 받지도, 국가의 규율에 얽매이지도 않는 무장 단체들이 지역의 사병 집단을 만들고... 나아가 국가적 군사 독재를 세우려 하고 있습니다. 장기적인 이념이나 대의가 아닌, 오직 눈앞의 사리사욕만을 좇는 사이비 정치 세력이 판을 치고 있습니다... 지금이야말로 허풍선이와 사기꾼들의 시대이며, 결코 지켜지지 않을 공허한 약속이 난무하는 시대입니다."*
 
- - Antonio Gramsci, *The Return to Freedom*, 1919
+ - 안토니오 그람시, *자유를 향한 회귀*, 1919년
 
-This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
+이 게임은 대체 역사를 다루고 있습니다. 역사적 사실을 충실히 반영하려 노력했지만, 이는 어디까지나 *게임*이며 실제 역사와 다른 전개는 약간의 상상력을 가미할 수밖에 없음을 기억해주십시오. 그럼에도 불구하고 명백한 역사적 오류를 발견하신다면 언제든 제작자에게 알려주시기 바랍니다.
 
-For more information on the politics and of the Italian Kingdom, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information.
+이탈리아 왕국의 정치 상황에 대한 자세한 정보는 화면 좌측 상단의 "자료실"에서 확인하실 수 있습니다. 게임을 처음 접하신다면, 해당 내용을 꼭 한 번 읽어보시길 강력히 권장합니다.
 
-This is an **overhaul** mod for Autumn Chen's *Social Democracy: An Alternate History* mod, that you should check out <a href="https://red-autumn.itch.io/social-democracy" style="color: #900;">**here**</a> if you have not done so already.
+이 모드는 Autumn Chen 님이 제작한 *사회민주주의: 대안 역사*의 **전면 개편** 모드입니다. 원작을 아직 플레이해보지 않으셨다면, <a href="https://red-autumn.itch.io/social-democracy" style="color: #900;">**이곳**</a>에서 꼭 확인해보세요.
 
-**If you are playing this mod via the Mod Loader in base game, there will be various items missing (Election Colours, Card Images, Status Bar, etc.). For the intended experience, please play using <a href="https://awesdes.github.io/biennio_rosso_alternate_history/" style="color: #66b2b2">this</a> link.**
+**기존 게임의 모드 로더로 이 모드를 실행할 경우, 선거 결과 색상, 카드 이미지, 상태 표시줄 등 일부 요소가 정상적으로 표시되지 않을 수 있습니다. 온전한 게임 환경을 원하신다면 <a href="https://awesdes.github.io/biennio_rosso_alternate_history/" style="color: #66b2b2">이곳</a> 링크를 통해 플레이해주십시오.**
 
-- @1919_mod: Begin (Biennio Rosso difficulty)
-- @1919_easy: Begin (Easy difficulty)
-- @1919_main: Begin (Normal difficulty)
-- @1919_hard: Begin (Hard difficulty)
-- @1919_historical: Begin (Historical mode)
+- @1919_mod: 시작 (비엔뇨 로쏘 난이도: 개발자 추천)
+- @1919_easy: 시작 (쉬움 난이도)
+- @1919_main: 시작 (보통 난이도)
+- @1919_hard: 시작 (어려움 난이도)
+- @1919_historical: 시작 (역사적 모드)
 
 @1919_mod
-subtitle: The difficulty of a normal game with the mechanics of an easy one; The intended way to play the game.
+subtitle: 보통 난이도의 깊이와 쉬움 난이도의 편의성을 결합한, 개발자가 의도한 플레이 방식입니다.
 on-arrival: difficulty = -1; 
 go-to: 1919_main
 
@@ -800,7 +800,7 @@ on-arrival: difficulty = 1; resources = 0; dues = 1; rg_strength = 75; reformist
 go-to: 1919_main
 
 @1919_historical
-subtitle: Saving, loading, and polls will be disabled. [? if not achievement_game_completed: Not recommended for a first playthrough. ?]
+subtitle: 저장, 불러오기, 여론조사 기능이 비활성화됩니다. [? if not achievement_game_completed: 첫 플레이에는 권장하지 않습니다. ?]
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
@@ -825,10 +825,10 @@ audio: shuffle music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 
-= 1919
+= 1919년
 
-It is a dark time for Italian Kingdom. After the first world war, the economy is in crisis, with inflation uncontrollable and unemployment widespread. Our internal situation isn't much better, as nationalist and socialist paramilitaries engage in effectively open warfare against each other whilst government inaction is criticised.
+이탈리아 왕국에 암운이 드리웠습니다. 제1차 세계 대전의 여파로 경제는 파탄 지경에 이르렀고, 천정부지로 치솟는 물가와 만연한 실업으로 민생은 도탄에 빠졌습니다. 국내 상황도 별반 다르지 않아, 민족주의 세력과 사회주의 세력의 준군사조직이 공공연히 무력 충돌을 벌이는 동안 정부는 속수무책으로 비판만 받고 있습니다.
 
-Now, your task is to prepare for the next election. The bourgeois-right government is unpopular, and with the new voting laws passed, we stand to gain. Perhaps the next government will have a socialist majority.
+이제 여러분의 과제는 다가오는 총선을 준비하는 것입니다. 현 부르주아 우파 정부는 민심을 잃었고, 새로 통과된 선거법은 우리에게 유리합니다. 어쩌면 다음 정권은 사회주의자들이 주도하게 될지도 모릅니다.
 
 

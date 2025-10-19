@@ -65,7 +65,7 @@ max-cards: 3
 
 [? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : 러시아 소비에트 연방 사회주의 공화국이 바르샤바 공략에 실패하자 폴란드 공화국에 강화를 요청했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : 바르샤바가 진격하는 소비에트군에 함락되자 폴란드 공화국이 러시아 소비에트 연방 사회주의 공화국에 강화를 요청했습니다. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : 바르샤바가 소비에트군의 진격에 의해 함락되자 폴란드 공화국이 러시아 소비에트 연방 사회주의 공화국에 강화를 요청했습니다. ?]
 
 [? if year = 1920 and month = 11 and week = 1: 1920년 미국 대통령 선거에서 워런 G. 하딩이 민주당의 제임스 M. 콕스와 사회당의 유진 V. 뎁스를 꺾고 당선되었습니다. ?]
 
@@ -239,7 +239,7 @@ max-cards: 4
 
 [? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : 러시아 소비에트 연방 사회주의 공화국이 바르샤바 공략에 실패하자 폴란드 공화국에 강화를 요청했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : 바르샤바가 진격하는 소비에트군에 함락되자 폴란드 공화국이 러시아 소비에트 연방 사회주의 공화국에 강화를 요청했습니다. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : 바르샤바가 소비에트군의 진격에 의해 함락되자 폴란드 공화국이 러시아 소비에트 연방 사회주의 공화국에 강화를 요청했습니다. ?]
 
 [? if year = 1920 and month = 11 and week = 1: 1920년 미국 대통령 선거에서 워런 G. 하딩이 민주당의 제임스 M. 콕스와 사회당의 유진 V. 뎁스를 꺾고 당선되었습니다. ?]
 
