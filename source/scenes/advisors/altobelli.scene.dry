@@ -34,6 +34,6 @@ go-to: party_disunity
 title: 농업 정책
 subtitle: 농업부를 장악했으므로, 우리의 농촌 지지자들에게 도움이 될 정책을 시행할 수 있습니다.
 choose-if: advisor_action_timer <= 0 and psi_in_government and agriculture_minister_party == psi_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : + psi_name +가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not agriculture_minister_party == psi_name : + psi_name +가 농업부를 장악하지 않았습니다. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not agriculture_minister_party == psi_name : [+ psi_name +]가 농업부를 장악하지 않았습니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: agricultural_policy

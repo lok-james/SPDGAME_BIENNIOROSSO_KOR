@@ -1,40 +1,40 @@
-title: Giacomo Matteotti
+title: 자코모 마테오티
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/GiacomoMatteotti.jpg
 view-if: matteotti_advisor = 1
 new-page: true 
 
-= Giacomo Matteotti
+= 자코모 마테오티
 
-Matteotti is a long-time deputy of the [+ psi_name +] in the Chamber of Deputies, as well as a member of the reformist faction under Turati.
+마테오티는 하원에서 오랫동안 활동해 온 [+ psi_name +] 소속 의원이며, 투라티가 이끄는 개혁파의 핵심 인물입니다.
 
-- @constitutional_reform_matteotti
-- @foreign_policy_matteotti
-- @fasci_urgency_matteotti
-- @root: Return to main
+- @constitutional_reform_matteotti: 헌법 개정
+- @foreign_policy_matteotti: 외교 정책
+- @fasci_urgency_matteotti: 파시스트 위협 경고
+- @root: 주 메뉴로 돌아가기
 
 @constitutional_reform_matteotti
-title: Constitutional Reform
-subtitle: Having gathered enough support in the Chamber, it is time to reform the Italian Constitution into one more suited to our likeness.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not psi_in_government : The [+ psi_name +] is not in government. ?] [? if psi_in_government and coalition_dissent > 3 : Coalition dissent is too high for us to even suggest reforming the Constitution. ?]
+title: 헌법 개정
+subtitle: 하원에서 충분한 지지를 확보했으니, 이제 우리의 비전에 부합하도록 이탈리아 헌법을 개정할 때입니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?] [? if not psi_in_government : [+ psi_name +]은(는) 현재 정부에 속해 있지 않습니다 ?] [? if psi_in_government and coalition_dissent > 3 : 연정 내 갈등이 심각하여 헌법 개정 제안조차 어렵습니다. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government
 view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; constitutional_reform_timer -= 9; last_advisor_action = 1
 go-to: constitutional_reform
 
 @foreign_policy_matteotti
-title: Foreign Policy
-subtitle: Having control of the Foreign Ministry, we can alter Italy's relations with the world.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not currently in government. ?][? if not foreign_minister_party == psi_name : The [+ psi_name +] does not control the Foreign Ministry. ?]
+title: 외교 정책
+subtitle: 외무부를 장악했으므로, 이탈리아의 국제 관계를 재정립할 수 있습니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : The [+ psi_name +]은(는) 현재 정부에 속해 있지 않습니다  ?][? if not foreign_minister_party == psi_name : [+ psi_name +]가 외무부를 장악하지 않았습니다. ?]
 choose-if: psi_in_government and foreign_minister_party == psi_name and advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 5; last_advisor_action = 1;
 go-to: foreign_policy
 
 @fasci_urgency_matteotti
-title: Fasci Urgency
-subtitle: We should warn the party about the growing [+ pnf_name +].
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 파시스트 위협 경고
+subtitle: 점증하는 [+ pnf_name +]의 위협을 당에 알려야 합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 choose-if: advisor_action_timer == 0
 view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;

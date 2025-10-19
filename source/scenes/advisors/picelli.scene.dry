@@ -1,42 +1,42 @@
-title: Guido Picelli
+title: 귀도 피첼리
 is-pinned-card: true
 tags: advisor, nonfactional
 card-image: img/portraits/GuidoPicelli.jpg
 view-if: picelli_advisor = 1
 new-page: true 
 
-= Guido Picelli
+= 귀도 피첼리
 
-Picelli is a founding member of the Red Guards and a fierce anti-fascist. He is not affiliated with any factions of the [+ psi_name +].
+피첼리는 적위대의 창립 멤버이자 불굴의 반파시스트 투사입니다. 그는 [+ psi_name +]의 어떤 파벌에도 속해 있지 않습니다.
 
-- @fasci_urgency_picelli
-- @red_guards_picelli
-- @arditi_picelli
-- @root: Return to main
+- @fasci_urgency_picelli: 파시스트 위협 경고
+- @red_guards_picelli: 적위대 지원
+- @arditi_picelli: 인민의 결사대 활용
+- @root: 주 메뉴로 돌아가기
 
 @fasci_urgency_picelli
-title: Fasci Urgency
-subtitle: We should warn the party about the growing [+ pnf_name +].
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+title: 파시스트 위협 경고
+subtitle: 점증하는 [+ pnf_name +]의 위협을 당에 알려야 합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 choose-if: advisor_action_timer == 0
 view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: urgency
 
 @red_guards_picelli
-title: Red Guards
-subtitle: We can fund our paramilitary.
+title: 적위대
+subtitle: 우리의 준군사조직에 자금을 지원할 수 있습니다.
 choose-if: advisor_action_timer = 0
 view-if: not national_congress_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: red_guards
 
 @arditi_picelli
-title: Arditi del Popolo
-subtitle: We can utilise the Arditi del Popolo.
+title: 인민의 결사대
+subtitle: 인민의 결사대를 활용할 수 있습니다.
 choose-if: advisor_action_timer = 0
 view-if: arditi_cooperation and arditi_formed
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: arditi
