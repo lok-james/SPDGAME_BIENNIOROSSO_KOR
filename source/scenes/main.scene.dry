@@ -1,169 +1,169 @@
-title: Next month
+title: 다음 달 진행
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = '고문 - 행동 가능';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
+    Q.pinnedCardsDescription = '고문 - 다음 행동까지 2주 남음';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = '고문 - 다음 행동까지 ' + Q.advisor_action_timer + '개월 남음';
 }
 !}
 max-cards: 3
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
+#이곳에 메인 덱이 표시됩니다. 덱을 클릭해 카드를 뽑고, 카드를 클릭해 사용하세요.
 
-[? if year = 1919 and month = 1 and week = 3: The *Spartacist Uprising* in Berlin has fallen, suppressed forcefully by the government and *Freikorps*. It's leaders are slaughtered under command of Friedrich Ebert and Gustav Noske. The League of Nations is founded. ?]
+[? if year = 1919 and month = 1 and week = 3: 베를린에서 벌어진 *스파르타쿠스단 봉기*가 정부와 *자유군단*의 무력 진압으로 실패했습니다. 봉기 지도자들은 프리드리히 에베르트와 구스타프 노스케의 명령에 따라 처형되었습니다. 국제 연맹이 창설되었습니다. ?]
 
-[? if year = 1919 and month = 2 and week = 1: Friedrich Erbert is elected as the First President of Germany. The Weimar Republic is founded. ?]
+[? if year = 1919 and month = 2 and week = 1: 프리드리히 에베르트가 독일의 초대 대통령으로 선출되고, 바이마르 공화국이 공식 수립되었습니다. ?]
 
-[? if year = 1919 and month = 2 and week = 3: The Republic of Poland invades the Russian SFSR and begins the *Soviet-Polish War*. ?]
+[? if year = 1919 and month = 2 and week = 3: 폴란드 제2공화국이 러시아 소비에트 연방 사회주의 공화국을 침공하여 *소비에트-폴란드 전쟁*이 발발했습니다. ?]
 
-[? if year = 1919 and month = 3 and week = 1: The Communist International is founded. ?]
+[? if year = 1919 and month = 3 and week = 1: 공산주의 인터내셔널(코민테른)이 창설되었습니다. ?]
 
-[? if year = 1919 and month = 4 and week = 1: The Bavarian Soviet Republic is established. ?]
+[? if year = 1919 and month = 4 and week = 1: 바이에른 소비에트 공화국이 수립되었습니다. ?]
 
-[? if year = 1919 and month = 5 and week = 1: Weimar Republic forces, alongside the Freikorps occupy Munich and dissolve the Bavarian Soviet Republic. ?]
+[? if year = 1919 and month = 5 and week = 1: 바이마르 공화국군이 자유군단과 함께 뮌헨을 점령하고 바이에른 평의회 공화국을 해체시켰습니다. ?]
 
-[? if year = 1919 and month = 5 and week = 3: Mustafa Kemal Pasha lands at Samsun on the Black Sea coast, refusing to surrender to Entente forces. ?]
+[? if year = 1919 and month = 5 and week = 3: 무스타파 케말 파샤가 흑해 연안의 삼순에 상륙하여, 연합국에 대한 항복을 거부했습니다. ?]
 
-[? if year = 1919 and month = 6 and week = 1: The *Treaty of Versailles* is signed, ending the state of war between the Weimar Republic and the Entente. ?]
+[? if year = 1919 and month = 6 and week = 1: 바이마르 공화국과 연합국 간의 전쟁 상태를 공식적으로 종식하는 *베르사유 조약*이 체결되었습니다. ?]
 
-[? if year = 1919 and month = 8 and week = 1 and supported_hungary < 2 : The Hungarian Soviet Republic collapses after Romanian intervention, leading to a power vacuum. ?]
+[? if year = 1919 and month = 8 and week = 1 and supported_hungary < 2 : 헝가리 평의회 공화국이 루마니아의 개입으로 붕괴하며 권력 공백 상태에 빠졌습니다. ?]
 
-[? if year = 1919 and month = 8 and week = 1 and supported_hungary >= 2 : Soviet Hungarian forces are barely able to repel Romanian troops during the Battle of *Tisza River*, resulting in the signing of a ceasefire between the two nations. ?]
+[? if year = 1919 and month = 8 and week = 1 and supported_hungary >= 2 : 소비에트 헝가리군이 *티서 강 전투*에서 루마니아군을 힘겹게 격퇴하고, 양국 간의 휴전 협정이 체결되었습니다. ?]
 
-[? if year = 1919 and month = 9 and week = 1: The *Treaty of Saint-Germain-en-Laye* is signed, ceding Austrian Littoral, South Tyrol alongside various Dalmatian islands to Italy. The remainder goes to the newly established Kingdom of Serbs, Croats and Slovenes, in violation of the 1915 *Treaty of London*. ?]
+[? if year = 1919 and month = 9 and week = 1: 오스트리아 연안 지대, 남티롤, 다수의 달마티아 제도를 이탈리아에 할양하는 *생제르맹 조약*이 체결되었습니다. 나머지 영토는 1915년 *런던 조약*을 위반하고 신생 국가인 세르브-크로아트-슬로벤 왕국에 귀속되었습니다. ?]
 
-[? if year = 1919 and month = 9 and week = 3: The current bourgeois-right government has fallen after D'Annunzio's march to Fiume. The next elections are slated for November of this year. ?]
+[? if year = 1919 and month = 9 and week = 3: 단눈치오의 피우메 점령 이후 현 부르주아-우파 정부가 무너졌습니다. 차기 총선은 올해 11월로 예정되었습니다. ?]
 
-[? if year = 1919 and month = 11 and week = 3: The *Treaty of Neuilly-sur-Seine* is signed, ending the state of war between the Tsardom of Bulgaria and the Entente. ?]
+[? if year = 1919 and month = 11 and week = 3: 불가리아 왕국과 연합국 간의 전쟁을 종식하는 *뇌이 조약*이 체결되었습니다. ?]
 
-[? if year = 1920 and month = 1 and week = 3: The city of Split is plagued by violence after an anti-Italian rally results in assaults on Italian shops and offices, stirring up sentiment. ?]
+[? if year = 1920 and month = 1 and week = 3: 스플리트에서 반이탈리아 시위가 이탈리아 상점과 사무실에 대한 공격으로 번지면서 도시 전체가 폭력에 휩싸였고, 민심이 격앙되고 있습니다. ?]
 
-[? if year = 1920 and month = 2 and week = 3: The *Conference of London* is held to discuss the partitioning of the Ottoman Empire. Foreign Minister [+ foreign_minister +] travels to London to attend. ?]
+[? if year = 1920 and month = 2 and week = 3: 오스만 제국의 분할 문제를 논의하기 위해 *런던 회의*가 개최되었습니다. [+ foreign_minister +] 외무장관이 회의 참석을 위해 런던으로 향합니다. ?]
 
-[? if year = 1920 and month = 3 and week = 1 and supported_hungary < 2 : Admiral Miklós Horthy becomes Regent of the Kingdom of Hungary, taking advantage of the power vacuum following the collapse of the Hungarian Soviet Republic. ?]
+[? if year = 1920 and month = 3 and week = 1 and supported_hungary < 2 : 헝가리 평의회 공화국 붕괴 이후의 권력 공백을 틈타 해군 제독 미클로시 호르티가 헝가리 왕국의 섭정으로 취임했습니다. ?]
 
-[? if year = 1920 and month = 3 and week = 1: Hjalmar Branting is elected the Prime Minister of the Kingdom of Sweden, becoming the [? if psi_in_government :second?][? if not psi_in_government:first?] social democratic government to be peacefully established. ?]
+[? if year = 1920 and month = 3 and week = 1: 얄마르 브란팅이 스웨덴 총리로 선출되어, 평화적으로 정권을 창출한 [? if psi_in_government:두 번째?][? if not psi_in_government:첫 번째?] 사회민주주의 정부가 수립되었습니다. ?]
 
-[? if year = 1920 and month = 3 and week = 3: The *Kapp Putsch*, organised by Wolfgang Kapp and Walther von Lüttwitz fails in the Weimar Republic, primarily due to a general strike organised by the SPD, USPD & KPD. ?]
+[? if year = 1920 and month = 3 and week = 3: 볼프강 카프와 발터 폰 뤼트비츠가 주도한 *카프 폭동*이 바이마르 공화국에서 실패로 끝났습니다. 사회민주당, 독립사회민주당, 공산당이 조직한 총파업이 결정적인 역할을 했습니다. ?]
 
-[? if year = 1920 and month = 4 and week = 3: The *Sanremo Conference* is held to further discuss the partitioning of the Ottoman Empire. Foreign Minister [+ foreign_minister +] travels to attend. ?]
+[? if year = 1920 and month = 4 and week = 3: 오스만 제국 분할을 심도 있게 논의하기 위한 *산레모 회의*가 개최되었습니다. [+ foreign_minister +] 외무장관이 참석할 예정입니다. ?]
 
-[? if year = 1920 and month = 5 and week = 3: Joan of Arc is canonised as a saint of the Roman Catholic Church, presided over by Pope Benedict XV. ?]
+[? if year = 1920 and month = 5 and week = 3: 교황 베네딕토 15세의 주례 하에 잔 다르크가 로마 가톨릭 교회의 성인으로 시성되었습니다. ?]
 
-[? if year = 1920 and month = 6 and week = 1: The *Treaty of Trianon* is signed, ending a state of war between the Kingdom of Hungary and the Entente. ?]
+[? if year = 1920 and month = 6 and week = 1: 헝가리 왕국과 연합국 간의 전쟁을 종식하는 *트리아농 조약*이 체결되었습니다. ?]
 
-[? if year = 1920 and month = 7 and week = 3: A series of anti-Italian and retaliatory strikes in Split results in 3 dead and street violence across the city. In response, the Fasces of Combat destroy the Trieste National Hall. ?]
+[? if year = 1920 and month = 7 and week = 3: 스플리트에서 반이탈리아 시위와 보복성 파업으로 3명이 사망하고 시가전이 벌어졌습니다. 이에 대한 보복으로, 전투 결사대가 트리에스테의 슬로베니아 국립 회관을 파괴했습니다. ?]
 
-[? if year = 1920 and month = 8 and week = 1: The *Treaty of Sevres* is signed, ending a state of war between the Ottoman Empire and the Entente and partitioning the Empire. ?]
+[? if year = 1920 and month = 8 and week = 1: 연합국과 오스만 제국 간의 전쟁을 종결하고 제국을 분할하는 *세브르 조약*이 체결되었습니다. ?]
 
-[? if year = 1920 and month = 8 and week = 3: The VII Olympiad occurs in Antwerp, Belgium. Italy wins 7th place. ?]
+[? if year = 1920 and month = 8 and week = 3: 벨기에 안트베르펜에서 제7회 올림픽이 개최되었습니다. 이탈리아는 종합 7위를 기록했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 1: D'Annunzio proclaims the establishment of the *Italian Regency of Carnaro* in Fiume, with himself as *Duce*. ?]
+[? if year = 1920 and month = 9 and week = 1: 단눈치오가 피우메에 *이탈리아 카르나로 섭정령*의 수립을 선포하고 스스로를 *영도자*로 칭했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : 러시아 소비에트 연방 사회주의 공화국이 바르샤바 공략에 실패하자 폴란드 공화국에 강화를 요청했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : The Republic of Poland sues for peace with the Russian SFSR following the fall of Warsaw to advancing Soviet forces. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : 바르샤바가 진격하는 소비에트군에 함락되자 폴란드 공화국이 러시아 소비에트 연방 사회주의 공화국에 강화를 요청했습니다. ?]
 
-[? if year = 1920 and month = 11 and week = 1: Warren G. Harding defeats Democrat James M. Cox and Socialist Eugene V. Debs in the 1920 United States Presidential Election. ?]
+[? if year = 1920 and month = 11 and week = 1: 1920년 미국 대통령 선거에서 워런 G. 하딩이 민주당의 제임스 M. 콕스와 사회당의 유진 V. 뎁스를 꺾고 당선되었습니다. ?]
 
-[? if year = 1920 and month = 12 and week = 3 and fiume_free = 1: The Regio Esercito and Regia Marina engage in combat with D'Annunzio, forcing him to surrender and establishing the Free City of Fiume. ?]
+[? if year = 1920 and month = 12 and week = 3 and fiume_free = 1: 왕립 육군 및 해군이 단눈치오의 군대와 교전 끝에 그의 항복을 받아내고, 피우메 자유시를 수립했습니다. ?]
 
-[? if year = 1921 and month = 1 and week = 3: The *Conference of London* is convened once again to deal with the problems arising from the dissolution of the Ottoman Empire. Foreign Minister [+ foreign_minister +] travels to London to attend. ?]
+[? if year = 1921 and month = 1 and week = 3: 오스만 제국 해체 이후 발생한 문제들을 해결하기 위해 *런던 회의*가 다시 소집되었습니다. [+ foreign_minister +] 외무장관이 회의 참석을 위해 런던으로 향합니다. ?]
 
-[? if year = 1921 and month = 2 and week = 1: The Red Army begins its invasion of the Democratic Republic of Georgia. ?]
+[? if year = 1921 and month = 2 and week = 1: 붉은 군대가 조지아 민주 공화국을 침공하기 시작했습니다. ?]
 
-[? if year = 1921 and month = 3 and week = 1 : The Democratic Republic of Georgia completely falls to the Red Army. As a result, the Georgian Diplomatic Mission in Rome is recalled while Menshevik & Diplomat Wladimir Woytinsky emigrates to Germany. ?]
+[? if year = 1921 and month = 3 and week = 1 : 조지아 민주 공화국이 붉은 군대에 의해 완전히 점령당했습니다. 이로 인해 로마에 주재하던 조지아 외교 사절단은 본국으로 소환되었고, 멘셰비키이자 외교관이었던 블라디미르 보이틴스키는 독일로 망명했습니다. ?]
 
-[? if year = 1921 and month = 6 and week = 3: The Third Congress of the Communist International takes place. ?]
+[? if year = 1921 and month = 6 and week = 3: 제3차 공산주의 인터내셔널(코민테른) 대회가 개최되었습니다. ?]
 
-[? if year = 1921 and month = 7 and week = 3: Adolf Hitler assumes power of the *National Socialist German Workers' Party*, becoming *Führer*. ?]
+[? if year = 1921 and month = 7 and week = 3: 아돌프 히틀러가 *국가사회주의 독일 노동자당*의 당권을 장악하고 *총통*의 지위에 올랐습니다. ?]
 
-[? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
+[? if year = 1921 and month = 12 and week = 3: 이탈리아 할인 은행이 파산하여 재정 문제 해결을 위해 1년간의 채무 상환 유예를 받았습니다. 이 사건이 이탈리아 금융계와 경제에 미친 영향은 미미했습니다. ?]
 
-[? if year = 1922 and month = 2 and week = 1: The *Five Power Naval Disarmament Treaty* is signed between the United Kingdom, United States, Japan, France and Italy. Foreign Minister [+ foreign_minister +] signs the treaty as a representative of Italy. ?]
+[? if year = 1922 and month = 2 and week = 1: 영국, 미국, 일본, 프랑스, 이탈리아 5개국이 *워싱턴 해군 군축 조약*에 서명했습니다. [+ foreign_minister +] 외무장관이 이탈리아 대표로 조약에 서명했습니다. ?]
 
-[? if year = 1922 and month = 2 and week = 3: The United Kingdom ends its protectorate and grants nominal independence to Egypt following the *Unilateral Declaration of Egyptian Independence* ?]
+[? if year = 1922 and month = 2 and week = 3: 영국이 *이집트 독립에 관한 일방 선언*에 따라 이집트에 대한 보호령을 종식하고 명목상의 독립을 부여했습니다. ?]
 
-[? if year = 1922 and month = 4 and week = 1: Joseph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
+[? if year = 1922 and month = 4 and week = 1: 이오시프 스탈린이 소비에트 공산당 중앙위원회 서기장으로 임명되었습니다. ?]
 
-[? if year = 1922 and month = 9 and week = 1: The Autodromo Nazionale di Monza motorsport race track officially opens in Monza. ?]
+[? if year = 1922 and month = 9 and week = 1: 몬차에 위치한 국립 자동차 경주장이 공식 개장했습니다. ?]
 
-[? if year = 1922 and month = 12 and week = 1: The *Irish Free State* is officially established after the Irish War of Independence and the following Irish Civil War. ?]
+[? if year = 1922 and month = 12 and week = 1: 아일랜드 독립 전쟁과 내전을 거쳐 *아일랜드 자유국*이 공식적으로 수립되었습니다. ?]
 
-[? if year = 1922 and month = 12 and week = 3: The Russian, Ukrainian, Belorussian, Transcaucasian Soviet Federative Socialist Republics sign the Declaration and Treaty on the Creation of the Union of Soviet Socialist Republics, uniting into one nation. ?]
+[? if year = 1922 and month = 12 and week = 3: 러시아, 우크라이나, 벨로루시, 자카프카스의 소비에트 공화국들이 단일 국가 형성을 위한 *소비에트 사회주의 공화국 연방 창설 조약*에 서명했습니다. ?]
 
-[? if year = 1923 and month = 1 and week = 1: French and Belgian troops occupy the Ruhr region of Germany after its numerous defaults on its war debts. The British oppose French and Belgian action. ?]
+[? if year = 1923 and month = 1 and week = 1: 독일이 전쟁 배상금 지불을 거듭 연체하자, 프랑스와 벨기에 군대가 루르 공업 지대를 점령했습니다. 영국은 이러한 군사 행동에 반대했습니다. ?]
 
-[? if year = 1923 and month = 3 and week = 1: Vladimir Lenin, leader of the Union of Soviet Socialist Republics, suffers a stroke and becomes bedridden. ?]
+[? if year = 1923 and month = 3 and week = 1: 소비에트 연방의 지도자 블라디미르 레닌이 뇌졸중으로 쓰러져 병상에 들었습니다. ?]
 
-[? if year = 1923 and month = 3 and week = 3: The Italian Air Wing of the *Regio Esercito* and *Regia Marina* is established as an independent wing of the armed forces, called the *Regia Aeronautica*. ?]
+[? if year = 1923 and month = 3 and week = 3: *왕립 육군*과 *왕립 해군* 소속의 항공대가 독립하여 *왕립 공군*으로 공식 창설되었습니다. ?]
 
-[? if year = 1923 and month = 6 and week = 3: Mount Etna erupts on the east cost of Sicily, resulting in an estimated 60,000 to go homeless. ?]
+[? if year = 1923 and month = 6 and week = 3: 시칠리아 동부 해안의 에트나 화산이 폭발하여 약 6만 명의 이재민이 발생했습니다. ?]
 
-[? if year = 1923 and month = 7 and week = 3: The *Treaty of Lausanne* is signed by Turkey, Greece, Bulgaria and the Entente, officially marking the end of the Ottoman Empire. Foreign Minister [+ foreign_minister +] is sent as our signatory. ?]
+[? if year = 1923 and month = 7 and week = 3: 튀르키예, 그리스, 불가리아, 연합국이 *로잔 조약*에 서명하여 오스만 제국의 종식을 공식화했습니다. [+ foreign_minister +] 외무장관이 이탈리아 서명 대표로 파견되었습니다. ?]
 
-[? if year = 1923 and month = 10 and week = 3 and not soviet_germany: The *Hamburg Uprising*, organised by the KPD (Communist Party of Germany), has fallen, suppressed forcefully by the government within just one day. ?]
+[? if year = 1923 and month = 10 and week = 3 and not soviet_germany: 독일 공산당이 주도한 *함부르크 봉기*가 하루 만에 정부군에 의해 무력으로 진압되었습니다. ?]
 
-[? if year = 1923 and month = 11 and week = 1 and not soviet_germany: The *Beer Hall Putsch*, organised by Adolf Hitler and the Kampfbund in Munich, has fallen, suppressed forcefully by the government within just one day. ?]
+[? if year = 1923 and month = 11 and week = 1 and not soviet_germany: 아돌프 히틀러와 전투동맹이 뮌헨에서 일으킨 *맥주홀 폭동*이 단 하루 만에 정부군에 의해 무력으로 진압되었습니다. ?]
 
-[? if year = 1923 and month = 11 and week = 3 and not soviet_germany: Hyperinflation in the Weimar Republic reaches historic highs, worsening the economic crisis and collapses Gustav Streseman's governing coalition. ?]
+[? if year = 1923 and month = 11 and week = 3 and not soviet_germany: 바이마르 공화국의 초인플레이션이 극에 달하며 경제 위기가 심화되었고, 구스타프 슈트레제만 연립 내각이 붕괴했습니다. ?]
 
-[? if year = 1923 and month = 12 and week = 1: The Gieno Dam, located in the northern province of Bergamo bursts, resulting in the deaths of an estimated 356 people. ?]
+[? if year = 1923 and month = 12 and week = 1: 베르가모 주 북부에 위치한 글리에노 댐이 붕괴하여 약 356명이 사망했습니다. ?]
 
-[? if year = 1924 and month = 1 and week = 3 : The 1924 Winter Olympics, the first of its kind, opens in Chamonix, France. Italy comes in last place. ?]
+[? if year = 1924 and month = 1 and week = 3 : 사상 첫 동계 올림픽이 프랑스 샤모니에서 개막했습니다. 이탈리아는 최하위를 기록했습니다. ?]
 
-[? if year = 1924 and month = 1 and week = 3 : Vladimir Ilyich Ulyanov, Premier of the Union of Soviet Socialist Republic, passes away. Aleksej Rykov succeeds him as Premier, representing the moderate wing of the Bolshevik faction. ?]
+[? if year = 1924 and month = 1 and week = 3 : 소비에트 연방의 인민위원평의회 의장 블라디미르 레닌이 서거했습니다. 볼셰비키 온건파를 대표하는 알렉세이 리코프가 그의 뒤를 이었습니다. ?]
 
-[? if year = 1924 and month = 1 and week = 3 : Ramsey McDonald, leader of the Labour Party of the United Kingdom, is elected the first Labour British Prime Minister. ?]
+[? if year = 1924 and month = 1 and week = 3 : 영국 노동당의 램지 맥도널드가 총리로 선출되어, 영국 최초의 노동당 정부가 출범했습니다. ?]
 
-[? if year = 1924 and month = 3 and week = 1 : The Grand National Assembly of Turkey abolishes the Ottoman Caliphate via decree, deposing caliph Abdülmecid II alongside it.  ?]
+[? if year = 1924 and month = 3 and week = 1 : 튀르키예 대국민의회가 법령을 통해 오스만 칼리파 제도를 폐지하고 마지막 칼리파 압뒬메지트 2세를 폐위했습니다. ?]
 
-[? if year = 1924 and month = 4 and week = 1 and not soviet_germany : Adolf Hitler is sentenced to 5 years in prison for his responsibility in the *Beer Hall Putsch*. ?]
+[? if year = 1924 and month = 4 and week = 1 and not soviet_germany : 아돌프 히틀러가 *맥주홀 폭동*을 주도한 혐의로 징역 5년을 선고받았습니다. ?]
 
-[? if year = 1924 and month = 9 and week = 1 and not soviet_germany : The *Dawes Plan* is signed and approved by the Weimar Republic, establishing an alternate means of repayment and ending the occupation of the Ruhr. French and Belgian forces are set to evacuate the region soon. ?]
+[? if year = 1924 and month = 9 and week = 1 and not soviet_germany : 바이마르 공화국이 전쟁 배상금 지불에 대한 대안을 제시하고 루르 점령을 종식하는 *도스 안*을 승인했습니다. 프랑스와 벨기에 군대는 곧 철수할 예정입니다. ?]
 
-[? if year = 1924 and month = 10 and week = 1 : The *Geneva Protocol* is adopted by the League of Nations for compulsory arbitration of disputes. It is set to be ratified. ?]
+[? if year = 1924 and month = 10 and week = 1 : 국제 분쟁의 중재를 의무화하는 *제네바 의정서가* 국제 연맹에서 채택되었습니다. 곧 비준될 예정입니다. ?]
 
-[? if year = 1924 and month = 10 and week = 3 and supported_entente < 2 : The Conservative Party of the United Kingdom succeeds in obtaining a majority landslide victory over the Labour and Liberal Parties following the reveal of the *Zinoviev Letter*. ?]
+[? if year = 1924 and month = 10 and week = 3 and supported_entente < 2 : 이른바 *지노비예프 편지*가 폭로된 후, 영국 보수당이 총선에서 노동당과 자유당을 상대로 압도적인 과반 의석을 확보하며 승리했습니다. ?]
 
-[? if year = 1924 and month = 10 and week = 3 and supported_entente >= 2 : The Labour Party of the United Kingdom is able to maintain its control of the government following its most recent election, gaining seats at the expense of the Liberal Party. ?]
+[? if year = 1924 and month = 10 and week = 3 and supported_entente >= 2 : 영국 노동당이 최근 총선에서 자유당의 의석을 잠식하며 과반을 유지, 정권 연장에 성공했습니다. ?]
 
-[? if year = 1924 and month = 11 and week = 1 and supported_usa < 2 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in a landslide victory during the 1924 United States Presidential Election. ?]
+[? on year = 1924 and month = 11 and week = 1 and supported_usa < 2 : 1924년 미국 대통령 선거에서 캘빈 쿨리지가 민주당의 존 W. 데이비스와 진보당의 로버트 M. 라폴레트를 압도적인 표차로 누르고 당선되었습니다. ?]
 
-[? if year = 1924 and month = 11 and week = 1 and supported_usa >= 2 : Calvin Coolidge barely edges out a victory against Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette following La Follette's success in several mid-west states during the 1924 United States Presidential Election. ?]
+[? if year = 1924 and month = 11 and week = 1 and supported_usa >= 2 : 1924년 미국 대통령 선거에서 진보당의 라폴레트 후보가 여러 중서부 주에서 선전했으나, 캘빈 쿨리지가 민주당의 존 W. 데이비스와 라폴레트를 간신히 따돌리고 신승을 거두었습니다. ?]
 
-[? if year = 1924 and month = 12 and week = 3 and not soviet_germany : Adolf Hitler is released from prison, serving out only 9 months of the 5 years sentenced due to his involvement in the *Beer Hall Putsch*. ?]
+[? if year = 1924 and month = 12 and week = 3 and not soviet_germany : *맥주홀 폭동*으로 5년 형을 선고받았던 아돌프 히틀러가 9개월 만에 석방되었습니다. ?]
 
-[? if year = 1925 and month = 7 and week = 3 and not soviet_germany : Adolf Hitler publishes volume 1 of his manifesto, *Mein Kampf*. ?]
+[? if year = 1925 and month = 7 and week = 3 and not soviet_germany : 아돌프 히틀러가 자신의 정치 선언문인 *나의 투쟁* 제1권을 출간했습니다. ?]
 
-[? if year = 1925 and month = 8 and week = 3 and not soviet_germany : The last of the French forces evacuate the Ruhr, following the resumption of German reparations payments under the Dawes Plan, ending the almost three year occupation. ?]
+[? if year = 1925 and month = 8 and week = 3 and not soviet_germany : 독일이 도스 안에 따라 전쟁 배상금 지불을 재개하자, 마지막 프랑스군이 루르에서 철수하며 약 3년에 걸친 점령이 막을 내렸습니다. ?]
 
-[? if year = 1925 and month = 11 and week = 1 and not soviet_germany : The *Schutzstaffel* is established as a paramilitary organisation to protect Adolf Hitler. ?]
+[? if year = 1925 and month = 11 and week = 1 and not soviet_germany : 아돌프 히틀러의 개인 경호를 위한 준군사조직인 *친위대* 가 창설되었습니다. ?]
 
-[? if year = 1925 and month = 12 and week = 1 and not soviet_germany : The *Locarno Treaties* are signed in London, pledging to guarantee the inviolability of the borders between Germany and France & Belgium, alongside various other agreements to ensure the Weimar Republic would ensure peaceful arbitration in the event of disputes. ?]
+[? if year = 1925 and month = 12 and week = 1 and not soviet_germany : 독일-프랑스-벨기에 간 국경의 불가침을 보장하고, 분쟁 시 평화적 해결을 약속하는 *로카르노 조약*이 런던에서 체결되었습니다. ?]
 
-[? if year = 1926 and month = 5 and week = 1 : The Trades Union Congress begins a strike in the United Kingdom in support of the Miners' Federation. Martial Law is declared just nine days later that ends the strike. ?]
+[? if year = 1926 and month = 5 and week = 1 : 영국 노동조합회의가 광부 연맹을 지지하며 총파업에 돌입했습니다. 9일 후 계엄령이 선포되면서 파업은 강제 해산되었습니다. ?]
 
-[? if year = 1926 and month = 5 and week = 1 : Marshal Józef Piłsudski overthrows the democratically elected government of the Republic of Poland, establishing a military dictatorship. ?]
+[? if year = 1926 and month = 5 and week = 1 : 유제프 피우수트스키 원수가 폴란드 제2공화국의 민선 정부를 전복시키고 군사 독재 정권을 수립했습니다. ?]
 
-[? if year = 1926 and month = 5 and week = 3 : Army Officer Manuel Gomes da Costa overthrows the democratically elected government of the Portugal, establishing a military dictatorship. ?]
+[? if year = 1926 and month = 5 and week = 3 : 마누엘 고메스 다 코스타 장군이 포르투갈의 민선 정부를 전복시키고 군사 독재 정권을 수립했습니다. ?]
 
-[? if year = 1926 and month = 7 and week = 1 : The National Revolutionary Army, led by Chiang Kai-shek of the Chinese Kuomintang, begins the *Northern Expedition*, seeking to reunite Northern China. ?]
+[? if year = 1926 and month = 7 and week = 1 : 중국 국민당의 장제스가 이끄는 국민혁명군이 분열된 북부 중국을 통일하기 위해 *북벌*을 개시했습니다. ?]
 
-[? if year = 1926 and month = 9 and week = 1 and not soviet_germany : The Weimar Republic joins the League of Nations. ?]
+[? if year = 1926 and month = 9 and week = 1 and not soviet_germany : 바이마르 공화국이 국제 연맹에 가입했습니다. ?]
 
-[? if year = 1926 and month = 12 and week = 1 : Martial Law in response to the General Strike in the United Kingdom ends. ?]
+[? if year = 1926 and month = 12 and week = 1 : 영국 총파업 사태로 선포되었던 계엄령이 해제되었습니다. ?]
 
-[? if year = 1926 and month = 12 and week = 3 : Emperor Taishō passes away from a heart attack, ending the Taishō era. Succeeding him is Emperor Shōwa, who begins the Shōwa era. ?]
+[? if year = 1926 and month = 12 and week = 3 : 다이쇼 천황이 심장마비로 서거하며 다이쇼 시대가 막을 내렸습니다. 그의 뒤를 이어 쇼와 천황이 즉위하며 쇼와 시대가 시작되었습니다. ?]
 
-[? if year = 1927 and month = 3 and week = 3 : Foreign ships, including our own, bombard the city of Nanjing after its capture by the National Revolutionary Army to defend foreign residents. ?]
+[? year = 1927 and month = 3 and week = 3 : 국민혁명군이 난징을 점령하자, 자국민 보호를 명분으로 이탈리아 함선을 포함한 열강의 함대가 난징 시를 포격했습니다. ?]
 
-[? if year = 1927 and month = 5 and week = 3 : Due to revelations of espionage and underground agitation, the United Kingdom cuts diplomatic ties with the Union of Soviet Socialist Republics. ?]
+[? if year = 1927 and month = 5 and week = 3 : 간첩 활동 및 체제 전복 시도가 발각되자, 영국이 소비에트 연방과의 외교 관계를 단절했습니다. ?]
 
-[? if year = 1927 and month = 6 and week = 1 : The Kingdom of Serbs, Croats and Slovenes cuts diplomatic ties with the Kingdom of Albania. ?]
+[? if year = 1927 and month = 6 and week = 1 : 세르브-크로아트-슬로벤 왕국이 알바니아 왕국과의 외교 관계를 단절했습니다. ?]
 
 - @party
 - @paramilitary
@@ -176,168 +176,168 @@ max-cards: 3
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = '고문 - 행동 가능';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
+    Q.pinnedCardsDescription = '고문 - 다음 행동까지 2주 남음';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer * 2 + ' weeks.';
+    Q.pinnedCardsDescription = '고문 - 다음 행동까지 ' + Q.advisor_action_timer * 2 + '주 남음';
 }
 !}
 max-cards: 4
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
+#이곳에 메인 덱이 표시됩니다. 덱을 클릭해 카드를 뽑고, 카드를 클릭해 사용하세요.
 
-[? if year = 1919 and month = 1 and week = 3: The *Spartacist Uprising* in Berlin has fallen, suppressed forcefully by the government and *Freikorps*. It's leaders are slaughtered under command of Friedrich Ebert and Gustav Noske. The League of Nations is founded. ?]
+[? if year = 1919 and month = 1 and week = 3: 베를린에서 벌어진 *스파르타쿠스단 봉기*가 정부와 *자유군단*의 무력 진압으로 실패했습니다. 봉기 지도자들은 프리드리히 에베르트와 구스타프 노스케의 명령에 따라 처형되었습니다. 국제 연맹이 창설되었습니다. ?]
 
-[? if year = 1919 and month = 2 and week = 1: Friedrich Erbert is elected as the First President of Germany. The Weimar Republic is founded. ?]
+[? if year = 1919 and month = 2 and week = 1: 프리드리히 에베르트가 독일의 초대 대통령으로 선출되고, 바이마르 공화국이 공식 수립되었습니다. ?]
 
-[? if year = 1919 and month = 2 and week = 3: The Republic of Poland invades the Russian SFSR and begins the *Soviet-Polish War*. ?]
+[? if year = 1919 and month = 2 and week = 3: 폴란드 제2공화국이 러시아 소비에트 연방 사회주의 공화국을 침공하여 *소비에트-폴란드 전쟁*이 발발했습니다. ?]
 
-[? if year = 1919 and month = 3 and week = 1: The Communist International is founded. ?]
+[? if year = 1919 and month = 3 and week = 1: 공산주의 인터내셔널(코민테른)이 창설되었습니다. ?]
 
-[? if year = 1919 and month = 4 and week = 1: The Bavarian Soviet Republic is established. ?]
+[? if year = 1919 and month = 4 and week = 1: 바이에른 소비에트 공화국이 수립되었습니다. ?]
 
-[? if year = 1919 and month = 5 and week = 1: Weimar Republic forces, alongside the Freikorps occupy Munich and dissolve the Bavarian Soviet Republic. ?]
+[? if year = 1919 and month = 5 and week = 1: 바이마르 공화국군이 자유군단과 함께 뮌헨을 점령하고 바이에른 평의회 공화국을 해체시켰습니다. ?]
 
-[? if year = 1919 and month = 5 and week = 3: Mustafa Kemal Pasha lands at Samsun on the Black Sea coast, refusing to surrender to Entente forces. ?]
+[? if year = 1919 and month = 5 and week = 3: 무스타파 케말 파샤가 흑해 연안의 삼순에 상륙하여, 연합국에 대한 항복을 거부했습니다. ?]
 
-[? if year = 1919 and month = 6 and week = 1: The *Treaty of Versailles* is signed, ending the state of war between the Weimar Republic and the Entente. ?]
+[? if year = 1919 and month = 6 and week = 1: 바이마르 공화국과 연합국 간의 전쟁 상태를 공식적으로 종식하는 *베르사유 조약*이 체결되었습니다. ?]
 
-[? if year = 1919 and month = 8 and week = 1 and supported_hungary < 2 : The Hungarian Soviet Republic collapses after Romanian intervention, leading to a power vacuum. ?]
+[? if year = 1919 and month = 8 and week = 1 and supported_hungary < 2 : 헝가리 평의회 공화국이 루마니아의 개입으로 붕괴하며 권력 공백 상태에 빠졌습니다. ?]
 
-[? if year = 1919 and month = 8 and week = 1 and supported_hungary >= 2 : Soviet Hungarian forces are barely able to repel Romanian troops during the Battle of *Tisza River*, resulting in the signing of a ceasefire between the two nations. ?]
+[? if year = 1919 and month = 8 and week = 1 and supported_hungary >= 2 : 소비에트 헝가리군이 *티서 강 전투*에서 루마니아군을 힘겹게 격퇴하고, 양국 간의 휴전 협정이 체결되었습니다. ?]
 
-[? if year = 1919 and month = 9 and week = 1: The *Treaty of Saint-Germain-en-Laye* is signed, ceding Austrian Littoral, South Tyrol alongside various Dalmatian islands to Italy. The remainder goes to the newly established Kingdom of Serbs, Croats and Slovenes, in violation of the 1915 *Treaty of London*. ?]
+[? if year = 1919 and month = 9 and week = 1: 오스트리아 연안 지대, 남티롤, 다수의 달마티아 제도를 이탈리아에 할양하는 *생제르맹 조약*이 체결되었습니다. 나머지 영토는 1915년 *런던 조약*을 위반하고 신생 국가인 세르브-크로아트-슬로벤 왕국에 귀속되었습니다. ?]
 
-[? if year = 1919 and month = 9 and week = 3: The current bourgeois-right government has fallen after D'Annunzio's march to Fiume. The next elections are slated for November of this year. ?]
+[? if year = 1919 and month = 9 and week = 3: 단눈치오의 피우메 점령 이후 현 부르주아-우파 정부가 무너졌습니다. 차기 총선은 올해 11월로 예정되었습니다. ?]
 
-[? if year = 1919 and month = 11 and week = 3: The *Treaty of Neuilly-sur-Seine* is signed, ending the state of war between the Tsardom of Bulgaria and the Entente. ?]
+[? if year = 1919 and month = 11 and week = 3: 불가리아 왕국과 연합국 간의 전쟁을 종식하는 *뇌이 조약*이 체결되었습니다. ?]
 
-[? if year = 1920 and month = 1 and week = 3: The city of Split is plagued by violence after an anti-Italian rally results in assaults on Italian shops and offices, stirring up sentiment. ?]
+[? if year = 1920 and month = 1 and week = 3: 스플리트에서 반이탈리아 시위가 이탈리아 상점과 사무실에 대한 공격으로 번지면서 도시 전체가 폭력에 휩싸였고, 민심이 격앙되고 있습니다. ?]
 
-[? if year = 1920 and month = 2 and week = 3: The *Conference of London* is held to discuss the partitioning of the Ottoman Empire. Foreign Minister [+ foreign_minister +] travels to London to attend. ?]
+[? if year = 1920 and month = 2 and week = 3: 오스만 제국의 분할 문제를 논의하기 위해 *런던 회의*가 개최되었습니다. [+ foreign_minister +] 외무장관이 회의 참석을 위해 런던으로 향합니다. ?]
 
-[? if year = 1920 and month = 3 and week = 1 and supported_hungary < 2 : Admiral Miklós Horthy becomes Regent of the Kingdom of Hungary, taking advantage of the power vacuum following the collapse of the Hungarian Soviet Republic. ?]
+[? if year = 1920 and month = 3 and week = 1 and supported_hungary < 2 : 헝가리 평의회 공화국 붕괴 이후의 권력 공백을 틈타 해군 제독 미클로시 호르티가 헝가리 왕국의 섭정으로 취임했습니다. ?]
 
-[? if year = 1920 and month = 3 and week = 1: Hjalmar Branting is elected the Prime Minister of the Kingdom of Sweden, becoming the [? if psi_in_government :second?][? if not psi_in_government:first?] social democratic government to be peacefully established. ?]
+[? if year = 1920 and month = 3 and week = 1: 얄마르 브란팅이 스웨덴 총리로 선출되어, 평화적으로 정권을 창출한 [? if psi_in_government:두 번째?][? if not psi_in_government:첫 번째?] 사회민주주의 정부가 수립되었습니다. ?]
 
-[? if year = 1920 and month = 3 and week = 3: The *Kapp Putsch*, organised by Wolfgang Kapp and Walther von Lüttwitz fails in the Weimar Republic, primarily due to a general strike organised by the SPD, USPD & KPD. ?]
+[? if year = 1920 and month = 3 and week = 3: 볼프강 카프와 발터 폰 뤼트비츠가 주도한 *카프 폭동*이 바이마르 공화국에서 실패로 끝났습니다. 사회민주당, 독립사회민주당, 공산당이 조직한 총파업이 결정적인 역할을 했습니다. ?]
 
-[? if year = 1920 and month = 4 and week = 3: The *Sanremo Conference* is held to further discuss the partitioning of the Ottoman Empire. Foreign Minister [+ foreign_minister +] travels to attend. ?]
+[? if year = 1920 and month = 4 and week = 3: 오스만 제국 분할을 심도 있게 논의하기 위한 *산레모 회의*가 개최되었습니다. [+ foreign_minister +] 외무장관이 참석할 예정입니다. ?]
 
-[? if year = 1920 and month = 5 and week = 3: Joan of Arc is canonised as a saint of the Roman Catholic Church, presided over by Pope Benedict XV. ?]
+[? if year = 1920 and month = 5 and week = 3: 교황 베네딕토 15세의 주례 하에 잔 다르크가 로마 가톨릭 교회의 성인으로 시성되었습니다. ?]
 
-[? if year = 1920 and month = 6 and week = 1: The *Treaty of Trianon* is signed, ending a state of war between the Kingdom of Hungary and the Entente. ?]
+[? if year = 1920 and month = 6 and week = 1: 헝가리 왕국과 연합국 간의 전쟁을 종식하는 *트리아농 조약*이 체결되었습니다. ?]
 
-[? if year = 1920 and month = 7 and week = 3: A series of anti-Italian and retaliatory strikes in Split results in 3 dead and street violence across the city. In response, the Fasces of Combat destroy the Trieste National Hall. ?]
+[? if year = 1920 and month = 7 and week = 3: 스플리트에서 반이탈리아 시위와 보복성 파업으로 3명이 사망하고 시가전이 벌어졌습니다. 이에 대한 보복으로, 전투 결사대가 트리에스테의 슬로베니아 국립 회관을 파괴했습니다. ?]
 
-[? if year = 1920 and month = 8 and week = 1: The *Treaty of Sevres* is signed, ending a state of war between the Ottoman Empire and the Entente and partitioning the Empire. ?]
+[? if year = 1920 and month = 8 and week = 1: 연합국과 오스만 제국 간의 전쟁을 종결하고 제국을 분할하는 *세브르 조약*이 체결되었습니다. ?]
 
-[? if year = 1920 and month = 8 and week = 3: The VII Olympiad occurs in Antwerp, Belgium. Italy wins 7th place. ?]
+[? if year = 1920 and month = 8 and week = 3: 벨기에 안트베르펜에서 제7회 올림픽이 개최되었습니다. 이탈리아는 종합 7위를 기록했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 1: D'Annunzio proclaims the establishment of the *Italian Regency of Carnaro* in Fiume, with himself as *Duce*. ?]
+[? if year = 1920 and month = 9 and week = 1: 단눈치오가 피우메에 *이탈리아 카르나로 섭정령*의 수립을 선포하고 스스로를 *영도자*로 칭했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : The Russian SFSR sues for peace with the Republic of Poland following its failure to capture Warsaw. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr < 2 : 러시아 소비에트 연방 사회주의 공화국이 바르샤바 공략에 실패하자 폴란드 공화국에 강화를 요청했습니다. ?]
 
-[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : The Republic of Poland sues for peace with the Russian SFSR following the fall of Warsaw to advancing Soviet forces. ?]
+[? if year = 1920 and month = 9 and week = 3 and supported_ussr >= 2 : 바르샤바가 진격하는 소비에트군에 함락되자 폴란드 공화국이 러시아 소비에트 연방 사회주의 공화국에 강화를 요청했습니다. ?]
 
-[? if year = 1920 and month = 11 and week = 1: Warren G. Harding defeats Democrat James M. Cox and Socialist Eugene V. Debs in the 1920 United States Presidential Election. ?]
+[? if year = 1920 and month = 11 and week = 1: 1920년 미국 대통령 선거에서 워런 G. 하딩이 민주당의 제임스 M. 콕스와 사회당의 유진 V. 뎁스를 꺾고 당선되었습니다. ?]
 
-[? if year = 1920 and month = 12 and week = 3 and fiume_free = 1: The Regio Esercito and Regia Marina engage in combat with D'Annunzio, forcing him to surrender and establishing the Free City of Fiume. ?]
+[? if year = 1920 and month = 12 and week = 3 and fiume_free = 1: 왕립 육군 및 해군이 단눈치오의 군대와 교전 끝에 그의 항복을 받아내고, 피우메 자유시를 수립했습니다. ?]
 
-[? if year = 1921 and month = 1 and week = 3: The *Conference of London* is convened once again to deal with the problems arising from the dissolution of the Ottoman Empire. Foreign Minister [+ foreign_minister +] travels to London to attend. ?]
+[? if year = 1921 and month = 1 and week = 3: 오스만 제국 해체 이후 발생한 문제들을 해결하기 위해 *런던 회의*가 다시 소집되었습니다. [+ foreign_minister +] 외무장관이 회의 참석을 위해 런던으로 향합니다. ?]
 
-[? if year = 1921 and month = 2 and week = 1: The Red Army begins its invasion of the Democratic Republic of Georgia. ?]
+[? if year = 1921 and month = 2 and week = 1: 붉은 군대가 조지아 민주 공화국을 침공하기 시작했습니다. ?]
 
-[? if year = 1921 and month = 3 and week = 1 : The Democratic Republic of Georgia completely falls to the Red Army. As a result, the Georgian Diplomatic Mission in Rome is recalled while Menshevik & Diplomat Wladimir Woytinsky emigrates to Germany. ?]
+[? if year = 1921 and month = 3 and week = 1 : 조지아 민주 공화국이 붉은 군대에 의해 완전히 점령당했습니다. 이로 인해 로마에 주재하던 조지아 외교 사절단은 본국으로 소환되었고, 멘셰비키이자 외교관이었던 블라디미르 보이틴스키는 독일로 망명했습니다. ?]
 
-[? if year = 1921 and month = 6 and week = 3: The Third Congress of the Communist International takes place. ?]
+[? if year = 1921 and month = 6 and week = 3: 제3차 공산주의 인터내셔널(코민테른) 대회가 개최되었습니다. ?]
 
-[? if year = 1921 and month = 7 and week = 3: Adolf Hitler assumes power of the *National Socialist German Workers' Party*, becoming *Führer*. ?]
+[? if year = 1921 and month = 7 and week = 3: 아돌프 히틀러가 *국가사회주의 독일 노동자당*의 당권을 장악하고 *총통*의 지위에 올랐습니다. ?]
 
-[? if year = 1921 and month = 12 and week = 3: The Banca Italiana di Sconto goes bankrupt and is given one year of moratorium to resolve its financial problems. It's impact on banking and the economy in Italy is minimal. ?]
+[? if year = 1921 and month = 12 and week = 3: 이탈리아 할인 은행이 파산하여 재정 문제 해결을 위해 1년간의 채무 상환 유예를 받았습니다. 이 사건이 이탈리아 금융계와 경제에 미친 영향은 미미했습니다. ?]
 
-[? if year = 1922 and month = 2 and week = 1: The *Five Power Naval Disarmament Treaty* is signed between the United Kingdom, United States, Japan, France and Italy. Foreign Minister [+ foreign_minister +] signs the treaty as a representative of Italy. ?]
+[? if year = 1922 and month = 2 and week = 1: 영국, 미국, 일본, 프랑스, 이탈리아 5개국이 *워싱턴 해군 군축 조약*에 서명했습니다. [+ foreign_minister +] 외무장관이 이탈리아 대표로 조약에 서명했습니다. ?]
 
-[? if year = 1922 and month = 2 and week = 3: The United Kingdom ends its protectorate and grants nominal independence to Egypt following the *Unilateral Declaration of Egyptian Independence* ?]
+[? if year = 1922 and month = 2 and week = 3: 영국이 *이집트 독립에 관한 일방 선언*에 따라 이집트에 대한 보호령을 종식하고 명목상의 독립을 부여했습니다. ?]
 
-[? if year = 1922 and month = 4 and week = 1: Joseph Stalin is appointed General Secretary of the Central Committee of the Soviet Communist Party. ?]
+[? if year = 1922 and month = 4 and week = 1: 이오시프 스탈린이 소비에트 공산당 중앙위원회 서기장으로 임명되었습니다. ?]
 
-[? if year = 1922 and month = 9 and week = 1: The Autodromo Nazionale di Monza motorsport race track officially opens in Monza. ?]
+[? if year = 1922 and month = 9 and week = 1: 몬차에 위치한 국립 자동차 경주장이 공식 개장했습니다. ?]
 
-[? if year = 1922 and month = 12 and week = 1: The *Irish Free State* is officially established after the Irish War of Independence and the following Irish Civil War. ?]
+[? if year = 1922 and month = 12 and week = 1: 아일랜드 독립 전쟁과 내전을 거쳐 *아일랜드 자유국*이 공식적으로 수립되었습니다. ?]
 
-[? if year = 1922 and month = 12 and week = 3: The Russian, Ukrainian, Belorussian, Transcaucasian Soviet Federative Socialist Republics sign the Declaration and Treaty on the Creation of the Union of Soviet Socialist Republics, uniting into one nation. ?]
+[? if year = 1922 and month = 12 and week = 3: 러시아, 우크라이나, 벨로루시, 자카프카스의 소비에트 공화국들이 단일 국가 형성을 위한 *소비에트 사회주의 공화국 연방 창설 조약*에 서명했습니다. ?]
 
-[? if year = 1923 and month = 1 and week = 1: French and Belgian troops occupy the Ruhr region of Germany after its numerous defaults on its war debts. The British oppose French and Belgian action. ?]
+[? if year = 1923 and month = 1 and week = 1: 독일이 전쟁 배상금 지불을 거듭 연체하자, 프랑스와 벨기에 군대가 루르 공업 지대를 점령했습니다. 영국은 이러한 군사 행동에 반대했습니다. ?]
 
-[? if year = 1923 and month = 3 and week = 1: Vladimir Lenin, leader of the Union of Soviet Socialist Republics, suffers a stroke and becomes bedridden. ?]
+[? if year = 1923 and month = 3 and week = 1: 소비에트 연방의 지도자 블라디미르 레닌이 뇌졸중으로 쓰러져 병상에 들었습니다. ?]
 
-[? if year = 1923 and month = 3 and week = 3: The Italian Air Wing of the *Regio Esercito* and *Regia Marina* is established as an independent wing of the armed forces, called the *Regia Aeronautica*. ?]
+[? if year = 1923 and month = 3 and week = 3: *왕립 육군*과 *왕립 해군* 소속의 항공대가 독립하여 *왕립 공군*으로 공식 창설되었습니다. ?]
 
-[? if year = 1923 and month = 6 and week = 3: Mount Etna erupts on the east cost of Sicily, resulting in an estimated 60,000 to go homeless. ?]
+[? if year = 1923 and month = 6 and week = 3: 시칠리아 동부 해안의 에트나 화산이 폭발하여 약 6만 명의 이재민이 발생했습니다. ?]
 
-[? if year = 1923 and month = 7 and week = 3: The *Treaty of Lausanne* is signed by Turkey, Greece, Bulgaria and the Entente, officially marking the end of the Ottoman Empire. Foreign Minister [+ foreign_minister +] is sent as our signatory. ?]
+[? if year = 1923 and month = 7 and week = 3: 튀르키예, 그리스, 불가리아, 연합국이 *로잔 조약*에 서명하여 오스만 제국의 종식을 공식화했습니다. [+ foreign_minister +] 외무장관이 이탈리아 서명 대표로 파견되었습니다. ?]
 
-[? if year = 1923 and month = 10 and week = 3 and not soviet_germany: The *Hamburg Uprising*, organised by the KPD (Communist Party of Germany), has fallen, suppressed forcefully by the government within just one day. ?]
+[? if year = 1923 and month = 10 and week = 3 and not soviet_germany: 독일 공산당이 주도한 *함부르크 봉기*가 하루 만에 정부군에 의해 무력으로 진압되었습니다. ?]
 
-[? if year = 1923 and month = 11 and week = 1 and not soviet_germany: The *Beer Hall Putsch*, organised by Adolf Hitler and the Kampfbund in Munich, has fallen, suppressed forcefully by the government within just one day. ?]
+[? if year = 1923 and month = 11 and week = 1 and not soviet_germany: 아돌프 히틀러와 전투동맹이 뮌헨에서 일으킨 *맥주홀 폭동*이 단 하루 만에 정부군에 의해 무력으로 진압되었습니다. ?]
 
-[? if year = 1923 and month = 11 and week = 3 and not soviet_germany: Hyperinflation in the Weimar Republic reaches historic highs, worsening the economic crisis and collapses Gustav Streseman's governing coalition. ?]
+[? if year = 1923 and month = 11 and week = 3 and not soviet_germany: 바이마르 공화국의 초인플레이션이 극에 달하며 경제 위기가 심화되었고, 구스타프 슈트레제만 연립 내각이 붕괴했습니다. ?]
 
-[? if year = 1923 and month = 12 and week = 1: The Gieno Dam, located in the northern province of Bergamo bursts, resulting in the deaths of an estimated 356 people. ?]
+[? if year = 1923 and month = 12 and week = 1: 베르가모 주 북부에 위치한 글리에노 댐이 붕괴하여 약 356명이 사망했습니다. ?]
 
-[? if year = 1924 and month = 1 and week = 3 : The 1924 Winter Olympics, the first of its kind, opens in Chamonix, France. Italy comes in last place. ?]
+[? if year = 1924 and month = 1 and week = 3 : 사상 첫 동계 올림픽이 프랑스 샤모니에서 개막했습니다. 이탈리아는 최하위를 기록했습니다. ?]
 
-[? if year = 1924 and month = 1 and week = 3 : Vladimir Ilyich Ulyanov, Premier of the Union of Soviet Socialist Republic, passes away. Aleksej Rykov succeeds him as Premier, representing the moderate wing of the Bolshevik faction. ?]
+[? if year = 1924 and month = 1 and week = 3 : 소비에트 연방의 인민위원평의회 의장 블라디미르 레닌이 서거했습니다. 볼셰비키 중도파를 대표하는 알렉세이 리코프가 그의 뒤를 이었습니다. ?]
 
-[? if year = 1924 and month = 1 and week = 3 : Ramsey McDonald, leader of the Labour Party of the United Kingdom, is elected the first Labour British Prime Minister. ?]
+[? if year = 1924 and month = 1 and week = 3 : 영국 노동당의 램지 맥도널드가 총리로 선출되어, 영국 최초의 노동당 정부가 출범했습니다. ?]
 
-[? if year = 1924 and month = 3 and week = 1 : The Grand National Assembly of Turkey abolishes the Ottoman Caliphate via decree, deposing caliph Abdülmecid II alongside it.  ?]
+[? if year = 1924 and month = 3 and week = 1 : 튀르키예 대국민의회가 법령을 통해 오스만 칼리파 제도를 폐지하고 마지막 칼리파 압뒬메지트 2세를 폐위했습니다. ?]
 
-[? if year = 1924 and month = 4 and week = 1 and not soviet_germany : Adolf Hitler is sentenced to 5 years in prison for his responsibility in the *Beer Hall Putsch*. ?]
+[? if year = 1924 and month = 4 and week = 1 and not soviet_germany : 아돌프 히틀러가 *맥주홀 폭동*을 주도한 혐의로 징역 5년을 선고받았습니다. ?]
 
-[? if year = 1924 and month = 9 and week = 1 and not soviet_germany : The *Dawes Plan* is signed and approved by the Weimar Republic, establishing an alternate means of repayment and ending the occupation of the Ruhr. French and Belgian forces are set to evacuate the region soon. ?]
+[? if year = 1924 and month = 9 and week = 1 and not soviet_germany : 바이마르 공화국이 전쟁 배상금 지불에 대한 대안을 제시하고 루르 점령을 종식하는 *도스 안*을 승인했습니다. 프랑스와 벨기에 군대는 곧 철수할 예정입니다. ?]
 
-[? if year = 1924 and month = 10 and week = 1 : The *Geneva Protocol* is adopted by the League of Nations for compulsory arbitration of disputes. It is set to be ratified. ?]
+[? if year = 1924 and month = 10 and week = 1 : 국제 분쟁의 중재를 의무화하는 *제네바 의정서가* 국제 연맹에서 채택되었습니다. 곧 비준될 예정입니다. ?]
 
-[? if year = 1924 and month = 10 and week = 3 and supported_entente < 2 : The Conservative Party of the United Kingdom succeeds in obtaining a majority landslide victory over the Labour and Liberal Parties following the reveal of the *Zinoviev Letter*. ?]
+[? if year = 1924 and month = 10 and week = 3 and supported_entente < 2 : 이른바 *지노비예프 편지*가 폭로된 후, 영국 보수당이 총선에서 노동당과 자유당을 상대로 압도적인 과반 의석을 확보하며 승리했습니다. ?]
 
-[? if year = 1924 and month = 10 and week = 3 and supported_entente >= 2 : The Labour Party of the United Kingdom is able to maintain its control of the government following its most recent election, gaining seats at the expense of the Liberal Party. ?]
+[? if year = 1924 and month = 10 and week = 3 and supported_entente >= 2 : 영국 노동당이 최근 총선에서 자유당의 의석을 잠식하며 과반을 유지, 정권 연장에 성공했습니다. ?]
 
-[? if year = 1924 and month = 11 and week = 1 and supported_usa < 2 : Calvin Coolidge defeats Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette in a landslide victory during the 1924 United States Presidential Election. ?]
+[? if year = 1924 and month = 11 and week = 1 and supported_usa < 2 : 1924년 미국 대통령 선거에서 캘빈 쿨리지가 민주당의 존 W. 데이비스와 진보당의 로버트 M. 라폴레트를 압도적인 표차로 누르고 당선되었습니다. ?]
 
-[? if year = 1924 and month = 11 and week = 1 and supported_usa >= 2 : Calvin Coolidge barely edges out a victory against Democratic nominee John W. Davis and Progressive nominee Robert M. La Follette following La Follette's success in several mid-west states during the 1924 United States Presidential Election. ?]
+[? if year = 1924 and month = 11 and week = 1 and supported_usa >= 2 : 1924년 미국 대통령 선거에서 진보당의 라폴레트 후보가 여러 중서부 주에서 선전했으나, 캘빈 쿨리지가 민주당의 존 W. 데이비스와 라폴레트를 간신히 따돌리고 신승을 거두었습니다. ?]
 
-[? if year = 1924 and month = 12 and week = 3 and not soviet_germany : Adolf Hitler is released from prison, serving out only 9 months of the 5 years sentenced due to his involvement in the *Beer Hall Putsch*. ?]
+[? if year = 1924 and month = 12 and week = 3 and not soviet_germany : *맥주홀 폭동*으로 5년 형을 선고받았던 아돌프 히틀러가 9개월 만에 석방되었습니다. ?]
 
-[? if year = 1925 and month = 7 and week = 3 and not soviet_germany : Adolf Hitler publishes volume 1 of his manifesto, *Mein Kampf*. ?]
+[? if year = 1925 and month = 7 and week = 3 and not soviet_germany : 아돌프 히틀러가 자신의 정치 선언문인 *나의 투쟁* 제1권을 출간했습니다. ?]
 
-[? if year = 1925 and month = 8 and week = 3 and not soviet_germany : The last of the French forces evacuate the Ruhr, following the resumption of German reparations payments under the Dawes Plan, ending the almost three year occupation. ?]
+[? if year = 1925 and month = 8 and week = 3 and not soviet_germany : 독일이 도스 안에 따라 전쟁 배상금 지불을 재개하자, 마지막 프랑스군이 루르에서 철수하며 약 3년에 걸친 점령이 막을 내렸습니다. ?]
 
-[? if year = 1925 and month = 11 and week = 1 and not soviet_germany : The *Schutzstaffel* is established as a paramilitary organisation to protect Adolf Hitler. ?]
+[? if year = 1925 and month = 11 and week = 1 and not soviet_germany : 아돌프 히틀러의 개인 경호를 위한 준군사조직인 *친위대* 가 창설되었습니다. ?]
 
-[? if year = 1925 and month = 12 and week = 1 and not soviet_germany : The *Locarno Treaties* are signed in London, pledging to guarantee the inviolability of the borders between Germany and France & Belgium, alongside various other agreements to ensure the Weimar Republic would ensure peaceful arbitration in the event of disputes. ?]
+[? if year = 1925 and month = 12 and week = 1 and not soviet_germany : 독일-프랑스-벨기에 간 국경의 불가침을 보장하고, 분쟁 시 평화적 해결을 약속하는 *로카르노 조약*이 런던에서 체결되었습니다. ?]
 
-[? if year = 1926 and month = 5 and week = 1 : The Trades Union Congress begins a strike in the United Kingdom in support of the Miners' Federation. Martial Law is declared just nine days later that ends the strike. ?]
+[? if year = 1926 and month = 5 and week = 1 : 영국 노동조합회의가 광부 연맹을 지지하며 총파업에 돌입했습니다. 9일 후 계엄령이 선포되면서 파업은 강제 해산되었습니다. ?]
 
-[? if year = 1926 and month = 5 and week = 1 : Marshal Józef Piłsudski overthrows the democratically elected government of the Republic of Poland, establishing a military dictatorship. ?]
+[? if year = 1926 and month = 5 and week = 1 : 유제프 피우수트스키 원수가 폴란드 제2공화국의 민선 정부를 전복시키고 군사 독재 정권을 수립했습니다. ?]
 
-[? if year = 1926 and month = 5 and week = 3 : Army Officer Manuel Gomes da Costa overthrows the democratically elected government of the Portugal, establishing a military dictatorship. ?]
+[? if year = 1926 and month = 5 and week = 3 : 마누엘 고메스 다 코스타 장군이 포르투갈의 민선 정부를 전복시키고 군사 독재 정권을 수립했습니다. ?]
 
-[? if year = 1926 and month = 7 and week = 1 : The National Revolutionary Army, led by Chiang Kai-shek of the Chinese Kuomintang, begins the *Northern Expedition*, seeking to reunite Northern China. ?]
+[? if year = 1926 and month = 7 and week = 1 : 중국 국민당의 장제스가 이끄는 국민혁명군이 분열된 북부 중국을 통일하기 위해 *북벌*을 개시했습니다. ?]
 
-[? if year = 1926 and month = 9 and week = 1 and not soviet_germany : The Weimar Republic joins the League of Nations. ?]
+[? if year = 1926 and month = 9 and week = 1 and not soviet_germany : 바이마르 공화국이 국제 연맹에 가입했습니다. ?]
 
-[? if year = 1926 and month = 12 and week = 1 : Martial Law in response to the General Strike in the United Kingdom ends. ?]
+[? if year = 1926 and month = 12 and week = 1 : 영국 총파업 사태로 선포되었던 계엄령이 해제되었습니다. ?]
 
-[? if year = 1926 and month = 12 and week = 3 : Emperor Taishō passes away from a heart attack, ending the Taishō era. Succeeding him is Emperor Shōwa, who begins the Shōwa era. ?]
+[? if year = 1926 and month = 12 and week = 3 : 다이쇼 천황이 심장마비로 서거하며 다이쇼 시대가 막을 내렸습니다. 그의 뒤를 이어 쇼와 천황이 즉위하며 쇼와 시대가 시작되었습니다. ?]
 
-[? if year = 1927 and month = 3 and week = 3 : Foreign ships, including our own, bombard the city of Nanjing after its capture by the National Revolutionary Army to defend foreign residents. ?]
+[? if year = 1927 and month = 3 and week = 3 : 국민혁명군이 난징을 점령하자, 자국민 보호를 명분으로 이탈리아 함선을 포함한 열강의 함대가 난징 시를 포격했습니다. ?]
 
-[? if year = 1927 and month = 5 and week = 3 : Due to revelations of espionage and underground agitation, the United Kingdom cuts diplomatic ties with the Union of Soviet Socialist Republics. ?]
+[? if year = 1927 and month = 5 and week = 3 : 간첩 활동 및 체제 전복 시도가 발각되자, 영국이 소비에트 연방과의 외교 관계를 단절했습니다. ?]
 
-[? if year = 1927 and month = 6 and week = 1 : The Kingdom of Serbs, Croats and Slovenes cuts diplomatic ties with the Kingdom of Albania. ?]
+[? if year = 1927 and month = 6 and week = 1 : 세르브-크로아트-슬로벤 왕국이 알바니아 왕국과의 외교 관계를 단절했습니다. ?]
 
 - @party
 - @paramilitary
@@ -347,14 +347,14 @@ max-cards: 4
 - @shuffle_leadership_pinned
 
 @party
-title: Party Affairs
+title: 당내 문제
 card-image: img/partydeck.jpg
 is-deck: true
 
 - #party_affairs
 
 @paramilitary
-title: Paramilitary Affairs
+title: 준군사조직 관리
 view-if: not national_congress_seen and not pacification_pact
 card-image: img/redguarddeck.jpg
 is-deck: true
@@ -362,7 +362,7 @@ is-deck: true
 - #para_affairs
 
 @natdef 
-title: National Defence
+title: 국방
 view-if: national_congress_seen
 card-image: img/redguarddeck.jpg
 is-deck: true
@@ -370,7 +370,7 @@ is-deck: true
 - #national_def
 
 @govt
-title: Government Affairs
+title: 국정 운영
 view-if: psi_in_government
 card-image: img/governmentdeck.jpg
 is-deck: true
