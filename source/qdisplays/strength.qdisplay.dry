@@ -1,8 +1,8 @@
 
 # faction strength
 
-(0..10) Weak
-(10..25) Moderate
-(25..40) Strong
-(40..60) Very strong
-(60..) Dominant
+(0..10) 약함
+(10..25) 보통
+(25..40) 강함
+(40..60) 매우 강함
+(60..) 지배적

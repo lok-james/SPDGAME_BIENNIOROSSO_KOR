@@ -1,10 +1,10 @@
 
-(..-6) Extremely low
-(-5..-4) Very low
-(-3..-2) Low
-(-1..-1) Below baseline
-(0..0) Moderate
-(1..1) Above baseline
-(2..3) High
-(4..5) Very high
-(6..) Extremely high
+(..-6) 극도로 낮음
+(-5..-4) 매우 낮음
+(-3..-2) 낮음
+(-1..-1) 약간 낮음
+(0..0) 중간
+(1..1) 약간 높음
+(2..3) 높음
+(4..5) 매우 높음
+(6..) 극도로 높음

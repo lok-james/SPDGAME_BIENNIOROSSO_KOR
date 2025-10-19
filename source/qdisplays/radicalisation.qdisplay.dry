@@ -1,7 +1,7 @@
 
-(..1) Nonexistent
-(1..3) Extremely low
-(3..5) Low
-(5..6) Moderate
-(7..9) High
-(9..) Extremely high
+(..1) 존재하지 않음
+(1..3) 극도로 낮음
+(3..5) 낮음
+(5..6) 보통
+(7..9) 높음
+(9..) 극도로 높음
