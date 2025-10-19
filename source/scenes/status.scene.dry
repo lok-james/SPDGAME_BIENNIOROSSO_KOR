@@ -2,14 +2,14 @@ title: 현황
 new-page: true
 is-special: true
 on-arrival: {!
-if (Q.inflation) {
-    Q.inflation_2 = Q.inflation.toFixed(1);
+if (typeof Q.inflation !== 'undefined' && Q.inflation !== null) {
+    Q.inflation_2 = (typeof Q.inflation === 'number') ? Q.inflation.toFixed(1) : Q.inflation;
 }
-if (Q.economic_growth) {
-    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+if (typeof Q.economic_growth !== 'undefined' && Q.economic_growth !== null) {
+    Q.economic_growth_2 = (typeof Q.economic_growth === 'number') ? Q.economic_growth.toFixed(1) : Q.economic_growth;
 }
-if (Q.unemployment) {
-    Q.unemployment_2 = Q.unemployment.toFixed(1);
+if (typeof Q.unemployment !== 'undefined' && Q.unemployment !== null) {
+    Q.unemployment_2 = (typeof Q.unemployment === 'number') ? Q.unemployment.toFixed(1) : Q.unemployment;
 }
 !}
 
