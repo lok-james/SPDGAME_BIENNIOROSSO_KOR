@@ -239,7 +239,7 @@ go-to: menu
 
 [? if pcs_formed : **기독교사회당(PCS)** - *Partito Cristiano Sociale* - [+ ds_name +]의 우익이 분리되어 창당한 우파 자유주의 정당입니다. 가브리엘로 카르나차의 지도 아래 있으며, 좌파에 맞서기 위한 극우 세력과의 협력을 주장합니다. ?]
 
-[? if not pnf_banned : **[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - 새롭게 결성된 조직으로, [+ pnf_leader +]가 이끄는 '전투 파스케스'(*Fasci di Combattimento*)의 정치적 대변인 역할을 수행합니다. ?]
+[? if not pnf_banned : **[+ pnf_name +]** - *[+ pnf_full_italian +]* - ([+ pnf_full_name +]) - 새롭게 결성된 조직으로, [+ pnf_leader +]가 이끄는 '전투 파시'(*Fasci di Combattimento*)의 정치적 대변인 역할을 수행합니다. ?]
 
 [? if not pnf_banned : 현재 관계: [+ pnf_relation : relationships +] ?]
 
@@ -269,13 +269,13 @@ go-to: menu
 
 [? if arditi_formed : 무장 수준: [+ adp_militancy : militancy +]?]
 
-[? if not national_congress_seen : **이탈리아 전투 파스케스**: [+ pnf_leader +]가 이끄는 준군사조직으로, 적위대와 빈번하게 충돌합니다. ?]
+[? if not national_congress_seen : **이탈리아 전투 파시**: [+ pnf_leader +]가 이끄는 준군사조직으로, 적위대와 빈번하게 충돌합니다. ?]
 
 [? if not national_congress_seen : 규모: 약 [+ fdc_strength +]천 명 ?]
 
 [? if not national_congress_seen : 무장 수준: [+ fdc_militancy : militancy +] ?]
 
-[? if not national_congress_seen : **아르디티즈모**: 전투 파스케스와 연계된 준군사조직으로, 독자적으로 활동하며 적위대와 자주 무력 충돌을 일으킵니다. ?]
+[? if not national_congress_seen : **아르디티즈모**: 전투 파시와 연계된 준군사조직으로, 독자적으로 활동하며 적위대와 자주 무력 충돌을 일으킵니다. ?]
 
 [? if not national_congress_seen : 규모: 약 [+ ard_strength +]천 명 ?]
 
