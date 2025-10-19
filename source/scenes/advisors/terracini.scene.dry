@@ -14,7 +14,7 @@ new-page: true
 - @fasci_urgency
 - @root: 주 메뉴로 돌아가기
 
-@comintern_relations_salvemini
+@comintern_relations
 title: 코민테른 관계
 subtitle: 국제 동맹들과의 관계를 증진합니다.
 choose-if: advisor_action_timer = 0 
