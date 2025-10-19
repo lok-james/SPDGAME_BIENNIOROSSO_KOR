@@ -1,4 +1,4 @@
-title: Status
+title: 현황
 new-page: true
 is-special: true
 on-arrival: {!
@@ -13,141 +13,141 @@ if (Q.unemployment) {
 }
 !}
 
-= Status
+= 현황
 
-Week [+ week +], [+ month : month +] [+ year +]
+[+ year +]년 [+ month : month +], [+ week +]주차
 
-Party: [+ resources +]
+당 자금: [+ resources +]
 
-Paramilitary: [+ para_resources +]
+준군사조직 자금: [+ para_resources +]
 
-[+ psi_name +] Position: [? if psi_in_government : In Government - ?][? if psi_in_government == 0 : Opposition ?]
-[? if centre_left_coalition and psi_in_government: Centre-Left Coalition ?][? if psi_majority and psi_in_government: [+ psi_name +] majority ?][? if socialist_catholic_coalition and psi_in_government: Catholic-Socialist Coalition ?][? if left_wing_coalition and psi_in_government: Left-Wing Coalition ?]
+[+ psi_name +]의 위치: [? if psi_in_government : 여당 - ?][? if psi_in_government == 0 : 야당 ?]
+[? if centre_left_coalition and psi_in_government: 중도-좌파 연정 ?][? if psi_majority and psi_in_government: [+ psi_name +] 다수당 ?][? if socialist_catholic_coalition and psi_in_government: 사회주의-가톨릭 연정 ?][? if left_wing_coalition and psi_in_government: 좌파 연정 ?]
 
-[? if psi_in_government and not psi_majority: Coalition Dissent: [+ coalition_dissent : coalition_dissent +] ?]
+[? if psi_in_government and not psi_majority: 연정 내 갈등: [+ coalition_dissent : coalition_dissent +] ?]
 
-Internal Dissent: [+ dissent_percent : dissent +]
+당내 불만: [+ dissent_percent : dissent +]
 
-Revolutionary Fervour: [+ revolutionary_fervour +]%
+혁명 열기: [+ revolutionary_fervour +]%
 
-[? if not_participating = 1: {!<span class="tooltip-text" title="The party will grow exhausted as time goes by, as it becomes clearer and clearer calls for revolution mean just that.">Revolutionary Exhaustion</span>!}: [+ revolutionary_exhaustion_2 : exhaustion +] ?]
+[? if not_participating = 1: {!<span class="tooltip-text" title="시간이 지남에 따라 당은 점점 지쳐갈 것입니다. 혁명을 요구하는 목소리가 그저 그런 뜻임을 점점 더 분명히 깨닫게 되면서 말입니다.">혁명 열기</span>!}: [+ revolutionary_exhaustion_2 : 열기 +] ?]
 
-{!<span class="tooltip-text" title="The other parties view us with doubt, considering the party contains radicals advocating for the fall of the Kingdom. The question is: How radical?">Radicalisation</span>!}: [+ radicalisation : radicalisation +]
+{!<span class="tooltip-text" title="다른 정당들은 우리를 의심스러운 눈초리로 바라봅니다. 당 내에 왕국 전복을 주장하는 급진주의자들이 존재하기 때문이죠. 문제는 이들의 급진성이 어느 정도인가 하는 점입니다.">급진주의</span>!}: [+ radicalisation : 급진주의 +]
 
-[? if prime_minister = "D'Annunzio" : Our relationship with D'Annunzio is [+ dannunzio_relation : radicalisation +] ?]
+[? if prime_minister = “D’Annunzio” : 단눈치오와의 관계: [+ dannunzio_relation : radicalisation +] ?]
 
-[? if prime_minister = "D'Annunzio" : D'Annunzio's influence within the party is [+ dannunzio_influence : influence +] ?]
+[? if prime_minister = “D’Annunzio” : 당내 단눈치오의 영향력: [+ dannunzio_influence : influence +] ?]
 
-= Government
+= 정부
 
-[? if not king_abolished : King: [+ king +] ?]
+[? if not king_abolished : 국왕: [+ king +] ?]
 
-[? if not king_abolished and not king_figurehead : King Approval: [+ king_relation : relationships +] ?]
+[? if not king_abolished and not king_figurehead : 국왕 지지도: [+ king_relation : relationships +] ?]
 
-Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
+총리: [+ prime_minister +] ([+ prime_minister_party +])
 
-Senate: [? if veto_removed == 0: Empowered ?][? if veto_removed == 1: Weakened ?]
+상원: [? if veto_removed == 0: 권한 유지 ?][? if veto_removed == 1: 권한 약화 ?]
 
-Chamber of Deputies composition:
+하원 의석 현황:
 
-[? if changed_name != 1: {!<span class="tooltip-text" title="Italian Socialist Party">PSI</span>!}: [+ psi_seating_disp +]% ?]
-[? if changed_name = 1 : {!<span class="tooltip-text" title="Communist Party - Italian Section of the Communist International">PC - SIIC</span>!}: [+ psi_seating_disp +]% ?]
-[? if pcdi_formed : {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_seating_disp +]% ?]
-[? if psu_formed : {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_seating_disp +]% ?]
-[? if not psri_collapse :{!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_seating_disp +]% ?]
-[? if pll_formed : {!<span class="tooltip-text" title="Liberal Workers' Party">PLL</span>!}: [+ pll_seating_disp +]% ?]
-[? if pri_prominent : {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_seating_disp +]% ?]
-[? if not pdsi_formed : {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_seating_disp +]% ?]
-[? if pdsi_formed : {!<span class="tooltip-text" title="Italian Social Democratic Party">PDSI</span>!}: [+ ds_seating_disp +]% ?]
-{!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_seating_disp +]%
-[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats & Radicals">LDR</span>!}: [+ ldr_seating_disp +]% ?]
-[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_seating_disp +]% ?]
-[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_seating_disp +]% ?]
-[? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_seating_disp +]% ?]
-[? if pcs_formed : {!<span class="tooltip-text" title="Christian Social Party">PCS</span>!}: [+ pcs_seating_disp +]% ?]
-[? if not pnf_formed :{!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_seating_disp +]% ?]
-[? if pnf_formed :{!<span class="tooltip-text" title="National Fascist Party">PNF</span>!}: [+ pnf_seating_disp +]% ?]
+[? if changed_name != 1: {!<span class="tooltip-text" title="이탈리아 사회당">PSI</span>!}: [+ psi_seating_disp +]% ?]
+[? if changed_name = 1 : {!<span class="tooltip-text" title="공산당 - 공산주의 인터내셔널 이탈리아 지부">PC - SIIC</span>!}: [+ psi_seating_disp +]% ?]
+[? if pcdi_formed : {!<span class="tooltip-text" title="이탈리아 공산당">PCd'I</span>!}: [+ pcdi_seating_disp +]% ?]
+[? if psu_formed : {!<span class="tooltip-text" title="단일 사회당">PSU</span>!}: [+ psu_seating_disp +]% ?]
+[? if not psri_collapse :{!<span class="tooltip-text" title="이탈리아 개혁사회당">PSRI</span>!}: [+ psri_seating_disp +]% ?]
+[? if pll_formed : {!<span class="tooltip-text" title="자유노동당' Party">PLL</span>!}: [+ pll_seating_disp +]% ?]
+[? if pri_prominent : {!<span class="tooltip-text" title="공화당">PRI</span>!}: [+ pri_seating_disp +]% ?]
+[? if not pdsi_formed : {!<span class="tooltip-text" title="사회민주주의">DS</span>!}: [+ ds_seating_disp +]% ?]
+[? if pdsi_formed : {!<span class="tooltip-text" title="이탈리아 사회민주당">PDSI</span>!}: [+ ds_seating_disp +]% ?]
+{!<span class="tooltip-text" title="이탈리아 인민당">PPI</span>!}: [+ ppi_seating_disp +]%
+[? if not pldi_formed : {!<span class="tooltip-text" title="자유민주급진당">LDR</span>!}: [+ ldr_seating_disp +]% ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="이탈리아 자유민주당">PLDI</span>!}: [+ ldr_seating_disp +]% ?]
+[? if not pli_formed : {!<span class="tooltip-text" title="자유연합">UL</span>!}: [+ ul_seating_disp +]% ?]
+[? if pli_formed : {!<span class="tooltip-text" title="이탈리아 자유당">PLI</span>!}: [+ ul_seating_disp +]% ?]
+[? if pcs_formed : {!<span class="tooltip-text" title="기독교사회당">PCS</span>!}: [+ pcs_seating_disp +]% ?]
+[? if not pnf_formed :{!<span class="tooltip-text" title="이탈리아 전투 파시">FdC</span>!}: [+ pnf_seating_disp +]% ?]
+[? if pnf_formed :{!<span class="tooltip-text" title="국가 파시스트당">PNF</span>!}: [+ pnf_seating_disp +]% ?]
 Others: [+ other_seating_disp +]%
 
-[? if psi_in_government = 1 : Budget: [+ budget +] ?]
+[? if psi_in_government = 1 : 국가 재정: [+ budget +] ?]
 
-Next election: [+ next_election_month : month +] [+ next_election_year +]
+차기 총선: [+ next_election_month : month +] [+ next_election_year +]
 
-= Coalition Demands
+= 연정 파트너 요구 사항
 
-[? if left_wing_coalition : We are in a coalition without demands. ?]
+[? if left_wing_coalition : 현재 연정에는 별다른 요구 사항이 없습니다. ?]
 
-[? if not psi_in_government : We are not in government. ?]
+[? if not psi_in_government : 현재 야당입니다. ?]
 
-[? if psi_majority : The [+ psi_name +] holds a majority. ?]
+[? if psi_majority : [+ psi_name +]가 단독 과반 의석을 확보하고 있습니다. ?]
 
-[? if liberal_reform_accepted : Land Reforms disallowed ?]
+[? if liberal_reform_accepted : 토지 개혁 불가 ?]
 
-[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : Crackdown on Paramilitaries: [+ liberal_crackdown_timer +] weeks left ?]
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 0 : 준군사조직 탄압: [+ liberal_crackdown_timer +]주 후 완료 ?]
 
-[? if liberal_crackdown_accepted and liberal_crackdown_complete == 1: Crackdown on Paramilitaries: Completed ?]
+[? if liberal_crackdown_accepted and liberal_crackdown_complete == 1: 준군사조직 탄압: 완료 ?]
 
-[? if liberal_nationalisation_accepted : Nationalisations disallowed ?]
+[? if liberal_nationalisation_accepted : 국유화 불가 ?]
 
-[? if liberal_budget_accepted : Deficit spending disallowed ?]
+[? if liberal_budget_accepted : 재정 적자 편성 불가 ?]
 
-[? if liberal_foreign_accepted : Continue Entente alignment ?]
+[? if liberal_foreign_accepted : 협상국과의 동맹 유지 ?]
 
-[? if liberal_aid_accepted : Soviet Aid disallowed ?]
+[? if liberal_aid_accepted : 소비에트 연방 지원 불가 ?]
 
-[? if catholic_papacy_accepted and roman_question_answered == 0 : Roman Question resolved: [+ catholic_papacy_timer +] weeks left ?]
+[? if catholic_papacy_accepted and roman_question_answered == 0 : 로마 문제 해결: [+ catholic_papacy_timer +]주 후 완료 ?]
 
-[? if catholic_papacy_accepted and roman_question_answered == 1 : Roman Question resolved: Completed ?]
+[? if catholic_papacy_accepted and roman_question_answered == 1 : 로마 문제 해결: 완료 ?]
 
-[? if catholic_education_accepted : Catholic Education Reforms disallowed ?]
+[? if catholic_education_accepted : 가톨릭 교육 개혁 불가 ?]
 
-[? if catholic_women_accepted : Women's Reforms disallowed ?]
+[? if catholic_women_accepted : 여성 권리 개혁 불가 ?]
 
-[? if catholic_charity_accepted : Non-Catholic Charity funding disallowed ?]
+[? if catholic_charity_accepted : 비가톨릭 자선 단체 지원 불가 ?]
 
-[? if catholic_nationalisation_accepted : Anti-Catholic Nationalisations disallowed ?]
+[? if catholic_nationalisation_accepted : 가톨릭 소유 자산 국유화 불가 ?]
 
-= Economics
+= 경제
 
-Inflation: [+ inflation_2 +]%
+인플레이션: [+ inflation_2 +]%
 
-Economic Growth: [+ economic_growth_2 +]%
+경제 성장률: [+ economic_growth_2 +]%
 
-Unemployment: [+ unemployment_2 +]%
+실업률: [+ unemployment_2 +]%
 
-British Debts: [? if uk_debts > 0 and not in_default : Significant ?] [? if uk_debts_over and not in_default : Amortisation Plan ?] [? if in_default : Defaulted ?]
+영국 부채: [? if uk_debts > 0 and not in_default : 심각함 ?] [? if uk_debts_over and not in_default : 분할 상환 중 ?] [? if in_default : 채무 불이행 ?]
 
-American Debts: [? if american_debts > 0 and not in_default : Significant ?] [? if us_debts_over and not in_default : Amortisation Plan ?] [? if in_default : Defaulted ?]
+미국 부채: [? if american_debts > 0 and not in_default : 심각함 ?] [? if us_debts_over and not in_default : 분할 상환 중 ?] [? if in_default : 채무 불이행 ?]
 
 @politics
 
-= Inter-party Relations
+= 정당 간 관계
 
-[? if pcdi_formed : {!<span class="tooltip-text" title="Communist Party of Italy">PCd'I</span>!}: [+ pcdi_relation : relationships +] ?]
+[? if pcdi_formed : {!<span class="tooltip-text" title="이탈리아 공산당">PCd'I</span>!}: [+ pcdi_relation : relationships +] ?]
 
-[? if psu_formed : {!<span class="tooltip-text" title="Unitary Socialist Party">PSU</span>!}: [+ psu_relation : relationships +] ?]
+[? if psu_formed : {!<span class="tooltip-text" title="단일 사회당">PSU</span>!}: [+ psu_relation : relationships +] ?]
 
-[? if not psri_collapse : {!<span class="tooltip-text" title="Italian Reformist Socialist Party">PSRI</span>!}: [+ psri_relation : relationships +] ?]
+[? if not psri_collapse : {!<span class="tooltip-text" title="이탈리아 개혁사회당">PSRI</span>!}: [+ psri_relation : relationships +] ?]
 
-[? if pll_formed : {!<span class="tooltip-text" title="Liberal Workers' Party">PLL</span>!}: [+ pll_relation : relationships +] ?]
+[? if pll_formed : {!<span class="tooltip-text" title="자유노동자당">PLL</span>!}: [+ pll_relation : relationships +] ?]
 
-[? if pri_prominent = 1: {!<span class="tooltip-text" title="Italian Republican Party">PRI</span>!}: [+ pri_relation : relationships +] ?]
+[? if pri_prominent = 1: {!<span class="tooltip-text" title="이탈리아 공화당">PRI</span>!}: [+ pri_relation : relationships +] ?]
 
-[? if not pdsi_formed : {!<span class="tooltip-text" title="Social Democracy">DS</span>!}: [+ ds_relation : relationships +] ?]
-[? if pdsi_formed : {!<span class="tooltip-text" title="Italian Social Democratic Party">PDSI</span>!}: [+ ds_relation : relationships +] ?]
+[? if not pdsi_formed : {!<span class="tooltip-text" title="사회민주주의">DS</span>!}: [+ ds_relation : relationships +] ?]
+[? if pdsi_formed : {!<span class="tooltip-text" title="이탈리아 사회민주당">PDSI</span>!}: [+ ds_relation : relationships +] ?]
 
 {!<span class="tooltip-text" title="Italian People's Party">PPI</span>!}: [+ ppi_relation : relationships +]
 
-[? if not pldi_formed : {!<span class="tooltip-text" title="Liberals, Democrats and Radicals">LDR</span>!}: [+ ldr_relation : relationships +] ?]
-[? if pldi_formed : {!<span class="tooltip-text" title="Italian Democratic Liberal Party">PLDI</span>!}: [+ ldr_relation : relationships +] ?]
+[? if not pldi_formed : {!<span class="tooltip-text" title="자유민주급진당">LDR</span>!}: [+ ldr_relation : relationships +] ?]
+[? if pldi_formed : {!<span class="tooltip-text" title="이탈리아 자유민주당">PLDI</span>!}: [+ ldr_relation : relationships +] ?]
 
-[? if not pli_formed : {!<span class="tooltip-text" title="Liberal Union">UL</span>!}: [+ ul_relation : relationships +] ?]
+[? if not pli_formed : {!<span class="tooltip-text" title="자유연합">UL</span>!}: [+ ul_relation : relationships +] ?]
 [? if pli_formed : {!<span class="tooltip-text" title="Italian Liberal Party">PLI</span>!}: [+ ul_relation : relationships +] ?]
 
-[? if not pnf_formed : {!<span class="tooltip-text" title="Italian Fasces of Combat">FdC</span>!}: [+ pnf_relation : relationships +] ?]
-[? if pnf_formed : {!<span class="tooltip-text" title="National Fascist Party">PNF</span>!}: [+ pnf_relation : relationships +] ?]
+[? if not pnf_formed : {!<span class="tooltip-text" title="이탈리아 전투 파시">FdC</span>!}: [+ pnf_relation : relationships +] ?]
+[? if pnf_formed : {!<span class="tooltip-text" title="국가 파시스트당">PNF</span>!}: [+ pnf_relation : relationships +] ?]
 
-= Internal Factions of the [+ psi_name +]
+= [+ psi_name +]의 파벌
 
 {!<span class="tooltip-text" title="The Communists are interested in radical, transformative policies and revolutionary action.">Communists</span>!} strength: [+ communist_strength : strength +], dissent: [+ communist_dissent : dissent +]
 
