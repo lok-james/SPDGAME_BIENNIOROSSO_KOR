@@ -9,9 +9,9 @@ view-if: rigola_advisor = 1
 
 리고라는 이탈리아 노동 총동맹의 전 서기장이자, [+ psi_name +] 내 노동조합주의 파벌의 일원입니다.
 
-- @emergency_fundraising_rigola: 긴급 자금 모금
-- @minimum_program_implementation_rigola: 최소 강령 이행
-- @veterans_welfare: 참전용사 복지
+- @emergency_fundraising_rigola
+- @minimum_program_implementation_rigola
+- @veterans_welfare
 - @root: 주 메뉴로 돌아가기
 
 @emergency_fundraising_rigola

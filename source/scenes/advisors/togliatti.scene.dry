@@ -1,40 +1,40 @@
-title: Palmiro Togliatti
+title: 팔미로 톨리아티
 is-pinned-card: true
 tags: advisor, communist
 card-image: img/portraits/PalmiroTogliatti.jpg
 view-if: togliatti_advisor = 1
 new-page: true 
 
-= Palmiro Togliatti
+= 팔미로 톨리아티
 
-Togliatti is a member of the Communist faction of the [+ psi_name +]. A popular figure on the far-left, he is one of the founders of *L'Ordine Nuovo*, the far-left newspaper.
+톨리아티는 [+ psi_name +] 내 공산주의파의 일원입니다. 극좌파 내에서 높은 인기를 누리고 있으며, 극좌 신문인 <신질서>의 창립자 중 한 명입니다.
 
 - @togliatti_coalition
 - @public_education
 - @shuffle_cabinet_togliatti
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @togliatti_coalition
-title: Negotiating with the Coalition
-subtitle: Togliatti can improve our relationships with our centrist and centre-left coalition partners in the Chamber of Deputies.
+title: 연정 협상
+subtitle: 톨리아티는 하원의 중도 및 중도 좌파 연립 파트너들과 관계를 개선할 수 있습니다.
 choose-if: advisor_action_timer <= 0 and (centre_left_coalition or socialist_catholic_coalition or left_wing_coalition)
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition : The [+ psi_name +] is not currently in a coalition. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?] [? if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition : [+ psi_name +]이(가) 현재 연정에 참여하고 있지 않음. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1; ldr_relation += 7 if centre_left_coalition; ds_relation += 5 if centre_left_coalition; psri_relation += 9; ppi_relation += 7 if socialist_catholic_coalition;
 
-We have improved our relations with our coalition partners and reduced tensions with the coalition.
+연정 파트너들과의 관계를 개선하고 연정 내 긴장을 완화했습니다.
 
 @public_education
-title: Public Education
-subtitle: As we control the Public Education Ministry, we are able to direct policy, potentially benefitting us.
+title: 공교육
+subtitle: 공교육부를 장악했으니, 정책을 주도하여 우리 당에 유리한 방향으로 이끌 수 있습니다.
 choose-if: advisor_action_timer = 0 and psi_in_government and public_education_minister_party == psi_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not psi_in_government : The [+ psi_name +] is not currently in government. ?][? if not public_education_minister_party == psi_name : The [+ psi_name +] is not in control of the Public Education Ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not public_education_minister_party == psi_name : [+ psi_name +]이(가) 공교육부를 장악하고 있지 않습니다 ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: education_policy
 
 @shuffle_cabinet_togliatti
-title: Shuffle Cabinet 
-subtitle: Perhaps it is time we renegotiate the terms of the coalition with our partners.
+title: 내각 개편
+subtitle: 연정 파트너들과 연정 구성에 대한 재협상을 시작해야 할 때일지도 모릅니다.
 choose-if: advisor_action_timer = 0 and (centre_left_coalition or socialist_catholic_coalition or left_wing_coalition) and coalition_dissent < 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not centre_left_coalition or socialist_catholic_coalition or left_wing_coalition : The [+ psi_name +] is not currently in a coalition. ?][? if coalition_dissent >= 3 : Coalition dissent is far too high for us to negotiate with our partners. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not centre_left_coalition or socialist_catholic_coalition or left_wing_coalition : [+ psi_name +]이(가) 현재 연정에 참여하고 있지 않음. ?][? if coalition_dissent >= 3 : 연정 내 갈등이 심각하여 파트너들과 협상할 수 없음. ?]
 on-arrival: advisor_action_timer = 6; shuffle_cabinet_timer -= 5; last_advisor_action = 1
 go-to: shuffle_cabinet

@@ -1,40 +1,40 @@
-title: Angelo Tasca
+title: 안젤로 타스카
 is-pinned-card: true 
 tags: advisor, communist
 card-image: img/portraits/AngeloTasca.jpg
 new-page: true
 view-if: tasca_advisor = 1
 
-= Angelo Tasca
+= 안젤로 타스카
 
-Tasca is a member of the Communist faction of the [+ psi_name +]. A writer and historian, Tasca is a writer of *Avanti!*
+타스카는 [+ psi_name +] 내 공산주의파의 일원입니다. 작가이자 역사가인 그는 당 기관지 <전진!>의 필진이기도 합니다.
 
 - @media_tasca
 - @implement_plan_tasca
 - @para_funding_tasca
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
-@media_tasca
-title: Media
-subtitle: Organise our media to spread our message further.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+@media_gramsci
+title: 언론 활동
+subtitle: 언론을 조직하여 우리의 메시지를 더 널리 퍼뜨립니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; media_timer -= 6; last_advisor_action = 1
 go-to: media
 
-@implement_plan_tasca
-title: Implementing our Plan
-subtitle: We can being implementing the Maximum Program.
+@implement_plan
+title: 우리의 강령 이행하기
+subtitle: 최대 강령의 이행을 시작할 수 있습니다.
 choose-if: advisor_action_timer = 0 and economic_plan = 1 and nationalisation_adopted = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if economic_plan = 0 : We have not chosen a program yet. ?][? if economic_plan = 1 and moderate_plan_adopted : We have chosen a different plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if economic_plan = 0 : 아직 강령을 채택하지 않았습니다. ?][? if economic_plan = 1 and moderate_plan_adopted : 이미 다른 강령을 채택했습니다. ?]
 on-arrival: advisor_action_timer = 6; maximum_program_timer -= 8; last_advisor_action = 1
 go-to: maximum_program
 
 @para_funding_tasca
-title: Paramilitary Funding
-subtitle: From our party coffers, we can continue funding the Red Guards to expand their reach.
+title: 준군사조직 자금 지원
+subtitle: 당 자금으로 적위대에 자금을 지원하여 활동 반경을 넓힐 수 있습니다.
 choose-if: advisor_action_timer = 0 and resources > 0
 view-if: not national_congress_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources = 0 : We cannot afford to fund the Red Guards now. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if resources = 0 : 지금은 적위대에 자금을 지원할 여력이 없습니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; para_funding_timer -= 3;
 go-to: para_funding

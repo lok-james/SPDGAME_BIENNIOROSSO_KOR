@@ -1,41 +1,41 @@
-title: Giacinto Menotti Serrati
+title: 지아친토 메노티 세라티
 is-pinned-card: true
 tags: advisor, maximalist
 card-image: img/portraits/GiacintoMenottiSerrati.png
 view-if: serrati_advisor = 1
 new-page: true 
 
-= Giacinto Menotti Serrati
+= 지아친토 메노티 세라티
 
-Serrati is a leader of the Maximalists, one of the factions of the [+ psi_name +].
+세라티는 [+ psi_name +] 내 주요 파벌 중 하나인 최대강령주의파의 지도자입니다.
 
 - @serrati_revolution_or_reformist
 - @party_discipline
 - @implement_plan
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
 @serrati_revolution_or_reformist
-title: Revolution or Reformist?
-subtitle: Debate our path forward. For Serrati, it is in favour of revolution.
+title: 혁명이냐, 개량이냐?
+subtitle: 당의 나아갈 방향에 대한 토론을 시작합니다. 세라티는 혁명을 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: communist_dissent -= 7*(1-dissent); reformist_dissent += 7*(1-dissent); radicalisation += 0.5; revolutionary_fervour += 3; communist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent); advisor_action_timer = 6;
 
-We are able to sway some of the more left-wing members of the party to our cause, advocating for a more revolutionary approach. This only further exacerbates the split within the party, however.
+당내 좌파 성향의 일부 의원들을 설득하여 더 혁명적인 노선을 지지하도록 만들 수 있습니다. 그러나 이는 당의 분열을 더욱 심화시킬 것입니다.
 
 @party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
+title: 당 기강 확립
+subtitle: 당 전체의 불만을 감소시킵니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; communist_dissent -= 5; labour_dissent -= 10; maximalist_dissent -= 10; reformist_dissent -= 10; syndicalist_dissent -= 5
 
-We have enforced party discipline to reduce dissent across all factions.
+모든 파벌의 불만을 줄이기 위해 당 기강을 강화했습니다.
 
 @implement_plan
-title: Implementing our Plan
-subtitle: We can being implementing the Maximum Program.
+title: 우리의 강령 이행하기
+subtitle: 최대 강령의 이행을 시작할 수 있습니다.
 choose-if: advisor_action_timer = 0 and economic_plan = 1 and nationalisation_adopted = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if economic_plan = 0 : We have not chosen a program yet. ?][? if economic_plan = 1 and moderate_plan_adopted : We have chosen a different plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if economic_plan = 0 : 아직 강령을 채택하지 않았습니다. ?][? if economic_plan = 1 and moderate_plan_adopted : 이미 다른 강령을 채택했습니다. ?]
 on-arrival: advisor_action_timer = 6; maximum_program_timer -= 8; last_advisor_action = 1
 go-to: maximum_program

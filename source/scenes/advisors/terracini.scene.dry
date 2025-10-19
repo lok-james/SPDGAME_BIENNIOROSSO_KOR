@@ -1,41 +1,41 @@
-title: Umberto Terracini
+title: 움베르토 테라치니
 is-pinned-card: true
 tags: advisor, communist
 card-image: img/portraits/UmbertoTerracini.jpg
 view-if: terracini_advisor = 1
 new-page: true
 
-= Umberto Terracini
+= 움베르토 테라치니
 
-Terracini is a member of the Communist faction of the [+ psi_name +]. A lawyer and writer, he is one of the founders of *L'Ordine Nuovo*, a communist newspaper.
+테라치니는 [+ psi_name +] 내 공산주의파의 일원입니다. 변호사이자 작가인 그는 공산주의 신문 <신질서>의 창립자 중 한 명입니다.
 
 - @comintern_relations
 - @constitutional_reform_terracini
 - @fasci_urgency
-- @root: Return to main
+- @root: 주 메뉴로 돌아가기
 
-@comintern_relations
-title: Comintern Relations
-subtitle: Improve our standing with the our international allies.
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+@comintern_relations_salvemini
+title: 코민테른 관계
+subtitle: 국제 동맹들과의 관계를 증진합니다.
+choose-if: advisor_action_timer = 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 8; last_advisor_action = 1
 go-to: international_relations
 
 @constitutional_reform_terracini
-title: Constitutional Reform
-subtitle: Having gathered enough support in the Chamber, it is time to reform the Italian Constitution into one more suited to our likeness.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not psi_in_government : The [+ psi_name +] is not in government. ?] [? if psi_in_government and coalition_dissent > 3 : Coalition dissent is too high for us to even suggest reforming the Constitution. ?]
+title: 헌법 개정
+subtitle: 하원에서 충분한 지지를 확보했으니, 이제 우리의 비전에 부합하도록 이탈리아 헌법을 개정할 때입니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?] [? if not psi_in_government : [+ psi_name +]은(는) 현재 정부에 속해 있지 않습니다 ?] [? if psi_in_government and coalition_dissent > 3 : 연정 내 갈등이 심각하여 헌법 개정 제안조차 어렵습니다. ?]
 choose-if: advisor_action_timer = 0 and psi_in_government
 view-if: not national_congress_seen
 on-arrival: advisor_action_timer = 6; constitutional_reform_timer -= 9; last_advisor_action = 1
 go-to: constitutional_reform
 
 @fasci_urgency
-title: Confronting the Fasci
-subtitle: Socialist & Fasci violence has only intensified in recent months; we have to act.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
-choose-if: advisor_action_timer = 0
+title: 파시스트 위협 경고
+subtitle: 점증하는 [+ pnf_name +]의 위협을 당에 알려야 합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?]
+choose-if: advisor_action_timer == 0
 view-if: not national_congress_seen
-on-arrival: advisor_action_timer = 6; urgency_timer -= 10; last_advisor_action = 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1;
 go-to: urgency

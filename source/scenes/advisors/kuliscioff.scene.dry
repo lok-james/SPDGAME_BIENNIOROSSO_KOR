@@ -9,9 +9,9 @@ new-page: true
 
 러시아 태생의 쿨리쇼프는 이탈리아 사회당([+ psi_name +])의 개혁파 소속입니다. 필리포 투라티와 함께 개혁파를 이끌고 있으며 사회주의 신문 <사회 비평(Critica Sociale)>의 편집장으로 활동하며 상당한 영향력을 지니고 있습니다.
 
-- @womens_rights_kuliscioff: 여성 인권
-- @dealing_with_welfare: 참전용사 복지
-- @labour_rights_kuliscioff: 노동권
+- @womens_rights_kuliscioff
+- @dealing_with_welfare
+- @labour_rights_kuliscioff
 - @root: 주 메뉴로 돌아가기
 
 @womens_rights_kuliscioff
@@ -26,7 +26,7 @@ go-to: womens_rights
 title: 참전용사 복지 문제
 subtitle: 이제 우리가 정부에 있으니, 새로이 늘어난 참전용사들을 위한 복지 정책을 추진할 수 있습니다.
 choose-if: advisor_action_timer <= 0 and psi_in_government and labour_minister_party == psi_name
-unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not labour_minister_party == psi_name : [+ psi_name +]가 노동사회보장부를 장악하지 않았습니다. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 다음 고문 활동까지 [+ advisor_action_timer +]개월 남음. ?][? if not psi_in_government : [+ psi_name +]가 정부에 속해 있지 않아 정책에 영향을 줄 수 없습니다. ?][? if not labour_minister_party == psi_name : [+ psi_name +]이(가) 노동사회보장부를 장악하지 않았습니다. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: welfare_gov
 

@@ -9,9 +9,9 @@ new-page: true
 
 마테오티는 하원에서 오랫동안 활동해 온 [+ psi_name +] 소속 의원이며, 투라티가 이끄는 개혁파의 핵심 인물입니다.
 
-- @constitutional_reform_matteotti: 헌법 개정
-- @foreign_policy_matteotti: 외교 정책
-- @fasci_urgency_matteotti: 파시스트 위협 경고
+- @constitutional_reform_matteotti
+- @foreign_policy_matteotti
+- @fasci_urgency_matteotti
 - @root: 주 메뉴로 돌아가기
 
 @constitutional_reform_matteotti

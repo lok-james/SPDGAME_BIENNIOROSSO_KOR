@@ -9,9 +9,9 @@ new-page: true
 
 라차리는 1892년 [+ psi_name +] 창당에 참여한 원로 당원입니다. 최대강령주의파의 일원인 그는 현재 당 서기장으로서 당내에서 막강한 영향력을 행사하고 있습니다.
 
-- @party_disunity_lazzari: 당내 갈등 해소
-- @party_rally: 당 집회 개최
-- @fiscal_policy_lazzari: 재정 정책 추진
+- @party_disunity_lazzari
+- @party_rally
+- @fiscal_policy_lazzari
 - @root: 주 메뉴로 돌아가기
 
 @party_disunity_lazzari

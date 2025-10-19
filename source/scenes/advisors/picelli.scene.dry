@@ -9,9 +9,9 @@ new-page: true
 
 피첼리는 적위대의 창립 멤버이자 불굴의 반파시스트 투사입니다. 그는 [+ psi_name +]의 어떤 파벌에도 속해 있지 않습니다.
 
-- @fasci_urgency_picelli: 파시스트 위협 경고
-- @red_guards_picelli: 적위대 지원
-- @arditi_picelli: 인민의 결사대 활용
+- @fasci_urgency_picelli
+- @red_guards_picelli
+- @arditi_picelli
 - @root: 주 메뉴로 돌아가기
 
 @fasci_urgency_picelli
