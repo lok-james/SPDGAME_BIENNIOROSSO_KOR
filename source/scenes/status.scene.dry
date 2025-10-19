@@ -185,73 +185,87 @@ Q.fascist_bomb_display = Q.fascist_bomb_timer - Q.time;
 Q.foreign_invasion_display = Q.foreign_invasion_time - Q.time;
 !}
 
-[? if violent_revolution: 외세 개입 가능성: [+ foreign_invasion_display : warnings +] ?]
+[? if violent_revolution : 외세 개입 가능성: [+ foreign_invasion_display +] ?]
 
-시가전 발생 빈도: [+ violent_prevalence : violence +]
+시가전 발생 빈도: [+ violent_prevalence +]
 
 = 단체 합법성
 
-[? if not national_congress_seen : 파시스트 행동대: [? if not fdc_banned : 활동 중][? if fdc_banned : 불법화됨][? if fasci_adp_active or fasci_rg_active :, 공격받는 중 ?] ?]
+[? if not national_congress_seen : 
+  파시스트 행동대: [? if not fdc_banned : 활동 중 ?][? if fdc_banned : 불법화됨 ?][? if fasci_adp_active or fasci_rg_active : 공격받는 중 ?] ?]
 
-[? if not national_congress_seen : 아르디티스모: [? if not ard_banned : 활동 중][? if ard_banned : 불법화됨][? if arditi_adp_active or arditi_rg_active :, 공격받는 중 ?] ?]
+[? if not national_congress_seen :
+  아르디티스모: [? if not ard_banned : 활동 중 ?][? if ard_banned : 불법화됨 ?][? if arditi_adp_active or arditi_rg_active : 공격받는 중 ?] ?]
 
-[? if not national_congress_seen : 반볼셰비키 연맹: [? if not abl_banned : 활동 중][? if abl_banned : 불법화됨][? if abl_adp_active or abl_rg_active :, 공격받는 중 ?] ?]
+[? if not national_congress_seen :
+  반볼셰비키 연맹: [? if not abl_banned : 활동 중 ?][? if abl_banned : 불법화됨 ?][? if abl_adp_active or abl_rg_active : 공격받는 중 ?] ?]
 
-[? if not national_congress_seen : 적위대: [? if not rg_banned : 활동 중 ?][? if rg_banned : 불법화됨 ?] ?]
+[? if not national_congress_seen :
+  적위대: [? if not rg_banned : 활동 중 ?][? if rg_banned : 불법화됨 ?] ?]
 
 [? if arditi_formed : 인민의 결사대: 활동 중 ?]
 
 = 준군사조직 세력
 
-[? if not national_congress_seen and not pcdi_formed : {!<span class="tooltip-text" title="적위대는 이탈리아 사회당과 연계된 사회주의 준군사조직입니다.">적위대 </span>!} 세력: [+ rg_strength_2 +] 천 명 ?]
+[? if not national_congress_seen and not pcdi_formed : 
+  {!<span class="tooltip-text" title="적위대는 이탈리아 사회당과 연계된 사회주의 준군사조직입니다.">적위대</span>!} 세력: [+ rg_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen and not pcdi_formed : 적위대 전투력: [+ rg_militancy : militancy +] ?]
+[? if not national_congress_seen and not pcdi_formed : 적위대 전투력: [+ rg_militancy +] ?]
 
-[? if not national_congress_seen and pcdi_formed : {!<span class="tooltip-text" title="적위대는 사회주의 준군사조직으로, 급진파는 이탈리아의 공산당과 연계되어 있습니다.">적위대 - 공산당 </span>!} 세력: [+ sov_rg_strength_2 +] 천 명 ?]
+[? if not national_congress_seen and pcdi_formed : 
+  {!<span class="tooltip-text" title="적위대는 사회주의 준군사조직으로, 급진파는 이탈리아의 공산당과 연계되어 있습니다.">적위대 - 공산당</span>!} 세력: [+ sov_rg_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen and pcdi_formed : 적위대-공산당 전투력: [+ sov_rg_militancy : militancy +] ?]
+[? if not national_congress_seen and pcdi_formed : 적위대-공산당 전투력: [+ sov_rg_militancy +] ?]
 
-[? if not national_congress_seen and pcdi_formed : {!<span class="tooltip-text" title="적위대는 사회주의 준군사조직으로, 온건파는 이탈리아 사회당과 연계되어 있습니다.">적위대 - 사회당 </span>!} 세력: [+ rg_strength_2 +] 천 명 ?]
+[? if not national_congress_seen and pcdi_formed : 
+  {!<span class="tooltip-text" title="적위대는 사회주의 준군사조직으로, 온건파는 이탈리아 사회당과 연계되어 있습니다.">적위대 - 사회당</span>!} 세력: [+ rg_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen and pcdi_formed : 적위대-사회당 전투력: [+ rg_militancy : militancy +] ?]
+[? if not national_congress_seen and pcdi_formed : 적위대-사회당 전투력: [+ rg_militancy +] ?]
 
-[? if arditi_formed : {!<span class="tooltip-text" title="'인민의 결사대'는 무정부주의자부터 공산주의자, 공화주의자에 이르기까지 다양한 반파시스트 세력이 연합한 조직입니다.">인민의 결사대 </span>!} 세력: [+ adp_strength_2 +] 천 명 ?]
+[? if arditi_formed : 
+  {!<span class="tooltip-text" title="'인민의 결사대'는 무정부주의자부터 공산주의자, 공화주의자에 이르기까지 다양한 반파시스트 세력이 연합한 조직입니다.">인민의 결사대</span>!} 세력: [+ adp_strength_2 +] 천 명 ?]
 
-[? if arditi_formed: 인민의 결사대 전투력: [+ adp_militancy : militancy +] ?]
+[? if arditi_formed : 인민의 결사대 전투력: [+ adp_militancy +] ?]
 
-[? if not national_congress_seen : {!<span class="tooltip-text" title="파시스트 행동대는 국가 파시스트당 하의 참전 용사들로 구성된 우익 단체입니다.">파시스트 행동대 </span>!} 세력: [+ fdc_strength_2 +] 천 명 ?]
+[? if not national_congress_seen : 
+  {!<span class="tooltip-text" title="파시스트 행동대는 국가 파시스트당 하의 참전 용사들로 구성된 우익 단체입니다.">파시스트 행동대</span>!} 세력: [+ fdc_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen : 파시스트 행동대 전투력: [+ fdc_militancy : militancy +] ?]
+[? if not national_congress_seen : 파시스트 행동대 전투력: [+ fdc_militancy +] ?]
 
-[? if not national_congress_seen : {!<span class="tooltip-text" title="아르디티스모는 파시스트 행동대와 연계된, 이탈리아 육군 정예 돌격대 '아르디티' 출신들로 구성된 조직입니다.">아르디티스모 </span>!} 세력: [+ ard_strength_2 +] 천 명 ?]
+[? if not national_congress_seen : 
+  {!<span class="tooltip-text" title="아르디티스모는 파시스트 행동대와 연계된, 이탈리아 육군 정예 돌격대 '아르디티' 출신들로 구성된 조직입니다.">아르디티스모</span>!} 세력: [+ ard_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen : 아르디티스모 전투력: [+ ard_militancy : militancy +] ?]
+[? if not national_congress_seen : 아르디티스모 전투력: [+ ard_militancy +] ?]
 
-[? if not national_congress_seen : {!<span class="tooltip-text" title="반볼셰비키 연맹은 지주와 자본가들의 지원을 받아 사회주의 이념에 대항하기 위해 이탈리아 전역에 결성된 지역 단체입니다.">반볼셰비키 연맹 </span>!} 세력: [+ abl_strength_2 +] 천 명 ?]
+[? if not national_congress_seen : 
+  {!<span class="tooltip-text" title="반볼셰비키 연맹은 지주와 자본가들의 지원을 받아 사회주의 이념에 대항하기 위해 이탈리아 전역에 결성된 지역 단체입니다.">반볼셰비키 연맹</span>!} 세력: [+ abl_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen : 반볼셰비키 연맹 전투력: [+ abl_militancy : militancy +] ?]
+[? if not national_congress_seen : 반볼셰비키 연맹 전투력: [+ abl_militancy +] ?]
 
-[? if communist_terror : {!<span class="tooltip-text" title="'신 적위대'는 이탈리아의 공산당과 연계된 급진 준군사조직입니다.">신 적위대 </span>!} ?]
+[? if communist_terror : 
+  {!<span class="tooltip-text" title="'신 적위대'는 이탈리아의 공산당과 연계된 급진 준군사조직입니다.">신 적위대</span>!} ?]
 
-[? if communist_terror: 신 적위대 공격 가능성: [+ communist_bomb_display : warnings +] ?]
+[? if communist_terror : 신 적위대 공격 가능성: [+ communist_bomb_display +] ?]
 
-[? if republican_terror : {!<span class="tooltip-text" title="반공여단은 구 자유당과 연계된 공화주의 준군사조직입니다.">반공여단 </span>!} ?]
+[? if republican_terror : 
+  {!<span class="tooltip-text" title="반공여단은 구 자유당과 연계된 공화주의 준군사조직입니다.">반공여단</span>!} ?]
 
-[? if republican_terror: 반공여단 공격 가능성: [+ republican_bomb_display : warnings +] ?]
+[? if republican_terror : 반공여단 공격 가능성: [+ republican_bomb_display +] ?]
 
-[? if fascist_terror : {!<span class="tooltip-text" title="새로운 파시스트 행동대는 구 국가 파시스트당과 연계된 급진 준군사조직입니다.">파시스트 행동대 </span>!} ?]
+[? if fascist_terror : 
+  {!<span class="tooltip-text" title="새로운 파시스트 행동대는 구 국가 파시스트당과 연계된 급진 준군사조직입니다.">파시스트 행동대</span>!} ?]
 
-[? if fascist_terror: 파시스트 행동대 공격 가능성: [+ fascist_bomb_display : warnings +] ?]
+[? if fascist_terror : 파시스트 행동대 공격 가능성: [+ fascist_bomb_display +] ?]
 
 = 정부군
 
-[? if not national_congress_seen : 왕립 육군: ?][? if national_congress_seen : 이탈리아 육군: ?] [+ army_strength +]천 명.
+[? if not national_congress_seen : 왕립 육군: [+ army_strength +]천 명 ?][? if national_congress_seen : 이탈리아 육군: [+ army_strength +]천 명 ?]
 
-[? if not national_congress_seen : 왕립 육군 충성도: ?][? if national_congress_seen : 이탈리아 육군 충성도: ?] [+ army_loyalty : loyalty +]
+[? if not national_congress_seen : 왕립 육군 충성도: [+ army_loyalty +] ?][? if national_congress_seen : 이탈리아 육군 충성도: [+ army_loyalty +] ?]
 
 [? if psi_in_government : 국가헌병대: [+ interior_police_strength +]천 명 ?]
 
-[? if psi_in_government : 국가헌병대 충성도: [+ interior_police_loyalty: loyalty +] ?]
+[? if psi_in_government : 국가헌병대 충성도: [+ interior_police_loyalty +] ?]
 
 @polls
 on-arrival: {!
