@@ -34,9 +34,9 @@ if (Q.unemployment) {
 
 {!<span class="tooltip-text" title="다른 정당들은 우리를 의심스러운 눈초리로 바라봅니다. 당 내에 왕국 전복을 주장하는 급진주의자들이 존재하기 때문이죠. 문제는 이들의 급진성이 어느 정도인가 하는 점입니다.">급진주의</span>!}: [+ radicalisation : radicalisation +]
 
-[? if prime_minister = “D’Annunzio” : 단눈치오와의 관계: [+ dannunzio_relation : radicalisation +] ?]
+[? if prime_minister = "D’Annunzio"" : 단눈치오와의 관계: [+ dannunzio_relation : radicalisation +] ?]
 
-[? if prime_minister = “D’Annunzio” : 당내 단눈치오의 영향력: [+ dannunzio_influence : influence +] ?]
+[? if prime_minister = "D’Annunzio" : 당내 단눈치오의 영향력: [+ dannunzio_influence : influence +] ?]
 
 = 정부
 
