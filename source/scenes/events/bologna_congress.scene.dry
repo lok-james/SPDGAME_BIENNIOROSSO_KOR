@@ -1,4 +1,4 @@
-title: XVI Congress of the [+ psi_full_name +]
+title: 제16차 [+ psi_full_name +] 전당대회
 new-page: true
 subtitle: It is time to decide our path for the future.
 view-if: year = 1919 and month = 10
@@ -6,72 +6,72 @@ max-visits: 1
 face-image: img/portraits/NicolaBombacci.jpg
 tags: event
 
-= XVI Congress of the [+ psi_full_name +]
+= 제16차 [+ psi_full_name +] 전당대회
 
-The XVI Congress of Bologna has officially begun. Though the Congress wil be have many debates and discussions on the future of the party, there are two main things to be discussed: deciding on an approach to advance the proletarian revolution and participation in the new November elections. Nicola Bombacci has, at least temporarily, been elected and appointed General-Secretary of the Party.
+볼로냐에서 제16차 전당대회가 공식적으로 개막했습니다. 당의 미래에 대한 수많은 토론이 예정되어 있지만, 핵심 안건은 두 가지입니다. 바로 프롤레타리아 혁명을 위한 접근 방식을 결정하는 것과 오는 11월 총선 참여 여부입니다. 니콜라 봄바치가 최소한 임시로나마 당의 총서기로 선출되었습니다.
 
-**This will decide the path you will take.**
+**이 결정이 우리 당의 앞날을 좌우할 것입니다.**
 
-The first thing on the agenda is to decide between a reformist or revolutionary approach. The right-wing of the party, the Reformists, are staunch advocates of parliamentary action to achieve a socialist state, while the Communists and majority of the Maximalists advocate for revolutionary action to achieve a Soviet Republic.
+첫 번째 안건은 개혁주의 노선과 혁명 노선 중 하나를 선택하는 것입니다. 당의 우파인 개혁파는 의회 활동을 통해 사회주의 국가를 실현해야 한다고 강력히 주장하고 있습니다. 반면, 공산주의자들과 대부분의 최대강령주의파는 소비에트 공화국 수립을 위해 혁명적 행동을 추구해야 한다고 맞서고 있습니다.
 
--@revolutionary_approach: The Communist and Left-Maximalists sway enough of the party in their favour.
--@maximalist_approach: The Moderate Maximalists are able to establish a compromise that forms a majority.
--@reformist_approach: The Reformists are able to sway enough of the Right-Maximalists to achieve a plurality.
+-@revolutionary_approach: 공산주의 파벌과 좌파 최대강령주의파가 당원들의 지지를 확보한다.
+-@maximalist_approach: 온건 최대강령주의파가 다수의 지지를 받는 타협안을 도출한다.
+-@reformist_approach: 개혁파가 우파 최대강령주의파의 지지를 얻어 최다 득표에 성공한다.
 
 @revolutionary_approach
-subtitle: The party will fully abandon parliamentary means and pursue a policy of violent revolution.
+subtitle: 당은 의회주의를 완전히 포기하고 폭력 혁명 노선을 추구할 것입니다.
 choose-if: communist_strength > reformist_strength
-unavailable-subtitle: The bulk of the party is opposed to this.
+unavailable-subtitle: 당내 다수가 이 노선에 반대합니다.
 on-arrival: reformist_dissent *= 1.5; reformist_strength *= 0.5; communist_strength *= 1.5; maximalist_strength *= 1.25; communist_dissent *= 0.5; maximalist_dissent *= 0.75; not_participating = 1; revolutionary_fervour += 5; king_relation -= 7*radicalisation; preparing_rev_active = 1
 go-to: @election_agenda
 
-This result only seems to exacerbate the friction within the party, as Reformist members storm out of the Congress in protest as the results of the votes is announced.
+투표 결과가 발표되자, 개혁파 당원들이 항의하며 총회장을 박차고 나가는 등 당내 갈등은 더욱 악화되는 듯합니다.    
 
 @maximalist_approach
-subtitle: The party will stay the course of revolution via extraparliamentary ways, but will not fully abandon parliamentary means.
+subtitle: 당은 의회 밖에서의 혁명 노선을 유지하되, 의회주의를 완전히 포기하지는 않을 것입니다.
 on-arrival: reformist_dissent += 10; reformist_strength -= 5; communist_strength -= 5; maximalist_strength += 5; communist_dissent += 10; maximalist_dissent -= 10; preparing_rev_active = 1
 go-to: @election_agenda
 
-The less radical members of the Communists and Reformists accept the compromise, whilst the more radical members criticise this as effective 'appeasement' to keep the party together.
+비교적 온건한 공산주의파와 개혁파 당원들은 타협안을 수용했지만, 강경파들은 이를 당의 통합을 위한 '유화책'에 불과하다며 비판했습니다.
 
 @reformist_approach
 choose-if: communist_strength < reformist_strength
-unavailable-subtitle: The bulk of the party is opposed to this.
-subtitle: The party will fully abandon extraparliamentary means and pursue a policy of parliamentary reform.
+unavailable-subtitle: 당내 다수가 이 노선에 반대합니다.
+subtitle: 당은 모든 원외 투쟁을 포기하고 의회 개혁 노선을 추구할 것입니다.
 on-arrival: reformist_dissent *= 0.5; reformist_strength *= 1.5; communist_strength *= 0.5; maximalist_strength *= 0.75; communist_dissent *= 1.5; maximalist_dissent *= 1.25; participating = 1; revolutionary_fervour -= 7; king_relation += 7*(1-(radicalisation/10));
 go-to: @election_agenda
 
-The Reformists, having lost leadership in 1912, are able to achieve a plurality through the vote, stunning many who saw them as having lost most of its support within the party. Already, as the vote is announced, many Communist and Maximalist members storm out of the Congress in protest, leaving the remaining members to continue the Congress.
+1912년에 당권을 잃었던 개혁파가 당내 지지를 대부분 상실했다는 예상을 뒤엎고 최다 득표를 얻는 데 성공했습니다. 투표 결과가 발표되자마자, 많은 공산주의파와 최대강령주의파 당원들은 항의의 표시로 총회장을 떠났고, 남은 당원들만으로 대회가 속행되었습니다.
 
 @election_agenda
 new-page: false
 
-The second and final thing on the agenda is whether or not the [+ psi_name +] should participate in the November elections. The Reformists advocate for full participation, the Maximists token participation and the Communists full abstention.
+두 번째이자 마지막 안건은 [+ psi_name +]의 11월 총선 참여 여부입니다. 개혁파는 전면적인 참여를, 최대강령주의파는 상징적인 참여를, 공산주의파는 전면적인 불참을 주장하고 있습니다.
 
-- @communist_arguments: The Communists are able to convince the rest of the party against the bourgeois elections.
-- @maximalist_arguments: The Maximalists utilise their majority to convince the rest of the party to compromise.
-- @reformist_arguments: The Reformists are able to eek through with support from the sympathetic Maximalist members.
+- @communist_arguments: 공산주의 파벌의 주도로 부르주아 선거 불참을 설득한다.
+- @maximalist_arguments: 최대강령주의파가 머릿수를 이용하여 타협안을 관철시킨다.
+- @reformist_arguments: 개혁파가 우호적인 최대강령주의파의 지지를 얻어 안건을 가까스로 통과시킨다.
 
 @communist_arguments
-subtitle: The party will fully refuse to participate in the upcoming election.
+subtitle: 당은 다가오는 선거에 전면 불참할 것입니다.
 choose-if: participating = 0
-unavailable-subtitle: [? if participating = 1 : We have already chosen to achieve socialism via parliamentary means. ?]
+unavailable-subtitle: [? if participating = 1 : 이미 의회주의를 통한 사회주의 실현을 선택했습니다. ?]
 on-arrival: reformist_dissent += 7; reformist_strength -= 7; communist_strength += 7; communist_dissent -= 7; not_participating = 1; abstentionist_psi = 1;
 
-The Communists are able to convince the Maximalists that wasting time on participating is a futile use of time, as the party votes for full abstention in the upcoming elections.
+선거 참여에 시간을 낭비하는 것은 무의미하다는 공산주의 파벌의 주장에 최대강령주의파가 동조하면서, 당은 다가오는 총선에 전면 불참하기로 결정했습니다.
 
 @maximalist_arguments
-subtitle: The party will participate, but not form coalitions with the bourgeois parties.
+subtitle: 당은 선거에 참여하되, 부르주아 정당과 연정을 구성하지 않을 것입니다.
 choose-if: not_participating = 0
-unavailable-subtitle: [? if not_participating = 1: We have already chosen to abandon the reformist approach. ?]
+unavailable-subtitle: [? if not_participating = 1: 이미 개혁주의 노선을 포기하기로 결정했습니다. ?]
 on-arrival: maximalist_strength += 10; maximalist_dissent -= 10; maximalist_participating = 1;
 
-The Maximalist majority secures a compromise solution, agreeing to participate in the upcoming elections but refusing any sort of coalition with the bourgeois parties. 
+최대강령주의파가 다수표를 확보하여, 다가오는 선거에는 참여하지만 부르주아 정당과 어떠한 형태의 연정도 구성하지 않겠다는 타협안을 통과시켰습니다.
 
 @reformist_arguments
 choose-if: not_participating = 0
-unavailable-subtitle: [? if not_participating = 1 : We have already chosen to achieve socialism via extraparliamentary ways. ?]
-subtitle: The party will fully participate in the upcoming election.
+unavailable-subtitle: [? if not_participating = 1 : 이미 의회를 통한 사회주의 실현 방식을 거부하기로 결정했습니다. ?]
+subtitle: 당은 다가오는 선거에 전면적으로 참여할 것입니다.
 on-arrival: reformist_dissent -= 7; reformist_strength += 7; communist_strength -= 7; communist_dissent += 7; participating = 1; election_participation = 1;
 
-The Reformists are able to convince sympathetic Maximalist members to support their endeavour to participate in the November elections and form a coalition with the bourgeois parties. The Communists and remaining Maximalists are unsurprisingly, outraged.
+개혁파가 우호적인 최대강령주의파 당원들을 설득하여 11월 선거에 참여하고 부르주아 정당과 연정을 구성하는 방안을 지지하도록 하는 데 성공했습니다. 예상대로 공산주의 파벌과 잔류 최대강령주의파들은 격분했습니다.

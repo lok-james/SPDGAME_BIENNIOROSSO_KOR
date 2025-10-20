@@ -1,5 +1,5 @@
-title: Abolishment of Price Controls
-subtitle: The Nitti Government floors a controversial bill.
+title: 가격 통제 폐지
+subtitle: 니티 정부가 논란이 분분한 법안을 상정했습니다.
 tags: event, govt_affairs
 is-card: true
 view-if: year = 1920 and month = 6 and week = 1 and prime_minister = "Nitti"
@@ -7,29 +7,29 @@ on-arrival: bread_price_seen = 1
 max-visits: 1
 new-page: true
 
-= Price Control Measures
+= 가격 통제 조치
 
-The Nitti government has floored a bill that would abolish price controls on essential goods, including a controversial abolishing of price controls on bread. Our support base, allies and the vast majority of our leadership has demanded we vote against the bill, as a general strike has seemingly begun once more in response to this.
+니티 정부가 필수품에 대한 가격 통제를 폐지하는 법안을 제출했습니다. 여기에는 논란의 여지가 큰 빵값 통제 폐지도 포함되어 있습니다. 이 소식에 전국적으로 다시 총파업이 시작될 조짐이 보이는 가운데, 당의 지지 기반과 동맹, 지도부 대다수는 이 법안에 반대표를 던질 것을 요구하고 있습니다.
 
-What should we do?
+우리는 어떻게 해야 할까요?
 
-- @vote_yes: Vote yes, abolishing the price controls on bread.
-- @vote_no: Vote no, against abolishing the price controls on bread.
-- @abstain: Abstain from the vote.
+- @vote_yes: 찬성 투표하여 빵값 통제를 폐지한다.
+- @vote_no: 빵값 통제 폐지 법안에 반대 투표한다.
+- @abstain: 투표에 기권한다.
 
 @vote_yes
 on-arrival: communist_dissent += 10; labour_dissent += 5; maximalist_dissent += 5; reformist_dissent += 5; syndicalist_dissent += 5; workers_pcdi += 6 if pcdi_formed; workers_psi -= 7
 
-Our grassroots party members are shocked by our intransigence! Many party branches have begun agitating against the cabinet, and our own delegation members even plan a full vote on the proposal, contravening the government's decision.
+우리의 강경한 태도에 기층 당원들이 충격에 빠졌습니다! 많은 당 지부에서 내각에 반대하는 운동을 시작했으며, 심지어 우리 당 소속 의원들조차 정부의 결정에 반하여 독자적인 표결을 계획하고 있습니다.
 
-The workers view this as betrayal, as do the unions. The bill is voted down anyways by a slight margin in fear of the ongoing general strike. The coalition government does not seem that it will last, but it unclear if we will benefit following our betrayal.
+노동자들과 노동조합 모두 이를 배신으로 여기고 있습니다. 법안은 총파업에 대한 우려로 인해 근소한 차이로 부결되었습니다. 현 연정은 오래가지 못할 것 같지만, 우리의 '배신' 행위 이후 상황이 우리에게 유리하게 돌아갈지는 불투명합니다.
 
 @vote_no
 on-arrival: ul_relation -= 10; ldr_relation -= 5; communist_dissent -= 5; labour_dissent -= 5; workers_psi += 3*(1-dissent);
 
-Regardless of our vote, the bill is voted down a significant measure in fear of the ongoing general strike. The coalition government does not seem that it will last.
+우리의 표결과 상관없이, 법안은 총파업에 대한 우려로 인해 상당한 표 차이로 부결되었습니다. 현 연정은 오래가지 못할 것 같습니다.
 
 @abstain
 on-arrival: ul_relation -= 5; ldr_relation -= 3; communist_dissent += 5; labour_dissent += 5; workers_psi -= 3*(1-dissent)
 
-Regardless of our vote, the bill is voted down a significant measure in fear of the ongoing general strike. The coalition government does not seem that it will last.
+우리의 표결과 상관없이, 법안은 총파업에 대한 우려로 인해 상당한 표 차이로 부결되었습니다. 현 연정은 오래가지 못할 것 같습니다.

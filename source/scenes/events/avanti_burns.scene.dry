@@ -1,13 +1,13 @@
-title: Avanti Burns!
+title: 불타는 아반티!
 new-page: true
-subtitle: The Milan branch of *Avanti!* has been attacked!
+subtitle: 당 기관지 *아반티!*의 밀라노 지부가 공격받았습니다!
 tags: event
 view-if: year = 1921 and month = 2
 on-arrival: workers_psi -= 2; rural_psi -= 4; middle_class_psi -= 1; fasci_urgency += 1; workers_psi += 1 if radio > 1; rural_psi += 1 if radio > 1; middle_class_psi += 1 if radio > 1
 max-visits: 1
 
-= *Avanti!* burns!
+= *아반티!*가 불타다!
 
-The Milan branch of *Avanti!* has been attacked and burned to the ground, and responsibility points to Mussolini and his Fasces of Combat. This will severely impact our ability to spread our message in Milan.
+*아반티!"* 밀라노 지부가 습격당해 잿더미가 되었습니다. 모든 정황이 무솔리니와 그의 전투 파쇼를 범인으로 지목하고 있습니다. 이 사건으로 밀라노에서 우리의 메시지를 전파하는 데 심각한 차질이 빚어질 것입니다.
 
-- @root: It has been made clear what their stance is.
+@root: 이제 그들의 입장이 무엇인지 명확해졌군.
