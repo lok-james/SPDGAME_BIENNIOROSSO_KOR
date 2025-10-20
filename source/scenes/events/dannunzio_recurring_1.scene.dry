@@ -1,30 +1,30 @@
-title: D'Annunzio's Control increases...
-subtitle: The Syndicalists within the party are acting strange...
+title: 단눈치오의 통제력 강화...
+subtitle: 당내 생디칼리스트들의 움직임이 심상치 않다...
 view-if: dannunzio_influence < 10 and dannunzio_influence >= 1 and pnf_in_government and pnf_leader = "D'Annunzio" and influence_time <= time
 new-page: true
 on-arrival: influence_time = time + 6
 max-visits: 1
 tags: event
 
-= D'Annunzio's Influence
+= 단눈치오의 영향력
 
-Having taken at least active steps to cultivate relations with D'Annunzio, we have seen an uptick in our supporters and party members warming up to the idea to collaborating with the Futurist, much to the chagrin of party leadership, who merely view connections as opportunistic.
+단눈치오와의 관계를 개선하기 위해 적극적인 조치를 취한 결과, 우리 지지자들과 당원들 사이에서 미래주의자와 협력하자는 생각에 동조하는 분위기가 퍼지고 있습니다. 이는 단순한 기회주의적 관계로 여기는 당 지도부에게는 매우 못마땅한 일입니다.
 
-Though it seems like murmurs of collaboration are merely whispers for now, it might be best to act quickly to suppress D'Annunzio's influence within the party.
+아직은 협력에 대한 소문이 속삭임에 불과한 것 같지만, 당내에서 단눈치오의 영향력이 더 커지기 전에 신속히 조치를 취하는 것이 현명할 수 있습니다.
 
-- @influence_money: Remove D'Annunzio's influence through funding.
-- @influence_purge: Remove D'Annunzio's influence through a purge.
-- @root: Do nothing for now.
+- @influence_money: 자금 지원을 통해 단눈치오의 영향력을 제거한다.
+- @influence_purge: 숙청을 통해 단눈치오의 영향력을 제거한다.
+- @root: 당분간은 아무것도 하지 않는다.
 
 @influence_money
-subtitle: - 1 Resources
+subtitle: - 1 자원
 choose-if: resources >= 1
 on-arrival: dannunzio_influence -= 1; resources -= 1
 
-We are able to root out D'Annunzio's influence slightly by funding supporters loyal to us instead.
+우리에게 충성하는 지지자들에게 자금을 지원함으로써 단눈치오의 영향력을 약간 약화시킬 수 있습니다.
 
 @influence_purge
-subtitle: This will weaken the party's popularity.
+subtitle: 이 조치는 당의 인기를 떨어뜨릴 것입니다.
 on-arrival: dannunzio_influence -= 1; workers_psi -= 6; rural_psi -= 4;
 
-We are able to root out D'Annunzio's influence slightly by purging members loyal to him.
+그에게 충성하는 당원들을 숙청함으로써 단눈치오의 영향력을 약간 약화시킬 수 있습니다.

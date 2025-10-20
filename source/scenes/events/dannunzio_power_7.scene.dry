@@ -1,35 +1,35 @@
-title: Rumors of a Struggle
-subtitle: The PNF isn't as stable as it seems...
+title: 내부 투쟁의 소문
+subtitle: 국가 파시스트당이 겉보기처럼 안정적이지는 않은 것 같습니다...
 view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_strike_seen and dannunzio_time <= time
 max-visits: 1
 tags: event
 new-page: true
 on-arrival: pnf_right += 1; dannunzio_struggle_seen = 1; dannunzio_time = time + 6
 
-= Rumors of a Internal Struggle
+= 내부 갈등의 소문
 
-Reports of an internal factional struggle within the PNF have reached our ears as disagreements regarding policy matters and actions taken by D'Annunzio continues, as two factions forming; The Left-wing of the party, comprised of National Syndicalists and Futurists, follow the lead of Prime Minister Gabriele D'Annunzio, supporting his policies and ideals as established in the Italian Regency of Carnaro. On the other end, the Nationalists have turned on D'Annunzio, comprised of leaders of the *Ras* once loyal to Mussolini, seeing his policies as too socialist and left-wing and supported by industrialists and conservatives who have seen D'Annunzio's policies as a betrayal.
+단눈치오의 정책과 행동에 대한 이견이 지속되면서 국가 파시스트당 내부에 파벌 투쟁이 벌어지고 있다는 보고가 들어왔고, 두 개의 파벌이 형성되고 있습니다. 국가 생디칼리스트와 미래주의자로 구성된 당내 좌파는 가브리엘레 단눈치오 총리를 중심으로 뭉쳐, 그가 피우메의 이탈리아 카르나로 섭정국에서 수립했던 정책과 이상을 지지하고 있습니다. 반면, 과거 무솔리니에게 충성했던 *지방 실력자*들이 이끄는 민족주의자들은 단눈치오에게 등을 돌렸습니다. 그들은 그의 정책이 지나치게 사회주의적이고 좌경화되었다고 보며, 단눈치오의 정책을 배신으로 여기는 자본가들과 보수주의자들의 지지를 받고 있습니다.
 
-Dino Grandi, formerly one of the many leaders of the *Ras*, has risen to lead the faction opposing D'Annunzio, seeking to oust the Poet and assume control over the PNF – and the position of Prime Minister himself.
+과거 *지방 실력자* 중 한 명이었던 디노 그란디가 단눈치오 반대파의 선두에 서서 '시인' 총리를 축출하고 국가 파시스트당과 총리직을 장악하려 하고 있습니다.
 
-Though we clearly do not have a horse in this race, there are, naturally, benefits for helping either side. Keeping D'Annunzio in power who, at least partly, aligns with us ideologically would naturally be optimal, combined with being able to weaken the paramilitaries would allow our own Red Guards to dominate the streets. On the other hand, though risky, allowing Grandi, a man with no political experience and under influence of the *Ras*, to seize control would severely weaken the King's trust in the PNF, potentially ousting him.
+이 싸움에서 우리가 응원할 쪽은 명백히 없지만, 양쪽 중 한쪽을 돕는 것에는 각각 이점이 있습니다. 이념적으로 우리와 어느 정도 일치하는 단눈치오를 권좌에 남겨두고 그의 파시스트 행동대를 약화시킨다면, 우리 적위대가 거리를 장악하기 용이해질 것입니다. 반면, 위험 부담은 있지만 정치 경험이 없고 *지방 실력자*들의 영향 아래 있는 그란디가 권력을 잡도록 놔두면, 국가 파시스트당에 대한 국왕의 신임이 크게 흔들려 그를 실각시킬 수도 있을 것입니다.
 
-What should we do, if anything?
+우리는 어떻게 해야 할까요?
 
-- @support_dannunzio: Covertly support Gabriele D'Annunzio and the left. 
-- @support_grandi: Covertly support Dino Grandi and the right.
-- @root: We shouldn't meddle in their affairs.
+- @support_dannunzio: 가브리엘레 단눈치오와 좌파를 은밀히 지원한다.
+- @support_grandi: 디노 그란디와 우파를 은밀히 지원한다.
+- @root: 그들의 내분에 간섭해서는 안 된다.
 
 @support_dannunzio
-subtitle: -1 Party Resource - Are we sure we want to interfere in a internal squabble?
+subtitle: -1 당 자원 - 정말로 그들의 내부 싸움에 개입하시겠습니까?
 choose-if: resources >= 1
 on-arrival: pnf_left += 1;
 
-We are able to covertly funnel resources to aid D'Annunzio without his knowledge, hopefully keeping him in power and weakening the right wing of the party.
+우리는 단눈치오 몰래 그를 돕기 위해 자금을 은밀히 지원할 수 있습니다. 이를 통해 그가 권력을 유지하고 당내 우파를 약화시키기를 기대합니다.
 
 @support_grandi
-subtitle: -1 Party Resource - Are we sure we want to interfere in a internal squabble?
+subtitle: -1 당 자원 - 정말로 그들의 내부 싸움에 개입하시겠습니까?
 choose-if: resources >= 1
 on-arrival: pnf_right += 1;
 
-We are able to covertly, both to our allies and Grandi, funnel resources to aid the right wing of the party, hopefully quickening the collapse of the party and its rule.
+우리는 동맹 세력과 그란디 모두에게 비밀로 하고 당내 우파를 지원하기 위해 자금을 은밀히 지원할 수 있습니다. 이를 통해 당과 그들의 통치가 더 빨리 붕괴되기를 기대합니다.

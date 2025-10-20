@@ -1,17 +1,17 @@
-title: D'Annunzio seizes control of the [+ psi_full_name +]
-subtitle: We have handed too much power to D'Annunzio.
+title: 단눈치오, [+ psi_full_name +] 장악
+subtitle: 우리는 단눈치오에게 너무 많은 권력을 넘겨주었다.
 view-if: dannunzio_influence >= 5 and pnf_in_government and pnf_leader = "D'Annunzio"
 new-page: true
 max-visits: 1
 tags: event
 achievement: lunico_rivoluzionario_in_italia
 
-= D'Annunzio seizes the [+ psi_full_name +]
+= 단눈치오, [+ psi_full_name +] 장악
 
-As relations with D'Annunzio slowly deepened, so did our ties with the PNF. Forces loyal, or at the very least supportive, of an alliance with D'Annunzio climbed the ranks of the party, eventually ousting and seizing leadership of the party, handing it to one man. Gabriele D'Annunzio.
+단눈치오와의 관계가 점차 깊어지면서 국가 파시스트당과의 유대도 깊어졌습니다. 단눈치오와의 동맹에 충성하거나 적어도 우호적인 세력들이 당내에서 서서히 세를 불려, 마침내 당의 지도부를 축출하고 그 자리를 한 남자에게 넘겨주었습니다. 바로 가브리엘레 단눈치오에게 말입니다.
 
-Syndicalists like De Ambris now head the party, fully collaborating with the fascists as its new ally in the fight to consolidate Italy under a dictatorship. The General Confederation of Labour is merged into the Italian Syndicalist Union as a junior party, firmly entrenching the remnants of labour into syndicalism.
+이제 데 암브리스와 같은 생디칼리스트들이 당을 이끌며, 이탈리아를 독재 아래 통합하려는 투쟁에서 새로운 동맹으로서 파시스트와 전적으로 협력하고 있습니다. 노동총연맹은 이탈리아 생디칼리스트 연합의 하위 조직으로 흡수되어, 남은 노동 운동의 잔재를 생디칼리즘 속에 확고히 뿌리내리게 했습니다.
 
-It's out of our hands now.
+이제 더 이상 우리 손을 떠났습니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버.

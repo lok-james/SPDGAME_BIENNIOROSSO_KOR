@@ -1,6 +1,6 @@
 title: 제16차 [+ psi_full_name +] 전당대회
 new-page: true
-subtitle: It is time to decide our path for the future.
+subtitle: 이제 우리의 미래를 결정해야 할 때입니다.
 view-if: year = 1919 and month = 10
 max-visits: 1
 face-image: img/portraits/NicolaBombacci.jpg

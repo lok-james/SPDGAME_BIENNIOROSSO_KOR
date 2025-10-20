@@ -1,61 +1,61 @@
-title: The Second Turin Strike
-subtitle: Turin breaks out in flames once more.
+title: 제2차 토리노 파업
+subtitle: 토리노가 또다시 불길에 휩싸이다.
 view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_arts_seen and time >= dannunzio_time
 max-visits: 1
 tags: event
 new-page: true
 on-arrival: dannunzio_strike_seen = 1; dannunzio_time = time + 1; inflation -= 0.4; economic_growth += 0.4; unemployment += 1.1;
 
-= The Second Turin Strike
+= 제2차 토리노 파업
 
-In a cruel twist of events, Turin has once more broken out in a strike, this time led by the industrialists. The industrialists have refused to comply with D'Annunzio's 'Labour and Corporative Charter', deciding to shut down production and establishing a lockout of the factories and the layoff of thousands of workers.
+운명의 장난처럼, 이번에는 자본가들이 주도한 파업이 토리노에서 다시 한번 발발했습니다. 자본가들은 단눈치오의 '노동조합 헌장' 준수를 거부하며 생산 중단과 공장 폐쇄, 그리고 수천 명의 노동자 해고를 단행했습니다.
 
-Public opinion of the strike is split; Workers and voters of the left condemn the strike as unlawful and harming workers, with some unionists and syndicalist leaders pressuring D'Annunzio to act, while conservatives and nationalists praise industrialist bravery against the 'reckless' Charter.
+파업에 대한 여론은 양분되었습니다. 노동자와 좌파 유권자들은 파업이 불법이고 노동자의 생계를 위협한다며 규탄했고, 일부 노조 지도자와 생디칼리스트들은 단눈치오에게 조치를 취하라고 압박했습니다. 반면, 보수주의자와 민족주의자들은 '무모한' 헌장에 맞서는 자본가들의 용기를 칭송했습니다.
 
-Unfortunately, our paramilitary forces are unfortunately weakened from the ascendance of the PNF, with violence towards Red Guard affiliated workers becoming more common, thus making us unable to act with force. What should we do, and more importantly, what will D'Annunzio do?
+불행히도 국가 파시스트당이 집권하면서 우리의 준군사 조직은 약화되었고, 적위대 소속 노동자들에 대한 폭력이 빈번해져 무력으로 대응할 수 없는 상황입니다. 우리는 어떻게 해야 할까요? 그리고 더 중요하게, 단눈치오는 어떤 선택을 할까요?
 
-- @strike_condemn: Condemn the strikes, supporting the workers.
-- @strike_condemn_together: Could we issue a joint statement with the PNF to condemn the strikes?
-- @strike_support: Utilise the strikes to campaign against D'Annunzio's incompetence.
-- @strike_nothing: We should stay out of this.
+- @strike_condemn: 파업을 규탄하고 노동자들을 지지한다.
+- @strike_condemn_together: 국가 파시스트당과 함께 파업을 규탄하는 공동 성명을 낼 수 있을까?
+- @strike_support: 파업을 이용해 단눈치오의 무능을 비판하는 선전 활동을 벌인다.
+- @strike_nothing: 이 문제에는 개입하지 않는다.
 
 @strike_condemn
-subtitle: This is our expected response.
+subtitle: 예상했던 대로의 대응입니다.
 on-arrival: workers_psi += 2
 go-to: strike_menu
 
-We condemn the industrialists for the loss of jobs, criticising the strike as illegal alongside our aligned unions. 
+우리는 자본가들이 노동자들의 일자리를 빼앗았다며 비난하고, 우리와 연대한 노조들과 함께 이번 파업이 불법임을 규탄합니다.
 
 @strike_condemn_together
-subtitle: The Unions are warming up to D'Annunzio too...
+subtitle: 노조들도 단눈치오에게 호감을 보이기 시작했습니다...
 choose-if: dannunzio_relation >= 2
 view-if: not unions_break
-unavailable-subtitle: A joint statement with the Syndicalists would be an outrage.
+unavailable-subtitle: 생디칼리스트들과 공동 성명을 내는 것은 미친 짓일 겁니다.
 on-arrival: dannunzio_influence += 1; workers_psi += 6; workers_pnf += 4; rural_psi += 4; rural_pnf += 3; industrialists_pnf -= 4;
 
-In a joint statement by both the Italian Syndicalist Union and General Confederation of Labour, alongside their affiliated parties, the [+ pnf_full_name +] and the [+ psi_full_name +], all four parties have condemned the strike as reckless and disruptive, demanding an end to the strike and the rehiring of the fired workers. 
+이탈리아 생디칼리스트 연합과 노동총연맹, 그리고 이들과 연계된 [+ pnf_full_name +]와 [+ psi_full_name +]가 공동 성명을 발표했습니다. 네 단체 모두 이번 파업을 무모하고 파괴적인 행위로 규탄하며, 즉각적인 파업 중단과 해고 노동자들의 복직을 요구했습니다.
 
 @strike_support
-subtitle: -1 Resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: workers_psi += 4; workers_pnf -= 3; middle_class_pnf -= 1; rural_pnf -= 3; dannunzio_relation -= 1;
 go-to: strike_menu
 
-We campaign against D'Annunzio's incompetence, utilising *Avanti!* to portray him as a weak leader unable to stand up to the industrialists, swaying some workers back to our side.
+우리는 당 기관지인 *전진!*을 통해 단눈치오를 자본가들에게 맞서지 못하는 무능한 지도자로 묘사하며 비판했고, 그 결과 일부 노동자들의 마음을 돌리는 데 성공했습니다.
 
 @strike_nothing
 go-to: strike_menu
 
-Very well. We stay out of the matter, merely watching the moves of D'Annunzio and the strikers.
+좋습니다. 우리는 이 문제에 개입하지 않고 단눈치오와 파업 참가자들의 동향을 주시하기만 합니다.
 
 @strike_menu
 
-Eventually, the stalemate between D'Annunzio and the industrialist strikers is broken, as D'Annunzio acts against the industrialists.
+마침내, 단눈치오가 자본가들에게 조치를 취하면서 그와 파업 참가자들 사이의 교착 상태가 깨졌습니다.
 
-- @army_suppress: The Army suppresses the strike.
-- @squadrismo_suppress: The Squadrismo forcefully suppress the strike.
-- @negotiation_suppress: D'Annunzio opens negotiations with the strikers.
+- @army_suppress: 군대가 파업을 진압한다.
+- @squadrismo_suppress: 행동대가 강제로 파업을 진압한다.
+- @negotiation_suppress: 단눈치오가 파업 참가자들과 협상을 시작한다.
 
 @army_suppress
 view-if: army_loyalty > 0.54 and industrialists_pnf_normalised <= workers_pnf_normalised
@@ -75,9 +75,9 @@ Q.abl_strength *= 1.4;
 Q.abl_militancy *= 0.8;
 !}
 
-The Regio Esercito is mobilised and deployed to Italy, the strikes forcefully ended as prominent industrialists and strikers are arrested. The factories are placed under state control as workers return to their employment, though this solidifies the industrialists opposition to D'Annunzio.
+왕립 육군이 동원되어 이탈리아 전역에 배치되었고, 주동적인 자본가들과 파업 참가자들이 체포되면서 파업은 강제 진압되었습니다. 공장들은 국가 관리 하에 놓였고 노동자들은 일터로 복귀했지만, 이 사건으로 인해 단눈치오에 대한 자본가들의 반감은 더욱 확고해졌습니다.
 
-Rumors of unrest from the *Ras* are more often too, seemingly left out of the responsibility of quelling unrest which they expected to perform.
+한편, 자신들이 맡았어야 할 소요 진압 임무에서 배제된 *지방 실력자*들 사이에서 불만의 목소리가 커지고 있다는 소문도 점점 더 자주 들려옵니다.
 
 @squadrismo_suppress
 view-if: army_loyalty < 0.54 and industrialists_pnf_normalised <= workers_pnf_normalised
@@ -97,7 +97,7 @@ Q.abl_strength *= 1.3;
 Q.abl_militancy *= 0.9;
 !}
 
-With the loyalties of the Regio Esercito called into question, the Squadrismo have assumed responsibility of quelling unrest, forcefully breaking up the strike, though surprisingly not employing its usually cruel tactics. The factories have reopened, placed under state control as workers are rehired once more.
+왕립 육군의 충성심에 의문이 제기되자, 파시스트 행동대가 소요 진압 책임을 맡았습니다. 그들은 파업을 강제로 해산시켰지만, 놀랍게도 평소와 같은 잔혹한 수단은 동원하지 않았습니다. 공장들은 다시 문을 열었고, 국가 관리 하에 놓이면서 노동자들도 다시 고용되었습니다.
 
 @negotiation_suppress
 view-if: industrialists_pnf_normalised > workers_pnf_normalised
@@ -111,6 +111,6 @@ Q.inflation += 0.2;
 !}
 achievement: il_mio_nome_e_storpiato_percio
 
-With mediation from conservative leaders, the PNF and business leaders are able to come to an agreement to end the strike. Labour law changes are curtailed slightly, as are changes to levies on taxes in exchange for ending the strike.
+보수파 지도자들의 중재 덕분에 국가 파시스트당과 재계 지도자들은 파업 종료에 합의할 수 있었습니다. 파업을 끝내는 대신 노동법 개정은 약간 축소되었고, 관련 세금 부과 변경도 이루어졌습니다.
 
-Though an amicable end to the strike, this has certainly placed D'Annunzio against the industrialists, once backing the PNF under Mussolini's control. 
+비록 파업은 원만하게 끝났지만, 이 사건은 한때 무솔리니 휘하에서 국가 파시스트당을 지지했던 자본가들과 단눈치오를 확실히 등지게 만들었습니다.

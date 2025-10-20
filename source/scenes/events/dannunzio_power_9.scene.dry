@@ -1,5 +1,5 @@
-title: D'Annunzio consolidates control over the PNF
-subtitle: The Squadrismo are purged.
+title: 단눈치오가 국가 파시스트당 장악력을 강화함
+subtitle: 행동대가 숙청되다.
 view-if: pnf_in_power and pnf_leader = "D'Annunzio" and dannunzio_coup_seen and dannunzio_time <= time
 max-visits: 1
 tags: event
@@ -15,10 +15,10 @@ Q.abl_strength *= 0.4;
 Q.abl_militancy *= 0.2;
 !} next_election_time = time + 6; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12
 
-= Squadrismo Purged
+= 행동대 숙청
 
-Following the coup attempt, a purge of the Squadrismo has occurred, removing disloyal *Ras* and officers from their position. This has thankfully, weakened them severely too, as inexperienced men take their place. Our ability to control the streets with the Red Guards will be easier. 
+쿠데타 시도 이후, 행동대에 대한 숙청이 단행되어 불충한 '지방 실력자'들과 장교들이 자리에서 축출되었습니다. 다행히도 이로 인해 그들의 세력은 심각하게 약화되었고, 그 자리는 경험 없는 인물들로 채워졌습니다. 이제 적위대로 거리를 통제하기가 더 수월해질 것입니다.
 
-Elections have been rescheduled to stabilise the situation.
+상황을 안정시키기 위해 선거가 재조정되었습니다.
 
-- @root: Excellent.
+- @root: 훌륭하다.

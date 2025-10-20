@@ -1,15 +1,15 @@
-title: Syndicalists defect!
-subtitle: Our syndicalist wing have defected!
+title: 생디칼리스트들의 이탈!
+subtitle: 우리의 생디칼리스트 파벌이 이탈했다!
 view-if: syndicalist_active and dannunzio_tour_seen and pnf_leader = "D'Annunzio"
 on-arrival: syndicalist_break = 1; workers_psi *= 0.9; rg_strength *= 0.8; veterans_psi *= 0.9; workers_psri += 5; workers_pnf *= 0.05; n_advisors -= 1 if divittorio_advisor == 1; divittorio_advisor = 0; n_advisors -= 1 if deambris_advisor == 1; deambris_advisor = 0; syndicalist_strength *= 0.5
 new-page: true
 max-visits: 1
 tags: event
 
-= Syndicalists defect!
+= 생디칼리스트들의 이탈!
 
-The *Unione Sindacale Italiana*, and as a whole a large majority of our syndicalist wing have defected to the newly formed [+ pnf_full_name +], with Gabriele D'Annunzio leading the party. Having close ties with D'Annunzio, the USI's leadership led by Alceste De Ambris have decided to join the party, throwing the weight of the union behind them.
+*이탈리아 생디칼리스트 연합*과 우리 당의 생디칼리스트 파벌 대다수가 가브리엘레 단눈치오가 이끄는 새로 창당된 [+ pnf_full_name +]로 넘어갔습니다. 단눈치오와 긴밀한 관계를 맺고 있던 생디칼리스트 연합의 지도자 알체스테 데 암브리스는 파시스트 정당에 합류하기로 결정하며 노조의 전폭적인 지지를 선언했습니다.
 
-This was, unfortunately, expected, seeming as the two men both played a significant role in the occupation of Fiume and the sole reason of their estranged relation with the party was due to Mussolini and his *Ras*.
+안타깝게도, 이는 예상되었던 일입니다. 두 사람이 모두 피우메 점령에서 중요한 역할을 했으며, 그들이 당과 소원했던 유일한 이유는 무솔리니와 그의 *지방 실력자들* 때문이었던 것으로 보입니다.
 
-- @root: Unfortunate.
+- @root: 안타까운 일이다.

@@ -1,27 +1,27 @@
-title: The Women's Suffrage Act
+title: 여성 참정권법
 view-if: pnf_in_power and pnf_leader = "D'Annunzio" and not womens_suffrage and dannunzio_education_seen and dannunzio_time <= time
 max-visits: 1
 tags: event
 new-page: true
 on-arrival: dannunzio_suffrage_seen = 1; dannunzio_time = time + 4
 
-= D'Annunzio pushes a Women's Suffrage Bill
+= 단눈치오, 여성 참정권 법안 추진
 
-Gabriele D'Annunzio, leader of the PNF and now Prime Minister, has floored a bill to grant women suffrage in Italy. This is...somewhat unexpected, so say the least. The Chamber of Deputies is surprisingly blurred by this bill. Delegates are seemingly no longer voting upon partisan or party lines, as members of D'Annunzio's own party have voiced their intentions to shoot down this bill.
+국가 파시스트당의 지도자이자 현 총리인 가브리엘레 단눈치오가 이탈리아 여성에게 참정권을 부여하는 법안을 발의했습니다. 이것은... 솔직히 말하자면, 아주 예상 밖의 일입니다. 하원은 이 법안으로 인해 놀라울 정도로 혼란에 빠졌습니다. 단눈치오의 당원들조차 법안을 부결시키겠다고 공언하면서, 의원들은 더 이상 당파나 당론에 따라 투표하지 않는 것 같습니다.
 
-The other leftist parties in the Chamber have announced their intention to vote in favour of the bill, in an odd *Querfront*. It is clear that our own party will be instrumental to the passage of the bill, and though some wish to support this bill, others warn that this is a trap intended for D'Annunzio to consolidate more power.
+의회 내 다른 좌파 정당들은 기묘한 *좌우합작*의 형태로 법안에 찬성하겠다고 밝혔습니다. 법안 통과에 우리 당의 역할이 결정적일 것이 분명한 가운데, 일각에서는 법안을 지지해야 한다는 목소리가 나오지만, 다른 한편에서는 이것이 단눈치오가 권력을 공고히 하기 위해 파놓은 함정이라고 경고합니다.
 
-What are we to do?
+우리는 어떻게 해야 할까요?
 
-- @suffrage_success: Vote in favour of the bill.
-- @suffrage_fail: Vote against the bill, killing it.
+- @suffrage_success: 법안에 찬성 투표한다.
+- @suffrage_fail: 법안에 반대 투표하여 부결시킨다.
 
 @suffrage_fail
 on-arrival: dannunzio_relation -= 1; workers_psi -= 4; workers_pnf += 2; women_psi -= 7; women_pnf += 2; middle_class_pnf -= 2; middle_class_psi += 6; pnf_right += 1
 
-We whip the party into voting against the bill, convinced it is a trap and part of a much larger scheme. Our supporters are outraged, seeing this as us failing to grasp an opportunity to advance women's rights, while the more conservative middle class praise our actions, in an odd spectacle.
+우리는 이 법안이 더 큰 음모의 일부이자 함정이라고 확신하여 반대 투표를 당론으로 정했습니다. 우리 지지자들은 이를 여성 인권을 신장시킬 기회를 놓친 것이라며 격분했지만, 아이러니하게도 더 보수적인 중산층은 우리의 행동에 찬사를 보냈습니다.
 
 @suffrage_success
 on-arrival: dannunzio_relation += 1; womens_suffrage = 1; women += 27; womens_rights += 1; middle_class_pnf -= 4; middle_class_psi -= 1; workers_psi += 3*(1-dissent); workers_pnf += 3; industrialists_ds += 3; industrialists_ldr += 3; industrialists_ul += 3; rural_ul += 3; women_ppi += 3; middle_class_ul += 3*(1-dissent); ppi_left += 2; ldr_right += 0.6; ds_right += 0.2; socialist_sentiment += 3; nationalist_sentiment += 3; women_pnf += 12; pnf_left += 1; 
 
-With the support of the left including the PSRI [? if pri_prominent: and the PRI?] alongside the PPI, we whip the party to pass the bill, allowing women to vote in Italy! This has heartened our more radical supporters, while hurting our relations with the liberal parties. With the increasing political discourse around suffrage, and the betrayal of the PNF, middle class and rural votes have defected over to the [+ ul_name +] and [+ ldr_name +]
+PSRI[? if pri_prominent: 와 PRI?] 및 PPI를 포함한 좌파의 지지에 힘입어, 우리는 당론으로 찬성 투표를 이끌어내 마침내 이탈리아 여성의 투표권을 얻어냈습니다! 이 일은 우리의 더 급진적인 지지자들을 고무시켰지만, 자유주의 정당들과의 관계에는 악영향을 미쳤습니다. 참정권을 둘러싼 정치적 논쟁이 격화되고 국가 파시스트당이 배신하자, 중산층과 농촌 유권자들은 [+ ul_name +]과 [+ ldr_name +]로 등을 돌렸습니다.

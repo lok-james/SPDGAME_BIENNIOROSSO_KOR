@@ -1,15 +1,15 @@
-title: [+ prime_minister +] improves Public Education funding
-subtitle: Funding is expanded for Public Education
+title: [+ prime_minister +] 총리, 공교육 예산 증액
+subtitle: 공교육 예산 확대
 view-if: gov_education_timer <= 0 and gov_cooldown_timer <= 0 and psi_in_government = 0 and not national_congress_seen and prime_minister = "D'Annunzio" and budget > -5 and dannunzio_council_seen and dannunzio_time <= time
 on-arrival: gov_cooldown_timer = 3; gov_education_timer = 6; budget -= 1; education_funded += 1; workers_pnf += 3*(1-dissent); middle_class_pnf += 3*(1-dissent); industrialists_pnf -= 3*(1-dissent); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.3; unemployment -= 0.1 if unemployment >= 8; dannunzio_education_seen = 1; dannunzio_time = time + 4; pnf_left += 0.5
 new-page: true
 max-visits: 1
 tags: event
 
-= [+ prime_minister +] expands Public Education
+= [+ prime_minister +] 총리, 공교육 확대
 
-Prime Minister D'Annunzio has announced his intention to expand public education and improving the system, emphasising his focus on the topic and for the eventual process of free public education when the necessary budget is given. 
+단눈치오 총리가 공교육을 확대하고 교육 시스템을 개선하겠다는 의지를 밝혔습니다. 그는 이 의제에 대한 자신의 집중을 강조하고, 필요한 예산이 확보되면 궁극적으로 무상 공교육을 실현할 것이라고 역설했습니다.
 
-Already, we have seen improvements made in the education system, with emphasis being placed on culture, music and art for students, seemingly in line with D'Annunzio's aims.
+단눈치오의 목표에 발맞추어 학생들을 위한 문화, 음악, 예술 교육에 중점을 두는 등, 교육 시스템 전반에 걸쳐 이미 개선이 이루어지고 있습니다.
 
-- @root: How odd.
+- @root: 기이한 일이로군.

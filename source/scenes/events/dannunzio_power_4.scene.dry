@@ -1,17 +1,17 @@
-title: The Labour & Corporative Charter of [+ year +]
-subtitle: D'Annunzio begins his plan of economic consolidation.
+title: [+ year +]년 노동조합 헌장
+subtitle: 단눈치오가 경제 통제 계획에 착수하다.
 view-if: pnf_in_power and pnf_leader = "D'Annunzio" and (dannunzio_suffrage_seen or (womens_suffrage and dannunzio_education_seen)) and time >= dannunzio_time
 max-visits: 1
 tags: event
 new-page: true
 on-arrival: dannunzio_corporative_seen = 1; dannunzio_time = time + 3; industrialists_pnf -= 12; industrialists_ul += 8; industrialists_ldr += 4; industrialists_pcs += 2 if pcs_formed; workers_psi -= 7; workers_pnf += 9; workers_psri -= 2; workers_pcdi -= 3 if pcdi_formed; workers_psu -= 1 if psu_formed; inflation += 0.7; economic_growth += 0.4; unemployment += 0.4; working_hours = 3 if working_hours < 3; workers_safety = 2 if workers_safety < 2; wage_increase = 3 if wage_increase < 3; upper_tax_rates += 1 if upper_tax_rates <= 5; budget += 3 if upper_tax_rates <= 5; budget += 1 if upper_tax_rates > 5;
 
-= The Labour & Corporative Charter
+= 노동조합 헌장
 
-In an effort to replicate the economic success of the Italian Regency of Carnaro, Prime Minister D'Annunzio has passed the Labour & Corporative Charter, organising and consolidating the Italian economy into nine corporations, dividing them up by sectors. The bill also introduces mandatory membership to all labour and industries, subordinating private profit to state planning and levying high profit taxes on oligarchic wealth to fund social programs.
+피우메 점령 당시 이탈리아 카르나로 섭정국의 경제적 성공을 재현하려는 시도로, 단눈치오 총리는 '노동조합 헌장'을 통과시켰습니다. 이 헌장은 이탈리아 경제를 9개의 부문별 조합으로 조직하고 통제하며, 모든 노동자와 산업의 의무 가입을 규정합니다. 또한 사적 이윤을 국가 계획에 종속시키고, 사회 프로그램 기금 마련을 위해 과두 재산에 높은 이윤세를 부과합니다.
 
-In regards to labour policy, in both a surprising and unsurprising sense, D'Annunzio has established numerous progressive labour laws, [? if working_hours < 3 : passing a ?][? if working_hours >= 3 : enshrining the already-established ?] 8-hour workday into law, empowering labour councils and improving labour protection laws comprehensively.
+한편으로 놀랍고 다른 한편으로 당연하게도, 단눈치오는 수많은 진보적 노동법을 제정했습니다 [? if working_hours < 3 : 8시간 노동제를 ?][? if working_hours >= 3 : 이미 확립된 8시간 노동제를 ?] 법으로 명시하고 노동 평의회의 권한을 강화하며 노동 보호법을 포괄적으로 개선했습니다.
 
-The reaction to these laws have been mixed; former backers of the fascists, the Industrialists, Oligarchs and Radical Nationalists have lambasted D'Annunzio for his 'reckless' policy, while winning the support of radical workers and some of our voters, concerningly. Some of the other left-wing parties have welcomed D'Annunzio's attitude and policies towards workers, while the conservative parties remain suspicious of D'Annunzio's goals.
+이러한 법안에 대한 반응은 극명하게 엇갈렸습니다. 과거 파시스트의 후원자였던 자본가, 과두 재벌, 급진 민족주의자들은 단눈치오의 '무모한' 정책을 맹비난했습니다. 반면, 급진 노동자들과 우려스럽게도 일부 우리 유권자들은 그의 편에 섰습니다. 일부 다른 좌파 정당들은 단눈치오의 노동 정책과 태도를 환영했지만, 보수 정당들은 그의 진정한 의도를 여전히 의심하고 있습니다.
 
-- @root: A realignment of voters within the PNF?
+- @root: 국가 파시스트당 지지층이 재편되고 있는 것인가?
