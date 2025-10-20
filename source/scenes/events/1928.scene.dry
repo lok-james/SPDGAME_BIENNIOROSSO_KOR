@@ -1,22 +1,22 @@
-title: A New Year in Italy
-subtitle: Has fascism been defeated?
+title: 이탈리아의 새해
+subtitle: 파시즘은 패배했는가?
 tags: event
 priority: 3
 view-if: year = 1928 and month = 1
 max-visits: 1
 new-page: true
 
-= A New Day in Italy
+= 이탈리아의 새로운 날
 
-We have come a long way from 1919. The March on Rome, the relentless strife of streetfights, the economic crisis, alongside the instability of the government is over.
+1919년부터 참으로 먼 길을 걸어왔습니다. 로마 진군, 끊임없는 시가전, 경제 위기와 정부의 불안정은 이제 모두 끝났습니다.
 
-Only time will tell how we go from here.
+앞으로 어떻게 될지는 오직 시간만이 알려줄 것입니다.
 
-- @one_more_turn: Just one more turn...
-- @game_over: Game over.
+- @one_more_turn: 한 턴만 더…
+- @game_over: 게임 끝.
 
 @one_more_turn
-subtitle: There is no content past this point.
+subtitle: 이 시점 이후에는 콘텐츠가 없습니다.
 on-arrival: no_content = 1
 
-Very well. D'Aragona will have an 'End Game' option now when you're done. 
+알겠습니다. 이제 당신이 완료하면 다라고나는 ‘게임 종료’ 옵션을 갖게 될 것입니다.

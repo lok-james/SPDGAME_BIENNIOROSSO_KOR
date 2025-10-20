@@ -1,10 +1,10 @@
 title: 1927
-subtitle: A new year 
+subtitle: 새해
 tags: event
 view-if: year = 1927 and month = 1
 priority: 2
 max-visits: 1
 
-A new year has come to Italy.
+이탈리아에 새해가 밝았습니다.
 
-[? if psi_in_government : Our budget has increased due to the yearly tax. ?]
+[? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]

@@ -1,5 +1,5 @@
 title: 1920
-subtitle: A new year
+subtitle: 새해
 on-arrival: {!
 // see post_event.scene.dry for changes.
 !}
@@ -8,6 +8,6 @@ view-if: year = 1920 and month = 1
 priority: 2
 max-visits: 1
 
-The turn of the decade has arrived. The post-war situation does not seem to be getting better. The economy is still in crisis as unemployment surges and inflation is rampant, [? if psi_in_government :though we are confident our new position in government will fix that. ?][? if not psi_in_government :and our expectations with the seemingly paralysed bourgeois parties to pull us out the crisis are low. ?]
+새로운 10년이 시작되었습니다. 하지만 전후 상황은 나아질 기미가 보이지 않습니다. 실업률은 급증하고 인플레이션은 만연하는 등 경제는 여전히 위기 상황입니다. [? if psi_in_government : 하지만 저희는 정부의 일원이 된 만큼 이 문제를 해결할 수 있다고 자신합니다. ?][? if not psi_in_government : 무기력해 보이는 부르주아 정당들이 과연 이 위기에서 우리를 구해낼 수 있을지 기대조차 되지 않습니다. ?]
 
-[? if psi_in_government : Our budget has increased due to the yearly tax. ?]
+[? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]

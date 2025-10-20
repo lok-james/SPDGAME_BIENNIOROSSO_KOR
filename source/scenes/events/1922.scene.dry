@@ -1,11 +1,11 @@
 title: 1922
-subtitle: A new year 
+subtitle: 새로운 해 
 on-arrival: inflation -= 3.4; economic_growth += 1.3; unemployment -= 1.4; nationalist_sentiment += 4*(1-dissent)
 tags: event
 view-if: year = 1922 and month = 1
 priority: 2
 max-visits: 1
 
-A new year begins. The Fasci have only gotten stronger. [? if not psi_in_government: Government inaction has slowed recovery, as well as kept violence high. ?][? if psi_in_government : Government policy has helped stemmed the worst, as people are heading back to work. ?]
+새해가 밝았습니다. 파시스트 세력은 더욱더 강성해졌습니다. [? if not psi_in_government: 정부의 무능으로 경제 회복은 더뎌지고 폭력 사태는 끊이지 않고 있습니다. ?][? if psi_in_government : 정부 정책 덕분에 최악의 상황은 면했고, 사람들도 일터로 복귀하고 있습니다. ?]
 
-[? if psi_in_government : Our budget has increased due to the yearly tax. ?]
+[? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]

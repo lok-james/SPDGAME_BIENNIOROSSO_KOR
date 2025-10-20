@@ -1,11 +1,11 @@
 title: 1924
-subtitle: A new year 
+subtitle: 새해
 on-arrival: inflation -= 3.4; economic_growth += 1.3; unemployment -= 1.4; nationalist_sentiment -= 4*(1-dissent); nationalist_sentiment += 8*(1-dissent) if prime_minister_party = "PNF"
 tags: event
 view-if: year = 1924 and month = 1
 priority: 2
 max-visits: 1
 
-A new year has come to Italy. [? if not national_economic_recovery :The economy continues to struggle following the end of the war. ?][? if prime_minister_party == "PNF": [+ prime_minister +] continues to consolidate his rule, and we are experiencing worse and worse violence against us each passing day.?]
+이탈리아에 새해가 밝았습니다. [? if not national_economic_recovery :전쟁이 끝났음에도 경제는 여전히 어려운 상황입니다. ?][? if prime_minister_party == “PNF”: [+ prime_minister +]가 자신의 통치를 계속해서 공고히 하는 가운데, 우리를 향한 폭력은 날이 갈수록 심해지고 있습니다.?]
 
-[? if psi_in_government : Our budget has increased due to the yearly tax. ?]
+[? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]

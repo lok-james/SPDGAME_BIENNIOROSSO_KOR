@@ -1,11 +1,11 @@
 title: 1921
-subtitle: A new year 
+subtitle: 새해
 on-arrival: inflation -= 1.4; economic_growth += 0.3; unemployment -= 0.2; nationalist_sentiment += 2*(1-dissent);
 tags: event
 view-if: year = 1921 and month = 1 
 priority: 2
 max-visits: 1
 
-A new year begins. The economic crisis seems to have improved slightly, [? if psi_in_government : thanks to us. ?][? if not psi_in_government : no thanks to government inaction. ?] The conflict between us and the Fasci have only intensified, and it seems stability is a far reach from reality.
+새해가 밝았습니다. 경제 위기는 다소 완화된 듯합니다. [? if psi_in_government : 모두 저희의 덕분입니다. ?][? if not psi_in_government : 정부가 손을 놓고 있었으니 당연히 정부의 공은 아닙니다. ?] 파시 세력과의 갈등은 더욱 격화되었고, 안정적인 상황은 요원해 보입니다.
 
-[? if psi_in_government : Our budget has increased due to the yearly tax. ?]
+[? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]
