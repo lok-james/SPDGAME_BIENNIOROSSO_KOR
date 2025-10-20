@@ -1,15 +1,15 @@
-title: Tax Cuts for the Rich
-subtitle: Finance Minister [+ finance_minister +] authorises tax cuts.
+title: 부자 감세
+subtitle: [+ finance_minister +] 재무장관이 감세를 승인했습니다.
 view-if: (finance_minister_party == ul_name or finance_minister_party == ldr_name) and gov_finance_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and upper_tax_rates > -5 and (economic_growth < 0 or unemployment > 8) and budget >= 2
 on-arrival: gov_cooldown_timer = 3; gov_treasury_timer = 9
 new-page: true
 tags: event
 
-= Finance Minister [+ finance_minister +] authorizes tax cuts for the rich
+= 재무장관 [+ finance_minister +], 부유층 감세 승인
 
-Finance Minister [+ finance_minister +] has authorised tax cuts for the rich in order to stimulate the economy. These cuts are unpopular amongst our voting bloc, seeing them as unfair and greedy.
+[+ finance_minister +] 재무장관이 경제 활성화를 목표로 부유층 감세를 승인했습니다. 이 감세 조치는 우리의 지지층 사이에서 불공정하고 탐욕스러운 처사로 여겨져 큰 반발을 사고 있습니다.
 
-- @pm_nothing: There is nothing we can do.
+- @pm_nothing: 우리가 할 수 있는 일은 아무것도 없다.
 
 @pm_nothing
 on-arrival: {!
@@ -54,6 +54,6 @@ Q.upper_tax_rates -= 1;
 
 !}
 
-[? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ finance_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name +] are able to use this policy to recruit more members. ?]
+[? if psi_in_government : 우리는 경제 안정을 위해 불가피한 조치였다고 노동자들과 재향군인들을 설득하려 하지만, [+ finance_minister_party +]에 대한 그들의 지지는 눈에 띄게 감소했으며, 이 조치를 용인한 우리에 대한 지지 또한 마찬가지입니다. [+ pnf_name +]는 이 정책을 이용해 더 많은 당원을 끌어모으고 있습니다. ?]
 
-[? if not psi_in_government : The cuts pass, and we utilise them to recruit workers who have lost faith in the liberal parties, alongside the [+ pnf_name +]. ?]
+[? if not psi_in_government : 감세안은 통과되었고, 우리는 [+ pnf_name +]와 함께 자유당에 실망한 노동자들을 포섭하는 기회로 삼았습니다. ?]

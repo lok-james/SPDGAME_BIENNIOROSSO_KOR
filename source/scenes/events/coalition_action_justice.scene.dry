@@ -1,12 +1,12 @@
-title: Judicial Reform rolled back
-subtitle: Justice Minister [+ justice_minister +] has begun rolling back our judicial reforms.
+title: 사법 개혁의 후퇴
+subtitle: [+ justice_minister +] 법무장관이 우리의 사법 개혁을 되돌리기 시작했습니다.
 view-if: ((justice_minister_party == ul_name and ul_relation <= 30) or (justice_minister_party == ldr_name and ldr_relation <= 30) or justice_minister_party == pnf_name) and gov_justice_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and judicial_reform > 0
 on-arrival: gov_cooldown_timer = 3; gov_justice_timer = 9; judicial_reform -= 1; workers_psi -= 3*(1-dissent) if democratisation < 3; republican_sentiment -= 3*(1-dissent);
 new-page: true
 tags: event
 
-= Justice Minister [+ justice_minister +] begins overhaul
+= 법무장관 [+ justice_minister +], 사법 시스템 개편 착수
 
-Justice Minister [+ justice_minister +] has begun an overhaul of the current justice system, removing judges we have previously appointed and replacing them with reactionary counterparts, as well as revising the legal code to be more lenient on far-right radicals.
+[+ justice_minister +] 법무장관이 현 사법 시스템의 전면 개편에 착수했습니다. 이전에 우리가 임명했던 판사들을 해임하고 그 자리에 반동적인 인물들을 앉혔으며, 극우 급진파에 관대한 방향으로 법률을 개정하고 있습니다.
 
-- @root: There is nothing we can do.
+- @root: 우리가 할 수 있는 일은 아무것도 없다.

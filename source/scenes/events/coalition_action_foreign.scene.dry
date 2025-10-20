@@ -1,17 +1,17 @@
-title: Aid Cuts
-subtitle: Foreign Minister [+ foreign_minister +] authorises cuts to foreign aid.
+title: 원조 삭감
+subtitle: [+ foreign_minister +] 외무장관이 대외 원조 삭감을 승인했습니다.
 view-if: ((foreign_minister_party == ul_name and ul_relation <= 30) or (foreign_minister_party == ldr_name and ldr_relation <= 30) or foreign_minister_party == pnf_name) and gov_foreign_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and soviet_aid_given > 0 and (not rcw_over or soviet_recovery_timer > 0)
 on-arrival: gov_cooldown_timer = 3; gov_foreign_timer = 9
 new-page: true
 tags: event
 
-= Foreign Minister [+ foreign_minister +] authorizes foreign aid cuts
+= [+ foreign_minister +] 외무장관, 대외 원조 삭감 승인
 
-Foreign Minister [+ foreign_minister +] has authorised cuts to foreign aid, particularly to the Soviet Union that we have given during our party's previous tenure as Foreign Minister.
+[+ foreign_minister +] 외무장관이 대외 원조 삭감을 승인했습니다. 특히 우리 당이 외무장관직을 맡았을 때 소련에 제공했던 원조가 대상이 되었습니다.
 
-- @fm_nothing: There is nothing we can do.
+- @fm_nothing: 우리가 할 수 있는 일은 아무것도 없다.
 
 @fm_nothing
 on-arrival: soviet_relation -= 2; budget += 1; soviet_aid_given -= 1; communist_dissent += 7; maximalist_dissent += 4; soviet_end_timer += 1 if not rcw_over; soviet_recovery_timer += 1 if soviet_recovery_timer > 0;
 
-The cuts easily pass, and the Foreign Ministry cuts off aid given to the Soviet Union, and we see notice Soviet attitudes with us have gotten colder, regardless whether or not it was us who cut the funding. The Left-wing of the party is furious at our inability to prevent this.
+삭감안은 손쉽게 통과되었고, 외무부는 소련에 대한 원조를 중단했습니다. 자금 지원을 중단한 것이 우리가 아님에도 불구하고 소련의 태도는 눈에 띄게 차가워졌습니다. 당내 좌파는 이를 막지 못한 우리의 무능에 격분하고 있습니다.

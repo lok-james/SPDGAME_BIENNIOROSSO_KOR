@@ -1,5 +1,5 @@
-title: Trade School funding gutted
-subtitle: Public Education Minister [+ public_education_minister +] is gutting our trade school funding.
+title: 직업 학교 예산 삭감
+subtitle: [+ public_education_minister +] 공교육부 장관이 직업 학교에 대한 예산 지원을 삭감하고 있습니다.
 view-if: public_education_minister_party == ldr_name and budget < 0 and gov_public_education_timer <= 0 and gov_cooldown_timer <= 0 and trade_school_funded > 0
 on-arrival: {! 
 
@@ -47,10 +47,10 @@ if (Q.unemployment < 8) {
 new-page: true
 tags: event
 
-= [+ public_education_minister +] guts funding for Trade Schools
+= [+ public_education_minister +], 직업 학교 예산 삭감
 
-The [+ ldr_name +]-led Public Education Ministry have begun to gut funding of the already-existing Trade Schools funded by the previous government due to the budget deficit, causing another wave of unemployment.
+[+ ldr_name +]가 이끄는 공교육부가 예산 적자를 이유로 이전 정부에서 지원하던 기존 직업 학교들의 예산을 삭감하기 시작했습니다. 이로 인해 또다시 실업의 파도가 몰아치고 있습니다.
 
-[? if psi_in_government : Our traditional rural and worker base criticise our inability to prevent this, as do our middle class supporters who benefit from this the most. The fascists are able to utilise both our incompetence and the [+ public_education_minister_party +]'s callousness to recruit more supporters. ?][? if not psi_in_government : We use this opportunity to recruit those disillusion with the liberal status-quo, as do the fascists. ?]
+[? if psi_in_government : 우리의 전통적인 지지 기반인 노동자와 농민뿐 아니라, 이 정책의 가장 큰 수혜자였던 중산층 지지자들조차 이를 막지 못한 우리의 무능을 비판합니다. 파시스트들은 우리의 무능과 [+ public_education_minister_party +]의 냉혹함을 모두 이용해 지지 세력을 더욱 늘리고 있습니다. ?][? if not psi_in_government : 우리는 이 기회를 이용해 자유주의 현 체제에 환멸을 느낀 이들을 포섭하려 하고 있으며, 파시스트들 역시 마찬가지입니다. ?]
 
-- @root: There is nothing we can do.
+- @root: 우리가 할 수 있는 일은 아무것도 없다.

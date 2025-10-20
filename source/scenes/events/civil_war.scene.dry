@@ -190,9 +190,9 @@ on-arrival: war_choices += 1;
 
 우리는 극우 세력에 [? if participating = 0 :그리고 부르주아 정당들에도 ?]  맞서 싸우기 위해 소련에 원조를 요청했습니다. [? if not rcw_over : 하지만 그들 역시 내전을 치르고 있어 많은 지원을 기대하기는 어렵습니다. ?]
 
-[? if soviet_relation < 3 : The Soviet Union sends refuses to send us any aid owing to our terrible relations, though international forces flock to our aid. ?][? if (soviet_relation > 2 and soviet_relation < 6) : The Soviet Union sends us the bare minimum, owing to our strained relations. ?][? if (soviet_relation > 5 and soviet_relation < 8) : The Soviet Union sends us a force of willing volunteers, aiding our cause. ?][? if soviet_relation >= 8 : Owing to our good relations, the Soviet Union has sent us substantial aid, giving us a massive advantage. ?]
+[? if soviet_relation < 3 : 최악의 관계 탓에 소련은 어떠한 원조도 거부했지만, 국제 의용군이 우리를 돕기 위해 모여들고 있습니다. ?][? if (soviet_relation > 2 and soviet_relation < 6) : 경색된 관계 탓에 소련은 최소한의 지원만을 보냈습니다. ?][? if (soviet_relation > 5 and soviet_relation < 8) : 소련이 우리의 대의를 돕기 위해 기꺼이 자원하여 의용군 부대를 파견했습니다. ?][? if soviet_relation >= 8 : 돈독한 관계 덕분에 소련은 우리에게 막대한 원조를 보냈고, 이는 전황을 뒤집을 엄청난 이점이 될 것입니다. ?]
 
-[? if soviet_germany : International Aid is further strengthened by volunteers from Soviet Germany. ?]
+[? if soviet_germany : 소비에트 독일에서 온 의용군 덕분에 국제 원조는 한층 더 강화되었습니다. ?]
 
 @pcdi_aid
 view-if: friendly_king = 0 and (not_participating = 1 or maximalist_participating = 1 or royal_coup = 1) and pcdi_formed
@@ -200,23 +200,23 @@ max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1;
 
-[? if pcdi_relation >= 60 : Though reluctant, the PCd'I are willing to put aside their differences to aid us in the fight against the reactionaries. ?]
+[? if pcdi_relation >= 60 : 마지못해 하는 기색이 역력하지만, 이탈리아 공산당은 반동 세력과의 싸움에서 우리를 돕기 위해 이견을 잠시 접어두기로 했습니다. ?]
 
-[? if pcdi_relation < 60 : The PCd'I refuse to aid us in our fight, primarily due to our strained relations. ?]
+[? if pcdi_relation < 60 : 이탈리아 공산당은 불편한 관계를 이유로 우리의 전투를 돕기를 거부했습니다. ?]
 
 @general_strike
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-General strikes are a significant tool we have against both the bourgeois and the far-right, and it can help us out now. [? if normalised_workers_total > 70 : The workers are largely united with us. ?][? if normalised_workers_total >= 50 and normalised_workers_total <= 70 : There is some dissent within labour, but a majority of workers support the general strike. ?][? if normalised_workers_total > 30 and normalised_workers_total < 50 : However, there is substantial dissent within labour, and less than half support the general strike. ?][? if normalised_workers_total <= 30 : However, labour is deeply divided, and most workers do not heed the call to strike. ?]
+총파업은 부르주아와 극우 모두에게 맞설 수 있는 우리의 강력한 무기이며, 지금의 위기에서도 큰 힘이 될 것입니다. [? if normalised_workers_total > 70 : 노동자들은 우리를 중심으로 굳게 단결해 있습니다. ?][? if normalised_workers_total >= 50 and normalised_workers_total <= 70 : 노동계 내부에 약간의 이견이 있지만, 대다수의 노동자들이 총파업을 지지하고 있습니다. ?][? if normalised_workers_total > 30 and normalised_workers_total < 50 : 하지만, 노동계 내부에 상당한 이견이 있어, 절반도 채 안 되는 노동자만이 총파업을 지지하고 있습니다. ?][? if normalised_workers_total <= 30 : 그러나 노동계는 극심하게 분열되어 있으며, 대부분의 노동자들이 파업 요구에 응하지 않고 있습니다. ?]
 
 @loyal_police
 max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-We urge the Carabinieri, the force of the Interior police, to join our cause. [? if interior_police_loyalty < 0.4 : Unfortunately, the Carabinieri are politically unreliable at best. ?][? if interior_police_loyalty >= 0.4 and interior_police_loyalty < 0.65 : In this crucial hour, the Carabinieri are split, with about half actively supporting our efforts. ?][? if interior_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating socialist loyalties in the Carabinieri have proven their worth. ?]
+우리는 내무 경찰 병력인 헌병대에 우리의 대의에 동참할 것을 촉구합니다. [? if interior_police_loyalty < 0.4 : 안타깝게도 헌병대는 기껏해야 정치적으로 신뢰할 수 없는 집단입니다. ?][? if interior_police_loyalty >= 0.4 and interior_police_loyalty < 0.65 : 이 중대한 시기에 헌병대는 분열되었고, 절반가량이 우리의 노력을 적극적으로 지지하고 있습니다. ?][? if interior_police_loyalty >= 0.65 : 대부분이 우리의 노력을 지지하는 데 동참했습니다. 헌병대 내부에 사회주의 동조 세력을 키우려던 우리의 노력이 빛을 발했습니다. ?]
 
 @war_outcome
 view-if: war_choices >= 2
@@ -225,65 +225,65 @@ go-to: defeat if total_defeat = 1; long_war if long_war = 1; socialist_victory i
 @defeat
 achievement: follia_di_sinistra
 
-= Total Defeat
+= 총체적 패배
 
-Our forces are no match for those of the reactionaries. Red Guard forces are quickly overpowered by the forces of the Arditismo, Fasci, and Regio Esercito. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Italy.
+우리 군대는 반동 세력의 적수가 되지 못했습니다. 적위대는 결사대, 파시스트, 왕립 육군의 연합군에 의해 순식간에 압도당했습니다. 수많은 동지들이 항복하기도 전에 목숨을 잃었습니다. 살아남은 지도자들은 국외로 망명하거나 처형당했으며, 이탈리아의 절대 권력은 반동주의자들의 손에 넘어갔습니다.
 
-Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
+우리의 저항은 역사책에 기록되고, 훗날 우리의 이름은 명예롭게 기억될 것입니다. 하지만 지금은, 모든 것을 잃었습니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버
 
 @long_war
 achievement: guerra_civile
 
-= Long War
+= 기나긴 전쟁
 
-The initial phase of the action ends, and somehow, both sides remain standing.
+전투의 초반 국면이 끝났지만, 양측 모두 기적적으로 버텨내고 있습니다.
 
-The war settles into fixed battle lines. This will not be a quick coup, but a long civil war. The nation will destroy itself before it can be rebuilt again.
+전쟁은 고착화된 전선으로 접어들었습니다. 이것은 단기전으로 끝나지 않을 것입니다. 길고 긴 내전이 될 것입니다. 이 나라는 재건되기도 전에 스스로를 파괴하고 말 것입니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버
 
 @socialist_victory
 audio: shuffle music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3 music/main/QuattroSignoriAParigiVanno.mp3
 on-arrival: prime_minister = "Bacci" if prime_minister_party = "PNF"; prime_minister_party = psi_name if prime_minister_party = "PNF"; ard_banned = 1; fdc_banned = 1; abl_banned = 1
 achievement: vittoria_monarchica
 
-= Victory for the Kingdom
+= 왕국의 승리
 
-The battle lines hold, and the Fasci, Arditismo, and pro-coup Regio Esercito forces are defeated. Today, the forces of the kingdom prevail over the fascists. It will be tough to recover once more before we have even recovered from our involvement in the First World War, but we are confident.
+전선은 유지되었고, 파시스트와 결사대, 그리고 쿠데타에 가담한 왕립 육군 병력은 패배했습니다. 오늘, 왕국의 군대는 파시스트를 상대로 승리했습니다. 제1차 세계 대전의 상처가 아물기도 전에 또다시 회복의 길을 걸어야 한다는 것은 힘든 일이지만, 우리는 자신 있습니다.
 
-Italy holds strong, against fascism.
+이탈리아는 파시즘에 맞서 굳건히 버텼습니다.
 
-- @post_war_cv: It is time to decide our new agenda.
+- @post_war_cv: 이제 새로운 의제를 결정할 시간입니다.
 
 @communist_victory
 on-arrival: soviet_victory = 1; prime_minister = "Bacci"; prime_minister_party = psi_name; 
 achievement: vittoria_sovietica
 
-= Victory for the Socialists
+= 사회주의자들의 승리
 
-The bourgeois and fascists lines shatter, as their forces are quickly overwhelmed by pro-socialist forces and the Red Guard, forcing a surrender. The Monarchy has been abolished, as bourgeois leaders are arrested and trialed in people's courts across the nation. The 18th Congress has been scheduled to occur within a few months to determine the state and organisation of the new nation.
+부르주아와 파시스트의 전선이 무너졌습니다. 그들의 군대는 친사회주의 세력과 적위대에 의해 순식간에 압도당했고, 결국 항복했습니다. 군주제는 폐지되었고, 부르주아 지도자들은 체포되어 전국 각지의 인민 재판소에서 심판을 받고 있습니다. 새로운 국가의 체제와 조직을 결정하기 위해, 수개월 내로 제18차 전당대회가 소집될 예정입니다.
 
-Italy has toppled its bourgeois oppressors and established a revolutionary state.
+이탈리아는 마침내 부르주아 압제자들을 타도하고 혁명 국가를 건설했습니다.
 
-- @post_war_force: It is time to decide the new agenda.
+- @post_war_force: 이제 새로운 의제를 결정할 시간입니다.
 
 @post_war_cv
 
-- @pressure_ban: Ban the [+ pnf_name +].
-- @none: We have done all we can for the moment.
+- @pressure_ban: [+ pnf_name +]를 정당 해산시키도록 압박한다.
+- @none: 지금으로서는 할 수 있는 일을 다 했다.
 
 @pressure_ban
 view-if: pnf_banned = 0
 on-arrival: pnf_banned = 1
 go-to: post_war_cv
 
-We are able to pressure the King, as well as convince the other parties to outlaw the [+ pnf_name +] for this attempted March on Rome.
+우리는 국왕에게 압력을 행사하고 다른 정당들을 설득하여, 이번 로마 진군 시도를 빌미로 [+ pnf_name +]를 불법화하는 데 성공했습니다.
 
 @none
 on-arrival: nationalist_sentiment -= 9; republican_sentiment += 7
 
-Regardless, the failure of the March on Rome has bolstered republican opposition within the country, who view the March as the result of the King's incompetence and inability to lead this nation in crisis.
+어쨌든, 로마 진군의 실패는 이번 사태를 국왕의 무능과 위기 대처 능력 부재의 결과로 보는 공화주의자들의 목소리에 힘을 실어주었습니다.
 
-Similarly, nationalist sentiments within the country have been besmirched by this failed coup attempt.
+마찬가지로, 이 실패한 쿠데타 시도로 인해 국내 민족주의자들의 위신은 땅에 떨어졌습니다.

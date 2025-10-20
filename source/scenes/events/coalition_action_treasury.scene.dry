@@ -1,15 +1,15 @@
-title: Emergency Budget Cuts
-subtitle: Treasury Minister [+ treasury_minister +] authorises cuts to social spending.
+title: 긴급 예산 삭감
+subtitle: [+ treasury_minister +] 재무장관이 사회 보장 지출 삭감을 승인했습니다.
 view-if: (treasury_minister_party == ul_name or treasury_minister_party == ldr_name or (treasury_minister_party == pnf_name and pnf_leader = "Mussolini")) and gov_treasury_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and ((welfare > 0 and (budget < 0 or inflation > unemployment) and not national_economic_recovery) or treasury_minister_party == pnf_name) and prime_minister != "D'Annunzio"
 on-arrival: gov_cooldown_timer = 3; gov_treasury_timer = 9
 new-page: true
 tags: event
 
-= Treasury Minister [+ treasury_minister +] authorizes welfare Cuts
+= 재무장관 [+ treasury_minister +], 복지 예산 삭감 승인
 
-Treasury Minister [+ treasury_minister +] has authorised cuts to welfare in reponse to the current economic crisis. Although it might be necessary for economic stability, the workers and unemployed, our main base, will bear the brunt of these cuts, worsening their situation.
+[+ treasury_minister +] 재무장관이 현 경제 위기에 대응한다는 명목으로 복지 예산 삭감을 승인했습니다. 경제 안정을 위해 필요한 조치일 수도 있지만, 우리의 핵심 지지 기반인 노동자와 실업자들이 그 피해를 고스란히 떠안게 되어 그들의 상황은 더욱 악화될 것입니다.
 
-- @pm_nothing: There is nothing we can do.
+- @pm_nothing: 우리가 할 수 있는 일은 아무것도 없다.
 
 @pm_nothing
 on-arrival: {!
@@ -76,6 +76,6 @@ Q.inflation -= 0.2;
 Q.unemployment += 0.3;
 !}
 
-[? if psi_in_government : We attempt to convince the workers and veterans that this is necessary for economic stability. Regardless, support for the [+ treasury_minister_party +] from workers and veterans decreases notably, and as do we for tolerating the cuts. The [+ pnf_name +] are able to use this policy to recruit more members. ?]
+[? if psi_in_government : 우리는 경제 안정을 위해 불가피한 조치였다고 노동자들과 재향군인들을 설득하려 하지만, [+ treasury_minister_party +]에 대한 그들의 지지는 눈에 띄게 감소했으며, 이 조치를 용인한 우리에 대한 지지 또한 마찬가지입니다. [+ pnf_name +]는 이 정책을 이용해 더 많은 당원을 끌어모으고 있습니다. ?]
 
-[? if not psi_in_government : The cuts pass, and we utilise them to recruit workers who have lost faith in the liberal parties, alongside the [+ pnf_name +]. ?]
+[? if not psi_in_government : 삭감안은 통과되었고, 우리는 [+ pnf_name +]와 마찬가지로 자유주의 정당에 실망한 노동자들을 포섭하는 기회로 삼았습니다. ?]

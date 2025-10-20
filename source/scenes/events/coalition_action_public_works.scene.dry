@@ -1,4 +1,4 @@
-title: Public Works Minister [+ public_education_minister +] acts
+title: [+ public_education_minister +] 공공사업부 장관의 조치
 view-if: ((ul_leader == "Giolitti" and public_works_funded > 0 and public_works_minister_party == ul_name and (unemployment < 8 or inflation > 5)) or (public_works_minister_party == "PPI" and budget > 0 and inflation < 5 and unemployment > 8)) and gov_public_works_timer <= 0 and gov_cooldown_timer <= 0
 on-arrival: gov_cooldown_timer = 3; gov_public_works_timer = 9
 new-page: true
@@ -43,12 +43,12 @@ Q.republican_sentiment -= 1;
 Q.nationalist_sentiment += 2;
 !}
 
-= Public Works Minister [+ public_works_minister +] guts funding of existing Public Works
+=공공사업부 장관 [+ public_works_minister +], 기존 공공사업 예산 삭감
 
-The [+ ul_name +]-led Public Works Ministry have begun to gut funding of the already-existing Public Works constructed by the previous government due to the budget deficit, causing another wave of unemployment.
+[+ ul_name +]가 이끄는 공공사업부가 예산 적자를 이유로 이전 정부에서 시작한 공공사업들의 예산을 삭감하기 시작했습니다. 이로 인해 또 다시 실업의 파도가 몰아치고 있습니다.
 
-[? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
-- @root: There is nothing we can do.
+[? if not psi_in_government : 우리는 이 기회를 이용해 자유주의 정당의 냉혹함을 선전하고 있으며, 파시스트들 역시 마찬가지입니다. ?][? if psi_in_government : 지지 기반인 노동자들로부터 이를 막지 못했다는 비판을 받고 있으며, 파시스트들은 이를 우리와 자유주의자 모두의 냉혹함을 공격하는 선전 도구로 사용하고 있습니다. ?]
+- @root: 우리가 할 수 있는 일은 아무것도 없다.
 
 @pw_ppi
 on-arrival: {!
@@ -82,10 +82,10 @@ Q.rural_ppi += 2*(1-Q.dissent);
 Q.nationalist_sentiment -= 2;
 !}
 
-= Public Works Minister [+ public_works_minister +] begins construction of new Public Works
+= 공공사업부 장관 [+ public_works_minister +], 신규 공공사업 착수
 
-The PPI-led Public Works Ministry have begun to plan and construct new Public Works constructed, hoping to lower inflation and utilise the current budget surplus.
+이탈리아 인민당이 이끄는 공공사업부가 인플레이션 완화와 현재의 재정 흑자 활용을 목표로 새로운 공공사업의 계획 및 건설에 착수했습니다.
 
-This will aid our efforts in reducing unemployment immensely.
+이 조치는 실업률 감소를 위한 우리의 노력에 엄청난 도움이 될 것입니다.
 
-- @root: Interesting.
+- @root: 흥미롭군.

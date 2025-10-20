@@ -1,13 +1,13 @@
-title: Military Reshuffle
-subtitle: The Regio Esercito is conducting a sweeping reshuffle.
+title: 군부 개편
+subtitle: 왕립 육군이 대대적인 인사 개편을 단행하고 있습니다.
 view-if: gov_army_timer <= 0 and gov_cooldown_timer <= 0 and year >= 1920 and army_loyalty > 0.71 and king_relation < 5*radicalisation and not national_congress_seen
 on-arrival: gov_cooldown_timer = 3; gov_army_timer = 6; army_loyalty -= 0.07
 new-page: true
 tags: event
 
-= King [+ king +] reshuffles Regio Esercito leadership
+= [+ king +] 국왕, 왕립 육군 지도부 개편
 
-The Minister of War, under suggestion of King [+ king +] has begun a reshuffling of the leadership of the Regio Esercito, which have seen some of the officers and soldiers more sympathetic to our cause removed from power and reassigned to missions in the colonies abroad, harming our influence.
+국방부 장관이 [+ king +] 국왕의 제안에 따라 왕립 육군 지도부 개편에 착수했습니다. 이로 인해 우리에게 비교적 우호적이던 일부 장교와 병사들이 권력에서 밀려나 해외 식민지로 재배치되었고, 이는 군부 내 우리의 영향력을 약화시켰습니다.
 
-- @root: There is nothing we can do.
+- @root: 우리가 할 수 있는 일은 아무것도 없다.
 

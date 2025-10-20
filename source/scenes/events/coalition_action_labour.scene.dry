@@ -1,17 +1,17 @@
-title: Labour Minister [+ labour_minister +] rolls back our reforms
-subtitle: Labour Minister [+ public_education_minister +] is retaliating against us.
+title: [+ labour_minister +] 노동장관, 우리의 개혁을 되돌리다
+subtitle: [+ public_education_minister +] 노동장관이 우리에게 보복하고 있습니다.
 view-if: gov_cooldown_timer <= 0 and gov_labour_timer <= 0 and ((labour_minister_party == ldr_name and (ldr_relation <= 30 or radicalisation >= 7)) or (labour_minister_party == ul_name and (ul_relation <= 30 or radicalisation >= 7)) or (labour_minister_party == "DS" and ds_leader != "Giuffrida" and (ldr_relation <= 30 or radicalisation >= 7))) and (working_hours > 2 or workers_safety > 2 or wage_increase > 2)
 on-arrival: gov_cooldown_timer = 3 and gov_labour_timer = 9
 new-page: true
 tags: event
 
-= Labour Minister [+ labour_minister +] rolls back our Labour reforms
+= 노동장관 [+ labour_minister +], 우리의 노동 개혁을 원점으로 되돌렸습니다.
 
-The [+ labour_minister_party +]-led Labour Ministry have begun to gut and roll back our labour reforms that benefit our workers.
+[+ labour_minister_party +]가 이끄는 노동부가 노동자들을 위해 우리가 추진했던 노동 개혁을 무력화하고 되돌리기 시작했습니다.
 
-- @gut_cut: Our reforms to working hours is gutted.
-- @gut_safety: Our reforms to workers safety is gutted.
-- @gut_wages: Our reforms to the minimum wage is gutted.
+- @gut_cut: 우리의 노동 시간 단축 개혁이 무효화되었습니다.
+- @gut_safety: 우리의 산업 안전 강화 개혁이 무효화되었습니다.
+- @gut_wages: 우리의 최저 임금 인상 개혁이 무효화되었습니다.
 
 @gut_cut
 view-if: working_hours > 2
@@ -49,9 +49,9 @@ Q.inflation -= 0.3;
 Q.socialist_sentiment -= 5; 
 !}
 
-The Labour Ministry has been rolling back our reforms to the national working hours and reinstituting regressive hours at the advice of the industrialists and landowners. [? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
+노동부가 자본가와 지주들의 조언에 따라 우리의 노동 시간 단축 개혁을 되돌리고 과거의 장시간 노동 체제를 부활시키고 있습니다. [? if not psi_in_government : 우리는 이 기회를 이용해 자유주의 정당의 냉혹함을 선전하고 있으며, 파시스트들 역시 마찬가지입니다. ?][? if psi_in_government : 지지 기반인 노동자들로부터 이를 막지 못했다는 비판을 받고 있으며, 파시스트들은 이를 우리와 자유주의자 모두의 냉혹함을 공격하는 선전 도구로 사용하고 있습니다. ?]
 
-- @root: There is nothing we can do.
+- @root: 우리가 할 수 있는 일은 아무것도 없다.
 
 @gut_safety
 view-if: workers_safety > 2
@@ -89,9 +89,9 @@ Q.inflation -= 0.3;
 Q.socialist_sentiment -= 2; 
 !}
 
-The Labour Ministry begins a overhaul of the safety regulations, gutting and removing regulations deemed 'too excessive' by them and under advice of their industrialist supporters. [? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
+노동부가 자본가 지지자들의 조언에 따라 "과도하다"고 판단되는 안전 규제들을 폐지하거나 무력화하며 산업 안전 규정을 전면 개편하기 시작했습니다. [? if not psi_in_government : 우리는 이 기회를 이용해 자유주의 정당의 냉혹함을 선전하고 있으며, 파시스트들 역시 마찬가지입니다. ?][? if psi_in_government : 지지 기반인 노동자들로부터 이를 막지 못했다는 비판을 받고 있으며, 파시스트들은 이를 우리와 자유주의자 모두의 냉혹함을 공격하는 선전 도구로 사용하고 있습니다. ?]
 
-- @root: There is nothing we can do.
+- @root: 우리가 할 수 있는 일은 아무것도 없다.
 
 @gut_wages
 view-if: wage_increase > 2
@@ -129,6 +129,6 @@ Q.inflation -= 0.4;
 Q.socialist_sentiment -= 5; 
 !}
 
-The Labour Ministry, though unable to decrease the minimum wage directly, alters regulation to include loopholes that the industrialists, of course, exploit for their gain. [? if not psi_in_government : We utilise this as propaganda to show the callousness of the liberal parties, as do the fascists. ?][? if psi_in_government : We are criticised by our worker support base for failing to prevent this, and the fascists use this as propaganda against both us and the liberals callousness. ?]
+노동부는 최저 임금을 직접 인하할 수는 없지만, 규정을 변경하여 여러 허점을 만들었고, 자본가들은 당연히 이를 자신들의 이익을 위해 악용하고 있습니다. [? if not psi_in_government : 우리는 이 기회를 이용해 자유주의 정당의 냉혹함을 선전하고 있으며, 파시스트들 역시 마찬가지입니다. ?][? if psi_in_government : 지지 기반인 노동자들로부터 이를 막지 못했다는 비판을 받고 있으며, 파시스트들은 이를 우리와 자유주의자 모두의 냉혹함을 공격하는 선전 도구로 사용하고 있습니다. ?]
 
-- @root: There is nothing we can do.
+- @root: 우리가 할 수 있는 일은 아무것도 없다.
