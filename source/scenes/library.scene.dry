@@ -128,7 +128,7 @@ go-to: menu
 
 **산업 자본가 및 지주**: 막강한 경제력을 가진 엘리트 계층입니다. 이들은 자유주의 계열 정당을 자신들의 부를 안정적으로 지켜주는 보호자로 여기며 핵심적인 지지 기반 역할을 합니다. 일부 독실한 신자들은 가톨릭 계열 정당을 선호하기도 합니다. 전체 인구의 약 5~10%를 차지합니다.
 
-**참전용사 및 실업자**: 제1차 세계 대전의 결과에 대해 정부로부터 배신감을 느끼는 퇴역 군인들로 구성됩니다. 이들은 민족주의 운동과 파시스트 운동의 강력한 지지자들이지만, 일부는 [+ psi_name +]를 지지하기도 합니다. 전체 인구의 약 5%를 차지합니다.
+**재향군인 및 실업자**: 제1차 세계 대전의 결과에 대해 정부로부터 배신감을 느끼는 퇴역 군인들로 구성됩니다. 이들은 민족주의 운동과 파시스트 운동의 강력한 지지자들이지만, 일부는 [+ psi_name +]를 지지하기도 합니다. 전체 인구의 약 5%를 차지합니다.
 
 **가톨릭계**: 성직자와 독실한 가톨릭 신자들로 구성됩니다. 거의 절대적으로 가톨릭 계열 정당을 지지하며, 이는 이탈리아 인민당의 강력한 기반이 됩니다. 전체 인구의 약 5%를 차지합니다.
 
@@ -190,7 +190,7 @@ go-to: menu
 
 산업 자본가 및 지주: [+ psi_name +]: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pll_formed : PLL: [+ industrialists_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] [+ ds_name +]: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ industrialists_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ industrialists_pnf_display +]%, ?] 기타: [+ industrialists_other_display +]%
 
-참전용사 및 실업자: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ veterans_pnf_display +]%, ?] 기타: [+ veterans_other_display +]%
+재향군인 및 실업자: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ veterans_pnf_display +]%, ?] 기타: [+ veterans_other_display +]%
 
 가톨릭계: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pll_formed : PLL: [+ catholic_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] [+ ds_name +]: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ catholic_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ catholic_pnf_display +]%, ?] 기타: [+ catholic_other_display +]%
 

@@ -1,18 +1,18 @@
-title: Consumption Taxes
-subtitle: An immediate motion has been filed.
+title: 소비세
+subtitle: 긴급 안건이 발의되었습니다.
 tags: event
 view-if: psi_in_government and finance_minister_party == psi_name and not national_economic_recovery
 max-visits: 1
 
-= Immediate Motion Filed
+= 소비세 인하 긴급 안건 발의
 
-In order to finance the war effort, the liberal government raised consumption taxes that affected the workers and unemployed significantly. Now that we are in power, and more importantly, control the Finance Ministry, our support base have requested we bring consumption taxes back to pre-war levels.
+전쟁 경비 조달을 위해, 과거 자유주의 정부는 노동자와 실업자에게 큰 부담을 주는 소비세를 인상했습니다. 이제 우리가 정권을 잡았고, 더 중요하게는 재정부를 장악했기에, 우리의 지지 기반은 소비세를 전쟁 이전 수준으로 되돌려달라고 요구하고 있습니다.
 
-- @consumption_taxes_accept: -2 Budget - Bring consumption taxes down.
-- @consumption_taxes_refuse: Reject the motion.
+- @consumption_taxes_accept: 예산 -2 - 소비세를 인하한다.
+- @consumption_taxes_refuse: 안건을 부결시킨다.
 
 @consumption_taxes_accept
-subtitle: We must heed the will of the people.
+subtitle: 우리는 인민의 뜻에 따라야 합니다.
 on-arrival: {!
 
 if (Q.in_unstable_coalition == 0) {
@@ -63,10 +63,10 @@ Q.economic_growth += 0.5;
 Q.budget -= 2;
 !}
 
-The liberal parties berate our actions, criticising our lack of care for the economy and the current economic situation. They use this as a recruiting tool amongst the industrialists and middle class, while we see an increase in support from our workers.
+자유주의 정당들은 우리의 조치를 맹비난하며, 현 경제 상황에 대한 우리의 무관심을 지적합니다. 그들은 이를 자본가와 중산층을 포섭하는 도구로 삼는 반면, 우리의 노동자 지지는 더욱 공고해졌습니다.
 
 @consumption_taxes_refuse
-subtitle: We can't afford to upset the economy in this time of crisis.
+subtitle: 이 위기 상황에 경제를 불안하게 만들 수는 없습니다.
 on-arrival: {!
 
 Q.workers_psi -= 7*(1-Q.dissent); 
@@ -95,4 +95,4 @@ if (Q.syndicalist_active) {
 }
 !}
 
-The workers are unsurprisingly angered by this betrayal, as we see defections to the PSRI and PPI, who disapprove of our decision. The liberal parties, however, laud our decision and care to not upset or worsen the current economic situation.
+노동자들은 당연히도 이 배신에 격분했고, 이탈한 지지자들은 우리의 결정을 비판하는 PSRI와 PPI로 향하고 있습니다. 반면, 자유주의 정당들은 우리의 결정을 환영하며 현 경제 상황을 악화시키지 않으려는 신중함을 칭찬하고 있습니다.

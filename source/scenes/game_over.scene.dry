@@ -262,7 +262,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_rivoluzione_industriale: **산업 혁명** - 산업 자본가의 지지율 50%를 달성하십시오. ?]
 
-[? if game_achievement_redenzione_dei_veterani: **참전용사의 구원** - 참전용사의 지지율 50%를 달성하십시오. ?]
+[? if game_achievement_redenzione_dei_veterani: **재향군인의 구원** - 재향군인의 지지율 50%를 달성하십시오. ?]
 
 [? if game_achievement_bolscevismo_bianco: **하얀 볼셰비즘** - 가톨릭계의 지지율 50%를 달성하십시오. ?]
 
@@ -358,7 +358,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_rivoluzione_industriale: **산업 혁명** - 산업 자본가의 지지율 50%를 달성하십시오. ?]
 
-[? if achievement_redenzione_dei_veterani: **참전용사의 구원** - 참전용사의 지지율 50%를 달성하십시오. ?]
+[? if achievement_redenzione_dei_veterani: **재향군인의 구원** - 재향군인의 지지율 50%를 달성하십시오. ?]
 
 [? if achievement_bolscevismo_bianco: **하얀 볼셰비즘** - 가톨릭계의 지지율 50%를 달성하십시오. ?]
 
@@ -454,7 +454,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_rivoluzione_industriale: **산업 혁명** - 산업 자본가의 지지율 50%를 달성하십시오. ?]
 
-[? if not achievement_redenzione_dei_veterani: **참전용사의 구원** - 참전용사의 지지율 50%를 달성하십시오. ?]
+[? if not achievement_redenzione_dei_veterani: **재향군인의 구원** - 재향군인의 지지율 50%를 달성하십시오. ?]
 
 [? if not achievement_bolscevismo_bianco: **하얀 볼셰비즘** - 가톨릭계의 지지율 50%를 달성하십시오. ?]
 

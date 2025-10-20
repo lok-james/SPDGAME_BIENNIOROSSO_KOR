@@ -1,24 +1,24 @@
-title: Banca d'Italia reports critical deficit!
+title: 이탈리아 은행, 심각한 재정 적자 경고!
 new-page: true
 tags: event
 view-if: (budget <= -5 and psi_in_government and deficit_extension == 0) or (budget <= -5 and psi_in_government and deficit_timer <= 0 and deficit_extension == 1)
 
-= Banca d'Italia reports critical deficit!
+= 이탈리아 은행, 심각한 재정 적자 경고!
 
-The Banca d'Italia, our National Bank, has informed us that our debt has reached a critical amount. We have to do something **now**.
+우리나라 중앙은행인 이탈리아 은행이 국가 부채가 위험 수위에 도달했다고 통보해왔습니다. 우리는 **지금 당장** 조치를 취해야 합니다.
 
-- @deficit_austerity: Cut funding to welfare in general.
-- @deficit_insurance: Cut funding to the Unemployment Insurance Program.
-- @deficit_workers: Cut the size of the Unemployment Insurance Program.
-- @deficit_taxes: Increase taxes across the board.
-- @deficit_relations: Can we convince our Entente allies to give us more time?
-- @deficit_renege: Void our debts with our international debtors.
+- @deficit_austerity: 복지 예산을 전반적으로 삭감한다.
+- @deficit_insurance: 실업 보험 기금을 삭감한다.
+- @deficit_workers: 실업 보험 적용 대상을 축소한다.
+- @deficit_taxes: 세금을 전면적으로 인상한다.
+- @deficit_relations: 협상국 동맹국들에게 시간을 더 벌어달라고 설득할 수 있을까?
+- @deficit_renege: 국제 채권단에 대한 채무를 불이행한다.
 
 @deficit_austerity
-subtitle: +2 Budget - Our voters won't be happy about this...
+subtitle: 예산 +2 - 유권자들이 탐탁지 않아 할 것입니다...
 view-if: unemployment_insurance_founded == 0
 choose-if: welfare > 0
-unavailable-subtitle: There is no welfare left to cut.
+unavailable-subtitle: 더 이상 삭감할 복지 예산이 없습니다.
 on-arrival: {!
 Q.budget += 2; 
 Q.welfare -= 1; 
@@ -41,26 +41,26 @@ if (Q.pcs_active) {
 }
 !}
 
-We are forced to cut welfare, with workers seeing this as a betrayal.
+우리는 복지 예산을 삭감할 수밖에 없었고, 노동자들은 이를 배신으로 여기고 있습니다.
 
 @deficit_insurance
-subtitle: +2 Budget - Our voters won't be happy about this,,,
+subtitle: 예산 +2 - 유권자들이 탐탁지 않아 할 것입니다...
 view-if: unemployment_insurance_founded == 1 and not unemployment_insurance_expanded
 on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
 
-We are forced to end the Unemployment Insurance Program early, regaining the injected funds, with veterans seeing this as a betrayal.
+투입된 자금을 회수하기 위해 실업 보험 프로그램을 조기 종료할 수밖에 없었고, 재향군인들은 이를 배신으로 받아들이고 있습니다.
 
 @deficit_workers
-subtitle: +2 Budget - Our voters won't be happy about this,,,
+subtitle: 예산 +2 - 유권자들이 탐탁지 않아 할 것입니다...
 view-if: unemployment_insurance_expanded
 on-arrival: budget += 2; veterans_psi -= 4*(1-dissent); veterans_ldr -= 3 if centre_left_coalition; veterans_ppi -= 3 if socialist_catholic_coalition; veterans_pnf += 7; unemployment_insurance_founded = 0;
 
-We are forced to end the Unemployment Insurance Program early, regaining the injected funds, with veterans seeing this as a betrayal.
+투입된 자금을 회수하기 위해 실업 보험 프로그램을 조기 종료할 수밖에 없었고, 재향군인들은 이를 배신으로 받아들이고 있습니다.
 
 @deficit_taxes
-subtitle: +3 Budget - We should be prepared for a support hit...
+subtitle: 예산 +3 - 지지율 하락은 각오해야 합니다...
 choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
-unavailable-subtitle: Tax Rates are already too high.
+unavailable-subtitle: 세율이 이미 너무 높습니다.
 on-arrival: {!
 Q.budget += 3; 
 
@@ -124,19 +124,19 @@ if (Q.unemployment < 8) {
 Q.psri_relation -= 5*(1-Q.dissent);
 !}
 
-Raising taxes hurts our support among all those who pay taxes. [? if centre_left_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
+세금 인상은 모든 납세 계층의 지지를 약화시킵니다. [? if centre_left_coalition : 하지만, 우리의 연정 파트너들은 부유층에게만 세금을 부과하는 것보다 "고통 분담"이라는 명분을 더 지지합니다. ?] 또한, 세금 인상은 경제 수요를 위축시켜 실업을 더욱 악화시킬 수 있습니다.
 
 @deficit_relations
-subtitle: Thankfully, they seem receptive, at least...
+subtitle: 다행히, 그들도 수긍하는 눈치입니다...
 choose-if: entente_relation >= 6 and deficit_extension == 0
-unavailable-subtitle: [? if entente_relation <= 5: Our relations are too low. ?][? if deficit_extension == 1: We have already asked them for an extension. ?]
+unavailable-subtitle: [? if entente_relation <= 5: 관계가 너무 나쁩니다. ?][? if deficit_extension == 1: 이미 한 번 연장을 요청했습니다. ?]
 on-arrival: deficit_timer = 6; deficit_extension = 1; 
 
-We are able to convince the Entente to grant us another 6 months to resolve this.
+우리는 협상국을 설득하여 이 문제를 해결할 6개월의 시간을 더 벌었습니다.
 
 @deficit_renege
 view-if: welfare < 1 and not unemployment_insurance_founded and not unemployment_insurance_expanded and (upper_tax_rates > 5 or lower_tax_rates > 5) and ((entente_relation < 6 and deficit_extension == 0) or deficit_extension == 1)
-subtitle: This won't end well...
+subtitle: 좋게 끝나지는 않을겁니다...
 on-arrival: {!
 Q.budget = 0;
 
@@ -157,4 +157,4 @@ Q.economic_growth -= 5.9;
 Q.inflation += 13.6;
 !}
 
-We are immediately plunged into a deeper financial crisis, as businesses and banks pull out of the country. We are forced to print excessive amounts of money, resulting in hyperinflation. There is no telling how we will be able to get out of this.
+기업과 은행들이 국내에서 철수하면서, 우리는 즉시 더 깊은 금융 위기로 빠져들었습니다. 우리는 과도한 화폐를 발행할 수밖에 없었고, 이는 초인플레이션을 초래했습니다. 이 위기에서 어떻게 벗어날 수 있을지 알 수 없습니다.

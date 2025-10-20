@@ -1,4 +1,4 @@
-title: 13th Congress of the Russian Communist Party
+title: 러시아 공산당 제13차 당 대회
 view-if: year == 1924 and month >= 5 and week == 3
 max-visits: 1
 on-arrival: {!
@@ -56,55 +56,55 @@ tags: event
 set-bg: img/BgUSSR.jpg
 new-page: true
 
-= 13th Congress of the Russian Communist Party
+= 러시아 공산당 제13차 당 대회
 
-The 13th Congress of the Russian Communist Party has officially begun. The first Congress to take place following the death of Vladmir Lenin, various prominent figures of the parties have risen in an attempt to succeed Lenin in becoming General-Secretary of the Soviet Union. Plagued by the economic instability of the *New Economic Policy*, it is unclear how the future lies for the five men vying for control.
+러시아 공산당 제13차 당 대회가 공식적으로 개막했습니다. 블라디미르 레닌 사후 처음으로 열리는 이번 당 대회에서는, 당내 유력 인사들이 레닌의 뒤를 이어 소련 공산당 서기장 자리를 놓고 경합을 벌이고 있습니다. '신경제정책'이 야기한 경제 불안 속에서, 권력을 노리는 다섯 인물의 미래가 어떻게 펼쳐질지는 불투명합니다.
 
-On the Left, Leon Trotsky has risen to form the *Left Opposition*, advocating for rapid industrialisation, the expansion of democracy as well as the policy of *Permanent Revolution*. Trotsky holds the support of intellectuals locally, and holds himself well internationally with his policies. On the Right, *Nikolai Bukharin* has consolidated influence, advocating for the continuation of the *New Economic Policy* and the policy of *Socialism in one Country*. And in the Centre, Joesph Stalin currently holds the reigns of the nation, leading the nation as General-Secretary following the death of Lenin. Joined alongside him are Grigory Zinoviev and Lev Kamenev, forming a *Triumvirate* of men in an effort to prevent Trotsky's ascension to power.
+좌파에서는 레온 트로츠키가 '좌익 반대파'를 결성하여 신속한 산업화, 민주주의 확대, 그리고 '영구혁명론'을 주창하고 있습니다. 트로츠키는 국내 지식인들의 지지를 얻고 있으며, 그의 정책은 국제적으로도 긍정적인 평가를 받고 있습니다. 우파에서는 니콜라이 부하린이 영향력을 다지며 '신경제정책' 유지와 '일국 사회주의론'을 내세우고 있습니다. 그리고 중앙에서는 이오시프 스탈린이 현재 국가의 고삐를 쥐고, 레닌 사후 서기장으로서 국가를 이끌고 있습니다. 그와 함께 그리고리 지노비예프와 레프 카메네프가 트로츠키의 집권을 막기 위해 '삼두정치'를 구성했습니다.
 
-After fierce deliberations and voting, the Congress elects the 13th Central Committee of the Russian Communist Party.
+치열한 토론과 투표 끝에, 당 대회는 러시아 공산당 제13차 중앙위원회를 선출합니다.
 
-- @stalin_elected: Joseph Stalin retains his position as General-Secretary.
-- @trotsky_elected: Leon Trotsky and his 'Left Opposition' sways enough of the party in his favour.
-- @bukharin_elected: Nikolai Bukharin and his 'Right Opposition' convinces the party to elect him.
-- @duumvirate_elected: A Duumvirate between Lev Kamenev and Grigory Zinoviev seizes control of the party!
+- @stalin_elected: 이오시프 스탈린이 서기장직을 유지한다.
+- @trotsky_elected: 레온 트로츠키와 그의 '좌익 반대파'가 당의 지지를 얻는다.
+- @bukharin_elected: 니콜라이 부하린과 그의 '우익 반대파'가 당을 설득하여 승리한다.
+- @duumvirate_elected: 레프 카메네프와 그리고리 지노비예프의 이두 정치가 당을 장악한다!
 
 @stalin_elected
 on-arrival: soviet_leader = "Stalin"
 set-bg: img/background.png
 choose-if: stalin_influence >= trotsky_influence and stalin_influence >= bukharin_influence and stalin_influence >= duumvirate_influence
-unavailable-subtitle: [? if pcdi_formed : A more aligned PCd'I could swing the Congress in his favour. ?][? if not pcdi_formed : A party split might just be the way for Stalin to seize control. ?]
+unavailable-subtitle: [? if pcdi_formed : 좀 더 결속력 있는 이탈리아 공산당이 그의 편을 들어줄 수도 있습니다. ?][? if not pcdi_formed : 당 분열이 스탈린에게 권력을 장악할 기회를 줄 수도 있습니다. ?]
 
-Joseph Stalin is able to consolidate power by the end of the Congress, preventing the publishing of *Lenin's Testament* as well as letting the other parties fight against one another. He retains the position of General-Secretary, and is posed to control the party for the foreseeable future. 
+이오시프 스탈린은 대회 막바지에 '레닌의 유언' 공개를 막고 다른 파벌들이 서로 싸우도록 유도하여 권력을 공고히 했습니다. 그는 서기장직을 유지했으며, 당분간 당을 장악할 것으로 보입니다.
 
-Some within the party are concerned by this development, especially with Stalin's theory of *Socialism in One Country* and the suspicion of Stalin's consolidation and attempts to subject the Communist International to his will.
+당내 일부에서는 스탈린의 '일국 사회주의론'과 그가 권력을 강화하고 코민테른을 자신의 의지에 종속시키려 한다는 의혹 때문에 이러한 상황에 우려를 표하고 있습니다.
 
 @trotsky_elected
 on-arrival: soviet_leader = "Trotsky"
 set-bg: img/background.png
 choose-if: trotsky_influence > stalin_influence and trotsky_influence > bukharin_influence and trotsky_influence > duumvirate_influence
-unavailable-subtitle: Perhaps the vindication of Trotsky's *Permanent Revolution* could allow him to seize control.
+unavailable-subtitle: 트로츠키의 '영구혁명론'이 정당성을 인정받는다면 그가 권력을 장악할 수도 있습니다.
 
-Leon Trotsky is able to sway the delegates in his favour, publishing *Lenin's Testament* and ousting Joseph Stalin as General-Secretary alongside the backing of Zinoviev and Kamenev. He assumes the position of General-Secretary, and is posed to control the party for the foreseeable future.
+`레온 트로츠키는 '레닌의 유언'을 공개하고 지노비예프와 카메네프의 지지를 얻어 이오시프 스탈린을 서기장직에서 축출하며 대의원들의 마음을 돌리는 데 성공했습니다. 그는 서기장직에 올랐으며, 당분간 당을 장악할 것으로 보입니다.
 
-Some within the party are relieved; Trotsky's *Permanent Revolution* and support of a united front could possibly mean more support for us in our fight against the reactionaries.
+당내 일부는 안도의 한숨을 내쉽니다. 트로츠키의 '영구혁명론'과 통일전선 지지는 반동 세력에 맞선 우리의 투쟁에 더 많은 지원을 의미할 수 있기 때문입니다.
 
 @bukharin_elected
 on-arrival: soviet_leader = "Bukharin"
 set-bg: img/background.png
 choose-if: bukharin_influence > stalin_influence and bukharin_influence > trotsky_influence and bukharin_influence > duumvirate_influence
-unavailable-subtitle: A more moderate yet friendly [+ psi_name +] might potentially swing the Congress towards him.
+unavailable-subtitle: 좀 더 온건하면서도 우호적인 [+ psi_name +]가 당 대회의 향방을 그에게로 기울게 할 수도 있습니다.
 
-Nikolai Bukharin, alongside Rykov and Tomsky and the Right-Opposition, is able to outmaneuver both Stalin and Trotsky by utilising his position in *Pravda*, allowing him barely enough votes to succeed. He assumes the position of General-Secretary, and is posed to control the party for the foreseeable future.
+`니콜라이 부하린은 리코프, 톰스키, 그리고 우익 반대파와 함께 '프라우다'에서의 자신의 지위를 이용하여 스탈린과 트로츠키를 모두 따돌리고 간신히 승리를 거머쥐었습니다. 그는 서기장직에 취임했으며, 당분간 당을 이끌 것으로 보입니다.
 
-Most within the party are relieved; Bukharin's foreign policy outlook is seemingly less aggressive than both Trotsky's and Stalin's, meaning we will no longer have to worry about subversion from the Communist International.
+당내 대부분은 안도하고 있습니다. 부하린의 외교 정책은 트로츠키나 스탈린보다 덜 공격적으로 보이기 때문에, 더 이상 코민테른의 배후 공작을 걱정하지 않아도 될 것입니다.
 
 @duumvirate_elected
 on-arrival: soviet_leader = "Duumvirate"
 set-bg: img/background.png
 choose-if: duumvirate_influence > stalin_influence and duumvirate_influence > trotsky_influence and duumvirate_influence > bukharin_influence
-unavailable-subtitle: A significantly more moderate yet friendly [+ psi_name +] could deadlock the Congress.
+unavailable-subtitle: 훨씬 더 온건하면서도 우호적인 [+ psi_name +]가 당 대회를 교착 상태에 빠뜨릴 수도 있습니다.
 
-Lev Kamenev and Grigory Zinoviev are able to seize control of the party, sidelining Stalin and merging with Trotsky's Left Opposition and successfully deadlocking the Congress as no figure is able to come up on top, placing them both as joint leadership in a bid to preserve unity. Both leaders assume positions of equal footing, and are posed to control the party for the foreseeable future.
+레프 카메네프와 그리고리 지노비예프가 스탈린을 밀어내고 트로츠키의 좌익 반대파와 연합하여 당을 장악했습니다. 아무도 확실한 우위를 점하지 못하면서 당 대회는 교착 상태에 빠졌고, 결국 두 사람은 당의 통합을 위해 공동 지도 체제를 구축했습니다. 두 지도자는 동등한 지위에서 당을 이끌게 되었으며, 당분간 이 체제가 유지될 것으로 보입니다.
 
-Many within the party are surprised by this development, as it seems the Soviets will be prioritising party unity over foreign policy in its immediate future.
+소련이 당분간 외교 정책보다는 당내 통합을 우선시할 것으로 보여 당내 많은 이들이 이 결과에 놀라움을 표하고 있습니다.

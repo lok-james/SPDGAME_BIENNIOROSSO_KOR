@@ -1,6 +1,6 @@
-title: Communist Split
+title: 공산주의파 분당
 new-page: true 
-subtitle: The Left's disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 당내 좌파의 불만이 임계점을 넘었습니다.
 tags: event
 view-if: communist_dissent >= 60
 on-arrival: communist_split = 1; rural_pcdi += rural_psi * 0.3; workers_pcdi += workers_psi * 0.2; workers_other += 3; veterans_pcdi *= veterans_psi * 0.5; workers_psi *= 0.85; veterans_psi *= 0.5; communist_strength *= 0.5; n_advisors -= 1 if terracini_advisor == 1; terracini_advisor = 0; n_advisors -= 1 if togliatti_advisor == 1; togliatti_advisor = 0; n_advisors -= 1 if gramsci_advisor == 1; gramsci_advisor = 0; n_advisors -= 1 if bordiga_advisor == 1; bordiga_advisor = 0; pcdi_formed = 1; n_advisors -= 1 if tasca_advisor == 1; tasca_advisor = 0; pcdi_congress_time = time + 4 {!
@@ -13,7 +13,6 @@ if (Q.rg_militancy >= 0.1) {
 !}
 max-visits: 1
 
-= Left-wing members split
+= 좌파 세력의 분당
 
-Our policy choices have greatly offended the left, seeing our turn against revolutionary theory, and many of their leaders have split to form a new party, the PCd'I, or the Communist Party of Italy. They do not count a huge section of our membership, but unfortunately were making up an unequal amount of the Red Guards.
-
+우리의 정책 노선에 혁명 이론을 등졌다고 판단한 좌파는 크게 반발했고, 결국 다수의 지도자들이 탈당하여 이탈리아 공산당(PCd'I)이라는 새로운 정당을 창당했습니다. 그들은 우리 당원의 상당수를 차지하지는 않지만, 안타깝게도 적위대 내에서는 상당한 비중을 차지하고 있었습니다.

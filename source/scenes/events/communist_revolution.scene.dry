@@ -1,5 +1,5 @@
-title: [+ month : month +] Revolution
-subtitle: The Communists are launching a revolution!
+title: [+ month : month +]월 혁명
+subtitle: 공산당이 혁명을 일으키고 있습니다!
 view-if: not national_congress_seen and ((sov_rg_strength*sov_rg_militancy) >= ((fdc_strength*fdc_militancy) + (abl_strength*abl_militancy) + (ard_strength*ard_militancy) * 2) or (sov_rg_strength*sov_rg_militancy) >= ((army_strength*army_militancy) + (interior_police_militancy*interior_police_strength) * 2) or pcdi_votes >= 50) and soviet_leader = "Stalin"
 new-page: true
 tags: event
@@ -11,44 +11,44 @@ Q.fascist_strength = (Q.fdc_strength*Q.fdc_militancy) + (Q.abl_strength*Q.abl_mi
 Q.army_strength = (Q.army_strength*Q.rg_militancy) + (Q.interior_police_strength);
 !}
 
-= [+ month : month +] Revolution
+= [+ month : month +]월 혁명
 
 # credit to redux for this, btw
 
-Aided by the Communist International and under pressure by [+ soviet_leader +] the PCd'I has seemingly commenced the revolutionary process. Out of nowhere, a call to general strike is published while radical elements of the Red Guards storms key infrastructure points across the country, attempting especially to secure control over arms with which to distribute to local workers. Streetfighting erupts as fascist militias and police forces opposed to the communists attempt to put down their uprisings while further more expansive ones are launched across the country.
+코민테른의 지원과 [+ soviet_leader +]의 압력 하에, 이탈리아 공산당이 마침내 혁명의 서막을 연 것으로 보입니다. 느닷없이 전국에 총파업령이 내려졌고, 적위대의 급진 분파들이 전국의 주요 기간 시설을 습격하고 있습니다. 특히 지역 노동자들에게 분배할 무기를 확보하는 데 혈안이 되어 있습니다. 공산주의에 반대하는 파시스트 민병대와 경찰이 봉기 진압을 시도하면서 시가전이 벌어졌고, 이를 시작으로 전국 곳곳에서 더 큰 규모의 봉기가 일어나고 있습니다.
 
-Factories are occupied through an initiative of the PCd'I-aligned trade unions and radical elements of the General Confederation of Labour, and PCd'I-backed worker councils formed within them, expanding its reach beyond Turin. Local government offices are seized and occupied, leaving the inprompteau worker councils as the only form of governance, while within those councils PCd'I and Red Guard leaders are elected to direct the ongoing revolution. 
+공산당 계열 노조와 노동총연맹 내 급진파의 주도로 공장들이 점거되었습니다. 점거된 공장 안에는 공산당이 후원하는 노동자 평의회가 결성되어 토리노를 넘어 그 세력을 확장하고 있습니다. 지방 관청들이 점거되면서 즉석에서 결성된 노동자 평의회가 유일한 행정 기구가 되었고, 평의회 내부에서는 공산당과 적위대 지도자들이 진행 중인 혁명을 이끌도록 선출되었습니다.
 
-- @psi_supports: The [+ psi_name +] stands with the revolution!
-- @social_fascism: This is madness!
+- @psi_supports: [+ psi_name +]는 혁명과 함께 하겠다!
+- @social_fascism: 이것은 광기다!
 
 @psi_supports
 choose-if: communist_strength >= reformist_strength+labour_strength and not psi_in_government and sov_rg_militancy >= 0.2
-unavailable-subtitle: The impromptu revolution is doomed to fail.
+unavailable-subtitle: 이 즉흥적인 혁명은 실패할 운명입니다.
 on-arrival: psi_revolution = 1; pcdi_relation += 100; ldr_relation -= 100; ul_relation -= 100; ds_relation -= 100; psri_relation -= 100; psu_relation -= 100 if psu_formed; pll_relation -= 100 if pll_formed; ppi_relation -= 100; reformist_dissent += 100;
 go-to: pcdi_survives if pcdi_strength + neutral_strength >= fascist_strength; pcdi_crushed if pcdi_strength + neutral_strength < fascist_strength
 
-We mobilize the moderate Red Guards against the reactionary militias to defend the worker councils, and join the call to general strike. What's left of our party's reformists leave, unwilling to support a violent means of revolution. 
+우리는 노동자 평의회를 지키기 위해 반동 민병대에 맞서 온건파 적위대를 동원하고, 총파업 요구에 동참합니다. 우리 당에 남아있던 개혁주의자들은 폭력 혁명을 지지할 수 없다며 당을 떠났습니다.
 
 @social_fascism
 go-to: pcdi_survives if pcdi_strength >= fascist_strength; pcdi_crushed if pcdi_strength < fascist_strength
 
 @pcdi_survives
 
-The streetfighting in the streets reaches levels one would expect in a civil war before eventually, the communists seem to remain standing. Police stations are stormed across the country, red flags raised above while forces of the Arditismo and Fasci driven out of the cities and into the countryside. Arms are distributed from seized armories to local radical workers, organized into a new fledgling Red Army with one task: the fall of the italian monarchy, and the defense of the councils.
+거리의 시가전은 내전 수준으로 격화되었지만, 결국 공산주의자들이 버텨내는 듯 보입니다. 전국적으로 경찰서가 습격당하고 그 위에는 붉은 깃발이 올랐으며, 결사대와 파시스트 세력은 도시에서 쫓겨나 시골로 밀려났습니다. 점령한 무기고에서 탈취한 무기가 지역의 급진 노동자들에게 분배되어, 갓 창설된 적군으로 조직되었습니다. 그들의 임무는 단 하나, 이탈리아 군주제를 타도하고 평의회를 수호하는 것입니다.
 
-Regio Esercito forces across the country are ordered out of their barracks by the King to quell the uprisings and restore order, only pre-empted in communist strongholds where barracks were stormed by local Red Army contingents. The failure of the bourgeois' first line of defense to suppress this revolutionary attempt has reinvigorated the communists' efforts.
+전국의 왕립 육군 부대는 국왕의 명령을 받아 봉기를 진압하고 질서를 회복하기 위해 병영을 나섰지만, 공산주의자들의 거점에서는 지역 적군 분견대가 먼저 병영을 습격했습니다. 이 혁명적 시도를 진압하려던 부르주아의 첫 방어선이 무너지면서, 공산주의자들의 사기는 다시 불타오르고 있습니다.
 
-Now, the question on everyone's minds will be answered - can the communists defend against the full force of the state?
+이제 모두가 궁금해하는 질문의 답이 밝혀질 것입니다. 과연 공산주의자들은 국가의 총력에 맞서 스스로를 지켜낼 수 있을까요?
 
-- @neutrality: It would be best to wait the chaos out.
-- @pcdi_vs_army: The state is nothing without the support of the workers!
+- @neutrality: 이 혼란이 잠잠해질 때까지 기다리는 것이 최선일 것이다.
+- @pcdi_vs_army: 노동자의 지지 없는 국가는 아무것도 아니다!
 
 @neutrality
 view-if: not spd_revolution
 go-to: pcdi_vs_army
 
-By firmly taking a side we would split, as the communists want us to. We will wait the chaos out.
+확고하게 한쪽 편을 들면 공산주의자들이 원하는 대로 당이 분열될 것입니다. 우리는 이 혼란이 잠잠해질 때까지 기다릴 것입니다.
 
 @pcdi_vs_army
 view-if: psi_revolution
@@ -57,33 +57,33 @@ go-to: pcdi_aftermath
 
 @pcdi_aftermath
 
-[? if pcdi_victory : The answer seems to be yes, as, somehow, the Red Army drive Regio Esercito forces back into their barracks which are then besieged and occupied one by one. The flames of civil war have been ignited and the communists are prepared to fight this uphill battle to bring about the dictatorship of the proletariat they so desire. ?]
+[? if pcdi_victory : 대답은 '그렇다'인 것 같습니다. 어찌된 일인지, 적군이 왕립 육군을 병영으로 몰아넣고, 그 병영을 차례차례 포위하여 점령하고 있기 때문입니다. 내전의 불길은 타올랐고, 공산주의자들은 그들이 그토록 갈망하는 프롤레타리아 독재를 실현하기 위해 이 험난한 싸움에 나설 준비가 되어 있습니다. ?]
 
-[? if pcdi_beaten : The answer seems to be no, as, predictably, the Regio Esercito drive the Red Army forces back into their councils which are then besieged and occupied one by one. The flames of civil war have been ignited but the communists seem after all to not be ready for what is to come. ?]
+[? if pcdi_beaten :  대답은 '아니오'인 것 같습니다. 예상대로 왕립 육군이 적군을 그들의 평의회로 몰아넣고, 그 평의회를 차례차례 포위하여 점령하고 있기 때문입니다. 내전의 불길은 타올랐지만, 공산주의자들은 결국 앞으로 닥칠 일들을 감당할 준비가 되어 있지 않은 것 같습니다.  ?]
 
-- @long_war: The war settles into fixed battle lines.
-- @true_pcdi_victory: The Communists emerge victorious!
-- @pcdi_crushed: The communists are crushed.
-- @civil_war_if_psi: It is a civil war.
+- @long_war: 전쟁은 고정된 전선으로 접어들었다.
+- @true_pcdi_victory: 공산주의자들이 승리했다!
+- @pcdi_crushed: 공산주의자들이 진압되었다.
+- @civil_war_if_psi: 이것은 내전이다.
 
 @long_war
 view-if: not psi_revolution and (pcdi_strength*0.6) < fascist_strength
 on-arrival: long_war = 1
 
-The initial phase of the action ends, and somehow, both sides remain standing.
+초반 전투가 끝났지만, 양측 모두 기적적으로 건재합니다.
 
-This will not be a quick coup, but a long civil war. The nation will destroy itself before it can be rebuilt again.
+전쟁은 순식간에 끝나지 않을 것입니다. 길고 긴 내전이 될 것입니다. 이 나라는 재건되기도 전에 스스로를 파괴하고 말 것입니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버
 
 @true_pcdi_victory
 view-if: not psi_revolution and (pcdi_strength*0.6) >= fascist_strength
 
-The Red Army descends upon Italy, picking off reactionary holdout after reactionary holdout in its crusade against capital. Eventually, it emerges unmistakeably victorious, most of Italy under its control. After sweeping up the remnants of reactionary forces, the eyes of the Communists turn to us, the very leftists who refused to aid them in their victorious revolution.
+적군은 자본주의에 대한 성전에서 반동 세력의 거점을 하나씩 격파하며 이탈리아 전역을 휩쓸었습니다. 마침내, 적군은 이탈리아 대부분을 장악하며 명백한 승리를 거두었습니다. 반동 세력의 잔당을 소탕한 후, 공산주의자들의 시선은 그들의 승리한 혁명을 외면했던 바로 우리, 다른 좌파들에게 향하고 있습니다.
 
-Revolution has reached Italy. Merely no longer on our terms.
+혁명은 마침내 이탈리아에 도달했습니다. 단지 더 이상 우리가 주도하는 혁명이 아닐 뿐입니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버
 
 @civil_war_if_psi
 view-if: psi_revolution
@@ -94,4 +94,4 @@ go-to: civil_war
 view-if: not psi_revolution and (fascist_strength*0.6) >= pcdi_strength
 on-arrival: rg_banned = 1; sov_rg_strength *= 0.1; sov_rg_militancy *= 0.4; workers_pcdi *= 0.4; veterans_pcdi *= 0.6; workers_psi *= 0.9; workers_psi *= 0.7 if psi_revolution; workers_pnf += 10; veterans_pnf += 10; workers_ul += 10
 
-The communists are predictably crushed. Worker councils are shuttered and leading conspirators executed. The Red Guards in its entirely is banned, and so are most communist publications. The PCd'I's leaders are arrested - those that are not summarily executed, anyway.
+공산주의자들은 예상대로 분쇄되었습니다. 노동자 평의회는 폐쇄되고 주동자들은 처형당했습니다. 적위대 전체가 불법화되었고 대부분의 공산주의 출판물도 금지되었습니다. 이탈리아 공산당의 지도자들은 즉결 처형되지 않은 이들은 모두 체포되었습니다.

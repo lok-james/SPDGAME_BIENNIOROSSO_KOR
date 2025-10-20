@@ -228,7 +228,7 @@ Q.foreign_invasion_display = Q.foreign_invasion_time - Q.time;
 [? if arditi_formed : 인민의 결사대 전투력: [+ adp_militancy +] ?]
 
 [? if not national_congress_seen : 
-  {!<span class="tooltip-text" title="파시스트 행동대는 국가 파시스트당 하의 참전 용사들로 구성된 우익 단체입니다.">파시스트 행동대</span>!} 세력: [+ fdc_strength_2 +] 천 명 ?]
+  {!<span class="tooltip-text" title="파시스트 행동대는 국가 파시스트당 하의 재향군인들로 구성된 우익 단체입니다.">파시스트 행동대</span>!} 세력: [+ fdc_strength_2 +] 천 명 ?]
 
 [? if not national_congress_seen : 파시스트 행동대 전투력: [+ fdc_militancy +] ?]
 
@@ -322,7 +322,7 @@ Q.nationalist_sentiment_disp = Math.round(Q.nationalist_sentiment);
 
 자본가 및 지주: [+ psi_name +]: [+ industrialists_psi_display +]%, [? if pcdi_formed : PCd'I: [+ industrialists_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ industrialists_psu_display +]%, ?] PSRI: [+ industrialists_psri_display +]%, [? if pll_formed : PLL: [+ industrialists_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ industrialists_pri_display +]%, ?] [+ ds_name +]: [+ industrialists_ds_display +]%, PPI: [+ industrialists_ppi_display +]%, [+ ldr_name +]: [+ industrialists_ldr_display +]%, [+ ul_name +]: [+ industrialists_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ industrialists_pcs_display +]%, ?] [+ pnf_name +]: [+ industrialists_pnf_display +]%, 기타: [+ industrialists_other_display +]%
 
-참전 용사 및 실업자: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [+ pnf_name +]: [+ veterans_pnf_display +]%, 기타: [+ veterans_other_display +]%
+재향군인 및 실업자: [+ psi_name +]: [+ veterans_psi_display +]%, [? if pcdi_formed : PCd'I: [+ veterans_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ veterans_psu_display +]%, ?] PSRI: [+ veterans_psri_display +]%, [? if pll_formed : PLL: [+ veterans_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ veterans_pri_display +]%, ?] [+ ds_name +]: [+ veterans_ds_display +]%, PPI: [+ veterans_ppi_display +]%, [+ ldr_name +]: [+ veterans_ldr_display +]%, [+ ul_name +]: [+ veterans_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ veterans_pcs_display +]%, ?] [+ pnf_name +]: [+ veterans_pnf_display +]%, 기타: [+ veterans_other_display +]%
 
 가톨릭 신자: [+ psi_name +]: [+ catholic_psi_display +]%, [? if pcdi_formed : PCd'I: [+ catholic_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ catholic_psu_display +]%, ?] PSRI: [+ catholic_psri_display +]%, [? if pll_formed : PLL: [+ catholic_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ catholic_pri_display +]%, ?] [+ ds_name +]: [+ catholic_ds_display +]%, PPI: [+ catholic_ppi_display +]%, [+ ldr_name +]: [+ catholic_ldr_display +]%, [+ ul_name +]: [+ catholic_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ catholic_pcs_display +]%, ?] [+ pnf_name +]: [+ catholic_pnf_display +]%, 기타: [+ catholic_other_display +]%
 
@@ -372,7 +372,7 @@ Q.nationalist_sentiment_disp = Math.round(Q.nationalist_sentiment);
 
 = 노동 환경
 
-참전 용사 보험 제도: [? if not unemployment_insurance_founded : 미설립 ?][? if unemployment_insurance_founded : [+ insurance_payments_veterans_timer +]개월 후 갱신 필요 ?]
+재향군인 보험 제도: [? if not unemployment_insurance_founded : 미설립 ?][? if unemployment_insurance_founded : [+ insurance_payments_veterans_timer +]개월 후 갱신 필요 ?]
 
 [? if unemployment_insurance_founded : 노동자 보험 제도: [? if not unemployment_insurance_expanded : 미확대 ?][? if unemployment_insurance_expanded : [+ insurance_payments_workers_timer +]개월 후 갱신 필요 ?] ?]
 
