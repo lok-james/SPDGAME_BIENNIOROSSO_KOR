@@ -6,6 +6,6 @@ view-if: year = 1924 and month = 1
 priority: 2
 max-visits: 1
 
-이탈리아에 새해가 밝았습니다. [? if not national_economic_recovery :전쟁이 끝났음에도 경제는 여전히 어려운 상황입니다. ?][? if prime_minister_party == “PNF”: [+ prime_minister +]가 자신의 통치를 계속해서 공고히 하는 가운데, 우리를 향한 폭력은 날이 갈수록 심해지고 있습니다.?]
+이탈리아에 새해가 밝았습니다. [? if not national_economic_recovery :전쟁이 끝났음에도 경제는 여전히 어려운 상황입니다. ?][? if prime_minister_party == "PNF": [+ prime_minister +]가 자신의 통치를 계속해서 공고히 하는 가운데, 우리를 향한 폭력은 날이 갈수록 심해지고 있습니다.?]
 
 [? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]

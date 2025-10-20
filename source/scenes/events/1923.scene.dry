@@ -6,6 +6,6 @@ view-if: year = 1923 and month = 1
 priority: 2
 max-visits: 1
 
-이탈리아에 새해가 밝았습니다. [? if not national_economic_recovery :전쟁이 끝났음에도 경제는 여전히 어려운 상황입니다. ?][? if prime_minister_party == “PNF”: [+ prime_minister +]가 총리직에 오른 것은 심히 우려스러운 일입니다. ?]
+이탈리아에 새해가 밝았습니다. [? if not national_economic_recovery :전쟁이 끝났음에도 경제는 여전히 어려운 상황입니다. ?][? if prime_minister_party == "PNF": [+ prime_minister +]가 총리직에 오른 것은 심히 우려스러운 일입니다. ?]
 
 [? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]

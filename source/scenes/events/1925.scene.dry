@@ -6,6 +6,6 @@ view-if: year = 1925 and month = 1
 priority: 2
 max-visits: 1
 
-이탈리아에 새해가 밝았습니다. [? if prime_minister_party == “PNF”: 아체르보 법의 실패로 [+ prime_minister +]의 입지가 약화되었음에도 그는 계속해서 권력을 공고히 하고 있으며, 그의 통치에 대한 우리의 저항도 더욱 거세지고 있습니다.?]
+이탈리아에 새해가 밝았습니다. [? if prime_minister_party == "PNF": 아체르보 법의 실패로 [+ prime_minister +]의 입지가 약화되었음에도 그는 계속해서 권력을 공고히 하고 있으며, 그의 통치에 대한 우리의 저항도 더욱 거세지고 있습니다.?]
 
 [? if psi_in_government : 연례 세금 징수로 예산이 증액되었습니다. ?]
