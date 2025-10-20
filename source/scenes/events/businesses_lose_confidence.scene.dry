@@ -1,40 +1,40 @@
-title: Businesses Lose Confidence
-subtitle: Big businesses are losing confidence in our government's policies.
+title: 기업들의 신뢰 상실
+subtitle: 대기업들이 현 정부의 정책에 등을 돌리고 있습니다.
 view-if: (capital_strike_progress >= 6 and capital_strike_progress < 10 and budget > -5) and psi_in_government and not violent_revolution
 new-page: true
 max-visits: 1
 on-arrival: unemployment += 2; middle_class_psi -= 6; industrialists_psi -= 6; rural_psi -= 5; workers_psi -= 4; veterans_psi -= 4; ldr_relation -= 6; ul_relation -= 6; economic_growth -= 1
 tags: event
 
-= Businesses Lose Confidence
+= 기업들의 신뢰 상실
 
-Because of our government's policies, which are perceived as anti-business, the industrialists are reducing their investment and laying off workers. This has the immediate effect of raising unemployment and dissent against our government, especially among the middle class.
+반기업적으로 인식되는 정부 정책으로 인해, 자본가들이 투자를 줄이고 노동자들을 해고하고 있습니다. 이로 인해 즉각적으로 실업률이 치솟고, 특히 중산층을 중심으로 정부에 대한 불만이 커지고 있습니다.
 
-The business community has a variety of suggestions as to how we might improve the business environment.
+재계는 사업 환경 개선을 위해 다음과 같은 제안들을 해왔습니다.
 
-- @taxes: Cut taxes for the upper brackets.
-- @welfare: Reduce welfare and social spending.
-- @nothing: We will not take any action for now.
-- @watch: Just watch us. The economy *will* improve.
+- @taxes: 상위 소득 계층의 세금을 감면한다.
+- @welfare: 복지 및 사회 보장 지출을 삭감한다.
+- @nothing: 당분간은 어떤 조치도 취하지 않는다.
+- @watch: 두고 보자. 경제는 *반드시* 살아날 것이다.
 
 @taxes
 choose-if: upper_tax_rates > -5 and (not national_economic_recovery or budget > 0)
-unavailable-subtitle: [? if upper_tax_rates > -5: Tax rates for the upper brackets are already too low. ?][? if budget < 1 and national_economic_recovery : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if upper_tax_rates > -5: 상위 계층의 세율이 이미 너무 낮습니다. ?][? if budget < 1 and national_economic_recovery : 예산이 부족합니다. (1 필요) ?]
 on-arrival: upper_tax_rates -= 1; budget -= 1; capital_strike_progress -= 1; unemployment -= 0.4; middle_class_psi += 5*(1-dissent); industrialists_psi += 4*(1-dissent); communist_dissent += 7; maximalist_dissent += 3; labour_dissent += 9; syndicalist_dissent += 9 if syndicalist_active
 
-Cutting taxes for the upper brackets improves our relationship with the capitalists, though is unsurprisingly unpopular within the party.
+상위 계층 감세는 자본가들과의 관계를 개선하지만, 예상대로 당내에서는 거센 반발을 사고 있습니다.
 
 @welfare
 choose-if: welfare > 0
-unavailable-subtitle: There is no welfare left to cut.
+unavailable-subtitle: 더 이상 삭감할 복지 예산이 없습니다.
 on-arrival: welfare -= 1; budget += 1; capital_strike_progress -= 2; middle_class_psi += 4*(1-dissent); industrialists_psi += 4*(1-dissent); workers_psi -= 6*(unemployment/10); veterans_psi -= 5; unemployment -= 0.6; veterans += 1; communist_dissent += 7; labour_dissent += 6; maximalist_dissent += 3; reformist_dissent += 5; inflation -= 0.8; women_psi -= 4*(1-dissent);
 
-Cutting welfare improves our relationship with the capitalists, but it hurts our working-class base.
+복지 예산 삭감은 자본가들과의 관계를 개선하지만, 우리의 핵심 지지 기반인 노동자 계급에게 큰 상처를 줍니다.
 
 @nothing
 
-Realistically, there is nothing we can do.
+현실적으로 우리가 할 수 있는 건 아무것도 없습니다.
 
 @watch
 
-Presumably, we have a plan that will lead us out of the crisis. The capitalists do not trust us, but we will show them eventually.
+아마 우리에게는 이 위기를 타개할 계획이 있을 것입니다. 자본가들은 우리를 믿지 않지만, 결국에는 우리의 실력을 보여주게 될 것입니다.

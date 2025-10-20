@@ -1,19 +1,19 @@
-title: Meeting with the Catholics
+title: 가톨릭계와의 회담
 view-if: psi_in_government and socialist_catholic_coalition and ppi_promise_failed or (catholic_papacy_accepted and catholic_papacy_timer == 0 and roman_question_answered == 0) and ppi_in_government
 new-page: true
 tags: event
 
-= Promises given, Promises broken
+= 했던 약속, 깨진 약속
 
-The Italian People's Party is, understandably upset at our failure to maintain the agreement that has held this coalition together and are considering a Vote of No Confidence against the government.
+이탈리아 인민당은 연정의 근간이 되었던 합의를 우리가 이행하지 못한 것에 대해 당연히 분노하고 있으며, 현 정부에 대한 불신임 투표를 고려하고 있습니다.
 
-- @catholic_promise_results: And...
+- @catholic_promise_results: 그 결과...
 
 @catholic_promise_results 
 on-arrival: ppi_relation -= 5; ppi_total_broken += 1; ppi_promise_failed = 0; coalition_dissent += 1 if (ppi_relation >= 50 and ppi_total_broken < 2); catholic_papacy_timer += 6 if (ppi_relation >= 50 and ppi_total_broken < 2 and catholic_papacy_timer == 0 and roman_question_answered == 0)
 go-to: catholic_vote_of_no_confidence if (ppi_relation < 50 or ppi_total_broken >= 2 or coalition_dissent >= 3)
 
-[? if ppi_relation >= 50 and ppi_total_broken < 2 and coalition_dissent < 2: Fortunately, owing to our good relations, the PPI have decided against a vote, though our relations have taken a hit. ?]
+[? if ppi_relation >= 50 and ppi_total_broken < 2 and coalition_dissent < 2: 다행히, 우리가 쌓아온 우호적인 관계 덕분에 인민당은 불신임안을 상정하지 않기로 결정했습니다. 하지만 양당 관계에 금이 간 것은 어쩔 수 없습니다. ?]
 
-[? if ppi_relation >= 50 and ppi_total_broken < 2 and coalition_dissent < 2 and catholic_papacy_accepted : We have been given an extra 6 months to negotiate an agreement with the Holy See. ?]
+[? if ppi_relation >= 50 and ppi_total_broken < 2 and coalition_dissent < 2 and catholic_papacy_accepted : 우리는 교황청과 합의점을 찾기 위해 6개월의 시간을 추가로 벌었습니다. ?]
 

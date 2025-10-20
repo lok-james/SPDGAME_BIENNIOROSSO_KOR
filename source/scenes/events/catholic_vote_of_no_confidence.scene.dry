@@ -1,5 +1,5 @@
-title: The Catholics calls a vote of no confidence against the current government!
-subtitle: We have angered our coalition partners too much...
+title: 가톨릭계, 현 정부 불신임안 가결!
+subtitle: 연정 파트너들의 분노가 극에 달했습니다...
 new-page: true
 view-if: psi_in_government = 1 and socialist_catholic_coalition and coalition_dissent >= 3 and psi_seating_disp < 50 and ppi_in_government
 tags: event
@@ -7,43 +7,43 @@ go-to: vonc_menu
 
 # Options: spend relations to reduce coalition_dissent, ask for kpd to abstain
 
-= Vote of No Confidence
+= 불신임 투표
 
-The Italian People's Party have called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be a new government formed.
+이탈리아 인민당이 우리의 정책과 노선에 대한 이견을 이유로 불신임 투표를 소집했습니다. 만약 이 안건이 통과된다면, 새로운 정부가 구성될 것입니다.
 
 @vonc_menu
 
-- @try_assuage: Try to assuage our partners.
-- @let_it_happen: Let the vote happen.
+- @try_assuage: 연정 파트너들을 설득해본다.
+- @let_it_happen: 표결에 맡긴다.
 
 @try_assuage
 
-How do we assuage our partners?
+어떻게 연정 파트너들을 설득할 수 있을까요?
 
-- @white_leagues: Agree to temporarily end contention of influence with the White Leagues.
-- @resources: Use our resources to reduce dissent within the coalition.
-- @support_psri: Could we get the PSRI to abstain?
-- @let_it_happen: Never mind. Let the vote happen.
-- @let_it_happen_elections: Never mind. Let the vote happen and call for snap elections.
+- @white_leagues: 가톨릭 백위대와의 세력 다툼을 일시적으로 중단하는 데 동의한다.
+- @resources: 자원을 사용하여 연정 내의 불만을 잠재운다.
+- @support_psri: PSRI에게 기권을 요청해볼 수 있을까?
+- @let_it_happen: 그만두자. 표결에 맡기겠다.
+- @let_it_happen_elections: 그만두자. 표결 후 조기 총선을 요구하겠다.
 
 
 @white_leagues
 view-if: rg_strength > 0
 on-arrival: coalition_dissent = 0; rural_psi -= 10; middle_class_psi -= 10; rural_ppi += 7; rural_pnf += 3; middle_class_ppi += 5; middle_class_pnf += 5; communist_dissent += 17; maximalist_dissent += 10; labour_dissent += 12; reformist_dissent += 7; rg_strength *= 0.9; rg_militancy -= 0.03; ard_strength += 20; catholic_papacy_timer += 12 if (catholic_papacy_timer == 0 and roman_question_answered == 0) 
 
-Fine. We pull back the Red Guards from rural areas of contention with the catholic White Leagues, allowing the PPI to grab our voters to the dismay of the party. The rural Arditismo capitalises on our absence as well, recruiting more forces and 'campaigning'.
+알겠습니다. 우리는 가톨릭 백위대와의 분쟁이 잦은 농촌 지역에서 적위대를 철수시킵니다. 당원들의 실망에도 불구하고, 인민당이 우리의 지지자들을 흡수하도록 허용한 셈입니다. 우리가 자리를 비운 사이, 농촌의 결사대는 세력을 키우며 '선거 운동'을 벌이고 있습니다.
 
 @resources
 choose-if: resources >= 3
-unavailable-subtitle: We do not have enough resources.
-subtitle: -3 resources
+unavailable-subtitle: 자원이 부족합니다.
+subtitle: 자원 -3
 on-arrival: resources -= 3; coalition_dissent -= 1; catholic_papacy_timer += 6 if (catholic_papacy_timer == 0 and roman_question_answered == 0)
 
-By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
+연정 파트너들에게 자원을 지원함으로써, 우리 정책에 대한 그들의 반감을 줄일 수 있습니다. 다소 조잡하지만 효과적인 방법입니다.
 
 @support_psri
 choose-if: psri_relation >= 40 and left_wing_coalition >= 50
-unavailable-subtitle: [? if psri_relation < 40 : The PSRI is not friendly enough with us. ?] [? if left_wing_coalition < 50: The PSRI does not have enough votes. ?]
+unavailable-subtitle: [? if psri_relation < 40 : PSRI는 우리에게 충분히 우호적이지 않습니다. ?] [? if left_wing_coalition < 50: PSRI는 의석이 부족합니다. ?]
 on-departure: {!
 Q.ppi_relation -= 10;
 
@@ -111,7 +111,7 @@ Q.leverage = parseFloat(Q.psi_seating_disp);
 !}
 go-to: election_1919.left_wing_coalition
 
-Both party votes, alongside some defectors from the minor parties are enough for us to maintain control of the government. We owe a massive debt to the PSRI, which could lead to broader cooperation in the future, for better or for worse.
+양당과 소수 정당의 일부 이탈표 덕분에, 우리는 정부를 유지하는 데 성공했습니다. PSRI에 큰 빚을 졌습니다. 이것이 득이 될지 실이 될지는 모르지만, 앞으로 더 폭넓은 협력의 길이 열릴 수 있습니다.
 
 @let_it_happen
 on-departure: {!
@@ -211,10 +211,10 @@ Q.leverage = parseFloat(Q.psi_seating_disp);
 !}
 go-to: election_1919.coalition_menu if next_election_time >= 8
 
-The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies.
+표결 결과, 불신임안이 통과되어 정부는 총사퇴했습니다. [+ prime_minister +] 총리는 정부 수반직을 유지하지만, 더 이상 새로운 정책을 추진할 권한은 없습니다.
 
-[? if next_election_time >= 8 : A new government will be formed within the scope of the current composition of the Chamber of Deputies. ?]
-[? if next_election_time < 8 : A new government will be formed within the scope of the next composition of the Chamber of Deputies within the next 4 months. ?]
+[? if next_election_time >= 8 : 새로운 정부는 현재 하원 구성 내에서 구성될 것입니다. ?]
+[? if next_election_time < 8 : 새로운 정부는 향후 4개월 이내에 다음 하원 구성 내에서 구성될 것입니다. ?]
 
 @let_it_happen_elections
 view-if: next_election_time >= 8 and prime_minister_party == psi_name
@@ -314,5 +314,5 @@ Q.party_demands_timer = 6;
 Q.leverage = parseFloat(Q.psi_seating_disp);
 !}
 
-The vote succeeds, and our government has resigned. Prime Minister [+ prime_minister +] remains as the head of the government, but no longer has the power to enact new policies. Snap elections have been called and will occur in the next three months.
+표결 결과, 불신임안이 통과되어 정부는 총사퇴했습니다. [+ prime_minister +] 총리는 정부 수반직을 유지하지만, 더 이상 새로운 정책을 추진할 권한은 없습니다. 조기 총선이 소집되었고, 3개월 이내에 치러질 것입니다.
 
