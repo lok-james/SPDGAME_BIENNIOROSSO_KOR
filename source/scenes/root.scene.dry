@@ -96,40 +96,40 @@ Q.psu_relation = 10;
 // PNF relations are invariably hostile
 Q.pnf_relation = 0;
 
-Q.ul_leader = “Giolitti”;
-Q.ldr_leader = “Orlando”;
-Q.ds_leader = “Colonna”;
-Q.ppi_leader = “Sturzo”;
-Q.psri_leader = “Ciotti”;
-Q.pnf_leader = “Mussolini”;
-Q.pri_leader = “Chisea”;
-Q.psu_leader = “Turati”;
-Q.pcdi_leader = “Bordiga”;
-Q.pll_leader = “Giuffrida”;
-Q.pcs_leader = “Carnazza”;
+Q.ul_leader = "지올리티";
+Q.ldr_leader = "올란도";
+Q.ds_leader = "콜로나";
+Q.ppi_leader = "스트루초";
+Q.psri_leader = "치오티";
+Q.pnf_leader = "무솔리니";
+Q.pri_leader = "키세아";
+Q.psu_leader = "투라티";
+Q.pcdi_leader = "보르디가";
+Q.pll_leader = "주프리다";
+Q.pcs_leader = "카르나차";
 
-Q.soviet_leader = “Lenin”;
+Q.soviet_leader = "레닌";
 Q.soviet_germany = 0;
 
-Q.ldr_name = “LDR”;
-Q.ldr_full_name = “Liberals, Democrats and Radicals”;
-Q.ldr_full_italian = “Liberali, democratici e radicali”;
+Q.ldr_name = "LDR";
+Q.ldr_full_name = "자유민주급진당";
+Q.ldr_full_italian = "자유당, 민주당, 급진당";
 
-Q.ul_name = “UL”;
-Q.ul_full_name = “Liberal Union”;
-Q.ul_full_italian = “Liberale Unione”;
+Q.ul_name = "UL";
+Q.ul_full_name = "자유 연합";
+Q.ul_full_italian = "연합 자유당";
 
-Q.ds_name = “DS”;
-Q.ds_full_name = “Social Democracy”;
-Q.ds_full_italian = “Democrazia Sociale”;
+Q.ds_name = "DS";
+Q.ds_full_name = "사회민주주의";
+Q.ds_full_italian = "사회민주주의";
 
-Q.pnf_name = “FdC”;
-Q.pnf_full_name = “Italian Fasces of Combat”;
-Q.pnf_full_italian = “Fasci Italiani di Combattimento”;
+Q.pnf_name = "FdC";
+Q.pnf_full_name = "이탈리아 전투 파시";
+Q.pnf_full_italian = "이탈리아 전투 파시";
 
-Q.psi_name = “PSI”;
-Q.psi_full_name = “Italian Socialist Party”;
-Q.psi_full_italian = “Partito Socialista Italiano”;
+Q.psi_name = "PSI";
+Q.psi_full_name = "이탈리아 사회당";
+Q.psi_full_italian = "이탈리아 사회당";
 
 Q.pri_prominent = 0;
 Q.psri_stable = 1;
