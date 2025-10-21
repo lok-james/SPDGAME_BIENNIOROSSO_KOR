@@ -824,126 +824,126 @@ go-to: coalition_menu
 
 [? if anti_fas_psu and acerbo_law_passed : {!<tr><td>!} -단일 사회당  {!</td></tr>!} ?]
 
-[? if anti_fas_psri and acerbo_law_passed : {!<tr><td>!} -Italian Reformist Socialist Party  {!</td></tr>!} ?]
+[? if anti_fas_psri and acerbo_law_passed : {!<tr><td>!} -이탈리아 개혁 사회당  {!</td></tr>!} ?]
 
-[? if anti_fas_pll and acerbo_law_passed : {!<tr><td>!} -Liberal Workers' Party  {!</td></tr>!} ?]
+[? if anti_fas_pll and acerbo_law_passed : {!<tr><td>!} -자유노동당  {!</td></tr>!} ?]
 
-[? if anti_fas_pri and acerbo_law_passed : {!<tr><td>!} -Italian Republican Party  {!</td></tr>!} ?]
+[? if anti_fas_pri and acerbo_law_passed : {!<tr><td>!} -이탈리아 공화당  {!</td></tr>!} ?]
 
-[? if anti_fas_ppi and acerbo_law_passed : {!<tr><td>!} -Italian People's Party  {!</td></tr>!} ?]
+[? if anti_fas_ppi and acerbo_law_passed : {!<tr><td>!} -이탈리아 인민당  {!</td></tr>!} ?]
 
 [? if anti_fas_ds and acerbo_law_passed : {!<tr><td>!} -[+ ds_full_name +]  {!</td></tr>!} ?]
 
 [? if anti_fas_ldr and acerbo_law_passed : {!<tr><td>!} -[+ ldr_full_name +]  {!</td></tr>!} ?]
 
-[? if not acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Socialist List: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
+[? if not acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} 사회주의 명부: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
 [? if not acerbo_law_passed : {!<tr><td>!} **-[+ psi_full_name +]** {!</td></tr>!} ?]
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} Communist List: {!</td><td>!} [+ pcdi_r_disp +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} 공산주의 명부: {!</td><td>!} [+ pcdi_r_disp +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pcdi_formed : {!<tr><td>!} -Communist Party of Italy {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td>!} -이탈리아 공산당 {!</td></tr>!} ?]
 
-[? if psu_formed and not anti_fas_psu : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} Socialist Unity List: {!</td><td>!} [+ psu_r_disp +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
+[? if psu_formed and not anti_fas_psu : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} 단일 사회주의 명부: {!</td><td>!} [+ psu_r_disp +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psu_formed and not anti_fas_psu : {!<tr><td>!} -Unitary Socialist Party {!</td></tr>!} ?]
+[? if psu_formed and not anti_fas_psu : {!<tr><td>!} -단일 사회당 {!</td></tr>!} ?]
 
-[? if psu_formed and psri_joint_psu and not anti_fas_psu : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if psu_formed and psri_joint_psu and not anti_fas_psu : {!<tr><td>!} -이탈리아 개혁 사회당 {!</td></tr>!} ?]
 
-[? if pll_formed and not anti_fas_pll : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div>!} Liberal-Socialist List: {!</td><td>!} [+ pll_r_disp +]% {!</td><td>!} [+ str_change_pll +]% {!</td><td>!} [+ pll_seating +] {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
+[? if pll_formed and not anti_fas_pll : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div>!} 자유-사회주의 명부: {!</td><td>!} [+ pll_r_disp +]% {!</td><td>!} [+ str_change_pll +]% {!</td><td>!} [+ pll_seating +] {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pll_formed and not anti_fas_pll : {!<tr><td>!} -Liberal Workers' Party {!</td></tr>!} ?]
+[? if pll_formed and not anti_fas_pll : {!<tr><td>!} -자유노동당 {!</td></tr>!} ?]
 
-[? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} Reformist Socialist List: {!</td><td>!} [+ psri_r_disp +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
+[? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} 개혁 사회주의 명부: {!</td><td>!} [+ psri_r_disp +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td>!} -이탈리아 개혁 사회당 {!</td></tr>!} ?]
 
-[? if pri_prominent and not anti_fas_pri : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} Republican List: {!</td><td>!} [+ pri_r_disp +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
+[? if pri_prominent and not anti_fas_pri : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} 공화주의 명부: {!</td><td>!} [+ pri_r_disp +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pri_prominent and not anti_fas_pri : {!<tr><td>!} -Italian Republican Party {!</td></tr>!} ?]
+[? if pri_prominent and not anti_fas_pri : {!<tr><td>!} -이탈리아 공화당 {!</td></tr>!} ?]
 
-[? if pri_prominent and psri_joint_pri and not anti_fas_pri : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if pri_prominent and psri_joint_pri and not anti_fas_pri : {!<tr><td>!} -이탈리아 개혁 사회당 {!</td></tr>!} ?]
 
-[? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} Democratic List: {!</td><td>!} [+ ds_r_disp +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
+[? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} 민주주의 명부: {!</td><td>!} [+ ds_r_disp +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
 
-[? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td>!} -Italian Social Democratic Party {!</td></tr>!} ?]
+[? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td>!} -이탈리아 사회민주당 {!</td></tr>!} ?]
 
-[? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} Catholic List: {!</td><td>!} [+ ppi_r_disp +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} 가톨릭 명부: {!</td><td>!} [+ ppi_r_disp +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td>!} -Italian People's Party {!</td></tr>!} ?]
+[? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td>!} -이탈리아 인민당 {!</td></tr>!} ?]
 
-[? if (ldr_party or ldr_list) and not pnf_in_power and not anti_fas_ldr : {!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} Liberals, Democrats and Radicals: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
+[? if (ldr_party or ldr_list) and not pnf_in_power and not anti_fas_ldr : {!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} 자유주의자, 민주주의자, 급진파: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
 
-[? if ldr_party or (ldr_list and not view_full) and not pnf_in_power and not anti_fas_ldr : {!<tr><td>!} -Italian Democratic Liberal Party {!</td></tr>!} ?]
+[? if ldr_party or (ldr_list and not view_full) and not pnf_in_power and not anti_fas_ldr : {!<tr><td>!} -이탈리아 민주자유당 {!</td></tr>!} ?]
 
-[? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} Liberal List: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
+[? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} 자유주의 명부: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
 
-[? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td>!} -Italian Liberal Party {!</td></tr>!} ?]
+[? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td>!} -이탈리아 자유당 {!</td></tr>!} ?]
 
-[? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} National Bloc: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td><td>!} [+ bn_seating_disp +]% {!</td></tr>!} ?]
+[? if bn_formed : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} 국민 블록: {!</td><td>!} [+ bn_r +]% {!</td><td>!} [+ str_change_bn +]% {!</td><td>!} [+ bn_seating +] {!</td><td>!} [+ bn_seating_disp +]% {!</td></tr>!} ?]
 
-[? if ul_in_bn : {!<tr><td>!} -Italian Liberal Party {!</td></tr>!} ?]
+[? if ul_in_bn : {!<tr><td>!} -이탈리아 자유당 {!</td></tr>!} ?]
 
-[? if ani_in_bn : {!<tr><td>!} -Italian Nationalist Association {!</td></tr>!} ?]
+[? if ani_in_bn : {!<tr><td>!} -이탈리아 민족주의 협회 {!</td></tr>!} ?]
 
-[? if pnf_in_bn : {!<tr><td>!} -National Fascist Party {!</td></tr>!} ?]
+[? if pnf_in_bn : {!<tr><td>!} -국가 파시스트당 {!</td></tr>!} ?]
 
-[? if pcs_formed and pnf_r < 5 : {!<tr><td><div class="box" style='background-color:#656573'> </div>!} National Conservative List: {!</td><td>!} [+ pcs_r_disp +]% {!</td><td>!} [+ str_change_pcs +]% {!</td><td>!} [+ pcs_seating +] {!</td><td>!} [+ pcs_seating_disp +]% {!</td></tr>!} ?]
+[? if pcs_formed and pnf_r < 5 : {!<tr><td><div class="box" style='background-color:#656573'> </div>!} 국가 보수주의 명부: {!</td><td>!} [+ pcs_r_disp +]% {!</td><td>!} [+ str_change_pcs +]% {!</td><td>!} [+ pcs_seating +] {!</td><td>!} [+ pcs_seating_disp +]% {!</td></tr>!} ?]
 
-[? if pcs_formed and pnf_r < 5 : {!<tr><td>!} -Christian Social Party {!</td></tr>!} ?]
+[? if pcs_formed and pnf_r < 5 : {!<tr><td>!} -기독교사회당 {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : Fascist List ?][? if pnf_in_power : National List ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : 파시스트 명부 ?][? if pnf_in_power : 민족주의 명부 ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
 [? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
-[? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td>!} -Italian Social Democratic Party {!</td></tr>!} ?]
+[? if ds_leader = "Carnazza" and ds_party and (pnf_r >= 5) : {!<tr><td>!} -이탈리아 사회민주당 {!</td></tr>!} ?]
 
-[? if pcs_formed and (pnf_r >= 5) : {!<tr><td>!} -Christian Social Party {!</td></tr>!} ?]
+[? if pcs_formed and (pnf_r >= 5) : {!<tr><td>!} -기독교사회당 {!</td></tr>!} ?]
 
-[? if not ul_in_bn and pnf_in_power : {!<tr><td>!} -Italian Liberal Party (Def.) {!</td></tr>!} ?]
+[? if not ul_in_bn and pnf_in_power : {!<tr><td>!} -이탈리아 자유당 (탈당파) {!</td></tr>!} ?]
 
-[? if pnf_in_power : {!<tr><td>!} -Italian People's Party (Def.) {!</td></tr>!} ?]
+[? if pnf_in_power : {!<tr><td>!} -이탈리아 인민당 (탈당파) {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} Others: {!</td><td>!} [+ other_r_disp +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div>!} 기타: {!</td><td>!} [+ other_r_disp +]% {!</td><td>!} [+ str_change_other +]% {!</td><td>!} [+ other_seating +] {!</td><td>!} [+ other_seating_disp +]% {!</td></tr>!}
 
-[? if not pri_prominent : {!<tr><td>!} -Italian Republican Party {!</td></tr>!} ?]
+[? if not pri_prominent : {!<tr><td>!} -이탈리아 공화당 {!</td></tr>!} ?]
 
-[? if not economic_right : {!<tr><td>!} -Economic & Agrarian Party {!</td></tr>!} ?]
+[? if not economic_right : {!<tr><td>!} -경제당 & 농업당 {!</td></tr>!} ?]
 
 [? if pnf_r < 5 and not pnf_in_bn and not pnf_banned : {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
-[? if pnf_in_power : {!<tr><td>!} -Constitutional Opposition {!</td></tr>!} ?]
+[? if pnf_in_power : {!<tr><td>!} -헌정수호 야당 {!</td></tr>!} ?]
 
-[? if psri_solo and psri_r < 5 : {!<tr><td>!} -Italian Reformist Socialist Party {!</td></tr>!} ?]
+[? if psri_solo and psri_r < 5 : {!<tr><td>!} -이탈리아 개혁 사회당{!</td></tr>!} ?]
 
-[? if pnf_in_power : {!<tr><td>!} -Independent Liberals {!</td></tr>!} ?]
+[? if pnf_in_power : {!<tr><td>!} -무소속 자유주의자 {!</td></tr>!} ?]
 
-[? if abstentionist_psi : {!<tr><td><div class="box" style='background-color:#FFFFFF'> </div>!} Vacant: {!</td><td>!} N/A {!</td><td>!} N/A {!</td><td>!} [+ vacant_seating +] {!</td><td>!} [+ vacant_seating_disp +]% {!</td></tr>!} ?]
+[? if abstentionist_psi : {!<tr><td><div class="box" style='background-color:#FFFFFF'> </div>!} 공석: {!</td><td>!} N/A {!</td><td>!} N/A {!</td><td>!} [+ vacant_seating +] {!</td><td>!} [+ vacant_seating_disp +]% {!</td></tr>!} ?]
 {!</table>!}
 
-**Potential Coalitions:**
+**유력 연정:**
 
-Left-Wing Coalition ([+ psi_name +] + PSRI [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]): [+ left_wing_coalition_r +]%
+좌파 연정 ([+ psi_name +] + PSRI [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]): [+ left_wing_coalition_r +]%
 
-Centre-Left Coalition ([+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]): [+ centre_left_coalition_r +]%
+중도좌파 연정 ([+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]): [+ centre_left_coalition_r +]%
 
-Socialist-Catholic Coalition ([+ psi_name +] + PSRI + PPI [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +] ?] [? if pll_formed :+ PLL?]): [+ socialist_catholic_coalition_r +]%
+사회-가톨릭 연정 ([+ psi_name +] + PSRI + PPI [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +] ?] [? if pll_formed :+ PLL?]): [+ socialist_catholic_coalition_r +]%
  
-Grand Coalition (PSRI + PPI + [+ ldr_name +] + [+ ul_name +] + [+ ds_name +] + Others [? if pll_formed :+ PLL?]): [+ grand_coalition_r +]%
+대연정 (PSRI + PPI + [+ ldr_name +] + [+ ul_name +] + [+ ds_name +] + Others [? if pll_formed :+ PLL?]): [+ grand_coalition_r +]%
 
-Centre-Right Coalition (PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?] [? if pcs_formed :+ PCS ?]): [+ centre_right_coalition_r +]%
+중도우파 연정 (PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?] [? if pcs_formed :+ PCS ?]): [+ centre_right_coalition_r +]%
 
-Anti-Socialist Coalition (PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?]  [? if pcs_formed :+ PCS ?]): [+ anti_socialist_coalition_r +]%
+반사회주의 연정 (PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?]  [? if pcs_formed :+ PCS ?]): [+ anti_socialist_coalition_r +]%
 
-[? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : The rapid rise in [+ pnf_name +] votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest obstacle to socialism in Italy. ?]
+[? if fasci_urgency <= 2 and pnf_seating_disp >= 15 : [+ pnf_name +]의 득표율 급등은 심히 우려스러운 일입니다. 많은 이가 파시스트당은 소멸 중인 정당이라 믿었지만 이제 우리 중 일부는 그들을 이탈리아 사회주의의 가장 큰 장애물로 여기고 있습니다. ?]
 
-[? if abstentionist_psi : In accordance with the XVI Congress, all [+ psi_name +] deputies will refuse to take up their seats. ?]
+[? if abstentionist_psi : 제16차 당대회 결의에 따라, 모든 [+ psi_name +] 의원은 등원을 거부할 것입니다. ?]
 
-[? if vacant_seating_disp >= 35 : Our strong showing even without taking up seats has reinviograted the party towards revolutionary means. ?]
+[? if vacant_seating_disp >= 35 : 의원들이 등원하지 않았음에도 불구하고 거둔 강력한 선거 결과는 당이 혁명적 수단을 강구하도록 다시금 활력을 불어넣었습니다. ?]
 
-[? if prime_minister_party == pnf_name : Numerous deputies of the PPI, [+ ul_name +], [+ ds_name +] and [+ ldr_name +] have defected to the PNF. ?]
+[? if prime_minister_party == pnf_name : 이탈리아 인민당, [+ ul_name +], [+ ds_name +] 그리고 [+ ldr_name +] 소속의 수많은 의원들이 국가 파시스트당으로 이탈했습니다. ?]
 
-There are some potential coalition arrangements.
+몇 가지 유력한 연정 구성안이 있습니다.
 
 @coalition_menu
 on-arrival: {!
@@ -981,32 +981,32 @@ Q.catholic_women_accepted = 0;
 - @anti_socialist_coalition
 
 @pnf_majority
-title: PNF majority alone
-subtitle: PNF: [+ pnf_seating_disp +]%
+title: 국가 파시스트당 단독 과반
+subtitle: 국가 파시스트당: [+ pnf_seating_disp +]%
 view-if: pnf_seating_disp >= 50 and prime_minister != "D'Annunzio"
 on-arrival: {!
 Q.prime_minister_party = "PNF";
 Q.prime_minister = Q.pnf_leader;
 !}
 
-Our worst fears have come true. The PNF have managed to gain a majority in the elections, and secure a two-thirds majority in the Chamber of Deputies.
+최악의 시나리오가 현실이 되고 말았습니다. 국가 파시스트당이 선거에서 과반을 확보하고 하원 의석 3분의 2를 장악했습니다.
 
-What now?
+이제 어찌해야 할까요?
 
-- @civil_war: We cannot wait any longer. Mobilise the Red Guards!
-- @nothing: Bide our time further.
+- @civil_war: 더는 지체할 수 없다. 적위대를 동원하라!
+- @nothing: 좀 더 때를 기다린다.
 
 @nothing
-subtitle: This will end the game.
+subtitle: 게임은 끝날 것입니다.
 
-[+ pnf_leader +] acts fast, as the Red Guards are harassed and attacked by both government and right-wing paramilitaries. In the Chamber of Deputies, the assassination of Giacomo Matteotti by government forces sparks momentary outrage while [+ pnf_leader +] seizes the opportunity and quickly consolidates Italy into one-party dictatorship.
+[+ pnf_leader +]는 신속하게 움직였고, 적위대는 정부와 우익 준군사조직 양측의 탄압과 공격을 받았습니다. 하원에서는 정부군에 의한 자코모 마테오티 암살 사건이 잠시 분노를 일으켰지만, [+ pnf_leader +]는 이 기회를 틈타 재빨리 이탈리아를 일당 독재 국가로 만들어 버렸습니다.
 
-Italy is lost.
+이탈리아는 길을 잃었습니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버.
 
 @psi_majority
-title: [+ psi_name +] majority alone
+title: [+ psi_name +] 단독 과반
 subtitle: [+ psi_name +]: [+ psi_seating_disp +]%
 view-if: psi_seating_disp >= 50
 on-arrival: {!
@@ -1057,16 +1057,16 @@ Q.public_works_minister = "Vella";
 !}
 achievement: governo_monocolore
 
-Finally, the [+ psi_name +] can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
+마침내, [+ psi_name +]가 단독으로 집권할 수 있게 되었습니다! 우리의 오랜 선거 운동이 결실을 보았습니다. 이제 연정에 대해 걱정할 필요 없이 무엇이든 가능합니다.
 
-[+ prime_minister +] is elected within the party to become Prime Minister.
+당내에서 [+ prime_minister +]가 총리로 선출되었습니다.
 
 @left_wing_coalition
-title: Can we form a Left-Wing Coalition?
-subtitle: [+ psi_name +] [? if psri_relation >= psri_min_relations :+ PSRI ?] [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: Dissident Republicans, Socialists [? if pri_prominent = 0:& the Italian Republican Party?] are willing to provide toleration to the coalition. ?]
+title: 좌파 연정을 구성할 수 있는가?
+subtitle: [+ psi_name +] [? if psri_relation >= psri_min_relations :+ PSRI ?] [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: 일부 공화주의자들과 사회주의자들[? if pri_prominent = 0:& , 이탈리아 공화당?]이 묵인 협정을 체결할 용의가 있습니다. ?]
 view-if: left_wing_coalition_r >= left_wing_minimum
 choose-if: (participating = 1 or maximalist_participating = 1) and psri_relation >= psri_min_relations and left_wing_coalition_failed = 0
-unavailable-subtitle: [+ psi_name +] + PSRI [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]: ([+ left_wing_coalition_r +]%). [? if not_participating = 1: The party has already decided against parliamentary means. ?][? if psri_relation < psri_min_relations : Our relations with the PSRI are too poor. ?][? if left_wing_coalition_failed : Our coalition partners refuse to form another government so soon after the previous one failed. ?]
+unavailable-subtitle: [+ psi_name +] + PSRI [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]: ([+ left_wing_coalition_r +]%). [? if not_participating = 1: 당이 이미 의회주의 노선을 거부했습니다. ?][? if psri_relation < psri_min_relations : 이탈리아 개혁 사회당과의 관계가 너무 나쁩니다. ?][? if left_wing_coalition_failed : 연정 파트너들이 이전 정부 붕괴 후 바로 새 정부를 구성하는 것을 거부합니다. ?]
 on-arrival: {!
 Q.leverage = Q.leverage * 1.5;
 Q.psi_in_government = 1;
@@ -1111,18 +1111,18 @@ Q.public_works_minister_party = "PSRI";
 !}
 achievement: sinistra_ascendente
 
-Our negotiations with our coalition allies goes smoothly, and we form a stable coalition.
+연정 파트너들과의 협상이 순조롭게 진행되어 안정적인 연정을 구성했습니다.
 
-Who should we select to be Prime Minister?
+누구를 총리로 선출해야 할까요?
 
 - @turati
 - @bissolati
 - @bonomi
 
 @centre_left_coalition
-title: Open negotiations with the Liberal parties.
-subtitle: [+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_seating_disp) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : We will have to negotiate with the [+ ul_name +] to secure a majority coalition. ?]
-unavailable-subtitle: [+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]: ([+ centre_left_coalition_r +]%). [? if not_participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ldr_relation < ldr_min_relations : We do not have adequate relations with the [+ ldr_name +]. ?][? if ldr_negotiations_failed : The liberals are unwilling to enter into talks again. ?][? if southern_land_reformed = 1 : The [+ ldr_name +] has vowed against coalitions with us since our southern land reforms. ?][? if centre_left_coalition_failed : Our coalition partners refuse to form another government so soon after the previous one failed. ?]
+title: 자유당과 협상을 시작한다.
+subtitle: [+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]: ([+ centre_left_coalition_r +]%). [? if (((centre_left_coalition_r + ul_seating_disp) >= 50) and (centre_left_coalition_r <= 50)) and not ul_allies : 과반 연정을 확보하려면 [+ ul_name +]와도 협상해야 합니다. ?]
+unavailable-subtitle: [+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]: ([+ centre_left_coalition_r +]%). [? if not_participating = 1 : 우리 당은 이미 의회주의 노선을 거부했습니다. ?][? if maximalist_participating = 1 : 우리 당은 부르주아 정당과의 연정을 거부하기로 결정했습니다. ?][? if ldr_relation < ldr_min_relations : [+ ldr_name +]와 관계가 충분히 좋지 않습니다. ?][? if ldr_negotiations_failed : 자유주의자들은 재협상에 응하지 않을 것입니다. ?][? if southern_land_reformed = 1 : [+ ldr_name +]은 우리의 남부 토지 개혁 이후 우리와의 연정을 거부하고 있습니다. ?][? if centre_left_coalition_failed : 연정 파트너들이 이전 정부 붕괴 후 바로 새 정부를 구성하는 것을 거부합니다. ?]
 view-if: centre_left_coalition_r >= 50
 choose-if: participating = 1 and ldr_relation >= ldr_min_relations and ldr_negotiations_failed = 0 and southern_land_reformed = 0 and centre_left_coalition_failed = 0
 on-arrival: {!
@@ -1182,9 +1182,9 @@ on-departure: liberal_negotiations = 0;
 go-to: liberal_demands
 
 @socialist_catholic_coalition 
-title: Open negotiations with the People's Party.
+title: 인민당과 협상을 시작한다.
 subtitle: [+ psi_name +] + PSRI + PPI [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +] ?] [? if pll_formed :+ PLL?]: ([+ socialist_catholic_coalition_r +]%).
-unavailable-subtitle: [+ psi_name +] + PSRI + PPI [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +] ?] [? if pll_formed :+ PLL?]: ([+ socialist_catholic_coalition_r +]%). [? if not_participating = 1 : The party has already decided against parliamentary means. ?][? if maximalist_participating = 1 : The party has decided against coalitions with any bourgeois parties. ?][? if ppi_relation < ppi_min_relations : We do not have adequate relations with the PPI. ?][? if ppi_negotiations_failed = 1 : We have already tried negotiating with the Catholics. ?][? if catholic_coalition_failed : The Catholics are unwilling to accept another coalition right after the previous one failed. ?][? if secularised_education = 1 : The PPI has vowed against coalitions with us since our education reforms. ?][? if papal_relation < 5 : Our relations with the Holy See are too poor. ?][? if socialist_catholic_coalition_failed : Our coalition partners refuse to form another government so soon after the previous one failed. ?]
+unavailable-subtitle: [+ psi_name +] + PSRI + PPI [? if pri_allies :+ PRI?] [? if ds_allies :+ [+ ds_name +] ?] [? if pll_formed :+ PLL?]: ([+ socialist_catholic_coalition_r +]%). [? if not_participating = 1 : 우리 당은 이미 의회주의 노선을 거부했습니다. ?][? if maximalist_participating = 1 : 우리 당은 부르주아 정당과의 연정을 거부하기로 결정했습니다. ?][? if ppi_relation < ppi_min_relations : 이탈리아 인민당과의 관계가 충분히 좋지 않습니다. ?][? if ppi_negotiations_failed = 1 : 이미 가톨릭 세력과는 협상을 시도한 바 있습니다. ?][? if catholic_coalition_failed : 가톨릭 세력은 이전 연정 붕괴 후 바로 재연정을 받아들이려 하지 않습니다. ?][? if secularised_education = 1 : 이탈리아 인민당은 우리의 교육 개혁 이후 우리와의 연정을 거부하고 있습니다. ?][? if papal_relation < 5 : 교황청과의 관계가 너무 나쁩니다. ?][? if socialist_catholic_coalition_failed : 연정 파트너들이 이전 정부 붕괴 후 바로 새 정부를 구성하는 것을 거부합니다. ?]
 view-if: socialist_catholic_coalition_r >= 50 and catholic_coalition_failed = 0
 choose-if: participating = 1 and ppi_relation >= ppi_min_relations and ppi_negotiations_failed = 0 and secularised_education = 0 and socialist_catholic_coalition_failed = 0
 on-arrival: {!
@@ -1235,18 +1235,18 @@ on-departure: catholic_negotiations = 0
 go-to: catholic_demands
 
 @grand_coalition
-title: [? if (socialist_catholic_coalition_r >= 50) or (centre_left_coalition_r >= 50) : Refuse to form a government, and let the other parties assume responsibility. ?][? if (socialist_catholic_coalition_r < 50) and (centre_left_coalition_r < 50) : We are unable to form a government. The task is handed over to the Liberals. ?]
+title: [? if (socialist_catholic_coalition_r >= 50) or (centre_left_coalition_r >= 50) : 정부 구성을 거부하고 다른 정당들이 책임지도록 한다. ?][? if (socialist_catholic_coalition_r < 50) and (centre_left_coalition_r < 50) : 정부 구성이 불가능합니다. 이 일은 자유주의자들에게 넘어갑니다. ?]
 view-if: centre_right_coalition_r < 50 and anti_socialist_coalition_r < 50
 subtitle: PSRI + PPI + [+ ldr_name +] + [+ ul_name +] + [+ ds_name +] + Others [? if pll_formed :+ PLL?]: ([+ grand_coalition_r +]%). 
 go-to: grand_coalition_yes if (socialist_catholic_coalition_r < 50) or (centre_left_coalition_r < 50 and ul_allies) or ((centre_left_coalition_r + ul_seating_disp < 50) and (not ul_allies)) or not_participating = 1
 
-Are we sure we wish to give up our opportunity to form the government?
+정부 구성 기회를 정말 포기하시겠습니까?
 
-- @grand_coalition_yes: Yes, we will abdicate our responsibility for government formation, and let a coalition without us take power.
-- @coalition_menu: Actually, we wish to form a coalition after all.
+- @grand_coalition_yes: 그래, 정부 구성 책임을 포기하고 우리를 제외한 연정이 집권하도록 할 것이다.
+- @coalition_menu: 아니, 역시 연정을 구성하고 싶다.
 
 @centre_right_coalition
-title: Centre-Right Coalition
+title: 중도우파 연정
 subtitle: PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?] [? if pcs_formed :+ PCS ?]: ([+ centre_right_coalition_r +]%)..
 on-arrival: {!
 Q.centre_right_coalition = 1;
@@ -1294,7 +1294,7 @@ Q.public_works_minister_party = "PNF";
 view-if: centre_right_coalition_r >= 50 and ul_seating_disp + ldr_seating_disp >= pnf_seating_disp 
 
 @anti_socialist_coalition
-title: Anti-Socialist Coalition
+title: 반사회주의 연합
 subtitle: PNF + [+ ul_name +] [? if ds_enemies:+ [+ ds_name +]?] [? if ldr_enemies:+ [+ ldr_name +]?]  [? if pcs_formed :+ PCS ?]: ([+ anti_socialist_coalition_r +]%).
 on-arrival: {!
 Q.anti_socialist_coalition = 1;
@@ -1348,30 +1348,30 @@ Q.public_works_minister_party = "PNF";
 view-if: anti_socialist_coalition_r >= 50 and pnf_seating_disp > ul_seating_disp + ldr_seating_disp and (prime_minister_party != "PNF" or prime_minister = "D'Annunzio")
 go-to: dannunzio_power if prime_minister = "D'Annunzio"
 
-It seems our radicalism and abstentionism has pushed the Liberals to ally with the National Fascist Party, as a junior partner to their list. [+ pnf_leader +] has made himself crucial to this coalition, and been able to come out on top in the inter-party struggle, being appointed Prime Minister by the King.
+우리의 급진주의와 총선 불참이 자유주의자들을 파시스트당과 손잡게 만든 것 같습니다. 그들은 파시스트당 명부의 하위 파트너로 참여합니다. [+ pnf_leader +]는 이 연정에서 자신의 입지를 굳혔고, 당내 투쟁에서 승리하여 국왕으로부터 총리로 임명되었습니다.
 
-- @pnf_prime_minister: What now?
+- @pnf_prime_minister: 이제 어떻게 해야 하지?
 
 @dannunzio_power
 
-The National Fascist Party, under the leadership of Gabriele D'Annunzio, is able to form a coalition, keeping himself as Prime Minister in a majority coalition.
+가브리엘레 단눈치오가 이끄는 국가 파시스트당은 연정을 구성하여 과반 연정의 총리직을 유지합니다.
 
-What now?
+이제 어찌해야 할까요?
 
-- @civil_war: We cannot wait any longer. Mobilise the Red Guards!
-- @nothing_dannunzio: Bide our time further.
+- @civil_war: 더는 지체할 수 없다. 적위대를 동원하라!
+- @nothing_dannunzio: 좀 더 때를 기다린다.
 
 @nothing_dannunzio
-subtitle: This will end the game.
+subtitle: 이것으로 게임은 끝날 것입니다.
 
-[+ pnf_leader +] acts fast, consolidating Italy into a corporative state and empowering the PNF and D'Annunzio into effective dictators of Italy for the foresseable future.
+[+ pnf_leader +]는 재빠르게 움직여 이탈리아를 조합주의 국가로 만들고, 국가 파시스트당과 단눈치오가 당분간 이탈리아의 실질적 독재자가 되도록 권력을 강화했습니다.
 
-Italy is lost.
+이탈리아를 잃었습니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버.
 
 @grand_coalition_yes
-subtitle: [? if participating = 1 : This is extremely unpopular with the reformists. ?]
+subtitle: [? if participating = 1 : 이 결정은 개혁파의 극심한 반발을 사고 있습니다. ?]
 on-arrival: {!
 if (Q.participating == 1) {
     Q.reformist_dissent += 15;
@@ -1404,69 +1404,69 @@ Q.agriculture_minister_party = "LDR";
 Q.labour_minister_party = "UL";
 !}
 
-Though tense negotiations between the Liberals and newly formed Catholic parties, the coalition of the PPI, [+ ldr_name +], [+ ul_name +] and [+ ds_name +] is established.
+자유주의자들과 새로 결성된 가톨릭 정당들 간의 긴장된 협상 끝에, PPI, [+ ldr_name +], [+ ul_name +], [+ ds_name +]의 연정이 수립되었습니다.
 
 @turati
-title: Filippo Turati for Prime Minister
-subtitle: Turati leads the reformist wing, and is an acceptable candidate for Prime Minister.
+title: 총리 후보로 필리포 투라티를 추천한다
+subtitle: 개혁파를 이끄는 투라티는 총리로서 수용 가능한 인물입니다.
 choose-if: reformists_defect = 0
 unavailable-subtitle: Turati is no longer a member of the [+ psi_name +].
 on-arrival: psi_in_government = 1; prime_minister = "Turati"; prime_minister_party = psi_name;
 go-to: ministries
 
-Filippo Turati's appointment as Prime Minister is approved by all our potential allies.
+필리포 투라티의 총리 임명은 우리의 잠재적 동맹 모두에게 승인되었습니다.
 
 @bissolati
-title: Leonida Bissolati for Prime Minister
+title: 총리 후보로 레오니다 비솔라티를 추천한다
 view-if: not bissolati_dead
-subtitle: Bissolati is a prominent leader of the PSRI, formerly affiliated with the [+ psi_name +].
+subtitle: 비솔라티는 이탈리아 개혁 사회당의 저명한 지도자로, 과거 [+ psi_name +] 소속이었습니다.
 on-arrival: psi_in_government = 1; prime_minister = "Bissolati"; prime_minister_party = "PSRI"; leverage += 5; maximalist_dissent += 2; communist_dissent += 5;
 go-to: ministries
 
-This is highly unexpected, but Bissolati's PSRI roots, as well as his committment to socialism, leaves little grumbling from our party.
+매우 의외의 결정이지만, 이탈리아 개혁 사회당 출신인 비솔라티의 경력과 사회주의에 대한 그의 헌신 덕분에 당내 불만은 거의 없습니다.
 
 @bonomi
-title: Ivanoe Bonomi for Prime Minister
+title: 총리 후보로 이바노에 보노미를 추천한다
 view-if: bissolati_dead
-subtitle: Bonomi is a prominent leader of the PSRI, formerly affiliated with the [+ psi_name +].
+subtitle: 보노미는 이탈리아 개혁 사회당의 저명한 지도자로, 과거 [+ psi_name +]소속이었습니다.
 on-arrival: psi_in_government = 1; prime_minister = "Bonomi"; prime_minister_party = "PSRI"; leverage += 5; maximalist_dissent += 4; communist_dissent += 7;
 go-to: ministries
 
-This is highly unexpected, but Bonomi's PSRI roots leaves merely some grumbling from our party.
+매우 의외의 결정이지만, 이탈리아 개혁 사회당 출신이라는 보노미의 경력 때문에 당내에서는 약간의 불평만 있을 뿐입니다.
 
 @orlando
-title: Let the [+ ldr_name +] have their Prime Minister. This will improve our leverage.
-subtitle: Vittorio Emanuele Orlando will be reappointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+title: [+ ldr_name +]에게 총리직을 양보해 협상력을 높인다.
+subtitle: 비토리오 에마누엘레 오를란도가 총리로 재임명될 것입니다. 이는 예상 밖의 일로 당내 불만을 야기할 수 있지만, 다른 장관직 협상에서 유리한 위치를 점할 수 있습니다.
 on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ldr_relation += 10; ds_relation += 5; prime_minister = "Orlando"; prime_minister_party = ldr_name; psi_in_government = 1; leverage += 10
 go-to: ministries
 
 @giolitti
-title: Let the [+ ul_name +] have their Prime Minister. This will improve our leverage.
-subtitle: Giovanni Giolitti will be reappointed Prime Minister. Allowing Giolitti to become Prime Minister is unexpected, and controversial within the party.
+title: [+ ul_name +]에게 총리직을 양보해 협상력을 높인다.
+subtitle: 조반니 졸리티가 총리로 재임명될 것입니다. 졸리티를 총리로 임명하는 것은 예상 밖의 일이며, 당내에서 논란이 많습니다.
 on-arrival: reformist_dissent += 7; maximalist_dissent += 9; communist_dissent += 12; ldr_relation += 5; ul_relation += 10; prime_minister = "Giolitti"; prime_minister_party = ul_name; psi_in_government = 1; leverage += 10
 go-to: ministries
 
-This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
+이는 전혀 예상치 못한 결과이며, 당내 중도파와 개혁파까지도 이 결정을 비판하고 있습니다.
 
 @gasperi
-title: Let the People's Party have their Prime Minister. This will improve over leverage.
-subtitle: Alcide De Gasperi will be appointed Prime Minister. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
+title: 인민당에 총리직을 양보해 협상력을 높인다.
+subtitle: 알치데 데 가스페리가 총리로 임명될 것입니다. 이는 예상 밖의 일로 당내 불만을 야기할 수 있지만, 다른 장관직 협상에서 유리한 위치를 점할 수 있습니다.
 on-arrival: reformist_dissent += 5; maximalist_dissent += 5; communist_dissent += 10; ppi_relation += 10; prime_minister = "De Gasperi"; prime_minister_party = "PPI"; psi_in_government = 1; leverage += 5
 go-to: ministries
 
-This is highly unexpected, and many in the centre and even the reformists of our party are criticizing this decision.
+이는 전혀 예상치 못한 결과이며, 당내 중도파와 개혁파까지도 이 결정을 비판하고 있습니다.
 
 @liberal_demands
 go-to: l_demands_menu
 
-Having met with representatives from the [+ ldr_name +], they have put forward a series of demands we are to either complete or policies we cannot change while in power.
-While it seems do have a bit of wiggle room to negotiate, we certainly cannot outright refuse them. What do we do?
+[+ ldr_name +]대표들을 만난 결과, 그들은 우리가 집권하는 동안 이행해야 하거나 변경해서는 안 될 일련의 요구 사항을 제시했습니다.
+협상의 여지가 약간 있는 것 같지만, 그렇다고 그들의 요구를 전면적으로 거부할 수는 없습니다. 어떻게 해야 할까요?
 
-**We will have one year to complete the crackdown of violence if given to us.**
+**폭력 단속 요청을 수락하면, 1년 안에 완료해야 합니다.**
 
-Some major ones include: Land Reform, Streetfighting Crackdowns, and Nationalisations,
+주요 요구 사항은 토지 개혁, 시위 진압, 국유화입니다.
 
-While some minor ones are: Budget Surplus, Foreign Affairs and Soviet Aid.
+사소한 요구 사항으로는 예산 흑자, 외교, 소련 원조가 있습니다.
 
 @l_demands_menu
 
@@ -1478,121 +1478,121 @@ While some minor ones are: Budget Surplus, Foreign Affairs and Soviet Aid.
 - #drop_libdem_minor
 
 @liberal_reform
-title: End our violent seizure of land in the South and reject any form of land reform.
-subtitle: This will be a major setback if we are to solve the Southern Question anytime soon.
+title: 남부에서의 폭력적인 토지 점거를 중단하고 모든 형태의 토지 개혁을 거부한다.
+subtitle: 이는 남부 문제 해결에 있어 중대한 차질을 빚게 될 것입니다.
 tags: libdem_major
 view-if: liberal_reform_accepted = 0
 on-arrival: liberal_reform_accepted = 1; liberal_negotiations += 20;
 go-to: l_demands_menu
 
-This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
+이는 자유주의자들에게 있어 핵심 쟁점이며, 이를 수용하면 협상에서 상당한 진전을 이룰 수 있습니다.
 
 @liberal_crackdown
-title: Begin a crack down of violence in the streets, including the Red Guards.
-subtitle: This will force us to rely on the loyalties of government forces.
+title: 적위대를 포함한 거리 폭력을 단속하기 시작한다.
+subtitle: 이는 우리를 정부군의 충성심에 의존하게 만들 것입니다.
 tags: libdem_major
 view-if: liberal_crackdown_accepted = 0
 on-arrival: liberal_crackdown_accepted = 1; liberal_negotiations += 20; liberal_crackdown_timer = 12;
 go-to: l_demands_menu
 
-This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
+이는 자유주의자들에게 있어 핵심 쟁점이며, 이를 수용하면 협상에서 상당한 진전을 이룰 수 있습니다.
 
 @liberal_nationalisation
-title: Reject any form of nationalisation to the Italian economy.
-subtitle: This will limit our ability to reform the current economic system.
+title: 모든 형태의 이탈리아 경제 국유화를 거부한다.
+subtitle: 이것은 현재 경제 체제를 개혁하는 우리의 능력을 제한할 것입니다.
 tags: libdem_major
 view-if: liberal_nationalisation_accepted = 0
 on-arrival: liberal_nationalisation_accepted = 1; liberal_negotiations += 20;
 go-to: l_demands_menu
 
-This is a major point of conjecture for the Liberals, and secures us significant progress in negotiations.
+이는 자유주의자들에게 있어 핵심 쟁점이며, 이를 수용하면 협상에서 상당한 진전을 이룰 수 있습니다.
 
 @liberal_budget
-title: Maintain a budget surplus.
-subtitle: This will limit our ability to conduct government policy. [? if budget < 0 : We will be inheriting a deficit, so we will have to implement temporary austerity. ?]
+title: 예산 흑자를 유지한다.
+subtitle: 이는 정부 정책을 수행하는 우리의 능력을 제한할 것입니다. [? if budget < 0 : 재정 적자를 물려받게 되므로, 일시적인 긴축 재정을 시행해야 할 것입니다. ?]
 tags: libdem_minor
 view-if: liberal_budget_accepted = 0
 on-arrival: liberal_budget_accepted = 1; liberal_negotiations += 10;
 go-to: l_demands_menu
 
-This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
+이는 자유주의자들에게 사소한 쟁점이며, 이를 수용하면 협상에서 약간의 진전을 이룰 수 있습니다.
 
 @liberal_foreign
-title: Maintain our current alignment with the Entente.
-subtitle: This will hamper our actions if we are to control the Foreign Ministry.
+title: 현재의 협상국과의 동맹을 유지한다.
+subtitle: 이는 우리가 외무부를 장악할 경우 우리의 행동을 제약할 것입니다.
 tags: libdem_minor
 view-if: liberal_foreign_accepted = 0
 on-arrival: liberal_foreign_accepted = 1; liberal_negotiations += 10;
 go-to: l_demands_menu
 
-This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
+이는 자유주의자들에게 사소한 쟁점이며, 이를 수용하면 협상에서 약간의 진전을 이룰 수 있습니다.
 
 @liberal_aid
-title: Reject any form of aid to the Soviet Union.
-subtitle: This will limit our ability to improve relations with the Soviet Union.
+title: 소련에 대한 모든 형태의 원조를 거부한다.
+subtitle: 이는 소련과의 관계 개선 능력을 제한할 것입니다.
 tags: libdem_minor
 view-if: liberal_aid_accepted = 0
 on-arrival: liberal_aid_accepted = 1; liberal_negotiations += 10;
 go-to: l_demands_menu
 
-This is a minor point of conjecture for the Liberals, and secures us some progress in negotiations.
+이는 자유주의자들에게 사소한 쟁점이며, 이를 수용하면 협상에서 약간의 진전을 이룰 수 있습니다.
 
 @drop_liberal_reform
-title: Drop our promise to reject land reform.
+title: 토지 개혁 거부 약속을 철회한다.
 tags: drop_libdem_major
 view-if: liberal_reform_accepted = 1
 on-arrival: liberal_reform_accepted = 0; liberal_negotiations -= 20;
 go-to: l_demands_menu
 
 @drop_liberal_crackdown
-title: Drop our promise to crack down on street violence.
+title: 거리 폭력 단속 약속을 철회한다.
 tags: drop_libdem_major
 view-if: liberal_crackdown_accepted = 1
 on-arrival: liberal_crackdown_accepted = 0; liberal_negotiations -= 20; liberal_crackdown_timer = 0;
 go-to: l_demands_menu
 
 @drop_liberal_nationalisation
-title: Drop our promise to reject nationalisation.
+title: 국유화 거부 약속을 철회한다.
 tags: drop_libdem_major
 view-if: liberal_nationalisation_accepted = 1
 on-arrival: liberal_nationalisation_accepted = 0; liberal_negotiations -= 20;
 go-to: l_demands_menu
 
 @drop_liberal_budget
-title: Drop our promise to maintain a surplus.
+title: 흑자 유지 약속을 철회한다.
 tags: drop_libdem_minor
 view-if: liberal_budget_accepted = 1
 on-arrival: liberal_budget_accepted = 0; liberal_negotiations -= 10;
 go-to: liberal_demands
 
 @drop_liberal_foreign
-title: Drop our promise to keep alignment with the Entente.
+title: 협상국과의 동맹 유지 약속을 철회한다.
 tags: drop_libdem_minor
 view-if: liberal_foreign_accepted = 1
 on-arrival: liberal_foreign_accepted = 0; liberal_negotiations -= 10;
 go-to: l_demands_menu
 
 @drop_liberal_aid
-title: Drop our promise to reject aid to the Soviet Union.
+title: 소련 원조 거부 약속을 철회한다.
 tags: drop_libdem_minor
 view-if: liberal_aid_accepted = 1
 on-arrival: liberal_aid_accepted = 0; liberal_negotiations -= 10;
 go-to: l_demands_menu
 
 @refuse_libdem
-title: It seems we cannot come to an agreement.
-subtitle: Maybe one with the Catholics might work?
+title: 합의에 이를 수 없을 것 같습니다.
+subtitle: 가톨릭 세력과는 가능할지도 모릅니다.
 on-departure: ldr_negotiations_failed = 1
 go-to: coalition_menu 
 
 @finalise_libdem
-title: It seems we have come to an agreement.
-subtitle: This is an unstable coalition, to say the least.
+title: 합의에 도달한 것 같습니다.
+subtitle: 불안정한 연정임은 분명합니다.
 choose-if: liberal_negotiations >= ldr_negotiations_min
-unavailable-subtitle: The Liberals are not satisfied with the current arrangement.
+unavailable-subtitle: 자유주의자들이 현재 제안에 만족하지 않습니다.
 on-departure: catholic_coalition_failed = 0; 
 
-With the coalition agreed upon, it is time to choose a Prime Minister.
+연정이 합의되었으니, 이제 총리를 선택할 시간입니다.
 
 - @turati
 - @orlando
@@ -1603,14 +1603,14 @@ With the coalition agreed upon, it is time to choose a Prime Minister.
 @catholic_demands
 go-to: c_demands_menu
 
-Having met with representatives from the PPI, they have put forward a series of demands we are to either complete or policies we cannot change while in power.
-While it seems do have a bit of wiggle room to negotiate, we certainly cannot outright refuse them. What do we do?
+이탈리아 인민당 대표들을 만난 결과, 그들은 우리가 집권하는 동안 이행해야 하거나 변경해서는 안 될 일련의 요구 사항과 정책을 제시했습니다.
+협상의 여지가 약간 있는 것 같지만, 그렇다고 그들의 요구를 전면적으로 거부할 수는 없습니다. 어떻게 해야 할까요?
 
-**We will have one year to complete the Roman Question if demanded to us.**
+**로마 문제 해결을 요구받을 경우, 1년 안에 완료해야 합니다.**
 
-Some major ones include the Roman Question, Catholic Schools and Family Structure.
+주요 요구 사항은 로마 문제, 가톨릭 학교, 가족 구조입니다.
 
-While some minor ones are Charity, Nationalisations and the Prime Minister.
+사소한 요구 사항으로는 자선 활동, 국유화, 총리직이 있습니다.
 
 @c_demands_menu
 
@@ -1622,321 +1622,321 @@ While some minor ones are Charity, Nationalisations and the Prime Minister.
 - #drop_catholic_minor
 
 @catholic_papacy
-title: Resolve the Roman Question with the Papacy.
-subtitle: This will benefit our Catholic bloc as well if we can form a compromise in time.
+title: 교황청과의 로마 문제를 해결한다.
+subtitle: 기간 내에 타협안을 마련할 수 있다면, 이는 우리 가톨릭 블록에도 이익이 될 것입니다.
 tags: catholic_major
 view-if: catholic_papacy_accepted = 0 and roman_question_answered = 0
 on-arrival: catholic_papacy_accepted = 1; catholic_negotiations += 20; catholic_papacy_timer = 12;
 go-to: c_demands_menu
 
-This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
+이는 가톨릭 세력에게 있어 핵심 쟁점이며, 이를 수용하면 협상에서 상당한 진전을 이룰 수 있습니다.
 
 @catholic_education
-title: Reject any changes to Catholic schools.
-subtitle: This will limit our abilities to secularise education.
+title: 가톨릭 학교에 대한 어떠한 변경도 거부한다.
+subtitle: 이는 교육을 세속화하는 우리의 능력을 제약할 것입니다.
 tags: catholic_major
 view-if: catholic_education_accepted = 0
 on-arrival: catholic_education_accepted = 1; catholic_negotiations += 20;
 go-to: c_demands_menu
 
-This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
+이는 가톨릭 세력에게 있어 핵심 쟁점이며, 이를 수용하면 협상에서 상당한 진전을 이룰 수 있습니다.
 
 @catholic_women
-title: Reject any changes to the traditional family structure and women's rights.
-subtitle: This will limit our ability to institute reforms to laws as divorce or marriage.
+title: 전통적인 가족 구조와 여성 권리에 대한 어떠한 변경도 거부한다.
+subtitle: 이혼이나 결혼과 같은 법률 개혁을 시행할 수 없게 될 것입니다.
 tags: catholic_major
 view-if: catholic_women_accepted = 0
 on-arrival: catholic_women_accepted = 1; catholic_negotiations += 20;
 go-to: c_demands_menu
 
-This is a major point of conjecture for the Catholics, and secures us significant progress in negotiations.
+이는 가톨릭 세력에게 있어 핵심 쟁점이며, 이를 수용하면 협상에서 상당한 진전을 이룰 수 있습니다.
 
 @catholic_charity
-title: Expand welfare only through Catholic-aligned welfare programs.
-subtitle: This will solely increase the support for the People's Party if we are to fund welfare.
+title: 가톨릭 연계 복지 프로그램을 통해서만 복지를 확대한다.
+subtitle: 복지 예산을 지원하더라도 이는 인민당의 지지율만 높여줄 것입니다.
 tags: catholic_minor
 view-if: catholic_charity_accepted = 0
 on-arrival: catholic_charity_accepted = 1; catholic_negotiations += 10;
 go-to: c_demands_menu
 
-This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
+이는 가톨릭 세력에게 사소한 쟁점이며, 이를 수용하면 협상에서 약간의 진전을 이룰 수 있습니다.
 
 @catholic_nationalisation
-title: Protect Church-owned lands from nationalisation or seizure.
-subtitle: This will undermine our ability for land redistribution.
+title: 교회 소유 토지를 국유화나 몰수로부터 보호한다.
+subtitle: 이는 토지 재분배 능력을 약화시킬 것입니다.
 tags: catholic_minor
 view-if: catholic_nationalisation_accepted = 0
 on-arrival: catholic_nationalisation_accepted = 1; catholic_negotiations += 10;
 go-to: c_demands_menu
 
-This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
+이는 가톨릭 세력에게 사소한 쟁점이며, 이를 수용하면 협상에서 약간의 진전을 이룰 수 있습니다.
 
 @catholic_pm
-title: Elect De Gasperi as Prime Minister.
-subtitle: This will prevent us from taking some actions.
+title: 데 가스페리를 총리로 선출한다.
+subtitle: 이는 우리의 일부 행동을 제약할 것입니다.
 tags: catholic_minor
 view-if: catholic_pm_accepted = 0
 on-arrival: catholic_pm_accepted = 1; catholic_negotiations += 10;
 go-to: c_demands_menu
 
-This is a minor point of conjecture for the Catholics, and secures us some progress in negotiations.
+이는 가톨릭 세력에게 사소한 쟁점이며, 이를 수용하면 협상에서 약간의 진전을 이룰 수 있습니다.
 
 @drop_catholic_papacy
-title: Drop our promise to resolve the Roman Question.
+title: 로마 문제 해결 약속을 철회한다.
 tags: drop_catholic_major
 view-if: catholic_papacy_accepted = 1 and roman_question_answered = 0
 on-arrival: catholic_papacy_accepted = 0; catholic_negotiations -= 20; catholic_papacy_timer = 0;
 go-to: c_demands_menu
 
 @drop_catholic_education
-title: Drop our promise to reject changes to Catholic schools.
+title: 가톨릭 학교 변경 거부 약속을 철회한다.
 tags: drop_catholic_major
 view-if: catholic_education_accepted = 1
 on-arrival: catholic_education_accepted = 0; catholic_negotiations -= 20;
 go-to: c_demands_menu
 
 @drop_catholic_women
-title: Drop our promise to reject changes to the traditional family structure.
+title: 전통적인 가족 구조 변경 거부 약속을 철회한다.
 tags: drop_catholic_major
 view-if: catholic_women_accepted = 1
 on-arrival: catholic_women_accepted = 0; catholic_negotiations -= 20;
 go-to: c_demands_menu
 
 @drop_catholic_charity
-title: Drop our promise to expand Catholic-aligned welfare.
+title: 가톨릭 연계 복지 확대 약속을 철회한다.
 tags: drop_catholic_minor
 view-if: catholic_charity_accepted = 1
 on-arrival: catholic_charity_accepted = 0; catholic_negotiations -= 10;
 go-to: c_demands_menu
 
 @drop_catholic_nationalisation
-title: Drop our promise to protect Church-owned lands.
+title: 교회 소유 토지 보호 약속을 철회한다.
 tags: drop_catholic_minor
 view-if: catholic_nationalisation_accepted = 1
 on-arrival: catholic_nationalisation_accepted = 0; catholic_negotiations -= 10;
 go-to: c_demands_menu
 
 @drop_catholic_pm
-title: Drop our promise to elect De Gasperi as Prime Minister.
+title: 데 가스페리 총리 선출 약속을 철회한다.
 tags: drop_catholic_minor
 view-if: catholic_pm_accepted = 1
 on-arrival: catholic_pm_accepted = 0; catholic_negotiations -= 10;
 go-to: c_demands_menu
 
 @refuse_catholic
-title: It seems we cannot come to an agreement.
-subtitle: Maybe one with the Liberals might work?
+title: 합의에 이를 수 없을 것 같습니다.
+subtitle: 자유주의자들과는 가능할지도 모릅니다.
 on-departure: ppi_negotiations_failed = 1
 go-to: coalition_menu
 
 @finalise_catholic
-title: It seems we have come to an agreement.
-subtitle: This is an unstable coalition, to say the least.
+title: 합의에 도달한 것 같습니다.
+subtitle: 불안정한 연정임은 분명합니다.
 choose-if: catholic_negotiations >= ppi_negotiations_min
-unavailable-subtitle: The Catholics are not satisfied with the current arrangement.
+unavailable-subtitle: 가톨릭 세력이 현재 제안에 만족하지 않습니다.
 on-departure: socialist_catholic_coalition = 1; liberal_coalition_failed = 0;
 go-to: chooseable_pm if not catholic_pm_accepted; nonchooseable_pm if catholic_pm_accepted
 
 @chooseable_pm
 
-With the coalition agreed upon, it is time to choose a Prime Minister.
+연정이 합의되었으니, 이제 총리를 선택할 시간입니다.
 
 - @turati
 - @gasperi
 
 @nonchooseable_pm
 
-With the coalition agreed upon, we should make do on our promises.
+연정이 합의되었으니, 약속을 이행해야 합니다.
 
 - @gasperi
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area.
+우리는 여러 부처 중 하나를 선택할 수 있습니다. 특정 부처를 장악하면 해당 분야의 정책에 직접적인 영향을 미칠 수 있습니다.
 
 - #mins_1919
 - #drop_mins_1919
 
 @labour
-title: Labour and Social Security Ministry
-subtitle: Taking the Labour Ministry is expected of us.
-unavailable-subtitle: We do not have enough leverage.
+title: 노동사회보장부
+subtitle: 노동부 장악은 당연히 우리 몫으로 기대됩니다.
+unavailable-subtitle: 협상력이 충분하지 않습니다.
 tags: mins_1919
 choose-if: leverage >= 5
 view-if: labour_minister_party != psi_name
 on-arrival: leverage -= 5; labour_minister_party = psi_name; labour_minister = "Rigola"
 go-to: ministries
 
-Rinaldo Rigola of the [+ psi_name +] has been appointed Labour and Social Security minister.
+[+ psi_name +]의 리날도 리골라가 노동·사회보장부 장관으로 임명되었습니다.
 
 @interior
-title: Interior Ministry
-subtitle: The Interior Ministry controls domestic security.
-unavailable-subtitle: We do not have enough leverage.
+title: 내무부
+subtitle: 내무부는 국내 안보를 담당합니다.
+unavailable-subtitle: 협상력이 충분하지 않습니다.
 tags: mins_1919
 choose-if: leverage >= 10
 view-if: interior_minister_party != psi_name
 on-arrival: leverage -= 10; interior_minister_party = psi_name; interior_minister = "Turati" if not reformists_defect; interior_minister = "Bacci" if reformists_defect;
 go-to: ministries
 
-[? if not reformists_defect : Filippo Turati of the [+ psi_name +] has been appointed Interior Minister. ?]
+[? if not reformists_defect : [+ psi_name +]의 필리포 투라티가 내무부 장관으로 임명되었습니다. ?]
 
-[? if reformists_defect : Giovanni Bacci of the [+ psi_name +] has been appointed Interior Minister. ?]
+[? if reformists_defect : [+ psi_name +]의 조반니 마치노가 내무부 장관으로 임명되었습니다. ?]
 
 @finance
-title: Finance Ministry
-subtitle: The Finance Ministry controls the government budget and taxes.
-unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
+title: 재무부
+subtitle: 재무부는 정부 예산과 세금을 담당합니다.
+unavailable-subtitle: [? if leverage < 10 : 협상력이 충분하지 않습니다. ?][? if king_relation < 30 : 국왕은 우리 당을 경계하여 경제 관련 부처 임명을 막을 것입니다. ?]
 tags: mins_1919
 choose-if: leverage >= 10 and king_relation >= 30
 view-if: finance_minister_party != psi_name
 on-arrival: leverage -= 10; finance_minister_party = psi_name; finance_minister = "Lazzari"
 go-to: ministries
 
-Constantinto Lazzari of the [+ psi_name +] has been appointed Finance Minister.
+[+ psi_name +]의 코스탄티노 라차리가 재무부 장관으로 임명되었습니다.
 
 @treasury
-title: Treasury Ministry
-subtitle: The Treasury Ministry controls broader economic policy.
-unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
+title: 국고부
+subtitle: 국고부는 광범위한 경제 정책을 담당합니다.
+unavailable-subtitle: [? if leverage < 10 : 협상력이 충분하지 않습니다. ?][? if king_relation < 30 : 국왕은 우리 당을 경계하여 경제 관련 부처 임명을 막을 것입니다. ?]
 tags: mins_1919
 choose-if: leverage >= 10 and king_relation >= 30
 view-if: treasury_minister_party != psi_name
 on-arrival: leverage -= 10; treasury_minister_party = psi_name; treasury_minister = "Modigliani"
 go-to: ministries
 
-Emanuele Modigliani of the [+ psi_name +] has been appointed Treasury Minister.
+[+ psi_name +]의 에마누엘레 모딜리아니가 국고부 장관으로 임명되었습니다.
 
 @justice
-title: Justice Ministry
-subtitle: The Justice Ministry controls the courts.
-unavailable-subtitle: We do not have enough leverage.
+title: 법무부
+subtitle: 법무부는 법원을 관할합니다.
+unavailable-subtitle: 협상력이 충분하지 않습니다.
 tags: mins_1919
 choose-if: leverage >= 10 
 view-if: justice_minister_party != psi_name
 on-arrival: leverage -= 10; justice_minister_party = psi_name; justice_minister = "Treves"
 go-to: ministries
 
-Claudio Treves of the [+ psi_name +] has been appointed Justice Minister.
+[+ psi_name +]의 클라우디오 트레베스가 법무부 장관으로 임명되었습니다.
 
 @public_works
-title: Public Works Ministry
-subtitle: The Public Works Ministry control our national public works.
-unavailable-subtitle: [? if leverage < 10 : We do not have enough leverage. ?][? if king_relation < 30 : The King will block our nomination to any economic Ministries due to his wariness. ?]
+title: 공공 사업부
+subtitle: 공공 사업부는 국가 공공 사업을 담당합니다.
+unavailable-subtitle: [? if leverage < 10 : 협상력이 충분하지 않습니다. ?][? if king_relation < 30 : 국왕은 우리 당을 경계하여 경제 관련 부처 임명을 막을 것입니다. ?]
 tags: mins_1919
 choose-if: leverage >= 10 and king_relation >= 30
 view-if: public_works_minister_party != psi_name
 on-arrival: leverage -= 10; public_works_minister_party = psi_name; public_works_minister = "Vella"
 go-to: ministries
 
-Arturo Vella of the [+ psi_name +] has been appointed Public Works Minister.
+[+ psi_name +]의 아르투로 벨라가 공공사업부 장관으로 임명되었습니다.
 
 @public_education
-title: Public Education Ministry
-subtitle: The Public Education Ministry manages the education system.
-unavailable-subtitle: We do not have enough leverage.
+title: 공교육부
+subtitle: 공교육부는 교육 시스템을 관리합니다.
+unavailable-subtitle: 협상력이 충분하지 않습니다.
 tags: mins_1919
 choose-if: leverage >= 5
 view-if: public_education_minister_party != psi_name
 on-arrival: leverage -= 5; public_education_minister_party = psi_name; public_education_minister = "Togliatti" if not communist_split; public_education_minister = "Zibordi" if communist_split;
 go-to: ministries
 
-[? if not communist_split : Palmiro Togliatti of the [+ psi_name +] has been appointed Public Education Minister. ?]
+[? if not communist_split : [+ psi_name +]의 팔미로 톨리아티가 공교육부 장관으로 임명되었습니다. ?]
 
-[? if communist_split : Giovanni Zibordi of the [+ psi_name +] has been appointed Public Education Minister. ?]
+[? if communist_split : [+ psi_name +]의 조반니 지보르디가 공교육부 장관으로 임명되었습니다. ?]
 
 @foreign
-title: Foreign Ministry
-subtitle: The Foreign Ministry dictates our foreign policy.
-unavailable-subtitle: We do not have enough leverage.
+title: 외무부
+subtitle: 외무부는 외교 정책을 결정합니다.
+unavailable-subtitle: 협상력이 충분하지 않습니다.
 tags: mins_1919
 choose-if: leverage >= 10 
 view-if: foreign_minister_party != psi_name
 on-arrival: leverage -= 10; foreign_minister_party = psi_name; foreign_minister = "Matteotti" if not reformists_defect; foreign_minister = "Morgari" if reformists_defect;
 go-to: ministries
 
-[? if not reformists_defect : Giacomo Matteotti of the [+ psi_name +] has been appointed Foreign Minister. ?]
+[? if not reformists_defect : [+ psi_name +]의 자코모 마테오티가 외무부 장관으로 임명되었습니다. ?]
 
-[? if reformists_defect : Oddino Morgari of the [+ psi_name +] has been appointed Foreign Minister. ?]
+[? if reformists_defect : [+ psi_name +]의 오디노 모르가리가 외무부 장관으로 임명되었습니다. ?]
 
 @agriculture
-title: Agricultural Ministry
-subtitle: The Agricultural Ministry dictates our agricultural policy, - Taking this is expected of us to strengthen our traiditonal voting bloc.
-unavailable-subtitle: We do not have enough leverage.
+title: 농업부
+subtitle: 농업부는 농업 정책을 결정합니다. 이 자리를 차지하는 것은 전통적 지지 기반을 강화하기 위해 기대되는 일입니다.
+unavailable-subtitle: 협상력이 충분하지 않습니다.
 choose-if: leverage >= 5 
 view-if: agriculture_minister_party != psi_name
 on-arrival: leverage -= 5; agriculture_minister_party = psi_name; agriculture_minister = "Graziadei"
 go-to: ministries
 tags: mins_1919
 
-Antonio Graziadei of the [+ psi_name +] has been appointed Agriculture Minister.
+[+ psi_name +]의 안토니오 그라치아데이가 농업부 장관으로 임명되었습니다.
 
 @no_more
-title: No more ministries.
-subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?] 
+title: 더 이상 부처를 가져오지 않는다.
+subtitle: [? if leverage >= 10 : 아직 더 많은 부처를 확보할 협상력이 남아있습니다. ?][? if leverage < 10 : 남은 협상력이 많지 않습니다. ?] 
 on-arrival: election_seen = 1;
 tags: mins_1919
 
-This coalition arrangement is tolerable to all.
+이 연정 구성은 모두에게 용납될 수 있는 수준입니다.
 
 @drop_labour
-title: Drop the Labour & Social Security Ministry.
+title: 노동사회보장부를 포기한다.
 view-if: labour_minister_party = psi_name
 on-arrival: labour_minister_party = ds_name if ds_allies; labour_minister_party = ldr_name if centre_left_coalition; labour_minister_party = "PSRI" if left_wing_coalition; labour_minister_party = "PPI" if socialist_catholic_coalition; labour_minister_party = "DS" if not ds_allies and not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 5;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_interior
-title: Drop the Interior Ministry.
+title: 내무부를 포기한다.
 view-if: interior_minister_party = psi_name
 on-arrival: interior_minister_party = ldr_name if centre_left_coalition; interior_minister_party = "PSRI" if left_wing_coalition; interior_minister_party = "PPI" if socialist_catholic_coalition; interior_minister_party = ldr_name if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_finance
-title: Drop the Finance Ministry.
+title: 재무부를 포기한다.
 view-if: finance_minister_party = psi_name
 on-arrival: finance_minister_party = ds_name if ds_allies; finance_minister_party = ldr_name if centre_left_coalition; finance_minister_party = "PSRI" if left_wing_coalition; finance_minister_party = "PPI" if socialist_catholic_coalition; finance_minister_party = "DS" if not ds_allies and not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_treasury
-title: Drop the Treasury Ministry.
+title: 국고부를 포기한다.
 view-if: treasury_minister_party = psi_name
 on-arrival: treasury_minister_party = ds_name if ds_allies; treasury_minister_party = ldr_name if centre_left_coalition; treasury_minister_party = "PSRI" if left_wing_coalition; treasury_minister_party = "PPI" if socialist_catholic_coalition; treasury_minister_party = "DS" if not ds_allies and not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_justice
-title: Drop the Justice Ministry.
+title: 법무부를 포기한다.
 view-if: justice_minister_party = psi_name
 on-arrival: justice_minister_party = ldr_name if centre_left_coalition; justice_minister_party = "PSRI" if left_wing_coalition; justice_minister_party = "PPI" if socialist_catholic_coalition; justice_minister_party = "PPI" if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_public_works
-title: Drop the Public Works Ministry.
+title: 공공 사업부를 포기한다.
 view-if: public_works_minister_party = psi_name
 on-arrival: public_works_minister_party = ldr_name if centre_left_coalition; public_works_minister_party = "PSRI" if left_wing_coalition; public_works_minister_party = "PPI" if socialist_catholic_coalition; public_works_minister_party = "PPI" if not centre_left_coalition and not left_wing_coalition and not socialist_catholic_coalition; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_public_education
-title: Drop the Public Education Ministry.
+title: 공교육부를 포기한다.
 view-if: public_education_minister_party = psi_name
 on-arrival: public_education_minister_party = ldr_name if not left_wing_coalition or not socialist_catholic_coalition; public_education_minister_party = "PSRI" if left_wing_coalition; public_education_minister_party = "PPI" if socialist_catholic_coalition; leverage += 5;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_foreign
-title: Drop the Foreign Ministry.
+title: 외무부를 포기한다.
 view-if: foreign_minister_party = psi_name
 on-arrival: foreign_minister_party = "PSRI" if not centre_left_coalition or not socialist_catholic_coalition; foreign_minister_party = ldr_name if centre_left_coalition; foreign_minister_party = "PPI" if socialist_catholic_coalition; leverage += 10;
 tags: drop_mins_1919
 go-to: ministries
 
 @drop_agriculture
-title: Drop the Agriculture Ministry.
+title: 농업부를 포기한다.
 view-if: agriculture_minister_party = psi_name
 on-arrival: agriculture_minister_party = ds_name if ds_allies; agriculture_minister_party = ldr_name if centre_left_coalition; agriculture_minister_party = "PSRI" if left_wing_coalition; agriculture_minister_party = "PPI" if socialist_catholic_coalition; leverage += 5;
 tags: drop_mins_1919
