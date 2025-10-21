@@ -1,16 +1,16 @@
-title: [+ ds_name +] Fractures!
-subtitle: The party's internal machinations have caused its collapse.
+title: [+ ds_name +] 분당!
+subtitle: 당내 권력 투쟁이 붕괴를 야기했습니다.
 new-page: true
 view-if: ds_r > ul_r and ds_r > ldr_r and ds_party and not ds_fractured and not pcs_formed and not pll_formed
 tags: event
 
-= [+ ds_name +] Fractures!
+= [+ ds_name +] 분당!
 
-The [+ ds_name +] has always been a historically unstable party, having had members from left to right wings of the political sphere. However, these ideological differences have typically been placed in check by the party's leadership, notably Giovanni Antonio Colonna di Cesarò. However, the rise of the [+ ds_full_name +] as the dominant party in the liberal sphere has resulted in an worsening of these party internal politics, as arguments and fights between members break out regularly.
+[+ ds_name +]은 정치 스펙트럼의 좌익부터 우익까지 다양한 인사들을 품고 있어 역사적으로 불안정한 정당이었습니다. 하지만 이러한 이념적 차이는 그동안 조반니 안토니오 콜론나 디 체사로와 같은 지도부 덕분에 봉합되어 왔습니다. 그러나 [+ ds_name +]이 자유주의 진영의 주도권을 잡게 되자 당원들 간의 논쟁과 다툼이 빈번해지면서 당내 갈등은 악화일로를 걸었습니다.
 
-The party can no longer hold through compromise.
+더 이상 타협으로는 당을 유지할 수 없는 지경에 이르렀습니다.
 
-- @ds_collapse: The left, led by Giuffrida, and the right, led by Carnazza, split from the party.
+- @ds_collapse: 주프리다가 이끄는 좌파와 카르나차가 이끄는 우파가 당을 탈퇴한다.
 
 @ds_collapse
 on-arrival: {!
@@ -126,4 +126,4 @@ for (var record of Q.party_support_records) {
 
 !}
 
-Both the 'Christian Social Party', led by Gabriello Carnazza and the 'Liberal Workers' Party', led by Vincenzo Giuffrida have been founded, as the remnants of the [+ ds_name +] have been left as the party becomes defunct, a shadow of its former self.
+가브리엘로 카르나차가 이끄는 '기독교사회당'과 빈첸초 주프리다가 이끄는 '자유노동당'이 각각 창당되었습니다. 이로써 [+ ds_name +]는 과거의 영광을 잃고 유명무실한 정당으로 전락했습니다.

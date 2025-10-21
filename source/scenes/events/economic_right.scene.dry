@@ -1,12 +1,12 @@
-title: Minority Parties endorse the [+ pnf_full_name +]
+title: 군소 정당들, [+ pnf_full_name +]  지지 선언
 view-if: ((radicalisation >= 7 and not_participating = 1) or (radicalisation >= 8 and participating = 1) or largest_party == pnf_name) and pnf_r >= 5
 on-arrival: economic_right = 1;
 max-visits: 1
 tags: event
 new-page: true
 
-= Economic & Agrarian Parties endorse the [+ pnf_name +]
+= 경제당과 농업당, [+ pnf_name +] 지지
 
-It seems the radicalisation of our policies has gravely concerned the minor Conservative parties, specifically the *Economic Party* and the *Agrarian Party*, who have both endorsed the [+ pnf_name +], calling upon their base to support the party and forming a joint list with the Fascists for the next elections.
+우리의 정책이 급진화되자, 군소 보수 정당인 *경제당*과 *농업당*이 심각한 우려를 표명한 것 같습니다. 두 정당은 [+ pnf_name +] 지지를 선언하고, 자신들의 지지층에게 파시스트당을 지지할 것을 호소하며 다음 선거에서 공동 명부를 구성하기로 했습니다.
 
-Regardless, their endorsement has brought a fairly moderate amount of landowners, factory owners and farmers to the Fascist's side.
+그들의 지지 선언으로 인해 상당수의 지주, 공장주, 농민들이 파시스트의 편으로 돌아섰습니다.

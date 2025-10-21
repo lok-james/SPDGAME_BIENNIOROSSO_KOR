@@ -1,4 +1,4 @@
-title: The Death of Leonida Bissolati
+title: 레오니다 비솔라티의 서거
 view-if: year == 1920 and month >= 5
 frequency: 1000
 max-visits: 1
@@ -7,48 +7,48 @@ tags: event
 new-page: true
 go-to: pm if prime_minister = "Bissolati"; not_pm if prime_minister != "Bissolati"
 
-= The Death of Leonida Bissolati
+= 레오니다 비솔라티의 서거
 
 @pm
 
-Prime Minister Leonida Bissolati has died while in office. He will be greatly missed. But now, we must select a new Prime Minister.
+레오니다 비솔라티 총리가 재임 중 서거했습니다. 그의 빈자리가 클 것입니다. 하지만 이제 우리는 새로운 총리를 선출해야 합니다.
 
-The PSRI are heavily pushing for us to support Bonomi, Bissolati's successor, as Prime Minister. However, we can support our own candidates, or others.
+이탈리아 개혁 사회당은 비솔라티의 후임인 보노미를 총리로 지지해 달라고 우리를 강력히 압박하고 있습니다. 하지만 우리 당의 후보나 다른 인물을 지지할 수도 있습니다.
 
-- @turati_pm: Filippo Turati ([+ psi_name +]) for Prime Minister.
-- @bonomi_pm: Ivanoe Bonomi (PSRI) for Prime Minister.
-- @de_gasperi_pm: Let Alcide De Gasperi of the Catholic Party become Prime Minister.
-- @orlando_pm: Let Vittorio Emanuele Orlando of the Liberal Democrats become Prime Minister.
+- @turati_pm: 필리포 투라티 ([+ psi_name +])를 총리로 추대한다.
+- @bonomi_pm: 이바노에 보노미(이탈리아 개혁 사회당)를 총리로 추대한다.
+- @de_gasperi_pm: 이탈리아 인민당의 알치데 데 가스페리를 총리로 추대한다.
+- @orlando_pm: 이탈리아 민주자유당의 비토리오 에마누엘레 오를란도를 총리로 추대한다.
 
 @turati_pm
 view-if: not reformists_defect
 on-arrival: prime_minister = "Turati"; prime_minister_party = psi_name; psri_relation -= 5; ldr_relation -= 5 if centre_left_coalition; ppi_relation -= 5 if socialist_catholic_coalition
-subtitle: The PSRI argue for their own successor, while the [? if centre_left_coalition : liberals ?][? if socialist_catholic_coalition : Catholics ?] argue for their own man to lead.
+subtitle: 이탈리아 개혁 사회당은 자신들의 후계자를 내세우고, [? if centre_left_coalition : 자유주의자들은 ?][? if socialist_catholic_coalition : 인민당은 ?] 자신들의 인물이 정부를 이끌어야 한다고 주장하고 있습니다.
 
-Our coalition partners are reluctant to accept the new Prime Minister, but they do not make loud objections.
+연정 파트너들은 새로운 총리를 마지못해 받아들이지만, 노골적인 반대는 하지 않습니다.
 
 @bonomi_pm
 on-arrival: prime_minister = "Bonomi"; prime_minister_party = "PSRI"; psri_relation += 5; ldr_relation -= 3 if centre_left_coalition; ppi_relation -= 3 if socialist_catholic_coalition
-subtitle: The PSRI claims allowing Bonomi to lead is the right thing to do.
+subtitle: 이탈리아 개혁 사회당은 보노미가 총리직을 잇는 것이 순리라고 주장합니다.
 
-Our coalition partners on the right are reluctant to accept the new Prime Minister, but they do not make loud objections. The PSRI thanks us for our backing, and we see an improvement in relations.
+우파 성향의 연정 파트너들은 새로운 총리를 마뜩잖아하지만, 노골적으로 반대하지는 않습니다. 이탈리아 개혁 사회당은 우리의 지지에 감사를 표했고, 그들과의 관계가 개선되는 것을 확인했습니다.
 
 @de_gasperi_pm
 on-arrival: prime_minister = "De Gasperi"; prime_minister_party = "PPI"; psri_relation -= 3; ppi_relation += 5
 view-if: socialist_catholic_coalition
-subtitle: The Catholic Party claim it is their turn...
+subtitle: 이탈리아 인민당은 이번에는 자신들의 차례라고 주장합니다...
 
-The Catholic Party is grateful that we have supported De Gasperi for Prime Minister, while the PSRI are disappointed at our choice.
+이탈리아 인민당은 우리가 데 가스페리를 총리로 지지한 것에 감사를 표했지만, 이탈리아 개혁 사회당은 우리의 선택에 실망했습니다.
 
 @orlando_pm
 on-arrival: prime_minister = "Orlando"; prime_minister_party = ldr_name; psri_relation -= 3; ldr_relation += 5
 view-if: centre_left_coalition
-subtitle: The Liberals would prefer a moderate to led the country.
+subtitle: 자유주의자들은 국가를 이끌 지도자로 온건파를 선호합니다.
 
-The Liberal Democratic Party is grateful that we have supported Orlando for Prime Minister, while the PSRI are disappointed at our choice.
+이탈리아 민주자유당은 우리가 오를란도를 총리로 지지한 것에 감사를 표했지만, 이탈리아 개혁 사회당은 우리의 선택에 실망했습니다.
 
 @not_pm
 
-Leonida Bissolati, right-reformist and leader of the Italian Reformist Socialist Party has passed away. His death represents the weakening of social democracy in the party, and he is succeeded by Ivanoe Bonomi.
+우익 개혁주의자이자 이탈리아 개혁 사회당의 지도자였던 레오니다 비솔라티가 타계했습니다. 그의 죽음은 당내 사회민주주의 세력의 약화를 상징하며, 이바노에 보노미가 그의 뒤를 잇습니다.
 
-He will be missed.
+그의 빈자리가 클 것입니다.

@@ -1,4 +1,4 @@
-title: Chamber of Deputies Elections
+title: 하원 의원 선거
 new-page: true
 tags: event
 priority: -1
@@ -52,11 +52,11 @@ Q.in_unstable_coalition = 0;
 on-departure: week_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919
 
-= Elections, [+ month : month +] [+ year +]
+= [+ year +]년 [+ month : month +]월 선거
 
-The Chamber of Deputies elections are to be held now.
+하원 의원 선거가 실시됩니다.
 
-- @election_algorithm: May we do our best...
+- @election_algorithm: 최선을 다하길...
 
 @post_election_1919
 on-arrival: {!
@@ -812,17 +812,17 @@ if (window && d3) {
 !}
 go-to: coalition_menu
 
-= Election results
+= 선거 결과
 
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Parties/Groups</td><td>Vote Share</td><td>% Change</td><td>Seats Given</td><td>% Seats</td></tr>!}
-[? if acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} Anti-Fascist List: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
+{!<tr><td>정당/세력</td><td>득표율</td><td>% 변화</td><td>의석수</td><td>의석률</td></tr>!}
+[? if acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} 반파시스트 명부: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
 [? if acerbo_law_passed : {!<tr><td>!} **-[+ psi_full_name +]** {!</td></tr>!} ?]
 
-[? if anti_fas_psu and acerbo_law_passed : {!<tr><td>!} -Unitary Socialist Party  {!</td></tr>!} ?]
+[? if anti_fas_psu and acerbo_law_passed : {!<tr><td>!} -단일 사회당  {!</td></tr>!} ?]
 
 [? if anti_fas_psri and acerbo_law_passed : {!<tr><td>!} -Italian Reformist Socialist Party  {!</td></tr>!} ?]
 

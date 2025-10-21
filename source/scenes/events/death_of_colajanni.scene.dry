@@ -1,4 +1,4 @@
-title: The Death of Napoleone Colajanni
+title: 나폴레오네 콜라얀니의 서거
 view-if: year == 1922 and month >= 9
 frequency: 1000
 max-visits: 1
@@ -6,8 +6,8 @@ on-arrival: colajanni_dead = 1;
 tags: event
 new-page: true
 
-= The Death of Napoleone Colajanni
+= 나폴레오네 콜라얀니의 서거
 
-Napoleone Colajanni, socialist, republican and leader of the Italian Republican Party, has passed away. He is succeeded by Eugenio Chiesa, a committed republican who is less likely to work with us. preferring alliances and cooperation with the liberals.
+사회주의자이자 공화주의자, 그리고 이탈리아 공화당의 지도자였던 나폴레오네 콜라얀니가 타계했습니다. 그의 후임은 에우제니오 키에사로, 그는 확고한 공화주의자여서 우리와 협력하기보다는 자유주의자들과의 연대와 협력을 선호할 가능성이 높습니다.
 
-He will be missed.
+그가 그리울 것입니다.
