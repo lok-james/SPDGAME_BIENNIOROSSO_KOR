@@ -1,5 +1,5 @@
-title: The Prime Minister's Address to the Nation
-subtitle: Grandi begins his first moves.
+title: 총리의 대국민 담화
+subtitle: 그란디가 첫발을 내디딥니다.
 view-if: pnf_in_power and pnf_leader = "Grandi" and dannunzio_coup_seen and time >= dannunzio_time
 max-visits: 1
 tags: event
@@ -20,30 +20,30 @@ if (Q.rg_banned == 1) {
 }
 !}
 
-= Address to the Nation
+= 대국민 담화
 
-Prime Minister Dino Grandi has officially assumed power following the fall of Gabriele D'Annunzio, beginning his first address to the nation. Grandi has emphasised the need for unity, order and respect across the nation, vowing to quell forces causing the instability plaguing Italy today. 
+디노 그란디 총리가 가브리엘레 단눈치오의 몰락 이후 공식적으로 권력을 잡고 첫 대국민 담화를 시작했습니다. 그란디는 오늘날 이탈리아를 괴롭히는 불안을 야기하는 세력을 진압하겠다고 다짐하며, 국가 전역에 걸친 단결, 질서, 존중의 필요성을 강조했습니다.
 
-More specifically, Grandi has called out our own paramilitary, the Red Guard as the main culprits of lawlessness and disorder plaguing the streets, vowing to eliminate reckless violence unsanctioned by the state. Already, we have seen a crackdown of our forces within Italy, as Red Guard leaders and workers are arrested on trumped up charges. Fortunately, our forces are able to adequately defend themselves and minimal losses have occurred.
+구체적으로 그란디는 우리의 준군사 조직인 적위대를 거리의 무법과 무질서의 주범으로 지목하며, 국가가 승인하지 않은 무모한 폭력을 근절하겠다고 선언했습니다. 이미 이탈리아 전역에서 우리 세력에 대한 탄압이 시작되었고, 적위대 지도자와 노동자들이 날조된 혐의로 체포되고 있습니다. 다행히 우리 세력은 효과적으로 방어하여 최소한의 손실만 입었습니다.
 
-The PNF has, naturally, not taken to this well, and Grandi's own allies are seemingly pressuring the new Prime Minister to act further to crush dissent and begin his term with stability.
+국가 파시스트당은 당연히 이를 달가워하지 않았고, 그란디의 동맹들조차 불만을 잠재우고 안정적으로 임기를 시작하기 위해 더 강경한 조치를 취하라고 신임 총리를 압박하는 모양새입니다.
 
-- @grandi_blackshirts: The Squadrismo are organised into a National Militia placed under the state.
-- @grandi_violent: The Squadrismo are granted expanded powers to suppress dissent.
+- @grandi_blackshirts: 행동대를 국가 통제 하의 민병대로 조직한다.
+- @grandi_violent: 행동대에게 반체제 인사를 탄압할 수 있도록 확대된 권한을 부여한다.
 
 @grandi_blackshirts
 view-if: paranoia_stat <= 0
 on-arrival: grandi_good += 1; rg_strength *= 0.8; rg_militancy *= 0.9; blackshirts_formed = 1
 
-The *Squadrismo* are been reorganised into the MVSN, or *Milizia Volontaria per la Sicurezza Nazionale*, integrating the organisation into the Regio Esercito under [+ pnf_leader +]'s orders. 
+'행동대'는 [+ pnf_leader +]의 명령에 따라 이탈리아 육군에 편입되어 *국가 안보 의용 민병대*으로 개편되었습니다.
 
-This has given a significant boost to the strength of the paramilitary, effectively legalising violence that can be used against us, sanctioned by the King. The Red Guards are hit hard as our bases are raided.
+이는 준군사 조직의 힘을 크게 강화시켰고, 국왕의 승인 하에 우리에게 행사될 수 있는 폭력을 사실상 합법화했습니다. 우리 기지가 급습당하면서 적위대는 큰 타격을 입었습니다.
 
 @grandi_violent
 view-if: paranoia_stat > 0
 on-arrival: grandi_bad += 1; rg_strength *= 0.7; rg_militancy *= 0.8;
 
-In an effort to suppress us, Grandi has authorised more 'unconventional' powers to suppress the Red Guards. We have seen an uptick in violent attacks on workers affiliated with the Red Guards, even socialists in general in an effort to undermine left-wing support within the country.
+우리를 탄압하기 위해 그란디는 적위대를 진압하기 위한 '비정상적인' 권한을 승인했습니다. 국내 좌익 지지 기반을 약화시키려는 의도로 적위대 소속 노동자들은 물론, 일반 사회주의자들에 대한 폭력적인 공격이 증가하는 것을 목격했습니다.
 
-Murmurs of discontent within some have not gone unnoticed, however, as many are skeptical of these powers granted to a non-governmental force, especially following Grandi's speech emphasising the curtailment of reckless violence on the streets. Nevertheless, the Red Guards, and even some of our support will take a significant hit as long as the Squadrismo remains active.
+하지만 거리에서 무모한 폭력을 억제해야 한다는 그란디의 연설 이후, 비정부 조직에 부여된 이러한 권한에 대한 회의적인 시선이 많아지면서 일부의 불만 섞인 목소리가 나오기 시작했습니다. 그럼에도 불구하고, 행동대가 활동하는 한 적위대는 물론 우리의 지지 기반 일부도 상당한 타격을 입을 것입니다.
 

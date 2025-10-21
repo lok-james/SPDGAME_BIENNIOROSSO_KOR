@@ -1,5 +1,5 @@
-title: The Assassination of Dino Grandi!
-subtitle: Più Grandi sono... 
+title: 디노 그란디 암살!
+subtitle: 클수록 소리가 요란한 법… 
 view-if: pnf_in_power and pnf_leader = "Grandi" and dannunzio_king_seen and time >= dannunzio_time
 max-visits: 1
 tags: event
@@ -7,28 +7,28 @@ new-page: true
 on-arrival: grandi_dead = 1; pnf_leader = "Unorganised"
 achievement: piu_fanno_rumore_quando_cadono
 
-In a regular scheduled speech at the *Palazzo Venezia* to a crowd of people, Dino Grandi, Prime Minister of Italy, was shot thrice in the chest by an assassin within the crowd, being able to flee successfully amongst the chaos. Though no suspects have been found, the Squadrismo have immediately issued blame on the left, promising a renewed crackdown on the Red Guards and socialism forces.
+이탈리아 총리 디노 그란디가 *베네치아 궁전*에서 정기 연설 도중 군중 속 암살자에게 가슴에 세 발의 총을 맞았고, 범인은 혼란을 틈타 성공적으로 도주했습니다. 용의자는 아직 발견되지 않았지만, 행동대는 즉시 좌파를 비난하며 적위대와 사회주의 세력에 대한 새로운 탄압을 예고했습니다.
 
-However, with both the waning confidence of the Monarchy, rising pressure from other Squadrismo leaders seeking to oust him, as well as discontent workers and industrialists who have lost faith in Grandi, it is truly uncertain who planned for his assassination, or if it were merely through a man upset with Grandi's failure.
+하지만 군주제의 신뢰 하락, 그를 축출하려는 다른 행동대 지도자들의 압박 증가, 그리고 그란디에 대한 신뢰를 잃은 노동자와 산업가들의 불만까지 겹쳐, 누가 이번 암살을 계획했는지, 아니면 단순히 그의 실패에 분노한 한 사람의 소행인지는 불분명합니다.
 
-Whatever the case, the PNF has fallen back into a leadership crisis, with the fall of two separate leaders in such a short term, as what remains of the party make up various disloyal *Ras*, seeking to consolidate their own power through violent force rather than political maneuvering.
+어쨌든, 국가 파시스트당은 짧은 기간에 두 명의 지도자가 연이어 몰락하면서 다시 리더십 위기에 빠졌고, 남은 당원들은 정치적 책략보다는 폭력을 통해 자신의 권력을 공고히 하려는 비충성적인 *라즈*들로 이루어져 있습니다.
 
-- @pnf_collapse: The PNF collapses without a suitable leader.
+- @pnf_collapse: PNF는 적합한 지도자 없이 붕괴된다.
 
 @pnf_collapse
 on-arrival: workers_pnf *= 0.35; rural_pnf *= 0.35; industrialists_pnf *= 0.1; veterans_pnf *= 0.5; middle_class_pnf *= 0.4; pnf_collapse_seen = 1;
 
-Naturally, without a suitable leader, the National Fascist Party collapses. The initial party, comprised of Nationalists, Syndicalists and Futurists have seen both the Syndicalists and Futurists purged by Grandi, and now the Nationalists squabbling to keep control of whatever individual power they have left.
+당연히, 마땅한 지도자가 없는 국가 파시스트당은 붕괴합니다. 민족주의자, 생디칼리스트, 미래주의자로 구성되었던 초기 당은 그란디에 의해 생디칼리스트와 미래주의자들이 숙청되었고, 이제 남은 민족주의자들은 자신들이 가진 얼마 안 되는 권력을 유지하기 위해 다투고 있습니다.
 
-As fierce and sporadic streetfighting breaks out across Italy, both the conservatives and liberals have beckoned the King to restore order to Italy.
+이탈리아 전역에서 치열하고 산발적인 시가전이 벌어지자, 보수주의자들과 자유주의자들은 국왕에게 질서 회복을 간청했습니다.
 
-- @king_dissolve: The King dissolves the Grand Council of Fascism, rescinding confidence in the party and declares new elections.
+- @king_dissolve: 국왕은 대 파시스트 평의회를 해산하고 당에 대한 신임을 철회하며 새로운 선거를 선포한다.
 
 @king_dissolve
 on-arrival: next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
-Utilising his constitutional powers, the King has dissolved the Grand Council of Fascism, deploying both the Regio Esercito and the Carabinieri to restore order in Italy and suppress the rowdy Squadrismo. New elections have been called and scheduled, as parties begin to campaign. 
+국왕은 헌법상의 권한을 이용하여 파시즘 대평의회를 해산하고, 왕립 육군과 카라비니에리를 동원하여 이탈리아의 질서를 회복하고 소란스러운 행동대를 진압했습니다. 새로운 선거가 소집 및 예정되었고, 정당들은 선거 운동을 시작했습니다.
 
-Fascism, with three leaders across its lifespan, from Mussolini to D'Annunzio to Grandi, has fallen. Its ideology discredited amongst the people and internationally as a failure, as it seems unlikely such an ideology will come to fruition inside nor outside Italy for a long time.
+무솔리니에서 단눈치오, 그란디에 이르기까지 세 명의 지도자를 거친 파시즘은 몰락했습니다. 그 이념은 국민과 국제 사회로부터 실패자로 낙인찍혔고, 이탈리아 안팎에서 그러한 이념이 다시 실현될 가능성은 오랫동안 없어 보입니다.
 
-- @root: Fascism, from cradle to grave.
+- @root: 요람에서 무덤까지, 파시즘.

@@ -1,95 +1,95 @@
-title: Electoral List Preparations
-subtitle: The Acerbo Law looms above the upcoming election.
+title: 선거인 명부 준비
+subtitle: 아체르보 법이 다가오는 선거를 어둡게 합니다.
 new-page: true 
 tags: event
 view-if: pnf_in_power and pnf_leader = "Grandi" and (grandi_acerbo_seen) and time >= dannunzio_time and grandi_good >= grandi_bad
 max-visits: 1
 go-to: list_menu
 
-= Electoral List Preparations
+= 선거인 명부 준비
 
-Following the passing of the Acerbo Law, it seems all but certain that the PNF will secure a majority in the Chamber of Deputies and consolidate a one-party dictatorship. However, we should not give up just yet. Though at a disadvantage, we can establish a united Anti-Fascist List against the PNF.
+아체르보 법안의 통과에 따라 국가 파시스트당이 하원에서 과반을 확보하고 단일 정당 독재를 공고히 할 것이 거의 확실해 보입니다. 하지만 우리는 아직 포기해서는 안 됩니다. 불리한 상황이지만, 국가 파시스트당에 대항하는 반파시스트 연합 명단을 만들 수 있습니다.
 
 @list_menu
 
-- @contact_pcdi: Convince the PCd'I.
-- @contact_psu: Convince the PSU.
-- @contact_psri: Convince the PSRI.
-- @contact_pll: Convince the PLL.
-- @contact_pri: Convince the PRI.
-- @contact_ppi: Contact the PPI.
-- @contact_ds: Convince the PDSI
-- @contact_ldr: Convince the PLDI.
-- @root: We have done all we can.
+- @contact_pcdi: 이탈리아 공산당을 설득한다.
+- @contact_psu: 단일 사회당을 설득한다.
+- @contact_psri: 이탈리아 개혁 사회당을 설득한다.
+- @contact_pll: 자유 노동당을 설득한다.
+- @contact_pri: 이탈리아 공화당을 설득한다.
+- @contact_ppi: 이탈리아 인민당에 접촉한다.
+- @contact_ds: 이탈리아 사회 민주당을 설득한다.
+- @contact_ldr: 이탈리아 민주 자유당을 설득한다.
+- @root: 우리는 할 수 있는 모든 것을 했다.
 
 @contact_pcdi
 view-if: pcdi_formed
 choose-if: false
-unavailable-subtitle: The Communists would never form a joint list with us.
+unavailable-subtitle: 공산주의자들은 결코 우리와 공동 명부를 작성하지 않을 것입니다.
 max-visits: 1
 
 @contact_psu
 view-if: psu_formed
 choose-if: psu_relation >= 55
-unavailable-subtitle: Our relations with the PSU are too poor for this.
+unavailable-subtitle: 단일 사회당과의 관계가 너무 나빠서 불가능합니다.
 on-arrival: anti_fas_psu = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the PSU! This will aid our efforts in combatting fascism.
+단일 사회당과의 협상을 통해 공동 명부를 구성할 수 있었습니다! 이는 파시즘에 맞서는 우리의 노력에 도움이 될 것입니다.
 
 @contact_psri
 choose-if: not psri_joint_pll and not psri_joint_pri and not psri_joint_pri
-unavailable-subtitle: The PSRI is already in a joint list with another party.
+unavailable-subtitle: 이탈리아 개혁 사회당은 이미 다른 정당과 공동 명부를 작성하고 있습니다.
 on-arrival: anti_fas_psri = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the PSRI! This will aid our efforts in combatting fascism.
+이탈리아 개혁 사회당과 공동 명부를 구성할 수 있었습니다! 이는 파시즘과 싸우는 우리의 노력에 도움이 될 것입니다.
 
 @contact_pll
 view-if: pll_formed
 choose-if: pll_relation >= 55
-unavailable-subtitle: Our relations with the PLL are too poor for this.
+unavailable-subtitle: 자유 노동당과의 관계가 너무 나빠서 불가능합니다.
 on-arrival: anti_fas_pll = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the PLL! This will aid our efforts in combatting fascism.
+자유 노동당과 공동 명부를 구성할 수 있었습니다! 이는 파시즘에 맞서는 우리의 노력에 도움이 될 것입니다.
 
 @contact_pri
 view-if: pri_prominent
 choose-if: pri_relation >= 45
-unavailable-subtitle: Our relations with the PRI are too poor for this.
+unavailable-subtitle: 이탈리아 공화당과의 관계가 너무 나빠서 불가능합니다.
 on-arrival: anti_fas_pri = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the PRI! This will aid our efforts in combatting fascism.
+이탈리아 공화당과 공동 명부를 구성해 파시즘에 맞서는 우리의 노력에 힘을 보탤 수 있었습니다!
 
 @contact_ppi
 choose-if: ppi_leader == "Sturzo" and ppi_relation >= 60
-unavailable-subtitle: Our relations with the PPI are too poor for this.
+unavailable-subtitle: 인민당과의 관계가 너무 나빠서 불가능합니다.
 on-arrival: anti_fas_ppi = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the PPI! This will aid our efforts in combatting fascism.
+인민당과 공동 명부를 구성할 수 있었습니다! 이는 파시즘에 맞서는 우리의 노력에 도움이 될 것입니다.
 
 @contact_ds
 choose-if: ds_leader != "Carnazza" and ((ds_relation >= 55 and ds_leader == "Giuffrida") or (ds_relation >= 70 and ds_leader == "Colonna"))
-unavailable-subtitle: [? if ds_leader != "Carnazza" : Our relations with the [+ ds_name +] are too poor for this. ?][? if ds_leader == "Carnazza" : The [+ ds_name +] would never form a joint list with us. ?]
+unavailable-subtitle: [? if ds_leader != "Carnazza" : [+ ds_name +]와의 관계가 너무 좋지 않습니다. ?][? if ds_leader == "Carnazza" : [+ ds_name +]는 결코 우리와 공동 명단을 작성하지 않을 것입니다. ?]
 on-arrival: anti_fas_ds = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the [+ ds_name +]! This will aid our efforts in combatting fascism.
+[+ ds_name +]와 공동 명부를 구성할 수 있었습니다! 이는 파시즘과 싸우는 우리의 노력에 도움이 될 것입니다.
 
 @contact_ldr
 choose-if: ldr_leader == "Nitti" and ldr_relation >= 65
-unavailable-subtitle: The [+ ldr_name +] would never form a joint list with us.
+unavailable-subtitle: [+ ldr_name +]는 결코 우리와 공동 명단을 작성하지 않을 것입니다.
 on-arrival: anti_fas_ldr = 1
 go-to: list_menu
 max-visits: 1
 
-We are able to negotiate an form a joint list with the [+ ldr_name +]! This will aid our efforts in combatting fascism.
+[+ ldr_name +]와 공동 명부를 구성할 수 있었습니다! 이는 파시즘에 맞서는 우리의 노력에 도움이 될 것입니다.

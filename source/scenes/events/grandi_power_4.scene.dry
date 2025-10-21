@@ -1,5 +1,5 @@
-title: Political Consolidation
-subtitle: The PNF reaches out to the Conservatives.
+title: 정치적 기반 다지기
+subtitle: 국가 파시스트당이 보수파에 손을 내밀다.
 view-if: pnf_in_power and pnf_leader = "Grandi" and (grandi_foreign_seen or (us_debts_over and uk_debts_over)) and time >= dannunzio_time
 max-visits: 1
 tags: event
@@ -121,23 +121,23 @@ Q.grandi_coalition = Number(Q.pnf_seating_disp);
 !}
 go-to: coalition_menu
 
-Currently, the PNF is in power only via an Emergency Government as authorised by King Vittorio Emanuele III following the ousting of Gabriele D'Annunzio. However, the King has recently announced his intention to revoke his decree, forcing the PNF to begin forming coalitions once more.
+현재 국가 파시스트당은 가브리엘레 단눈치오를 축출한 후 비토리오 에마누엘레 3세 국왕의 승인 하에 구성된 비상 정부를 통해 정권을 유지하고 있을 뿐입니다. 그러나 최근 국왕이 비상 조치 철회 의사를 밝히면서, 국가 파시스트당은 다시 연정 구성을 시작해야 합니다.
 
-Though D'Annunzio's economic policies had alienated the conservative right, Grandi's pivot back towards the right has warmed the party back up with the Conservatives, and though some skeptical, it is likely at least some of the parties are willing to coalition with the PNF. It is unclear whether it will be enough to form a majority government once more, but being unable to do so will significantly harm Grandi's influence and control as Prime Minister.
+단눈치오의 경제 정책이 보수 우파를 소외시켰지만, 그란디의 우경화 선회는 다시 보수층의 지지를 얻게 했습니다. 일부 회의적인 시선이 있었지만, 적어도 일부 정당들은 국가 파시스트당과의 연정에 참여할 용의가 있는 것으로 보입니다. 과반 정부를 다시 구성할 수 있을지는 불분명하지만, 만약 실패한다면 그란디의 총리로서의 영향력과 통제력은 심각하게 손상될 것입니다.
 
 @coalition_menu
 
-- @grandi_ul: The [+ ul_full_name +] enters the National Coalition.
-- @grandi_ppi: The Italian People's Party enters the National Coalition.
-- @grandi_ldr: The [+ ldr_full_name +] enters the National Coalition.
-- @grandi_pcs: The Christian Social Party enters the National Coalition.
-- @grandi_ds: The [+ ds_full_name +] enters the National Coalition.
-- @grandi_no: The National Coalition is unable to secure a majority in the Chamber of Deputies.
-- @grandi_yes: The National Coalition is able to form a stable government, with Dino Grandi as Prime Minister.
+- @grandi_ul: [+ ul_full_name +]가 국민 연정에 참여한다.
+- @grandi_ppi: 이탈리아 인민당이 국민 연정에 참여한다.
+- @grandi_ldr: [+ ldr_full_name +]가 국민 연정에 참여한다.
+- @grandi_pcs: 기독교 사회당이 국민 연정에 참여한다.
+- @grandi_ds: [+ ds_full_name +]가 국민 연정에 참여한다.
+- @grandi_no: 국민 연합은 하원에서 과반 의석을 확보하지 못한다.
+- @grandi_yes: 국민 연합은 디노 그란디를 총리로 하는 안정적인 정부를 구성할 수 있다.
 
 @grandi_ul
 choose-if: ul_sway >= 0
-unavailable-subtitle: The [+ ul_full_name +] are unwilling to join the National Coalition.
+unavailable-subtitle: The [+ ul_full_name +]는 국민 연정에 참여하기를 거부한다.
 on-arrival: {!
 Q.grandi_coalition += Number(Q.ul_seating_disp);
 Q.ul_seen = 1;
@@ -146,11 +146,11 @@ Q.ul_in_government = 1;
 max-visits: 1
 go-to: coalition_menu
 
-With [+ ul_leader +] leading the [+ ul_full_name +], Grandi is able to negotiate the [+ ul_name +]'s entry into the National Coalition.
+[+ ul_leader +]가 이끄는 [+ ul_full_name +] 덕분에 그란디는 국민 연정에 [+ ul_name +]의 참여를 성공적으로 협상할 수 있습니다.
 
 @grandi_ppi
 choose-if: ppi_sway >= 0
-unavailable-subtitle: The Italian People's Party are unwilling to join the National Coalition.
+unavailable-subtitle: 이탈리아 인민당은 국민 연정에 참여하기를 거부합니다.
 
 on-arrival: {!
 Q.grandi_coalition += Number(Q.ppi_seating_disp);
@@ -160,11 +160,11 @@ Q.ppi_in_government = 1;
 max-visits: 1
 go-to: coalition_menu
 
-With reassurances to respect religious freedoms within Italy, the Italian People's Party enters the National Coalition.
+이탈리아 내 종교적 자유를 존중하겠다는 약속을 받고 이탈리아 인민당이 국민 연합에 참여합니다.
 
 @grandi_ldr
 choose-if: ldr_sway >= 0
-unavailable-subtitle: The [+ ldr_full_name +] are unwilling to join the National Coalition.
+unavailable-subtitle: [+ ldr_full_name +]는 국민 연정에 참여하기를 거부한다.
 on-arrival: {!
 Q.grandi_coalition += Number(Q.ldr_seating_disp);
 Q.ldr_seen = 1;
@@ -173,7 +173,7 @@ Q.ldr_in_government = 1;
 max-visits: 1
 go-to: coalition_menu
 
-The [+ ldr_full_name +] enters the National Coalition, influenced by the leadership of [+ ldr_leader +] with promises to restore the Italian economy.
+[+ ldr_full_name +]는 이탈리아 경제 회복에 대한 약속과 함께 [+ ldr_leader +]의 지도력에 이끌려 국민 연합에 참여합니다.
 
 @grandi_pcs
 choose-if: pcs_sway >= 0
@@ -186,11 +186,11 @@ Q.pcs_in_government = 1;
 max-visits: 1
 go-to: coalition_menu
 
-The Christian Social Party, ideologically aligned with the PNF, joins the National Coalition to support them.
+이념적으로 국가 파시스트당과 뜻을 같이하는 기독교 사회당이 그들을 지지하기 위해 국민 연합에 합류합니다.
 
 @grandi_ds
 choose-if: ds_sway >= 0
-unavailable-subtitle: The [+ ds_full_name +] are unwilling to join the National Coalition.
+unavailable-subtitle: [+ ds_full_name +]는 국민 연정에 참여하기를 거부한다.
 on-arrival: {!
 Q.grandi_coalition += Number(Q.ds_seating_disp);
 Q.ds_seen = 1;
@@ -199,7 +199,7 @@ Q.ds_in_government = 1;
 max-visits: 1
 go-to: coalition_menu
 
-The [+ ds_full_name +] enter the National Coalition. influenced by [+ ds_leader +] who is seemingly ideologically aligned or opportunistically aligned with the PNF in an effort to side with the winning party.
+[+ ds_full_name +]는 국민 연정에 참여합니다. 이념적으로 같거나 기회주의적으로 승리하는 정당에 편승하려는 [+ ds_leader +]의 영향력 때문인 것으로 보입니다.
 
 @grandi_no
 choose-if: (ul_sway < 0 or ul_seen) and (ppi_sway < 0 or ppi_seen) and (ldr_sway < 0 or ldr_seen) and (pcs_sway < 0 or pcs_seen or not pcs_formed) and (ds_sway < 0 or ds_seen)
@@ -212,7 +212,7 @@ Q.pcs_in_government = 0;
 Q.ds_in_government = 0;
 !}
 
-The Fascists are, thankfully, unable to form a majority coalition with the other parties. Unfortunately, Grandi is able to convince the King to allow the Emergency Government to continue at the very least until new elections in which a new government majority can be formed.
+다행히 파시스트들은 다른 정당들과 과반 연정을 구성하지 못했습니다. 안타깝게도 그란디는 새로운 정부 과반이 구성될 수 있는 새로운 선거가 있을 때까지라도 비상 정부를 계속 유지하도록 국왕을 설득할 수 있습니다.
 
 @grandi_yes
 choose-if: (ul_sway < 0 or ul_seen) and (ppi_sway < 0 or ppi_seen) and (ldr_sway < 0 or ldr_seen) and (pcs_sway < 0 or pcs_seen or not pcs_formed) and (ds_sway < 0 or ds_seen)
@@ -250,4 +250,4 @@ if (Q.ds_in_government == 1) {
 
 !}
 
-Shockingly, the PNF is able to reconcile with the other conservative parties, allowing it to form a stable majority coalition and the revocation of the King's emergency government, granting Grandi's government significant legitimacy in the eyes of the people.
+놀랍게도, 국가 파시스트당은 다른 보수 정당들과 화해하여 안정적인 과반 연정을 구성하고 국왕의 비상 정부를 철회했으며, 이는 그란디 정부에 국민들의 눈에 상당한 정당성을 부여했습니다.

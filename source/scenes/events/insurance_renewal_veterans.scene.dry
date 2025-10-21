@@ -1,21 +1,21 @@
-title: Veteran Insurance Funding
+title: 재향 군인 보험 지원
 new-page: true
-subtitle: It's time to fund the program once more.
+subtitle: 다시 한 번 프로그램을 지원할 시간입니다.
 view-if: insurance_payments_veterans_timer = 0 and unemployment_insurance_founded == 1 and veterans_insurance = 1
 tags: event
 
-= Unemployment Insurance Funding
+= 실업 보험 지원
 
-Funding for the Unemployment Insurance Program has once again dried up, and the program is scheduled for its yearly funding once more. What do we do?
+실업 보험 프로그램의 자금이 다시 고갈되어, 프로그램의 연례 자금 지원이 예정되었습니다. 어떻게 해야 할까요?
 
-- @fund_insurance: Continue funding the Program.
-- @end_insurance: End funding for the Program.
-- @await_government: We have to await the Finance Minister's decision.
+- @fund_insurance: 프로그램을 계속 지원한다.
+- @end_insurance: 프로그램 지원을 중단한다.
+- @await_government: 우리는 재무장관의 결정을 기다려야 한다.
 
 @fund_insurance
-subtitle: -2 Budget - Keep the Program running for another year. [? if catholic_charity_accepted = 1: Any funding of any non-Catholic welfare program would violate our coalition agreements! ?][? if (budget < 2 and liberal_budget_accepted = 1) : This will put us into a deficit! ?]
+subtitle: 예산 -2 - 프로그램을 1년 더 운영합니다. [? if catholic_charity_accepted = 1: 가톨릭이 아닌 복지 프로그램에 자금을 지원하는 것은 우리 연정 합의를 위반하는 것입니다! ?][? if (budget < 2 and liberal_budget_accepted = 1) : 이것은 우리를 적자로 만들 것입니다! ?]
 choose-if: finance_minister_party = psi_name and (not national_economic_recovery or budget >= 2)
-unavailable-subtitle: [? if finance_minister_party != psi_name : The [+ psi_name +] does not control the Finance Ministry. ?][? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
+unavailable-subtitle: [? if finance_minister_party != psi_name : [+ psi_name +]는 재무부를 장악하고 있지 않습니다. ?][? if national_economic_recovery and budget < 2 : 예산이 부족합니다. (2 필요) ?]
 on-arrival: {!
 Q.unemployment_insurance_veterans_funded += 1; 
 Q.insurance_payments_veterans_timer = 12; 
@@ -52,11 +52,11 @@ if (Q.budget < 0) {
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
-The program is set to continue for another year, our appeal to veterans increase alongside it.
+이 프로그램은 1년 더 계속될 예정이며, 재향 군인들에 대한 우리의 호소는 그와 함께 증가합니다.
 
 @end_insurance
 view-if: finance_minister_party = psi_name
-subtitle: Our veterans on this program will see this as a betrayal.
+subtitle: 이 프로그램에 참여하는 우리 재향 군인들은 이를 배신으로 여길 것입니다.
 on-arrival: {!
 
 if (Q.in_unstable_coalition == 0 && Q.psi_in_government == 1) {
@@ -89,10 +89,10 @@ if (Q.unemployment_insurance_expanded) {
 }
 !}
 
-The program's funding is gutted, as veterans now without government support flock to more radical parties, bitter regarding the government's betrayal.
+프로그램 지원이 중단되면서, 이제 정부 지원을 받지 못하게 된 재향 군인들은 정부의 배신에 분노하며 더 급진적인 정당으로 몰려갑니다.
 
 @await_government
 view-if: not psi_in_government or not finance_minister_party = psi_name
-subtitle: [? if not psi_in_government : We are no longer in government. ?][? if psi_in_government : We no longer control the Finance Ministry. ?]
+subtitle: [? if not psi_in_government : 우리는 더 이상 정부에 있지 않습니다. ?][? if psi_in_government : 우리는 더 이상 재무부를 통제하지 않습니다. ?]
 go-to: fund_insurance if ((centre_left_coalition and budget > 2 and psi_in_government) or (not catholic_charity_accepted and socialist_catholic_coalition and psi_in_government) or (left_wing_coalition and budget > -3 and psi_in_government)); end_insurance if ((centre_left_coalition and budget < 2 and psi_in_government) or (catholic_charity_accepted and socialist_catholic_coalition and psi_in_government) or (left_wing_coalition and budget <= -3 and psi_in_government)); end_insurance if not psi_in_government
 

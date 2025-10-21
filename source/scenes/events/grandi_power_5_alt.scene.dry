@@ -1,4 +1,4 @@
-title: Introduction of the Acerbo Law
+title: 아체르보 법 도입
 view-if: pnf_in_power and pnf_leader = "Grandi" and (grandi_coalition_seen) and time >= dannunzio_time and grandi_good >= grandi_bad
 max-visits: 1
 on-arrival: anti_acerbo_coalition = 0; grandi_acerbo_seen = 1; dannunzio_time = time + 3;
@@ -6,27 +6,27 @@ new-page: true
 tags: event
 go-to: acerbo_menu
 
-= Introduction of the Acerbo Law
+= 아체르보 법 도입
 
-The Acerbo Law, an amendment to electoral law, has reached the floor of the Chamber of Deputies, introduced by Giacomo Acerbo, one of the PNF's Deputies. The change in law would result in which gained at least 25 per cent of the votes – gained two-thirds of the seats in parliament. The remaining third was to be shared amongst the other parties proportionally.
+선거법 개정안 '아체르보 법'이 국가 파시스트당 소속 의원인 지아코모 아체르보에 의해 발의되어 하원 본회의에 상정되었습니다. 개정안은 최소 25%의 득표를 한 정당이 의회 의석의 3분의 2를 차지하고, 나머지 3분의 1은 다른 정당들이 비례적으로 배분받는 내용입니다.
 
-This is an obvious power grab by [+ pnf_leader +], who seeks to consolidate power, and we must oppose this bill, considering the rampant violence and voter intimidation we have seen throughout the country. We can contact the other parties, and hopefully get them to recognise this bill for what it is and vote it down.
+이는 명백히 권력을 공고히 하려는 [+ pnf_leader +]의 야욕이며, 우리는 이미 전국적으로 만연한 폭력과 유권자 협박을 고려해서라도 이 법안에 반대해야 합니다. 우리는 다른 정당들과 접촉하여 이 법안의 실체를 알리고 부결시키도록 설득해야 합니다.
 
-What should we do?
+어떻게 해야 할까요?
 
 @acerbo_menu
 
-- @psi_convince: Check in on our own deputies.
-- @psu_convince: Contact the Unitary Socialist Party.
-- @pll_convince: Contact the Liberal Workers' Party.
-- @psri_convince: Contact the Reformist Socialist Party.
-- @pri_convince: Contact the Republican Party.
-- @ds_convince: Contact the Social Democratic Party.
-- @ppi_convince: Contact the People's Party.
-- @ldr_convince: Contact the Democratic Liberal Party.
-- @ul_convince: Contact the Liberal Party.
-- @other_convince: Contact the minor parties on the left.
-- @acerbo_results: We have done all we can.
+- @psi_convince: 우리 당 소속 의원들을 확인한다.
+- @psu_convince: 단일 사회당에 접촉한다.
+- @pll_convince: 자유 노동당에 접촉한다.
+- @psri_convince: 개혁 사회당에 접촉한다.
+- @pri_convince: 공화당에 접촉한다.
+- @ds_convince: 사회 민주당에 접촉한다.
+- @ppi_convince: 인민당에 접촉한다.
+- @ldr_convince: 민주 자유당에 접촉한다.
+- @ul_convince: 자유당에 접촉한다.
+- @other_convince: 좌파 소수 정당들에 접촉한다.
+- @acerbo_results: 우리는 할 수 있는 모든 것을 했다.
 
 @psi_convince
 on-arrival: {!
@@ -40,9 +40,9 @@ if (Q.fdc_strength*Q.fdc_militancy > Q.rg_strength*Q.rg_militancy) {
 go-to: acerbo_menu
 max-visits: 1
 
-[? if psi_unreliable : Unfortunately, our forces are being harassed consistently by the far-right paramilitaries, who are able to overwhelm our forces. We will be able to rely on half of our own deputies voting against the Law, optimistically. ?]
+[? if psi_unreliable : 안타깝게도 극우 준군사 조직에 의해 우리 군은 지속적으로 괴롭힘을 당하고 있으며, 그들의 세력에 압도당하고 있습니다. 낙관적으로 보아도 우리 의원 중 절반 정도만 법안에 반대할 것으로 예상됩니다. ?]
 
-[? if not psi_unreliable : Thankfully, it seems the far-right paramilitaries are unable to intimidate many of our own deputies, and we can rely on their full support in voting against the law. ?]
+[? if not psi_unreliable : 다행히도 극우 준군사 세력이 우리 의원들에게 큰 위협이 되지는 않는 것 같으며, 법안에 반대하는 그들의 전폭적인 지지를 기대할 수 있습니다. ?]
 
 @psu_convince
 view-if: psu_formed
@@ -52,7 +52,7 @@ Q.anti_acerbo_coalition += parseFloat(Q.psu_seating_disp);
 go-to: acerbo_menu
 max-visits: 1
 
-Though we have had our ideological differences, the PSU has assured that its deputies will be voting against this law.
+이념적 차이에도 불구하고, 통합 사회당은 자신들의 의원들이 이 법안에 반대 투표할 것이라고 확언했습니다.
 
 @psri_convince
 view-if: not psri_collapse
@@ -62,7 +62,7 @@ Q.anti_acerbo_coalition += parseFloat(Q.psri_seating_disp);
 go-to: acerbo_menu
 max-visits: 1
 
-The PSRI has reassured us that its deputies will be voting against the Acerbo Law.
+이탈리아 개혁 사회당은 자신들의 의원들이 아체르보 법에 반대 투표할 것이라고 우리에게 재확인했습니다.
 
 @pri_convince
 view-if: pri_prominent
@@ -72,7 +72,7 @@ Q.anti_acerbo_coalition += parseFloat(Q.pri_seating_disp);
 go-to: acerbo_menu
 max-visits: 1
 
-The Republicans have assured us that their deputies are against the fascists and will vote against the law.
+공화당은 자신들의 의원들이 파시스트에 반대하며 법안에 반대표를 던질 것이라고 우리에게 확언했습니다.
 
 @pll_convince
 view-if: pll_formed
@@ -82,16 +82,16 @@ Q.anti_acerbo_coalition += parseFloat(Q.pll_seating_disp);
 go-to: acerbo_menu
 max-visits: 1
 
-The PLL has reassured us that its deputies will be voting against the Acerbo Law.
+자유노동당은 당 소속 의원들이 아체르보 법안에 반대표를 던질 것임을 우리에게 재확인했습니다.
 
 @ppi_convince
-subtitle: [? if not ppi_leader = "Sturzo": The PPI is disorganised following Sturzo's recent dismissal. ?]
+subtitle: [? if not ppi_leader = "Sturzo": 스투르초가 최근 해임된 후 인민당은 혼란에 빠졌습니다. ?]
 on-arrival: anti_acerbo_coalition += ppi_seating_disp if ppi_leader = "Sturzo"
 go-to: acerbo_menu
 max-visits: 1
 
-[? if ppi_leader = "Sturzo" : Our contacts with Sturzo are mildly successful, and he informs us his party will, at the very least, abstain from the vote. ?]
-[? if not ppi_leader = "Sturzo": Unfortunately, the PPI is disorganised without Sturzo's leadership, and is seems there will be many dissident members voting in favour of the law. We cannot rely on them dissenting. ?]
+[? if ppi_leader = "Sturzo" : 스투르초와의 접촉은 약간의 성과를 거두었고, 그의 당은 적어도 투표에 기권할 것이라고 알려줍니다. ?]
+[? if not ppi_leader = "Sturzo": 안타깝게도 스투르초의 리더십 없이는 인민당의 앞날이 불투명하며, 많은 의원들이 이 법안에 찬성표를 던질 것으로 보입니다. 우리는 그들이 반대할 것이라고 기대할 수 없습니다. ?]
 
 @ldr_convince
 on-arrival: {!
@@ -107,12 +107,12 @@ if (Q.ldr_leader == "Orlando" && Q.ldr_relation > 75) {
 go-to: acerbo_menu
 max-visits: 1
 
-[? if not ldr_convinced = 1: Unfortunately, and perhaps unsurprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] refuse to support us, seeing the Acerbo Law as a stability measure than the power grab that it is.  ?]
+[? if not ldr_convinced = 1: 안타깝게도, 그리고 아마 놀랍지 않게도, [+ ldr_full_name +]와 [+ ldr_leader +]는 아체르보 법을 권력 장악이 아닌 안정화 조치로 보며 우리를 지지하기를 거부합니다.  ?]
 
-[? if ldr_convinced = 1: Thankfully, and moreso surprisingly, the [+ ldr_full_name +] and [+ ldr_leader +] have agreed to support us, refusing to vote in favour of the Acerbo Law due to our good relations, combined with an at the very least ambivalent leadership. ?]
+[? if ldr_convinced = 1: 다행히도, 그리고 더욱 놀랍게도, [+ ldr_full_name +]와 [+ ldr_leader +]는 우리의 좋은 관계와 더불어 적어도 양면적인 지도력 덕분에 아체르보 법안에 찬성하지 않고 우리를 지지하기로 했습니다. ?]
 
 @ul_convince
-subtitle: [? if ul_leader = "Salandra" : We shouldn't be optimistic about their response. ?]
+subtitle: [? if ul_leader = "Salandra" : 그들의 반응에 대해 낙관적으로 생각해서는 안 됩니다. ?]
 on-arrival: {! 
 if (Q.ul_relation >= 75 && Q.ul_leader === "Giolitti") {
     Q.ul_convinced = 1;
@@ -122,12 +122,12 @@ if (Q.ul_relation >= 75 && Q.ul_leader === "Giolitti") {
 go-to: acerbo_menu
 max-visits: 1
 
-[? if not ul_convinced = 1: Unfortunately, and maybe unsurprisingly, the [+ ul_full_name +] and Giolitti refuse to support us. ?]
+[? if not ul_convinced = 1: 안타깝게도, 그리고 아마 놀랍지 않게도, [+ ul_full_name +]와 졸리티는 우리를 지지하기를 거부합니다. ?]
 
-[? if ul_convinced = 1: Thankfully, and perhaps more surprisingly, the [+ ul_full_name +] and Giolitti have agreed to support us, refusing to vote in favour of the Acerbo Law. There are, of course, dissident members who will vote in favour regardless. ?]
+[? if ul_convinced = 1: 다행히도, 그리고 더 놀랍게도, [+ ul_full_name +]와 졸리티는 아체르보 법에 찬성 투표하는 것을 거부하며 우리를 지지하기로 했습니다. 물론, 그럼에도 불구하고 찬성표를 던질 이탈 의원들이 있을 것입니다. ?]
 
 @ds_convince
-subtitle: [? if ds_leader = "Carnazza" or ds_leader = "Colonna" : We shouldn't be optimistic about their response. ?]
+subtitle: [? if ds_leader = "Carnazza" or ds_leader = "Colonna" : 그들의 반응에 대해 낙관적으로 생각해서는 안 됩니다. ?]
 on-arrival: {!
 if (Q.ds_leader == "Giuffrida") {
     Q.anti_acerbo_coalition += parseFloat(Q.ds_seating_disp);
@@ -137,9 +137,9 @@ if (Q.ds_leader == "Giuffrida") {
 go-to: acerbo_menu
 max-visits: 1
 
-[? if not ds_convinced = 1: Unfortunately, and maybe unsurprisingly, the [+ ds_name +] and [+ ds_leader +] refuse to support us. ?]
+[? if not ds_convinced = 1: 안타깝게도, 그리고 아마 놀랍지 않게도, [+ ds_name +]와 [+ ds_leader +]는 우리를 지지하기를 거부합니다. ?]
 
-[? if ldr_convinced = 1: Thankfully, the Giuffrida's left-wing leadership have agreed to support us, rallying the party against the Acerbo Law. ?]
+[? if ldr_convinced = 1: 다행히도 주프리다의 좌파 지도부가 아체르보 법에 맞서 당을 결집시켜 우리를 지지하기로 했습니다. ?]
 
 @other_convince
 view-if: not pri_prominent or psri_collapse
@@ -154,16 +154,16 @@ if (Q.psri_collapse == 1) {
 go-to: acerbo_menu
 max-visits: 1
 
-We contact the left-leaning minor parties, specifically the [? if pri_prominent : Italian Republican Party ?] [? if pri_prominent and psri_collapse : and the ?] [? if psri_collapse : Italian Reformist Socialist Party ?] who agree to vote against the law.
+우리는 좌파 성향의 소수 정당들, 특히 [? if pri_prominent : 이탈리아 공화당 ?] [? if pri_prominent and psri_collapse : 과?] [? if psri_collapse : 이탈리아 개혁 사회당 ?]에 연락하여 법안에 반대하는 표를 던질 것을 약속받았습니다.
 
 @acerbo_results
-subtitle: [? if anti_acerbo_coalition < 50 : It seems the law is destined to pass. ?][? if anti_acerbo_coalition >= 50: It seems we have been able to secure enough votes to kill the bill. ?]
+subtitle: [? if anti_acerbo_coalition < 50 : 이 법안은 통과될 운명인 것 같습니다. ?][? if anti_acerbo_coalition >= 50: 이 법안을 부결시키기에 충분한 표를 확보한 것 같습니다. ?]
 on-arrival: {!
 if (parseFloat(Q.anti_acerbo_coalition) < 50) {
     Q.acerbo_law_passed = 1;
 }
 !}
 
-[? if acerbo_law_passed : The worst has come. The Acerbo Law has been able to reach a majority in parliament, and is promptly signed off by the King. We will merely have to wait for the next elections to see the fallout. ?]
+[? if acerbo_law_passed : 최악의 상황이 닥쳤습니다. 아체르보 법안이 의회에서 과반수를 얻어 국왕의 재가를 받았습니다. 우리는 다음 선거에서 그 결과를 지켜볼 수밖에 없을 것입니다. ?]
 
-[? if not acerbo_law_passed : It's a miracle; the bill dies in the Chamber of Deputes, as we are able to form a united front against fascism. [+ prime_minister +] is outraged, but we have managed to stem fascist takeover, even slightly. ?]
+[? if not acerbo_law_passed : 기적입니다. 우리가 파시즘에 맞서 단일 전선을 형성하면서 법안이 하원에서 부결되었습니다. 총리는 분노했지만, 우리는 파시스트의 장악을 조금이나마 막아냈습니다. ?]
