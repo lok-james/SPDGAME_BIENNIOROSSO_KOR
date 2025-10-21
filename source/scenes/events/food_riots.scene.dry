@@ -1,39 +1,39 @@
-title: Food Riots!
+title: 식량 폭동!
 new-page: true
-subtitle: Riots have broken out across Italy!
+subtitle: 이탈리아 전역에서 폭동이 발발했습니다!
 view-if: year = 1919 and month = 7
 max-visits: 1
 tags: event
 
-= Food riots break out across Italy!
+= 이탈리아 전역에서 식량 폭동 발발!
 
-The end of the war resulted in a sharp increase of prices across the country as inflation skyrocketed, including food, which led to obvious discontent amongst the masses. Today, seemingly, that discontent has exploded, as riots have broken out across Italy, starting with the northern regions as the other regions followed suit shortly after.
+종전은 인플레이션 급등으로 이어져 전국적으로 물가가 급격히 상승하는 결과를 낳았습니다. 여기에는 식량 가격도 포함되어 대중 사이에서 명백한 불만을 야기했습니다. 오늘, 마침내 그 불만이 폭발한 듯합니다. 북부 지역을 시작으로 이탈리아 전역에서 폭동이 일어났고, 다른 지역들도 곧바로 뒤따랐습니다.
 
-Food and clothing stores have been raided, as shopkeepers have been forced to lower back their prices to acceptable levels. Some have been killed in the midst of the results, though none have taken responsibility.
+식료품점과 의류 매장이 약탈당했고, 상인들은 가격을 감당할 수 있는 수준으로 다시 인하하도록 강요받았습니다. 이 과정에서 사망자도 발생했지만, 누구도 책임을 지려 하지 않습니다.
 
-What should we do?
+어떻게 해야 할까요?
 
-- @expand_aid: Expand our welfare & food programs to aid the rioters.
-- @solidarity_protest: Protest in solidarity with the rioters.
-- @condemn_protest: Condemn the violent protestors.
+- @expand_aid: 폭동에 가담한 이들을 돕기 위해 복지 및 식량 지원 프로그램을 확대한다.
+- @solidarity_protest: 폭동에 가담한 이들과 연대하여 시위를 벌인다.
+- @condemn_protest: 폭력적인 시위대를 규탄한다.
 
 @expand_aid 
-subtitle: -1 Party Resource - We can take the opportunity to grow our popularity.
+subtitle: 당 자원 -1 - 우리는 이 기회를 이용해 인기를 높일 수 있습니다.
 choose-if: resources > 0
-unavailable-subtitle: Not enough party resources. (Need 1)
+unavailable-subtitle: 당 자원이 부족합니다. (1 필요)
 on-arrival: workers_psi += 3*(1-dissent); rural_psi += 4*(1-dissent); veterans_psi += 3*(1-dissent); resources -= 1; ds_left += 0.2
 
-Our actions have earned us new supporters in our tradition worker and rural bases, who appreciate our support
+우리의 행동 덕분에 우리의 지원에 감사하는 전통적인 노동자 및 농촌 지지 기반에서 새로운 지지자들을 얻게 되었습니다.
 
 @solidarity_protest
-subtitle: Our actions will only exacerbate the situation.
+subtitle: 우리의 행동은 상황을 더욱 악화시킬 뿐입니다.
 on-arrival: workers_psi += 2*(1-dissent); rural_psi += 3*(1-dissent); middle_class_psi -= 2*(1-dissent); ldr_relation -= 3; ul_relation -= 5; radicalisation += 0.2;
 
-We protest alongside the protestors and defending the common worker in the face of bourgeois greed, though our actions are seen less fondly by the governing coalition, seeing it as only exacerbating the situation further.
+우리는 부르주아의 탐욕에 맞서 평범한 노동자를 보호하며 시위대와 함께 연대 시위를 벌이지만, 연정 정부는 우리의 행동은 상황을 더 악화시킨다며 부정적으로 봅니다.
 
 @condemn_protest
-subtitle: Our voting base won't be happy about this.
+subtitle: 우리의 지지 기반이 이 결정을 좋아하지 않을 것입니다.
 on-arrival: workers_psi -= 1*(1-dissent); rural_psi -= 2*(1-dissent); middle_class_psi += 2*(1-dissent); communist_dissent += 10; maximalist_dissent += 10; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; reformist_dissent += 5; ldr_relation += 10; ul_relation += 5; ppi_relation += 10; radicalisation -= 0.5;
 
-Our actions are criticised by every faction of the party. Though the ruling coalition certainly appreciates our attempt to quell the riots, it comes at a loss of our voters, who see this as a betrayal of the worker.
+우리의 행동은 당의 모든 파벌로부터 비판받습니다. 연정 정부는 폭동을 진압하려는 우리의 노력을 고맙게 생각하겠지만, 이는 우리의 행동을 노동자에 대한 배신으로 여기는 유권자들의 지지를 잃는 대가를 치릅니다.
 

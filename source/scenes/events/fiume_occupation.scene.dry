@@ -1,31 +1,31 @@
-title: Occupation of Fiume
-subtitle: D'Annunzio has seized control of Fiume!
+title: 피우메 점령
+subtitle: 단눈치오가 피우메를 장악했습니다!
 new-page: true
 tags: event
 view-if: year = 1919 and month = 9 and week = 3
 max-visits: 1
 face-image: img/Fiume.jpg
 
-= Occupation of Fiume
+= 피우메 점령
 
-Gabriele D'Annunzio, a poet and officer of the Regio Esercito, along with his "legionaries", have seized control of the city of Fiume from Entente occupying forces, declaring the "Italian Regency of Carnaro" and demanding Italy annex the city.
+시인이자 왕립 육군 장교인 가브리엘레 단눈치오가 자신의 '군단병'들을 이끌고 협상국 점령군으로부터 피우메 시를 점령하고, '카르나로의 이탈리아인 섭정'을 선포하며 이탈리아에 이 도시의 병합을 요구했습니다.
 
-D'Annunzio, accompanied by syndicalist Alceste De Ambris, has surprisingly garnered the support of some of the left, most notably the national syndicalist *Italian Labour Union*, even as British and French union organisations have called upon Italian workers to protest this perceived act of imperialism.
+생디칼리스트 알체스테 데 암브리스와 함께한 단눈치오는 놀랍게도 좌파 일부, 특히 국가 생디칼리즘 성향의 *이탈리아 노동조합*으로부터 지지를 얻어냈습니다. 이는 영국과 프랑스의 노동조합 조직들이 명백한 제국주의 행위에 항의하라고 이탈리아 노동자들에게 촉구하는 와중에 일어난 일입니다.
 
-This has caused quite a stir internationally, and will certainly delay the resolution of our negotiations with Yugoslavia.
+이는 국제적으로 큰 파장을 일으켰고, 유고슬라비아와의 협상 타결을 지연시킬 것이 분명합니다.
 
-- @support_fiume: Support D'Annunzio and his revolutionary march!
-- @root: Do not release a comment.
-- @condemn_fiume: Condemn D'Annunzio and his nationalist march! 
+- @support_fiume: 단눈치오와 그의 혁명적 진군을 지지하라!
+- @root: 논평을 내지 않는다.
+- @condemn_fiume: 단눈치오와 그의 민족주의적 진군을 규탄하라!
 
 @condemn_fiume 
-subtitle: D'Annunzio is popular among our veterans, who see him as regaining Italy's pride.
+subtitle: 단눈치오는 이탈리아의 자긍심을 되찾는 인물로 그를 보는 퇴역 군인들 사이에서 인기가 높습니다.
 on-arrival: veterans_psi -= 3; nationalist_sentiment -= 3; communist_dissent -= 5; labour_dissent += 5; reformist_dissent -= 5; syndicalist_strength -= 7; syndicalist_dissent += 7 if syndicalist_active;
 
-We issue a letter of condemnation of D'Annunzio, even as not much of the party agrees.
+당내의 많은 반대에도 불구하고, 우리는 단눈치오를 규탄하는 서한을 발표했습니다.
 
 @support_fiume
-subtitle: De Ambris' participation certainly makes this move popular among the syndicalists.
+subtitle: 데 암브리스의 참여는 생디칼리스트들 사이에서 이 움직임의 인기를 확실히 높여줍니다.
 on-arrival: workers_psi += 3; nationalist_sentiment += 3; communist_dissent -= 5; labour_dissent -= 5; reformist_dissent += 5; syndicalist_strength += 7; syndicalist_dissent -= 7 if syndicalist_active;
 
-We issue a letter of support for D'Annunzio, even as not much of the party agrees.
+당내의 많은 반대에도 불구하고, 우리는 단눈치오를 지지하는 서한을 발표합니다.

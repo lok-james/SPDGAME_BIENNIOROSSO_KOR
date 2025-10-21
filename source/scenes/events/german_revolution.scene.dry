@@ -1,5 +1,5 @@
-title: German October
-subtitle: The dust settles on a new Germany.
+title: 독일 10월 혁명
+subtitle: 독일의 격변이 가라앉고 새로운 질서가 들어섭니다.
 view-if: year = 1923 and month = 10 and week = 3 and not pcdi_formed and violent_revolution and soviet_polish_victory = 1
 on-arrival: soviet_germany = 1; socialist_sentiment += 7; communist_strength += 10;
 max-visits: 1
@@ -7,10 +7,10 @@ tags: event
 new-page: true
 achievement: spartaco_marcia_ancora
 
-= Establishment of a Soviet Germany
+= 독일 소비에트 공화국 수립
 
-The *Kommunistische Partei Deutschlands* under the leadership of Paul Levi, have overthrown the Weimar Republic. Following strikes against then-Chancellor Wilhelm Cuno, the KPD was able to enter into coalition governments within numerous states, utilising its position to arm workers and establish paramilitary forces.
+파울 레비가 이끄는 *독일 공산당*이 바이마르 공화국을 전복시켰습니다. 당시 총리였던 빌헬름 쿠노에 대항하는 파업에 이어, 공산당은 여러 주에서 연립 정부에 참여하여 노동자를 무장시키고 준군사 조직을 창설했습니다.
 
-First Saxony, then Thuringia and finally Hamburg. In collaboration with the left-wing of the *Sozialdemokratische Partei Deutschlands*, the KPD formed combat units and following a successful workers' congress in Chemnitz, begun a general strike and mobilised its forces, achieving victory in a swift coup.
+먼저 작센, 다음은 튀링겐, 그리고 마지막으로 함부르크에서였습니다. 공산당은 *독일 사회민주당* 좌파와 협력하여 전투 부대를 조직했고, 켐니츠에서 성공적인 노동자 대회를 마친 후 총파업을 개시하고 군대를 동원하여 신속한 쿠데타로 승리를 거두었습니다.
 
-A wave of socialist sentiment was occurred within Italy following the news, as well as the reinvigoration of optimism within the party, combined with a strengthening of the left-wing of the PSI. Regardless, it seems we will be able to count on further international support should we require it.
+이 소식 이후 이탈리아 내에서는 사회주의 정서가 고조되었고, 당내에서는 낙관론이 다시 고개를 들었으며, 이탈리아 사회당 좌파 세력이 강화되었습니다. 앞으로 필요하다면 국제적인 지원을 받을 수 있을 것으로 보입니다.

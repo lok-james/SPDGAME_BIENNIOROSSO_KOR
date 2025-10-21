@@ -1,20 +1,20 @@
-title: Forming of the Fasci
-subtitle: A new organisation has formed...
+title: 파쇼의 결성
+subtitle: 새로운 조직이 결성되었습니다…
 view-if: year = 1919 and month = 3 and week = 3
 max-visits: 1
 tags: event
 new-page: true
 
-= Forming of the *Fasci Italiani di Combattimento*
+= *이탈리아 전투 파시* 결성
 
-In the hall of Piazza San Sepolcro, a man speaks. He speaks of equal suffrage, of direct referendums, of nationalism, of how the Italian people were robbed, given this "mutilated victory" in its wake, as thunderous applause shakes the hall. The Fasci Italiani di Combattimento has been formed, and has already picked up momentum within the population.
+산 세폴크로 광장의 한 회관에서 한 남자가 연설합니다. 그는 보통선거권, 직접 국민투표, 민족주의에 대해, 그리고 이탈리아 국민이 어떻게 '불구의 승리'라는 결과물을 받아들고 강탈당했는지에 대해 열변을 토하자, 홀은 천둥 같은 박수갈채로 흔들립니다. '이탈리아 전투 파시'가 결성되었고, 이미 대중 사이에서 상당한 반향을 일으키고 있습니다.
 
-The party is split on the how we should react to the formation of this new organisation. After all, talks of equal suffrage, of the abolishment of the Senate. Do these demands not reflect ours?
+이 새로운 조직의 결성에 대해 어떻게 대응해야 할지를 두고 당내 의견이 분분합니다. 어쨌든 보통선거권과 상원 폐지에 관한 이야기, 이러한 요구들이 우리의 그것과 다르지 않은 것 아닙니까?
 
-- @distrust_watch_closely: Time will only tell what this entails.
+- @distrust_watch_closely: 시간이 지나야 그들의 실체를 알 수 있을 것이다.
 
 @distrust_watch_closely
 on-arrival: veterans_pnf += 7; fdc_strength += 12; 
 
-Regardless, it seems the organisation is catching fire amongst the population, especially the veterans.
+어쨌든, 이 조직은 대중, 특히 퇴역 군인들 사이에서 들불처럼 번져나가고 있는 것 같습니다.
 

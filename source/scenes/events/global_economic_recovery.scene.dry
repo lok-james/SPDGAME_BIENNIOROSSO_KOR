@@ -1,5 +1,5 @@
-title: Global Economic Recovery
-subtitle: Finally, the world economy is leaving the worst throes of the depression.
+title: 세계 경제 회복
+subtitle: 마침내 세계 경제가 대공황의 가장 깊은 수렁에서 빠져나오고 있습니다.
 view-if: year = 1920 and month >= 6
 on-arrival: {!
 
@@ -28,6 +28,6 @@ new-page: true
 max-visits: 1
 tags: event
 
-= Global Economic Recovery
+= 세계 경제 회복
 
-Countries across Europe and the Americas seem to finally be recovering from the post-war recession, including us. Though it is still a long road to full recovery, this improvement bodes well for us. [? if unemployment >= 8: Our unemployment has fallen. ?]
+유럽과 미주 대륙 전역의 국가들이 우리를 포함하여 마침내 전후 불황에서 회복의 기미를 보이고 있습니다. 완전한 회복까지는 아직 갈 길이 멀지만, 이러한 개선은 우리에게 긍정적인 신호입니다. [? if unemployment >= 8: 실업률이 감소했습니다. ?]

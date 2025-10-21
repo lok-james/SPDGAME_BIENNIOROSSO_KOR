@@ -1,5 +1,5 @@
-title: CGL relinquishes control of the Turin Factory Councils
-subtitle: Unprecedented power is now in our hands.
+title: 총노동연맹, 토리노 공장 평의회에 대한 통제권을 포기하다
+subtitle: 유례없는 힘이 이제 우리 손에 들어왔습니다.
 new-page: true
 tags: event
 view-if: year = 1920 and month = 9
@@ -7,82 +7,82 @@ on-arrival: revolutionary_exhaustion += 0.1; revolutionary_fervour += 5*revoluti
 max-visits: 1
 face-image: img/TurinFactories.jpg
 
-= Turin Factory Councils under our control
+= 토리노 공장 평의회가 우리 통제 하에 놓이다
 
-Beginning in early 1919, factory councils across industrial plants in Italy were formed, modelled upon the Soviets in Russia. Most notable of were the Turin Factory Councils, with the situation now exacerbated by the Turin General Strike.
+1919년 초부터 러시아의 소비에트를 본뜬 공장 평의회가 이탈리아 전역의 공업 단지에 결성되었습니다. 그중 가장 주목할 만한 것은 토리노 공장 평의회로, 토리노 총파업으로 상황은 더욱 악화되었습니다.
 
-The General Confederation of Labour, an Italian labour union affiliated with us, have relinquished control of the Turin Factory Councils to us. Though historically we have not responded well to Turin's 'Syndicalism' rhetoric, we could use this opportunity to further our cause immensely. 
+우리 이탈리아 사회당과 연계된 이탈리아의 노동조합인 노동 총연맹이 토리노 공장 평의회에 대한 통제권을 우리에게 양도했습니다. 역사적으로 우리는 토리노의 '생디칼리슴'적인 수사에 호의적으로 반응하지 않았지만, 이 기회를 활용하여 우리의 대의를 엄청나게 진전시킬 수 있습니다.
 
-Without our aid, the councils seem destined to fall under bourgeois pressure or be forced to negotiate. Notable Turin members such as Gramsci have supported the movement and requested that we ensure its survival.
+우리의 도움이 없다면, 평의회는 부르주아의 압력에 무너지거나 협상을 강요당할 운명인 듯합니다. 그람시와 같은 토리노의 저명한 당원들은 이 운동을 지지하며 그 생존을 보장해 달라고 우리에게 요청했습니다.
 
-What should we do?
+우리는 어떻게 해야 할까요?
 
-- @turin_revolution: Begin the revolutionary process.
-- @turin_red_guards: Mobilise the Red Guards to defend the councils.
-- @turin_popularity: Authorise funding to prop up the Councils for their own defence.
-- @turin_negotiate: Utilise our position in government to negotiate favourable terms for both sides.
-- @turin_conflict: We cannot do anything.
+- @turin_revolution: 혁명을 시작하자.
+- @turin_red_guards: 적위대를 동원하여 평의회를 수호하자.
+- @turin_popularity: 평의회의 자체 방어를 위한 자금 지원을 승인하자.
+- @turin_negotiate: 정부 내 우리의 입지를 활용해 양측 모두에게 유리한 조건을 협상하자.
+- @turin_conflict: 우리는 아무것도 할 수 없다.
 
 @turin_revolution
-subtitle: Authorise the strikes past the Piedmont region and mobilise the Red Guards; now is the time to strike!
+subtitle: 피에몬테 지역을 넘어 파업을 확대하고 적위대를 동원합시다. 지금이 바로 공격할 때입니다!
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: participating = 0 and revolutionary_fervour >= 65
-unavailable-subtitle: [? if participating = 1 : We have already decided to achieve socialism through parliamentary means. ?][? if revolutionary_fervour < 65 : The bulk of the party refuses to begin the process of revolution. ?]
+unavailable-subtitle: [? if participating = 1 : 우리는 이미 의회주의적 수단을 통해 사회주의를 달성하기로 결정했습니다. ?][? if revolutionary_fervour < 65 : 당의 대다수가 혁명 개시를 거부하고 있습니다. ?]
 on-arrival: turin_action = 1; participating = 0; maximalist_participating = 1; not_participating = 0
 go-to: civil_war
 
 @turin_red_guards
-subtitle: -1 Paramilitary Resources - The Red Guards will defend the Councils from violent bourgeois action.
+subtitle: 준군사 자원 -1 - 적위대가 자본가들의 폭력적인 행동으로부터 평의회를 보호할 것입니다.
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: para_resources >= 1
-unavailable-subtitle: [? if para_resources < 1 : Not enough paramilitary resources. (Need 1) ?]
+unavailable-subtitle: [? if para_resources < 1 : 준군사 자원이 부족합니다. (1 필요) ?]
 on-arrival: para_resources -= 1; communist_dissent -= 7; labour_dissent -= 7; workers_psi += 2; work_councils += 1; middle_class_psi -= 3; ul_relation -= 5; ldr_relation -= 5; syndicalist_strength += labour_strength/4; pcdi_bordiga += 2;
 
-The Red Guards are able to defend the Councils, and its continued existence encourage popular sentiment within the nation, though our violent actions aren't welcomed by the other parties.
+적위대가 평의회를 성공적으로 방어했고, 평의회가 계속 유지되자 국민들의 지지가 높아졌습니다. 하지만 우리의 폭력적인 행동은 다른 정당들로부터 환영받지 못했습니다.
 
 @turin_popularity
-subtitle: -1 Party Resources - The Party will fund the Councils to defend themselves.
+subtitle: 당 자원 -1 - 당이 평의회의 자체 방어를 위한 자금을 지원할 것입니다.
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: resources > 0
 unavailable-subtitle: [? if resources < 1 : Not enough party resources. (Need 1) ?]
 on-arrival: workers_psi += 2; resources -= 1; work_councils += 1; syndicalist_strength += labour_strength/4; pcdi_gramsci += 2;
 
-The Councils are able to utilise our aid for their own defence, their faith in our party renewed.
+평의회는 우리의 지원 자금을 자체 방어에 활용할 수 있었고, 이는 우리 당에 대한 그들의 신뢰를 재확인하는 계기가 되었습니다.
 
 @turin_negotiate
-subtitle: Hopefully we can come to an agreement for both sides...
+subtitle: 양측이 모두 만족할 만한 합의에 이를 수 있기를...
 view-if: communist_dissent < 40 or reformist_dissent < 40 or maximalist_dissent < 40 or labour_dissent < 40
 choose-if: psi_in_government
 unavailable-subtitle: [? if not psi_in_government : The [+ psi_name +] are not in government. ?]
 on-arrival: pcdi_bordiga += 1;
 
-Our status both controlling the Councils and in government places us in a unique situation, and we are tasked with negotiating an end to the strike,
+우리는 평의회를 통제하고 동시에 정부에 참여하는 독특한 위치에 있으며, 파업을 종식시키기 위한 협상 임무를 맡게 되었습니다.
 
-- @negotiate_labour_oriented: Favour the Councils in our negotiations.
-- @negotiate_balance: Favour neither side in our negotiations.
-- @negotiate_business_oriented: Favour the industrialists in our negotiations.
+- @negotiate_labour_oriented: 협상에서 평의회 측의 입장을 지지한다.
+- @negotiate_balance: 협상에서 중립을 지킨다.
+- @negotiate_business_oriented: 협상에서 산업가 측의 입장을 지지한다.
 
 @negotiate_labour_oriented
-subtitle: This might anger our coalition allies and the industrialists.
+subtitle: 이 결정은 연정 파트너들과 산업가들의 분노를 살 수 있습니다.
 on-arrival: ds_relation -= 5; ppi_relation -= 5; communist_dissent -= 5; unemployment += 0.6; councils_empowered = 1; coalition_dissent += 1 if in_unstable_coalition; worker_psi += 6; ds_left += 0.2; ldr_moderates += 0.2; syndicalist_strength += labour_strength/3
 
-The *Factory Control Act* is signed, granting the Councils greater control over the factories and giving them direct input into control of the factories. The industrialists are unsurprisingly fuming, refusing to hire workers and worsening the unemployment situation somewhat [? if centre_left_coalition :, while our coalition partners with the exception of the PSRI are also disatisfied. ?][? if not centre_left_coalition :. ?]
+평의회에 공장에 대한 더 큰 통제권을 부여하고 경영에 직접 참여할 수 있도록 하는 *공장 관리법*이 통과되었습니다. 예상대로 산업가들은 격분하여 노동자 고용을 거부했고, 실업 상황은 다소 악화되었습니다 [? if centre_left_coalition :, 이탈리아 개혁 사회당을 제외한 우리의 연정 파트너들 역시 불만을 표했습니다. ?][? if not centre_left_coalition :. ?]
 
 @negotiate_balance
-subtitle: We need this to be a fair agreement.
+subtitle: 우리는 공정한 합의를 이끌어내야 합니다.
 on-arrival: communist_dissent += 7; workers_psi += 1; industrialists_psi += 1; 
 
-The *Turin Accord* is signed, negotiating Council control within the factories to include Worker welfare and improved negotiating rights, as the state acts as an arbitrator in any disputes. Both sides seem to be satisfied with the agreement, and the factories continue working once more.
+노동자 복지 및 교섭권 향상을 포함한 공장 내 평의회 운영에 관한 *토리노 협정*이 체결되었고, 모든 분쟁은 국가가 중재하기로 했습니다. 양측 모두 합의에 만족하는 듯하며, 공장은 다시 가동되기 시작했습니다.
 
 @negotiate_business_oriented
-subtitle: We can't afford to upset the industrialists in the economic crisis, can we?
+subtitle: 경제 위기 속에서 산업가들의 심기를 거스를 여유가 있을까요?
 on-arrival: dissent += 0.1; councils_decreased = 1; workers_psi -= 5; ul_relation += 5; ldr_relation += 7; coalition_dissent -= 1; unemployment -= 0.7; industrialists_psi += 6; working_hours += 1; wage_increase += 1; ds_moderates += 0.2; ldr_moderates += 0.2; syndicalist_dissent += 10 if syndicalist_active;
 
-The *Productivity Agreement* is signed, promising wage increases, shorter hours in exchange for decreased Council control over the factories. The Communists and Trade Unionists give us hell for our decision to bend over backwards to appease the industrialists [? if centre_left_coalition :, while our coalition members seem to be satisfied. ?][? if not centre_left_coalition :. ?]
+공장 내 평의회의 통제력 약화를 대가로 임금 인상과 노동 시간 단축을 약속하는 *생산성 협약*이 체결되었습니다. 산업가들의 비위를 맞추기 위해 굴복한 우리의 결정에 대해 공산주의자들과 노동조합주의자들은 우리를 맹렬히 비난합니다 [? if centre_left_coalition : , 반면 우리의 연정 파트너들은 만족하는 듯합니다. ?][? if not centre_left_coalition :. ?]
 
 @turin_conflict
-subtitle: Party disunity and lack of resources paralyses the opportunity to take decisive action. 
+subtitle: 당의 분열과 자원 부족으로 인해 결단력 있는 조치를 취할 기회를 놓쳤습니다.
 view-if: not psi_in_government and ((communist_dissent > 40 and reformist_dissent > 40 and maximalist_dissent > 40 and labour_dissent > 40) or (para_resources < 1 and resources < 1))
 on-arrival: labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; worker_psi *= 0.8; rural_psi *= 0.9; communist_dissent += 7; maximalist_dissent += 7; reformist_dissent += 7
 
-Either by choice or by force, we are unable to utilise the Turin Factory Councils, as the workers surrender to bourgeois forces and return to work, having lost faith in us.
+우리의 결정 때문이든, 어쩔 수 없는 상황 때문이든 간에, 결국 우리는 토리노 공장 평의회를 활용할 수 없었고, 노동자들은 우리에 대한 신뢰를 잃고 부르주아 세력에 굴복하여 일터로 복귀했습니다.
