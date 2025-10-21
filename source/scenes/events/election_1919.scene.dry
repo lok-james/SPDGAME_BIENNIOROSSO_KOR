@@ -56,7 +56,7 @@ set-jump: post_election_1919
 
 하원 의원 선거가 실시됩니다.
 
-- @election_algorithm: 최선을 다하길...
+- @election_algorithm: 최선을 다했길...
 
 @post_election_1919
 on-arrival: {!
@@ -836,47 +836,47 @@ go-to: coalition_menu
 
 [? if anti_fas_ldr and acerbo_law_passed : {!<tr><td>!} -[+ ldr_full_name +]  {!</td></tr>!} ?]
 
-[? if not acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} 사회주의 명부: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
+[? if not acerbo_law_passed : {!<tr><td><div class="box" style='background-color:#ED2855; outline: 2px; outline-style: solid;'> </div>!} 사회당 선거 연합: {!</td><td>!} **[+ psi_r_disp +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!} ?]
 
 [? if not acerbo_law_passed : {!<tr><td>!} **-[+ psi_full_name +]** {!</td></tr>!} ?]
 
-[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} 공산주의 명부: {!</td><td>!} [+ pcdi_r_disp +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
+[? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div>!} 공산당 선거 연합: {!</td><td>!} [+ pcdi_r_disp +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
 [? if pcdi_formed : {!<tr><td>!} -이탈리아 공산당 {!</td></tr>!} ?]
 
-[? if psu_formed and not anti_fas_psu : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} 단일 사회주의 명부: {!</td><td>!} [+ psu_r_disp +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
+[? if psu_formed and not anti_fas_psu : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div>!} 단일 사회당 선거 연합: {!</td><td>!} [+ psu_r_disp +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
 [? if psu_formed and not anti_fas_psu : {!<tr><td>!} -단일 사회당 {!</td></tr>!} ?]
 
 [? if psu_formed and psri_joint_psu and not anti_fas_psu : {!<tr><td>!} -이탈리아 개혁 사회당 {!</td></tr>!} ?]
 
-[? if pll_formed and not anti_fas_pll : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div>!} 자유-사회주의 명부: {!</td><td>!} [+ pll_r_disp +]% {!</td><td>!} [+ str_change_pll +]% {!</td><td>!} [+ pll_seating +] {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
+[? if pll_formed and not anti_fas_pll : {!<tr><td><div class="box" style='background-color:#FFD1D9'> </div>!} 자유-사회당 선거 연합: {!</td><td>!} [+ pll_r_disp +]% {!</td><td>!} [+ str_change_pll +]% {!</td><td>!} [+ pll_seating +] {!</td><td>!} [+ pll_seating_disp +]% {!</td></tr>!} ?]
 
 [? if pll_formed and not anti_fas_pll : {!<tr><td>!} -자유노동당 {!</td></tr>!} ?]
 
-[? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} 개혁 사회주의 명부: {!</td><td>!} [+ psri_r_disp +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
+[? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div>!} 개혁 사회당 선거 연합: {!</td><td>!} [+ psri_r_disp +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
 [? if (psri_stable or (psri_solo and psri_r >= 5)) and not anti_fas_psri : {!<tr><td>!} -이탈리아 개혁 사회당 {!</td></tr>!} ?]
 
-[? if pri_prominent and not anti_fas_pri : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} 공화주의 명부: {!</td><td>!} [+ pri_r_disp +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
+[? if pri_prominent and not anti_fas_pri : {!<tr><td><div class="box" style='background-color:#3CB371'> </div>!} 공화당 선거 연합: {!</td><td>!} [+ pri_r_disp +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
 [? if pri_prominent and not anti_fas_pri : {!<tr><td>!} -이탈리아 공화당 {!</td></tr>!} ?]
 
 [? if pri_prominent and psri_joint_pri and not anti_fas_pri : {!<tr><td>!} -이탈리아 개혁 사회당 {!</td></tr>!} ?]
 
-[? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} 민주주의 명부: {!</td><td>!} [+ ds_r_disp +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
+[? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td><div class="box" style='background-color:#1E99C5'> </div>!} 민주당 선거 연합: {!</td><td>!} [+ ds_r_disp +]% {!</td><td>!} [+ str_change_ds +]% {!</td><td>!} [+ ds_seating +] {!</td><td>!} [+ ds_seating_disp +]% {!</td></tr>!} ?]
 
 [? if (ds_list and not view_full) or ((ds_party and ds_leader = "Colonna") or (ds_leader = "Carnazza" and ds_party and (pnf_r < 5)) or (ds_party and ds_leader = "Giuffrida" and not ds_joint)) and not anti_fas_ds or pnf_in_government : {!<tr><td>!} -이탈리아 사회민주당 {!</td></tr>!} ?]
 
-[? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} 가톨릭 명부: {!</td><td>!} [+ ppi_r_disp +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td><div class="box" style='background-color:#87CEFA'> </div>!} 가톨릭 선거 연합: {!</td><td>!} [+ ppi_r_disp +]% {!</td><td>!} [+ str_change_ppi +]% {!</td><td>!} [+ ppi_seating +] {!</td><td>!} [+ ppi_seating_disp +]% {!</td></tr>!} ?]
 
 [? if not pnf_in_power and (not anti_fas_ppi or not acerbo_law_passed) : {!<tr><td>!} -이탈리아 인민당 {!</td></tr>!} ?]
 
-[? if (ldr_party or ldr_list) and not pnf_in_power and not anti_fas_ldr : {!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} 자유주의자, 민주주의자, 급진파: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
+[? if (ldr_party or ldr_list) and not pnf_in_power and not anti_fas_ldr : {!<tr><td><div class="box" style='background-color:#FFD700'> </div>!} 자유주의자, 민주주의자, 급진주의자 연합: {!</td><td>!} [+ ldr_r +]% {!</td><td>!} [+ str_change_ldr +]% {!</td><td>!} [+ ldr_seating +] {!</td><td>!} [+ ldr_seating_disp +]% {!</td></tr>!} ?]
 
 [? if ldr_party or (ldr_list and not view_full) and not pnf_in_power and not anti_fas_ldr : {!<tr><td>!} -이탈리아 민주자유당 {!</td></tr>!} ?]
 
-[? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} 자유주의 명부: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
+[? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td><div class="box" style='background-color:#0047AB'> </div>!} 자유당 선거 연합: {!</td><td>!} [+ ul_r +]% {!</td><td>!} [+ str_change_ul +]% {!</td><td>!} [+ ul_seating +] {!</td><td>!} [+ ul_seating_disp +]% {!</td></tr>!} ?]
 
 [? if not ul_in_bn and not pnf_in_power and not anti_fas_ul : {!<tr><td>!} -이탈리아 자유당 {!</td></tr>!} ?]
 
@@ -888,11 +888,11 @@ go-to: coalition_menu
 
 [? if pnf_in_bn : {!<tr><td>!} -국가 파시스트당 {!</td></tr>!} ?]
 
-[? if pcs_formed and pnf_r < 5 : {!<tr><td><div class="box" style='background-color:#656573'> </div>!} 국가 보수주의 명부: {!</td><td>!} [+ pcs_r_disp +]% {!</td><td>!} [+ str_change_pcs +]% {!</td><td>!} [+ pcs_seating +] {!</td><td>!} [+ pcs_seating_disp +]% {!</td></tr>!} ?]
+[? if pcs_formed and pnf_r < 5 : {!<tr><td><div class="box" style='background-color:#656573'> </div>!} 국가 보수 선거 연합: {!</td><td>!} [+ pcs_r_disp +]% {!</td><td>!} [+ str_change_pcs +]% {!</td><td>!} [+ pcs_seating +] {!</td><td>!} [+ pcs_seating_disp +]% {!</td></tr>!} ?]
 
 [? if pcs_formed and pnf_r < 5 : {!<tr><td>!} -기독교사회당 {!</td></tr>!} ?]
 
-[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : 파시스트 명부 ?][? if pnf_in_power : 민족주의 명부 ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
+[? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td><div class="box" style='background-color:#000000'> </div>!} [? if not pnf_in_power : 파시스트 선거 연합 ?][? if pnf_in_power : 민족주의 선거 연합 ?]: {!</td><td>!} [+ pnf_r_disp +]% {!</td><td>!} [+ str_change_pnf +]% {!</td><td>!} [+ pnf_seating +] {!</td><td>!} [+ pnf_seating_disp +]% {!</td></tr>!} ?]
 
 [? if not pnf_in_bn and (pnf_r >= 5) and not pnf_banned: {!<tr><td>!} -[+ pnf_full_name +] {!</td></tr>!} ?]
 
@@ -921,7 +921,7 @@ go-to: coalition_menu
 [? if abstentionist_psi : {!<tr><td><div class="box" style='background-color:#FFFFFF'> </div>!} 공석: {!</td><td>!} N/A {!</td><td>!} N/A {!</td><td>!} [+ vacant_seating +] {!</td><td>!} [+ vacant_seating_disp +]% {!</td></tr>!} ?]
 {!</table>!}
 
-**유력 연정:**
+**가능한 연정:**
 
 좌파 연정 ([+ psi_name +] + PSRI [? if pri_allies :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]): [+ left_wing_coalition_r +]%
 
