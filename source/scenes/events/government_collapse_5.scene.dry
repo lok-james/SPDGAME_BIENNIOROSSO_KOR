@@ -1,5 +1,5 @@
-title: Bonomi I Government Collapses!
-subtitle: The current coalition has fallen...
+title: 보노미 1차 내각 붕괴!
+subtitle: 현 연립 정부가 무너졌습니다…
 view-if: year = 1922 and month = 2 and (not psi_in_government or not_participating = 1) and prime_minister = "Bonomi"
 new-page: true
 max-visits: 1
@@ -27,6 +27,6 @@ Q.ul_giolitti += 1;
 !}
 tags: event
 
-= Bonomi I Government Collapses!
+= 보노미 1차 내각 붕괴!
 
-The current governing coalition has collapsed, failing to secure a majority in a Vote-of-No-Confidence. The Liberals negotiate and appoint Giolitti, arguing that he is the only one to bring order to Italy, like he had done before. [? if ppi_in_government and ppi_leader = "Sturzo" : However, Sturzo, alongside various dissenting members are able to force Giolitti to refuse the offer, instead appointing Luigi Facta instead. ?]
+현 연립 정부는 불신임 투표에서 과반 의석 확보에 실패하며 무너졌습니다. 조리티가 예전에 그랬던 것처럼 이탈리아에 질서를 가져올 유일한 인물이라고 주장하는 자유당은 그를 총리로 임명하기 위해 협상에 나섰습니다. [? if ppi_in_government and ppi_leader = "Sturzo" : 하지만 스투르초와 여러 반대파 의원들은 조리티가 총리직 제안을 거절하도록 압력을 행사하고, 대신 루이지 팩타를 임명했습니다. ?]

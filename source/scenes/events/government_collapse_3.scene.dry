@@ -1,5 +1,5 @@
-title: Nitti II Government Collapses!
-subtitle: The current coalition has fallen...
+title: 니티 2차 내각 붕괴!
+subtitle: 현 연립 정부가 무너졌습니다…
 view-if: year = 1920 and month = 6 and (not psi_in_government or not_participating = 1) and week = 1 and prime_minister = "Nitti" and bread_price_seen = 1
 new-page: true
 priority: -1
@@ -29,6 +29,6 @@ Q.ul_giolitti += 2;
 !}
 tags: event
 
-= Nitti II Government Collapses!
+= 니티 2차 내각 붕괴!
 
-The current governing coalition has collapsed once more in less than a month, primarily due to Nitti's inability to control the dissent of the coalition. He is succeeded by Giovanni Giolitti of the Liberal Union, and is joined by the PSRI once more, alongside the DS.
+한 달도 채 되지 않아 현 연립 정부가 또다시 붕괴했습니다. 주된 원인은 니티 총리가 연정 내 갈등을 통제하지 못했기 때문입니다. 후임으로 자유당의 조반니 졸리티가 총리로 취임하고, 이탈리아 개혁 사회당과 이탈리아 사회 민주당이 다시 연정에 합류합니다.

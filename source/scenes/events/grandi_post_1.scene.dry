@@ -1,4 +1,4 @@
-title: Repeal of the Acerbo Law
+title: 아체르보 법 폐지
 view-if: acerbo_law_passed and psi_in_government and pnf_waiting = 0 and pnf_in_power = 0 and pnf_leader = "Grandi" and not grandi_dead
 priority: -1
 max-visits: 1
@@ -6,20 +6,20 @@ new-page: true
 tags: event
 achievement: follia_di_acerbo
 
-= Repeal of the Acerbo Law
+= 아체르보 법 폐지
 
-The Acerbo Law has backfired immensely, as the PNF was unable to receive the 25% to secure a majority. Now that we are in power, however, we can remove this corrupt law and restore fair democracy to Italy once more.
+국가 파시스트당이 과반 의석 확보에 필요한 25%의 지지를 얻지 못하면서 아체르보 법은 엄청난 역효과를 낳았습니다. 하지만 이제 우리가 정권을 잡았으니, 이 부패한 법을 폐지하고 이탈리아에 다시 한번 공정한 민주주의를 복원할 수 있습니다.
 
-- @remove_acerbo: Repeal the Law.
-- @keep_acerbo: Actually...
+- @remove_acerbo: 법을 폐지한다.
+- @keep_acerbo: 글쎄...
 
 @remove_acerbo
-subtitle: Such an unconstitutional law needs to go.
+subtitle: 이렇게 위헌적인 법은 사라져야 합니다.
 on-arrival: acerbo_law_passed = 0; next_election_time = time + 6 if next_election_time > time+6; next_election_month = month + 3 if next_election_time >= time+6; next_election_year = year if next_election_time >= time+6; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
-The Acerbo Law is easily repealed, reinstating the previous system of the D'Hondt Method. Snap elections are called in three months for fairer representation.
+아체르보 법은 손쉽게 폐지되었고, 이전의 동트 방식 선거 제도가 복원되었습니다. 더 공정한 대표성 확보를 위해 3개월 뒤 조기 총선이 실시될 예정입니다.
 
-- @root: Good riddance.
+- @root: 후련하군.
 
 @keep_acerbo
 view-if: psi_seating_disp >= 50
@@ -27,23 +27,23 @@ go-to: king_low if king_relation < 54; king_letter if king_relation >= 54
 
 @king_letter
 
-We decide to keep the Acerbo Law to maintain our grip within the Chamber of Deputies.
+우리는 하원에서 우리의 지배력을 유지하기 위해 아체르보 법을 유지하기로 결정합니다.
 
-Recently, however, a letter has been sent from Ivanoe Bonomi to [? if not reformists_defect : Filippo Turati’s ?][? if reformists_defect : Giovanni Bacci's ?] office, concerning the possibility of a sustained Acerbo Law. Though the author has yet to be determined, it can be safely assumed that Vittorio Emanuele III has sent it to us as a warning. 
+하지만 최근 이바노에 보노미로부터 [? if not reformists_defect : 필리포 투라티의 ?][? if reformists_defect : 조반니 바치의 ?] 사무실로 아체르보 법 유지 가능성에 관한 편지가 전달되었습니다. 작성자는 아직 밝혀지지 않았지만, 비토리오 에마누엘레 3세가 경고의 의미로 보낸 것으로 추정됩니다.
 
-In it, is a plea to repeal the law, as its preservation could provide the other parties with the opportunity for mass agitation against the [+ psi_name +], and give the party the status of Italy’s pariah within its political sphere. Vittorio might be considered a political ally of ours, but even he cannot defend us should we consider the possibility of taking power in such an unlawful and deceitful manner. After all, we were the ones who pushed the idea of the Anti-Fascist Bloc in the first place, and we could end up being considered no different to the Blackshirts. 
+편지에는 법 폐지를 간청하는 내용이 담겨 있습니다. 법을 유지할 경우 다른 정당들이 [+ psi_name +]에 대항해 대규모 선동을 벌일 기회를 제공할 수 있으며, 우리 당을 이탈리아 정치권에서 배척당하는 신세로 만들 수 있다는 것입니다. 비토리오는 우리의 정치적 동맹으로 여겨질 수 있지만, 우리가 이처럼 불법적이고 기만적인 방식으로 권력을 잡으려 한다면 그조차도 우리를 변호할 수 없을 것입니다. 결국, 반파시스트 블록이라는 아이디어를 처음 내세운 것은 우리였고, 자칫하면 검은 셔츠단과 다를 바 없는 존재로 낙인찍힐 수 있습니다.
 
-What do we do?
+어떻게 해야 할까요?
 
-- @king_low: Ignore the warnings, the law must remain.
-- @remove_acerbo: So be it. Repeal the law.
+- @king_low: 경고를 무시한다. 법은 반드시 유지해야 한다.
+- @remove_acerbo: 알겠다. 법을 폐지한다.
 
 @king_low
 on-arrival: royal_coup = 1
-subtitle: Is the fallout from keeping the law really worth it?
+subtitle: 법을 유지함으로써 발생하는 후폭풍이 정말 그만한 가치가 있을까요?
 
-This has caused an outrage within our own party's right flank, as well with our allies in the Chamber of Deputies, calling us no better than the fascists that attempted to take over the nation.
+이 결정은 우리 당 우파와 의회 내 동맹 세력의 엄청난 반발을 불러일으켰고, 그들은 우리를 국가를 찬탈하려 했던 파시스트들과 다를 바 없다고 비난했습니다.
 
-Already, the King has mobilised the Regio Esercito and begun raiding our offices, bases and arresting our deputies. We have to strike back.
+국왕은 이미 왕립 육군을 동원하여 우리의 사무실과 기지를 급습하고 당 소속 의원들을 체포하기 시작했습니다. 우리는 반격해야 합니다.
 
-- @civil_war: Wait, wha-
+- @civil_war: 잠깐, 이게 대체…

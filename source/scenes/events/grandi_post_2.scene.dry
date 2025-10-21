@@ -1,4 +1,4 @@
-title: King [+ king +] rescinds support for the PNF
+title: 국왕 [+ king +], 국가 파시스트당에 대한 지지 철회
 audio: clear shuffle music/post/FischiaIlVento.mp3 music/main/Innodeilavoratori.mp3 music/main/FraIl19FraLAnno20.mp3 music/main/BandieraRossa.mp3 music/main/Canzonieredelventorosso.mp3 music/main/WorkersHymn.mp3 music/main/LeOttoOre.mp3 music/main/CantoDeiReclusi.mp3 music/main/MarciaSocialistaMondiale.mp3 music/main/QuattroSignoriAParigiVanno.mp3
 set-bg: img/background.png
 view-if: pnf_in_power = 1 and pnf_in_government = 0 and pnf_leader = "Grandi" and not grandi_dead
@@ -32,12 +32,12 @@ tags: event
 new-page: true
 achievement: ritorno_trionfale
 
-= King rescinds support for the PNF 
+= 국왕, 국가 파시스트당 지지 철회
 
-Following the recent elections & the fascists' failure to consolidate power, King [+ king +] has rescinded his support for the PNF, denouncing [+ pnf_leader +] and the party for its ineffectiveness and failures to stabilise the country.
+최근 선거에서 파시스트들이 권력을 공고히 하지 못하자, [+ king +] 국왕은 국가를 안정시키는 데 실패한 그들의 무능을 비난하며 국가 파시스트당에 대한 지지를 철회했습니다.
 
-Already, we have seen a significant drop in support for the fascists, as voters return to less radical parties, alongside a drop in far-right paramilitary strength.
+유권자들이 덜 급진적인 정당으로 돌아서면서 이미 파시스트에 대한 지지는 현저히 감소했으며, 극우 준군사 조직의 세력도 약화되었습니다.
 
-Fascism is dead, at least in Italy.
+파시즘은, 적어도 이탈리아에서는, 끝났습니다.
 
-- @root: Thus falls the failed experiment.
+- @root: 실패한 실험은 그렇게 막을 내린다.

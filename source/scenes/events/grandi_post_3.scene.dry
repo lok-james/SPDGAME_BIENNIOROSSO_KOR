@@ -1,4 +1,4 @@
-title: The Economic Elites pull the PNF’s rug...
+title:  경제 엘리트가 국가 파시스트당의 뒤통수를 치다…
 view-if: pnf_weakened = 1 and pnf_leader = "Grandi" and not grandi_dead
 on-arrival: {!
 
@@ -16,8 +16,8 @@ max-visits: 1
 tags: event
 new-page: true
 
-= The Economic Elites pull the PNF’s rug
+= 경제 엘리트, 국가 파시스트당에 등을 돌리다
 
-Once a mighty threat to Italian democracy, the Partito Nazionale Fascista has crumbled with the retraction of King Vittorio Emanuele III’s support, following a grand anti-fascist coalition of left-wing and even moderates opposing the Fascists in Italy’s most recent elections. [+ pnf_leader +]’s efforts to court the right-wing vote through mutual anti-socialist sentiments and political violence have isolated them of any political allies aside from the right-wing of the [+ ul_name +], [+ ldr_name +], and other minor right-wing parties, which do not have the power to overturn the newfound progressive coalition. However, the constituents of the liberal parties, those being the southern landowners and Italian industrialists, have begun to retract their support for the PNF. 
+한때 이탈리아 민주주의의 거대한 위협이었던 국가 파시스트당은 최근 선거에서 좌파와 중도파까지 아우르는 거대한 반파시스트 연합에 밀려난 뒤, 비토리오 에마누엘레 3세 국왕의 지지 철회로 인해 무너져 내렸습니다. 반사회주의 정서와 정치적 폭력을 통해 우익 표심을 공략하려던 [+ pnf_leader +]의 노력은 [+ ul_name +] 우파, [+ ldr_name +] 및 기타 소수 우익 정당 외에는 정치적 동맹을 확보하지 못하게 했고, 이들은 새로 등장한 진보 연합을 뒤집을 힘이 없었습니다. 더불어 자유주의 정당들의 지지 기반인 남부 지주들과 이탈리아 산업가들마저 국가 파시스트당에 대한 지지를 철회하기 시작했습니다.
 
-Citing their reasons as the extremism that has descended upon Italy through the fault of the PNF, along with the electoral defeat, this suspension of Fascist support has crippled their fundraising efforts. With the sudden drought of funding for the Fascists, and their greatest potential allies in the liberal parties quickly losing ground, party dissent within the PNF is rapidly eroding its foundations. The collapse of the PNF is imminent, and [+ pnf_leader +]’s dreams of an Italian nationalist future have taken a sudden downturn.
+국가 파시스트당의 잘못으로 이탈리아에 닥친 극단주의와 선거 패배를 이유로 들며 파시스트에 대한 지원을 중단하자 그들의 자금 조달 노력은 마비 상태에 빠졌습니다. 갑작스러운 자금줄 고갈과 자유당의 가장 강력한 잠재적 동맹들이 급속히 힘을 잃으면서, 국가 파시스트당 내부의 불만은 그 기반을 빠르게 침식하고 있습니다. 국가 파시스트당의 붕괴는 임박했으며, 이탈리아 민족주의의 미래에 대한 [+ pnf_leader +]의 꿈은 급격한 내리막길을 걷게 되었습니다.
