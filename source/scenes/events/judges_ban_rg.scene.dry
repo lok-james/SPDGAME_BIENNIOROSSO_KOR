@@ -1,9 +1,9 @@
-title: Government bans the Red Guards!
-subtitle: The reactionary judicial system has banned the Red Guards.
+title: 정부가 적위대 금지령을 발표하다!
+subtitle: 반동적인 사법 체계가 적위대 활동을 금지했습니다.
 view-if: not psi_in_government and (radicalisation > 8 or pnf_in_government) and not_participating = 1 and judicial_reform < 2 and rg_banned = 0
 on-arrival: rg_banned = 1; rg_strength *= 0.85; rg_militancy -= 0.04; socialist_sentiment -= 4;
 tags: event
 
-= Government crackdown on the Red Guard!
+= 정부의 적위대 탄압!
 
-Judges have decided to ban the Red Guards, as government forces crack down hard, limiting their abilities and growth.
+법원이 적위대를 불법 단체로 규정하고 정부군이 그들의 활동과 성장을 제한하며 강력한 단속에 나섰습니다.

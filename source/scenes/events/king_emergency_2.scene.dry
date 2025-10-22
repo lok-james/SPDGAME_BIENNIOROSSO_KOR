@@ -1,5 +1,5 @@
-title: Prime Minister [+ prime_minister +] floors the Land Reform Bill
-subtitle: The Knight moves forward.
+title: [+ prime_minister +] 총리가 토지 개혁 법안 발의하다
+subtitle: 나이트가 앞으로 나아가다.
 view-if: king_timer_1 <= time and not national_congress_seen and king_event = 1
 on-arrival: king_timer_2 = time + 2; king_1_seen = 1; {!
 Q.bill_support = parseFloat(Q.ul_seating_disp) + parseFloat(Q.ldr_seating_disp) + parseFloat(Q.psri_seating_disp) + parseFloat((Q.ppi_seating_disp)*0.8);
@@ -20,17 +20,17 @@ max-visits: 1
 tags: event
 new-page: true
 
-= The Land Reform Bill
+= 토지 개혁 법안
 
-The [+ prime_minister_party +] have floored a bill to the Chamber floors, called the 'Land Reform Bill'. The bill would, surprisingly, institute a set of limited land reforms throughout the country, targeting "underdeveloped" or "uncultivated" land for redistribution while landowners would receive partial compensation. Of course, Churches, officers and some nobles have been notably excluded from this law, while state-subsidised loans are to be granted from Catholic rural banks.
+[+ prime_minister_party +]가 하원에 '토지 개혁 법안'을 발의했습니다. 놀랍게도 이 법안은 "미개발" 또는 "미경작" 토지를 재분배 대상으로 지정해 전국적으로 제한적인 토지 개혁을 시행하며, 지주에게는 부분적인 보상을 제공할 것입니다. 물론 교회, 군 장교, 일부 귀족은 법 적용 대상에서 제외되었으며, 국가 보조금 융자는 가톨릭 농촌 은행을 통해 제공됩니다.
 
-At first glance, the bill looks perfect; land reform, aid to farmers, and so on. Many on the right-wing of the party are thus urging us to vote in favour of the bill, though it is certain the [+ prime_minister_party +] will receive the vast majority of the credit. On the other hand, the left advocate for the opposition or abstention of the bill, calling it merely a band-aid on a much larger issue and opposing the plans of the [+ prime_minister_party +].
+언뜻 보면 이 법안은 토지 개혁, 농민 지원 등 완벽해 보입니다. 이에 당내 우파는 법안 발의의 공이 대부분 [+ prime_minister_party +]에 돌아갈 것임에도 불구하고 찬성 투표를 촉구하고 있습니다. 반면 당내 좌파는 이를 근본적인 문제 해결에 미치지 못하는 임시방편에 불과하다며, [+ prime_minister_party +]의 계획에 반대하거나 기권할 것을 주장합니다.
 
-What should we do?
+어떻게 해야 할까요?
 
-- @vote_yes: Vote in favour of the bill.
-- @vote_no: Vote against the bill.
-- @vote_abstain: Abstain from the vote.
+- @vote_yes: 법안에 찬성한다.
+- @vote_no: 법안에 반대한다.
+- @vote_abstain: 투표를 기권한다.
 
 @vote_yes
 on-arrival: voted_yes = 1 {!
@@ -78,13 +78,13 @@ if (Q.psu_formed) {
 }
 !}
 
-The bill passes the Chamber of Deputies with [+ bill_support +]% voting in favour. It swiftly passes through the Senate and is signed into the law by the King where, unsurprisingly, credit is given to [+ prime_minister +]'s Cabinet and the [+ prime_minister_party +] who are able to flex their administrative muscles as the initiators of the bill.
+이 법안은 [+ bill_support +]%의 찬성으로 하원을 통과했습니다. 상원에서도 신속하게 통과되어 국왕의 서명을 받아 법으로 공포되었으며, 예상대로 법안 발의를 주도한 [+ prime_minister +] 내각과 [+ prime_minister_party +]가 행정 능력을 과시하며 그 공을 인정받았습니다.
 
-[? if voted_yes : Our support of the bill has garnered the praise of our rural allies and the National Federation of Agricultural Workers, who have seen significant benefit from the passage of the bill. Unfortunately, the [+ ul_name +] have been able to sway portions of more moderate and socially conservative voters towards their side as they are seen as the main party in charge of the bill. ?]
+[? if voted_yes : 법안 찬성으로 우리 농촌 유권자와 전국농업노동자연맹의 찬사를 받았으며, 연맹은 법안 통과로 큰 이익을 얻었습니다. 안타깝게도 [+ ul_name +]은(는) 법안을 주도한 정당으로 인식되어, 온건하고 사회적으로 보수적인 유권자 일부를 자신들의 편으로 끌어들이는 데 성공했습니다. ?]
 
-[? if voted_no : Our refusal to support the bill has garnered harsh criticisms from our rural allies, only alleviated by the bill passing without our support anyways. The National Federation of Agricultural Workers have threatened a disaffiliation with the General Confederation of Labour, while significant moderate voters once supporting us have instead turned to other parties who are more than willing to support them. ?]
+[? if voted_no : 법안 지지를 거부한 것은 농촌 지지자들의 거센 비판을 받았고, 법안이 우리 지지 없이 통과되면서 겨우 비난을 면했습니다. 전국농업노조는 전국노동총동맹 탈퇴를 위협했고, 한때 우리를 지지했던 상당수 온건 유권자들은 지지를 보장해주는 다른 정당으로 돌아섰습니다. ?]
 
-[? if voted_abstain : Our abstention is surprisingly, less controversial than if we picked a side. Our rural allies are disappointed by our course of action, but the success of the bill regardless has made our decision less controversial to our allies, though we have seen parts of the National Federation of Agricultural Workers defecting to the other parties such as the [+ ul_name +], who are seen as the initiators of the bill. ?]
+[? if voted_abstain : 기권은 놀랍게도 어느 한쪽을 지지하는 것보다 논란이 적었습니다. 농촌 지지자들은 우리의 결정에 실망했지만, 법안이 성공적으로 통과되면서 논란은 수그러들었습니다. 하지만 전국농업노동자연맹의 일부는 법안 발의를 주도한 [+ ul_name +]과 같은 다른 정당으로 이탈하는 모습을 보였습니다. ?]
 
 @bill_failure
 on-arrival: {!
@@ -122,10 +122,10 @@ if (Q.pcdi_formed) {
 }
 !}
 
-The bill fails to pass the Chamber of Deputies with only [+ bill_support +]% voting in favour. The failure of the bill has dealt a significant blow to the legitimacy of the current Cabinet, presented as a solution to the current 'crisis' and its immediate failure following its first attempt at action.
+이 법안은 겨우 [+ bill_support +]%의 찬성을 얻어 하원 통과에 실패했습니다. 이로 인해 '위기' 상황의 해결책으로 제시되었던 현 내각의 정당성은 첫 조치 시도부터 실패하면서 심각한 타격을 입었습니다.
 
-[? if voted_yes : Our support of the bill has garnered the praise of our rural allies and the National Federation of Agricultural Workers, though disappointed at the bill's failure. Unfortunately, the failure of the bill and our support has radicalised a small minority of our traditional rural voters, defecting to other socialist and communist parties. ?]
+[? if voted_yes : 법안의 실패에 실망했음에도 불구하고, 우리 농촌 동맹과 전국농업노동조합연맹은 우리의 지지에 찬사를 보냈습니다. 안타깝게도 법안 실패와 우리의 지지는 일부 전통적인 농촌 유권자를 급진화시켜, 다른 사회주의 및 공산주의 정당으로 이탈하게 만들었습니다. ?]
 
-[? if voted_no : Our refusal to support the bill has garnered harsh criticisms from our rural allies, only worsened by the bill's failure and our perceived action as having 'killed' the bill. The National Federation of Agricultural Workers have threatened a disaffiliation with the General Confederation of Labour, while significant moderate voters once supporting us have instead turned to other parties who are more than willing to support them. ?]
+[? if voted_no : 법안 지지를 거부한 것은 우리 농촌 유권자들의 날카로운 비판을 불러왔으며, 법안 실패와 우리를 법안의 '사살자'로 보는 시각이 더해져 더욱 악화되었습니다. 전국농업노동조합연맹은 전국노동조합총연맹 탈퇴를 위협했고, 한때 우리를 지지했던 상당수 온건 유권자들은 그들을 지지하고자 하는 다른 정당으로 돌아섰습니다. ?]
 
-[? if voted_abstain : Our abstention is surprisingly, less controversial than if we picked a side. Our rural allies are disappointed by our course of action, and the failure of the bill has made our decision more controversial to our allies, though we have seen parts of the National Federation of Agricultural Workers defecting to the other parties such as the [+ ul_name +], who are seen as the initiators of the bill. ?]
+[? if voted_abstain : 기권은 놀랍게도 편을 드는 것보다 논란이 적었습니다. 농촌 지지자들은 우리의 결정에 실망했고, 법안 실패로 인해 우리의 결정은 지지자들에게 더 큰 논란의 대상이 되었습니다. 하지만 전국농민노동자연맹의 일부가 법안의 발의자로 보이는 [+ ul_name +]과 같은 다른 정당으로 이탈하는 것이 목격했습니다. ?]

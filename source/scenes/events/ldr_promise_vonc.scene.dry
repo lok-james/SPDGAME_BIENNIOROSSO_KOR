@@ -1,20 +1,20 @@
-title: Meeting with the Liberals
+title: 자유주의자들과의 회담
 view-if: psi_in_government and centre_left_coalition and ldr_promise_failed or (liberal_crackdown_complete == 0 and liberal_crackdown_accepted == 1 and liberal_crackdown_timer <= 0) and ldr_in_government
 new-page: true
 tags: event
 
-= Promises given, Promises broken
+=약속을 하고 약속을 어기다
 
-The [+ ldr_full_name +] are, understandably upset at our failure to maintain the agreement that has held this coalition together and are considering a Vote of No Confidence against the government.
+[+ ldr_full_name +]는 당연하게도 이 연정을 지탱하는 합의를 유지하는 데 실패한 우리의 행동에 화가 났으며, 정부에 대한 불신임 투표를 고려하고 있습니다.
 
-- @lib_promise_results: And...
+- @lib_promise_results: 그리고...
 
 @lib_promise_results 
 on-arrival: ldr_relation -= 5; ldr_total_broken += 1; ldr_promise_failed = 0; coalition_dissent += 1 if (ldr_relation >= 50 and ldr_total_broken < 2); liberal_crackdown_timer += 6 if (ldr_relation >= 50 and ldr_total_broken < 2 and liberal_crackdown_accepted and liberal_crackdown_complete == 0);
 go-to: liberal_vote_of_no_confidence if (ldr_relation < 50 or ldr_total_broken >= 2 or coalition_dissent >= 3)
 
-[? if ldr_relation < 50 or ldr_total_broken >= 2 or coalition_dissent >= 3 : Unfortunately, the [+ ldr_name +] have decided to call a Vote of No Confidence against us. ?]
+[? if ldr_relation < 50 or ldr_total_broken >= 2 or coalition_dissent >= 3 : 안타깝게도 [+ ldr_name +]는 우리에 대한 불신임안을 발의하기로 했습니다. ?]
 
-[? if ldr_relation >= 50 and ldr_total_broken < 2 and coalition_dissent < 2: Fortunately, owing to our good relations, the [+ ldr_name +] have decided against a vote, though our relations have taken a hit. ?]
+[? if ldr_relation >= 50 and ldr_total_broken < 2 and coalition_dissent < 2 : 다행히 우리의 우호적인 관계 덕분에 [+ ldr_name +]는 투표를 반대하기로 했지만, 우리 관계는 타격을 입었습니다. ?]
 
-[? if ldr_relation >= 50 and ldr_total_broken < 2 and liberal_crackdown_accepted and liberal_crackdown_complete == 0 : We have been given 6 more months to crackdown on the paramilitaries. ?]
+[? if ldr_relation >= 50 and ldr_total_broken < 2 and liberal_crackdown_accepted and liberal_crackdown_complete == 0 : 우리는 준군사 조직을 단속하기 위해 6개월의 추가 시간을 받았습니다. ?]

@@ -1,13 +1,13 @@
-title: King Emanuele III adopts a conciliatory attitude
-subtitle: The King will no longer impede us.
+title: 에마누엘레 3세 국왕, 유화적인 태도로 전환
+subtitle: 국왕은 더 이상 우리를 방해하지 않을 것입니다.
 view-if: king_emergency <= time and not national_congress_seen and king_relation >= 40 and (pnf_weakened or pnf_collapse_seen) and not_participating = 0 and not king_enemies
 on-arrival: king_allies = 1; king_timer_1 = time + 2;
 max-visits: 1
 tags: event
 new-page: true
 
-= Vittorio Emanuele III adopts a conciliatory attitude
+= 비토리오 에마누엘레 3세, 유화적인 태도를 보이다
 
-Following the fall of fascism, the only threat impeding us, the King has opted to adopt a more friendly approach towards us, seeing from our formerly strong relations. Though not allies in the slightest, the King will no longer impede our efforts, nor actively work against us and influence the Chamber of Deputies.
+우리의 앞길을 막던 유일한 위협인 파시즘이 몰락하자, 국왕은 과거의 공고했던 관계를 고려하여 우리에게 보다 우호적인 태도를 취하기로 했습니다. 완전한 동맹은 아니지만, 국왕은 더 이상 우리의 활동을 방해하거나, 우리에게 적대적으로 행동하며 하원에 영향력을 행사하지 않을 것입니다.
 
-- @root: An odd turn of events.
+- @root: 의외의 전개로군.

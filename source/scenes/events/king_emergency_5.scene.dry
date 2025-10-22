@@ -1,5 +1,5 @@
-title: [+ prime_minister +] convenes a National Coalition
-subtitle: The Pawn is Promoted.
+title: [+ prime_minister +] 총리가 국민 연정 정부를 소집하다
+subtitle: 폰이 승진하다.
 view-if: king_timer_3 <= time and not national_congress_seen and king_event = 1 and king_3_seen
 on-arrival: national_coalition = 1; advisor_arrested = 0;
 max-visits: 1
@@ -7,63 +7,63 @@ tags: event
 new-page: true
 go-to: natcol_menu
 
-= Backroom Deals
+= 막후 거래
 
-[+ prime_minister +] has unveiled a new organisation; A 'National Coalition' of parties dedicated to stability, anti-socialism and preventing left-wing parties from entering government. Though the coalition only currently consists of the [+ ul_full_name +], rumors of persuasion or intimidation with the other liberal and right-wing parties within the Chamber of Deputies to negotiate their entry have reached our ears, even from the Italian People's Party.
+[+ prime_minister +]가 안정, 반사회주의, 좌파 정당의 정부 참여를 막기 위한 '국민 연합'이라는 새로운 조직을 발표했습니다. 현재는 [+ ul_full_name +]만이 참여하고 있지만, 다른 자유당과 우파 정당들, 심지어 이탈리아 인민당까지 참여시키기 위해 설득 또는 협박을 하고 있다는 소문이 우리 귀에도 들려왔습니다.
 
-We can only wait for any news or announcements to assess the extent of this Coalition. In other news, our advisors have been released from custody and are now available.
+이 연합의 실체를 파악하기 위해 우리는 어떠한 소식이나 발표든 기다릴 수 밖에 없습니다. 한편 좋은 소식으로, 우리 고문들이 석방되어 활동이 가능해졌습니다.
 
 @natcol_menu
 
-- @natcol_ppi: The Italian People's Party joins the National Coalition.
-- @natcol_ldr: The [+ ldr_full_name +] joins the National Coalition.
-- @natcol_ds: The [+ ds_full_name +] joins the National Coalition.
-- @natcol_pcs: The Christian Social Party joins the National Coalition.
-- @natcol_others: The Italian Nationalist Association and the Economic Parties joins the National Coalition.
+- @natcol_ppi: 이탈리아 인민당이 국민 연합에 가입한다.
+- @natcol_ldr: [+ ldr_full_name +]가 국민 연합에 가입한다.
+- @natcol_ds: [+ ds_full_name +]가 국민 연합에 가입한다.
+- @natcol_pcs: 기독교 사회당이 국민 연합에 가입한다.
+- @natcol_others: 이탈리아 국민 협회와 경제당이 국민 연합에 참여한다.
 
 @natcol_ppi 
-subtitle: Unfortunately, we have galvanised the PPI towards the National Coalition.
+subtitle: 안타깝게도 우리는 인민당을 국민 연합 쪽으로 자극하고 말았습니다.
 choose-if: (ppi_relation < 55 and ppi_leader == "Sturzo") or (ppi_relation < 75 and ppi_leader == "De Gasperi") or ppi_leader == "Triumvirate"
-unavailable-subtitle: Thankfully, a friendly leadership and cordial relations have let the PPI adopt a 'wait-and-see' approach rather than opposing us outright.
+unavailable-subtitle: 다행히 우호적인 지도부와 원만한 관계 덕분에 인민당은 우리에게 노골적으로 반대하기보다는 '관망'하는 태도를 취하고 있습니다.
 on-arrival: national_coalition_ppi = 1
 max-visits: 1
 go-to: natcol_menu
 
-In a shocking announcement, the Italian People's Party has decided to join the National Coalition as well, its evident fears and cold relations with us turning it towards the right. Considering the size of the PPI, as well as its voter base, we should be concerned.
+충격적인 발표로, 이탈리아 인민당이 우리에 대한 명백한 두려움과 냉랭한 관계 속에서 우경화되어 국민 연합에 합류하기로 결정했습니다. 인민당의 규모와 지지 기반을 고려할 때, 우려스러운 상황입니다.
 
 @natcol_ldr
-subtitle: An unfriendly leadership & poor relations have pushed the Liberal Democrats into joining the National Coalition.
+subtitle: 비우호적인 지도부와 관계 악화가 자유민주주의자들을 국민 연합으로 내몰았습니다.
 choose-if: (ldr_relation < 65 and ldr_leader == "Nitti") or (ldr_relation < 75 and ldr_leader == "Orlando") or ldr_leader == "Salandra"
-unavailable-subtitle: Thankfully, the Liberal Democrats are unwilling to collaborate with in the National Coalition – especially with the far-right parties included.
+unavailable-subtitle: 다행히 자유민주주의자들은 국민 연합에 참여하지 않으려 합니다 – 특히 극우 정당들이 포함된 이상.
 on-arrival: national_coalition_ldr = 1
 max-visits: 1
 go-to: natcol_menu
 
-The [+ ldr_full_name +] has, unfortunately, joined the National Coalition. It seems the party's wariness of us, or perhaps socialism in general has forced it rightwards, despite its unwillingness.
+안타깝게도 [+ ldr_full_name +]가 국민 연합에 합류했습니다. 정당이 우리, 또는 사회주의 전반에 대해 가지는 경계심때문에 꺼려하면서도 우경화된 것으로 보입니다.
 
 @natcol_ds
-subtitle: A right-wing [+ ds_name +] has aligned itself with the National Coalition.
+subtitle: 우파 [+ ds_name +]가 국민 연합에 합류했습니다.
 choose-if: ds_leader == "Colonna" or ds_leader == "Carnazza"
-unavailable-subtitle: Thankfully, Giuffrida's leadership role has placed the [+ ds_name +] firmly in our camp.
+unavailable-subtitle: 다행히 지우프리다의 지도력 덕분에 [+ ds_name +]은 우리 편에 확고히 서 있습니다.
 on-arrival: national_coalition_ds = 1
 max-visits: 1
 go-to: natcol_menu
 
-The [+ ds_full_name +], under leadership of [+ ds_leader +] has led the party to join the National Coalition, [? if ds_leader == "Colonna" : clearly as a means of opportunism. ?][? if ds_leader == "Carnazza" : as a means to develop and deepen ties with the conservative liberal parties. ?]
+[+ ds_leader +]가 이끄는 [+ ds_full_name +]가 국민 연합에 합류했습니다. [? if ds_leader == "Colonna" : 분명한 기회주의적 행보입니다. ?][? if ds_leader == "Carnazza" : 보수적인 자유주의 정당들과의 관계를 발전시키고 심화시키기 위한 것입니다. ?]
 
 @natcol_pcs
 view-if: pcs_formed
-subtitle: The right-wing Christian Social Party has thrown its weight with the King.
+subtitle: 우파 기독교 사회당이 국왕에게 힘을 실어줬다.
 max-visits: 1
 go-to: natcol_menu
 
-The conservative PCS has joined the National Coalition, having developed close ties with the [+ ul_full_name +] and former fascists, this was seemingly the expected outcome.
+보수 성향의 기독교 사회당은 [+ ul_full_name +]과 과거 파시스트들과 긴밀한 관계를 맺어왔기에, 예상대로 국민 연합에 합류했습니다.
 
 @natcol_others
-subtitle: The remnants of the fascists and far-right, alongisde the conservatives, align with the King and [+ prime_minister +]
+subtitle: 파시스트와 극우의 잔당들이 보수주의자들과 함께 국왕과 [+ prime_minister +]에게 협력합니다.
 max-visits: 1
 go-to: natcol_menu
 
-Unsurprisingly, the ANI has joined the National Coalition, fervently opposed to socialism and determined to utilise the opportunity to potentially enter government to stamp out the 'instability' caused by us.
+예상대로, 이탈리아 민족주의 협회는 사회주의에 대한 강한 반감과 함께, 우리로 인해 야기된 '불안정'을 해소하기 위해 잠재적인 정부 진출 기회로 국가 연합에 합류했습니다.
 
-The Economic Parties have joined the National Coalition as well, traditionally aligning themselves with the right and against us.
+ 전통적으로 우파와 제휴하여 우리에게 반대해온 경제당은 국민 연합에 합류했습니다

@@ -1,15 +1,15 @@
-title: Collapse of the National Coalition
-subtitle: Checkmate.
+title: 국민 연합의 붕괴
+subtitle: 체크메이트.
 view-if: king_event = 1 and psi_in_government
 on-arrival: king_event = 0; national_coalition = 0; national_coalition_ds = 0; national_coalition_ldr = 0; national_coalition_ppi = 0; king_timer_4 = time + 3; next_election_time = time + 8 if next_election_time >= time + 8; next_election_month = month + 4 if next_election_time >= time + 8; next_election_year = year if next_election_time >= time+8; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_psi += 7; middle_class_psi += 4; rural_psi += 7;
 max-visits: 1
 tags: event
 new-page: true
 
-= Collapse of the National Coalition
+= 국민 연합의 붕괴
 
-The failure of the National Coalition to form government – the King's 'all-or-nothing' option to squash socialism – has collapsed the coalition. With popular support turning against the King, the various right-wing parties within the coalition have fallen into infighting, with the ANI blaming the [+ ul_name +] for its failure to take over the government.
+국민 연합은 정부 구성에 실패했고 – 사회주의를 분쇄하려는 국왕의 ‘모 아니면 도’ 전략은 실패로 돌아가 연합은 붕괴했습니다. 국왕에 대한 대중의 지지가 등 돌리면서 연합 내 우파 정당들은 내분에 빠졌고, 이탈리아 민족 평의회는 정부 장악 실패의 책임을 [+ ul_name +]에게 돌렸습니다.
 
-Whatever the case, any credible threat to socialism within Italy has seemingly fallen; the fascists are powerless, without a leader, while the King has exhausted his political capital and turned public opinion against him with his recent attempts to intervene in the parliamentary system. 
+어쨌든, 이탈리아 내 사회주의에 대한 실질적인 위협은 사라진 것으로 보입니다. 파시스트들은 지도자 없이 무력하며, 국왕은 정치적 자본을 소진하고 최근 의회 개입 시도로 인해 여론의 반발을 샀습니다.
 
-- @root: The worst is over once more, and perhaps this time, for good.
+- @root: 최악의 상황은 다시 한번 끝났고, 이번에는 영원히 이겨낼 수 있을 것이다.

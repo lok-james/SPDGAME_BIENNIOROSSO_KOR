@@ -1,20 +1,20 @@
-title: King Emanuele III begins taking action against us
-subtitle: The King makes his move.
+title: 에마누엘레 3세 국왕이 우리를 상대로 행동을 개시하다
+subtitle: 국왕이 움직이기 시작했다.
 view-if: king_emergency <= time and not national_congress_seen and (king_relation < 40 or not_participating = 1) and (pnf_weakened or pnf_collapse_seen) and not king_allies
 on-arrival: king_enemies = 1; king_event = 1; king_timer_1 = time + 2; next_election_time = time + 12 if next_election_time >= time + 12; next_election_month = month + 6 if next_election_time >= time + 12; next_election_year = year if next_election_time >= time+12; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 max-visits: 1
 tags: event
 new-page: true
 
-= Vittorio Emanuele III invokes Constitutional Power
+= 비토리오 에마누엘레 3세, 헌법상의 권한 발동
 
-Following the fall of fascism, seemingly the only real power able to impede us, we have seen King Vittorio Emanuele taking an active role in attempting to rid Italy of socialism. The once passive King has been seen doing speeches, touring the nation with notably anti-socialist undertones, as well as utilising his political influence to wedge a rift between any goodwill we have left with the other parties.
+우리를 제어할 유일한 실질적 세력으로 보였던 파시즘이 몰락하자, 비토리오 에마누엘레 국왕이 이탈리아에서 사회주의를 제거하기 위해 적극적으로 나서기 시작했습니다. 한때 수동적이었던 국왕은 노골적인 반사회주의적 색채를 띤 연설과 전국 순회를 하고 있으며, 자신의 정치적 영향력을 이용해 다른 정당들과 우리 사이에 남은 얼마 안 되는 우호 관계마저 이간질하고 있습니다.
 
-To the reformists within the party, this spells ruin; an actively aggressive Monarch, combined with conservative backing will bring progress to a screeching halt, while reaffirming the Left-wing of the party. A violent revolution seems to be the only way forward, at this point.
+당내 개혁파에게 이는 파멸의 신호입니다. 공격적인 군주와 보수 세력의 지지는 진보 세력을 완전히 멈춰 세울 것이고, 당내 좌파의 입지를 더욱 강화할 것입니다. 이제 폭력 혁명만이 유일한 길처럼 보입니다.
 
-- @king_limited: [? if socialist_catholic_coalition : The Catholics ?][? if centre_left_coalition : The Liberals ?] collapse the coalition!
-- @king_limited_nogov: Prime Minister [+ prime_minister +] reshuffles the Cabinet.
-- @king_gov: The King invokes Article 65, dismissing the current government.
+- @king_limited: [? if socialist_catholic_coalition: 가톨릭계가 ?][? if centre_left_coalition: 자유주의자들이 ?] 연정을 붕괴시켰다!
+- @king_limited_nogov: [+ prime_minister +] 총리가 내각을 개편한다.
+- @king_gov: 국왕이 헌법 제65조를 발동하여 현 내각을 해산힌다.
 
 @king_limited
 view-if: pm_appointed and prime_minister_party = psi_name
@@ -80,15 +80,15 @@ Q.prime_minister = Q.ul_leader;
 Q.prime_minister_party = Q.ul_name;
 !}
 
-Seemingly out of nowhere, our coalition partners have brought a Vote-of-Confidence onto the floor, and with numerous dissenters amongst the ranks of our allies, the vote fails. The current government is dissolved, until a new one is to be found.
+갑자기 연정 파트너들이 불신임안을 상정했고, 우리 동맹 내 수많은 반대파들의 이탈로 인해 안건이 가결되었습니다. 현 내각은 해산되고 새로운 정부가 구성될 것입니다.
 
-As negotiations between parties have begun, however, the King has, for the first time in his reign, intervened within the process and while though completely within his constitutional rights, is of grave concern. Presiding over the Chamber the Deputies, Vittorio Emanuele III has granted a mandate of rule over to the [+ ul_full_name +].
+하지만 정당 간 협상이 시작되자, 국왕은 재위 기간 중 처음으로 그 과정에 개입했습니다. 이는 전적으로 헌법상의 권한이기는 하나, 심각한 우려를 낳고 있습니다. 하원을 주재하며 비토리오 에마누엘레 3세는 [+ ul_full_name +]에 정부 구성권을 부여했습니다.
 
-Within days, and as if planned, [+ ul_leader +] has been able to draft a Cabinet, comprised of the most anti-socialist, reactionary men we have seen. Pietro Badoglio as Minister of the Interior. Armando Diaz as Minister of War. The list continues. 
+마치 계획되었다는 듯, [+ ul_leader +]는 며칠 만에 우리가 본 중 가장 반사회주의적이고 반동적인 인물들로 내각을 구성했습니다. 내무장관 피에트로 바돌리오. 전쟁장관 아르만도 디아즈. 그 명단은 계속됩니다.
 
-The curtains open on a new act. The actors begin their roles.
+새로운 막이 오릅니다. 배우들이 각자의 역할을 시작합니다.
 
-- @root: A war is coming.
+- @root: 전쟁이 다가오고 있다.
 
 @king_limited_nogov
 view-if: pm_appointed and prime_minister_party != psi_name
@@ -151,13 +151,13 @@ Q.psri_in_government = 0;
 Q.pnf_in_government = 0;
 !}
 
-Seemingly out of nowhere, Prime Minister [+ prime_minister +] has reshuffled Cabinet positions with powers granted to him following our recent constitutional reform; notably expelling all [+ psi_name +] Cabinet members.
+갑자기 [+ prime_minister +] 총리가 최근 헌법 개정으로 부여된 권한을 이용해 내각을 개편했습니다. 특히 모든 [+ psi_name +] 소속 각료를 축출했습니다.
 
-Most notably, Italian general Pietro Badoglio has been elevated to the Minister of the Interior, while Marshal Armando Diaz has been elevated to Minister of War. Both men, staunch anti-socialists have promised a harsh crackdown on socialist unrest within the country, promising to stabilise the country.
+가장 주목할 만한 점은 이탈리아 장군 피에트로 바돌리오가 내무장관으로, 원수 아르만도 디아즈가 전쟁장관으로 임명된 것입니다. 두 사람 모두 확고한 반사회주의자로, 국가 안정을 약속하며 국내 사회주의 불안에 대한 강경한 탄압을 예고했습니다.
 
-The board is set up. The hourglass turns.
+판은 짜여졌습니다. 모래시계가 뒤집혔습니다.
 
-- @root: The pieces begin to move.
+- @root: 말들이 움직이기 시작한다.
 
 @king_gov
 view-if: not pm_appointed
@@ -223,10 +223,10 @@ Q.prime_minister = "Giolitti";
 Q.prime_minister_party = Q.ul_name;
 !}
 
-Citing matters of national urgency and defense, King Vittorio Emanuele III has decided to dissolve the sitting government, deciding to appoint an 'Emergency Cabinet' of his own in order to preside over this 'crisis'. The King, though within his constitutional rights, has only intensified the situation with his actions. On the left, threats and vindication of those who have called for revolution come, while on the right, praise of reactionaries swarm in, thanking the King for bringing order to the nation.
+국가적 비상사태와 국방을 이유로, 비토리오 에마누엘레 3세 국왕은 현 정부를 해산하고 '위기'를 관리하기 위한 자체적인 '비상 내각'을 임명하기로 결정했습니다. 국왕의 행동은 헌법상의 권한 내에 있었지만, 상황을 더욱 악화시켰을 뿐입니다. 좌파에서는 혁명을 외쳤던 이들의 위협과 정당화가 이어지고, 우파에서는 국가에 질서를 가져다준 국왕에게 감사하며 반동주의자들의 찬사가 쏟아집니다.
 
-The new Cabinet tells the same story. Giovanni Giolitti as Prime Minister. Pietro Badoglio as Interior Minister, Armando Diaz as Minister of War. Men poised against socialism, longing to kill its ideology now as the highest positions of the land. 
+새 내각의 구성도 마찬가지입니다. 총리 조반니 졸리티. 내무장관 피에트로 바돌리오, 전쟁장관 아르만도 디아즈. 사회주의에 맞서 그 이념을 파괴하려는 이들이 이제 국가의 최고위직에 올랐습니다.
 
-The Chamber of Deputies is in disarray. The left-half of the Chamber of Deputies, the reactionaries, conservatives. All in thunderous applause. Cheers echo through the chamber. The right-half of the Chamber of Deputies, the socialists, progressives. Empty. Plans and schemes trade hands.
+하원은 혼란에 빠졌습니다. 의사당의 좌측, 반동주의자들과 보수주의자들은 우레와 같은 박수를 보냅니다. 환호성이 의사당을 가득 메웁니다. 의사당의 우측, 사회주의자들과 진보주의자들의 자리는 텅 비었습니다. 은밀한 계획과 계략이 오고 갑니다.
 
-- @root: Democracy dies in darkness.
+- @root: 민주주의는 어둠 속에서 스러진다.

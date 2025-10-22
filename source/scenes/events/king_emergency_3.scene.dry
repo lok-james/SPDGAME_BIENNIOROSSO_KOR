@@ -1,5 +1,5 @@
-title: Army Crackdown on Strongholds
-subtitle: The Rook captures.
+title: 육군의 거점 탄압
+subtitle: 룩이 잡히다.
 view-if: king_timer_2 <= time and not national_congress_seen and king_event = 1 and king_1_seen
 on-arrival: king_timer_3 = time + 2; king_2_seen = 1; {!
 Q.workers_psi -= 6;
@@ -15,34 +15,34 @@ tags: event
 new-page: true
 go-to: action_menu
 
-= Turin & Bologna Headquarters Raided
+= 토리노 & 볼로냐 본부 급습
 
-A series of military crackdowns have wracked the country in recent days. The Regio Esercito, under command of Armando Diaz, have raided our offices and headquarters, particularly in Turin and Bologna. Our offices at *Avanti!* have been hit, members of the *Red Guards* [? if arditi_cooperation : and Arditi del Popolo ?] have been arrested, including leading members of the party.
+최근 이탈리아 전역에서 군사적 탄압이 잇따르고 있습니다. 아르만도 디아즈의 지휘 하에 왕립군은 토리노와 볼로냐를 중심으로 우리의 사무실과 본부를 급습했습니다. *전진!* 사무실이 공격당했고, *적위대* [?if arditi_cooperation : 와 인민의 결사대 ?]의 대원들이 당 지도부를 포함해 체포되었습니다.
 
-Though we naturally protest and argue that this is unconstitutional, the King and Cabinet have declared the locations and members are traitors to the Kingdom, in which their rights are no longer guaranteed. Unfortunately, our actions for the time being will be severely limited, and the influence of *Avanti* in these affected regions will also be significantly impacted.
+우리는 당연히 이러한 조치가 위헌이라며 항의하지만, 국왕과 내각은 해당 지역과 인물들을 왕국에 대한 반역자로 규정하고 그들의 권리를 박탈했습니다. 안타깝게도 당분간 우리의 활동은 크게 위축될 것이며, 피해 지역에서의 *전진!*의 영향력도 상당한 타격을 입을 것입니다.
 
 @action_menu
 
-- @advisor_deactivate: Our advisors are arrested.
-- @avanti_deactivate: *Avanti!* will be temporarily out of commission.
-- @red_guard_deactivate: The Red Guards are outlawed by the Interior Ministry.
-- @council_deactivate: The Factory Councils are placed under military occupation.
+- @advisor_deactivate: 고문들이 체포됩니다.
+- @avanti_deactivate: *전진!*은 일시적으로 운영을 중단합니다.
+- @red_guard_deactivate: ​​​내무부가 적위대를 불법 단체로 규정합니다.
+- @council_deactivate: 공장 노동자 평의회가 군사 점령 하에 놓입니다.
 
 @advisor_deactivate
-subtitle: Enrico Ferri, Guido Picelli and Umberto Terracini will be temporarily unavailable due to arrests.
+subtitle: 엔리코 페리, 귀도 피첼리, 움베르토 테라치니가 체포되어 당분간 활동이 불가능합니다.
 on-arrival: advisor_arrested = 1; n_advisors -= 1 if ferri_advisor == 1; n_advisors -= 1 if picelli_advisor == 1; n_advisors -= 1 if terracini_advisor == 1; ferri_advisor = 0; picelli_advisor = 0; terracini_advisor = 0;
 max-visits: 1
 go-to: action_menu
 
-Many high-profile members of the party are arrested, whether on trumped up charges or merely caught for questioning, it is at the very least, clear that they'll be unavailable to us for some time.
+많은 당의 유력 인사들이 날조된 혐의 또는 단순 심문을 이유로 체포되었으며, 적어도 당분간은 그들의 활동이 불가능할 것임은 분명합니다.
 
 @avanti_deactivate
-subtitle: The seizure of the newspaper will limit our reach substantially.
+subtitle: 신문 압수는 우리의 영향력을 실질적으로 제한할 것입니다.
 on-arrival: newspaper_seized = 1;
 max-visits: 1
 go-to: action_menu
 
-The regional branches of *Avanti!* are ransacked, raided by the Carabinieri, editors dragged off and arrested and branches left in ruins. Whatever the case, *Avanti!*'s capacity to reach workers and readers will be limited until operations are brought back to life.
+*전진!*의 지역 지부들은 카라비니에리에게 약탈당하고 급습당했으며, 편집자들은 끌려가 체포되었고 지부는 폐허가 되었습니다. 어쨌든 *전진!*의 노동자와 독자들에게 다가갈 수 있는 능력은 운영이 재개될 때까지 제한될 것입니다.
 
 @red_guard_deactivate
 view-if: rg_banned != 1
@@ -50,7 +50,7 @@ on-arrival: rg_banned = 1
 max-visits: 1
 go-to: action_menu
 
-In an unsurprising move, the Interior Ministry has outlawed the Red Guards, supported by the Judicial System. It seems our paramilitary force will be weakened for the time being.
+예상대로, 내무부는 사법 제도의 지지를 등에 업고 적위대를 불법화했습니다. 당분간 우리 준군사 조직은 약화될 것으로 보입니다.
 
 @council_deactivate
 view-if: work_councils > 0
@@ -58,4 +58,4 @@ on-arrival: work_councils -= 1; workers_psi -= 4;
 max-visits: 1
 go-to: action_menu
 
-The Factory Councils, the pride of Turin and its workers, have been put down. The Army has launched assaults, recapturing the factories and placing them under their control for the foreseeable future, despite protests from the factory owners.
+토리노와 노동자들의 자랑인 공장 노동자 평의회가 해산되었습니다. 군은 공장주들의 항의에도 불구하고 공장들을 재탈환하여 당분간 자신들의 통제 하에 두었습니다.

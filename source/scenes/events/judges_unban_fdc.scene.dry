@@ -1,8 +1,8 @@
-title: Fasci unbanned
-subtitle: The judges have re-legalized the Fasci.
+title: 이탈리아 전투 파시 금지 해제
+subtitle: 법원이 이탈리아 전투 파시의 활동을 재합법화했습니다.
 new-page: true
 view-if: fdc_banned == 1 and fdc_ban_timer == 0 and (judicial_reform < 2 or pnf_in_government) and not national_congress_seen and not pnf_banned and not march_failed
 on-arrival: fdc_banned = 0; fdc_strength += 20; fdc_militancy += 0.04; nationalist_sentiment += 6;
 tags: event
 
-Judges have ordered the Fasci Italiani di Combattimento to be re-legalized. They immediately return to mass recruiting and arming.
+법원이 이탈리아 전투 파시의 재합법화를 명령했습니다. 그들은 즉시 대규모 조직원 모집과 무장 활동을 재개하고 있습니다.

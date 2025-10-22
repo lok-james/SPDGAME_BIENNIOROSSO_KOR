@@ -1,15 +1,15 @@
-title: Chamber of Deputies dissolved
-subtitle: The Gambit is made.
+title: 하원 해산
+subtitle: 포석을 깔다.
 view-if: king_timer_3 <= time and not national_congress_seen and king_event = 1 and king_2_seen
 on-arrival: king_timer_4 = time + 3; king_3_seen = 1; next_election_time = time + 8 if next_election_time >= time + 8; next_election_month = month + 4 if next_election_time >= time + 8; next_election_year = year if next_election_time >= time+8; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 max-visits: 1
 tags: event
 new-page: true
 
-= New Elections Scheduled
+= 새 선거 일정 발표
 
-King Vittorio Emanuele III has dissolved the sitting Chamber of Deputies in accordance with Article 9 and scheduled new elections set to occur in [+ next_election_month : month +] [+ next_election_year +], the longest allowed to be set. This comes at a time following a vicious crackdown by the King, and it is obvious the Cabinet is seeking to garner enough seats to turn the 'Emergency Cabinet' into a legitimate government.
+비토리오 에마누엘레 3세 국왕은 허용된 최장 기간인 오는 [+ next_election_month : month+]월 [+ next_election_year +]년에 새 선거를 실시하기로 하고 하원을 해산했습니다. 이는 국왕의 혹독한 탄압 직후에 나온 조치로, 내각이 ‘긴급 내각’을 합법적인 정부로 전환하기 위해 충분한 의석 확보를 노리고 있음은 명백합니다.
 
-On the other hand, if we are able to hold back and succeed in retaining enough of a plurality to prevent the formation of a government or force the parties into a coalition with us, the 'Emergency Cabinet' will be unable to sustain its legitimacy, even with the support of the King. 
+반대로, 만약 우리가 정부 구성을 막을 만큼의 충분한 의석을 확보하거나 연립 정부 구성으로 정당들을 강제할 수 있다면, ‘긴급 내각’은 국왕의 지지를 받더라도 정당성을 유지하기 어려울 것입니다.
 
-- @root: We must prepare for the worst.
+- @root: 최악의 상황에 대비해야 한다.
