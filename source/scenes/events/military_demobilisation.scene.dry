@@ -1,49 +1,49 @@
-title: Further Military demobilisation set to occur
-subtitle: The Military will continue its post-war demobilisation.
+title: 추가 군 동원 해제 예정
+subtitle: 군은 전후 동원 해제를 계속할 것입니다.
 new-page: true
 view-if: demobilise_timer = 0 and army_strength > 692 and stopped_mobilisation == 0 and not violent_revolution
 tags: event
 
-= Military Demobilisation to Continue
+= 군 동원 해제 계속
 
-The Military is to continue its demobilisation of its forces back to post-war levels. It does so in waves, and this month seems to be the latest one. Though a strain on already high unemployment, this is sure to relieve the budget by a substantial amount.
+군은 군사력을 종전 수준으로 계속해서 감축할 예정입니다. 이는 단계적으로 진행되며, 이번 달이 그중 한 단계인 것으로 보입니다. 이는 이미 높은 실업률에 부담을 주겠지만, 상당한 예산 절감 효과를 가져올 것입니다.
 
-[? if psi_in_government : Should we do something about this? ?][? if demobilised_delay and psi_in_government : We are already off schedule. ?]
+[? if psi_in_governance : 뭔가 조치를 취해야 하지 않겠습니까? ?][? if demobilised_delay and psi_in_governance: 우리는 이미 예정보다 늦었습니다. ?]
 
-- @delay_demobilise: Influence the army to delay the orders.
-- @stop_demobilise: Influence the army to end demobilisation.
-- @sway_demobilise: Recruit the newly discharged soldiers to the Red Guards.
+- @delay_demobilise: 군에 압력을 넣어 동원 해제를 지연시킨다.
+- @stop_demobilise: 군에 영향력을 행사하여 동원 해제를 중단시킨다.
+- @sway_demobilise: 새로 제대한 군인들을 적위대로 모집한다.
 - @allow_demobilise
 
 @delay_demobilise 
-subtitle: -1 Budget - Further unemployment would only make matters worse.
+subtitle: 예산 -1 - 실업률 심화는 상황을 악화시킬 뿐이다.
 view-if: psi_in_government
 choose-if: army_loyalty > 0.53
-unavailable-subtitle: Our influence within the army is too low.
+unavailable-subtitle: 군 내부에서의 우리의 영향력이 너무 낮습니다.
 on-arrival: demobilise_timer += 6; demobilised_delay = 1; budget -= 1
 
-We successfully persuade the army to delay the mobilisation by another 6 months, letting us continue our policies without the extra burden of more unemployed soldiers. Keeping the army that big isn't cheap, either.
+우리는 성공적으로 군을 설득하여 동원 해제를 6개월 더 연기했고, 실업 군인 증가라는 추가 부담 없이 정책을 계속 추진할 수 있었습니다. 물론, 이 정도 규모의 군대를 유지하는 데는 상당한 비용이 듭니다.
 
 @stop_demobilise 
-subtitle: [? if army_strength > 3000 : -7 Budget ?][? if army_strength > 2000 and army_strength < 3000 : -5 Budget ?][? if army_strength < 2000 and army_strength > 1000: -3 Budget ?] We have done enough; end the demobilisation.
+subtitle:  [? if army_strength > 3000 : 예산 -7 ?][? if army_strength > 2000 and army_strength < 3000 : 예산 -5 ?][? if army_strength < 2000 and army_strength > 1000: 예산 -3 ?] 이만하면 충분하다. 동원 해제를 중단한다.
 view-if: psi_in_government
 choose-if: army_loyalty > 0.71
-unavailable-subtitle: Our influence within the army is too low.
+unavailable-subtitle: 군 내부에서의 우리의 영향력이 너무 낮습니다.
 on-arrival: stopped_mobilisation = 1; budget -= 7 if army_strength > 3000; budget -= 5 if army_strength > 2000 and army_strength < 3000; budget -= 3 if army_strength < 2000 and army_strength > 1000; dissent += 0.1;
 
-We are able to convince the army to end its demobilisation, the budget will be balanced some other way. Many in the party decry our seemingly pro-war stance, however.
+군을 설득하여 동원 해제를 중단시키는 데 성공했고, 예산은 다른 방법으로 균형을 맞춰야 할 것입니다. 하지만 당내 많은 이들이 우리의 이러한 친군사적 태도를 비난하고 있습니다.
 
 @sway_demobilise
-subtitle: +1 Budget, -1 Paramilitary Resource
+subtitle: 예산 +1, 준군사 자원 -1
 choose-if: para_resources > 0
-unavailable-subtitle: Not enough paramilitary resources. (Need 1).
+unavailable-subtitle: 준군사 자원이 부족합니다. (1 필요).
 on-arrival: para_resources -= 1; rg_strength += 15*revolutionary_exhaustion; rg_militancy += 0.02; army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
 
-We are able to utilise our resources to recruit and bolster our own forces, as the fascists do the same.
+파시스트들이 세력을 불리는 동안, 우리도 자원을 활용하여 우리 군대를 모집하고 강화합니다.
 
 @allow_demobilise
-title: Let them demobilise.
-subtitle: +1 Budget
+title: 동원 해제를 허용한다.
+subtitle: 예산 +1
 on-arrival: army_strength -= 692; unemployment += 1.9; budget += 1; demobilise_timer += 6; fdc_strength += 15; ard_strength += 10; abl_strength += 5; veterans += 2;
 
-The Regio Esercito continues its post-war demobilisation, as the fascists utilise the opportunity to bolster their ranks.
+왕립군은 전후 동원 해제를 계속하며, 파시스트들은 이 기회를 틈타 자신들의 세를 불리고 있습니다.

@@ -195,7 +195,7 @@ Q.foreign_invasion_display = Q.foreign_invasion_time - Q.time;
   파시스트 행동대: [? if not fdc_banned : 활동 중 ?][? if fdc_banned : 불법화됨 ?][? if fasci_adp_active or fasci_rg_active : 공격받는 중 ?] ?]
 
 [? if not national_congress_seen :
-  아르디티스모: [? if not ard_banned : 활동 중 ?][? if ard_banned : 불법화됨 ?][? if arditi_adp_active or arditi_rg_active : 공격받는 중 ?] ?]
+  결사대: [? if not ard_banned : 활동 중 ?][? if ard_banned : 불법화됨 ?][? if arditi_adp_active or arditi_rg_active : 공격받는 중 ?] ?]
 
 [? if not national_congress_seen :
   반볼셰비키 연맹: [? if not abl_banned : 활동 중 ?][? if abl_banned : 불법화됨 ?][? if abl_adp_active or abl_rg_active : 공격받는 중 ?] ?]
@@ -233,9 +233,9 @@ Q.foreign_invasion_display = Q.foreign_invasion_time - Q.time;
 [? if not national_congress_seen : 파시스트 행동대 전투력: [+ fdc_militancy +] ?]
 
 [? if not national_congress_seen : 
-  {!<span class="tooltip-text" title="아르디티스모는 파시스트 행동대와 연계된, 이탈리아 육군 정예 돌격대 '아르디티' 출신들로 구성된 조직입니다.">아르디티스모</span>!} 세력: [+ ard_strength_2 +] 천 명 ?]
+  {!<span class="tooltip-text" title="결사대는 파시스트 행동대와 연계된, 이탈리아 육군 정예 돌격대 '아르디티(결사대)' 출신들로 구성된 조직입니다.">결사대</span>!} 세력: [+ ard_strength_2 +] 천 명 ?]
 
-[? if not national_congress_seen : 아르디티스모 전투력: [+ ard_militancy +] ?]
+[? if not national_congress_seen : 결사대 전투력: [+ ard_militancy +] ?]
 
 [? if not national_congress_seen : 
   {!<span class="tooltip-text" title="반볼셰비키 연맹은 지주와 자본가들의 지원을 받아 사회주의 이념에 대항하기 위해 이탈리아 전역에 결성된 지역 단체입니다.">반볼셰비키 연맹</span>!} 세력: [+ abl_strength_2 +] 천 명 ?]

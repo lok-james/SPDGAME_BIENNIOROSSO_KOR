@@ -1,5 +1,5 @@
-title: March on Rome
-subtitle: The fascists are making their move!
+title: 로마 진군
+subtitle: 파시스트들이 행동을 개시했다!
 view-if: ((year == 1922 and month == 10) or (fasci_coup_progress >= 10 and year == 1922 and month <= 10)) and ((fdc_banned == 0 or ard_banned == 0 or abl_banned == 0) or (fdc_strength + ard_strength + abl_strength) > 100) and pnf_in_government = 0 and not national_congress_seen and not pnf_banned
 on-arrival: pnf_leader = "Balbo" if pnf_leader == "Grand Council"
 max-visits: 1
@@ -9,20 +9,20 @@ new-page: true
 face-image: img/MarchOnRome.jpg
 go-to: rome_menu if (maximalist_participating = 0 or (maximalist_participating and not psi_in_government)); cv_menu if maximalist_participating = 1 and psi_in_government
 
-= March on Rome
+= 로마 진군
 
-[? if pnf_leader != "D'Annunzio" : [+ pnf_leader +], alongside his militants, have marched upon Rome, demanding the resignation of the current government. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to [+ pnf_leader +]'s demands, as frantic calls are made to them to organise meetings. ?] ?][? if pnf_leader == "D'Annunzio" : The Squadrismo, the paramilitary wing of the PNF, have marched upon Rome, demanding the resignation of the current government and the appointment of Gabriele D'Annunzio to Prime Minister. The party is in crisis, as factions scramble to assemble a coherent response to the threat. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : Our coalition partners not responded to the Squadrismo's demands, as frantic calls are made to them to organise meetings. ?] ?][? if king_relation < 50 : The King has not responded to the demands as well, but we are pessimistic on his response, considering our strained relations. ?][? if king_relation > 49 : The King has not responded to the demands as well, but we are optimistic on his response, considering our warm relations. ?]
+[? if pnf_leader != "D'Annunzio" : [+ pnf_leader +]가 무장대원들과 함께 로마로 진군하며 현 정부의 사임을 요구하고 있습니다. 각 분파가 위협에 대한 일관된 대응을 모색하면서 당은 위기에 빠졌습니다. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : 연정 파트너들은 [+ pnf_leader +]의 요구에 응답하지 않고 있으며, 회담을 조직하기 위한 필사적인 연락이 오가고 있습니다. ?] ?][? if pnf_leader == "D'Annunzio" : 국가 파시스트당의 준군사 조직인 파시스트 행동대가 로마로 진군하여 현 정부의 사임과 가브리엘레 단눈치오의 총리 임명을 요구했습니다. 우리 당은 위기에 처했으며, 각 파벟은 이 위협에 대한 일관된 대응을 마련하기 위해 분주히 움직이고 있습니다. [? if centre_left_coalition or left_wing_coalition or socialist_catholic_coalition : 연정 파트너들은 파시스트 행동대의 요구에 응답하지 않고 있으며, 회의를 조직하기 위한 필사적인 연락이 오가고 있습니다. ?] ?][? if king_relation < 50 : 국왕 역시 요구에 응답하지 않았지만, 우리와의 경색된 관계를 고려할 때 그의 반응은 비관적입니다. ?][? if king_relation > 49 : 국왕 역시 요구에 응답하지 않았지만, 우리와의 따뜻한 관계를 고려할 때 그의 반응은 긍정적일 것으로 기대됩니다. ?]
 
-[? if psi_in_government : We could utilise our government influence to bring down [+ pnf_leader +] and fascism once and for all. ?][? if not_participating = 1 : We cannot rely on the bourgeois parties to defend this nation from fascism. ?] What do we do?
+[? if psi_in_government : 정부의 힘을 빌려 [+ pnf_leader +]와 파시즘을 영원히 종식시킬 수도 있습니다. ?][? if not_participating = 1 : 부르주아 정당들이 이 나라를 파시즘으로부터 지켜낼 것이라고는 기대할 수 없습니다. ?] 어떻게 해야 할까요?
 
 @cv_menu
 
-We are at a crossroads. The results of Bologna has resulted in us taking a middle-of-the-line avenue, advocating for both extraparliamentary means and participation in government, at least without the bourgeois parties. The communists on the left, however, argue that this is the perfect opportunity to strike, while the reformists on the left argue for our continued participation in government.
+우리는 기로에 서 있습니다. 볼로냐에서의 결정으로 우리는 원외 투쟁과 (적어도 부르주아 정당 없는) 정부 참여를 동시에 추구하는 중도 노선을 택했습니다. 그러나 당내 좌파 공산주의자들은 지금이 행동에 나설 절호의 기회라고 주장하는 반면, 개혁주의자들은 계속해서 정부에 참여해야 한다고 주장합니다.
 
-What should we do?
+어떻게 해야 할까요?
 
-- @cv_fight: The Communists should be heeded; we must use this opportunity!
-- @cv_def: The Reformists should be heeded; we should continue our position in government.
+- @cv_fight: 공산주의자들의 말을 들어야 한다. 이 기회를 잡아야 한다!
+- @cv_def: 개혁주의자들의 말을 따라야 한다. 정부 내에서 우리의 입지를 지켜야 한다.
 
 @cv_fight 
 go-to: civil_war
@@ -32,97 +32,97 @@ go-to: rome_menu
 
 @rome_menu
 
-- @rome_army_mobilise: Mobilise the Army to stop [+ pnf_leader +]!
-- @rome_police_mobilise: Mobilise the Carabinieri to stop [+ pnf_leader +]!
-- @rome_rg_mobilise: Mobilise the Red Guards to stop [+ pnf_leader +]!
-- @rome_adp_mobilise: Mobilise the Arditi del Popolo to stop [+ pnf_leader +]!
-- @rome_done: We have done all we can.
-- @rome_nothing: There is nothing we can do.
+- @rome_army_mobilise: [+ pnf_leader +]을(를) 막기 위해 군대를 동원하라!
+- @rome_police_mobilise: [+ pnf_leader +]을(를) 막기 위해 헌병대를 동원하라!
+- @rome_rg_mobilise: [+ pnf_leader +]을(를) 막기 위해 적위대를 동원하라!
+- @rome_adp_mobilise: [+ pnf_leader +]을(를) 막기 위해 인민의 결사대를 동원하라!
+- @rome_done: 우리는 할 수 있는 모든 것을 했다.
+- @rome_nothing: 우리가 할 수 있는 일은 아무것도 없다.
 
 @rome_army_mobilise
 max-visits: 1
-subtitle: The army themselves seem to be willing to cooperate, now we have to convince the King...
+subtitle: 군 자체는 협조적인 듯 하니, 이제 국왕을 설득하는 일만 남았습니다...
 view-if: psi_in_government
 on-arrival: army_convinced = 1; rome_army_visited = 1
 go-to: rome_army_checks
 
-We send out the order to mobilise the army, but it will require the King's authorisation.
+군대 동원 명령을 내리려면 국왕의 재가가 필요합니다.
 
 @rome_army_checks
 
-- @rome_army_king: Request the King formally mobilise the army.
-- @rome_army_bypass: The King be damned, mobilise the army already!
+- @rome_army_king: 국왕에게 공식적인 군대 동원을 요청한다.
+- @rome_army_bypass: 국왕은 상관 말고, 지금 당장 군대를 동원하라!
 
 @rome_army_king
-subtitle: This will result in full mobilisation of the army.
+subtitle: 이는 군대의 전면 동원으로 이어질 것입니다.
 choose-if: king_relation > 59
-unavailable-subtitle: [? if king_relation < 60: Our relations with the King are not high enough, despite our efforts. ?]
+unavailable-subtitle: [? if king_relation < 60: 우리의 노력에도 불구하고 국왕과의 관계가 충분히 좋지 않습니다. ?]
 on-arrival: army_king_successful = 1; army_king_bypassed = 0
 go-to: rome_menu
 
-The King authorises the order, and the entirely of the army is mobilised.
+국왕이 명령을 승인하고, 전 군이 동원됩니다.
 
 @rome_army_bypass
-subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
+subtitle: 국왕의 재가를 건너뛰면 많은 이들이 우리의 부름에 응하지 않을 것입니다.
 on-arrival: army_king_bypassed = 1; army_king_successful = 0
 go-to: rome_menu
 
-The King refuses to authorise the order, but a number of our loyal forces within the army mobilise regardless.
+국왕은 명령 승인을 거부하지만, 우리에게 충성하는 군 내부의 일부 병력은 개의치 않고 움직입니다.
 
 @rome_police_mobilise
 max-visits: 1
-subtitle: The Carabinieri themselves seem to be willing to cooperate, now we have to convince the King...
+subtitle: 헌병대 자체는 협력하려는 듯 하니, 이제 국왕을 설득할 차례다...
 view-if: psi_in_government
 on-arrival: police_convinced = 1; rome_police_visited = 1
 go-to: rome_police_checks
 
-We send out the order to mobilise the Carabinieri, but it will require the King's authorisation.
+헌병대 동원 명령을 내리려면 국왕의 재가가 필요할 것입니다.
 
 @rome_police_checks
 
-- @rome_police_king: Request the King formally order the Carabinieri to crackdown.
-- @rome_police_bypass: The King be damned, send the orders out to the Carabinieri already!
+- @rome_police_king: 국왕에게 헌병대의 강경 진압을 공식적으로 명령하도록 요청한다.
+- @rome_police_bypass: 국왕은 상관 말고, 지금 당장 헌병대에게 명령을 내려라!
 
 @rome_police_king
-subtitle: This will result in full mobilisation of the Carabinieri.
+subtitle: 이는 헌병대의 전면 동원으로 이어질 것이다.
 choose-if: king_relation > 59
-unavailable-subtitle: [? if king_relation < 60: Our relations with the King are not high enough. ?]
+unavailable-subtitle: [? if king_relation < 60: 국왕과의 관계가 충분히 좋지 않습니다. ?]
 on-arrival: police_king_successful = 1; police_king_bypassed = 0
 go-to: rome_menu
 
-The King authorises the order, and the entirely of the Carabinieri is mobilised.
+국왕이 명령을 승인하고, 헌병대 전 병력이 동원됩니다.
 
 @rome_police_bypass
-subtitle: Bypassing the King's authorisation will result in many refusing to heed our call.
+subtitle: 국왕의 재가를 건너뛰면 많은 이들이 우리의 부름에 응하지 않을 것이다.
 on-arrival: police_king_bypassed = 1; police_king_successful = 0
 go-to: rome_menu
 
-The King refuses to authorise the order, but a number of our loyal forces within the Carabinieri mobilise regardless.
+국왕은 명령 승인을 거부하지만, 헌병대 내 우리에게 충성하는 일부 병력은 개의치 않고 움직입니다.
 
 @rome_rg_mobilise
 max-visits: 1
-subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if participating = 0: potentially escalating the situation to a civil war. ?][? if rg_banned = 1 : The Red Guards are banned, and will be weakened. ?]
+subtitle: 우리 군대도 로마로 진군을 개시할 것입니다. [? if participating = 1 : 당연히 정부를 지원하기 위함입니다.  ?][? if participating = 0: 상황이 내전으로 격화될 수도 있습니다. ?][? if rg_banned = 1 : 적위대는 불법화되었기에, 전력이 약화될 것입니다. ?]
 choose-if: communist_dissent < 50 or maximalist_dissent < 50 or reformist_dissent < 50 or labour_dissent < 50
-unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and labour_dissent > 50) : The party is too disunited to act. ?]
+unavailable-subtitle: [? if (communist_dissent > 50 and maximalist_dissent > 50 and reformist_dissent > 50 and labour_dissent > 50) : 당이 너무 분열되어 행동에 나설 수 없습니다. ?]
 on-arrival: rome_rg_visited = 1
 go-to: rome_menu if participating == 1 or maximalist_participating == 1; civil_war if not_participating == 1
 
-The Red Guards mobilise upon our order, beginning the March to Rome to confront [+ pnf_leader +].
+적위대가 우리의 명령에 따라 동원되어, [+ pnf_leader +]에 맞서기 위해 로마로 진군을 시작합니다.
 
 @rome_adp_mobilise
 max-visits: 1
-subtitle: Our forces will begin to March on Rome as well, [? if participating = 1 : in support of the government. ?][? if not_participating = 1: the bourgeois may see this as a threat as well, however. ?]
+subtitle: 우리 군대도 로마로 진군을 개시할 것입니다, [? if participating = 1 : 당연히 정부를 지원하기 위함입니다.  ?][? if not_participating = 1: 하지만 부르주아들은 이를 위협으로 간주할 수도 있습니다. ?]
 choose-if: communist_dissent < 50 or maximalist_dissent < 50 or reformist_dissent < 50 or labour_dissent < 50
 view-if: arditi_cooperation = 1
-unavailable-subtitle: [? if (communist_dissent >= 50 and maximalist_dissent >= 50 and reformist_dissent >= 50 and labour_dissent >= 50) : The party is too disunited to act. ?]
+unavailable-subtitle: [? if (communist_dissent >= 50 and maximalist_dissent >= 50 and reformist_dissent >= 50 and labour_dissent >= 50) : 당이 너무 분열되어 행동에 나설 수 없습니다. ?]
 on-arrival: rome_adp_visited = 1
 go-to: rome_menu
 
-The Anti-Fascist Arditi del Popolo mobilise to stop the far-right.
+반파시스트 인민의 결사대가 극우 세력을 저지하기 위해 동원됩니다.
 
 @rome_done
 max-visits: 1
-subtitle: Now we just have to hope it works.
+subtitle: 이제는 이 작전이 성공하기를 바랄 수밖에.
 view-if: rome_army_visited = 1 or rome_police_visited = 1 or rome_rg_visited = 1
 on-arrival: {!
 Q.rg_strength = Math.round(Q.rg_strength);
@@ -203,7 +203,7 @@ console.log('Enemy strength:', Q.rome_enemy_power)
 go-to: total_defeat_accede if (rome_total_defeat = 1 and king_relation < 60); total_defeat_refuse if (rome_total_defeat = 1 and king_relation > 59); rome_long_war if rome_civil_war = 1; rome_victory if rome_victory = 1
 
 @rome_nothing
-subtitle: We must prepare for the worst.
+subtitle: 최악의 상황에 대비해야 한다.
 view-if: rome_army_visited = 0 and rome_police_visited = 0 and rome_rg_visited = 0
 on-arrival: mussolini_unopposed = 1
 go-to: pnf_takes_power 
@@ -214,74 +214,74 @@ new-page: false
 view-if: rome_total_defeat = 1 and king_relation < 60
 on-arrival: march_succeeded = 1;
 
-= Total Defeat
+= 완전한 패배
 
-Our forces have engaged in fierce combat with the Fasci, Arditismo and Anti-Bolshevik Leagues.
+우리 군은 파시스트, 결사대, 반볼셰비키 연맹과 격렬한 전투를 벌였습니다.
 
-Whatever the case, our initial force has been defeated and forced to retreat, as [+ pnf_leader +] threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted on the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
+결과적으로 우리 선발대는 패배하고 후퇴했으며, [+ pnf_leader +]은(는) 왕국에 '질서'를 회복시키겠다며 추가적인 폭력을 위협하고 있습니다. 로마의 거리는 피로 물들었고, 이탈리아 전역의 남성들은 파시즘이나 사회주의에 맞서 왕국을 지키기 위해 무기를 들라는 명령을 받았습니다.
 
-What happens now?
+이제 어떻게 될까요?
 
-- @pnf_takes_power: The King accedes to [+ pnf_leader +]'s demands and appoints him Prime Minister.
+- @pnf_takes_power: 국왕이 [+ pnf_leader +]의 요구를 수락하고 그를 총리로 임명합니다.
 
 @total_defeat_refuse
-title: Total Defeat
+title: 완전한 패배
 new-page: false
 view-if: rome_total_defeat and king_relation > 59
 
-= Total Defeat
+= 완전한 패배
 
-Our forces have engaged in fierce combat with the Fasci, Arditismo and Anti-Bolshevik Leagues.
+우리 군은 파시스트, 결사대, 반볼셰비키 연맹과 격렬한 전투를 벌였습니다.
 
-Whatever the case, our initial force has been defeated and forced to retreat, as [+ pnf_leader +] threatens further violence to bring 'order' to the Kingdom. Violence and blood is painted on the streets of Rome, as men across Italy are ordered to take up arms, either in defence of the Kingdom against fascism or socialism.
+결과적으로 우리 선발대는 패배하고 후퇴할 수밖에 없었고, [+ pnf_leader +]은(는) 왕국에 '질서'를 회복시키겠다며 추가적인 폭력을 위협합니다. 로마의 거리는 유혈사태로 물들었으며, 이탈리아 전역의 사람들이 파시즘 또는 사회주의에 맞서 왕국을 수호하기 위해 무기를 들라는 명령을 받았습니다.
 
-What happens now?
+이제 어떻게 될까요?
 
-- @civil_war: The King refuses to acquiesce. It is a civil war.
+- @civil_war: 국왕은 굴복을 거부한다. 내전이다.
 
 @rome_long_war
-title: Long War
+title: 기나긴 전쟁
 new-page: false
 view-if: rome_civil_war = 1
 achievement: guerra_civile
 
-= Long War
+= 기나긴 전쟁
 
-It seems the March on Rome has erupted into chaos, as forces across the nation take up arms, pledging support to one side or the other. 
+로마 진군이 혼란에 빠진 듯, 전국의 군세가 무기를 들고 각자의 편에 서서 지지를 맹세하고 있습니다.
 
-We are in a long, protracted war with the fascists now. This will be sure to shape our future immensely. Time will only tell how.
+이제 우리는 파시스트들과 길고 지루한 전쟁에 돌입했습니다. 이는 분명 우리의 미래를 크게 좌우할 것입니다. 그 결과는 시간이 지나야 알 수 있을 것입니다.
 
-- @game_over: Game over.
+- @game_over: 게임 종료.
 
 @rome_victory
-title: Victory
+title: 승리
 new-page: false
 view-if: rome_victory = 1
 on-arrival: march_failed = 1; ard_banned = 1; fdc_banned = 1; abl_banned = 1
 
-= Victory
+= 승리
 
-Our forces easily overwhelm [+ pnf_leader +]'s, as the Fasci are routed and forced to retreat. 
+우리 군대가 [+ pnf_leader +]의 군대를 손쉽게 제압하자, 파시스트 결사체는 궤멸되어 후퇴해야 했습니다.
 
-Victory is achieved, and fascism is staved off for yet another day.
+승리를 거두었고, 파시즘의 위협은 또다시 저지되었습니다.
 
-- @post_war_cv: It is time to decide our new agenda.
+- @post_war_cv: 이제 우리의 새로운 의제를 결정할 때입니다.
 
 @post_war_cv
 
-- @pressure_ban: Ban the [+ pnf_name +].
-- @none: We have done all we can for the moment.
+- @pressure_ban: [+ pnf_name +]를 불법화하자.
+- @none: 현재로서는 할 수 있는 일을 다 했다.
 
 @pressure_ban
 view-if: pnf_banned = 0
 on-arrival: pnf_banned = 1
 go-to: post_war_cv
 
-We are able to pressure the King, as well as convince the other parties to outlaw the [+ pnf_name +] for this attempted March on Rome.
+우리는 국왕에게 압력을 행사하고 다른 정당들을 설득하여, 이번 로마 진군 시도를 빌미로 [+ pnf_name +]를 불법화하는 데 성공했습니다.
 
 @none
 on-arrival: nationalist_sentiment -= 9; republican_sentiment += 7
 
-Regardless, the failure of the March on Rome has bolstered republican opposition within the country, who view the March as the result of the King's incompetence and inability to lead this nation in crisis.
+어쨌든 로마 진군의 실패는, 이를 국왕의 무능과 위기 극복 능력 부재의 결과로 보는 국내 공화주의 반대 세력을 고무시켰습니다.
 
-Similarly, nationalist sentiments within the country have been besmirched by this failed coup attempt.
+마찬가지로, 이번 쿠데타 시도 실패는 국내 민족주의 정서에 먹칠을 했습니다.
