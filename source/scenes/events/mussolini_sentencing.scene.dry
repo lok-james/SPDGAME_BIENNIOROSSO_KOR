@@ -1,18 +1,18 @@
-title: Day of Trial
-subtitle: Let's see if we can convict him...
+title: 재판의 날
+subtitle: 과연 그를 유죄로 만들 수 있을지 봅시다…
 view-if: mussolini_jailed = 1 and mussolini_trial_timer <= 0
 max-visits: 1
 priority: -1
 tags: event
 new-page: true
 
-= Day of Trial
+= 재판의 날
 
-The day of Mussolini's trial is here. He is standing for his threat against the state, for operating a violent militia, a now notorious militia, alongside with gathering arms to defy the state.
+무솔리니 재판의 날이 다가왔습니다. 그는 국가 전복 위협, 폭력 단체 조직 및 운영(이제는 악명이 자자한), 그리고 국가에 대항하기 위한 무기 소지 혐의로 법정에 섰습니다.
 
-We have done all we can. Now we must see if will bare fruit.
+우리는 최선을 다했습니다. 이제 그 노력이 결실을 맺을지 지켜볼 때입니다.
 
-- @trial_results: We await the Judges' decision...
+- @trial_results: 판사의 판결을 기다린다...
 
 @trial_results
 go-to: mussolini_sentenced if ((evidence >= 3 and judicial_reform < 2) or (evidence >= 2 and judicial_reform >= 2) and king_relation >= 30); mussolini_exonerated if ((evidence < 3 and judicial_reform < 2) or (evidence < 2 and judicial_reform >= 2)) and king_relation >= 30; mussolini_pardoned if king_relation < 30 
@@ -21,24 +21,24 @@ go-to: mussolini_sentenced if ((evidence >= 3 and judicial_reform < 2) or (evide
 on-arrival: mussolini_convicted = 1; veterans_pnf *= 0.75; industrialists_pnf *= 0.8; middle_class_pnf *= 0.9; fdc_militancy += 0.02; fdc_strength -= 20
 achievement: il_traditore_e_sempre_un_infame
 
-= Mussolini behind bars; Agitator convicted
+= 무솔리니가 철창으로; 선동가 유죄 판결
 
-The Judge has ruled in favour of us. Mussolini is found guilty of his crimes, and sentenced to god knows how long in prison. Regardless, he will no longer lead the fascists, and existing supporters of the organisation leave, not wanting their own image tarnished by a criminal.
+판사는 우리에게 유리한 판결을 내렸습니다. 무솔리니는 유죄 판결을 받고 기약 없는 옥살이를 하게 되었습니다. 이로써 그는 더 이상 파시스트를 이끌지 못할 것이며, 기존 지지자들도 범죄자와 엮이는 것을 꺼려 조직을 떠나고 있습니다.
 
-In response, however, Mussolini's most loyal forces riot, inciting further violence and bloodshed across the nation in response, though we are able to quell the weakened forces easily.
+하지만 이에 반발하여 무솔리니의 가장 충성스러운 세력은 폭동을 일으켜 전국적으로 더 큰 폭력과 유혈 사태를 초래했지만, 약화된 그들의 저항은 손쉽게 진압할 수 있었습니다.
 
 @mussolini_exonerated
 on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.5; industrialists_pnf *= 1.25; fdc_strength += 20; fdc_militancy += 0.04; middle_class_psi *= 1.3; pnf_leader = "Mussolini";
 
-= Mussolini Acquitted; State unlawfully holds innocent man for 12 months
+= 무솔리니 무죄 석방; 국가가 무고한 시민을 12개월간 불법 구금
 
-The Judge has ruled in favour of Mussolini, acquitting him of all charges we have placed against him due to 'insufficient evidence'. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.
+판사는 ‘증거 불충분’을 이유로 우리가 제기한 모든 혐의에 대해 무죄를 선고했고, 무솔리니의 손을 들어주었습니다. 결국 우리의 계획은 수포로 돌아갔습니다. 무솔리니는 부하들과 미래주의 운동과 파시스트 운동의 순교자로 추앙받게 되었고, 국가 파시스트당은 전국적인 정당으로 발돋움했습니다.
 
-- @root: Damn it.
+- @root: 제기랄.
 
 @mussolini_pardoned
 on-arrival: mussolini_jailed = 0; veterans_pnf *= 1.8; industrialists_pnf *= 1.4; fdc_strength += 23; fdc_militancy += 0.06; middle_class_psi *= 1.5; pnf_leader = "Mussolini";
 
-= King [+ king +] saves innocent man from [+ psi_name +]'s authoritarianism
+= [+ king +] 국왕이 [+ psi_name +]의 권위주의로부터 무고한 시민을 구하다
 
-In an unexpected twist, the King has exercised his constitutional rights, pardoning Mussolini and forcing the Ministry to release him. Regardless, our plan has backfired. Mussolini has turned into a martyr, celebrated by his men and the futurist and fascist movement, and has propelled the [+ pnf_name +] to a national stage.
+예상치 못한 반전으로, 국왕은 헌법상의 권한을 행사하여 무솔리니를 사면하고 석방을 명령했습니다. 결국 우리의 계획은 물거품이 되었습니다. 무솔리니는 부하들과 미래주의 운동과 파시스트 운동이 찬양하는 순교자가 되었고, [+ pnf_name +]는 전국적인 정당으로 발돋움했습니다.

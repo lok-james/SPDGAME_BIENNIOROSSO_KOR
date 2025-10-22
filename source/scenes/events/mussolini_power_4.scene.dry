@@ -1,11 +1,11 @@
-title: Treaty of Rome
+title: 로마 조약
 new-page: true 
-subtitle: Fiume's Free City status has been dissolved.
+subtitle: 피우메 자유시의 지위가 철폐되었습니다.
 tags: event
 view-if: fiume_free = 1 and year = 1924 and month = 1 and week = 3 and prime_minister_party == pnf_name
 on-arrival: veterans_pnf += 7; workers += 4; middle_class += 5; rural += 1; fiume_free = 0; fiume_italian = 1;
 max-visits: 1
 
-= Prime Minister [+ prime_minister +] signs the Treaty of Rome
+= [+ prime_minister +] 총리, 로마 조약 체결
 
-Prime Minister [+ prime_minister +] has negotiated an agreement with the Kingdom of Serbs, Croats and Slovenes, dissolving the Free City of Fiume and integrating it into Italy. Already, we have seen a jump from the veteran bloc, who are in support of [+ prime_minister +]'s revanchist and nationalistic tendencies.
+[+ prime_minister +] 총리는 세르비아·크로아티아·슬로베니아 왕국과 협상을 통해 피우메 자유시를 해체하고 이를 이탈리아 영토에 병합시켰습니다. [+ prime_minister +]의 이러한 영토 회복주의적이고 민족주의적인 행보에 힘입어, 퇴역 군인층의 지지율이 급등하는 것을 목격했습니다.

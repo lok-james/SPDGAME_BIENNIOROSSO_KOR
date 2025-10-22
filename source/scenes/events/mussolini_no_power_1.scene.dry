@@ -1,14 +1,14 @@
-title: [+ pnf_full_name +] Collapses!
+title: [+ pnf_full_name +] 붕괴!
 view-if: year == 1922 and month == 11 and march_failed = 1
 on-arrival: workers_pnf *= 0.35; rural_pnf *= 0.35; industrialists_pnf *= 0.1; veterans_pnf *= 0.5; middle_class_pnf *= 0.4; pnf_collapse_seen = 1; king_emergency = time + 2
 max-visits: 1
 tags: event
 new-page: true
 
-= [+ pnf_full_name +] Collapses!
+= [+ pnf_full_name +] 붕괴!
 
-Following the March on Rome, the National Fascist Party, known also as the PNF, has collapsed. [+ pnf_leader +] has fled to Switzerland in exile, while his subordinates have been arrested and are being trialed. The Fasces of Combat have collapsed, as Dino Grandi and other prominent paramilitary leaders have been arrested in the wake of their march.
+로마 진군 실패 이후, 일명 국가 파시스트당으로 알려진 정당이 붕괴했습니다. 당수 [+ pnf_leader +]는 스위스로 망명했고, 그의 측근들은 체포되어 재판을 받고 있습니다. 전투 파쇼 또한 와해되었으며, 디노 그란디를 비롯한 주요 준군사 조직 지도자들도 진군 실패의 여파로 체포되었습니다.
 
-Fascism is dead, at least in Italy.
+적어도 이탈리아에서 파시즘은 종말을 고했습니다.
 
-- @root: Thus falls the failed experiment.
+- @root: 실패한 실험은 그렇게 막을 내렸다.

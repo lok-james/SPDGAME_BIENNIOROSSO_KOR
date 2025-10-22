@@ -1,28 +1,28 @@
-title: Pact of Pacification
-subtitle: Mussolini approaches us with an offer.
+title: 평화 협정
+subtitle: 무솔리니가 우리에게 제안을 가지고 접근합니다.
 view-if: year == 1921 and month == 8 and week == 1 and pnf_leader = "Mussolini" and not national_congress_seen
 max-visits: 1
 tags: event
 new-page: true
 
-= Pact of Pacification
+= 평화 협정
 
-Benito Mussolini, leader of the [+ pnf_name +] and the *Italian Fasces of Combat*, the paramilitary forces that have been plaguing us, have come to us for an offer of peace. The peace, known as the *Pacification Pact*, would end hostilities between the Red Guards and the Fascists, calling to an end assaults, threats and violence of any sorts.
+[+ pnf_name +]의 지도자이자 우리를 괴롭혀 온 준군사조직 *이탈리아 전투 파쇼*의 수장인 베니토 무솔리니가 평화 협정을 제안해 왔습니다. '평화 협정'으로 알려진 이 협약은 적위대와 파시스트 간의 적대 행위를 종식시키고, 모든 형태의 공격, 위협, 폭력 등을 중단할 것을 약속합니다.
 
-Many within the party are conflicted; the left-wing is wary of a trap by our enemies, while the right is supportive of the pact, willing to place down arms in favour of peace. Even from the fascists, rumors of numerous *Ras* up in arms regarding Mussolini's offer is widespread, as an internal coup might be on the horizon.
+당내에서는 의견이 분분합니다. 좌파는 적의 함정을 경계하지만, 우파는 평화를 위해 무기를 내려놓으려는 의지를 보이며 협정을 지지합니다. 심지어 파시스트들 사이에서도 무솔리니의 제안에 대해 수많은 지방 유력가들이 반발하고 있다는 소문이 파다하여, 내부 쿠데타 가능성까지 거론되고 있습니다.
 
-What should we do?
+어떻게 해야 할까요?
 
-- @querfront: Accept the offer.
-- @fuck_off: No deals with fascists!
+- @querfront: 제안을 수락한다.
+- @fuck_off: 파시스트와는 타협 없다!
 
 @querfront
-subtitle: This will prevent us from using the Red Guards.
+subtitle: 이는 우리가 적위대를 동원하는 것을 막을 것입니다.
 on-arrival: fdc_militancy -= 0.05; abl_militancy -= 0.02; ard_militancy -= 0.03; rg_militancy -= 0.1; pacification_pact = 1; reformist_strength += 5; syndicalist_strength += 12; communist_dissent += 5
 
-The *Pacification Pact* is signed, and we see an immediate decrease in paramilitary violent in the following days. The right-wing of the party reassures us that this is the right course of action.
+*평화 협정*이 체결되었고, 이후 며칠간 준군사 조직의 폭력이 눈에 띄게 감소했습니다. 당내 우파는 이것이 올바른 방향이라고 우리를 안심시킵니다.
 
 @fuck_off
 on-arrival: communist_strength += 5; reformist_dissent += 3; syndicalist_dissent += 5 if syndicalist_active; fdc_militancy += 0.02; abl_militancy += 0.02; ard_militancy += 0.01;
 
-We refuse to sign the *Pacification Pact*, much to the delight of Mussolini's deputies and his *Ras*. Mussolini utilises the opportunity to paint us as radicals, refusing to even sign peace. The left-wing of the party reassures us that this is the right course of action.
+우리는 *평화 협정* 체결을 거부했고, 이는 무솔리니의 부관들과 그의 *지방 유력가들*을 크게 기쁘게 했습니다. 무솔리니는 이를 기회로 삼아 우리가 평화를 거부하는 극단주의자들이라고 선전했습니다. 당내 좌파는 이것이 올바른 방향이라고 우리를 안심시킵니다.

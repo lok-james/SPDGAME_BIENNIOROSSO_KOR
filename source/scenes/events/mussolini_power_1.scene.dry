@@ -1,12 +1,12 @@
-title: Formation of the Blackshirts
+title: 검은 셔츠단 창설
 view-if: year = 1923 and month = 3 and week = 3 and prime_minister_party = "PNF" and (pnf_leader = "Mussolini" or pnf_leader = "Balbo")
 on-arrival: blackshirts_formed = 1; fdc_strength *= 2.3; fdc_militancy += 0.12;
 max-visits: 1
 new-page: true
 tags: event
 
-= Formation of the Voluntary Militia for National Security
+= 국가 안보 지원 민병대 창설
 
-The *Squadrismo*, paramilitary wing of the [+ pnf_full_name +], has been reorganised into the MVSN, or *Milizia Volontaria per la Sicurezza Nazionale*, integrating the organisation into the Regio Esercito under [+ pnf_leader +]'s orders. 
+[+ pnf_full_name +]의 준군사조직인 *파시스트 행동대*가 [+ pnf_leader +]의 명령에 따라 왕립군에 편입되면서 'MVSN' 즉 *국가 안보 지원 민병대*로 재편되었습니다.
 
-This has given a significant boost to the strength of the paramilitary, as well as given it access to a larger range of weaponry that can begin using against us.
+이로 인해 준군사조직의 전력이 대폭 강화되었으며, 우리를 상대로 사용할 수 있는 더 다양한 무기를 확보하게 되었습니다.
