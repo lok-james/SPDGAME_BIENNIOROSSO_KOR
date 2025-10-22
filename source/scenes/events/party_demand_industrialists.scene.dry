@@ -1,5 +1,5 @@
-title: Petition of the Industrialists
-subtitle: Our Industrialist & Landowner support base have pushed forward demands.
+title: 산업자본가의 청원
+subtitle: 우리의 산업자본가 및 지주 지지층이 요구사항을 내세웠습니다.
 view-if: ((class1_set = 'industrialists' and class1_timer <= 0) or (class2_set = 'industrialists' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
 on-arrival: {! 
 
@@ -16,18 +16,18 @@ if (Q.class2_set == "industrialists") {
 new-page: true
 tags: event
 
-= Petition of the Industrialists
+= 산업자본가의 청원
 
-The Industrialists and Landowners, one of our non-traditional but now shockingly our key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+우리의 비전통적 지지층이지만 이제는 놀랍게도 핵심 투표 기반이 된 산업자본가와 지주들이 지지를 유지하는 조건으로 일련의 요구 사항을 제시했습니다.
 
-We will have to choose one to complete, or we could refuse their demands entirely.
+우리는 요구 중 하나를 이행하거나 아니면 전부를 거부할 수 있습니다.
 
-- @industrialists_demand_tax: Cut taxes for the upper class.
-- @industrialists_demand_nationalisation: Roll back nationalising industries.
-- @industrialists_demand_refuse: Refuse the demands.
+- @industrialists_demand_tax: 부유층의 세금을 감면한다.
+- @industrialists_demand_nationalisation: 산업 국유화 조치를 철회한다.
+- @industrialists_demand_refuse: 요구를 거부한다.
 
 @industrialists_demand_tax
-subtitle: -2 Budget
+subtitle: -2 예산
 view-if: upper_tax_rates < -5
 on-arrival: {!
 Q.upper_tax_rates -= 1; 
@@ -63,7 +63,7 @@ Q.ppi_relation -= 3*(1-Q.dissent);
 Q.ldr_right -= 0.2;
 !}
 
-Raising taxes on the rich is unpopular among our traditional base, but it is supported by the bourgeoisie.
+부유층에 대한 감세는 우리의 전통적인 지지층 사이에서 인기가 없지만, 부르주아 계층의 지지를 받고 있습니다.
 
 @industrialists_demand_nationalisation
 subtitle: +1 Budget
@@ -97,7 +97,7 @@ if (Q.centre_left_coalition == 1) {
 Q.psri_relation += 7*(1-Q.dissent);
 !}
 
-We begin privatising nationally owned companies, repurposing and organising them into corporations that we sell to the highest bidder. The workers, nor our party are not pleased at this change of course.
+우리는 국영 기업의 민영화를 시작하여 최고가 입찰자에게 매각할 기업으로 재편하고 있습니다. 노동자들은 물론 우리 당도 이러한 노선 변경에 만족하지 않습니다.
 
 @industrialists_demand_refuse
 on-arrival: {!
@@ -109,4 +109,4 @@ if (Q.left_wing_coalition) {
 }
 !}
 
-The industrialists are, unsurprisingly, outraged at our refusal to heed their demands.
+당연하게도, 산업자본가들은 자신들의 요구를 들어주지 않는 우리의 태도에 분개하고 있습니다.

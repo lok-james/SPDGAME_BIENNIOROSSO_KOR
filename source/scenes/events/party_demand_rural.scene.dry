@@ -1,5 +1,5 @@
-title: Petition of the Rural voters
-subtitle: Our Rural support base have pushed forward demands.
+title: 농촌 유권자의 청원
+subtitle: 우리의 농촌 지지 기반이 요구사항을 내세웠습니다.
 view-if: ((class1_set = 'rural' and class1_timer <= 0) or (class2_set = 'rural' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
 on-arrival: {! 
 
@@ -16,19 +16,19 @@ if (Q.class2_set == "rural") {
 new-page: true
 tags: event
 
-= Petition of the Rural voters
+= 농촌 유권자의 청원
 
-The Rural voters, our traditional support base have pushed forward a series of demands we should do in order to keep their support.
+우리의 전통적 지지 기반인 농촌 유권자들이 지지를 유지하는 조건으로 일련의 요구 사항을 제시했습니다.
 
-We will have to choose one to complete, or we could refuse their demands entirely.
+우리는 요구 중 하나를 이행하거나 아니면 전부를 거부할 수 있습니다.
 
-- @rural_demand_bordiga: Seize land from large estates to redistribute.
-- @rural_demand_serrati: Support Agricultural Cooperatives.
-- @rural_demand_turrati: Increase financing for agricultural credit and insurance.
-- @rural_demand_refuse: Refuse the demands.
+- @rural_demand_bordiga: 토지 재분배를 위해 대지주로부터 토지를 몰수한다.
+- @rural_demand_serrati: 농업 협동조합을 지원한다.
+- @rural_demand_turrati: 농업 신용과 보험 금융을 확대한다.
+- @rural_demand_refuse: 요구를 거부한다.
 
 @rural_demand_bordiga
-unavailable-subtitle: The judiciary would not support this.
+unavailable-subtitle: 사법부는 이를 지지하지 않을 것입니다.
 choose-if: judicial_reform >= 2
 view-if: prime_minister == "Bordiga"
 on-arrival: {!
@@ -63,20 +63,20 @@ Q.industrialists_pnf += 3;
 Q.psri_relation += 3*(1-Q.dissent);
 !}
 
-We are able to seize land form large estate, mostly uncultivated land and hand them out to peasants and veteran-run cooperatives, reducing unemployment.
+우리는 대농장으로부터 주로 미경작지를 몰수하여 농민과 재향군인 운영 협동조합에 분배함으로써 실업을 줄일 수 있습니다.
 
 @rural_demand_serrati
 on-arrival: rural_psi += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent);
 
-We are able to utilise the Ministry to support peasants and cooperatives, protecting them using legal means.
+우리는 부처를 활용해 농민과 협동조합을 지원하고 법적 수단을 동원해 그들을 보호할 수 있습니다.
 
 @rural_demand_turrati
-subtitle: -1 Budget
+subtitle: -1 예산
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: budget -= 1; agricultural_policy += 1; rural_psi += 7*(1-dissent); rural_pnf -= 3*(1-dissent); unemployment -= 0.3 if unemployment >= 8; communist_dissent += 8; maximalist_dissent += 6; labour_dissent += 3; economic_growth += 0.2; economic_growth += 0.3 if economic_growth < 0
 
-We have increased financial support for small farmers, providing aid through credit and insurance. The left and maximalists are unsurprisingly opposed to our policies, seeing them as handouts to petite-bourgeois farmers.
+우리는 신용과 보험을 통해 소농에 대한 재정 지원을 확대했습니다. 당연하게도 좌파와 최대강령주의파는 우리의 정책이 소시민 농부들을 위한 특혜에 불과하다며 반대합니다.
 
 @rural_demand_refuse
 on-arrival: {!
@@ -88,4 +88,4 @@ if (Q.left_wing_coalition) {
 }
 !}
 
-Our rural voters are, unsurprisingly, outraged at our refusal to heed their demands.
+당연하게도, 우리의 농촌 유권자들은 자신들의 요구를 들어주지 않는 우리의 태도에 분개하고 있습니다.

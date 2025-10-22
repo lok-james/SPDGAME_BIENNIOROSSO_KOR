@@ -1,5 +1,5 @@
-title: [+ year +] [+ ldr_name +] Party Congress
-subtitle: The [+ ldr_name +] holds its Biennial Congress.
+title: [+ year +]년 [+ ldr_name +] 전당대회
+subtitle: [+ ldr_name +]가 격년 전당대회를 개최합니다.
 new-page: true
 view-if: ldr_congress_trigger = 1 and not ldr_banned
 on-arrival: {!
@@ -34,39 +34,39 @@ if ((Q.ldr_r - Q.old_ldr_r) > 0) {
 !}
 tags: event
 
-= [+ year +] [+ ldr_name +] Party Congress
+= [+ year +]년 [+ ldr_name +] 전당대회
 
-The Biennial Party Congress of the [+ ldr_full_name +] has begun in order to elect the party's next leader. 
+차기 당 대표를 선출하기 위한 [+ ldr_full_name +]의 격년 전당대회가 시작되었습니다.
 
-[? if ldr_defunct : Following the merger of the PLDI and PLI, the remnants of the PLDI have remained as a defunct party. though still participating in elections via its own national electoral lists. ?]
+[? if ldr_defunct : 이탈리아 민주자유당과 이탈리아 자유당이 합당한 후, 민주자유당의 잔존 세력은 사실상 해체된 정당으로 남아, 독자적인 전국 선거 명부를 통해 선거에 참여하고 있습니다. ?]
 
-[? if not ldr_defunct and pli_formed : Following the failures of the merger between the PLDI and PLI, ?][? if not pli_formed : The liberals in Italy, unlike the Popular and Socialist Parties, are divided into two parties, with the PLDI representing a more moderate wing of liberalism compared to Giolitti's [? if pli_formed : and Salandra's ?] National Conservatism. ?]
+[? if not ldr_defunct and pli_formed : 이탈리아 민주자유당과 이탈리아 자유당의 합당이 실패한 후, ?][? if not pli_formed : 인민당 및 사회당과 달리, 이탈리아의 자유주의자들은 두 개의 정당으로 분열되어 있습니다. 민주자유당은 지올리티의 [? if pli_formed : 그리고 살란드라의 ?] 국가 보수주의에 비해 상대적으로 온건한 자유주의적 입장을 대변합니다. ?]
 
-[? if pli_formed : Following Salandra's defection to the PLI, the party is divided between two candidates; Orlando has consolidated the remaining right-wing of the party, as well as sympathetic moderates to his side, advocating for the PLDI's continuance to Conservative Liberalism. On the other end is Francesco Saverio Nitti, who has emerged as leader of the left-wing of the party. Nitti is, at the very least, one of the few people who oppose cooperation with fascism in the liberal parties, and his electoral victory could certainly sway the party against the tendencies of the right. ?]
+[? if pli_formed : 살란드라가 이탈리아 자유당으로 옮긴 후, 당은 두 후보로 나뉘었습니다. 한편에는 당내 잔존 우파와 동정적인 중도파를 규합한 오를란도가 있습니다. 그는 민주자유당이 보수적 자유주의 노선을 계속 이어가야 한다고 주장합니다. 다른 한편에는 당내 좌파의 지도자로 떠오른 프란체스코 사베리오 니티가 있습니다. 니티는 자유주의 정당 내에서 파시즘과의 협력에 반대하는 몇 안 되는 인물 중 한 명으로, 그의 승리는 당이 우경화되는 것을 막는 계기가 될 수 있습니다. ?]
 
-[? if not pli_formed : The party is divided between two candidates; Salandra leads the right-wing of the party, advocating for the party's continued ideological path of National Conservatism, as well as a strong willingness to cooperate with the far-right in order to restore stability to the nation. On the other end, Orlando has the backing of the moderates of the party, as well as reluctant members of the left-wing of the party, who might be able to quell his conservative tendencies. ?]
+[? if not pli_formed : 당은 두 후보로 나뉘었습니다. 살란드라는 당내 우파를 이끌며 국가 보수주의 이념을 고수하고, 국가 안정을 회복하기 위해 극우 세력과 기꺼이 협력해야 한다고 주장합니다. 반면 오를란도는 당내 중도파와 더불어, 그의 보수 성향을 억제하려는 좌파의 마지못한 지지를 등에 업고 있습니다. ?]
 
-- @salandra_elected: Antonio Salandra is elected leader of the party once more.
-- @orlando_elected: Vittorio Emanuele Orlando secures leadership of the party.
-- @nitti_elected: Francesco Saverio Nitti is able to secure a majority.
+- @salandra_elected: 안토니오 살란드라가 다시 당 대표로 선출된다.
+- @orlando_elected: 비토리오 에마누엘레 오를란도가 당권을 장악한다.
+- @nitti_elected: 프란체스코 사베리오 니티가 과반수를 확보한다.
 
 @salandra_elected
 view-if: not pli_formed
 choose-if: ldr_right >= ldr_moderates
-unavailable-subtitle: The right-wing of the party has been weakened.
+unavailable-subtitle: 당의 우익 세력이 약화되었습니다.
 
-Antonio Salandra has been able to continue his leadership role within the PLDI. He will continue the party's direction towards National Conservatism.
+안토니오 살란드라는 이탈리아 민주자유당의 지도자직을 계속 수행하게 되었습니다. 그는 당을 국가 보수주의 노선으로 계속 이끌 것입니다.
 
 @orlando_elected
 view-if: ((ldr_moderates > ldr_right) and not pli_formed) or ((ldr_right >= ldr_moderates) and pli_formed)
 on-arrival: ldr_leader = "Orlando"
 
-Vittorio Emanuele Orlando has been able to secure leadership of the PLDI, having swayed sympathetic party members towards his side. Orlando will continue the party's ideological direction of liberalism against threat of the Popular & Socialist Parties.
+비토리오 에마누엘레 오를란도는 우호적인 당원들을 자신의 편으로 끌어들이는 데 성공하여, 이탈리아 민주자유당의 지도권을 확보했습니다. 오를란도는 인민당과 사회당의 위협에 맞서 자유주의라는 당의 이념적 방향성을 계속 유지할 것입니다.
 
 @nitti_elected
 view-if: pli_formed
 choose-if: ldr_moderates > ldr_right
-unavailable-subtitle: The party's right-wing is strong enough to overcome the opposition.
+unavailable-subtitle: 당의 우파가 반대 세력을 누를 만큼 강력합니다.
 on-arrival: ldr_leader = "Nitti"
 
-Francesco Saverio Nitti has secured a majority in the party leadership, utilising the consolidated left of the party to seize control of the PLDI. Nitti, unlike many in the liberal parties, is wary of collaboration with the far-right, specifically [+ pnf_leader +] and his [+ pnf_full_name +].
+프란체스코 사베리오 니티는 결집된 당내 좌파 세력을 기반으로 당내 과반수를 확보하며 이탈리아 민주자유당의 주도권을 장악했습니다. 대부분의 자유주의 성향 정치인들과 달리, 니티는 [+ pnf_leader +]가 이끄는 [+ pnf_full_name +]와 같은 극우 세력과의 협력을 경계하고 있습니다.

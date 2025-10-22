@@ -1,5 +1,5 @@
-title: [+ year +] [+ ul_name +] Party Congress
-subtitle: The [+ ul_name +] holds its Biennial Congress.
+title: [+ year +]년 [+ ul_name +] 전당대회
+subtitle: [+ ul_name +]가 격년 전당대회를 개최합니다.
 new-page: true
 view-if: ul_congress_trigger = 1 and not ul_banned
 on-arrival: {!
@@ -26,28 +26,28 @@ if ((Q.ul_r - Q.old_ul_r) > 0) {
 !}
 tags: event
 
-= [+ year +] [+ ul_name +] Party Congress
+= [+ year +]년 [+ ul_name +] 전당대회
 
-The Biennial Party Congress of the [+ ul_full_name +] has begun in order to elect the party's next leader. Alberto Giovannini has continued his role as Secretary-General, though a vote will be held on electing the party's leadership to represent it for the next two years.
+[+ ul_full_name +]의 격년 전당대회가 시작되었습니다. 알베르토 조반니니가 지도자 자리를 계속 맡고 있는 가운데, 향후 2년간 당을 대표할 지도부를 선출하는 투표가 열릴 예정입니다.
 
-The party is split into two factions; [? if not ldr_defunct : Following the failure of the merger of the PLDI and the PLI and his subsequent defection, ?][? if ldr_defunct : Following the merger of the PLDI with the PLI, ?] Antonio Salandra, former leader of the PLDI, has been able to secure influence within the right of party, advocating for further and deepened cooperation with [+ pnf_leader +]'s [+ pnf_full_name +] in order to combat the left-wing radicals.
+당은 두 개의 파벌로 나뉘어 있습니다. [? if not ldr_defunct : 이탈리아 민주자유당과 이탈리아 자유당의 합병이 실패한 후 당을 옮겨온, ?][? if ldr_defunct : 이탈리아 민주자유당과 이탈리아 자유당의 합병 이래로, ?] 민주자유당의 전 대표였던 안토니오 살란드라는 당내 우파 내에서 영향력을 확보했으며, 좌익 급진주의자들과 맞서기 위해 [+ pnf_leader +]가 이끄는 [+ pnf_full_name +]와 더욱 깊은 협력을 해야 한다고 주장합니다.
 
-On the other side of the party lies Giovanni Giolitti, wielding immense influence over the party and supported by the moderate wing, alongside reluctant support from the left-wing of the party against Salandra, Giolitti advocates cautious cooperation with the [+ pnf_full_name +], viewing them as somewhat of a threat as well.
+당의 반대편에는 조반니 지올리티가 자리 잡고 있습니다. 그는 당내에서 막강한 영향력을 행사하며 중도파의 지지를 받고 있으며, 살란드라에 반대하는 좌파로부터는 마지못한 지지를 얻고 있습니다. 지올리티는 [+ pnf_full_name +]를 어느 정도 위협으로 여기면서도, 그들과의 신중한 협력을 옹호합니다.
 
-- @giolitti_elected: Giovanni Giolitti is elected leader.
-- @salandra_elected: Antonio Salandra and the right are voted in.
+- @giolitti_elected: 조반니 지올리티가 지도자로 선출된다.
+- @salandra_elected: 안토니오 살란드라와 우파가 당선된다.
 
 
 @giolitti_elected
 choose-if: ul_giolitti >= ul_salandra
-unavailable-subtitle: Our actions have pushed the party towards the right.
+unavailable-subtitle: 우리의 행동으로 인해 당이 우경화되었습니다.
 on-arrival: ul_leader = "Giolitti"
 
-Giovanni Giolitti has able to secure the leadership of the party once more, promising a continuance of the liberal vision and his "Giolittian System". Though hesitant to turn to the right, Giolitti's leadership does not represent a change in our relations, as the party still views us with distrust. Regardless, the moderate wing of the party taking the reigns is better than Salandra.
+조반니 지올리티는 자유주의적 비전과 자신의 "지올리티 체제"를 계속 이어가겠다는 약속을 하며 다시 한번 당의 지도권을 확보했습니다. 비록 그는 우파에 기대는 것을 주저하지만, 당이 여전히 우리를 불신하고 있기에 그의 리더십이 우리와의 관계에 변화를 가져오지는 않을 것입니다. 그럼에도 불구하고, 살란드라보다 당내 온건파가 주도권을 쥐는 것이 더 낫습니다.
 
 @salandra_elected
 view-if: ul_salandra > ul_giolitti
 on-arrival: ul_leader = "Salandra"
 
-Antonio Salandra has secured the leadership of the party with the support of the right-wing of the party, promising to defend liberalism against the threat of radicals and revolutionaries from the left. Whatever the case, this does not bode well for our relations with the PLI, as it is almost certain the Salandra will lead the PLI's shift further towards the right.
+안토니오 살란드라는 당내 우파의 지지를 받아 당권을 확보했으며, 좌파 급진주의자들과 혁명가들의 위협으로부터 자유주의를 수호하겠다고 약속했습니다. 어떤 경우든, 살란드라가 거의 확실하게 이탈리아 자유당을 더욱 오른쪽으로 이끌 것이기 때문에, 그와의 관계는 좋게 흘러가지 않을 것입니다.
 

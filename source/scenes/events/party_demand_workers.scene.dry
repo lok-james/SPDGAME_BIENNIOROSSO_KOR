@@ -1,5 +1,5 @@
-title: Petition of the Workers
-subtitle: Our Worker support base have pushed forward demands.
+title: 노동자의 청원
+subtitle: 우리의 노동자 지지 기반이 요구사항을 내세웠습니다.
 view-if: ((class1_set = 'workers' and class1_timer <= 0) or (class2_set = 'workers' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition) and womens_suffrage
 on-arrival: {! 
 
@@ -16,30 +16,30 @@ if (Q.class2_set == "workers") {
 new-page: true
 tags: event
 
-= Petition of the Workers
+= 노동자의 청원
 
-The Workers, our traditional and key voting support bloc have pushed forward a series of demands we should do in order to keep their support.
+우리의 전통적이고 핵심적인 투표 기반인 노동자들이 지지를 유지하는 조건으로 일련의 요구 사항을 제시했습니다.
 
-We will have to choose one to complete, or we could refuse their demands entirely.
+우리는 요구 중 하나를 이행하거나 아니면 전부를 거부할 수 있습니다.
 
-- @workers_demand_bordiga: Nationalise industries without compensation.
-- @workers_demand_serrati: Expand the scope of the Unemployment Insurance Program.
-- @workers_demand_turati: Cut taxes for the lower class.
-- @workers_demand_wages: Develop and enforce a minimum wage.
-- @workers_demand_safety: Develop and enforce safety regulations.
-- @workers_demand_refuse: Refuse the demands.
+- @workers_demand_bordiga: 보상 없이 산업 시설을 국유화한다.
+- @workers_demand_serrati: 실업 보험 프로그램의 적용 범위를 확대한다.
+- @workers_demand_turati: 저소득층의 세금을 감면한다.
+- @workers_demand_wages: 최저 임금제를 개발하고 시행한다.
+- @workers_demand_safety: 안전 규정을 개발하고 시행한다.
+- @workers_demand_refuse: 요구를 거부한다.
 
 @workers_demand_bordiga
 view-if: max_seize < 3 and prime_minister = "Bordiga"
 on-arrival: max_seize += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 6*(1-dissent); veterans_psi += 4*(1-dissent); middle_class_pnf += 3; radicalisation += 0.3; unemployment -= 0.7; economic_growth -= 0.4; industrialists_pnf += 8; capital_strike_progress += 3; fasci_coup_progress += 2; ldr_relation -= 10; ul_relation -= 10; ppi_relation -= 4; ds_right += 1; ldr_right += 1; ppi_right += 0.5; socialist_sentiment += 3;
 
-We begin forcefully seizing idle industries, nationalising vast sums of the economy without compensating the greedy industrialists a single cent. They are, of course, outraged, and utilise their backings and support from the liberal parties. The [+ pnf_name +] use this as propaganda, fearmongering to the middle class and other industrialists who are swayed to support them.
+우리는 가동되지 않는 공장들을 강제적으로 점거하기 시작하여, 탐욕스러운 자본가들에게는 단 한 푼의 보상도 없이 경제의 막대한 부분을 국유화합니다. 당연히 그들은 격분하며, 자유주의 정당들로부터 얻은 지지를 활용합니다. [+ pnf_name +]는 이를 선전 도구로 삼아, 이들에게 동조하는 중산층과 다른 산업자본가들에게 겁을 줍니다.
 
 @workers_demand_serrati
-subtitle: -2 Budget
+subtitle: -2 예산
 view-if: unemployment_insurance_founded and prime_minister = "Serrati"
 choose-if: not national_economic_recovery or budget > 1
-unavailable-subtitle: Not enough budget. (Need 2)
+unavailable-subtitle: 예산이 부족합니다. (2 필요)
 on-arrival: {!
 Q.unemployment_insurance_expanded = 1; 
 Q.insurance_payments_veterans_timer = 24; 
@@ -55,7 +55,7 @@ Q.psri_relation += 7*(1-Q.dissent);
 Q.nationalist_sentiment -= 3;
 !}
 
-Now that our financial situation is better, we can expand the scope of the program further, at least temporarily.
+이제 우리의 재정 상황이 나아졌으니, 적어도 일시적으로나마 프로그램의 적용 범위를 더욱 확대할 수 있습니다.
 
 @workers_demand_turati
 view-if: lower_tax_rates > -5 and prime_minister = "Turati"
@@ -78,17 +78,17 @@ Q.economic_growth += 0.1;
 Q.budget -= 1;
 !}
 
-The liberal parties berate our actions, criticising our lack of care for the economy and the current economic situation. They use this as a recruiting tool amongst the industrialists and middle class, while we see an increase in support from our workers.
+자유주의 정당들은 우리의 행동이 경제에 대한 무관심을 드러낸 것이라며 현 상황을 비판합니다. 그들은 이를 이용해 산업자본가와 중산층 사이에서 지지 세력을 모으는 한편, 우리는 노동자들의 지지가 증가하는 것을 목격합니다.
 
 @workers_demand_wages
 on-arrival: wage_increase += 1; labour_dissent -= 6; labour_strength += 3; workers_psi += 5*(1-dissent); capital_strike_progress += 1 if wage_increase >= 3; socialist_sentiment += 1 if wage_increase >= 3; economic_growth -= 0.3; unemployment += 0.2; inflation -= 0.2; economic_growth -= 0.2 if wage_increase >= 3; unemployment += 0.1 if wage_increase >= 3; inflation -= 0.2 if wage_increase >= 3; 
 
-The Labour Ministry works on developing and enforcing a standard national minimum wage, a new concept developed recently and popularised in the United Kingdom. [? if wage_increase >= 3 : Businesses have begun to argue that the minimum wage is too high, interfering with the economy. ?]
+노동부는 최근 영국에서 개발되어 대중화된 새로운 개념, 즉 표준 국가 최저 임금을 개발하고 시행하는 데 착수했습니다. [? if wage_increase >= 3 : 기업들은 최저 임금이 너무 높아 경제에 방해가 된다고 주장하기 시작했습니다. ?]
 
 @workers_demand_safety
 on-arrival: workers_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3; socialist_sentiment += 1 if workers_safety >= 3;
 
-The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for the proletariat. [? if workers_safety >= 3 : Businesses have begun to argue that our focus on safety is overbearing and unnecessary, interfering with the economy. ?]
+노동부는 프롤레타리아트의 건강한 작업 환경을 보장하기 위해 안전 규정을 개발하고 시행하는 데 착수했습니다. [? if workers_safety >= 3 : 기업들은 우리의 안전 우선 정책이 지나치고 불필요하며 경제에 방해가 된다고 주장하기 시작했습니다. ?]
 
 @workers_demand_refuse
 on-arrival: {!
@@ -102,4 +102,4 @@ if (Q.left_wing_coalition) {
 Q.labour_dissent += 5;
 !}
 
-The workers are, unsurprisingly, outraged at our refusal to heed their demands, as is the Labour faction.
+노동자들과 노동자 파벌은 당연하게도, 자신들의 요구를 들어주지 않는 우리의 태도에 분개하고 있습니다.

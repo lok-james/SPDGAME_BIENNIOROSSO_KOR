@@ -1,4 +1,4 @@
-title: Italian Economic Recovery!
+title: 이탈리아 경제 회복!
 tags: event
 view-if: economic_growth > 0 and inflation < 5 and inflation > 0 and unemployment < 8
 on-arrival: {!
@@ -75,8 +75,8 @@ Q.fasci_coup_progress -= 1;
 max-visits: 1
 achievement: risorgimento_economico
 
-= National Economic Recovery 
+= 국가 경제 회복 
 
-It seems the economy is finally recovering. People are heading back to work, inflation is down to single digits, and our economic forecasts show a positive growth for the first time in months. Regardless of the efforts taken, it seems most of the credit will be given to the current governing coalition, which [? if psi_in_government :fortunately, includes us. ?][? if not psi_in_government :unfortunately, does not include us. ?]
+경제가 드디어 회복되는 것 같습니다. 사람들이 직장으로 복귀하고, 물가 상승률은 한 자릿수로 떨어졌으며, 경제 전망은 몇 달 만에 처음으로 플러스 성장을 예고하고 있습니다. 우리가 어떠한 노력을 기울였든, 그 공은 대부분 현 집권 연정에게 돌아갈 것으로 보입니다. [? if psi_in_government :다행히도 지금 정권이 우리 당이 포함된 연정입니다. ?][? if not psi_in_government :불행히도 지금 정권이 우리 당이 포함되지 않은 연정입니다. ?]
 
-Following our economic recovery, the Financial Ministry will no longer take extreme measures in an attempt to resolve the economic crisis, **meaning that we can no longer go into a deficit**.
+경제 회복에 따라 재무부는 더 이상 경제 위기 해결을 위한 극단적인 조치를 취하지 않을 것입니다. **이는 더 이상 적자 재정을 운용할 수 없다는 것을 의미합니다**.

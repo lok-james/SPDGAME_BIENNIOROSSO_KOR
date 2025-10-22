@@ -1,5 +1,5 @@
-title: Petition of the Unemployed
-subtitle: Our Rural support base have pushed forward demands.
+title: 실업자의 청원
+subtitle: 우리의 실업자 지지 기반이 요구사항을 내세웠습니다.
 view-if: ((class1_set = 'veterans' and class1_timer <= 0) or (class2_set = 'veterans' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
 on-arrival: {! 
 
@@ -16,32 +16,32 @@ if (Q.class2_set == "veterans") {
 new-page: true
 tags: event
 
-= Petition of the Unemployed
+= 실업자의 청원
 
-The Unemployed, one of our non-traditional but now a growing and key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+우리의 비전통적 지지층이지만 이제는 성장하는 핵심 투표 기반이 된 실업자들이 지지를 유지하는 조건으로 일련의 요구 사항을 제시했습니다.
 
-We will have to choose one to complete, or we could refuse their demands entirely.
+우리는 요구 중 하나를 이행하거나 아니면 전부를 거부할 수 있습니다.
 
-- @veterans_demand_welfare: Increase welfare to government welfare organisations.
-- @veterans_demand_public_work: Continue the construction of new public works.
-- @veterans_demand_refuse: Refuse the demands.
+- @veterans_demand_welfare: 정부 복지 기관에 대한 지원을 확대한다.
+- @veterans_demand_public_work: 신규 공공사업 건설을 계속한다.
+- @veterans_demand_refuse: 요구를 거부한다.
 
 @veterans_demand_welfare
-subtitle: -1 Budget
+subtitle: -1 예산
 choose-if: not national_economic_recovery or budget >= 1
-unavailable-subtitle: [? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: budget -= 1; veterans_psi += 2*(1-dissent); veterans_pnf -= 2*(1-dissent); economic_growth += 0.2; inflation += 0.4;
 
-We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
+우리는 '전국 전우회'에 자금을 지원하기 시작했으며, 이 기금은 즉시 재향군인을 돕는 데 재배분됩니다.
 
 @veterans_demand_public_work
-subtitle: -1 Budget
+subtitle: -1 예산
 choose-if: not national_economic_recovery or budget >= 1
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: public_works_funded += 1; budget -= 1; unemployment -= 1.1 if unemployment >= 8; unemployment -= 0.4 if (unemployment >= 4 and unemployment < 8); unemployment -= 0.2 if unemployment < 4; veterans_pnf -= 3*(1-dissent); veterans_psi += 3*(1-dissent); rural_pnf -= 2*(1-dissent); socialist_sentiment += 1; nationalist_sentiment -= 2;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We have increased funding to the Public Works Ministry, who have begun drafting up plans and hiring workers for further infrastructure projects.
+우리는 공공사업부에 대한 예산을 증액했으며, 부처는 추가 사회 기반 시설 사업을 위한 계획을 수립하고 인력을 고용하기 시작했습니다.
 
 @veterans_demand_refuse
 on-arrival: {!
@@ -53,4 +53,4 @@ if (Q.left_wing_coalition) {
 }
 !}
 
-The unemployed are, unsurprisingly, outraged at our refusal to heed their demands.
+당연하게도, 실업자들은 자신들의 요구를 들어주지 않는 우리의 태도에 분개하고 있습니다.

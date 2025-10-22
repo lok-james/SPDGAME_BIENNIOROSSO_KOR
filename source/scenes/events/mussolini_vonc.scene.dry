@@ -1,16 +1,16 @@
-title: [+ pnf_leader +] calls a motion of confidence
+title: [+ pnf_leader +]가 신임 투표를 소집하다
 view-if: (pnf_in_government and violent_pnf = 1) and grand_coalition_r + pnf_seating_disp >= 55
 max-visits: 1
 tags: event
 new-page: true
 
-= [+ pnf_leader +]'s Motion of Confidence
+= [+ pnf_leader +]의 신임 투표를 소집
 
-[+ pnf_leader +] has called a Motion of Confidence for his current standing government in an effort to both legitimise his ascension to Prime Minister, especially considering the violent means to power.
+[+ pnf_leader +]가 현 정부에 대한 신임 투표를 소집했습니다. 이는 그가 폭력적인 수단으로 권력을 장악했다는 점을 감안할 때, 자신의 총리 등극에 정통성을 부여하려는 시도입니다.
 
-Unfortunately for us, however, it seems likely that enough of the Liberal and Catholic Deputies, alongside the fascists will assure [+ pnf_leader +] achieves a successful motion.
+하지만 불행히도 파시스트들과 더불어 충분한 수의 자유당과 가톨릭계 의원들이 그의 편에 서면서, [+ pnf_leader +]는 동의안을 성공적으로 통과시킬 것으로 보입니다.
 
-- @voc_success: There is not much we can do.
+- @voc_success: 우리가 할 수 있는 일이 많지 않다.
 
 @voc_success
 on-arrival: {!
@@ -23,4 +23,4 @@ Q.catholic_pnf *= 1.1;
 Q.women_pnf *= 1.4
 !}
 
-The Vote-of-Confidence succeeds, with enough of the liberal, fascist and dissident catholic Deputies voting in favour. This has reinvigorated support for the [+ pnf_name +], with many giving the party a second look, especially in light of the far-left violence plaguing the nation in the recent years.
+충분한 수의 자유주의, 파시스트, 그리고 반체제 가톨릭계 의원들이 찬성표를 던지면서 신임 투표가 통과되었습니다. 이로 인해 [+ pnf_name +]에 대한 지지가 다시 활력을 얻었고, 특히 최근 몇 년간 국가를 휩쓴 극좌 폭력 사태를 고려할 때 많은 이들이 이 정당을 다시 보게 되었습니다.

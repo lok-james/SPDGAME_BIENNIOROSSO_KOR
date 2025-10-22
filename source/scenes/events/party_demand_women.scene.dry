@@ -1,5 +1,5 @@
-title: Petition of the Women
-subtitle: Our Women support base have pushed forward demands.
+title: 여성의 청원
+subtitle: 우리의 여성 지지 기반이 요구사항을 내세웠습니다.
 view-if: ((class1_set = 'women' and class1_timer <= 0) or (class2_set = 'women' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition) and womens_suffrage
 on-arrival: {! 
 
@@ -16,34 +16,34 @@ if (Q.class2_set == "women") {
 new-page: true
 tags: event
 
-= Petition of the Women
+= 여성의 청원
 
-Women, one of our non-traditional but now a significant and key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+우리의 비전통적 지지층이지만 이제는 중요하고 핵심적인 투표 기반이 된 여성들이 지지를 유지하는 조건으로 일련의 요구 사항을 제시했습니다.
 
-We will have to choose one to complete, or we could refuse their demands entirely.
+우리는 요구 중 하나를 이행하거나 아니면 전부를 거부할 수 있습니다.
 
-- @women_demand_work: Institute policies that help women in the workforce.
-- @women_demand_law: Reform marriage, divorce, and property law. 
-- @women_demand_welfare: Improve welfare for single mothers and children.
-- @women_demand_refuse: Refuse the demands.
+- @women_demand_work: 여성 노동자를 돕는 정책을 도입한다.
+- @women_demand_law: 결혼, 이혼, 재산 관련 법을 개혁한다.
+- @women_demand_welfare: 미혼모와 아동을 위한 복지를 개선한다.
+- @women_demand_refuse: 요구를 거부한다.
 
 @women_demand_work
 on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15; middle_class_psi += 4*(1-dissent); workers_psi += 4*(1 - dissent); economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right;
 
-These policies mean that our party is increasing in popularity among the "new women" who work outside the home. [? if unemployment > 15 : However, many male workers develop a backlash towards women in the workplace, especially given the rising unemployment. ?]
+이 정책들은 우리 당이 가정 밖에서 일하는 "신여성"들 사이에서 인기를 얻고 있음을 의미합니다. [? if unemployment > 15 : 하지만 많은 남성 노동자들은, 특히 치솟는 실업률 속에서 직장 내 여성에 대한 반감을 키우고 있습니다. ?]
 
 @women_demand_law
 on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent); workers_psi += 3*(1-dissent); industrialists_psi -= 2; rural_psi -= 2; catholic_psi -= 4; ppi_relation -= 4; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right;
 
-These policies aim to ensure that women have equal rights within a marriage, including the right to divorce. The more conservative segments of society treat our reforms as deleterious to the social fabric.
+이 정책들은 이혼할 권리를 포함하여, 여성이 혼인 관계 내에서 동등한 권리를 갖도록 보장하는 것을 목표로 합니다. 사회의 보수적인 계층은 우리의 개혁이 사회 구조에 해롭다고 여깁니다.
 
 @women_demand_welfare
-subtitle: -1 Budget
+subtitle: -1 예산
 choose-if: not national_economic_recovery or budget >= 1
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: welfare += 1; workers_psi += 5*(1-dissent); veterans_psi += 5*(1-dissent); budget -= 1; womens_rights += 1; coalition_dissent += 1 if (welfare >= 3 and unemployment >= 15); unemployment -= 0.4; inflation += 0.2; economic_growth += 0.3;
 
-We have increased welfare spending on women and children. [? if welfare >= 1 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
+우리는 여성과 아동을 위한 복지 지출을 늘렸습니다. [? if welfare >= 1 and unemployment >= 15 : 일부 연정 파트너들은 지금 복지 지출을 늘리는 것은 낭비라고 생각합니다. ?]
 
 @women_demand_refuse
 on-arrival: {!
@@ -55,4 +55,4 @@ if (Q.left_wing_coalition) {
 }
 !}
 
-Our women voters are, unsurprisingly, outraged at our refusal to heed their demands.
+당연하게도, 우리의 여성 유권자들은 자신들의 요구를 들어주지 않는 우리의 태도에 분개하고 있습니다.

@@ -1,5 +1,5 @@
-title: Petition of the Middle Class
-subtitle: Our Middle Class support base have pushed forward demands.
+title: 중산층의 청원
+subtitle: 우리의 중산층 지지 기반이 요구사항을 내세웠습니다.
 view-if: ((class1_set = 'middle_class' and class1_timer <= 0) or (class2_set = 'middle_class' and class2_timer <= 0)) and party_demands_timer <= 0 and (psi_majority or left_wing_coalition)
 on-arrival: {! 
 
@@ -16,23 +16,23 @@ if (Q.class2_set == "middle_class") {
 new-page: true
 tags: event
 
-= Petition of the Middle Class
+= 중산층의 청원
 
-The Middle Class, one of more non-traditional but now our key voting blocs have pushed forward a series of demands we should do in order to keep their support.
+우리의 비전통적 지지층 중 하나이지만 이제는 핵심적인 투표 기반이 된 중산층이 지지를 유지하는 조건으로 일련의 요구 사항을 제시했습니다.
 
-We will have to choose one to complete, or we could refuse their demands entirely.
+우리는 요구 중 하나를 이행하거나 아니면 전부를 거부할 수 있습니다.
 
-- @middle_class_demand_tax: Grant tax breaks for businesses and co-operatives.
-- @middle_class_demand_reform: Continue reforms to the curriculum.
-- @middle_class_demand_refuse: Refuse the demands.
+- @middle_class_demand_tax: 기업과 협동조합에 세금 감면 혜택을 부여한다.
+- @middle_class_demand_reform: 교육과정 개혁을 계속한다.
+- @middle_class_demand_refuse: 요구를 거부한다.
 
 @middle_class_demand_tax
-subtitle: -1 Budget
+subtitle: -1 예산
 choose-if: not national_economic_recovery or budget >= 1
-unavailable-subtitle: [? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: budget -= 1; ldr_relation += 5; ul_relation += 5; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; communist_dissent += 10; maximalist_dissent += 10; unemployment -= 1.1 if unemployment >= 8; unemployment -= 0.4 if (unemployment > 4 and unemployment < 7); unemployment -= 0.2 if unemployment < 4; middle_class_psi += 3*(1-dissent); middle_class_pnf -= 3*(1*dissent); workers_psi -= 4; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent); ldr_moderates += 0.2;
 
-This is an unpopular move within the party, and is seen handouts to the petite-bourgeois. The loans however, are able to keep businesses afloat temporarily.
+이 조치는 당 내에서 인기가 없으며, 소시민층에 대한 특혜로 간주됩니다. 그러나, 대출은 기업들이 잠시나마 살아남을 수 있도록 도와줍니다.
 
 @middle_class_demand_reform
 view-if: education_reformed < 3
@@ -54,7 +54,7 @@ Q.ppi_right += 0.3;
 Q.ppi_left -= 0.1;
 !}
 
-Our efforts to reform the curriculum is opposed every step of the way by the Catholics and the PPI, who criticise 'government overreach'.
+교육과정을 개혁하려는 우리의 노력은 '정부의 과잉 개입'이라며 비판하는 가톨릭과 이탈리아 인민당에 의해 모든 단계에서 반대에 부딪히고 있습니다.
 
 @middle_class_demand_refuse
 on-arrival: {!
@@ -66,4 +66,4 @@ if (Q.left_wing_coalition) {
 }
 !}
 
-The middle class are, unsurprisingly, outraged at our refusal to heed their demands.
+당연하게도, 중산층은 자신들의 요구를 들어주지 않는 우리의 태도에 분개하고 있습니다.

@@ -1,14 +1,14 @@
-title: Formation of the National Bloc
+title: 국민 블록의 결성
 view-if: year == 1921 and month == 3 and week == 3
 on-arrival: bn_formed = 1; ani_in_bn = 1; ul_in_bn = 1; pnf_in_bn = 1; bn_r = 0;
 max-visits: 1
 tags: event
 new-page: true
 
-= Formation of the National Bloc
+= 국민 블록의 결성
 
-[? if prime_minister_party = ul_name : Following [+ prime_minister +]'s recent appointment and snap election, he has formed the National Bloc, consisting of his *[+ ul_full_name +]*, the *Italian Nationalist Association*, and more importantly, the *National Fascist Party*. ?]
+[? if prime_minister_party = ul_name : 최근 총리에 임명되고 조기 선거를 실시한 [+ prime_minister +]는 자신의 *[+ ul_full_name +]*와 *이탈리아 민족주의 협회*, 그리고 더 중요하게는, *국가 파시스트당*으로 구성된 국민 블록을 결성했습니다. ?]
 
-[? if not prime_minister_party = ul_name : Following recent developments in the political sphere, [+ ul_leader +] has formed the National Bloc, consisting of his *[+ ul_name +]*, the *Italian Nationalist Association*, and more importantly, the *National Fascist Party*. ?]
+[? if not prime_minister_party = ul_name : 최근 정계의 상황 변화에 따라 [+ ul_leader +]는 자신의 *[+ ul_name +]*과 *이탈리아 민족주의 협회*, 그리고 더 중요하게는 *국가 파시스트당*으로 구성된 국민 블록을 결성했습니다. ?]
 
-- @root: Concerning.
+- @root: 우려스러운 일입니다.

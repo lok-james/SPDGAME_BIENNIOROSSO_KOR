@@ -1,29 +1,29 @@
-title: [+ year +] PCd'I Party Congress
-subtitle: The PCd'I holds its first Congress.
+title: [+ year +]년 이탈리아 공산당 전당대회
+subtitle: 이탈리아 공산당이 첫 전당대회를 개최합니다.
 new-page: true
 view-if: communist_split and pcdi_congress_time <= time
 tags: event
 max-visits: 1
 
-= [+ year +] PCd'I Party Congress
+= [+ year +]년 이탈리아 공산당 전당대회
 
-The first Party Congress of the PCd'I have begun, following their recent split from the [+ psi_name +]. Bordiga has emerged as temporary leader of the party, pending the new party elections which might result in his resignation.
+최근 [+ psi_name +]로부터 분당한 이탈리아 공산당이 첫 전당대회를 시작했습니다. 아마데오 보르디가가 임시 당 대표로 나섰으며, 새로운 당내 선거 결과에 따라 사퇴할 수도 있습니다.
 
-The two factions within the PCd'I are Amadeo Bordiga, leading the traditional leftist faction within the party and Antonio Gramsci, leading the *L'Ordine Nuovo* faction in Turin. Bordiga advocates for a more centralised position amongst the party, viewing the party as necessary to have power over the workers' party. Gramsci, on the other hand, is more supportive of workers' councils, pushing for a mass movement, and more importantly, *viewed more positively by the Soviet Union.*
+이탈리아 공산당 내에는 두 개의 파벌이 존재합니다. 아마데오 보르디가는 당내 전통적인 좌파를 이끌고 있으며, 안토니오 그람시는 토리노에서 *"신질서"* 파벌을 이끌고 있습니다. 보르디가는 당이 노동 계급을 통제할 권력을 가져야 한다고 보며, 더욱 중앙집권적인 입장을 옹호합니다. 반면 그람시는 노동자 평의회를 더 지지하고 대중 운동을 강조하며, 더 중요하게는 *소비에트 연방으로부터 더 긍정적인 평가를 받고 있습니다*.
 
-- @bordiga_elected: Amadeo Bordiga retains his position as Party Secretary.
-- @gramsci_elected: Antonio Gramsci is able to ascend to the position of Party Secretary.
+- @bordiga_elected: 아마데오 보르디가가 당 서기장직을 유지한다.
+- @gramsci_elected: 안토니오 그람시가 당 서기장 자리에 오릅니다.
 
 
 @bordiga_elected
 choose-if: pcdi_bordiga >= pcdi_gramsci
-unavailable-subtitle: Our actions have pushed the party towards the right.
+unavailable-subtitle: 우리의 행동으로 인해 당이 우경화되었습니다.
 on-arrival: pcdi_leader = "Bordiga"
 
-Amadeo Bordiga is able to continue his role within the party as Secretary, consolidating his influence over the party for the foreseeable future. Time will only tell what this entails.
+아마데오 보르디가는 당 서기장으로서 자신의 역할을 계속 수행하며, 당분간 당에 대한 영향력을 공고히 하게 되었습니다. 이것이 앞으로 어떤 결과를 가져올지는 시간이 지나야 알 수 있을 것입니다.
 
 @gramsci_elected
 view-if: pcdi_bordiga < pcdi_gramsci
 on-arrival: pcdi_leader = "Gramsci"
 
-Antonio Gramsci successfully pushes his agenda and is elected as Secretary, ousting Bordiga from power. Time will only tell what this entails.
+안토니오 그람시는 자신의 의제를 성공적으로 관철시켜 서기장으로 선출되었고, 보르디가를 권좌에서 몰아냈습니다. 이것이 앞으로 어떤 결과를 가져올지는 시간이 지나야 알 수 있을 것입니다.
