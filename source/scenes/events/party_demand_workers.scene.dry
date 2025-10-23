@@ -88,7 +88,7 @@ on-arrival: wage_increase += 1; labour_dissent -= 6; labour_strength += 3; worke
 @workers_demand_safety
 on-arrival: workers_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent); capital_strike_progress += 1 if workers_safety >= 3; socialist_sentiment += 1 if workers_safety >= 3;
 
-노동부는 프롤레타리아트의 건강한 작업 환경을 보장하기 위해 안전 규정을 개발하고 시행하는 데 착수했습니다. [? if workers_safety >= 3 : 기업들은 우리의 안전 우선 정책이 지나치고 불필요하며 경제에 방해가 된다고 주장하기 시작했습니다. ?]
+노동부는 프롤레타리아트의 안전한 작업 환경을 보장하기 위해 안전 규정을 개발하고 시행하는 데 착수했습니다. [? if workers_safety >= 3 : 기업들은 우리의 안전 우선 정책이 지나치고 불필요하며 경제에 방해가 된다고 주장하기 시작했습니다. ?]
 
 @workers_demand_refuse
 on-arrival: {!

@@ -1,20 +1,20 @@
-title: 1921 Congress of the PNF
-subtitle: The PNF is established.
+title: 국가 파시스트당 1921년 전당대회
+subtitle: 국가 파시스트당이 창당되었습니다.
 new-page: true
 view-if: year = 1921 and month = 11 and week = 1 and not pnf_banned
 on-arrival: pnf_formed = 1; pnf_name = "PNF"; pnf_full_name = "National Fascist Party"; pnf_full_italian = "Partito Nazionale Fascista";
 max-visits: 1
 tags: event
 
-= 1921 [+ pnf_full_name +] Congress
+= 1921년 [+ pnf_full_name +] 전당대회
 
-The *Partito Nazionale Fascista*, known also as the PNF has been formed officially as a political party, reorganising the existing *Fasces of Combat* into a new entity. The First Congress is to be held to determine the new leader of the Fasci.
+*국가 파시스트당*(PNF)이 공식적으로 창당되었습니다. 기존의 *전투 파시*는 새로운 조직으로 재편되었습니다. 첫 전당대회는 파시스트 운동의 새 지도자를 결정하기 위해 개최될 것입니다.
 
-[? if pacification_pact: The signing of the *Pacification Pact* has led to a deep rift between the paramilitaries and Mussolini, and it is uncertain whether he will survive this challenge. ?]
+[? if pacification_pact: *평화 협정* 체결로 인해 준군사조직과 무솔리니 사이에 깊은 균열이 생겼으며, 그가 이 위기를 극복할 수 있을지는 미지수입니다. ?]
 
-[? if pnf_leader = "Grand Council" : The Grand Council seems to be getting even more unstable as time passes, as members vie for more control and power. ?]
+[? if pnf_leader = "Grand Council" : 시간이 흐를수록 대평의회는 더욱 불안정해지는 듯합니다. 구성원들이 더 큰 통제력과 권력을 얻기 위해 다투고 있기 때문입니다. ?]
 
-- @pnf_1921_vote: The organisation votes...
+- @pnf_1921_vote: 투표를 시작한다...
 
 @pnf_1921_vote
 on-arrival: pacification_pact = 0
@@ -24,18 +24,18 @@ go-to: mussolini_1921 if mussolini_jailed != 1 and (pacification_pact != 1 or (p
 on-arrival: pnf_leader = "Mussolini"; pacification_pact = 0 if pacification_pact = 1
 face-image: img/portraits/BenitoMussolini.jpg
 
-With his already-established influence, Mussolini has been able to mediate the party split and come out on top, quelling the unrest of the paramilitaries by avowing the pacification pact with us.
+이미 확고한 영향력을 구축한 무솔리니는 당의 분열을 중재하고 정상에 오르는 데 성공했습니다. 그는 우리와의 평화 협정을 파기함으로써 준군사조직의 불만을 잠재웠습니다.
 
 @council_1921
 on-arrival: pnf_leader = "Grand Council"; veterans_pnf -= 5; veterans_other += 5; fdc_strength -= 10;
 
-With the continued absence of Mussolini, alongside no other prominent leadership, the Grand Council continues to lead, while the Fascist movement continues to weaken, as other Futurist and Fascist parties appear to fill the political vacuum the PNF have left.
+무솔리니의 부재가 계속되고 다른 유력한 지도자가 없는 가운데, 대평의회가 계속해서 조직을 이끌고 있습니다. 한편 파시스트 운동은 약화되고 있으며, 국가 파시스트당이 남긴 정치적 공백을 메우기 위해 다른 미래주의 및 파시스트 정당들이 등장하고 있습니다.
 
 @dannunzio_1921
 on-arrival: pnf_leader = "D'Annunzio"; veterans_pnf += 17; middle_class_pnf += 6; dannunzio_time = time + 2; pnf_left = 0; pnf_right = 0
 face-image: img/portraits/GabrieleDAnnunzio.jpg
 achievement: quis_contra_nos
 
-Surprisingly, it seems Gabriele D'Annunzio has taken control of the party, dismissing the Grand Council and establishing his own group with overwhelming support. D'Annunzio's leadership has, unfortunately, revitalised the party, bringing the organisation to the forefront of Futurist and far-right politics.
+놀랍게도 가브리엘레 단눈치오가 당을 장악하고 대평의회를 해산한 뒤 압도적인 지지를 받으며 자신만의 세력을 구축한 것으로 보입니다. 불행히도 단눈치오의 지도력은 당에 새로운 활력을 불어넣어, 조직을 미래주의와 극우 정치의 선봉에 서게 했습니다.
 
-It is however, clear that the party itself will not be subjected to the whims of D'Annunzio. Though the man will certainly hold significant influence and power in leading its movement, its more ideological means and actions still remain, conducted by his deputies who still follow in the ways of Mussolini's *Fasces of Combat*.
+하지만 당 자체가 단눈치오 개인의 변덕에 좌우되지는 않을 것이 분명합니다. 그가 운동을 이끌면서 막강한 영향력과 권력을 행사하겠지만, 당의 보다 이념적인 수단과 행동은 여전히 무솔리니의 *전투 파시* 방식을 따르는 그의 부관들에 의해 수행되고 있습니다.

@@ -1,17 +1,17 @@
-title: 1919 Congress of the Fasci Italiani di Combattimento
-subtitle: The Fasci decides its political agenda.
+title: 1919년 이탈리아 전투 파시 전당대회
+subtitle: 파시스트가 정치적 의제를 결정합니다.
 new-page: true
 view-if: year = 1919 and month = 10 and week = 1 and not pnf_banned
 max-visits: 1
 tags: event
 
-= 1919 [+ pnf_full_name +] Congress
+= 1919년 [+ pnf_full_name +] 전당대회
 
-The *Fasci Italiani di Combattimento*, known also as the Fasci, was formed in March and are having their first congress to decide the party's agenda. It seems all but confirmed that Benito Mussolini will come out on top.
+ '파시'라고도 알려진 *이탈리아 전투 파시*는 지난 3월에 결성되었으며, 당의 노선을 결정하기 위한 첫 전당대회를 개최하고 있습니다. 베니토 무솔리니가 당권을 장악할 것이 거의 확실해 보입니다.
 
-- @mussolini_1919: The party votes...
+- @mussolini_1919: 당이 투표를 시작한다...
 
 @mussolini_1919
 face-image: img/portraits/BenitoMussolini.jpg
 
-As expected, Benito Mussolini will continue to lead the Fasci. Surprisingly, they have also decided to participate in the latest elections, perhaps signaling a change in rhetoric.
+예상대로, 베니토 무솔리니가 계속해서 파시스트를 이끌게 되었습니다. 놀랍게도 그들은 이번 선거에 참여하기로 결정했는데, 이는 아마도 노선 변화를 암시하는 것일 수 있습니다.

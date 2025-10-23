@@ -1,4 +1,4 @@
-title: Formation of the Social Democratic Party
+title: 사회민주당의 결성
 on-arrival: ds_name = "PDSI"; ds_full_italian = "Partito Democratico Sociale Italiano"; ds_full_name = "Italian Social Democratic Party"; ds_party = 1; ds_list = 0; prime_minister_party = ds_name if prime_minister_party == "DS"; pdsi_formed = 1; ds_congress_trigger = 1;
 view-if: year = 1922 and month = 4 and week = 3 and ds_list = 1
 new-page: true
@@ -6,10 +6,10 @@ max-visits: 1
 tags: event
 face-image: img/DS.png
 
-= Formation of the Italian Social Democratic Party
+= 이탈리아 사회민주당의 결성
 
-The Democratic List has officially dissolved. Following the establishment of the National Council of Social and Radical Democracy in January alongside the Italian Radical Party, the body has been planning the establishment of its own party, now called the Italian Social Democratic Party; a merger of the various parties under the Democratic List, alongside the Radical Party. 
+민주주의 선거명부가 공식적으로 해산되었습니다. 지난 1월 이탈리아 급진당과 함께 '사회-급진 민주주의 국가 평의회'가 설립된 이후, 이 기구는 독자적인 정당 창당을 준비해 왔습니다. 이제 민주 명부 산하의 여러 정당과 이탈리아 급진당이 합쳐져 '이탈리아 사회민주당'이라는 이름으로 새롭게 출범합니다.
 
-Leading the party is [+ ds_leader +], who will continue the party in the view of Social Democracy. 
+당 대표는 [+ ds_leader +]가 맡아, 사회민주주의 노선을 계속 이끌어 갈 것입니다.
 
-- @root: Interesting.
+- @root: 흥미롭군.

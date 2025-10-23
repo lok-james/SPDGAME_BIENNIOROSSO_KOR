@@ -1,10 +1,10 @@
-title: PCd'I consolidates support base
+title: 이탈리아 공산당이 지지 기반을 다지다
 new-page: true 
 tags: event
 view-if: pcdi_formed and unions_break
 on-arrival: workers_pcdi *= 1.3; workers_pcdi *= 1.4 if psu_formed = 0; veterans_pcdi *= 1.5; veterans_pcdi *= 1.3 if psu_formed = 0; socialist_sentiment += 4; republican_sentiment += 2;
 max-visits: 1
 
-= PCd'I Consolidates support base 
+= 이탈리아 공산당, 지지 기반을 공고히 하다 
 
-Though the recent split of the Left faction to form the *Partito Comunista d'Italia* as a splinter party was originally considered to be moribund, our labour faction breaking with us as well has resulted in the syndicalist *Unione Sindacale Italiana* to defect to the party, as the PCd'I seems to have consolidated and become a competitor to our party.  
+좌파 파벌이 분열해 창당한 *이탈리아 공산당*은 당초 소멸 직전의 군소 정당으로 여겨졌습니다. 하지만 우리 당의 노동 파벌마저 이탈하면서, 생디칼리스트 조직인 *이탈리아 생디칼리스트 연합*이 공산당으로 넘어가게 되었습니다. 이제 이탈리아 공산당은 지지 기반을 공고히 다지며 우리 당의 경쟁자로 부상한 것으로 보입니다.

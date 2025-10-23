@@ -1,4 +1,4 @@
-title: Formation of the Italian Liberal Party
+title: 이탈리아 자유당의 결성
 on-arrival: ul_name = "PLI"; ul_full_italian = "Partito Liberale Italiano"; ul_full_name = "Italian Liberal Party"; ul_party = 1; ul_list = 0; prime_minister_party = ul_name if prime_minister_party == "UL"; pli_formed = 1
 view-if: year = 1922 and month = 10 and week = 1 and ul_list = 1
 new-page: true
@@ -6,13 +6,13 @@ max-visits: 1
 tags: event
 face-image: img/PLI.png
 
-= Formation of the Italian Liberal Party
+= 이탈리아 자유당의 결성
 
-The Italian Liberal Party has been formed. A merger of the parties under the Liberal List, a consolidated party for the liberals has been formed, alongside the Italian Democratic Liberal Party.
+이탈리아 자유당이 창당되었습니다. 자유주의 선거 명부 산하 정당들이 합병하여 이탈리아 민주자유당과 더불어 자유주의자들을 위한 통합 정당이 탄생한 것입니다.
 
-In fact, there has been strong support from both sides of the party to form a united party, in order to further consolidate the liberal vote in the face of the Socialists and Catholics.
+실제로 사회주의와 가톨릭계에 맞서 자유주의 표를 결집하기 위해 양당이 통합해야 한다는 강력한 목소리가 양측에서 나오고 있습니다.
 
-- @merger_check: The party votes...
+- @merger_check: 당이 투표를 시작한다...
 
 @merger_check 
 on-arrival: {!
@@ -123,15 +123,15 @@ if (Q.ldr_leader === "Salandra") {
 
 !}
 
-As expected, the [+ ldr_name +] have merged with the [+ ul_name +], consolidating the liberal vote into one political party that will stand against the other parties in the Chamber of Deputies. The PLDI will continue to exist as a weakened, defunct party, as figures such as Francesco Saverio Nitti and Vittorio Emanuele Orlando refuse to join the PLI.
+예상대로 [+ ldr_name +]가 [+ ul_name +]와 합당하여, 하원에서 다른 정당들에 맞설 단일 자유주의 정당으로 표를 결집했습니다. 프란체스코 사베리오 니티와 비토리오 에마누엘레 오를란도 같은 인물들이 이탈리아 자유당 합류를 거부함에 따라, 이탈리아 민주자유당은 세력이 약화된 채 유명무실한 정당으로 존속하게 될 것입니다.
 
-- @root: Interesting.
+- @root: 흥미롭군.
 
 @pldi_refuse
 on-arrival: ul_congress_trigger = 1; ldr_leader = "Orlando" if ldr_leader == "Salandra"
 
-Surprisingly, whether it is because of the poor relations, the PLDI's ideological differences with the [+ ul_name +] or something else, the [+ ldr_name +] have refused to merge with the [+ ul_name +], remaining as an independent party running its own electoral list.
+놀랍게도 좋지 않은 관계 때문인지, 아니면 [+ ul_name +]와의 이념적 차이 때문인지, [+ ldr_name +]가 [+ ul_name +]와의 합당을 거부하고 독자 노선을 걷는 독립 정당으로 남았습니다.
 
-In response, however, Antonio Salandra and his right-wing bloc have defected to the PLI, seeing the PLDI as a sinking ship. The PLI will hold its first Party Congress shortly. 
+이에 대한 반발로, 안토니오 살란드라와 그의 우파 세력은 이탈리아 민주자유당을 가라앉는 배로 여겨 이탈리아 자유당으로 넘어갔습니다. 이탈리아 자유당은 곧 첫 전당대회를 개최할 예정입니다.
 
-- @root: Interesting.
+- @root: 흥미롭군.

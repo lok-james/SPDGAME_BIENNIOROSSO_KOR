@@ -1,5 +1,5 @@
-title: 1920 Congress of the Fasci Italiani di Combattimento
-subtitle: The Fasci decides its political agenda. 
+title: 1920년 이탈리아 전투 파시 전당대회
+subtitle: 파시스트가 정치적 의제를 결정합니다.
 new-page: true
 view-if: year = 1920 and month = 5 and week = 1 and not pnf_banned
 max-visits: 1
@@ -7,9 +7,9 @@ tags: event
 
 = 1920 [+ pnf_full_name +] Congress
 
-The *Fasci Italiani di Combattimento*, known also as the Fasci was formed in March and have begun their second congress to decide the party's agenda. [? if not mussolini_jailed :It seems all but confirmed that Benito Mussolini will come out on top once again. ?][? if mussolini_jailed: With Mussolini in jail, the organisation's future is uncertain. ?]
+'파시'라고도 알려진 *이탈리아 전투 파시*는 지난 3월에 결성되었으며, 당의 노선을 결정하기 위한 두 번째 전당대회를 시작했습니다. [? if not mussolini_jailed :베니토 무솔리니가 다시 한번 당권을 장악할 것이 거의 확실해 보입니다. ?][? if mussolini_jailed: 무솔리니가 수감된 상황에서 조직의 미래는 불투명합니다. ?]
 
-- @fdc_1920: The organisation votes...
+- @fdc_1920: 투표를 시작한다...
 
 @fdc_1920
 go-to: mussolini_1920 if not mussolini_jailed; council_1920 if mussolini_jailed
@@ -18,13 +18,13 @@ go-to: mussolini_1920 if not mussolini_jailed; council_1920 if mussolini_jailed
 on-arrival: pnf_leader = "Mussolini"; syndicalist_strength += 10;
 face-image: img/portraits/BenitoMussolini.jpg
 
-Unsurprisingly, Mussolini has triumphed once more. The organisation has however, surprisingly turned from left-wing politics, instead exalting the existing institutions, seemingly becoming a new reactionary force in response to us. In response, the left-wing of the party, made up of some futurists and syndicalists, have left the party, seeking refuge as independents or in other parties.
+예상대로 무솔리니가 다시 한번 승리했습니다. 하지만 조직은 놀랍게도 좌파적 정치 노선에서 벗어나 기존 체제를 옹호하며, 우리에 맞서는 새로운 반동 세력으로 변모한 듯합니다. 이에 반발하여, 일부 미래주의자와 생디칼리스트로 구성된 당내 좌파 세력은 탈당하여 무소속이 되거나 다른 정당으로 피신하고 있습니다.
 
-- @root: Opportunists.
+- @root: 기회주의자들 같으니.
 
 @council_1920
 on-arrival: pnf_leader = "Grand Council"; veterans_pnf -= 5;
 
-With Mussolini absent, the Grand Council of Fascism, comprised of Cesare Forni, Dino Grandi, Emilio De Bono, Italo Balbo and prominent members of the Fasci have formed to control the organisation, with Mussolini *de jure* operating in absentia.
+무솔리니가 없는 동안, 체사레 포르니, 디노 그란디, 에밀리오 데 보노, 이탈로 발보, 그리고 그 외 파시스트 주요 인사들로 구성된 파시즘 대평의회가 조직을 통제하기 위해 결성되었으며, 무솔리니는 *명목상* 옥중에서 조직을 운영하고 있습니다.
 
-Regardless, the lack of leadership seems to have weakened the organisation, even if only slightly.
+그럼에도 불구하고, 지도력의 부재는 사소할지언정 조직을 약화시킨 것으로 보입니다.

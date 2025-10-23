@@ -1,4 +1,4 @@
-title: Formation of the Italian Democratic Liberal Party
+title: 이탈리아 민주자유당의 결성
 on-arrival: ldr_name = "PLDI"; ldr_full_italian = "Partito Liberale Democratico Italiano"; ldr_full_name = "Italian Democratic Liberal Party"; ldr_party = 1; ldr_list = 0; prime_minister_party = ldr_name if prime_minister_party == "LDR"; ldr_congress_trigger = 1; pldi_formed = 1
 view-if: year = 1921 and month = 4 and week = 1 and ldr_list = 1
 new-page: true
@@ -6,8 +6,8 @@ max-visits: 1
 tags: event
 face-image: img/PLDI.png
 
-= Formation of the Italian Democratic Liberal Party
+= 이탈리아 민주자유당의 결성
 
-The Liberals, Democrats and Radicals list, also known as Liberali, democratici e radicali, under Orlando and Nitti, has reorganised itself, alongside the remnants of the Radical Party, under a new party from its current state as an electoral list, known as the Italian Democratic Liberal Party. The party still represents its former ideals, though it seems there will be a new party congress soon to establish its leadership.
+오를란도와 니티가 이끄는 '자유주의, 민주주의, 급진주의' 선거 명부가 이탈리아 급진당의 잔존 세력과 함께 재편되었습니다. 기존의 선거 연합 형태에서 벗어나 '이탈리아 민주자유당'이라는 새로운 정당으로 공식 출범한 것입니다. 당은 이전의 이념을 계승하지만, 조만간 새로운 전당대회를 열어 지도부를 선출할 것으로 보입니다.
 
-- @root: Interesting.
+- @root: 흥미롭군.
