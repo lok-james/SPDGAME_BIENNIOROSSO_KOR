@@ -1,30 +1,30 @@
-title: Adriatic Negotiations
+title: 아드리아 해 협상
 new-page: true
 subtitle: It's time to address the Adriatic.
 view-if: adriatic_timer <= 0 and resolved_adriatic == 0
 tags: event
 face-image: img/YugoslavCommittee.jpg
 
-= Adriatic Negotiations
+= 아드리아 해 협상
 
-Our allegiance with the Entente was secured via the *Treaty of London*, signed in secret by the liberal government. The Treaty promised a series of terms, the most important of which however, were the lands of *South Tyrol*, *Austrian Littoral*, *Dalmatia* and *Snežnik Plateau*.
+협상국과의 동맹은 자유당 정부가 비밀리에 체결한 *런던 조약*을 통해 보장되었습니다. 이 조약은 여러 조건을 약속했지만, 그 중 가장 중요한 것은 *남티롤*, *오스트리아 연안 지대*, *달마티아*, 그리고 *스네즈니크 고원*의 영유권이었습니다.
 
-Following the end of the war, however, the *Paris Peace Conference* saw the Entente refusing to support Italian claims as given, leaving us to rely on our own. 
+하지만 전쟁이 끝난 후 *파리 평화 회의*에서 협상국은 이탈리아의 영유권 주장을 그대로 받아들이기를 거부했고, 우리 스스로 문제를 해결해야 하는 상황에 놓였습니다.
 
-[? if foreign_minister_party == psi_name : Now that we are in control, however, it is up to us to resolve this conflict. Our first issue will be regarding all disputed lands **except Fiume**. ?]
+[? if foreign_minister_party == psi_name : 그러나 이제는 우리가 외무부를 통제하고 있으므로 이 갈등을 해결하는 것은 우리의 몫입니다. 첫 번째 문제는 **피우메를 제외한** 모든 분쟁 지역에 관한 것입니다. ?]
 
-- @adriatic_italy: Demand Yugoslavia respect the full Treaty of London, including Fiume!
-- @adriatic_equal: Negotiate co-operative management of disputed territories.
-- @adriatic_historical: Concede the Snežnik Plateau and Dalmatia, but keep Zara.
-- @adriatic_yugoslavia: Concede Dalmatia, the Snežnik Plateau and Zara to the Yugoslavs.
-- @adriatic_delay: Could we delay the negotiations later?
-- @adriatic_not_gov: We'll see how the Foreign Minister resolves this issue...
+- @adriatic_italy: 유고슬라비아가 피우메까지 포함한 런던 조약 전체를 이행하도록 요구한다!
+- @adriatic_equal: 영토 분쟁 지역의 공동 관리를 협상한다.
+- @adriatic_historical: 스네즈니크 고원과 달마티아를 양보하되, 자라는 유지한다.
+- @adriatic_yugoslavia: 달마티아, 스네즈니크 고원, 자라를 유고슬라비아에 넘겨줘라.
+- @adriatic_delay: 협상을 나중에로 미룰 수 있을까?
+- @adriatic_not_gov: 외무부 장관이 이 문제를 어떻게 해결하는지 지켜보겠다...
 
 @adriatic_italy
-subtitle: The Entente won't be happy about this, even if our relations are good.
+subtitle: 비록 우리와의 관계가 양호하더라도 협상국은 이걸 좋아하지 않을 것입니다.
 view-if: psi_in_government and foreign_minister_party == psi_name
 choose-if: entente_relation >= 7
-unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
+unavailable-subtitle: 영국과 프랑스는 이미 엄청난 압력을 가하고 있습니다. 
 on-arrival: {!
 Q.unemployment += 4.3;
 Q.economic_growth -= 2.9;
@@ -47,15 +47,15 @@ Q.resolved_adriatic = 1;
 Q.fiume_italian = 1;
 !}
 
-We force Yugoslavia to respect the Treaty of London, and without Entente backing, they acquiesce. The Entente responds by pulling credit from us, forcing us to print even more funds and exacerbating the economic crisis.
+우리는 협상국의 지지 없이 유고슬라비아에게 런던 조약을 존중할 것을 강요했고, 그들은 이를 묵인했습니다. 그러나 협상국은 이에 대응하여 우리의 신용대출을 회수했고, 이로 인해 우리는 더 많은 자금을 발행해야 했으며 경제 위기는 더욱 악화되었습니다.
 
-At home however, our veterans are ecstatic, and we have effectively pulled the rug out from under the Fasci, swaying their supporters to our side and weakening the argument of *Vittoria Mutilata*. Our party is less so, though.
+하지만 국내에서는 우리 재향군인들이 열광하고 있습니다. 우리는 사실상 파시즘의 발판을 무너뜨리고, 그들의 지지자들을 우리 편으로 만들었으며, *불구의 승리*라는 주장을 약화시켰습니다. 그러나 우리 당 내부의 상황은 좀 다릅니다.
 
 @adriatic_equal
-subtitle: This will leave us with Trieste, Istria and Zadar, while leaving the outer borders under co-operative control.
+subtitle: 이것은 우리에게 트리에스테, 이스트리아, 자다르를 남겨두고, 외부 국경을 협력 통제 하에 둘 것입니다. 
 view-if: psi_in_government and foreign_minister_party == psi_name
 choose-if: balkan_relation >= 7 and entente_relation > 2
-unavailable-subtitle: [? if balkan_relation < 8 : The Yugoslavian government is too wary of us. ?][? if entente_relation < 2: The Yugoslavian government knows they can get more from us. ?]
+unavailable-subtitle: [? if balkan_relation < 8 : 유고슬라비아 정부는 우리를 너무 경계하고 있습니다. ?][? if entente_relation < 2: 유고슬라비아 정부는 우리로부터 더 많은 것을 얻을 수 있다는 것을 알고 있습니다. ?]
 on-arrival: {!
 Q.veterans_psi += 4*(1-Q.dissent);
 Q.veterans_pnf -= 2*(1-Q.dissent);
@@ -68,18 +68,18 @@ Q.nationalist_sentiment -= 3;
 !}
 go-to: fiume_question
 
-We are able to negotiate a fair deal for both sides, establishing zones of co-occupation where both sides control, appeasing many. Though some of the more radical members want more, this seems like the best we will get.
+우리는 양측 모두에게 공정한 합의를 이끌어내어 양측이 함께 통제하는 공동 점령 지역을 설정함으로써 많은 이들을 만족시킬 수 있었습니다. 비록 일부 강경파들은 더 많은 것을 원했지만, 이것이 우리가 얻을 수 있는 최선의 결과인 것 같습니다.
 
 @adriatic_historical
-subtitle: This will leave us with Trieste, Istria and Zadar, leaving the outer borders to Yugoslavia.
+subtitle: 이것은 우리에게 트리에스테, 이스트리아, 자다르를 남게 하고, 외부 국경을 유고슬라비아에 남게 합니다. 
 view-if: psi_in_government and foreign_minister_party == psi_name
 on-arrival: workers += 3; middle_class += 2; rural += 1;
 go-to: fiume_question
 
-This is a relatively expected peace deal, though the time comes now for our negotiations regarding Fiume.
+이는 비교적 예상했던 평화 협정이지만, 이제 피우메에 대한 협상을 할 때가 되었습니다.
 
 @adriatic_yugoslavia
-subtitle: The backlash from this won't be good.
+subtitle: 이로 인한 역풍은 좋지 않을 것입니다.
 view-if: psi_in_government and foreign_minister_party == psi_name
 on-arrival: {!
 Q.nationalist_sentiment += 9;
@@ -112,39 +112,39 @@ Q.entente_relation += 2;
 !}
 go-to: fiume_question
 
-The Yugoslav Delegation is surprised at our willingness to accede to them, and happily accept, as are our Entente allies, wanting to maintain the balance of power.
+유고슬라비아 대표단은 우리가 자신들의 요구에 순순히 응한 것에 놀라며 흔쾌히 받아들였습니다. 협상 동맹국들 또한 힘의 균형을 유지하고자 하는 입장이었기 때문에 이를 지지했습니다.
 
-Our allies at home, however, bring down hell upon us. The Liberals and Catholics berate us in the Chamber of Deputies, the Fasci utilise our weakness to run a national campaign, and we are painted as 'traitors', as nationalist sentiment is riled up even further.
+하지만 국내의 우리 동맹들은 우리에게 맹공을 퍼부었습니다. 자유당과 가톨릭계는 하원에서 우리를 맹비난했고, 파시스트는 우리의 약점을 이용하여 전국적인 선동을 벌였으며, 우리는 '매국노'로 낙인찍혔고, 민족주의적 감정은 더욱 격화되었습니다.
 
-It seems we might need to invest in more security for the Foreign Minister.
+외무부 장관에게 더 많은 경호를 붙여야 할 것 같습니다.
 
 @adriatic_delay
 view-if: psi_in_government and foreign_minister_party == psi_name
 on-arrival: veterans_pnf += 4; veterans_psi -= 4; adriatic_timer += 6;
 
-We are able to buy another extra 6 months before renegotiations open back up.
+우리는 협상이 다시 시작되기 전에 추가로 6개월의 시간을 벌 수 있었습니다.
 
 @adriatic_not_gov
-subtitle: [? if not psi_in_government : We are not in government. ?][? if not foreign_minister_party == psi_name : We do not control the Foreign Ministry. ?]
+subtitle: [? if not psi_in_government : 우리는 정부에 참여하고 있지 않습니다. ?][? if not foreign_minister_party == psi_name : 우리가 외교부를 통제하고 있지 않습니다 ?]
 view-if: not psi_in_government or not foreign_minister_party == psi_name
 on-arrival: workers += 3; middle_class += 2; rural += 1;
 go-to: fiume_question
 
-The Foreign Minister agrees upon a relatively expected peace deal, though the time comes now for our negotiations regarding Fiume.
+외무부 장관은 비교적 예상 가능했던 평화 조약에 동의했지만, 이제 피우메에 대한 협상의 시간이 다가왔습니다.
 
 @fiume_question
 
-Next up on the list is Fiume. Occupied recently by Gabriele D'Annunzio, it is of importance to both Italy and Yugoslavia. What should we do with it?
+다음 안건은 피우메입니다. 최근 가브리엘레 다눈치오에게 점령된 이 도시는 이탈리아와 유고슬라비아 모두에게 중요합니다. 이 문제를 어떻게 해결해야 할까요?
 
-- @fiume_italy: Demand full control of Fiume.
-- @fiume_free: Let Fiume become a Free City.
-- @fiume_not_gov: We'll see how the Foreign Minister resolves this issue...
+- @fiume_italy: 피우메의 완전한 통제를 요구한다.
+- @fiume_free: 피우메를 자유 도시로 만든다.
+- @fiume_not_gov: 외무부 장관이 이 문제를 어떻게 해결하는지 지켜보자...
 
 @fiume_italy 
-subtitle: Thankfully, they seem willing to accommodate.
+subtitle: 다행히, 그들은 수용할 의사가 있는 것 같습니다.
 view-if: psi_in_government and foreign_minister_party == psi_name
 choose-if: (entente_relation >= 7 and balkan_relation >= 7) or ceded_territories == 1
-unavailable-subtitle: The British and French are already placing immense pressure on us to settle.
+unavailable-subtitle: 영국과 프랑스는 이미 엄청난 압력을 가하고 있습니다. 
 on-arrival: {!
 Q.veterans_psi += 4;
 Q.veterans_pnf -= 6;
@@ -175,10 +175,10 @@ if (Q.ceded_territories == 1) {
 }
 !}
 
-Yugoslavia agrees to hand over Fiume to us, as D'Annunzio and his forces celebrate as our troops enter the city. [? if ceded_territories == 1: The popularity at home isn't as happy to hear this, considering what they lost to earn Fiume. ?]
+유고슬라비아는 피우메를 우리에게 양도하는 데 동의했고, 우리 군대가 도시에 진입하자 다눈치오와 그의 세력은 환호했습니다. [? if ceded_territories == 1: 피우메를 얻기 위해 무엇을 희생했는지 생각하면, 국내의 여론은 그리 호의적이지 않습니다. ?]
 
 @fiume_free
-subtitle: Thankfully, they seem willing to compromise.
+subtitle: 다행히도 그들은 타협할 의지가 있는 것 같습니다.
 view-if: psi_in_government and foreign_minister_party == psi_name
 on-arrival: {!
 Q.veterans_psi -= 6*(1-Q.dissent);
@@ -189,10 +189,10 @@ Q.fiume_free = 1;
 Q.fasci_coup_progress += 1;
 !}
 
-This is a sensible comprise for many, forming the Free City of Fiume, though this only inflames the far-right, calling Fiume rightfully Italian. D'Annunzio refuses to honour the agreement as well, continuing his occupation, though the army makes quick work of his forces.
+피우메 자유 도시를 설립한 것은 많은 이들에게 합리적인 타협안처럼 보였지만, 이는 '피우메는 정당하게 이탈리아 영토'라고 외치는 극우 세력만 더욱 자극했습니다. 단눈치오 또한 이 협정을 무시하고 점령을 계속했지만, 군대는 그의 군대를 신속하게 제압했습니다.
 
 @fiume_not_gov
-subtitle: [? if not psi_in_government : We are not in government. ?][? if not foreign_minister_party == psi_name : We do not control the Foreign Ministry. ?]
+subtitle: [? if not psi_in_government : 우리는 정부에 참여하고 있지 않습니다. ?][? if not foreign_minister_party == psi_name : 우리가 외교부를 통제하고 있지 않습니다 ?]
 view-if: not psi_in_government or not foreign_minister_party == psi_name
 on-arrival: {!
 Q.veterans_psi -= 6*(1-Q.dissent);
@@ -202,4 +202,4 @@ Q.resolved_adriatic = 1;
 Q.fiume_free = 1;
 !}
 
-The Foreign Minister agrees upon a relatively expected peace deal, forming the Free City of Fiume.
+외무부 장관은 비교적 예상 가능했던 평화 협정에 동의하여, 피우메 자유 도시를 설립했습니다.

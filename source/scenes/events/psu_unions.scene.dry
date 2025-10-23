@@ -1,10 +1,10 @@
-title: PSU consolidates support base
+title: 단일 사회당이 지지 기반을 다지다
 new-page: true 
 tags: event
 view-if: psu_formed and unions_break
 on-arrival: workers_psu *= 1.4; workers_psu *= 1.2 if pcdi_formed = 0; veterans_psu *= 1.1; veterans_psu *= 1.1 if pcdi = 0; middle_class_psu += 5; socialist_sentiment += 2; republican_sentiment += 4;
 max-visits: 1
 
-= PSU Consolidates support base 
+= 단일 사회당이 지지 기반을 다지다
 
-Though the recent split of the Reformist faction to form the *Partito Socialista Unitario* as a splinter party was originally thought to be moribund, our Labour faction breaking with us as well has resulted in the labour union *Confederazione Generale del Lavoro* to defect to the party, as the PSU seems to have consolidated and become a competitor to our party.  
+최근 개혁주의 파벌이 분열하여 창당한 *단일 사회당*은 당초 소멸 직전의 군소 정당으로 여겨졌습니다. 하지만 우리 당의 노동 파벌마저 이탈하면서 노동조합인 *노동총연맹*이 단일 사회당으로 넘어가게 되었습니다. 이제 단일 사회당은 지지 기반을 공고히 다지며 우리 당의 경쟁자로 부상한 것으로 보입니다.

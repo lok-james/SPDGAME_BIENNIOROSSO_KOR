@@ -1,16 +1,16 @@
-title: The End of the Russian Civil War
+title: 러시아 내전의 종결
 new-page: true
-subtitle: Have our Soviet allies won?
+subtitle: 우리 소비에트 동맹이 승리했는가? 
 tags: event
 view-if: soviet_end_timer <= 0
 on-arrival: rcw_over = 1; soviet_recovery_timer = 4; communist_dissent -= 7; reformist_dissent -= 7; maximalist_dissent -= 7; labour_dissent -= 7; syndicalist_dissent -= 7 if syndicalist_active; communist_strength += 7*(1-dissent)
 max-visits: 1
 face-image: img/RCWOver.jpg
 
-= The End of the Russian Civil War
+= 러시아 내전의 종결
 
-News is pouring out of the Russian state, as our contacts have informed us that the last of the White Army has surrendered to Lenin and the Red Army. Already, celebration has broken out amongst our allies at the establishment of the first socialist state to ever exist.
+러시아로부터 소식이 쏟아지고 있습니다. 우리 정보통에 따르면, 백군의 마지막 잔당이 레닌과 붉은 군대에게 항복했다고 합니다. 인류 역사상 최초의 사회주의 국가 탄생에 우리 동맹들 사이에서는 이미 축하가 터져 나오고 있습니다.
 
-The state is far from stable, however, and will require quite a long time to recover from its civil war. Regardless, the party is understandably in a celebratory mood.
+그러나 이 국가는 아직 불안정하며, 내전의 상처를 치유하는 데는 상당한 시간이 걸릴 것입니다. 그럼에도 불구하고, 당은 당연히 축제 분위기에 휩싸여 있습니다.
 
 
