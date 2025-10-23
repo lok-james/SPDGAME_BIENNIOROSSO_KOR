@@ -52,7 +52,7 @@ Q.anti_acerbo_coalition += parseFloat(Q.psu_seating_disp);
 go-to: acerbo_menu
 max-visits: 1
 
-이념적 차이에도 불구하고, 통합 사회당은 자신들의 의원들이 이 법안에 반대 투표할 것이라고 확언했습니다.
+이념적 차이에도 불구하고, 단일 사회당은 자신들의 의원들이 이 법안에 반대 투표할 것이라고 확언했습니다.
 
 @psri_convince
 view-if: not psri_collapse

@@ -75,7 +75,7 @@ go-to: cabinet if psi_in_government; menu if not psi_in_government
 
 [+ psi_name +]: [+ psi_seating_disp +]%
 [? if pcdi_formed : 이탈리아 공산당(PCd'I): [+ pcdi_seating_disp +] ?]
-[? if psu_formed : 통합사회당(PSU): [+ psu_seating_disp +] ?]
+[? if psu_formed : 단일사회당(PSU): [+ psu_seating_disp +] ?]
 [? if not psri_collapse : 이탈리아 개혁사회당(PSRI): [+ psri_seating_disp +]% ?]
 [? if pll_formed : 자유노동당(PLL): [+ pll_seating_disp +] ?]
 [? if pri_prominent : 이탈리아 공화당(PRI): [+ pri_seating_disp +] ?]
@@ -158,7 +158,7 @@ go-to: menu
 
 [? if pcdi_formed : 이탈리아 공산당(PCd'I): [+ pcdi_votes +]% ?]
 
-[? if psu_formed : 통합사회당(PSU): [+ psu_votes +]% ?]
+[? if psu_formed : 단일사회당(PSU): [+ psu_votes +]% ?]
 
 [? if not psri_collapse : 이탈리아 개혁사회당(PSRI) : [+ psri_votes +]% ?]
 
@@ -182,7 +182,7 @@ go-to: menu
 
 **주요 사회 계층별 상세 지지율**
 
-도시 노동자: [+ psi_name +]: [+ workers_psi_display +]%, [? if pcdi_formed : 이탈리아 공산당 (PCd'I): [+ workers_pcdi_display +]%, ?] [? if psu_formed : 통합사회당 (PSU): [+ workers_psu_display +]%, ?] 이탈리아 개혁사회당(PSRI): [+ workers_psri_display +]%, [? if pll_formed : 자유노동당 (PLL): [+ workers_pll_display +]%, ?] [? if pri_prominent = 1 : 이탈리아 공화당 (PRI): [+ workers_pri_display +]%, ?] [+ ds_name +]: [+ workers_ds_display +]%, 이탈리아 인민당(PPI): [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%, [?if pcs_formed = 1 : 기독교사회당 (PCS): [+ workers_pcs_display +]%, ?] [? if not pnf_banned: [+ pnf_name +]: [+ workers_pnf_display +]%, ?] 기타: [+ workers_other_display +]%
+도시 노동자: [+ psi_name +]: [+ workers_psi_display +]%, [? if pcdi_formed : 이탈리아 공산당 (PCd'I): [+ workers_pcdi_display +]%, ?] [? if psu_formed : 단일사회당 (PSU): [+ workers_psu_display +]%, ?] 이탈리아 개혁사회당(PSRI): [+ workers_psri_display +]%, [? if pll_formed : 자유노동당 (PLL): [+ workers_pll_display +]%, ?] [? if pri_prominent = 1 : 이탈리아 공화당 (PRI): [+ workers_pri_display +]%, ?] [+ ds_name +]: [+ workers_ds_display +]%, 이탈리아 인민당(PPI): [+ workers_ppi_display +]%, [+ ldr_name +]: [+ workers_ldr_display +]%, [+ ul_name +]: [+ workers_ul_display +]%, [?if pcs_formed = 1 : 기독교사회당 (PCS): [+ workers_pcs_display +]%, ?] [? if not pnf_banned: [+ pnf_name +]: [+ workers_pnf_display +]%, ?] 기타: [+ workers_other_display +]%
 
 중산층: [+ psi_name +]: [+ middle_class_psi_display +]%, [? if pcdi_formed : PCd'I: [+ middle_class_pcdi_display +]%, ?] [? if psu_formed : PSU: [+ middle_class_psu_display +]%, ?] PSRI: [+ middle_class_psri_display +]%, [? if pll_formed : PLL: [+ middle_class_pll_display +]%, ?] [? if pri_prominent = 1 : PRI: [+ middle_class_pri_display +]%, ?] [+ ds_name +]: [+ middle_class_ds_display +]%, PPI: [+ middle_class_ppi_display +]%, [+ ldr_name +]: [+ middle_class_ldr_display +]%, [+ ul_name +]: [+ middle_class_ul_display +]%, [? if pcs_formed = 1 : PCS: [+ middle_class_pcs_display +]%, ?] [? if not pnf_banned : [+ pnf_name +]: [+ middle_class_pnf_display +]%, ?] 기타: [+ middle_class_other_display +]%
 
@@ -205,7 +205,7 @@ go-to: menu
 
 [? if pcdi_formed : 현재 관계: [+ pcdi_relation : relationships +] ?]
 
-[? if psu_formed : **통합사회당(PSU)** - *Partito Socialista Unitario* - [+ psi_name +]에서 당의 개혁주의 세력이 지도부와 함께 탈당하여 창당한 분파 정당입니다. ?]
+[? if psu_formed : **단일사회당(PSU)** - *Partito Socialista Unitario* - [+ psi_name +]에서 당의 개혁주의 세력이 지도부와 함께 탈당하여 창당한 분파 정당입니다. ?]
 
 [? if psu_formed : 현재 관계: [+ psu_relation : relationships +] ?]
 
@@ -534,7 +534,7 @@ data.push({
 
 [? if pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35'> </div></td> <td>!} 이탈리아 공산당 (PCd'I): {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} 통합사회당 (PSU): {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
+[? if psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A'> </div></td> <td>!} 단일사회당 (PSU): {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
 [? if not psri_collapse : {!<tr><td><div class="box" style='background-color:#FFC0CB'> </div></td><td>!} 이탈리아 개혁사회당 (PSRI): {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
@@ -727,7 +727,7 @@ if (Q.benevolence) {
 
 [? if (opposition or benevolence) and pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 공산당 (PCd'I): {!</td><td>!} [+ pcdi_r +]% {!</td></tr>!} ?]
 
-[? if (opposition or benevolence) and psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A; outline: 2px; outline-style: solid;'> </div>!} 통합사회당 (PSU): {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
+[? if (opposition or benevolence) and psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A; outline: 2px; outline-style: solid;'> </div>!} 단일사회당 (PSU): {!</td><td>!} [+ psu_r +]% {!</td></tr>!} ?]
 
 [? if opposition or benevolence :  {!<tr><td><div class="box" style='background-color:#FFC0CB; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 개혁사회당 (PSRI): {!</td><td>!} [+ psri_r +]% {!</td></tr>!} ?]
 

@@ -1,15 +1,15 @@
-title: The Social Liberalism of the PSRI
-subtitle: The PSRI completes its shift rightwards.
+title: 이탈리아 개혁 사회당의 사회 자유주의
+subtitle: 이탈리아 개혁 사회당이 우경화를 완료합니다.
 new-page: true
 view-if: psri_solo and psri_time <= time and not national_congress_seen
 on-arrival: psri_soclib = 1
 tags: event
 max-visits: 1
 
-= Social Liberalism of the PSRI
+= 이탈리아 개혁 사회당의 사회적 자유주의
 
-Following the PSRI's decision to move to the right and a reshuffling of its leadership, the PSRI has finally completed its shift to the right, opting instead to be elected on Liberal lists to its right rather than the socialist lists it has historically participated in. 
+이탈리아 개혁 사회당은 우경화 노선을 결정하고 지도부를 재편한 후, 마침내 우경화를 완료했습니다. 그들은 이제 역사적으로 함께했던 사회주의 명부 대신, 우파 경향의 자유주의 명부로 선거에 나서기로 결정했습니다.
 
-Adding to such, our relations with the PSRI have deteriorated slightly as well, as we can no longer count on the party to join in any Leftist coalitions within the Chamber of Deputies.
+더욱이, 이탈리아 개혁 사회당과의 관계도 다소 악화되었습니다. 이제 더 이상 하원에서 어떠한 좌파 연정에도 그들을 참여시킬 수 없을 것입니다.
 
-- @root: Expected, but a shame nevertheless.
+- @root: 예상했지만, 어쨌든 유감이다.

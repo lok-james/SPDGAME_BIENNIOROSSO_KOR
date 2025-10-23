@@ -1,23 +1,23 @@
-title: PSRI in Crisis!
-subtitle: The PSRI is having a crisis of leadership...
+title: 이탈리아 개혁 사회당의 위기!
+subtitle: 이탈리아 개혁 사회당이 지도부 위기를 겪고 있습니다...
 new-page: true
 view-if: psri_stable and psri_r < 3 and psri_votes < 4 and year < 1924 and not national_congress_seen and not left_wing_coalition
 on-arrival: psri_stable = 0
 tags: event
 max-visits: 1
 
-= PSRI in Crisis 
+= 이탈리아 개혁 사회당의 위기
 
-The PSRI, also known as the Italian Reformist Socialist Party, is in crisis following it's recent electoral results, going from [+ old_psri_r +]% to [+ psri_r +]% in just six years. The party has gone from a fairly important force, representing the left-wing of the political sphere willing to cooperate with the liberals to a now almost defunct party, as the party struggles to keep its now rapidly defecting support base. 
+이탈리아 개혁 사회당이 최근 선거에서의 부진한 성적으로 인해 위기에 직면했습니다. 불과 6년 만에 지지율이 [+ old_psri_r +]%에서 [+ psri_r +]%로 급락했습니다. 한때는 자유주의자들과의 협력에 개방적인 좌파 정치 세력을 대표하는 상당히 중요한 정당이었으나, 이제는 빠르게 이탈하는 지지층을 붙잡기 위해 안간힘을 쓰는, 사실상 소멸 직전의 정당이 되었습니다.
 
-There is significant efforts within the party, including Bonomi, who are pushing for a shift in the party's ideology in order to counteract it's association with the [+ psi_name +] and to allow closer collaboration with the existing liberal parties, though there is fierce opposition against such a response as well. The party will also have to figure out how to contest the next elections, without a suitable organisation to campaign for the party, it is likely that it will be forced to collaborate and form joint lists with other parties.
+당 내에서는 보노미를 비롯한 인사들이 [+ psi_name +]와의 연관성을 희석시키고 기존 자유당과의 긴밀한 협력을 가능하게 하기 위해 이념적 전환을 추진하는 등 상당한 노력이 있지만, 이러한 움직임에 대한 격렬한 반대 역시 존재합니다. 또한 당은 다음 선거를 어떻게 치를 것인지에 대한 해답을 찾아야 합니다. 선거운동을 수행할 적절한 조직이 없다면, 다른 정당들과 협력하여 공동 명부를 구성할 수밖에 없을 것입니다.
 
-- @psri_left: The PSRI reaffirms its commitment to social democracy.
-- @psri_moderate: The PSRI begins a shift towards social liberalism.
+- @psri_left: 이탈리아 개혁 사회당이 사회민주주의에 대한 헌신을 재확인한다.
+- @psri_moderate: 이탈리아 개혁 사회당이 사회 자유주의로의 전환을 시작한다.
 
 @psri_left
 choose-if: (psu_formed and (psi_votes >= 37 or radicalisation >= 8)) or ((pri_prominent or pll_formed) and bissolati_dead != 1)
-unavailable-subtitle: Without a suitable left-wing partner, advocates argue a change in course is necessary.
+unavailable-subtitle: 적합한 좌파 파트너가 없는 상황에서, 지지자들은 노선 변경이 필요하다고 주장합니다.
 on-arrival: {!
 
 let options = [];
@@ -47,13 +47,13 @@ if (options.length > 0) {
 
 !}
 
-The opposition is able to succeed, continuing the party's ideological commitment to social democracy and left-wing ideals.
+반대파가 승리하여, 당은 사회민주주의와 좌파 이념에 대한 헌신을 계속 이어가게 됩니다.
 
-[? if psri_joint_pll : The PSRI have come to an agreement with the PLL, officially forming a joint-list with them as a junior partner and stemming the bleed of the party's support. ?]
+[? if psri_joint_pll : 이탈리아 개혁 사회당이 자유노동당과 합의에 이르러, 공식적으로 그들의 하위 파트너로서 공동 명부를 구성하고 당의 지지율 하락을 막았습니다. ?]
 
-[? if psri_joint_psu : The PSRI have come to a wary agreement with the PSU, officially forming a joint-list with them as a junior partner. This has occurred primarily because of our popularity, as well as our increasing radicalisation, which has prompted a consolidation of the reformist left. ?]
+[? if psri_joint_psu : 이탈리아 개혁 사회당이 단일 사회당과 신중한 합의에 이르러, 공식적으로 그들의 하위 파트너로서 공동 명부를 구성했습니다. 이는 주로 우리의 인기와 더불어 점점 증가하는 우리의 급진화 경향 때문이며, 이로 인해 개혁주의 좌파의 통합이 촉진되었습니다. ?]
 
-[? if psri_joint_pri : The PSRI have come to an agreement with the PRI, officially forming a joint-list with the them as a junior partner. and stemming the bleed of the party's support. ?]
+[? if psri_joint_pri : 이탈리아 개혁 사회당이 이탈리아 공화당과 합의에 이르러, 공식적으로 그들의 하위 파트너로서 공동 명부를 구성했습니다. 이로써 당의 지지율 하락을 막게 되었습니다. ?]
 
 @psri_moderate
 view-if: (not psu_formed or (psi_votes < 37 and radicalisation < 8 or (not not_participating or not maximalist_participating) or radicalisation < 7)) and ((not pri_prominent and not pll_formed) or bissolati_dead = 1)
@@ -81,4 +81,4 @@ Q.catholic_psri *= 0.5;
 Q.women_psri *= 0.5;
 !}
 
-The exponents are able to succeed; with Bonomi's lead, the PSRI begins a change in course, pivoting to the right towards liberalism. This only seems to exacerbate the party's bleed however, as members of its left defect, becoming independents or joining the other left-wing parties.
+주장자들이 승리했습니다. 보노미의 주도 아래 이탈리아 개혁 사회당은 자유주의를 향해 우측으로 선회하며 노선을 변경하기 시작합니다. 하지만 이는 오히려 당의 지지층 이탈을 더욱 악화시키는 것으로 보입니다. 당내 좌파 구성원들이 탈당하여 무소속이 되거나 다른 좌파 정당에 합류하고 있습니다.
