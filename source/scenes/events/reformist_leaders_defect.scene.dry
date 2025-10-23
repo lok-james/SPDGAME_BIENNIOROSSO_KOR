@@ -1,13 +1,13 @@
-title: Reformist leaders defect
+title: 개혁주의 지도자들이 탈당하다
 new-page: true 
-subtitle: Reformist disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 개혁파의 불만이 극에 달했습니다.
 tags: event
 view-if: reformist_dissent >= 60
 on-arrival: reformist_seen = 1; rural_psu += rural_psi * 0.5; workers_other += 2; workers_psri += 2; workers_psu += workers_psi * 0.3; workers_psi *= 0.7; reformist_strength *= 0.3; n_advisors -= 1 if matteotti_advisor == 1; n_advisors -= 1 if buozzi_advisor == 1; n_advisors -= 1 if altobelli_advisor == 1; n_advisors -= 1 if salvemini_advisor == 1; n_advisors -= 1 if kuliscioff_advisor == 1; n_advisors -= 1 if turati_advisor == 1; matteotti_advisor = 0; buozzi_advisor = 0; kuliscioff_advisor = 0; altobelli_advisor = 0; turati_advisor = 0; salvemini_advisor = 0; rg_strength -= 10; reformists_defect = 1; psri_relation -= 7; psu_formed = 1; psu_seating = (psi_seating/3)*2; psi_seating = psi_seating/3; psu_seating_disp = (psi_seating_disp/3)*2; psi_seating_disp = psi_seating_disp/3; psu_negotiating_timer = 12; prime_minister_party = "PSU" if prime_minister = "Turati"
 max-visits: 1
 
-= Reformist leaders defect
+= 개혁주의 지도자들이 탈당하다
 
-Our policy choices have greatly offended the reformist faction, seeing our turn towards radicalism. While some have joined the PSRI, the remainder have set up the Unitary Socialist Party.
+우리의 급진적인 노선에 개혁주의 파벌이 크게 반발했습니다. 일부는 이탈리아 개혁사회당으로 갔고, 남은 이들은 단일사회당을 창당했습니다.
 
-Additionally and more importantly, a significant amount of our members in the Chamber of Deputies has defected to the PSU as well. [? if psi_in_government: They have maintained toleration of the current governing coalition. ?]
+게다가 더 중요하게는, 소속 대의회 의원 중 상당수가 단일사회당으로 이적했습니다. [? if psi_in_government: 이들은 현 연립 정부에 대한 지지 의사는 유지하고 있습니다. ?]

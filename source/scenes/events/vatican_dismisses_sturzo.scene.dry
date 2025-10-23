@@ -1,10 +1,10 @@
-title: Sturzo Dismissed!
+title: 스투르초가 해임되다!
 view-if: year == 1923 and month = 7 and week = 1 and (roman_question_answered = 0 or pope = "Del Val") and ppi_leader == "Sturzo" and pnf_in_government
 frequency: 1000
 max-visits: 1
 on-arrival: ppi_leader = "De Gasperi" if ppi_leader == "Sturzo";
 tags: event
 
-Luigi Sturzo, head of the PPI, has suddenly and shockingly resigned as party leader after a meeting with Pope Pius XI, though our sources indicate that [+ prime_minister +] had negotiated an agreement with the Holy See to do so. Alcide De Gasparri takes his place as party leader.
+이탈리아 인민당의 대표 루이지 스투르초가 교황 비오 11세와 면담한 후, 돌연 충격적인 사임을 발표했습니다. 정보원에 따르면, 이는 [+ prime_minister +]가 교황청과 맺은 협상의 결과라고 합니다. 그의 후임으로는 알치데 데 가스페리가 당 대표직을 맡게 되었습니다.
 
-- @root: Concerning.
+- @root: 우려스러운 일이다.

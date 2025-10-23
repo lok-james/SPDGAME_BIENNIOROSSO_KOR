@@ -1,6 +1,6 @@
-title: Streetfighting
+title: 시가전
 new-page: true 
-subtitle: Our forces engage with the far-right.
+subtitle: 우리 세력이 극우파와 충돌하다.
 tags: event
 view-if: not return_to_normalcy and streetfighting_timer <= 0 and not national_congress_seen and not pacification_pact
 on-arrival: {!
@@ -17,13 +17,13 @@ Q.abl_streetfighting = Q.abl_strength * Q.abl_militancy
 
 !}
 
-= Streetfighting
+= 시가전
 
-Frequently, and more often than not, our forces — whether that is the Red Guards or merely workers intending to defend themselves — face off against far-right paramilitaries. Whether that is the Anti-Bolshevik Leagues, funded by their elite backers, the Arditismo, former members of the *Arditi* special forces radicalised or even the Fasci themselves, determined to eliminate us. 
+빈번하게, 거의 항상 우리 세력은—적위대 대원이든 평범한 자위 노동자든—극우 준군사조직과 충돌합니다. 상대는 엘리트의 후원을 받는 반볼셰비키 연맹이기도 하고, 급진화된 *결사대* 특수부대 출신들의 결사대 운동이기도 하며, 심지어 우리를 제거하려는 파시스트 자체일 때도 있습니다.
 
-- @engage_fdc: Engage our forces with the Fasci.
-- @engage_ard: Engage our forces with the Arditismo.
-- @engage_abl: Engage our forces with the Anti-Bolshevik Leagues.
+- @engage_fdc: 우리 세력을 파시스트와 교전시킨다.
+- @engage_ard: 우리 세력을 결사대와 교전시킨다.
+- @engage_abl: 우리 세력을 반볼셰비키 연맹과 교전시킨다.
 
 @engage_fdc
 on-arrival: fdc_fought = 1;
@@ -82,7 +82,7 @@ if (Q.abl_fought == 1) {
 !}
 on-departure: fdc_fought = 0; ard_fought = 0; abl_fought = 0
 
-Our forces are, thankfully, able to come out victorious against our opponents. Our forces have been damaged, but the forces of the far-right are hurt significantly more.
+다행히도 우리 세력은 교전에서 승리했습니다. 우리측도 피해를 입었지만, 극우파 세력의 피해가 훨씬 더 막심합니다.
 
 @engage_failure
 on-arrival: {!
@@ -129,4 +129,4 @@ if (Q.abl_fought == 1) {
 !}
 on-departure: fdc_fought = 0; ard_fought = 0; abl_fought = 0
 
-Our forces are, unfortunately, unable to come out victorious, forced to retreat. Our forces have been significantly damaged, though so have theirs at a lesser capacity.
+안타깝게도 우리 세력은 승리하지 못하고 퇴각해야만 했습니다. 우리측의 피해가 막심했지만, 적들 또한 어느 정도 손실을 입었습니다.

@@ -1,14 +1,14 @@
-title: Southern Question Ameliorated
+title: 남부 문제가 개선됨
 new-page: true 
-subtitle: Our policies seem to have borne fruit.
+subtitle: 우리의 정책이 결실을 맺은 듯합니다.
 tags: event
 view-if: mafia_strength = 0 and southern_education_funded > 1 and southern_infrastructure_funded > 1 and psi_in_government and southern_land_reformed = 1
 on-arrival: rural_psi += 12*(1-dissent); rural_ldr -= 6*(1-dissent); rural_ul -= 3*(1-dissent); rural_ds -= 3*(1-dissent); southern_resolved = 1;
 max-visits: 1
 
-= Mezzogiorno Ameliorated
+= 남부 문제가 개선됨
 
-It seems our policies within the South has borne fruit. The various bickering Mafia groups have been quelled by the Interior, Public Education, as well as general literacy has improved amongst the population, and infrastructural projects directed by the Public Works Ministry has allowed the South to begin catching up, at the very least slowly, with its northern counterpart.
+남부 지역을 대상으로 한 우리의 정책이 결실을 맺은 것 같습니다. 내무부가 서로 반목하던 여러 마피아 집단을 진압했고, 공교육 강화로 주민들의 문해율이 향상되었습니다. 또한 공공사업부가 주도한 사회 기반 시설 프로젝트 덕분에 남부가 북부와의 격차를 최소한 천천히나마 좁혀가기 시작했습니다.
 
-There is still much to be done. The Mafia still remains relevant, albeit weaker, and the economic output of the South still lacks compared to the North. Regardless, our success seems to have swayed many rural voters over to our party, and away from the historically liberal parties.
+아직 해결해야 할 과제가 많습니다. 마피아는 약화되었지만 여전히 건재하며, 남부의 경제 생산량은 여전히 북부에 미치지 못합니다. 그럼에도 불구하고, 이러한 성공 덕분에 많은 농촌 유권자들이 전통적인 자유주의 정당들을 등지고 우리 당을 지지하게 된 것으로 보입니다.
 

@@ -1,34 +1,34 @@
-title: XVII Congress of the [+ psi_full_name +]
-subtitle: A divergence in paths is to be decided once more.
+title: 제17차 [+ psi_full_name +] 전당대회
+subtitle: 당 노선의 분기점이 다시 한번 결정될 것입니다.
 new-page: true
 tags: event
 view-if: year = 1921 and month = 1
 max-visits: 1
 face-image: img/XVIICongress.jpg
 
-= XVII Congress of the [+ psi_full_name +]
+= 제17차 [+ psi_full_name +] 전당대회
 
-Debates and speeches from many are heard, as differing voices voice their opinions to the crowd. The 17th Congress of the [+ psi_full_name +] has begun. The agenda on the table is the 21 new conditions by the Communist International, of which one has stood out: The expelling of the reformists, now considered counter-revolutionaries.
+군중을 향한 각기 다른 목소리들이 토론과 연설을 통해 울려 퍼집니다. 제17차 [+ psi_full_name +] 전당대회가 시작되었습니다. 이번 대회의 쟁점은 코민테른이 제시한 21개 가입 조건이며, 그중에서도 특히 이제 반혁명분자로 간주되는 개혁주의파의 축출 문제가 주목받고 있습니다.
 
-The Maximalists are caught in the centre, as the Communists and Reformists argue whether or not to toe the International line. It seems the party can no longer hold with compromise, one faction has to go.
+최대강령주의파는 코민테른의 노선을 따를 것인지 여부를 두고 다투는 공산주의파와 개혁주의파 사이에 끼어 있습니다. 더는 타협으로 당을 유지할 수 없을 것으로 보이며, 어느 한쪽 파벌은 떠나야만 합니다.
 
-- @refuse_comintern: The [+ psi_name +] must stand with its reformists. They will not be expelled.
-- @accept_comintern: The [+ psi_name +] must toe the Communist International line. The Reformists will be expelled.
+- @refuse_comintern: [+ psi_name +]는 개혁주의자들을 지지한다. 그들을 축출할 수 없다.
+- @accept_comintern: [+ psi_name +]는 코민테른의 노선을 따른다. 개혁주의자들을 축출한다.
 
 @refuse_comintern
-subtitle: It is likely the [? if pcdi_formed :remaining?] Communists will split from the party.
+subtitle: [? if pcdi_formed :잔류한?] 공산주의자들이 당을 이탈할 가능성이 높습니다.
 choose-if: maximalist_participating = 1 or participating = 1 or pcdi_formed
-unavailable-subtitle: [? if participating = 0 and maximalist_participating = 0: The XVI Congress has already forced us to adopt a revolutionary stance. ?]
+unavailable-subtitle: [? if participating = 0 and maximalist_participating = 0: 제16차 전당대회에서 이미 혁명 노선을 채택한 바 있습니다. ?]
 on-arrival: communist_strength -= 100; communist_dissent += 100; pcdi_formed = 1; revolutionary_fervour -= 10; soviet_relations -= 3;
 
-[? if communist_split = 1 : Even as the communist faction remains minimal after the founding of the Italian Communist Party, ?] The communist faction has resigned, with the majority [? if communist_split = 1 : joining the existing PCI. ?][? if communist_split = 0 : creating a new party called the Italian Communist Party. ?] 
+[? if communist_split = 1 : 이탈리아 공산당 창당 이후 공산주의 파벌의 규모가 미미함에도 불구하고, ?] 공산주의 파벌이 탈당을 선언했으며, 그들 대다수는 [? if communist_split = 1 : 기존의 이탈리아 공산당에 합류했습니다. ?][? if communist_split = 0 : 이탈리아 공산당이라는 새로운 정당을 창당했습니다. ?] 
 
-The Communist International has also expelled us, supporting the new PCI instead; it seems we can no longer rely on them for aid.
+코민테른 역시 우리를 축출하고는 새로 창당된 이탈리아 공산당을 지지하기 시작했습니다. 이제 더는 코민테른의 원조를 기대할 수 없을 것 같습니다.
 
 @accept_comintern
-subtitle: It is likely the [? if psu_formed :remaining?] Reformists will split from the party.
+subtitle: [? if psu_formed :잔류한?] 개혁주의자들이 당을 이탈할 가능성이 높습니다.
 choose-if: participating = 0 or psu_formed
-unavailable-subtitle: [? if participating = 1 : The XVI Congress has already forced us to adopt a parliamentary stance. ?]
+unavailable-subtitle: [? if participating = 1 : 제16차 전당대회에서 이미 의회주의 노선을 채택한 바 있다. ?]
 on-arrival: reformist_strength -= 100; reformist_dissent += 100; reformists_expelled = 1; revolutionary_fervour += 10; psu_formed = 1; changed_name = 1; psi_name = "PC - SIIC"; psi_full_name = "Communist Party - Italian Section of the Communist International"; psi_full_italian = "Partito Comunista - Sezione Italiana dell'Internazionale Comunista"; {!
 if (Q.prime_minister_party == "PSI") {
     Q.prime_minister_party = Q.psi_name;
@@ -71,4 +71,4 @@ if (Q.public_education_minister_party == "PSI") {
 }
 !}
 
-[? if reformists_defect = 1 : Even as the reformist faction remains minimal after its defection to the PSU, ?] The reformist faction has been expelled, with the majority joining the PSRI.
+[? if reformists_defect = 1 : 단일사회당으로의 이탈 사태 이후 개혁주의 파벌의 규모가 미미함에도 불구하고, ?] 개혁주의 파벌은 당에서 축출되었으며, 그들 대다수는 이탈리아 개혁사회당에 합류했습니다.

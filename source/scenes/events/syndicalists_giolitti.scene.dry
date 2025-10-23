@@ -1,12 +1,12 @@
-title: Syndicalists Arrested!
+title: 생디칼리스트들이 체포되다!
 view-if: year == 1920 and month = 10 and prime_minister == "Giolitti" and syndicalist_active and ul_relation < 30
 frequency: 1000
 max-visits: 1
 on-arrival: workers_psi -= 7*(1-dissent); rg_strength -= syndicalist_strength*0.8; syndicalist_strength *= 0.2; syndicalist_dissent *= 0.2;
 tags: event
 
-= USI Leadership arrested!
+= '이탈리아 생디칼리스트 연합' 지도부가 체포되다!
 
-Shockingly, it seems that Prime Minister Giolitti has ordered the Interior Ministry to arrest the leadership of the Italian Syndicalist Union, successfully imprisoning many under charges of disrupting the public order. This has weakened the syndicalist faction significantly.
+충격적이게도, 조반니 졸리티 총리가 내무부에 '이탈리아 생디칼리스트 연합' 지도부의 체포를 명령하여 공공질서 교란 혐의로 다수를 투옥시킨 것으로 보입니다. 이 사건으로 생디칼리스트 파벌은 크게 약화되었습니다.
 
-- @root: Concerning.
+- @root: 우려스러운 일이다.

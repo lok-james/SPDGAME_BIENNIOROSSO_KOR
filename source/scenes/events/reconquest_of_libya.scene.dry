@@ -1,47 +1,47 @@
-title: [? if psi_in_government : Military recommends action in Libya ?] [? if not psi_in_government : Military prepares for war in Libya ?]
-subtitle: The nation seems to be on the brink of war once more.
+title: [? if psi_in_government : 군부, 리비아에서의 군사 행동을 권고  ?] [? if not psi_in_government : 군부, 리비아 전쟁 준비 ?]
+subtitle: 이탈리아가 또다시 전쟁의 문턱에 서 있는 듯합니다.
 view-if: year = 1922 and month = 1
 new-page: true
 max-visits: 1
 tags: event
 face-image: img/Libya.jpg
 
-= [? if psi_in_government : Military recommends action in Libya ?] [? if not psi_in_government : Military prepares for war in Libya ?]
+= [? if psi_in_government : 군부, 리비아에서의 군사 행동을 권고  ?] [? if not psi_in_government : 군부, 리비아 전쟁 준비?]
 
-Our sources in the Army and Navy Ministries has informed us that the High Command is preparing for the pacification of Libya once more. Popular support for the war seems to be widespread, as many still remember the killings of civilians done by local guerrillas done during the first world war.
+육군과 해군의 정보원에 따르면, 최고 사령부가 리비아 평정을 위한 작전을 재차 준비하고 있다고 합니다. 제1차 세계 대전 당시 현지 게릴라들이 자행했던 민간인 학살을 기억하는 이들이 많아, 이번 전쟁에 대한 대중적 지지는 광범위한 것으로 보입니다.
 
-[? if psi_in_government : Many within the party are pressuring us to use our position in the government to convince or influence the army to stop, or at least delay the invasion until a later time. ?][? if not psi_in_government : Realistically, there is not much we can do to stop this. ?]
+[? if psi_in_government : 당내에서는 정부 내 우리의 입지를 이용해 군부를 설득하거나 영향력을 행사하여 침공을 중단시키거나, 최소한 나중으로 연기시켜야 한다는 압박이 거셉니다. ?][? if not psi_in_government : 현실적으로 우리가 이를 막을 방법은 거의 없습니다. ?]
 
-- @libya_majority: Refuse the military's recommendation for war.
-- @libya_coalition_influence: Utilise our government influence to delay the war.
-- @libya_military_influence: Utilise our military influence and coffers to delay the war.
-- @libya_nothing: Issue a letter of condemnation.
+- @libya_majority: 군의 전쟁 권고를 거부한다.
+- @libya_coalition_influence: 정부 내 영향력을 이용해 전쟁을 연기시킨다.
+- @libya_military_influence: 군 내 영향력과 자금을 이용해 전쟁을 연기시킨다.
+- @libya_nothing: 규탄 성명을 발표한다.
 
 @libya_majority
-subtitle: We're in control of the government after all, aren't we?
+subtitle: 어쨌든 정부는 우리 손에 있지 않습니까?
 view-if: psi_majority or left_wing_coalition
 on-arrival: maximalist_dissent -= 10; reformist_dissent -= 10; communist_dissent -= 10; labour_dissent -= 10; syndicalist_dissent -= 10 if syndicalist_active; veterans_psi -= 7; veterans_pnf += 12; middle_class_psi -= 6*(1-dissent); army_loyalty -= 0.1; workers_psi -= 3*(1-dissent)
 
-Being in control of the government, we force the military to drop their plans, as the factions laud our decisive action. The military, however, is less than enthused by the news, and our veteran support base is in an uproar.
+정부를 장악한 우리는 군에 작전 계획을 철회하도록 강제했고, 각 파벌은 우리의 단호한 조치에 찬사를 보냈습니다. 하지만 군부는 이 소식을 달가워하지 않으며, 우리의 퇴역 군인 지지층은 격분하고 있습니다.
 
 @libya_coalition_influence
-subtitle: Thankfully, we can persuade our coalition to heed our concerns.
+subtitle: 다행히 우리의 우려를 듣도록 연정 파트너들을 설득할 수 있습니다.
 view-if: in_unstable_coalition
 on-arrival: maximalist_dissent -= 5; reformist_dissent -= 5; communist_dissent -= 5; labour_dissent -= 5; syndicalist_dissent -= 5 if syndicalist_active; coalition_dissent += 1; veterans_psi -= 4; veterans_pnf += 4; army_loyalty -= 0.05;
 
-Our coalition members are able to see reason, at least temporarily, and decide to delay the war until the internal situation improves. Our veteran supporters, however, aren't happy, and the PNF seizes the opportunity to increase their support.
+연정 파트너들은 최소한 잠시나마 이성적으로 판단하여 국내 상황이 안정될 때까지 전쟁을 연기하기로 결정했습니다. 하지만 퇴역 군인 지지자들은 불만을 품었고, 국가 파시스트당은 이 기회를 틈타 지지세를 넓혔습니다.
 
 @libya_military_influence
-subtitle: -1 Resource - Thankfully, we can use to influence as well as our coffers to 'delay' the war.
+subtitle: -1 자원 - 다행히, 우리의 영향력과 자금으로 전쟁을 '지연'시킬 수 있습니다.
 choose-if: army_loyalty > 0.53 and resources > 0
-unavailable-subtitle: [? if army_loyalty < 0.54 : Our influence in the military is too low to even attempt this. ?][? if resources < 1 : Not enough resources. (Need 1) ?]
+unavailable-subtitle: [? if army_loyalty < 0.54 : 군 내 우리의 영향력이 너무 미미하여 시도조차 할 수 없습니다. ?][? if resources < 1 : 자원이 부족합니다. (1 필요) ?]
 on-arrival: resources -= 1; veterans_psi -= 1;
 
-Using our already-established influence, we coordinate troops to 'miscount' their equipment and 'take their time' in supplying equipment, whilst our funds go towards more 'friendly' officers who are encouraged to go through the full bureaucratic process to order troops or planning. War preparations, seeming for no reason, has ground to a halt.
+이미 확보한 영향력을 이용해 부대들이 장비 수량을 '오기'하게 하고 보급에 '늑장을 부리도록' 지시합니다. 동시에 우리의 자금은 병력 동원이나 작전 계획 시 모든 관료적 절차를 철저히 따르도록 장려받는 '우호적인' 장교들에게 흘러 들어갑니다. 아무런 이유도 없는 것처럼 보이던 전쟁 준비가 완전히 중단되었습니다.
 
 @libya_nothing
-subtitle: What else could we do?
+subtitle: 우리가 달리 뭘 할 수 있습니까?
 on-arrival: maximalist_dissent += 4; reformist_dissent += 4; communist_dissent += 4; labour_dissent += 4; syndicalist_dissent += 4 if syndicalist_active
 
-Realistically, there is nothing we can do. The factions are unsurprisingly outraged by our inaction, but it passes quickly, as usual.
+현실적으로 우리가 할 수 있는 일은 아무것도 없습니다. 예상대로 각 파벌은 우리의 무대응에 분노했지만, 언제나 그랬듯이 금세 잠잠해졌습니다.
 

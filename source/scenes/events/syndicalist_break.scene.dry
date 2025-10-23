@@ -1,15 +1,15 @@
-title: USI breaks from the Party
+title: '이탈리아 생디칼리스트 연합'이 당과 결별하다
 new-page: true 
-subtitle: Syndicalist disagreements with our policies have grown too severe.
+subtitle: 우리 정책에 대한 생디칼리스트파의 불만이 극에 달했습니다.
 tags: event
 view-if: syndicalist_dissent >= 60 and syndicalist_active = 1
 on-arrival: syndicalist_break = 1; workers_psi *= 0.9; rg_strength *= 0.8; veterans_psi *= 0.9; workers_psri += 5; workers_pnf *= 0.05; n_advisors -= 1 if divittorio_advisor == 1; divittorio_advisor = 0; n_advisors -= 1 if deambris_advisor == 1; deambris_advisor = 0; syndicalist_strength *= 0.5
 max-visits: 1
 
-= USI breaks from the [+ psi_name +]
+= '이탈리아 생디칼리스트 연합', [+ psi_name +]와 결별하다
 
-Our policy choices have greatly offended the syndicalist movement. Union leaders of the *Unione Sindacale Italiana* have declared that they are independent of any political party, and some have been seen seeking accommodation with the PSRI and even the PNF.
+우리의 정책 노선은 생디칼리스트 운동의 강한 반발을 샀습니다. *이탈리아 생디칼리스트 연합*의 지도부는 모든 정당으로부터 독립을 선언했으며, 일부는 이탈리아 개혁사회당이나 심지어 국가 파시스트당과의 연대를 모색하는 움직임도 포착되었습니다.
 
-Some workers remain loyal to the [+ psi_name +], although their affiliation is less solid. Many workers move away from us[? if (pcdi_formed or psu_formed) : ,joining our splinter parties?]. Others move in a more nationalist direction, as the CGL and USI signals its willingness to work with the right to solve the economic crisis.
+일부 노동자들은 [+ psi_name +]에 충성을 유지하지만, 지지세는 이전보다 약화되었습니다. 많은 노동자들이 우리를 떠나[? if (pcdi_formed or psu_formed) : 우리에게서 분리된 정당들로 합류하고 있습니다?]. '이탈리아 노동 총연맹'과 '이탈리아 생디칼리스트 연합'이 경제 위기 해결을 위해 우파와 협력할 의사를 내비치면서, 일부 노동자들은 더욱 민족주의적인 성향을 띠게 되었습니다.
 
-Much of our working-class base has defected, and labour's influence in our party has greatly diminished.
+노동계급 지지 기반의 상당수가 이탈했으며, 당내 노동파의 영향력 또한 크게 줄어들었습니다.

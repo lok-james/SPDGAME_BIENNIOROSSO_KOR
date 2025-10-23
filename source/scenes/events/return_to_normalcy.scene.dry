@@ -1,44 +1,44 @@
-title: Return to Normalcy
-subtitle: Have we finally found our way out of the crisis?
+title: 정상으로의 복귀
+subtitle: 드디어 위기에서 벗어났나?
 new-page: true
 view-if: (pnf_collapse_seen or pnf_weakened) and anti_monarchist_sentiment > nationalist_sentiment and national_economic_recovery and not king_event
 max-visits: 1
 on-arrival: return_to_normalcy = 1;
 tags: event
 
-= Return to Normalcy
+= 정상으로의 복귀
 
-Italy is finally recovering from the post-war crisis. As the economy gradually improves, the political crisis begins to unravel as well.
+이탈리아가 마침내 전후 위기에서 벗어나고 있습니다. 경제가 점진적으로 회복되면서 정치 위기 또한 해소되기 시작합니다.
 
-Finally, the PNF has fallen. From a massive party threatening to end Italian democracy, the party has fallen into infighting and strife following the collapse of its party leadership.
+마침내 국가 파시스트당이 몰락했습니다. 이탈리아 민주주의를 종식시킬 위협적인 거대 정당이었지만, 지도부 붕괴 이후 내분과 갈등의 늪에 빠지고 말았습니다.
 
-[? if not communist_split and not national_congress_seen : However, the Left-wing of the party has begun advocating to begin the revolutionary process, citing the return to normalcy as the final window of opportunity closing on us. ?]
+[? if not communist_split and not national_congress_seen : 하지만 당내 좌파는 정상화가 곧 혁명의 마지막 기회가 사라지는 것이라며, 혁명 준비에 돌입할 것을 주장하기 시작했습니다. ?]
 
-- @celebrate: This is an occasion to celebrate.
-- @complacency: The fascists are still a threat. We must not be too complacent.
-- @normalcy_civil_war: Begin the revolutionary process.
-- @normalcy_refuse: Refuse the communist demands.
+- @celebrate: 축하할 일이다.
+- @complacency: 파시스트들은 여전히 위협이다. 안심하기엔 이르다.
+- @normalcy_civil_war: 혁명을 시작한다.
+- @normalcy_refuse: 공산주의자들의 요구를 거부한다.
 
 @normalcy_civil_war
 view-if: not communist_split and not national_congress_seen
 choose-if: revolutionary_fervour >= 65
-unavailable-subtitle: The bulk of the party does not support this.
+unavailable-subtitle: 당의 대다수가 이를 지지하지 않습니다.
 on-arrival: participating = 0; maximalist_participating = 1; not_participating = 0
 go-to: civil_war
 
 @normalcy_refuse
-subtitle: It is likely the left will split from the party.
+subtitle: 좌파가 당을 이탈할 가능성이 높습니다.
 view-if: not communist_split and not national_congress_seen
 on-arrival: communist_dissent += 60; communist_strength -= 17; revolutionary_fervour -= 7
 
-The communists are outraged by this, accusing us of betraying our ideals and threatening a full-on party split.
+공산주의자들은 우리가 이상을 배신했다며 격분했고, 전면적인 분당도 불사하겠다며 위협하고 있습니다.
 
 @celebrate
 view-if: communist_split
 
-This is an occasion to celebrate! Hopefully the fascists will no longer be a threat to us.
+축하할 일입니다! 바라건대 파시스트들이 더 이상 우리에게 위협이 되지 않기를.
 
 @complacency
 view-if: communist_split
 
-Even in their weakened state, the fascists are still a threat. We must not be too complacent.
+세력이 약화되었다고는 하나, 파시스트들은 여전히 위협적입니다. 안심하기엔 이릅니다.
