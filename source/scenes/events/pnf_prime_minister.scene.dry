@@ -1,4 +1,4 @@
-title: [+ pnf_leader +] appointed Prime Minister!
+title: [+ pnf_leader +]가 수상으로 임명되다!
 set-bg: img/MussoliniBG.png
 audio: clear shuffle music/pnf_power/FischiaIlVento.mp3 music/pnf_power/CanzoneDeiPartigianiReggiani.mp3 music/pnf_power/ChiNonVuolChinarLaTesta.mp3 music/pnf_power/EIoEroSandokan.mp3 music/pnf_power/SonProletariIPartigiani.mp3
 view-if: anti_socialist_coalition = 1
@@ -6,27 +6,27 @@ max-visits: 1
 tags: event
 new-page: true
 
-= [+ pnf_leader +] Appointed Prime Minister!
+= [+ pnf_leader +]가 수상으로 임명되다!
 
-Popular sentiment within the bourgeois parties against us has led [+ pnf_leader +] and the National Fascist Party to form an 'Anti-Socialist' coalition and convince the centre-right majority to support him. The King has officially appointed [+ pnf_leader +] as Prime Minister, as many fear he will quickly consolidate power and bring the full force of the government towards us.
+우리에 대한 부르주아 정당들의 반감으로 인해, [+ pnf_leader +]와 국가 파시스트당은 '반사회주의' 연정을 형성하고 중도 우파 다수의 지지를 얻어냈습니다. 국왕은 공식적으로 [+ pnf_leader +]를 총리로 임명했으며, 많은 이들은 그가 신속하게 권력을 장악하고 정부의 모든 힘을 우리에게 돌릴 것을 우려하고 있습니다.
 
-He has promised a campaign of staunch anti-socialism, as reports have come out of violence across Italy already. Contacts between the Fasci Italiani di Combattimento and the army has strengthened, as seemingly more military arms appear more frequent in paramilitary hands.
+그는 강력한 반사회주의 운동을 약속했으며, 이미 이탈리아 전역에서 폭력 사태가 보고되고 있습니다. 준군사조직의 수중에서 군용 무기가 더 자주 목격되는 것으로 보아, 이탈리아 전투 파시와 군부 간의 연계가 강화된 것으로 보입니다.
 
-What are we to do now?
+이제 우리는 어떻게 해야 합니까?
 
-- @fight: Mobilise the Red Guards and authorise workers to begin taking up arms against [+ pnf_leader +]'s rule!
-- @keep_on: Await our opportunity to strike.
+- @fight: 적위대를 동원하고, 노동자들이 [+ pnf_leader +]의 통치에 맞서 무장 봉기를 시작하도록 하자!
+- @keep_on: 반격할 기회를 기다린다.
 
 
 @fight
 
-Do we realize that this means civil war, against the full force of the state?
+이건 국가의 모든 공권력에 맞서는 내전을 의미한다는 것을 알고 있습니까?
 
-- @civil_war: Yes.
-- @keep_on: We are not ready for war. Instead, we will continue to struggle and await our opportunity.
+- @civil_war: 그래.
+- @keep_on: 우리는 전쟁 준비가 되지 않았다. 대신 투쟁을 계속하며 기회를 엿보겠다.
 
 @keep_on
-subtitle: This will not end the game.
+subtitle: 이것으로 게임이 끝나지는 않을 것입니다.
 on-arrival: next_election_year = 1924; next_election_month = 4; pnf_in_power = 1
 
-We will continue onwards, biding our time. We are facing an extremely uphill battle, and will have to act fast.
+우리는 때를 기다리며 계속 나아갈 것입니다. 극도로 힘든 싸움에 직면한 만큼, 신속하게 움직여야 합니다.

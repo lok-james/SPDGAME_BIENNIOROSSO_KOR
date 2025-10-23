@@ -1,5 +1,5 @@
-title: Papal Conclave
-subtitle: Pope Benedict XV has passed away.
+title: 콘클라베
+subtitle: 교황 베네딕토 15세가 서거하셨습니다.
 view-if: year = 1922 and month = 2
 new-page: true
 max-visits: 1 
@@ -7,15 +7,15 @@ on-arrival: conclave_happened = 1; delval_votes += 1 if radicalisation > 7; delv
 tags: event
 face-image: img/PopeElection.jpg
 
-= 1922 Papal Conclave
+= 1922년 콘클라베
 
-We have received news from Papacy; Pope Benedict XV has passed away. A new Pope is to be elected in the Sistine Chapel, and though historically, Benedict XV held a rather conciliatory attitude towards us, it is unclear the new Pope will keep with him.
+교황청으로부터 소식이 도착했습니다. 교황 베네딕토 15세께서 서거하셨습니다. 시스티나 성당에서는 새로운 교황이 선출될 예정입니다. 역사적으로 베네딕토 15세는 우리에게 상당히 우호적인 태도를 보였지만, 새 교황도 그럴지는 미지수입니다.
 
-There are seemingly two factions within the election; The 'Integrationists', led by Cardinal Rafael Merry del Val, favouring the policies of former Pope Pius X, and the 'Conciliatorists', led by Pietro Gasparri, who wish to continue the policies and attitudes of the late Pope Benedict XV.
+선거에는 두 개의 파벌이 있는 것으로 보입니다. 전임 교황 비오 10세의 정책을 지지하는 라파엘 메리 델 발 추기경이 이끄는 '통합파'와, 고인이 된 베네딕토 15세의 정책과 태도를 계승하고자 하는 피에트로 가스파리가 이끄는 '융화파'입니다.
 
-Though we cannot obviously influence the conclave directly, our role and actions till now will play a significant role in swaying neutral cardinals to one side or the other.
+우리가 교황 선출 회의에 직접적인 영향을 미칠 수는 없지만, 지금까지 우리의 행보는 중립적인 추기경들의 마음을 한쪽으로 기울게 하는 데 중요한 역할을 할 것입니다.
 
-- @pope_result: Let's hope the new Pope is more accommodating...
+- @pope_result: 새로운 교황이 더 우호적이기를 바랄 뿐...
 
 @pope_result
 go-to: delval_elected if ((delval_votes > gasparri_votes) and (delval_votes > ratti_votes)); gasparri_elected if ((gasparri_votes > delval_votes) and (gasparri_votes > ratti_votes)); ratti_elected if (((ratti_votes >= gasparri_votes) and (ratti_votes >= delval_votes)) or gasparri_votes == delval_votes)
@@ -24,23 +24,23 @@ go-to: delval_elected if ((delval_votes > gasparri_votes) and (delval_votes > ra
 on-arrival: pope = "Del Val"
 face-image: img/portraits/del_Val.jpg
 
-= Cardinal Rafael Merry del Val succeeds Benedict XV
+= 라파엘 메리 델 발 추기경, 베네딕토 15세를 계승하다
 
-It seems our cold relations with the Holy See has pushed neutral cardinals to see us as a bigger threat, electing del Val. Unfortunately, it is clear he will be less cordial than his predecessor.
+교황청과의 냉랭한 관계 때문에 중립 성향의 추기경들이 우리를 더 큰 위협으로 간주하여 델 발을 선출한 것 같습니다. 불행하게도, 그는 전임자보다 덜 우호적일 것이 분명합니다.
 
 @gasparri_elected
 on-arrival: pope = "Gasparri"
 face-image: img/portraits/Gasparri.jpg
 
-= Cardinal Pietro Gasparri succeeds Benedict XV
+= 피에트로 가스파리 추기경, 베네딕토 15세를 계승하다
 
-It seems our warm relations with the Holy See has pushed neutral cardinals to continue conciliatory attitudes, electing Gasparri. Fortunately, it seems he will be following along with the attitudes and policies of his predecessor, perhaps even more cordially.
+교황청과의 우호적인 관계 덕분에 중립 성향의 추기경들이 타협적인 태도를 유지하기로 하면서 가스파리를 선출한 것 같습니다. 다행히도, 그는 전임자의 태도와 정책을 계승할 것이며, 어쩌면 더욱 우호적일 수도 있습니다.
 
 @ratti_elected
 on-arrival: pope = "Ratti";
 face-image: img/portraits/Ratti.jpg
 
-= Cardinal Achille Ratti succeeds Benedict XV
+= 아킬레 라티 추기경, 베네딕토 15세를 계승하다
 
-Surprisingly, neither del Val nor Gasparri have been elected. Instead, Ratti, a compromise candidate between the two factions was able to convince enough cardinals to be elected Pope. Taking on the name Pius XI, it seems he will neither be as warm as Gasparri, nor as cold as del Val.
+놀랍게도 델 발이나 가스파리 모두 선출되지 못했습니다. 대신 두 파벌 사이의 타협 후보였던 라티가 충분한 수의 추기경을 설득하여 교황으로 선출되었습니다. 그는 비오 11세라는 이름을 사용하기로 했으며, 가스파리만큼 우호적이지도, 델 발만큼 적대적이지도 않을 것으로 보입니다.
 

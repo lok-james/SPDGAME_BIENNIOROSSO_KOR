@@ -1,5 +1,5 @@
-title: PRI rises in prominence
-subtitle: The Republicans rise from obscurity.
+title: 이탈리아 공화당이 두각을 나타내다
+subtitle: 공화당이 무명에서 벗어나다.
 new-page: true
 view-if: republican_sentiment > 40 and (workers_other_normalised > 10 or middle_class_other_normalised > 10 or rural_other_normalised > 5 or industrialists_other_normalised > 10 or veterans_other_normalised > 10 or catholic_other_normalised > 10)
 on-arrival: {!
@@ -39,10 +39,10 @@ Q.republican_sentiment += 4;
 max-visits: 1
 tags: event
 
-= PRI regains Prominence
+= 이탈리아 공화당이 명성을 되찾다
 
-The *Partito Repubblicano Italiano*, known also as the Italian Republican Party, was a formidable force following the end of the 19th and early 20th century, reaching over 5% in the Chamber of Deputies, before falling into obscurity. However, it seems the party has made a comeback, primarily due to the increased support for Republicanism throughout the last couple months.
+'PRI'로도 알려진 *이탈리아 공화당*은 19세기 말과 20세기 초에 하원 의석의 5% 이상을 차지하며 강력한 세력을 자랑했지만, 이후 잊혀진 존재가 되었습니다. 하지만 지난 몇 달간 공화주의에 대한 지지가 높아지면서 당이 다시 부상한 것으로 보입니다.
 
-Whatever the case, the PRI have been our historic allies, [? if participating = 1:and we are optimistic to renew the bonds between our parties to be a strong force in politics. ?][? if not_participating = 1:it seems it will have to come to an end. ?]
+어찌 됐건, 이탈리아 공화당은 우리의 역사적인 동맹이었습니다. [? if participating = 1: 우리는 양당의 유대를 새롭게 다져 정치적으로 막강한 세력이 될 수 있기를 낙관합니다. ?][? if not_participating = 1: 이제 그 관계도 끝을 맺어야 할 것 같습니다. ?]
 
-- @root: Only time will tell what this new force will do.
+- @root: 이 새로운 세력이 어떤 행보를 보일지는 오직 시간만이 말해줄 것이다.

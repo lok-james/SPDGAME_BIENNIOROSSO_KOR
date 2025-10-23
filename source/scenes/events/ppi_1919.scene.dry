@@ -1,20 +1,20 @@
-title: 1919 Congress of the Partito Popolare Italiano
-subtitle: The PPI elects its Secretary General.
+title: 1919년 이탈리아 인민당 전당대회
+subtitle: 이탈리아 인민당이 지도자를 선출합니다.
 new-page: true
 view-if: year = 1919 and month = 6 and week = 3 and not ppi_banned
 max-visits: 1
 tags: event
 
-= 1919 Partito Popolare Italiano Congress
+= 1919년 이탈리아 인민당 전당대회
 
-The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party was formed in January and are having their first congress to decide the leader of the party. It seems all but confirmed that Luigi Sturzo will come out on top to lead the party in its next elections.
+'PPI' 또는 이탈리아 인민당으로도 알려진 *이탈리아 인민당*이 지난 1월 창당된 이후, 당의 지도자를 선출하기 위한 첫 전당대회를 열고 있습니다. 루이지 스투르초가 당을 이끌고 다음 선거를 지휘할 것이 거의 확실해 보입니다.
 
-Whatever the case, the PPI represents a shift in the Holy See's stance on Italian politics from non-intervention and will be pivotal to the nation's future outlook.
+어떠한 경우든, 이탈리아 인민당의 창당은 이탈리아 정치에 대한 교황청의 기존 불간섭주의적 입장에서의 변화를 의미하며, 국가의 미래에 중추적인 역할을 하게 될 것입니다.
 
-- @sturzo_1919: The party votes...
+- @sturzo_1919: 투표가 시작된다...
 
 @sturzo_1919
 face-image: img/portraits/LuigiSturzo.jpg
 on-arrival: ppi_left += 2;
 
-As expected, Luigi Sturzo has been elected as the first Secretary General of the Italian People's Party. He represents the more progressive faction of the party, willing to cooperate with us, and we are optimistic we will be able to cooperate.
+예상대로 루이지 스투르초가 이탈리아 인민당의 초대 당대표로 선출되었습니다. 그는 우리와의 협력에 긍정적인, 당내 진보 파벌을 대표하며, 우리는 그와 협력할 수 있을 것으로 낙관합니다.

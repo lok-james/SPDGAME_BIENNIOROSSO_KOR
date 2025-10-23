@@ -1,5 +1,5 @@
-title: 1920 Congress of the Partito Popolare Italiano
-subtitle: The PPI elects its Secretary General.
+title: 1920년 이탈리아 인민당 전당대회
+subtitle: 이탈리아 인민당이 당대표를 선출합니다.
 new-page: true
 view-if: year = 1920 and month = 4 and week = 1 and not ppi_banned
 on-arrival: {!
@@ -35,13 +35,13 @@ if (Q.pope === "Del Val") {
 max-visits: 1
 tags: event
 
-= 1920 Partito Popolare Italiano Congress
+= 1920년 이탈리아 인민당 전당대회
 
-The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party have begun their second Congress. The party has developed significantly over the past year, and a new face has emerged within the party: Alcide De Gasperi.
+'PPI' 또는 이탈리아 인민당으로도 알려진 *이탈리아 인민당*이 두 번째 전당대회를 시작했습니다. 지난 한 해 동안 당은 크게 성장했으며, 당내에서는 알치데 데 가스페리라는 새로운 인물이 부상했습니다.
 
-While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy.
+스투르초는 기독교 민주세력과 '백색' 농민 연맹의 지지를 받는 반면, 데 가스페리는 온건 성직자주의자들과 성직자들의 지지를 받고 있습니다.
 
-- @ppi_first: The party votes...
+- @ppi_first: 투표가 시작된다...
 
 @ppi_first
 go-to: sturzo_1920 if ppi_left >= ppi_moderates; gasperi_1920 if ppi_moderates > ppi_left
@@ -50,10 +50,10 @@ go-to: sturzo_1920 if ppi_left >= ppi_moderates; gasperi_1920 if ppi_moderates >
 face-image: img/portraits/LuigiSturzo.jpg
 on-arrival: ppi_left += 2;
 
-Unsurprisingly, Luigi Sturzo continues his leadership over the party, continuing the party's collaborative policies with the left.
+예상대로 루이지 스투르초가 당 대표직을 계속 유지하며, 좌파와의 협력 노선을 이어가게 되었습니다.
 
 @gasperi_1920
 face-image: img/portraits/DeGasperi.jpg
 on-arrival: ppi_relation -= 7; ppi_leader = "De Gasperi"; ppi_moderates += 2;
 
-Surprisingly, Alcide De Gasperi, with his support base, has been elected the second Secretary General of the Party. He represents a turn from the left, seeking further cooperation with the liberal parties.
+놀랍게도 알치데 데 가스페리가 지지 세력을 등에 업고 당의 두 번째 당대표로 선출되었습니다. 그는 좌파로부터의 이탈을 상징하며, 자유주의 정당과의 추가적인 협력을 모색할 것입니다.

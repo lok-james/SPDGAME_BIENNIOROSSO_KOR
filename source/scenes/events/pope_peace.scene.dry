@@ -1,13 +1,13 @@
-title: [? if conclave_happened = 0: Pope Benedict XV calls for peace ?][? if conclave_happened = 1: Pope Pius XI calls for peace ?]
-subtitle: The Pope has expressed his concern on our internal situation.
+title: [? if conclave_happened = 0: 교황 베네딕토 15세가 평화를 호소하다 ?][? if conclave_happened = 1: P교황 비오 11세가 평화를 호소하다 ?]
+subtitle: 교황이 우리의 내부 상황에 대해 우려를 표명했습니다.
 view-if: (conclave_happened = 0 or pope = "Gasparri") and peace_timer > time
 new-page: true
 max-visits: 1 
 on-arrival: fdc_strength *= 0.85; fdc_militancy *= 0.85; abl_strength *= 0.8; abl_militancy *= 0.8; ard_strength *= 0.9; ard_militancy *= 0.9; rg_strength *= 0.9; rg_militancy *= 0.9;
 tags: event
 
-= Pope [? if conclave_happened :Pius XI?][? if not conclave_happened:Benedict XV?] calls for peace
+= 교황 [? if conclave_happened :비오 11세?][? if not conclave_happened:베네딕토 15세?]가 평화를 호소하다
 
-Following the recent end of the Roman Question and the normalisation of relations between the Holy See and the Kingdom of Italy, the Pope, in a recent allocution, has called for peace within Italy.
+최근 로마 문제가 해결되고 교황청과 이탈리아 왕국 간의 관계가 정상화되자, 교황은 얼마 전 강론을 통해 이탈리아의 평화를 호소했습니다.
 
-He has expressed his want for pacifism, alongside the calls to end the unnecessary bloodshed plaguing the streets of Italy from the violent paramilitaries. The effects have been quickly evident, as we have witnessed a slight decrease in membership of the Arditismo, Fasci and Anti-Bolshevik Leagues, alongside our own, albeit in a lower amount than the far-right paramilitaries.
+그는 평화주의에 대한 염원을 표명하는 동시에, 폭력적인 준군사조직들로 인해 이탈리아 거리에서 벌어지는 불필요한 유혈 사태를 종식시킬 것을 촉구했습니다. 그 효과는 즉각적으로 나타났습니다. 극우 준군사조직보다는 작은 규모였지만, 인민의 결사대, 파시, 반볼셰비키 연맹, 그리고 우리 조직의 구성원 수가 약간 감소하는 것을 목격했습니다.

@@ -1,4 +1,4 @@
-title: [+ pnf_leader +] appointed Prime Minister
+title: [+ pnf_leader +]가 수상으로 임명되다
 audio: clear shuffle music/pnf_power/FischiaIlVento.mp3 music/pnf_power/CanzoneDeiPartigianiReggiani.mp3 music/pnf_power/ChiNonVuolChinarLaTesta.mp3 music/pnf_power/EIoEroSandokan.mp3 music/pnf_power/SonProletariIPartigiani.mp3
 set-bg: img/MussoliniBG.png
 view-if: march_succeeded = 1
@@ -6,27 +6,27 @@ tags: event
 max-visits: 1
 new-page: true
 
-= [+ pnf_leader +] Appointed Prime Minister!
+= [+ pnf_leader +]가 수상으로 임명되다
 
-The March on Rome has succeeded, as the threat of violence and outright civil war forces the King to give in to [+ pnf_leader +]'s demands. Vittorio Emanuele III has officially appointed [+ pnf_leader +] as Prime Minister, as many fear he will quickly consolidate power and bring the full force of the government towards us.
+로마 진군이 성공했습니다. 폭력과 전면적인 내전의 위협에 직면한 국왕은 결국 [+ pnf_leader +]의 요구에 굴복했습니다. 비토리오 에마누엘레 3세는 공식적으로 [+ pnf_leader +]를 총리로 임명했으며, 많은 이들은 그가 신속하게 권력을 장악하고 정부의 모든 힘을 우리에게 돌릴 것을 우려하고 있습니다.
 
-[+ pnf_leader +] has already formed a governing coalition of the PNF, PPI, PLI and DS.
+[+ pnf_leader +]는 이미 국가 파시스트당, 이탈리아 인민당, 이탈리아 자유당, 사회민주당으로 구성된 연립 정부를 구성했습니다.
 
-What are we to do now?
+이제 우리는 어떻게 해야 합니까?
 
-- @fight: Mobilise the Red Guards and authorise workers to begin taking up arms against [+ pnf_leader +]'s rule!
-- @keep_on: Await our opportunity to strike.
+- @fight: 적위대를 동원하고, 노동자들이 [+ pnf_leader +]의 통치에 맞서 무장 봉기를 시작하도록 하자!
+- @keep_on: 반격할 기회를 기다린다.
 
 
 @fight
 
-Do we realize that this means civil war, against the full force of the state?
+이건 국가의 모든 공권력에 맞서는 내전을 의미한다는 것을 알고 있습니까?
 
-- @civil_war: Yes.
-- @keep_on: We are not ready for war. Instead, we will continue to struggle and await our opportunity.
+- @civil_war: 그래.
+- @keep_on: 우리는 전쟁 준비가 되지 않았다. 대신 투쟁을 계속하며 기회를 엿보겠다.
 
 @keep_on
-subtitle: This will not end the game.
+subtitle: 이것으로 게임이 끝나지는 않을 것입니다.
 on-arrival: {!
 Q.psi_majority = 0;
 Q.centre_left_coalition = 0;
@@ -80,4 +80,4 @@ Q.pnf_in_power = 1;
 Q.violent_pnf = 1;
 !}
 
-We will continue onwards, biding our time. We are facing an extremely uphill battle, and will have to act fast.
+우리는 때를 기다리며 계속 전진할 것입니다. 극도로 힘든 싸움에 직면한 만큼, 신속하게 움직여야 합니다.

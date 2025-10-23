@@ -1,5 +1,5 @@
-title: 1923 Congress of the Partito Popolare Italiano
-subtitle: The PPI elects its Secretary General.
+title: 1923년 이탈리아 인민당 전당대회
+subtitle: 이탈리아 인민당이 당대표를 선출합니다.
 new-page: true
 view-if: year = 1923 and month = 4 and week = 1 and not ppi_banned
 on-arrival: {!
@@ -43,13 +43,13 @@ if (Q.largest_party === "PNF") {
 max-visits: 1
 tags: event
 
-= 1923 Partito Popolare Italiano Congress
+= 1923년 이탈리아 인민당 전당대회
 
-The *Partito Popolare Italiano*, known also as the PPI or the Italian People's Party have begun their fourth Congress. It's two factional bloc, with Sturzo on the left-wing of the party and De Gasperi's moderate-wing of the party is still prominent, but it seems the the right-wing of the party, represented by the Triumvirate has gained significant power within the party as well.
+'PPI' 또는 이탈리아 인민당으로도 알려진 *이탈리아 인민당*이 네 번째 전당대회를 시작했습니다. 당내에는 여전히 좌파의 스투르초와 온건파의 데 가스페리로 구성된 양대 파벌이 건재하지만, 삼두정치 체제로 대표되는 우파 세력 또한 상당한 힘을 얻은 것으로 보입니다.
 
-While Sturzo commands the support of the Christian Democrats and the 'White' Peasant Leagues, De Gasperi is supported by Moderate Clericalists and the Clergy. On the other hand, the Triumvirate is supported by Hardliner Clericalists & the National-Conservatives of the party.
+스투르초는 기독교 민주세력과 '백색' 농민 연맹의 지지를, 데 가스페리는 온건 성직자주의자들과 성직자들의 지지를 받고 있습니다. 반면, 삼두정치 체제는 강경 성직자주의자들과 당내 국가-보수주의자들의 지지를 받고 있습니다.
 
-- @ppi_fourth: The party votes...
+- @ppi_fourth: 투표가 시작된다...
 
 @ppi_fourth
 go-to: sturzo_1923 if ppi_left >= ppi_moderates and ppi_left >= ppi_right; gasperi_1923 if ppi_moderates > ppi_left and ppi_moderates >= ppi_right; triumvirate_1923 if ppi_right > ppi_left and ppi_right > ppi_moderates
@@ -58,17 +58,17 @@ go-to: sturzo_1923 if ppi_left >= ppi_moderates and ppi_left >= ppi_right; gaspe
 face-image: img/portraits/LuigiSturzo.jpg
 on-arrival: ppi_left += 2; ppi_relation += 2; ppi_leader = "Sturzo"
 
-It seems the progressives have managed to sway the party, as Luigi Sturzo is elected Secretary General of the party once again, re-continuing the party's collaborative policies with the left.
+진보 세력이 당심을 움직이는 데 성공한 듯합니다. 루이지 스투르초가 다시 당대표로 선출되어, 좌파와의 협력 정책을 계속 이어나가게 되었습니다.
 
 @gasperi_1923
 face-image: img/portraits/DeGasperi.jpg
 on-arrival: ppi_relation -= 7; ppi_leader = "De Gasperi"; ppi_moderates += 2;
 
-Alcide De Gasperi, with his support base, has been elected the fourth Secretary General of the Party. Representing a turn from the left, the PPI will cooperate further with the liberal parties.
+알치데 데 가스페리가 지지 세력을 등에 업고 당의 네 번째 당대표로 선출되었습니다. 그는 좌파로부터의 이탈을 상징하며, 이탈리아 인민당은 앞으로 자유주의 정당들과 더욱 긴밀하게 협력할 것입니다.
 
 @triumvirate_1923
 on-arrival: ppi_right += 2; ppi_leader = "Triumvirate"; ppi_relation -= 10;
 
-Shockingly, the Triumvirate have been able to achieve a plurality, establishing a joint Vice-Secretariat Position of the three. This represents a sharp turn from the PPI's roots, and we should assume the PPI will be willing to cooperate with the Fascists.
+충격적이게도 삼두정치 세력이 최다 득표를 하여 3인 공동 부대표직을 설치했습니다. 이는 이탈리아 인민당의 근본에서 벗어난 급격한 전환이며, 이제 이탈리아 인민당이 파시스트와 협력할 의지가 있다고 보아야 합니다.
 
-- @root: Damn it.
+- @root: 젠장.
