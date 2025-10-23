@@ -1,4 +1,4 @@
-title: Child Labour
+title: 아동 노동
 new-page: true
 is-card: true
 view-if: psi_in_government and child_labour_timer <= 0 and child_labour_laws != 1
@@ -6,56 +6,56 @@ on-arrival: week_actions += 1; child_labour_timer = 3; labour_law_support = left
 card-image: img/portraits/PalmiroTogliatti.jpg
 tags: govt_affairs
 
-= Child Labour
+= 아동 노동
 
-Child Labour is rampant throughout Italy, especially the Southern regions. The previous governments have done some work to attempt to curb this issue, from the Casati Law to the Coppino Act to safety laws, these have done relatively little to mitigate the issue. Now that we are in power, however, we can act decisively to finally fix this system.
+아동 노동은 이탈리아 전역, 특히 남부 지역에서 만연합니다. 과거 정부들이 카사티 법, 코피노 법, 각종 안전법 등을 통해 이 문제를 해결하려 노력했으나, 큰 효과는 없었습니다. 하지만 이제 정권을 잡은 우리는 이 제도를 최종적으로 바로잡기 위해 단호한 조치를 취할 수 있습니다.
 
 # another 'situation' esque thing - like the southern question 
 # labour, public education ministries for the two
 
-- @child_safety: Develop and enforce safety regulation.
-- @education_attendance: Enforce and pass compulsory education laws.
-- @child_welfare: Improve welfare for poor families with children.
-- @child_ban: Attempt to raise the minimum working age to 16.
-- @return: Do not enact any policies for now.
+- @child_safety: 안전 규정을 개발하고 시행한다.
+- @education_attendance: 의무 교육법을 제정하고 시행한다.
+- @child_welfare: 아동이 있는 빈곤 가정의 복지를 증진한다.
+- @child_ban: 최저 노동 연령 16세 상향을 시도한다.
+- @return: 당분간 어떠한 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @child_safety
 choose-if: labour_minister_party = psi_name
-unavailable-subtitle: We do not control the Labour Ministry.
+unavailable-subtitle: 우리는 노동부를 장악하지 못했습니다.
 on-arrival: child_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; capital_strike_progress += 1 if child_safety >= 3; socialist_sentiment += 2 if child_safety >= 3;
 
-The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for children in the workforce. [? if child_safety >= 3 : Businesses have begun to argue that our focus on safety, even for children, is overbearing and unnecessary, interfering with the economy. ?]
+노동부는 아동 노동자의 안전한 노동 환경을 보장하기 위해 안전 규정을 개발하고 시행하는 데 착수했습니다. [? if child_safety >= 3 : 기업들은 심지어 아동에게까지 안전을 강조하는 것이 과도하고 불필요하며 경제 활동을 저해한다고 주장하기 시작했습니다. ?]
 
 @education_attendance
 choose-if: public_education_minister_party = psi_name
-unavailable-subtitle: We do not control the Public Education Ministry.
-subtitle: This has broad popular support across the workers and middle class.
+unavailable-subtitle: 우리는 공교육부를 장악하지 못했습니다.
+subtitle: 이 조치는 노동자층과 중산층 전반의 폭넓은 지지를 받고 있습니다.
 on-arrival: child_attendance += 1; workers_psi += 3*(1-dissent); middle_class_psi += 2*(1-dissent); industrialists_pnf += 3*(1-dissent); economic_growth -= 0.2; economic_growth -= 0.1 if economic_growth > 0; unemployment -= 0.1; unemployment -= 0.1 if unemployment >= 8; socialist_sentiment += 1;
 max-visits: 3
 
-We continue enforcing the *Casati Law* further, as well as amending it further to increase the percentages necessary to qualify as 'adequate', improving attendance overall.
+우리는 *카사티 법*의 시행을 더욱 강화하는 한편, '적정' 수준으로 인정받기 위한 기준을 상향 조정하여 전반적인 취학률을 개선했습니다.
 
 @child_welfare
-subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 예산 [? if budget < 1 and liberal_budget_accepted : T이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: welfare += 1; child_welfare += 1; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; coalition_dissent += 1 if (child_welfare >= 3 and unemployment >= 15); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0; socialist_sentiment += 3
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We have increased welfare spending on poorer families with children. [? if child_welfare >= 3 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
+아동이 있는 빈곤 가정에 대한 복지 지출을 늘렸습니다. [? if child_welfare >= 3 and unemployment >= 15 : 일부 연정 파트너들은 지금과 같은 시기에 복지 지출을 늘리는 것은 무모한 처사라고 여기고 있습니다. ?]
 
 @child_ban
 view-if: not child_labour_laws and labour_attempted = 0
-subtitle: [? if labour_law_support < 50 and not violent_revolution : This is unlikely to succeed; we do not have majority support. ?][? if child_welfare < 3 : Enacting a ban without financial aid to poorer families might backfire. ?]
+subtitle: [? if labour_law_support < 50 and not violent_revolution : 성공할 가능성이 작습니다. 과반의 지지를 얻지 못했습니다. ?][? if child_welfare < 3 : 빈곤 가정에 대한 재정 지원 없는 금지 조치는 역효과를 낼 수 있습니다. ?]
 on-arrival: labour_attempted = 1;
 go-to: child_labour_fail if labour_law_support < 50 and not violent_revolution; child_labour_success if labour_law_support >= 50 or violent_revolution
 
 @child_labour_fail
 on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 4*(1-dissent) if not in_unstable_coalition; workers_clc += 4*(1-dissent) if centre_left_coalition; workers_scc += 4*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ldr_right += 0.5; socialist_sentiment -= 3
 
-Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ pnf_name +]'s and [+ ldr_name +] speaking in particularly vehement opposition. The activists, feeling demoralized from this attempt, have decided to bide their time.
+안타깝게도, 우리의 제안은 대의회에서 부결되었습니다. 특히 [+ pnf_name +]와 [+ ldr_name +]이 격렬하게 반대했습니다. 이 시도로 좌절한 활동가들은 잠시 숨을 고르기로 했습니다.
 
 @child_labour_success
 on-arrival: {!
@@ -119,6 +119,6 @@ Q.economic_growth -= 1.2;
 Q.inflation -= 0.1;
 !}
 
-With the support of the left including the PSRI[? if pri_prominent: and the PRI?], we have successfully passed a bill to ban child labour in Italy! This has heartened our more radical supporters, while hurting our relations with the [+ ldr_name +]. With the increasing political discourse around child labour, the [+ ldr_name +] and DS have gained landowner and industrialist votes at the expense of the [+ pnf_name +].
+이탈리아 개혁사회당[? if pri_prominent:을 비롯한 이탈리아 공화당을 포함한?] 좌파의 지지로 이탈리아의 아동 노동을 금지하는 법안을 성공적으로 통과시켰습니다! 이는 우리 당의 강경파 지지자들을 고무했지만, [+ ldr_name +]와의 관계는 악화되었습니다. 아동 노동을 둘러싼 정치적 논의가 활발해지면서, [+ ldr_name +]과 사회 민주당은 [+ pnf_name +]의 지지층이던 지주와 산업 자본가들의 표를 흡수했습니다.
 
-[? if child_welfare < 3 : Unfortunately, the bill has seemingly backfired, as the new ban on child labour has forced many into further poverty due to a lowered income. ?]
+[? if child_welfare < 3 : 안타깝게도, 새로운 아동 노동 금지법으로 인해 수입이 줄어든 많은 가정이 더 심각한 빈곤에 빠지면서 이 법안이 역효과를 낳은 것으로 보입니다. ?]

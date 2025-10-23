@@ -1,4 +1,4 @@
-title: Constitutional Reform
+title: 헌법 개혁
 new-page: true
 is-card: true
 view-if: psi_in_government and ((ldr_relation > 65 and ds_relation > 65) or ppi_relation > 65 or left_wing_coalition_r >= 50) and constitutional_reform_timer <= 0 and anti_monarchist_sentiment >= 30 and ((veto_removed = 0 or pm_appointed = 0) or king_veto_removed = 1 or constitution_removed != 1) and not national_congress_seen and not king_event
@@ -10,56 +10,56 @@ tags: govt_affairs
 
 # cosmetic stuff for now, except the veto thing
 
-= Constitutional Reform
+= 헌법 개혁
 
-The Statuto Albertino, the constitution of the current Kingdom of Italy and the Kingdom of Sardinia preceding it, has often been changed to keep up with modern times. The 1919 amendment to give all men the right to vote and alter the electoral system to a proportional representation system are the most recent examples.
+현 이탈리아 왕국과 그 전신인 사르데냐 왕국의 헌법인 알베르토 헌장은 시대의 흐름에 맞춰 여러 차례 개정되었습니다. 모든 남성에게 투표권을 부여하고 선거 제도를 비례대표제로 개편한 1919년의 개정안이 가장 최근 사례입니다.
 
-Now that we control a sizeable bloc in the Chamber of Deputies, we are able to alter the Statuto Albertino as well. We will need an absolute majority of the Chamber of Deputies as well as the approval of the Senate and the King to pass any reforms. 
+하원에서 상당한 의석을 확보한 지금, 우리 역시 알베르토 헌장을 개정할 수 있습니다. 개혁안을 통과시키려면 하원의 절대 과반수뿐만 아니라 상원과 국왕의 승인도 필요합니다.
 
 @reforms_menu
 
-- @article_33: Alter Article 33.
-- @article_65: Alter Article 65.
-- @article_33_2: Alter Article 33 once more.
-- @constitution_removal: Abolish the Statuo Albertino.
-- @root: Do not pursue constitutional reform.
+- @article_33: 제33조를 개정한다.
+- @article_65: 제65조를 개정한다.
+- @article_33_2: 제33조를 재차 개정한다.
+- @constitution_removal: 알베르토 헌장을 폐지한다.
+- @root: 헌법 개혁을 추진하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @article_33
-subtitle: Remove the appointed Senate's ability to reject bills.
+subtitle: 국왕이 임명한 상원의 법안 거부권을 폐지합니다.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and veto_removed = 0
 choose-if: king_relation > 70
-unavailable-subtitle: The King & Senate would not approve this.
+unavailable-subtitle: 국왕과 상원이 이를 승인하지 않을 것입니다.
 on-arrival: veto_removed = 1; fasci_coup_progress += 1; democratisation += 2; republican_sentiment += 4*democratisation; socialist_sentiment += 3
 achievement: riforma_costituzionale
 
-The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting the powers of the Senate and further democratising the Kingdom.
+헌법 개정안은 국왕에게 상정되었고, 국왕은 상원의 권한을 제한하고 왕국의 민주화를 더욱 진전시키는 이 조치를 승인하도록 설득되었습니다.
 
 @article_65
-subtitle: Make the Prime Minister choose and appoint his own ministers.
+subtitle: 총리가 직접 내각을 구성할 수 있도록 합니다.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and veto_removed = 1 and pm_appointed = 0
 choose-if: king_relation > 70
-unavailable-subtitle: The King & Senate would not approve this.
+unavailable-subtitle: 국왕과 상원이 이를 승인하지 않을 것입니다.
 on-arrival: fasci_coup_progress += 1; democratisation += 2; pm_appointed = 1; republican_sentiment += 4*democratisation; socialist_sentiment += 4;
 
-The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
+헌법 개정안은 국왕에게 상정되었고, 국왕은 자신의 권한을 제한하고 왕국의 민주화를 더욱 진전시키는 이 조치를 승인하도록 설득되었습니다.
 
 @article_33_2
-subtitle: Remove the King's ability to veto bills.
+subtitle: 국왕의 법안 거부권을 폐지한다.
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and pm_appointed = 1 and king_veto_removed = 0
 choose-if: king_relation > 80
-unavailable-subtitle: The King & Senate would not approve this.
+unavailable-subtitle: 국왕과 상원이 이를 승인하지 않을 것입니다.
 on-arrival: fasci_coup_progress += 2; democratisation += 2; king_veto_removed = 1; republican_sentiment += 4*democratisation; socialist_sentiment += 2
 
-The Constitutional Amendment makes it to the King, who is convinced to approve the measure, limiting his own powers and further democratising the Kingdom.
+헌법 개정안은 국왕에게 상정되었고, 국왕은 자신의 권한을 제한하고 왕국의 민주화를 더욱 진전시키는 이 조치를 승인하도록 설득되었습니다.
 
 @constitution_removal
 view-if: (centre_left_coalition_r > 50 or socialist_catholic_coalition_r > 50 or left_wing_coalition_r >= 50) and king_veto_removed = 1
 choose-if: king_relation >= 85 and return_to_normalcy
-unavailable-subtitle: [? if king_relation >= 85 : The King would not approve this. ?][? if not return_to_normalcy : It is too turbulent of a time to present this. Perhaps it would be better upon a return to normalcy. ?]
+unavailable-subtitle: [? if king_relation >= 85 : 국왕이 이를 승인하지 않을 것입니다. ?][? if not return_to_normalcy : 이를 논의하기에는 시기가 너무 혼란스럽습니다. 정세가 안정된 후에 추진하는 것이 좋을 듯합니다. ?]
 on-arrival: king = "N/A"; monarchy_gone = 1; socialist_sentiment += 9
 
-The reform passes with the slightest of margins, removing the Statuto Albertino as the constitution of the Kingdom of Italy. A new constitutional congress is to be held in the coming weeks as the King officially abdicates the throne.
+개혁안은 근소한 차이로 통과되었고, 이로써 이탈리아 왕국의 헌법인 알베르토 헌장은 폐지되었습니다. 국왕이 공식적으로 퇴위함에 따라, 수주 내로 새로운 제헌의회가 소집될 것입니다.
 
-- @post_war_peaceful: It is time to decide our new agenda.
+- @post_war_peaceful: 이제 우리의 새로운 의제를 결정할 시간이다.

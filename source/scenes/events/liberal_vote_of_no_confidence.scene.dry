@@ -217,7 +217,7 @@ go-to: election_1919.coalition_menu if next_election_time >= 8
 투표는 가결되었고, 우리 정부는 총사퇴했습니다. [+ prime_minister +] 총리는 정부 수장으로 남지만, 더 이상 새로운 법률을 제정할 권한은 없습니다.
 
 [? if next_election_time >= 8: 새로운 정부는 현 하원 구성 범위 내에서 구성될 것입니다. ?]
-[? if next_election_time < 8: 새로운 정부는 향후 4개월 내에 구성될 차기 대의원 회의의 범위 내에서 구성될 것입니다. ?]
+[? if next_election_time < 8: 새로운 정부는 향후 4개월 내에 구성될 차기 하원의 범위 내에서 구성될 것입니다. ?]
 
 @let_it_happen_elections
 view-if: next_election_time >= 8 and prime_minister_party = psi_name

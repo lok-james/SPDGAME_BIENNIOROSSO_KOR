@@ -1,4 +1,4 @@
-title: Agricultural Policy
+title: 농업 정책
 new-page: true
 is-card: true
 on-arrival: week_actions += 1; agricultural_policy_timer = 3;
@@ -7,36 +7,36 @@ frequency: 500
 card-image: img/portraits/AntonioGraziadei.jpg
 tags: govt_affairs
 
-= Agricultural Policy
+= 농업 정책
 
-With control of the Agricultural Ministry in the hands of the [+ psi_name +], it seems there is much work to be done in regards to reform. Many in the party are calling for land seizures, and some of our rural voters are requesting aid and financing to help in relieving their economic burden. What do we do?
+[+ psi_name +]가 농업부를 장악한 지금, 개혁을 위해 해야 할 일이 산적해 있습니다. 당내에서는 토지 몰수를 요구하는 목소리가 높고, 일부 농촌 유권자들은 경제적 부담 완화를 위한 지원을 요청하고 있습니다. 어떻게 하시겠습니까?
  
-- @support_coops: Support Agricultural cooperatives.
-- @support_coops_2: Continue supporting Agricultural cooperatives.
-- @land_seize: Land Seizure
-- @agricultural_finance: Agricultural Financing
-- @root: Do not enact any policies for now.
+- @support_coops: 농업 협동조합을 지원한다.
+- @support_coops_2: 농업 협동조합 지원을 지속한다.
+- @land_seize: 토지를 몰수한다.
+- @agricultural_finance: 농업 금융을 지원한다.
+- @root: 당분간 어떠한 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @support_coops
-subtitle: Support cooperatives via legal means and aid them.
+subtitle: 법적 수단을 동원해 협동조합을 지원하고 돕습니다.
 on-arrival: coalition_dissent += 1 if centre_left_coalition; rural_psi += 4*(1-dissent) if not in_unstable_coalition; rural_clc += 4*(1-dissent) if centre_left_coalition; rural_scc += 4*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; cooperatives_support += 1; psri_relation += 3*(1-dissent);
 view-if: cooperatives_support = 0
 
-We are able to utilise the Ministry to support peasants and cooperatives, protecting them using legal means.
+우리는 농업부를 동원하여 농민과 협동조합을 지원하고, 합법적인 수단을 통해 그들을 보호할 수 있습니다.
 
 @support_coops_2
-subtitle: Continue the supporting peasant cooperatives and aiding them.
+subtitle: 농민 협동조합에 대한 지원을 지속합니다.
 on-arrival: coalition_dissent += 1 if in_unstable_coalition; rural_psi += 5*(1-dissent) if not in_unstable_coalition; rural_clc += 5*(1-dissent) if centre_left_coalition; rural_scc += 5*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 5; ul_relation -= 5; ds_relation -= 3; labour_strength += 9; cooperatives_support += 1; psri_relation += 5*(1-dissent); socialist_sentiment += 2*(1-dissent);
 view-if: cooperatives_support >=1
 max-visits: 2
 
-We continue utilising the Ministry to support peasants and cooperatives, protecting them using legal means.
+우리는 계속해서 농업부를 동원하여 농민과 협동조합을 지원하고, 합법적인 수단을 통해 그들을 보호합니다.
 
 @land_seize
-subtitle: Conduct small seizures of land from large estates to give redistribute to peasants and cooperatives, mainly situated in the central and northern regions. [? if liberal_reform_accepted : This will break our agreement with the Liberals! ?]
-unavailable-subtitle: [? if judicial_reform < 2: The judiciary would not support this. ?]
+subtitle: 주로 중부와 북부 지역의 대농장에서 소규모 토지를 몰수하여 농민과 협동조합에 재분배합니다. [? if liberal_reform_accepted : 이는 자유당과의 합의를 파기하는 행위입니다! ?]
+unavailable-subtitle: [? if judicial_reform < 2: 사법부가 이를 지지하지 않을 것입니다. ?]
 choose-if: judicial_reform >= 2
 on-arrival: {!
 Q.land_seizures += 1;
@@ -90,18 +90,18 @@ Q.psri_relation += 3*(1-Q.dissent);
 go-to: ldr_promise_vonc if ldr_promise_failed == 1
 max-visits: 3
 
-We are able to seize land form large estate, mostly uncultivated land and hand them out to peasants and veteran-run cooperatives, reducing unemployment.
+우리는 대농장에서 주로 경작되지 않은 토지를 몰수하여 농민과 퇴역 군인 운영 협동조합에 분배함으로써 실업률을 낮출 수 있습니다.
 
-[? if ldr_promise_failed : Unfortunately, our land seizure has led us to break our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 안타깝게도 우리의 토지 몰수는 자유당과의 합의를 파기하는 결과를 낳았고, 자유당 대표들은 이미 우리에게 면담을 요청한 상태입니다. ?]
 
 @agricultural_finance
-subtitle: -1 Budget - Increase financing for agricultural credit and insurance. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 예산 - 농업 신용과 보험 자금을 증액합니다. [? if budget = 0 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: budget -= 1; agricultural_policy += 1; ldr_promise_failed = 1 if budget < 0 and liberal_budget_accepted; rural_psi += 7*(1-dissent) if not in_unstable_coalition; rural_clc += 7*(1-dissent) if centre_left_coalition; rural_scc += 7*(1-dissent) if socialist_catholic_coalition; rural_pnf -= 3*(1-dissent); communist_dissent += 8; maximalist_dissent += 6; labour_dissent += 3; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.3; unemployment -= 0.1 if unemployment >= 8;
 go-to: ldr_promise_vonc if ldr_promise_failed == 1
 
-We have increased financial support for small farmers, providing aid through credit and insurance. The left and maximalists are unsurprisingly opposed to our policies, seeing them as handouts to petite-bourgeois farmers.
+우리는 신용과 보험을 통해 소농에 대한 재정 지원을 확대했습니다. 예상대로 좌파와 최대강령주의자들은 이 정책이 소부르주아 농민을 위한 선심성 정책이라며 반대하고 있습니다.
 
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 안타깝게도 자금 지원 증액으로 인해 재정 적자가 발생하였고, 이는 자유당과의 합의를 파기하는 결과를 낳았습니다. 자유당 대표들은 이미 우리에게 면담을 요청한 상태입니다. ?]
 
