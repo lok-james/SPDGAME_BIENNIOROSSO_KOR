@@ -1,4 +1,4 @@
-title: Dealing with Unemployment
+title: 실업 문제 대응
 new-page: true
 is-card: true
 view-if: psi_in_government and (public_works_minister_party = psi_name or finance_minister_party = psi_name) and unemployment_gov_timer <= 0
@@ -7,37 +7,37 @@ on-arrival: week_actions += 1; unemployment_gov_timer = 2;
 card-image: img/UnemploymentGov.jpg
 tags: govt_affairs
 
-= Dealing with Unemployment
+= 실업 문제 대응
 
-The economic situation within Italy after the war is worsening after the previous government dragged us into a senseless war. With the demobilisation of the army, combined with debts piling, our unemployment rate stands at [+ unemployment +]%.
+이전 정부가 우리를 무의미한 전쟁으로 끌고 들어간 탓에, 전후 이탈리아의 경제 상황은 악화일로를 걷고 있습니다. 군인들의 제대와 쌓여가는 빚이 맞물려, 실업률은 [+ unemployment +]%에 달합니다.
 
-There are various ways we are able to tackle this problem now that we are in government, with proposals from numerous parties reaching the floor. What should we do?
+이제 정권을 잡은 우리에게는 이 문제를 해결할 여러 방법이 있으며, 다양한 정당의 제안들이 의회에 상정되고 있습니다. 우리는 어떻게 해야 할까요?
 
 # most of these will need to have a ministry involved as well; public works, labour & social security, financial respectively; last one is unpopular amongst party
 
-- @public_works_program: Continue the expansion of infrastructure projects.
-- @tax_breaks: Increase tax breaks and loans given to businesses and cooperatives.
-- @return: Our budget limits our ability to aid the unemployed.
+- @public_works_program: 사회 기반 시설 프로젝트를 계속해서 확장한다.
+- @tax_breaks: 기업과 협동조합에 대한 세금 감면과 대출을 확대한다.
+- @return: 예산 제약으로 지금으로서는 실업자를 지원하는 데 한계가 있다.
 - @easy_discard
 
 @public_works_program
-subtitle: -1 Budget - Expand our current infrastructural commitments further. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 예산 - 현재 진행 중인 기반 시설 사업을 더욱 확장합니다. [? if budget = 0 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: public_works_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if public_works_minister_party != psi_name : The [+ psi_name +] does not control the Public Works Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if public_works_minister_party != psi_name : [+ psi_name +]이 공공사업부를 장악하고 있지 않습니다. ?][? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: public_works_funded += 1; budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); unemployment -= 0.4 if unemployment >= 8; unemployment -= 0.2 if unemployment >= 8; veterans_pnf -= 3*(1-dissent); veterans_psi += 3*(1-dissent) if not in_unstable_coalition; veterans_clc += 3*(1-dissent) if centre_left_coalition; veterans_scc += 3*(1-dissent) if socialist_catholic_coalition; rural_pnf -= 2*(1-dissent); socialist_sentiment += 1; nationalist_sentiment -= 2; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0; inflation += 0.2; inflation += 0.1 if budget < 0;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We have increased funding to the Public Works Ministry, who have begun drafting up plans and hiring workers for further infrastructure projects.
+우리는 공공사업부 예산을 증액했으며, 부처는 추가 기반 시설 프로젝트를 위한 계획을 수립하고 인력을 고용하기 시작했습니다.
 
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 안타깝게도, 예산 증액으로 재정 적자가 발생하였고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 대표들이 이미 우리에게 면담을 요청했습니다. ?]
 
 @tax_breaks
-subtitle: -1 Budget - Offer financial aid to small businesses and the like to alleviate their economic burden. [? if budget = 0 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 예산 - 중소기업의 경제적 부담을 완화하기 위해 재정 지원을 제공합니다. [? if budget = 0 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: finance_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if finance_minister_party != psi_name : The [+ psi_name +] does not control the Financial Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if finance_minister_party != psi_name : [+ psi_name +]이 재무부를 장악하고 있지 않습니다. ?][? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); ldr_relation += 5; ul_relation += 5; labour_dissent += 10; syndicalist_dissent += 10 if syndicalist_active; communist_dissent += 10; maximalist_dissent += 10; middle_class_psi += 3*(1-dissent) if not in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_pnf -= 3(1*dissent); workers_psi -= 4 if not in_unstable_coalition; workers_clc -= 4 if centre_left_coalition; workers_scc -= 4 if not socialist_catholic_coalition; capital_strike_progress -= 1; psri_relation -= 3*(1-dissent); ldr_moderates += 0.2; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed = 1; 
 
-This is an unpopular move within the party, and is seen handouts to the petite-bourgeois. The loans however, are able to keep businesses afloat temporarily[? if centre_left_coalition : and our coalition partners seem satisfied. ?] [? if not centre_left_coalition:. ?]
+이는 당내에서 인기가 없는 조치로, 소부르주아 계층에 대한 특혜로 비춰집니다. 하지만 대출 덕분에 기업들은 당분간 생존할 수 있게 되었습니다[? if centre_left_coalition :. 그리고 연정 파트너들도 만족하는 듯 보입니다. ?] [? if not centre_left_coalition:. ?]
 
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed :안타깝게도, 예산 증액으로 재정 적자가 발생하였고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 대표들이 이미 우리에게 회의를 요청했습니다. ?]

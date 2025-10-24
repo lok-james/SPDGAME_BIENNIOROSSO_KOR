@@ -1,4 +1,4 @@
-title: Women's Rights
+title: 여성 인권
 new-page: true
 is-card: true
 view-if: psi_in_government and womens_rights_timer <= 0
@@ -15,49 +15,49 @@ if (Q.ds_allies == 1) {
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: govt_affairs
 
-= Women's Rights
+= 여성 인권
 
-According to the Constitution, women are equal to men, but this is not followed in practice. Women in the workforce are not paid equally for the same work, in addition to often being pushed out of employment after marriage. Men are still favored in marriage and family policy, and there are restrictions on women's rights in many other domains. And that is not to mention the overwhelming patriarchal culture present in Italy.
+헌법상 여성은 남성과 동등하지만 현실은 그렇지 않습니다. 노동 현장의 여성들은 동일 노동에 대해 동등한 임금을 받지 못하고, 결혼 후에는 직장에서 밀려나는 경우가 허다합니다. 결혼 및 가족 관련법에서도 여전히 남성이 우대받고 있으며, 그 외 수많은 영역에서 여성의 권리가 제한받고 있습니다. 이탈리아에 만연한 극심한 가부장적 문화는 말할 것도 없습니다.
 
-For better or for worse, the Socialists stand virtually alone in supporting increased rights for women, and even within the party, the leadership does not consider it a priority. [? if psi_seating_disp < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+좋든 싫든, 여성의 권익 신장을 지지하는 것은 사실상 사회주의자들이 유일하며, 심지어 당내에서조차 지도부는 이 문제를 우선 과제로 생각하지 않습니다. [? if psi_seating_disp < 50 : 설상가상으로, 여성 유권자들은 여전히 압도적으로 부르주아 정당을 지지하고 있습니다. ?]
 
-- @labour: Institute policies that help women in the workforce.
-- @family: Reform marriage, divorce, and property law. 
-- @welfare: Improve welfare for single mothers and children.
-- @liberalize: Attempt to liberalise abortion laws. 
-- @suffrage: Attempt to pass women's suffrage.
-- @return: Do not enact any policies for now.
+- @labour: 노동 현장에서의 여성들을 위한 정책을 수립한다.
+- @family: 결혼, 이혼, 그리고 재산 관련법을 개혁한다.
+- @welfare: 한부모 가정과 아동을 위한 복지를 개선한다.
+- @liberalize: 낙태법 자유화를 시도한다.
+- @suffrage: 여성 참정권 법안 통과를 시도한다.
+- @return: 당분간은 어떤 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @labour
-subtitle: Paid maternal leave policies, equal pay policies, and so on. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+subtitle: 유급 출산 휴가, 동일 임금 정책 등을 포함합니다. [? if catholic_women_accepted : 여성 인권 개혁은 연정 합의 위반입니다! ?]
 on-arrival: womens_work += 1; womens_rights += 1; workers_psi -= 4 if unemployment > 15 and not in_unstable_coalition; workers_clc -= 4 if unemployment > 15 and centre_left_coalition; workers_scc -= 4 if unemployment > 15 and socialist_catholic_coalition; middle_class_psi += 4*(1-dissent) if not in_unstable_coalition; middle_class_clc += 4*(1-dissent) if centre_left_coalition; middle_class_scc += 4*(1-dissent) if socialist_catholic_coalition; workers_psi += 4*(1 - dissent) if not in_unstable_coalition; workers_clc += 4*(1 - dissent) if centre_left_coalition; workers_scc += 4*(1 - dissent) if socialist_catholic_coalition; economic_growth += 0.1; coalition_dissent += 1 if socialist_catholic_coalition; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted; women_psi += 3*(1-dissent) if not in_unstable_coalition; women_clc += 3*(1-dissent) if centre_left_coalition; women_scc += 3*(1-dissent) if socialist_catholic_coalition; socialist_sentiment += 1
 max-visits: 3
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
-These policies mean that our party is increasing in popularity among the "new women" who work outside the home. [? if unemployment > 15 : However, many male workers develop a backlash towards women in the workplace, especially given the rising unemployment. ?]
+이런 정책들 덕분에, 가정 밖에서 일하는 "신여성"들 사이에서 우리 당의 인기가 높아지고 있습니다. [? if unemployment > 15 : 하지만, 치솟는 실업률 탓에 많은 남성 노동자들이 직장 내 여성을 향해 반감을 품게 되었습니다. ?]
 
 @family
-subtitle: Change family and inheritance law to treat women more equally. [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+subtitle: 여성을 더욱 평등하게 대우하도록 가족법과 상속법을 개정합니다. [? if catholic_women_accepted : 여성 인권 개혁은 연정 합의 위반입니다! ?]
 on-arrival: family_law += 1; womens_rights += 1; middle_class_psi += 2*(1-dissent) if not in_unstable_coalition; middle_class_clc += 2*(1-dissent) if centre_left_coalition; middle_class_scc += 2*(1-dissent) if socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 2 if not in_unstable_coalition; industrialists_clc -= 2 if centre_left_coalition; industrialists_scc -= 2 if socialist_catholic_coalition; rural_psi -= 2 if not in_unstable_coalition; rural_clc -= 2 if centre_left_coalition; rural_scc -= 2 if socialist_catholic_coalition; catholic_psi -= 4 if not in_unstable_coalition; catholic_clc -= 4 if centre_left_coalition; catholic_scc -= 4 if socialist_catholic_coalition; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 4; ppi_moderates += 0.1 if ppi_right < ppi_left; ppi_right += 0.1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted;  women_psi += 4*(1-dissent) if not in_unstable_coalition; women_clc += 4*(1-dissent) if centre_left_coalition; women_scc += 4*(1-dissent) if socialist_catholic_coalition;
 max-visits: 2
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
-These policies aim to ensure that women have equal rights within a marriage, including the right to divorce. The more conservative segments of society treat our reforms as deleterious to the social fabric.
+이 정책들은 이혼할 권리를 포함하여, 결혼 생활에서 여성이 동등한 권리를 갖도록 보장하는 것을 목표로 합니다. 사회의 보수적인 계층은 우리의 개혁이 사회의 근간을 해친다고 비난합니다.
 
 @welfare
-subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -1 예산 [? if budget < 1 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: not national_economic_recovery or budget >= 1
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: welfare += 1; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; veterans_psi += 5*(1-dissent) if not in_unstable_coalition; veterans_clc += 5*(1-dissent) if centre_left_coalition; veterans_scc += 5*(1-dissent) if socialist_catholic_coalition; budget -= 1; womens_rights += 1; coalition_dissent += 1 if (welfare >= 3 and unemployment >= 15); ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted == 1); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0;  women_psi += 5*(1-dissent) if not in_unstable_coalition; women_clc += 5*(1-dissent) if centre_left_coalition; women_scc += 5*(1-dissent) if socialist_catholic_coalition; socialist_sentiment += 2;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We have increased welfare spending on women and children. [? if welfare >= 1 and unemployment >= 15 : Some of our coalition partners consider increased welfare spending profligate at this time. ?]
+우리는 여성과 아동에 대한 복지 예산을 증액했습니다. [? if welfare >= 1 and unemployment >= 15 : 일부 연정 파트너들은 지금과 같은 때에 복지 지출을 늘리는 것은 무분별한 처사라고 생각합니다. ?]
 
 @liberalize
 view-if: not abortion_rights and abortion_attempted != 1
-subtitle: [? if left_wing_coalition_r < 50 : This is unlikely to succeed; we do not have majority support. ?] [? if catholic_women_accepted : Any reforms to women's rights will violate our coalition agreements! ?]
+subtitle: [? if left_wing_coalition_r < 50 : 성공할 가능성이 희박합니다. 과반의 지지를 얻지 못했습니다. ?] [? if catholic_women_accepted : 여성 인권 개혁은 연정 합의 위반입니다! ?]
 on-arrival: abortion_attempted = 1;
 go-to: liberalize_fail if left_wing_coalition_r < 50 and not violent_revolution; liberalize_success if left_wing_coalition_r >= 50 or violent_revolution
 
@@ -65,26 +65,26 @@ go-to: liberalize_fail if left_wing_coalition_r < 50 and not violent_revolution;
 on-arrival: ppi_relation -= 4; coalition_dissent += 1 if socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; catholic_psi -= 5 if not in_unstable_coalition; catholic_clc -= 5 if centre_left_coalition; catholic_scc -= 5 if socialist_catholic_coalition; ppi_moderates += 1 if ppi_right < ppi_left; ppi_right += 1 if ppi_left > ppi_right; ppi_promise_failed = 1 if catholic_women_accepted
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
-Unfortunately, our proposal is voted down in the Chamber of Deputies, with the Italian People's Party speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+안타깝게도, 우리의 법안은 하원에서 부결되었습니다. 이탈리아 인민당이 특히 격렬하게 반대했고, 심지어 우리 당내에서도 이탈표가 나왔습니다. 이 시도로 좌절감을 느낀 활동가들은 다음을 기약하기로 했습니다.
 
 @liberalize_success
 on-arrival: abortion_rights += 1; womens_rights += 1; coalition_dissent += 1 if in_unstable_coalition; coalition_dissent += 1 if socialist_catholic_coalition; ppi_relation -= 5*ppi_right; catholic_psi -= 10 if not in_unstable_coalition; catholic_clc -= 10 if centre_left_coalition; catholic_scc -= 10 if socialist_catholic_coalition; ul_relation -= 5; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 3*(1-dissent) if not in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3; industrialists_ppi += 3; industrialists_ul += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; veterans_pnf -= 2; veterans_ppi += 3; veterans_psi += 3*(1-dissent) if not in_unstable_coalition; veterans_clc += 3*(1-dissent) if centre_left_coalition; veterans_scc += 3*(1-dissent) if socialist_catholic_coalition; socialist_sentiment += 5; republican_sentiment += 3; ppi_left -= 2; ds_right += 1.2; ppi_promise_failed = 1 if catholic_women_accepted
 go-to: catholic_promise_vonc if ppi_promise_failed == 1
 
-With the support of the left including the [+ psi_name +] and PSRI, we have successfully passed a bill to legalize abortion in Italy! This has heartened our more progressive supporters, while hurting our relations with the People's Party. With the increasing political discourse around abortion, the religiously-oriented People's Party and [+ ul_full_name +] have gained conservative votes at the expense of the [+ pnf_name +].
+[+ psi_name +]와 이탈리아 개혁사회당을 포함한 좌파의 지지에 힘입어, 이탈리아에서 낙태를 합법화하는 법안을 성공적으로 통과시켰습니다! 이는 우리 진보 지지자들의 사기를 북돋웠지만, 인민당과의 관계는 악화되었습니다. 낙태에 대한 정치적 논의가 확산되면서, 종교적 색채가 강한 인민당과 [+ ul_full_name +]는 [+ pnf_name +]의 지지층이던 보수 유권자들을 흡수했습니다.
 
 @suffrage
 view-if: not womens_suffrage and suffrage_attempted != 1
-subtitle: [? if suffrage_support < 50 : This is unlikely to succeed; we do not have majority support. ?]
+subtitle: [? if suffrage_support < 50 : 성공할 가능성이 희박합니다. 과반의 지지를 얻지 못했습니다. ?]
 on-arrival: suffrage_attempted = 1;
 go-to: suffrage_fail if suffrage_support < 50 and not violent_revolution; suffrage_success if suffrage_support >= 50 or violent_revolution
 
 @suffrage_fail
 on-arrival: ldr_relation -= 4; coalition_dissent += 1 if not socialist_catholic_coalition; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 5 if not in_unstable_coalition; industrialists_clc -= 5 if centre_left_coalition; industrialists_scc -= 5 if socialist_catholic_coalition; ppi_left += 1; ldr_right += 0.6;
 
-Unfortunately, our proposal is voted down in the Chamber of Deputies, with the [+ ul_name +] and [+ ldr_name +] speaking in particularly vehement opposition, and some of our own members breaking party discipline. The activists, feeling demoralized from this attempt, have decided to bide their time.
+안타깝게도, 우리의 법안은 하원에서 부결되었습니다. [+ ul_name +]와 [+ ldr_name +]이 특히 격렬하게 반대했고, 심지어 우리 당내에서도 이탈표가 나왔습니다. 이 시도로 좌절감을 느낀 활동가들은 다음을 기약하기로 했습니다.
 
 @suffrage_success
 on-arrival: womens_suffrage = 1; women += 27; womens_rights += 1; coalition_dissent += 2 if centre_left_coalition; ldr_relation -= 5*ldr_right; middle_class_psi -= 7 if not in_unstable_coalition; middle_class_clc -= 7 if centre_left_coalition; middle_class_scc -= 7 if socialist_catholic_coalition; ul_relation -= 8; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 3*(1-dissent) if in_unstable_coalition; middle_class_clc += 3*(1-dissent) if centre_left_coalition; middle_class_scc += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3; industrialists_ds += 3; industrialists_ldr += 3; industrialists_ul += 3; rural_ul += 3; workers_pnf -= 3; industrialists_pnf -= 3; middle_class_pnf -= 2; rural_pnf -= 2; middle_class_pnf -= 2; women_ppi += 3; middle_class_ul += 3*(1-dissent); ppi_left += 2; ldr_right += 0.6; ds_right += 0.2; socialist_sentiment += 3;
 
-With the support of the left including the PSRI [? if pri_prominent: and the PRI?] alongside the PPI, we have successfully passed a bill to allow women to vote in Italy! This has heartened our more radical supporters, while hurting our relations with the liberal parties. With the increasing political discourse around suffrage, the [+ ldr_full_name +] and [+ ul_full_name +] have gained middle class and landowner votes at the expense of the [+ pnf_name +].
+이탈리아 개혁사회당을 [? if pri_prominent: 비롯한 공화당과?] 인민당의 지지에 힘입어, 이탈리아 여성의 참정권을 보장하는 법안을 성공적으로 통과시켰습니다! 이는 우리 급진 지지자들의 사기를 북돋웠지만, 자유주의 정당들과의 관계는 악화되었습니다. 참정권에 대한 정치적 논의가 확산되면서, [+ ldr_full_name +]와 [+ ul_full_name +]는 [+ pnf_name +]의 지지층이던 중산층과 지주 유권자들을 흡수했습니다.

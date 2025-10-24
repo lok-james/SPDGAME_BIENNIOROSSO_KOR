@@ -1,4 +1,4 @@
-title: Shuffle Cabinet
+title: 내각 개편
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -6,30 +6,30 @@ on-arrival: shuffle_cabinet_timer = 4;
 view-if: psi_in_government == 1 and shuffle_cabinet_timer <= 0 and prime_minister_party == psi_name and not psi_majority
 card-image: img/ShuffleCabinet.jpg
 
-Do we wish to shuffle our cabinet? This might upset our current coalition.
+내각을 개편하시겠습니까? 현 연정 파트너들이 반발할 수 있습니다.
 
-Current cabinet:
+현 내각 구성:
 
-Labour & Social Security: [+ labour_minister_party +]
+노동사회보장부: [+ labour_minister_party +]
 
-Interior: [+ interior_minister_party +]
+내무부: [+ interior_minister_party +]
 
-Finance: [+ finance_minister_party +]
+재무부: [+ finance_minister_party +]
 
-Treasury: [+ treasury_minister_party +] 
+국고부: [+ treasury_minister_party +] 
 
-Justice: [+ justice_minister_party +]
+법무부: [+ justice_minister_party +]
 
-Foreign: [+ foreign_minister_party +]
+외무부: [+ foreign_minister_party +]
 
-Public Works: [+ public_works_minister_party +]
+공공사업부: [+ public_works_minister_party +]
 
-Public Education: [+ public_education_minister_party +]
+공교육부: [+ public_education_minister_party +]
 
-Agriculture: [+ agriculture_minister_party +]
+농업부: [+ agriculture_minister_party +]
 
-- @shuffle: Yes, do it.
-- @root: No, there is no need.
+- @shuffle: 예, 하겠습니다.
+- @root: 아니오, 필요 없습니다.
 - @cancel_advisor_action
 
 @shuffle

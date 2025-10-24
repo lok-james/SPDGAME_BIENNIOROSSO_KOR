@@ -1,4 +1,4 @@
-title: Southern Question
+title: 남부 문제
 new-page: true
 is-card: true
 view-if: psi_in_government = 1 and (public_works_minister_party = psi_name or public_education_minister_party = psi_name or interior_minister_party = psi_name) and southern_question_timer <= 0 and southern_resolved = 0
@@ -6,11 +6,11 @@ on-arrival: week_actions += 1; southern_question_timer += 3; reform_cost = 4; re
 card-image: img/SouthernQuestion.jpg
 tags: govt_affairs
 
-= The Southern Question
+= 남부 문제
 
-There is a clear divide between the North and South of the nation. The rural south has lagged behind the industrial heartlands of the north, and the recent end of the war has only exacerbated the situation. Though it is unlikely we will ever see the end of the divide between the two regions, there is much we can do to stop the bleeding of economic divide, of population emigration, of corruption.
+이탈리아의 남북 간에는 뚜렷한 격차가 존재합니다. 농업 중심의 남부는 북부의 공업 지대에 비해 낙후되었으며, 최근 끝난 전쟁은 이 상황을 더욱 악화시켰습니다. 두 지역 간의 격차를 완전히 해소하기는 어렵겠지만, 심화되는 경제적 격차와 인구 유출, 부패 문제를 해결하기 위해 우리가 할 수 있는 일은 많습니다.
 
-Where should we begin?
+무엇부터 시작하시겠습니까?
 
 # if successful; major rural votes
 # first option pisses off the liberals massively; results in landowners flocking to pnf; helps out eco crisis? needs labour ministry + judicial reform, or 
@@ -18,42 +18,42 @@ Where should we begin?
 # third needs public works ministry
 # fourth needs education ministry; pisses of landowners + church since it'd be secular?
 
-- @southern_land_reform_gov: Begin massive land reforms in the South and issue compensation.
-- @southern_land_reform_rg: Seize land and redistribute it to the peasants!
-- @southern_infrastructure: Begin public works initiatives focused on the South.
-- @southern_literacy: Expand the education system & begin literacy programs in the South.
-- @southern_mafia: Crackdown on Mafia activity in the South.
-- @root: Leave the South as it is.
+- @southern_land_reform_gov: 남부에서 대규모 토지 개혁을 시작하고 보상금을 지급한다.
+- @southern_land_reform_rg: 토지를 점거하여 농민들에게 재분배하라!
+- @southern_infrastructure: 남부 중심의 공공 사업 계획을 시작한다.
+- @southern_literacy: 남부의 교육 체계를 확충하고 문해력 증진 프로그램을 시작한다.
+- @southern_mafia: 남부의 마피아 활동을 소탕한다.
+- @root: 일단은 남부를 그대로 둔다
 - @easy_discard
 
 @southern_land_reform_gov
-subtitle: -2 Budget - This will **irreversibly** damage our relations with the Liberals.
+subtitle: -2 예산 - 이 조치는 자유당과의 관계를 **돌이킬 수 없을 정도로** 악화시킬 것입니다.
 choose-if: not centre_left_coalition and (king_relation >= 60 or national_congress_seen) and (not national_economic_recovery or budget >= 2)
 view-if: southern_land_reformed == 0 and moderate_plan_adopted
-unavailable-subtitle: [? if centre_left_coalition : The Liberals are threatening a pre-emptive Vote-of-No-Confidence if this bill hits the Chamber floor. ?][? if king_relation < 60 : This King has informed us he will veto this bill upon arrival regardless. ?][? if national_economic_recovery and budget < 2: Not enough budget. (Need 2) ?]
+unavailable-subtitle: [? if centre_left_coalition : 자유당은 이 법안이 하원에 상정되면 선제 불신임 투표를 감행하겠다고 위협 중입니다. ?][? if king_relation < 60 : 국왕은 이 법안이 상정되는 즉시 거부권을 행사하겠다는 뜻을 통보해왔습니다. ?][? if national_economic_recovery and budget < 2: 예산이 부족합니다. (2 필요) ?]
 on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 7*(1-dissent); industrialists_pnf += 12*(1-dissent); middle_class_pnf += 4*(1-dissent); unemployment -= 0.9; inflation += 0.4; inflation += 0.1 if budget < 0; economic_growth += 0.6; fasci_coup_progress += 1; capital_strike_progress += 1; ldr_right += 3; rural += 4
 go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_seating_disp + ul_seating_disp + pnf_seating_disp >= 50 and not violent_revolution
 
-The bill is barely able to pass the floor, and the liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. [+ ldr_leader +] and the [+ ldr_name +] vow never to work with us in future coalitions, as the fascists use this opportunity to paint us as property-seizing radicals to the middle class.
+법안은 간신히 의회 문턱을 넘었지만, 자유당은 거세게 반발하고 있습니다. [+ ldr_name +] 내 정보원들에 따르면, 다수의 지주 후원자들이 당을 이탈하여 극우 세력과의 연대를 모색하고 있다고 합니다. [+ ldr_leader +]와 [+ ldr_name +]는 앞으로 우리와는 절대로 연정을 구성하지 않겠다고 공언했으며, 파시스트들은 이 기회를 틈타 우리를 재산을 강탈하는 급진주의자로 중산층에게 선전하고 있습니다.
 
-[? if ldr_seating_disp + ul_seating_disp + pnf_seating_disp > 50: The liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
+[? if ldr_seating_disp + ul_seating_disp + pnf_seating_disp > 50: 자유당은 과반의 의석을 규합하여 우리 정부에 대한 불신임 투표를 통과시킬 수 있습니다. ?]
 
 @southern_land_reform_rg
-subtitle: [? if not national_congress_seen : -[+ reform_cost +] Paramilitary Resources ?][? if national_congress_seen : -[+ reform_cost +] Resources ?] - This will **irreversibly** damage our relations with the Liberals. [? if grand_coalition_r >= 50 and not violent_revolution : We can expect a Vote-of-No-Confidence to succeed if we go through with this. ?] [? if rg_militancy >= 0.44 : The high militancy of the Red Guards have reduced the cost of this action. ?]
+subtitle: [? if not national_congress_seen : -[+ reform_cost +] 준군사 자원 ?][? if national_congress_seen : -[+ reform_cost +] 자원 ?] - 이 조치는 자유당과의 관계를 **돌이킬 수 없을 정도로** 악화시킬 것입니다. [? if grand_coalition_r >= 50 and not violent_revolution : 이를 강행할 경우, 불신임 투표가 가결될 것으로 예상됩니다. ?] [? if rg_militancy >= 0.44 : 적위대의 높은 전투력으로 인해 이 행동에 필요한 자원이 감소했습니다. ?]
 choose-if: para_resources >= 4 or (national_congress_seen and resources >= 4)
-unavailable-subtitle: [? if not national_congress_seen : Not enough paramilitary resources. (Need [+ reform_cost +]) ?] [? if national_congress_seen : Not enough resources. (Need [+ reform_cost +]) ?]
+unavailable-subtitle: [? if not national_congress_seen : 준군사 자원이 충분하지 않습니다. ([+ reform_cost +] 필요) ?] [? if national_congress_seen : 자원이 부족합니다. ([+ reform_cost +] 필요) ?]
 view-if: southern_land_reformed == 0 and nationalisation_adopted
 on-arrival: southern_land_reformed = 1; para_resources -= reform_cost if not national_congress_seen; resources -= reform_cost if national_congress_seen; ldr_relation -= 35; rural_psi += 13*(1-dissent); industrialists_ldr -= 17*(1-dissent); industrialists_pnf += 17*(1-dissent); middle_class_pnf += 7*(1-dissent); unemployment -= 0.9; inflation += 0.5; economic_growth += 0.2; fasci_coup_progress += 2; capital_strike_progress += 2; ldr_right += 4; rural += 4
 go-to: liberal_vote_of_no_confidence.let_it_happen if grand_coalition_r >= 50 and not violent_revolution
 
-The Red Guard, under our orders begin forceful seizures of landowner properties and the liberals are in an uproar. Already, our contacts within the [+ ldr_name +] have informed us of an exodus of their landowner backers from the party, instead seeking to align further with the far-right. [+ ldr_leader +] and the [+ ldr_name +] vow never to work with us again, as the fascists use this opportunity to paint us as violent radicals to the middle class.
+우리 명령에 따라 적위대가 지주들의 토지를 강제 몰수하기 시작하자, 자유당은 거세게 반발하고 있습니다. [+ ldr_name +] 내 정보원들에 따르면, 다수의 지주 후원자들이 당을 이탈하여 극우 세력과의 연대를 모색하고 있다고 합니다. [+ ldr_leader +]와 [+ ldr_name +]는 우리와 결코 다시는 협력하지 않겠다고 공언했으며, 파시스트들은 이 기회를 틈타 우리를 폭력적인 급진주의자로 중산층에게 선전하고 있습니다.
 
-[? if grand_coalition_r > 50: The liberals are able to rally a majority to call a vote of no-confidence against us, and are able to succeed. ?]
+[? if grand_coalition_r > 50: 자유당은 과반의 의석을 규합하여 우리 정부에 대한 불신임 투표를 통과시킬 수 있습니다. ?]
 
 @southern_infrastructure
-subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
+subtitle: -1 예산 [? if budget < 1 and liberal_budget_accepted :- 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: public_works_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if public_works_minister_party != psi_name : The [+ psi_name +] does not control the Public Works Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if public_works_minister_party != psi_name : 공공사업부는 [+ psi_name +]의 소관이 아닙니다. ?][? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: {!
 Q.southern_infrastructure_funded += 1; 
 Q.budget -= 1; 
@@ -95,14 +95,14 @@ Q.nationalist_sentiment -= 3;
 max-visits: 2
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We begin a series of infrastructural projects directed by the Public Works Ministry, leading to decreased unemployment in the region. 
+공공사업부 주도로 일련의 사회 기반 시설 프로젝트에 착수하여, 남부 지역의 실업률을 낮추는 데 성공했습니다.
 
-[? if ldr_promise_failed : Unfortunately, our funding of new projects has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
+[? if ldr_promise_failed : 안타깝게도, 신규 사업에 대한 자금 지원으로 예산 적자가 발생했고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 측에서 이미 면담을 요청해왔습니다. ?]
 
 @southern_literacy
-subtitle: -1 Budget [? if budget = 0 and liberal_budget_accepted :- This will put us into a deficit! ?]
+subtitle: -1 예산 [? if budget = 0 and liberal_budget_accepted :- 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: public_education_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if public_education_minister_party != psi_name : The [+ psi_name +] does not control the Public Education Ministry. ?][? if national_economic_recovery and budget < 1: Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if public_education_minister_party != psi_name : 공교육부는 [+ psi_name +]의 소관이 아닙니다. ?][? if national_economic_recovery and budget < 1: 예산이 부족합니다. (1 필요) ?]
 on-arrival: {!
 Q.southern_education_funded += 1; 
 Q.budget -= 1; 
@@ -153,20 +153,20 @@ Q.ppi_relation -= 4;
 max-visits: 2
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We expand education institutes, targeting the South, hiring teachers, building schools and the like. Both the landowners and the catholics certainly aren't pleased with our intrusion into the South.
+우리는 남부를 대상으로 교사를 채용하고 학교를 신설하는 등 교육 기관을 확충해나가고 있습니다. 지주와 가톨릭 세력 모두 우리의 남부 정책에 불만을 품고 있습니다.
 
-[? if ldr_promise_failed : Unfortunately, our expansion of the education system has led to a budget deficit, breaking our agreement with the Liberals, who have already requested a meeting. ?]
+[? if ldr_promise_failed : 안타깝게도, 교육 체계 확충으로 예산 적자가 발생했고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 측에서 이미 면담을 요청해왔습니다. ?]
 
 @southern_mafia
 choose-if: interior_minister_party = psi_name and mafia_strength > 0
-unavailable-subtitle: [? if not interior_minister_party = psi_name: The [+ psi_name +] does not control the Interior Ministry. ?][? if mafia_strength < 1 : The various forces of the mafia are too disorganised to be a threat to us. ?]
+unavailable-subtitle: [? if not interior_minister_party = psi_name: 내무부는 [+ psi_name +]의 소관이 아닙니다. ?][? if mafia_strength < 1 : 마피아 세력이 너무 분열되어 있어 우리에게 위협이 되지 않습니다. ?]
 go-to: investigate_mafia_success if interior_police_loyalty >= 0.5 and judicial_reform > 1; investigate_mafia_failure if interior_police_loyalty < 0.5 or judicial_reform < 2
 
 @investigate_mafia_success
 on-arrival: mafia_investigation += 1; rural_psi += 3*(1-dissent) if not in_unstable_coalition; rural_clc += 3*(1-dissent) if centre_left_coalition; rural_scc += 3*(1-dissent) if socialist_catholic_coalition; industrialists_psi -= 2*(1-dissent) if not in_unstable_coalition; industrialists_clc -= 2*(1-dissent) if centre_left_coalition; industrialists_scc -= 2*(1-dissent) if socialist_catholic_coalition; industrialists_pnf += 4*(1-dissent); mafia_strength -= 1; 
 
-The Carabinieri are able to uncover files regarding illegal activity among a number of high-value individuals, and we are able to conduct raids and arrests the following day.
+이탈리아 헌병대가 다수의 고위 인사에 대한 불법 활동 자료를 확보하는 데 성공했고, 우리는 다음날 이들을 급습하여 체포할 수 있었습니다.
 
 @investigate_mafia_failure
 
-Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+안타깝게도, 우리의 단속은 성과 없이 끝났고 체포 영장 집행도 중단되었습니다. 이탈리아 헌병대 내부에 잠입한 정보원에 의해 수사 대상이 사전에 정보를 입수했다는 소문이 돌고 있습니다.

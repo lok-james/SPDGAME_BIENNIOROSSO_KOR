@@ -1,4 +1,4 @@
-title: Dealing with Veterans' Welfare
+title: 재향군인 복지 문제
 new-page: true
 is-card: true
 view-if: psi_in_government and (finance_minister_party = psi_name or labour_minister_party = psi_name or treasury_minister_party = psi_name) and welfare_gov_timer <= 0
@@ -7,28 +7,28 @@ on-arrival: week_actions += 1; welfare_gov_timer = 2;
 card-image: img/WelfareGov.jpg
 tags: govt_affairs
 
-= Dealing with Veterans' Welfare
+= 재향군인 복지 문제
 
-Following our defeat at Caporetto and the subsequent formation of the *Opera Nazionale Combattenti*, the previous liberal government promised soldiers welfare as high as the moon to re-moralise them, and now it is up to us to actually take care of our veterans and fufill these promises. 
+카포레토 전투에서의 패배 이후 설립된 '전국 재향군인 기구'를 통해, 이전 자유당 정부는 병사들의 사기 진작을 위해 실현 불가능할 정도의 막대한 복지를 약속했습니다. 이제 그 약속들을 이행하고 재향군인들을 보살피는 것은 우리의 몫입니다.
 
-What do we do?
+우리는 어떻게 해야 할까요?
 
 # most of these will need to have a ministry involved as well; except the third one
 # place in party deck as well?
 
-- @unemployment_insurance_program: Begin the funding of the Unemployment Insurance Program.
-- @expand_insurance: Expand the scope of the Unemployment Insurance Program to poor workers.
-- @veterans_organisations_gov: Increasing the funding of government welfare organisations.
-- @veterans_organisations_catholic: Increase the funding of Catholic-run welfare organisaions
-- @no_aid: Our budget limits our ability to improve welfare.
+- @unemployment_insurance_program: 실업 보험 프로그램 예산 편성을 시작한다.
+- @expand_insurance: 실업 보험 적용 대상을 빈곤 노동자까지 확대한다.
+- @veterans_organisations_gov: 정부 운영 복지 기관에 대한 지원을 증액한다.
+- @veterans_organisations_catholic: 가톨릭 산하 복지 단체에 대한 지원을 증액한다.
+- @no_aid: 예산 제약으로 현재로서는 복지 개선에 한계가 있다.
 - @easy_discard
 - @cancel_advisor_action
 
 @unemployment_insurance_program
-subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -2 예산 - 적용 범위를 너무 넓힐 경우, 예산에 큰 부담이 될 것입니다. [? if catholic_charity_accepted : 비가톨릭계 복지 프로그램의 설립은 연정 합의 위반입니다! ?][? if budget < 2 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 view-if: not unemployment_insurance_founded 
 choose-if: not national_economic_recovery or budget > 1
-unavailable-subtitle: Not enough budget. (Need 2)
+unavailable-subtitle: 예산이 부족합니다. (2 필요)
 on-arrival: {!
 Q.unemployment_insurance_founded = 1; 
 Q.veterans_insurance = 1;
@@ -71,15 +71,15 @@ Q.socialist_sentiment += 2;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
-Proposed by one of our deputies, the unemployment insurance program would place hundreds of thousands or even millions onto a program that would ensure they would be able to feed themselves, as well as give workers a safety net to fall upon. 
+우리 당 소속 의원이 제안한 실업 보험 프로그램은 수십만에서 수백만에 이르는 국민들이 생계를 유지할 수 있도록 보장하고, 노동자들에게는 의지할 수 있는 사회 안전망을 제공해줄 것입니다.
 
-Unfortunately, our current financial situation limits the scope of this welfare program to unemployed and disabled veterans.
+안타깝게도, 현재 재정 상황으로는 이 복지 프로그램의 적용 대상을 실업자 및 상이 재향군인로 한정할 수밖에 없습니다.
 
 @expand_insurance
-subtitle: -2 Budget - This will expand the scope of the current program. [? if catholic_charity_accepted : The expansion of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -2 예산 - 현재 프로그램의 적용 범위를 확대합니다. [? if catholic_charity_accepted : 비가톨릭계 복지 프로그램의 확대는 연정 합의 위반입니다! ?][? if budget < 2 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 view-if: unemployment_insurance_founded 
 choose-if: not national_economic_recovery or budget > 1
-unavailable-subtitle: Not enough budget. (Need 2)
+unavailable-subtitle: 예산이 부족합니다. (2 필요)
 on-arrival: {!
 Q.unemployment_insurance_expanded = 1; 
 Q.insurance_payments_workers_timer = 12; 
@@ -121,34 +121,34 @@ Q.socialist_sentiment += 2;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
-Now that our financial situation is better, we can expand the scope of the program further, at least temporarily.
+이제 재정 상황이 호전되었으니, 적어도 일시적으로나마 프로그램의 적용 범위를 더욱 확대할 수 있습니다.
 
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
-[? if ppi_promise_failed : Unfortunately, the creation of the Unemployment Insurance Program has broken our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 안타깝게도, 예산 증액으로 재정 적자가 발생하였고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 대표들이 이미 우리에게 면담을 요청했습니다. ?]
+[? if ppi_promise_failed : 안타깝게도, 실업 보험 프로그램의 설립은 가톨릭계와의 약속을 저버리는 것이었고, 그들 측 대표들이 이미 우리에게 면담을 요청했습니다. ?]
 
 @veterans_organisations_gov
-subtitle: -1 Budget [? if catholic_charity_accepted :- The funding of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
+subtitle:  -1 예산 [? if catholic_charity_accepted :- 비가톨릭계 복지 프로그램에 대한 지원은 연정 합의 위반입니다! ?][? if budget < 1 and liberal_budget_accepted :- 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: labour_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if labour_minister_party != psi_name : The [+ psi_name +] does not control the Labour & Social Security Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if labour_minister_party != psi_name : 노동사회보장부는 [+ psi_name +]의 소관이 아닙니다. ?][? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); ppi_promise_failed = 1 if catholic_charity_accepted; veterans_psi += 2*(1-dissent) if not in_unstable_coalition; veterans_clc += 2*(1-dissent) if centre_left_coalition; veterans_scc += 2*(1-dissent) if socialist_catholic_coalition; veterans_pnf -= 2*(1-dissent); economic_growth += 0.3; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed == 1; catholic_promise_vonc if ppi_promise_failed == 1
 
-We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
+'전국 재향군인 기구'에 자금을 지원하기 시작했으며, 이 기금은 즉시 재향군인 지원에 투입됩니다.
 
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
-[? if ppi_promise_failed : Unfortunately, the funding of a non-Catholic aligned welfare organisation has led us to enter a deficit, breaking our agreement with the Catholics, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 안타깝게도, 예산 증액으로 재정 적자가 발생하였고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 대표들이 이미 우리에게 면담을 요청했습니다. ?]
+[? if ppi_promise_failed : 안타깝게도, 실업 보험 프로그램의 설립은 가톨릭계와의 약속을 저버리는 것이었고, 그들 측 대표들이 이미 우리에게 면담을 요청했습니다. ?]
 
 @veterans_organisations_catholic
-subtitle: -1 Budget [? if budget < 1 and liberal_budget_accepted :- This will put us into a deficit! ?]
+subtitle: -1 예산 [? if budget < 1 and liberal_budget_accepted :- 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: treasury_minister_party = psi_name and (not national_economic_recovery or budget >= 1)
-unavailable-subtitle: [? if treasury_minister_party != psi_name : The [+ psi_name +] does not control the Treasury Ministry. ?][? if national_economic_recovery and budget < 1 : Not enough budget. (Need 1) ?]
+unavailable-subtitle: [? if treasury_minister_party != psi_name : 국고부는 [+ psi_name +]의 소관이 아닙니다. ?][? if national_economic_recovery and budget < 1 : 예산이 부족합니다. (1 필요) ?]
 on-arrival: budget -= 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted); veterans_ppi += 1*(1-dissent); veterans_psi += 1*(1-dissent); veterans_pnf -= 2*(1-dissent); ppi_left += 0.1; economic_growth += 0.3; inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.1 if economic_growth < 0
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We begin distributing funds to Catholic-aligned organisations such as Churches, and the funds are reallocated to aid veterans immediately.
+교회와 같은 가톨릭 연계 단체에 자금을 지원하기 시작했으며, 이 기금은 즉시 재향군인 지원에 투입됩니다.
 
-[? if ldr_promise_failed : Unfortunately, increasing funding has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 안타깝게도, 예산 증액으로 재정 적자가 발생하였고, 이는 자유당과의 연정 합의를 위반하는 것입니다. 자유당 대표들이 이미 우리에게 회의를 요청했습니다. ?]
 
 @no_aid
 
-We cannot provide any aid, unfortunately.
+안타깝게도, 어떠한 지원도 제공할 수 없습니다.

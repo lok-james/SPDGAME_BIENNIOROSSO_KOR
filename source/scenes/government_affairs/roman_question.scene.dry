@@ -1,4 +1,4 @@
-title: Roman Question
+title: 로마 문제
 new-page: true
 is-card: true
 view-if: psi_in_government and roman_question_timer <= 0 and roman_question_answered == 0 and (foreign_minister_party = psi_name or catholic_papacy_accepted)
@@ -8,61 +8,61 @@ card-image: img/RomanQuestion.jpg
 go-to: papal_menu
 tags: govt_affairs
 
-= The Roman Question
+= 로마 문제
 
-Following the Risorgimento, the newly formed Kingdom of Italy seized Rome from the Holy See, as the Pope declared himself 'Prisoner of the Vatican'. Though attempts have been made to resolve this issue since, the situation has largely not changed. 
+리소르지멘토 이후, 신생 이탈리아 왕국이 교황청으로부터 로마를 점령하자 교황은 스스로 '바티칸의 포로'임을 선언했습니다. 그 후 이 문제를 해결하기 위한 시도들이 있었지만, 상황은 크게 변하지 않았습니다.
 
-Now that we are in power, we might be able to resolve this issue with the Holy See.
+이제 우리가 정권을 잡았으니, 교황청과의 이 오랜 문제를 해결할 수 있을지도 모릅니다.
 
 # list of demands you have to fufill, relation good less demands to fufill, relation bad more demands to fufill, etc
 @papal_menu
 
-- @papal_negotiations: Let us begin negotiations with the Holy See.
-- @root: Let us open negotiations another time.
+- @papal_negotiations: 교황청과 협상을 시작하자.
+- @root: 협상은 다음 기회로 미루겠다.
 - @easy_discard
 
 @papal_negotiations
 
-- @papal_compensation: Offer compensation to the Papacy for its loss of territories.
-- @papal_state: Offer recognition of the sovereignty of the Holy See in Vatican City.
-- @papal_defence: Offer the Holy See a commitment to defend its borders.
-- @papal_education: Offer the Holy See unfettered authority over religious schools.
-- @papal_sign: Sign the Lateran Treaty with the Holy See.
-- @papal_return: Let's recall our delegates for now.
+- @papal_compensation: 교황청이 상실한 영토에 대해 보상금을 제안한다.
+- @papal_state: 바티칸 시국 내 교황청의 주권을 인정할 것을 제안한다.
+- @papal_defence: 교황청의 국경을 방어할 것을 약속한다.
+- @papal_education: 종교 학교에 대한 완전한 통제 권한을 교황청에 제안한다.
+- @papal_sign: 교황청과 라테란 조약에 서명한다.
+- @papal_return: 일단은 대표단을 철수시키자.
 
 @papal_compensation
-subtitle: -3 Budget [? if liberal_budget_accepted and budget <= 3 : This will put us into a deficit! ?]
+subtitle: -3 예산 [? if liberal_budget_accepted and budget <= 3 : 이로 인해 재정 적자가 발생할 것입니다! ?]
 choose-if: not national_economic_recovery or budget >= 3
-unavailable-subtitle: Not enough budget. (Need 3)
+unavailable-subtitle: 예산이 부족합니다. (3 필요)
 view-if: papal_compensation_offered = 0
 on-arrival: papal_compensation_offered = 1; papal_appeased += 1
 go-to: papal_negotiations
 
 @papal_state
-subtitle: This is expected of us.
+subtitle: 당연히 우리가 해야 할 일입니다.
 view-if: papal_state_offered = 0
 on-arrival: papal_state_offered = 1; papal_appeased += 1;
 go-to: papal_negotiations
 
 @papal_defence
-subtitle: This is expected of us.
+subtitle: 당연히 우리가 해야 할 일입니다.
 view-if: papal_defence_offered = 0
 on-arrival: papal_defence_offered = 1; papal_appeased += 1;
 go-to: papal_negotiations
 
 @papal_education
-subtitle: This is a controversial move within the party. [? if secularised_education : This will reverse our previous decision to secularise education. ?]
+subtitle: 당내에서 논란의 여지가 있는 사안입니다. [? if secularised_education : 이는 교육 세속화에 대한 기존의 결정을 번복하는 것입니다. ?]
 view-if: papal_education_offered == 0
 on-arrival: papal_education_offered = 1; papal_appeased += 1;
 go-to: papal_negotiations
 
 @papal_sign
 choose-if: papal_appeased >= negotiating_power
-unavailable-subtitle: The Holy See would refuse this offer.
+unavailable-subtitle: 교황청이 이 제안을 거부할 것입니다.
 on-arrival: papal_relation += 2; roman_question_answered = 1; ppi_relation += 15; catholic_psi += 7*(1-dissent); budget -= 3 if papal_compensation_offered = 1; ldr_promise_failed = 1 if (budget < 0 and liberal_budget_accepted = 1); army_loyalty -= 0.05 if papal_defence_offered = 1; army_strength -= 50 if papal_defence_offered = 1; secularised_education = 0 if (papal_education_offered = 1 and secularised_education = 1); communist_dissent += 10 if papal_education_offered = 1; maximalist_dissent += 10 if papal_education_offered = 1; ppi_left += 3; peace_timer = time + 7; catholic_psi += 4;
 go-to: ldr_promise_vonc if ldr_promise_failed
 
-The Lateran Treaty of [+ year +] is signed, finally ending the Roman Question.
+[+ year +]년 라테란 조약의 체결과 함께, 마침내 로마 문제가 해결되었습니다.
 
 @papal_return
 on-arrival: papal_appeased = 0; papal_compensation_offered = 0; papal_state_offered = 0; papal_defence_offered = 0; papal_education_offered = 0;
