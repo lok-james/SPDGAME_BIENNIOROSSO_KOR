@@ -1,4 +1,4 @@
-title: Military Influence
+title: 군부 영향력
 new-page: true
 is-card: true
 view-if: psi_in_government and military_influence_timer <= 0 and not violent_revolution
@@ -7,46 +7,46 @@ on-arrival: week_actions += 1; military_influence_timer = 4
 card-image: img/MilitaryInfluence.jpg
 tags: govt_affairs
 
-= Military Influence
+= 군부 영향력
 
-The Military has been historically anti-socialist and unfavourable towards us. Though we do not control the Regio Esercito directly, and the other parties would never hand us the Ministry, being in government, we can certainly exert our influence on it. 
+군부는 역사적으로 반사회주의 성향이었고 우리에게 비우호적이었습니다. 우리가 왕립 육군을 직접 통제하지는 못하고 다른 정당들이 결코 국방부를 우리에게 넘겨주지는 않겠지만, 정부에 참여하고 있으므로 충분히 영향력을 행사할 수 있습니다.
 
 # can't directly control the military logistics wise, but influence them
 # number 2 would require judiciary reformed + control of justice ministry
 
-- @buy_loyalty: Sway officers to our cause using our coffers.
-- @purge_loyalty: Utilise the legal system to remove anti-socialist officers.
-- @return: Do nothing for now.
+- @buy_loyalty: 자금을 이용하여 장교들을 우리 편으로 회유한다.
+- @purge_loyalty: 법률 제도를 활용하여 반사회주의 장교들을 숙청한다.
+- @return: 당분간 아무 조치도 취하지 않는다.
 - @easy_discard
 
 @buy_loyalty
 view-if: not bribes_caught
 choose-if: resources > 0
-unavailable-subtitle: [? if resources < 1: Not enough resources. (Need 1) ?]
-subtitle: -1 Party Resource - It would be best not to try this often due to it's...legality.
+unavailable-subtitle: [? if resources < 1: 자원이 부족합니다. (1 필요) ?]
+subtitle: -1 당 자원 - 이 행위의...법적 문제 때문에 자주 시도하지 않는 것이 좋을 겁니다.
 on-arrival: resources -= 1; bought_loyalty += 1; army_loyalty += 0.07 if army_loyalty < 1;
 go-to: caught_army if bought_loyalty > 2
 
-Through a couple of 'meetings' with some officers, we are able to convince them of our cause and make them friendlier towards us.
+몇몇 장교들과의 '회담'을 통해, 우리는 그들을 우리의 대의에 동조하도록 설득하고 우리에게 더 우호적이게 만들 수 있습니다.
 
-Current Army loyalty: [+ army_loyalty : loyalty +]
+현재 육군 충성도: [+ army_loyalty : loyalty +]
 
 @caught_army
 new-page: true
 on-arrival: bribes_caught = 1; coalition_dissent += 3 if in_unstable_coalition; workers_psi -= 8*(1-dissent); workers_pnf += 5*(1-dissent); workers_ldr += 3*(1-dissent) if socialist_catholic_coalition; workers_ppi += 3*(1-dissent) if centre_left_coalition; reformist_dissent += 10; ldr_relation -= 5; ds_relation -= 5; ul_relation -= 5; ppi_relation -= 5; psri_relation -= 5; ldr_right += 2; ds_right += 1;
 
-= Il Popolo d'Italia publishes damning article!
+= '이탈리아의 인민'이 신랄한 기사를 게재하다!
 
-It seems news of our...shady dealings have come to light. [? if centre_left_coalition or socialist_catholic_coalition : Our coalition partners are understandably outraged. ?] Our supporters have lost faith in us, and the National Fascist Party has seized the opportunity to further smear our image.
+우리의...음흉한 거래 소식이 수면 위로 드러난 것 같습니다. [? if centre_left_coalition or socialist_catholic_coalition : 연정 파트너들은 당연히 격노했습니다. ?] 우리 지지자들은 신뢰를 잃었고, 국가 파시스트당은 이 기회를 틈타 우리의 이미지를 더욱 실추시키려 합니다.
 
 @purge_loyalty
 choose-if: judicial_reform >= 2 and justice_minister_party = psi_name and (king_relation >= 30 or national_congress_seen)
-unavailable-subtitle: [? if judicial_reform < 2 : The reactionary judiciary would not allow this. ?][? if not justice_minister_party = psi_name : We do not have control of the Justice Ministry. ?][? if king_relation < 30 : The King would not allow this. ?]
+unavailable-subtitle: [? if judicial_reform < 2 : 반동적인 사법부가 이를 허용하지 않을 것입니다. ?][? if not justice_minister_party = psi_name : 우리는 법무부를 장악하고 있지 않습니다. ?][? if king_relation < 30 : 국왕이 이를 허용하지 않을 것입니다. ?]
 on-arrival: army_loyalty += 0.07 if army_loyalty < 1; ldr_relation -= 5; ul_relation -= 5; army_strength -= 20 if army_strength > 0; unemployment += 0.3; veterans += 1; ldr_moderates += 0.2;
 
-Through some careful movement and reassignment of officers, we are able to remove anti-socialist officers from positions of power, slowly but surely getting rid of anti-socialist sentiment within the army.
+신중한 인사 조치를 통해, 우리는 반사회주의 성향의 장교들을 주요 보직에서 몰아내고, 군 내 반사회주의 정서를 점진적이지만 확실하게 제거할 수 있습니다.
 
-Current Army loyalty: [+ army_loyalty : loyalty +]
+현재 육군 충성도: [+ army_loyalty : loyalty +]
 
 
 

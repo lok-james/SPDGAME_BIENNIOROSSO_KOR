@@ -1,4 +1,4 @@
-title: Minimum Program
+title: 최소 강령
 new-page: true
 is-card: true
 tags: govt_affairs
@@ -7,110 +7,110 @@ view-if: (psi_in_government = 1 and minimum_program_timer <= 0 and economic_plan
 card-image: img/portraits/GiacintoMenottiSerrati.png
 #subtitle: Policies to address the economic crisis.
 
-= Minimum Program
+= 최소 강령
 
-We have already formulated an economic plan. Now we have to implement it. Thankfully, our other coalition partners seem willing to aid us.
+우리는 이미 경제 계획을 수립했습니다. 이제 실행에 옮겨야 합니다. 다행히 다른 연정 파트너들도 우리를 도울 의향이 있는 것 같습니다.
 
-- @min_tax_1: Begin overhauling the tax code.
-- @min_tax_2: Continue the overhaul the tax code.
-- @min_land_1: Take control of uncultivated land and redistribute it to cooperatives and peasants.
-- @min_land_2: Continue taking control of uncultivated land and redistribute it to cooperatives and peasants.
-- @min_works_1: Begin public works and infrastructure construction across Italy.
-- @min_works_2: Continue public works construction across Italy.
-- @min_nationalise_1: Begin nationalising key services with compensation.
-- @min_nationalise_2: Continue nationalising key services with compensation.
-- @root: Do not implement the economic plan.
+- @min_tax_1: 세법 개정에 착수한다.
+- @min_tax_2: 세법 개정을 지속한다.
+- @min_land_1: 경작되지 않은 토지를 장악하여 협동조합과 소농에게 재분배한다.
+- @min_land_2: 미경작지를 계속 장악하고 협동조합과 소농에게 재분배를 지속한다.
+- @min_works_1: 이탈리아 전역에서 공공 사업 및 사회 기반 시설 건설을 시작한다.
+- @min_works_2: 이탈리아 전역에서 공공 사업 건설을 지속한다.
+- @min_nationalise_1: 보상과 함께 핵심 서비스 국유화를 시작한다.
+- @min_nationalise_2: 보상과 함께 핵심 서비스 국유화를 지속한다.
+- @root: 경제 계획을 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @min_tax_1
-subtitle: [? if finance_minister_party = "PPI": Thankfully, the PPI seems willing to aid us. ?][? if finance_minister_party = psi_name: We can make taxes more progressive and root out corruption. ?]
+subtitle: [? if finance_minister_party = "PPI": 다행히 이탈리아 인민당이 우리를 도울 의향이 있는 것 같습니다. ?][? if finance_minister_party = psi_name: 세금을 더 누진적으로 만들고 부패를 뿌리 뽑을 수 있습니다. ?]
 view-if: tax_reformed = 0
 choose-if: finance_minister_party = psi_name or finance_minister_party = "PPI"
-unavailable-subtitle: We do not control the Financial Ministry.
+unavailable-subtitle: 우리는 재무부를 장악하고 있지 않습니다.
 on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; ppi_moderates += 0.2 if ppi_left < ppi_right; socialist_sentiment += 2; republican_sentiment += 2;
 
-We begin the slow and arduous process of reviewing and revising the tax code, removing loopholes and making it more progressive, albeit not our only goal.
+우리는 제도의 허점을 없애고 조세 제도를 더 누진적으로 만드는 것을 포함하여, 비록 그것만이 유일한 목표는 아니지만, 느리고 힘든 세법 검토 및 개정 과정을 시작했습니다.
 
 @min_tax_2
-subtitle: [? if finance_minister_party = "PPI": Thankfully, the PPI seems willing to aid us. ?][? if finance_minister_party = psi_name: We can continue making taxes more progressive and root out corruption. ?]
+subtitle: [? if finance_minister_party = "PPI": 다행히 이탈리아 인민당이 우리를 도울 의향이 있는 것 같습니다. ?][? if finance_minister_party = psi_name: 계속해서 조세 제도를 더 누진적으로 만들고 부패를 뿌리 뽑을 수 있습니다. ?]
 view-if: tax_reformed > 0
 choose-if: finance_minister_party = psi_name or finance_minister_party = "PPI"
-unavailable-subtitle: We do not control the Financial Ministry.
+unavailable-subtitle: 우리는 재무부를 장악하고 있지 않습니다.
 max-visits: 2
 on-arrival: tax_reformed += 1; workers_psi += 3*(1-dissent); middle_class_psi -= 1; industrialists_psi -= 1; ldr_relation -= 2; ul_relation -= 2; psri_relation += 5; upper_tax_rates += 1 if (tax_reformed = 3 and upper_tax_rates >= 5); lower_tax_rates += 1 if (tax_reformed = 3 and lower_tax_rates <= 5); ppi_moderates += 0.1 if ppi_left < ppi_right; socialist_sentiment += 1; republican_sentiment += 2; economic_growth += 0.1 if economic_growth < 0 and tax_reformed = 3;
 
-[? if tax_reformed = 2: We continue reforming the tax code, slowly but surely bringing it to modern standards and improving the bureaucracy plaguing it. ?]
+[? if tax_reformed = 2: 우리는 계속해서 세법을 개정하여, 점진적이지만 확실하게 현대적인 기준으로 바꾸고 이를 저해하는 관료주의를 개선했습니다. ?]
 
-[? if tax_reformed = 3: We finally finalise the overhaul of the tax code, whittling down corruption and loopholes within the system. Fortunately, and more surprisingly, the more efficient taxation system has allowed our yearly budget to increase without being forced to increase taxes. ?]
+[? if tax_reformed = 3: 마침내 세법 개정을 마무리하며, 제도 내 부패와 허점을 줄였습니다. 다행히도, 더욱 놀라운 점은, 효율성이 높아진 조세 제도 덕분에 증세 없이도 연간 예산을 늘릴 수 있게 되었다는 것입니다. ?]
 
-- @root: Excellent.
+- @root: 훌륭하군.
 
 @min_land_1
-subtitle: We can redistribute unused and uncultivated land to keep the lower unemployment.
+subtitle: 사용되지 않는 미경작지를 재분배하여 실업률을 낮출 수 있습니다.
 view-if: uncultivated_redistributed = 0
 choose-if: agriculture_minister_party = psi_name and judicial_reform > 0
-unavailable-subtitle: [? if not agriculture_minister_party = psi_name : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 0 : The judiciary would not support this. ?]
+unavailable-subtitle: [? if not agriculture_minister_party = psi_name : 우리는 농업부를 장악하고 있지 않습니다. ?][? if judicial_reform <= 0 : 사법부가 이를 지지하지 않을 것입니다. ?]
 on-arrival: uncultivated_redistributed += 1; unemployment -= 0.2 if unemployment >= 8; unemployment -= 0.1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); economic_growth += 0.1; economic_growth += 0.2 if economic_growth < 0; ldr_moderates += 0.2; socialist_sentiment += 4;
 
-We begin redistributions of uncultivated lands of large estates via legal means, decreasing unemployment and increasing the rural populace.
+우리는 법적 절차를 통해 대규모 장원의 미경작지를 재분배하여 실업률을 낮추고 농촌 인구를 늘리기 시작했습니다.
 
 @min_land_2
-subtitle: We can continue redistributing uncultivated land legally.
+subtitle: 합법적으로 미경작지를 계속 재분배할 수 있습니다.
 view-if: uncultivated_redistributed > 0
 choose-if: agriculture_minister_party = psi_name and judicial_reform > 1
-unavailable-subtitle: [? if not agriculture_minister_party = psi_name : We do not control the Agricultural Ministry. ?][? if judicial_reform <= 1 : The judiciary would not support this. ?]
+unavailable-subtitle: [? if not agriculture_minister_party = psi_name : 우리는 농업부를 장악하고 있지 않습니다. ?][? if judicial_reform <= 1 : 사법부가 이를 지지하지 않을 것입니다. ?]
 max-visits: 2
 on-arrival: uncultivated_redistributed += 1; unemployment -= 0.1 if unemployment >= 8; unemployment -= 0.2 if uncultivated_redistributed = 3; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); rural += 2 if uncultivated_redistributed = 3; ldr_moderates += 0.2; economic_growth += 0.2; economic_growth += 0.1 if economic_growth < 0
 
-[? if uncultivated_redistributed = 2: We continue redistributing land via the judicial system, as people are able to work again, reducing unemployment. ?]
+[? if uncultivated_redistributed = 2: 우리는 사법 제도를 통해 계속해서 토지를 재분배하여 사람들이 다시 일할 수 있게 함으로써 실업률을 낮추었습니다. ?]
 
-[? if uncultivated_redistributed = 3: We have been able to redistribute a significant amount of uncultivated land to cooperatives, comprised of unemployed or veterans, increasing rural migration as well. ?]
+[? if uncultivated_redistributed = 3: 실업자나 퇴역 군인으로 구성된 협동조합에 상당량의 미경작지를 재분배하여 농촌 이주를 증가시킬 수 있었습니다. ?]
 
-- @root: Excellent.
+- @root: 훌륭하군.
 
 @min_works_1
-subtitle: -1 Budget - We can utilise our surplus to continue economic development and reduce unemployment. [? if public_works_minister_party != psi_name :- Thankfully, the [+ public_works_minister_party +] seems willing to help us. ?]
+subtitle: -1 예산 - 잉여 예산을 활용하여 지속적인 경제 발전과 실업률 감소를 꾀할 수 있습니다. [? if public_works_minister_party != psi_name :- 다행히 [+ public_works_minister_party +]가 우리를 기꺼이 도울 것 같습니다. ?]
 view-if: min_public_works = 0
 choose-if: (public_works_minister_party = psi_name or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and (budget > 0 or violent_revolution)
-unavailable-subtitle: -1 Budget - [? if not public_works_minister_party = psi_name and not public_works_minister_party == ldr_name and not public_works_minister_party = ul_name : We do not control the Public Works Ministry. ?][? if budget <= 0 : We do not have a surplus. ?]
+unavailable-subtitle: -1 예산 - [? if not public_works_minister_party = psi_name and not public_works_minister_party == ldr_name and not public_works_minister_party = ul_name : 우리는 공공사업부를 장악하고 있지 않습니다. ?][? if budget <= 0 : 잉여 예산이 없습니다. ?]
 on-arrival: budget -= 1; min_public_works += 1; veterans_psi += 3*(1-dissent); rural_psi += 1*(1-dissent); inflation += 0.2; inflation += 0.1 if budget < 0; economic_growth += 0.3; economic_growth += 0.1 if economic_growth < 0; unemployment -= 0.4; unemployment -= 0.1 if unemployment >= 8
 
-We order the construction of railways, canals, streets and more, hiring unemployed workers to do so.
+철도, 운하, 도로 등의 건설을 지시하고, 실업자들을 고용하여 공사를 진행했습니다.
 
 @min_works_2
-subtitle: -[+ min_public_works +] - We can continue utilising our surplus to continue economic development and reduce unemployment. [? if public_works_minister_party != psi_name :- Thankfully, the [+ public_works_minister_party +] seems willing to help us. ?]
+subtitle: -[+ min_public_works +] - 잉여 예산을 계속 활용하여 지속적인 경제 발전과 실업률 감소를 꾀할 수 있습니다. [? if public_works_minister_party != psi_name :- 다행히 [+ public_works_minister_party +]가 우리를 기꺼이 도울 것 같습니다. ?]
 view-if: min_public_works > 0
 choose-if: (public_works_minister_party = psi_name or public_works_minister_party == ldr_name or public_education_minister_party = ul_name) and (budget >= min_public_works or violent_revolution)
-unavailable-subtitle: -[+ min_public_works +] Budget - [? if not public_works_minister_party = psi_name and not public_works_minister_party == ldr_name and not public_works_minister_party = ul_name : We do not control the Public Works Ministry. ?][? if budget < min_public_works : We do not have a surplus. ?]
+unavailable-subtitle: -[+ min_public_works +] 예산 - [? if not public_works_minister_party = psi_name and not public_works_minister_party == ldr_name and not public_works_minister_party = ul_name : 우리는 공공사업부를 장악하고 있지 않습니다. ?][? if budget < min_public_works : 잉여 예산이 없습니다. ?]
 max-visits: 2
 on-arrival: budget -= min_public_works; min_public_works += 1; veterans_psi += 3*(1-dissent)*min_public_works; rural_psi += 1*(1-dissent)*min_public_works; inflation += 0.2*min_public_works; inflation += 0.3 if budget < 0; economic_growth += 0.3*min_public_works; economic_growth += 0.2 if economic_growth < 0; unemployment -= 0.4*min_public_works; unemployment -= 0.2 if unemployment >= 8; socialist_sentiment += 3
 
-[? if min_public_works = 2: We continue constructing public works, improving the transition from the post-war economy. ?]
+[? if min_public_works = 2: 공공 사업을 계속하여 전후 경제로의 전환을 개선했습니다. ?]
 
-[? if min_public_works = 3: We have constructed extensive public works across Italy, stimulating the economy, albeit causing some slight inflation. ?]
+[? if min_public_works = 3: 이탈리아 전역에 대규모 공공 사업을 건설하여 경제를 활성화했지만, 약간의 인플레이션이 발생했습니다. ?]
 
-- @root: Excellent.
+- @root: 훌륭하군.
 
 @min_nationalise_1
-subtitle: -2 Budget - We can buy out bankrupt or defunct companies and repurpose them.
+subtitle: -2 예산 - 파산했거나 폐업한 회사를 인수하여 재활용할 수 있습니다.
 view-if: min_compensation = 0
 choose-if: labour_minister_party = psi_name and (budget > 1 or violent_revolution)
-unavailable-subtitle: -2 Budget - [? if not labour_minister_party = psi_name : We do not control the Labour Ministry. ?][? if budget <= 1 : We do not have a surplus. ?]
+unavailable-subtitle: -2 예산 - [? if not labour_minister_party = psi_name : 우리는 노동부를 장악하고 있지 않습니다. ?][? if budget <= 1 : 잉여 예산이 없습니다. ?]
 on-arrival: budget -= 2; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.4 if unemployment >= 8; workers_psi += 3*(1-dissent); veterans_psi += 1*(1-dissent); inflation += 2.3; industrialists_pnf += 2; socialist_sentiment += 2
 
-We begin buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion.
+현재 경제 위기로 파산하거나 폐업한 기업들을 인수하여 경제에 대한 정부 통제를 확대하기 시작했습니다. 물론 산업 자본가들과 지주들은 우리의 개입을 달가워하지 않습니다.
 
 @min_nationalise_2
-subtitle: -[+ compensation_cost +] - We can continue buying up idling factories to repurpose them.
+subtitle: -[+ compensation_cost +] - 우리는 계속해서 유휴 공장을 사들여 재활용할 수 있습니다.
 view-if: min_compensation > 0
 choose-if: labour_minister_party = psi_name and (budget >= compensation_cost or violent_revolution)
-unavailable-subtitle: -[+ compensation_cost +] Budget - [? if not labour_minister_party = psi_name : We do not control the Labour Ministry. ?][? if budget < compensation_cost : We do not have a surplus. ?]
+unavailable-subtitle: -[+ compensation_cost +] 예산 - [? if not labour_minister_party = psi_name : 우리는 노동부를 장악하고 있지 않습니다. ?][? if budget < compensation_cost : 잉여 예산이 없습니다. ?]
 max-visits: 2
 on-arrival: budget -= compensation_cost; min_compensation += 1; nationalisation_progress += 1; unemployment -= 0.6 if unemployment >= 8; unemployment -= 0.1 if min_compensation > 1; workers_psi += 3*(1-dissent)*min_compensation; veterans_psi += 1*(1-dissent)*min_compensation; inflation += 1.6; inflation += 0.4 if min_compensation > 1; industrialists_pnf += 2*min_compensation; coalition_dissent += 1 if centre_left_coalition
 
-[? if min_compensation = 2: We continue buying up companies who have gone bankrupt or defunct due to the current economic crisis, expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
+[? if min_compensation = 2: 현재 경제 위기로 파산하거나 폐업한 기업들을 계속 인수하여 경제에 대한 정부 통제를 확대했습니다. 물론 산업 자본가들과 지주들은 우리의 개입을 달가워하지 않습니다. ?]
 
-[? if min_compensation = 3: We expand our buyouts to idling factories and companies as well, drastically expanding government control over the economy. Industrialists and landowners are not pleased at our intrusion. ?]
+[? if min_compensation = 3: 유휴 공장 및 기업으로 인수를 확대하여 경제에 대한 정부 통제를 대폭 강화했습니다. 물론 산업 자본가들과 지주들은 우리의 개입을 달가워하지 않습니다. ?]
 
-- @root: Excellent.
+- @root: 훌륭하군.
