@@ -1,4 +1,4 @@
-title: Internal Security
+title: 내부 안보
 new-page: true
 is-card: true
 tags: govt_affairs, national_def
@@ -6,19 +6,19 @@ on-arrival: interior_policy_timer = 3 if not national_congress_seen; week_action
 view-if: psi_in_government = 1 and (interior_minister_party = psi_name or (liberal_crackdown_accepted and not crackdown_done)) and interior_policy_timer <= 0
 card-image: img/portraits/FilippoTurati.jpg
 
-= Internal Security
+= 내부 안보
 
-[? if interior_minister_party = psi_name: Being in control of the Interior Ministry, we hold control of the Carabinieri, the national gendarmerie, alongside the War Ministry, we can take care of the unstable internal situation of Italy. ?]
+[? if interior_minister_party = psi_name: 내무부 장악을 통해 우리는 국방부와 함께 국가 헌병대인 이탈리아 헌병대를 통제하에 두게 되었으므로, 이탈리아의 불안정한 국내 정세를 안정시킬 수 있습니다. ?]
 
-[? if liberal_crackdown_accepted and not interior_minister_party = psi_name : Although not in control of the Interior Ministry, our coalition partners have given us temporary control over matters of the Carabinieri. ?]
+[? if liberal_crackdown_accepted and not interior_minister_party = psi_name : 우리가 내무부를 장악한 것은 아니지만, 연정 파트너들이 우리에게 이탈리아 헌병대 관련 사안에 대한 임시 지휘권을 부여했습니다. ?]
 
-- @loyalty_interior: Improve the loyalty of the Carabinieri.
-- @investigate_corruption: Investigate corruption by big businesses.
-- @crackdown_far_right: Crack down on paramilitary organisations among the far right.
-- @crackdown_republican: Crack down on paramilitary organisations among the republicans.
-- @crackdown_far_left: Crack down on paramilitary organisations among the far left.
-- @domestic_enemies: Investigate or ban our domestic enemies.
-- @root: Take no action for now.
+- @loyalty_interior: 이탈리아 헌병대의 충성도를 높인다.
+- @investigate_corruption: 대기업 부패를 조사한다.
+- @crackdown_far_right: 극우파 준군사조직을 단속한다.
+- @crackdown_republican: 공화파 준군사조직을 단속한다.
+- @crackdown_far_left: 극좌파 준군사조직을 단속한다.
+- @domestic_enemies: 국내의 적을 조사하거나 불법화한다.
+- @root: 당분간 아무 조치도 취하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -26,9 +26,9 @@ card-image: img/portraits/FilippoTurati.jpg
 view-if: interior_minister_party = psi_name
 on-arrival: interior_police_loyalty += 0.1;
 
-With some specific reassignments and improved training methods, we can root out reactionary and sympathetic fascist influence within the Carabinieri.
+특정 보직 조정과 개선된 훈련 방식을 통해, 우리는 이탈리아 헌병대 내부의 반동 및 파시스트 동조 세력을 뿌리 뽑을 수 있습니다.
 
-Current Carabinieri loyalty: [+ interior_police_loyalty : loyalty +]
+현재 이탈리아 헌병대 충성도: [+ interior_police_loyalty : loyalty +]
 
 @investigate_corruption
 view-if: interior_minister_party = psi_name
@@ -37,11 +37,11 @@ go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investi
 @investigate_corruption_success
 on-arrival: investigate_corruption += 1; workers_psi += 5*(1-dissent) if not in_unstable_coalition; middle_class_psi += 2*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; middle_class_clc += 2*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; middle_class_psi += 2*(1-dissent) if socialist_catholic_coalition; inflation -= 0.1 if inflation > 3; inflation -= 0.2 if inflation >= 8
 
-Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the [+ psi_name +].
+대기업의 부패야 당연히 만연해 있습니다. 우리는 다수의 비리를 적발했으며, 이를 공론화함으로써 [+ interior_minister +] 내무장관의 업적과 [+ psi_name +]의 위상을 드높일 수 있습니다.
 
 @investigate_corruption_failure
 
-Unfortunately, our investigations have failed to turn up anything. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+유감스럽게도, 우리의 조사는 아무런 성과를 거두지 못했습니다. 조사 대상자들이 이탈리아 헌병대 내 첩자들로부터 정보를 미리 받았다는 소문이 돕니다.
 
 @crackdown_far_right
 go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5 or (liberal_crackdown_accepted and not interior_minister_party = psi_name); crackdown_far_right_failure if interior_police_loyalty < 0.5 and interior_minister_party = psi_name
@@ -49,11 +49,11 @@ go-to: crackdown_far_right_success if interior_police_loyalty >= 0.5 or (liberal
 @crackdown_far_right_success
 on-arrival: crackdown_far_right += 1 if liberal_crackdown_accepted; fascist_bomb_timer += 6 if fascist_terror; ard_strength -= 5; fdc_strength -= 7; abl_strength -= 3; liberal_crackdown_complete = 1 if crackdown_far_left > 0; democratisation += 1; nationalist_sentiment -= 3; violent_prevalence -= 0.01
 
-A number of coordinated raids and arrests have slightly paralysed the far-right paramilitaries.
+여러 차례의 조직적인 급습과 체포 작전으로 극우 준군사조직의 활동이 다소 위축되었습니다.
 
 @crackdown_far_right_failure
 
-Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+유감스럽게도, 우리의 급습은 허사로 돌아갔고 체포 영장 집행은 지연되었습니다. 수사 대상자들이 이탈리아 헌병대 내 첩자들로부터 정보를 미리 받았다는 소문이 돕니다.
 
 @crackdown_republican
 view-if: violent_revolution and republican_terror
@@ -62,11 +62,11 @@ go-to: crackdown_republican_success if interior_police_loyalty >= 0.5; crackdown
 @crackdown_republican_success
 on-arrival: republican_bomb_timer += 6 if fascist_terror; 
 
-A number of coordinated raids and arrests have slightly paralysed the republican paramilitaries.
+여러 차례의 조직적인 급습과 체포 작전으로 공화파 준군사조직의 활동이 다소 위축되었습니다.
 
 @crackdown_republican_failure
 
-Unfortunately, our raids have turned up empty, our arrest warrants stalled. Rumors are that the targets of our investigation were tipped off by infiltrators within the Carabinieri.
+유감스럽게도, 우리의 급습은 허사로 돌아갔고 체포 영장 집행은 지연되었습니다. 수사 대상자들이 이탈리아 헌병대 내 첩자들로부터 정보를 미리 받았다는 소문이 돕니다.
 
 @crackdown_far_left
 view-if: liberal_crackdown_accepted or communist_terror
@@ -75,5 +75,5 @@ go-to: crackdown_far_left_success
 @crackdown_far_left_success
 on-arrival: crackdown_far_left += 1 if liberal_crackdown_accepted; communist_bomb_timer += 6 if communist_terror; rg_strength -= 5; communist_dissent += 7*(1-dissent); liberal_crackdown_complete = 1 if crackdown_far_right > 0; democratisation += 1; socialist_sentiment -= 3; coalition_dissent -= 1; violent_prevalence -= 0.01; sov_rg_strength *= 0.98 if pcdi_formed; sov_rg_militancy *= 0.98 if pcdi_formed;
 
-A number of coordinated raids and arrests have slightly paralysed the far-left paramilitaries, as well as orders from party leadership to downsize the Red Guards. The left-wing of the party isn't exactly enthused about our decision, to say the least.
+여러 차례의 조직적인 급습과 체포, 그리고 당 지도부의 적위대 규모 축소 명령으로 극좌 준군사조직의 활동이 다소 위축되었습니다. 당내 좌파 세력은 우리의 결정에, 좋게 말해도, 딱히 열광적이지는 않습니다.
 

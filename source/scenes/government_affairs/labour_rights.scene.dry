@@ -1,4 +1,4 @@
-title: Labour Rights
+title: 노동권
 new-page: true
 is-card: true
 view-if: psi_in_government and labour_minister_party = psi_name and labour_rights_timer <= 0 
@@ -8,18 +8,18 @@ card-image: img/portraits/RinaldoRigola.png
 tags: govt_affairs
 go-to: labour_rights_menu
 
-= Labour Rights
+= 노동권
 
-With control of the Labour & Social Security Ministry, we can set national standards for labour. Our supporters expect us to enact worker-aligned reforms, such as working hours or safety regulations.
+노동사회보장부를 장악함으로써, 우리는 국가적 노동 기준을 수립할 수 있습니다. 지지자들은 우리가 노동 시간이나 안전 규제처럼 노동자에게 유리한 개혁을 시행하기를 기대하고 있습니다.
 
 @labour_rights_menu
 
-- @working_hours: Develop and enforce the 40-hour work week.
-- @shorten_hours: Shorten work hours less than 40 hours.
-- @safety: Develop and enforce safety regulations.
-- @wage: Develop and enforce a minimum wage.
-- @unemployment_insurance: Begin the Unemployment Insurance Program.
-- @root: Do not enact any policies.
+- @working_hours: 주 40시간 근무제를 개발하고 시행한다.
+- @shorten_hours: 주 40시간 미만으로 근무 시간을 단축한다.
+- @safety: 안전 규정을 개발하고 시행한다.
+- @wage: 최저 임금제를 개발하고 시행한다.
+- @unemployment_insurance: 실업 보험 제도를 시작한다.
+- @root: 어떠한 정책도 시행하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -27,30 +27,30 @@ With control of the Labour & Social Security Ministry, we can set national stand
 view-if: working_hours < 2
 on-arrival: working_hours += 1; labour_dissent -= 5; syndicalist_dissent -= 2 if syndicalist_active; labour_strength += 5; syndicalist_strength += 2; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ds_relation -= 4; coalition_dissent += 1 if centre_left_coalition; inflation += 0.1; economic_growth -= 0.1; unemployment += 0.1;
 
-The Kingdom of Italy does not have a current labour code, nor a set maximum amount of hours per work week. However, taking from our allies in the Entente and the Weimar Republic, the party advocates for a new 40-hour work week. 
+이탈리아 왕국에는 현재 노동법도, 법정 주당 최대 노동 시간도 없습니다. 하지만 협상국과 바이마르 공화국의 동맹국들 사례를 참고하여, 우리 당은 새로운 주 40시간 노동제를 주장합니다.
 
-Now, with the force of the Labour Ministry, we are able to implement this work week. The bourgeoisie and their political representatives are displeased.
+이제 노동부의 권한으로 주 40시간 근무제를 시행할 수 있게 되었습니다. 부르주아 계급과 그들을 대변하는 정치인들은 불쾌감을 드러냈습니다.
 
 @shorten_hours
 view-if: working_hours >= 2
-subtitle: Could we induce more hiring and reduce unemployment by reducing work hours?
+subtitle: 근무 시간 단축으로 고용을 늘리고 실업률을 줄일 수 있을까요?
 on-arrival: working_hours += 1; labour_dissent -= 8; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 5; workers_psi += 7*(1-dissent) if not in_unstable_coalition; workers_clc += 7*(1-dissent) if centre_left_coalition; workers_scc += 7*(1-dissent) if socialist_catholic_coalition; ldr_relation -= 4; ul_relation -= 4; ds_relation -= 2; coalition_dissent += 1 if in_unstable_coalition; capital_strike_progress += 1; socialist_sentiment += 2; ldr_right += 0.1; ds_right += 0.1; ul_giolitti -= 0.1; inflation -= 0.1; economic_growth -= 0.1; unemployment += 0.1
 
-Some in the labour movement argue that by reducing the maximum number of hours worked, employers would be induced to hire more workers, reducing unemployment. The argument also goes that this would be complementary to deflation, maintaining the same purchasing power for workers by cutting hours without cutting wages. Employers, however, resist this policy, arguing for more flexibility in hiring and firing.
+노동계 일각에서는 최대 노동 시간을 줄이면 고용주가 더 많은 노동자를 고용하게 되어 실업률이 감소할 것이라고 주장합니다. 또한 임금 삭감 없이 노동 시간만 줄이면 노동자의 구매력을 유지하여 디플레이션을 상쇄하는 효과도 있다는 주장입니다. 하지만 고용주들은 고용과 해고의 유연성을 더 보장해야 한다며 이 정책에 반대합니다.
 
 @safety
 on-arrival: workers_safety += 1; labour_dissent -= 5; syndicalist_dissent -= 3 if syndicalist_active; labour_strength += 2; workers_psi += 3*(1-dissent) if not in_unstable_coalition; workers_clc += 3*(1-dissent) if centre_left_coalition; workers_scc += 3*(1-dissent) if socialist_catholic_coalition; capital_strike_progress += 1 if workers_safety >= 3; socialist_sentiment += 1 if workers_safety >= 3;
 
-The Labour Ministry works on developing and enforcing safety regulations, in order to ensure healthy working conditions for the proletariat. [? if workers_safety >= 3 : Businesses have begun to argue that our focus on safety is overbearing and unnecessary, interfering with the economy. ?]
+노동부는 프롤레타리아의 건강한 노동 환경을 보장하기 위해 안전 규정을 개발하고 시행하고 있습니다. [? if workers_safety >= 3 : 기업들은 우리의 안전 강조 정책이 과도하고 불필요하게 경제 활동을 방해한다고 주장하기 시작했습니다. ?]
 
 @wage
 on-arrival: wage_increase += 1; labour_dissent -= 6; labour_strength += 3; workers_psi += 5*(1-dissent) if not in_unstable_coalition; workers_clc += 5*(1-dissent) if centre_left_coalition; workers_scc += 5*(1-dissent) if socialist_catholic_coalition; capital_strike_progress += 1 if wage_increase >= 3; socialist_sentiment += 1 if wage_increase >= 3; economic_growth -= 0.1; unemployment += 0.1; inflation -= 0.2; economic_growth -= 0.2 if wage_increase >= 3; unemployment += 0.1 if wage_increase >= 3; inflation -= 0.2 if wage_increase >= 3; 
 
-The Labour Ministry works on developing and enforcing a standard national minimum wage, a new concept developed recently and popularised in the United Kingdom. [? if wage_increase >= 3 : Businesses have begun to argue that the minimum wage is too high, interfering with the economy. ?]
+노동부는 최근 영국에서 개발되어 널리 알려진 새로운 개념인 전국 표준 최저 임금제를 개발하고 시행하고 있습니다. [? if wage_increase >= 3 : 기업들은 최저 임금이 너무 높아 경제에 부담이 된다고 주장하기 시작했습니다. ?]
 
 @unemployment_insurance
-subtitle: -2 Budget - This will be a burden to our budget if we expand the scope too far. [? if catholic_charity_accepted : The creation of an non-Catholic welfare program would violate our coalition agreements! ?][? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?]
+subtitle: -2 예산 - 범위를 너무 확대하면 예산에 부담이 될 것입니다. [? if catholic_charity_accepted : 비가톨릭 복지 프로그램을 만드는 것은 연정 협약 위반입니다! ?][? if budget < 2 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?]
 view-if: not unemployment_insurance_founded
 choose-if: not national_economic_recovery or budget > 1
-unavailable-subtitle: Not enough budget. (Need 2)
+unavailable-subtitle: 예산이 부족합니다. (2 필요)
 go-to: welfare_gov.unemployment_insurance_program

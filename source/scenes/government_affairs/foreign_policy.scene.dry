@@ -1,4 +1,4 @@
-title: Foreign Policy
+title: 외교 정책
 new-page: true
 is-card: true
 view-if: psi_in_government and foreign_minister_party = psi_name and foreign_policy_timer <= 0
@@ -7,105 +7,105 @@ on-arrival: week_actions += 1; foreign_policy_timer = 3;
 card-image: img/portraits/GiacomoMatteotti.jpg
 tags: govt_affairs, national_def
 
-= Foreign Policy
+= 외교 정책
 
-Being in control of Foreign Policy, we can direct it to advance our policies, whether that is aiding our socialist allies in the East, or negotiating war debts to alleviate the current economic situation.
+외교 정책을 주도함으로써, 우리는 동방의 사회주의 동맹국들을 지원하거나, 현 경제 위기 완화를 위해 전쟁 채무를 협상하는 등 우리의 정책 목표를 달성할 수 있습니다.
 
 # foreign ministry stuff
 
-- @improve_balkan_ties: Establish diplomatic ties with our Yugoslav neighbour.
-- @improve_allied_relations: Improve ties with our european Entente allies.
-- @aid_entente: Send aid to the Entente allies.
-- @improve_american_relations: Improve ties with the United States.
-- @improve_soviet_relations: Establish diplomatic ties with the Russian SFSR.
-- @aid_soviet_union: Send aid to the Red Army.
-- @improve_papal_relations: Improve ties with the Papacy.
-- @negotiate_us: Negotiate regarding our war debts with the United States.
-- @negotiate_uk: Negotiate regarding our war debts with the United Kingdom.
-- @negotiate_done_us: The US is finally willing to make a deal regarding our debt!
-- @negotiate_done_uk: The UK is finally willing to make a deal regarding our debt!
-- @reopen_negotiations: Perhaps it is time to resolve the Roman Question?
-- @root: Keep the Foreign Ministry as is.
+- @improve_balkan_ties: 이웃 국가인 유고슬라비아와 외교 관계를 수립한다.
+- @improve_allied_relations: 유럽 협상 동맹국들과의 관계를 개선한다.
+- @aid_entente: 협상 동맹국에 원조를 제공한다.
+- @improve_american_relations: 미국과의 관계를 개선한다.
+- @improve_soviet_relations: 러시아 소비에트 연방 사회주의 공화국과 외교 관계를 수립한다.
+- @aid_soviet_union: 적군에 원조를 제공한다.
+- @improve_papal_relations: 교황청과의 관계를 개선한다.
+- @negotiate_us: 미국과의 전쟁 채무 문제를 협상한다.
+- @negotiate_uk: 영국과의 전쟁 채무 문제를 협상한다.
+- @negotiate_done_us: 미국이 마침내 우리의 채무에 대한 협상에 응했다!
+- @negotiate_done_uk: 영국이 마침내 우리의 채무에 대한 협상에 응했다!
+- @reopen_negotiations: 이제 로마 문제를 해결할 때가 되지 않았을까?
+- @root: 외무부를 그대로 둔다.
 - @easy_discard
 - @cancel_advisor_action
 
 @aid_soviet_union
-subtitle: -1 Budget - We will provide support to the Soviets. [? if liberal_aid_accepted : Providing aid to the Russian SFSR would violate coalition agreements! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
+subtitle: -1 예산 - 소비에트 연방을 지원할 것입니다. [? if liberal_aid_accepted : 러시아 소비에트 연방 사회주의 공화국 원조는 연정 합의 위반입니다! ?][? if liberal_budget_accepted and budget < 1 : 이로 인해 재정 적자가 발생할 것입니다! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : 이는 협상국과의 동맹 관계를 저해할 것입니다! ?]
 view-if: not rcw_over or soviet_recovery_timer > 0 or (violent_revolution and soviet_influence > 0)
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: coalition_dissent += 1 if in_unstable_coalition; soviet_aid_given += 1; budget -= 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if soviet_recovery_timer > 0; soviet_relation += 2; ldr_relation -= 7*(1-dissent); ul_relation -= 4*(1-dissent); psri_relation += 3*(1-dissent); ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation)); ldr_right += 0.2; ds_left -= 0.1; soviet_influence -= 1 if violent_revolution; pcdi_gramsci += 1;
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We are able to send aid to the Red Army via our diplomatic channels, and the Soviets thank us for the aid. [? if in_unstable_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
+외교 채널을 통해 적군에 원조를 보낼 수 있었고, 소비에트는 이에 감사를 표했습니다. [? if in_unstable_coalition : 그러나 연정 파트너들은 우리의 원조를 '예산 낭비'라며 탐탁지 않아 합니다. ?]
 
-[? if ldr_promise_failed : Unfortunately, our decision to send aid has violated our agreement with the liberals, who have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 유감스럽게도, 우리의 원조 결정은 자유당과의 합의를 위반하였고, 그들은 이미 면담을 요청해 왔습니다. ?]
 
 @improve_balkan_ties
 on-arrival: balkan_relation += 1; foreign_invasion_time += 3 if violent_revolution
 
-We begin improving our relations with the newly established state of Yugoslavia, whom are naturally wary of us. [? if adriatic_timer > 0 : The Adriatic Question hangs over our relations, as well. ?]
+우리를 경계하는 신생 국가 유고슬라비아와의 관계 개선을 시작합니다. [? if adriatic_timer > 0 : 아드리아해 문제 또한 양국 관계에 그림자를 드리우고 있습니다. ?]
 
 @improve_allied_relations 
 on-arrival: entente_relation += 1; ldr_relation += 4*(1-dissent); ul_relation += 4*(1-dissent); ldr_right -= 0.1; ul_giolitti += 0.1; foreign_invasion_time += 3 if violent_revolution
 
-We continue improving our relations with our former allies in the Entente. [? if centre_left_coalition : Our coalition partners are pleased at our continued alignment. ?]
+이전 협상 동맹국들과의 관계를 지속적으로 개선합니다. [? if centre_left_coalition : 연정 파트너들은 우리가 지속적으로 동맹 노선을 유지하는 것에 만족하고 있습니다. ?]
 
 @aid_entente
-subtitle: -1 Budget - We will provide support to the Entente. [? if liberal_aid_accepted : Providing aid to the Russian SFSR would violate coalition agreements! ?][? if liberal_budget_accepted and budget < 1 : This will put us into a deficit! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : This will disrupt our alignment with the Entente! ?]
+subtitle:  -1 예산 - 협상국에 지원을 제공할 것입니다. [? if liberal_aid_accepted : 러시아 소비에트 연방 사회주의 공화국에 원조를 제공하는 것은 연정 합의 위반입니다! ?][? if liberal_budget_accepted and budget < 1 : 이로 인해 재정 적자가 발생할 것입니다! ?][? if liberal_foreign_accepted and soviet_relation <= entente_relation : 이는 협상국과의 동맹 관계를 저해할 것입니다! ?]
 view-if: violent_revolution
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: coalition_dissent += 1 if in_unstable_coalition; budget -= 1; entente_relation += 2; ldr_promise_failed = 1 if ((budget < 0 and liberal_budget_accepted) or liberal_aid_accepted or (liberal_foreign_accepted and soviet_relation > entente_relation)); foreign_invasion_time += 12 
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-We are able to send aid to the Entente via our diplomatic channels, and they thank us for the aid, hopefully delaying any plans regarding us as well. [? if in_unstable_coalition : Our coalition partners, however, are less than happy, calling our aid a 'waste of funds'. ?]
+외교 채널을 통해 협상국에 원조를 제공할 수 있었고, 그들은 감사를 표했습니다. 이로써 우리에 겨냥한 어떠한 계획도 미뤄지기를 바랍니다. [? if in_unstable_coalition : 그러나 연정 파트너들은 우리의 원조가 '예산 낭비'라며 탐탁지 않아 합니다. ?]
 
-[? if ldr_promise_failed : Unfortunately, our decision to send aid has violated our agreement with the liberals, who have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 유감스럽게도, 우리의 원조 결정은 자유당과의 합의를 위반하였고, 그들은 이미 면담을 요청해 왔습니다. ?]
 
 @improve_american_relations 
 on-arrival: american_relation += 1;
 
-We continue improving our relations with our former ally in the war of the United States. 
+전쟁 중 우리의 이전 동맹국이었던 미국과의 관계를 지속적으로 개선합니다.
 
 @negotiate_us
-subtitle: Debt negotiation, especially with the United States, will be a long affair.
+subtitle: 부채 협상, 특히 미국과의 협상은 오랜 시간이 걸릴 것입니다.
 choose-if: (american_relation >= 2 and not violent_revolution) or (american_relation >= 3)
 view-if: in_default = 0 and global_economic_recovery and american_debts > 0
-unavailable-subtitle: Our relations with the United States are too poor to attempt negotiations.
+unavailable-subtitle: 미국과의 관계가 너무 좋지 않아 협상을 시도할 수 없습니다.
 on-arrival: american_relation -= 2; american_debts -= 1;
 
-We continue negotiating the terms of the debts we have accumulated to the United States, attempting to pause or at the very least lengthen our debt payment intervals.
+미국에 진 빚의 상환 조건을 재협상하여, 채무 상환을 잠시 유예하거나 최소한 상환 기간이라도 연장하고자 합니다.
 
 @negotiate_uk
-subtitle: Debt negotiation will be a long affair.
+subtitle: 부채 협상은 오랜 시간이 걸릴 것입니다.
 choose-if: (entente_relation >= 2 and not violent_revolution) or (entente_relation >= 3)
 view-if: in_default = 0 and global_economic_recovery and uk_debts > 0
-unavailable-subtitle: Our relations with the Entente are too poor to attempt negotiations.
+unavailable-subtitle: 협상국과의 관계가 너무 좋지 않아 협상을 시도할 수 없습니다.
 on-arrival: entente_relation -= 2; uk_debts -= 1; entente_relation += 1 if labour_government;
 
-We continue negotiating the terms of the debts we have accumulated to the United Kingdom, attempting to pause or at the very least lengthen our debt payment intervals.
+영국에 진 빚의 상환 조건을 재협상하여, 채무 상환을 잠시 유예하거나 최소한 상환 기간이라도 연장하고자 합니다.
 
 @negotiate_done_us
-subtitle: Our negotiations have been successful.
+subtitle: 우리의 협상은 성공적이었습니다.
 view-if: american_debts <= 0 and us_debts_over = 0 and in_default = 0
 on-arrival: us_debts_over = 1; budget += 3; coalition_dissent -= 1 if coalition_dissent > 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 12*(1-dissent); industrialists_psi += 9*(1-dissent); middle_class_psi += 7*(1-dissent); rural_psi += 8*(1-dissent); capital_strike_progress -= 3 if capital_strike_progress > 3; economic_growth += 0.8; economic_growth += 0.2 if economic_growth < 0
 
-Finally, after perilous negotiations with the United States, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1931 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
+마침내, 미국과의 험난한 협상 끝에 상각 기금 계획을 마련했습니다. 이 계획에 따라 우리는 62년에 걸쳐 빚을 상환하게 되며, 1931년부터 상환액이 증가할 것입니다. 다행히 바이마르 공화국과 다른 패전국들로부터 받을 배상금으로 이 빚을 해결할 수 있을 것입니다.
 
-The new plan has boosted confidence of our economy, as well as allowed American investors once banned to invest into Italy once more, giving us significantly more budget to work with.
+새로운 계획은 우리 경제에 대한 신뢰를 회복시켰고, 한때 금지되었던 미국 투자자들의 이탈리아 투자를 다시 허용하여 우리가 활용할 수 있는 예산을 크게 늘려주었습니다.
 
 @negotiate_done_uk
-subtitle: Our negotiations have been successful.
+subtitle: 우리의 협상은 성공적이었습니다.
 view-if: uk_debts <= 0 and uk_debts_over = 0 and in_default = 0
 on-arrival: uk_debts_over = 1; budget += 2; coalition_dissent -= 1 if coalition_dissent > 0; workers_psi += 8*(1-dissent); industrialists_psi += 5*(1-dissent); middle_class_psi += 5*(1-dissent); rural_psi += 5*(1-dissent); capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.6; economic_growth += 0.1 if economic_growth < 0
 
-Finally, after perilous negotiations with the United Kingdom, we have devised a amortisation fund plan. This plan will pay out our debts over the span of 62 years, with the redemption of debt increasing from 1928 onwards. Thankfully, the reparations paid out by the Weimar Republic and other defeated powers will be able to pay off this debt for us. 
+마침내, 영국과의 험난한 협상 끝에 상각 기금 계획을 마련했습니다. 이 계획에 따라 우리는 62년에 걸쳐 빚을 상환하게 되며, 1928년부터 상환액이 증가할 것입니다. 다행히 바이마르 공화국과 다른 패전국들로부터 받을 배상금으로 이 빚을 해결할 수 있을 것입니다.
 
-The new plan has boosted confidence of our economy, giving us more budget to work with.
+이 새로운 계획 덕분에 우리 경제에 대한 신뢰가 회복되어, 가용 예산이 늘어났습니다.
 
 @improve_soviet_relations
-subtitle: [? if liberal_foreign_accepted and soviet_relation + 1 >= entente_relation : This will disrupt our alignment with the Entente! ?]
+subtitle: [? if liberal_foreign_accepted and soviet_relation + 1 >= entente_relation : 이는 협상국과의 동맹 관계를 저해할 것입니다! ?]
 on-arrival: {! 
 Q.soviet_relation += 1; 
 Q.ldr_relation -= 4*(1-Q.dissent); 
@@ -119,16 +119,16 @@ Q.pcdi_gramsci += 0.5;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Our overtures to the Russian SFSR are noticed, and welcomed with open arms by our allies. [? if not rcw_over : However, they are still plagued by a fierce civil war with anti-socialist forces. ?]
+우리 정부의 러시아 소비에트 연방 사회주의 공화국에 대한 관계 개선 시도는 동맹국들에게 주목받으며 열렬한 환영을 받았습니다. [? if not rcw_over : 하지만, 그들은 여전히 반사회주의 세력과의 격렬한 내전으로 시달리고 있습니다. ?]
 
-[? if ldr_promise_failed : Unfortunately, our recent attempts to turn Italy away from the Entente have angered our coalition partners, who have called a meeting with us. ?]
+[? if ldr_promise_failed : 유감스럽게도, 이탈리아를 협상국 진영에서 이탈시키려는 최근의 시도에 연정 파트너들이 분노하며 면담을 요청해 왔습니다. ?]
 
 @improve_papal_relations
 on-arrival: papal_relation += 1; ppi_relation += 4*(1-dissent); ppi_left += 0.1;
 
-We begin slowly mending diplomatic ties between both of our countries[? if not roman_question_answered :, though the Roman Question still hangs above us.?][? if roman_question_answered :. ?]
+우리는 양국 간의 외교 관계를 점진적으로 회복하기 시작합니다[? if not roman_question_answered :, 비록 로마 문제가 여전히 해결되지 않은 채 남아있지만 말입니다.?][? if roman_question_answered :. ?]
 
-The PPI appreciates our efforts, regardless.
+그럼에도 불구하고 이탈리아 인민당은 우리의 노력을 높이 평가합니다.
 
 @reopen_negotiations
 view-if: not roman_question_answered
