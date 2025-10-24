@@ -1,4 +1,4 @@
-title: Investigating Domestic Enemies
+title: 국내의 적 조사
 on-arrival: week_actions += 1
 view-if: psi_in_government = 1 and interior_minister_party = psi_name and not national_congress_seen
 #card-image: img/portraits/SeveringCarl.jpg
@@ -7,87 +7,87 @@ view-if: psi_in_government = 1 and interior_minister_party = psi_name and not na
 
 # this is not a card...
 
-= Investigating Domestic Enemies
+= 국내의 적 조사
 
-As we have control over the Interior Ministry, we can direct police and intelligence services to investigate internal enemies. We can proscribe various organisations.
+내무부를 장악했으니, 경찰과 정보기관을 지휘하여 국내의 적들을 조사할 수 있습니다. 여러 단체의 활동을 금지하는 것도 가능합니다.
 
-- @unban_rg: Unban the Red Guards.
-- @ban_fdc: Ban the Fasci Italiani di Combattimento.
-- @unban_fdc: Unban the Fasci Italiani di Combattimento.
+- @unban_rg: 적위대 활동 금지를 해제한다.
+- @ban_fdc: '이탈리아 전투 파시'를 불법화한다.
+- @unban_fdc: '이탈리아 전투 파시'의 불법화를 철회한다.
 - @persecute_fdc
-- @ban_ard: Ban the Arditismo.
-- @unban_ard: Unban the Arditismo.
+- @ban_ard: '결사대 운동'을 불법화한다.
+- @unban_ard: '결사대 운동'의 불법화를 철회한다.
 - @persecute_ard
-- @ban_abl: Ban the Anti-Bolshevik Leagues.
-- @unban_abl: Unban the Anti-Bolshevik Leagues.
+- @ban_abl: 반볼셰비키 연맹을 불법화한다.
+- @unban_abl: 반볼셰비키 연맹의 불법화를 철회한다.
 - @persecute_abl
-- @root: Take no action for now. [? if fasci_urgency < 3 : It's not like the far-right pose a threat. ?]
+- @root: 지금은 아무 조치도 취하지 않는다. [? if fasci_urgency < 3 : 극우파가 위협이 되는 것도 아니니 말이다. ?]
 
 @unban_rg
 view-if: rg_banned == 1
 on-arrival: rg_banned = 0; rg_strength += 5; socialist_sentiment += 6;
 
-The Red Guards are no longer banned.
+이제 적위대의 활동이 금지되지 않습니다.
 
 @ban_fdc
 view-if: fasci_urgency >= 3 and fdc_banned == 0
 on-arrival: fdc_strength *= 0.85; fdc_strength *= 0.7 if interior_police_loyalty >= 0.7; fdc_banned = 1; ul_relation -= 3; interior_police_loyalty -= 0.05; fdc_ban_timer = 6; fdc_militancy -= 0.04; nationalist_sentiment -= 4; ds_right += 0.2; ldr_right += 0.2;
 
-As it turns out, the Fasci have many allies in the police and bureaucracy. Our relationship with the Carabinieri weakens, and the Fasci can still organize illegally, right under the police's noses. [? if interior_police_loyalty >= 0.7 : Nevertheless, the Fasci are substantially weakened by our ban. ?]
+알고 보니, 파시는 경찰과 관료 사회에 많은 동맹을 거느리고 있었습니다. 이로 인해 이탈리아 헌병대와의 관계는 악화되고, 파시는 경찰의 눈을 피해 불법적으로 조직 활동을 이어 나갈 수 있습니다. [? if interior_police_loyalty >= 0.7 : 그럼에도 불구하고, 우리의 금지 조치로 '파시'의 세력은 상당히 약화되었습니다. ?]
 
 @unban_fdc
 view-if: fdc_banned == 1
 on-arrival: fdc_banned = 0; fdc_strength += 20; fdc_militancy += 0.04; nationalist_sentiment += 6;
 
-The Fasci is no longer banned. They immediately go on a recruiting spree.
+파시는 더는 불법 단체가 아닙니다. 그들은 즉시 대대적인 조직원 모집에 나섰습니다.
 
 @persecute_fdc
-title: Further persecute the Fasci.
+title: 파시에 대한 탄압을 강화한다.
 view-if: fdc_banned == 1
 choose-if: judicial_reform >= 3 and interior_police_loyalty >= 0.7
-unavailable-subtitle: [? if judicial_reform < 3 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The Carabinieri are too disloyal to be trusted with this. ?]
+unavailable-subtitle: [? if judicial_reform < 3 : 사법부가 이를 허용하지 않을 것입니다. ?] [? if interior_police_loyalty < 0.7 : 이탈리아 헌병대는 너무 불충하여 이 임무를 신뢰하고 맡길 수 없습니다. ?]
 on-arrival: fdc_strength *= 0.7; fdc_militancy -= 0.03; nationalist_sentiment -= 2; ds_right -= 0.1; ldr_right -= 0.1;
 
-We have arrested more of the Fasci's leaders and confiscated their weapons.
+파시 지도부를 추가로 체포하고 이들이 보유한 무기를 압수했습니다.
 
 @ban_ard
 on-arrival: ard_strength *= 0.85; ard_strength *= 0.7 if interior_police_loyalty >= 0.7; ard_banned = 1; ds_relation -= 5; interior_police_loyalty -= 0.05; ard_ban_timer = 6; ard_militancy -= 0.04; nationalist_sentiment -= 4;
 view-if: fasci_urgency >= 3 and ard_banned == 0
 
-Banning the Arditismo weakens our relationship with the political right and the police. In addition, the Arditismo still operates out of public sight.
+'결사대 운동'을 금지하면 정치적 우파 및 경찰과의 관계가 악화됩니다. 게다가 '결사대 운동'은 여전히 수면 아래에서 활동하고 있습니다.
 
 @unban_ard
 view-if: ard_banned == 1
 on-arrival: ard_banned = 0; ard_strength += 5; nationalist_sentiment += 6;
 
-The Arditismo is no longer banned.
+'결사대 운동'의 활동이 더는 금지되지 않습니다.
 
 @persecute_ard
-title: Further persecute the Arditismo.
+title: '결사대 운동'에 대한 탄압을 강화한다.
 view-if: ard_banned == 1
 choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
-unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
+unavailable-subtitle: [? if judicial_reform < 4 : 사법부가 이를 허용하지 않을 것입니다. ?] [? if interior_police_loyalty < 0.7 : 경찰은 너무 불충하여 이 임무를 신뢰하고 맡길 수 없습니다. ?]
 on-arrival: ard_strength *= 0.7; ard_militancy -= 0.03; ul_relation -= 5; interior_police_loyalty -= 0.05; nationalist_sentiment -= 2; ds_right -= 0.1; ldr_right -= 0.1;
 
-We have arrested more of the Arditismo's leaders and confiscated their weapons.
+'결사대 운동' 지도부를 추가로 체포하고 이들이 보유한 무기를 압수했습니다.
 
 @ban_abl
 on-arrival: abl_strength *= 0.85; abl_strength *= 0.7 if interior_police_loyalty >= 0.7; abl_banned = 1; industrialists_pnf += 5*(1-dissent); interior_police_loyalty -= 0.05; abl_ban_timer = 6; abl_militancy -= 0.04; nationalist_sentiment -= 4;
 view-if: fasci_urgency >= 3 and abl_banned == 0
 
-Banning the Anti-Bolshevik League's weakens our relationship with the landowners and industrialists.
+반볼셰비키 연맹을 금지하면 지주 및 산업 자본가들과의 관계가 악화됩니다.
 
 @unban_abl
 view-if: abl_banned == 1
 on-arrival: abl_banned = 0; abl_strength += 5; nationalist_sentiment += 6;
 
-The Anti-Bolshevik Leagues are no longer banned.
+반볼셰비키 연맹의 활동이 더는 금지되지 않습니다.
 
 @persecute_abl
-title: Further persecute the Anti-Bolshevik Leagues.
+title: 반볼셰비키 연맹에 대한 탄압을 강화한다.
 view-if: abl_banned == 1
 choose-if: judicial_reform >= 4 and interior_police_loyalty >= 0.7
-unavailable-subtitle: [? if judicial_reform < 4 : The judiciary would not allow this. ?] [? if interior_police_loyalty < 0.7 : The police are too disloyal to be trusted with this. ?]
+unavailable-subtitle: [? if judicial_reform < 4 : 사법부가 이를 허용하지 않을 것입니다. ?] [? if interior_police_loyalty < 0.7 : 경찰은 너무 불충하여 이 임무를 신뢰하고 맡길 수 없습니다. ?]
 on-arrival: abl_strength *= 0.7; abl_militancy -= 0.03; industrialists_pnf += 5*(1-dissent); interior_police_loyalty -= 0.05; nationalist_sentiment -= 2; ds_right -= 0.1; ldr_right -= 0.1;
 
-We have arrested more of the Anti-Bolshevik League's leaders and confiscated their weapons.
+반볼셰비키 연맹 지도부를 추가로 체포하고 이들이 보유한 무기를 압수했습니다.

@@ -1,4 +1,4 @@
-title: Fiscal Policy
+title: 재정 정책
 new-page: true
 is-card: true
 view-if: psi_in_government and finance_minister_party = psi_name and fiscal_policy_timer <= 0
@@ -8,33 +8,33 @@ card-image: img/portraits/CostantinoLazzari.jpg
 go-to: fiscal_menu
 tags: govt_affairs
 
-= Fiscal Policy
+= 재정 정책
 
-Now that we are in control of the Financial Ministry, we are able to alter our taxes and tariffs however we deem fit.
+재무부를 장악한 지금, 우리는 필요에 따라 세금과 관세를 조정할 수 있습니다.
 
 # financial ministry stuff, not treasury
 
 @fiscal_menu
 
-Upper-income tax rates: [+ upper_tax_rates : taxation +]
+고소득층 세율: [+ upper_tax_rates : taxation +]
 
-Lower-income tax rates: [+ lower_tax_rates : taxation +]
+저소득층 세율: [+ lower_tax_rates : taxation +]
 
-- @raise_progressive: Make the tax system more progressive by raising taxes on the rich and cutting them for the poor.
-- @raise_rich: Increase taxes on the rich.
-- @raise_overall: Increase overall taxes.
-- @cut_overall: Cut overall taxes.
+- @raise_progressive: 부유층 증세와 빈곤층 감세를 통해 조세 제도를 더 누진적으로 개편한다.
+- @raise_rich: 부유층에 대한 세금을 인상한다.
+- @raise_overall: 전반적으로 세율을 인상한다.
+- @cut_overall: 전반적으로 세율을 인하한다.
 - @regressive
 - @tariffs
 - @debts
-- @root: Do not change the tax system.
+- @root: 조세 제도를 변경하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @raise_progressive
-subtitle: This does not change overall revenue.
+subtitle: 전체 세수에는 변동이 없습니다.
 choose-if: lower_tax_rates >= -5 and upper_tax_rates <= 5
-unavailable-subtitle: [? if lower_tax_rates < -5 : Lower-class tax rates are too low to cut anymore. ?] [? if upper_tax_rates > 5 : Upper-class tax rates are too high to increase. ?]
+unavailable-subtitle: [? if lower_tax_rates < -5 : 저소득층 세율이 이미 너무 낮아 더 이상 인하할 수 없습니다. ?] [? if upper_tax_rates > 5 : 고소득층 세율이 이미 너무 높아 더 이상 인상할 수 없습니다. ?]
 on-arrival: {!
 
 if (Q.in_unstable_coalition == 0) {
@@ -77,11 +77,11 @@ Q.ldr_right += 0.2;
 Q.socialist_sentiment += 2;
 !}
 
-Making the tax system more progressive is popular among our base, but it upsets our bourgeois coalition partners, as well as our minimal number of bourgeois voters.
+조세 제도를 더 누진적으로 개편하는 것은 우리 지지층에게는 인기가 있지만, 연정 내 부르주아 파트너들과 얼마 안 되는 부르주아 유권자들의 심기를 건드립니다.
 
 @raise_rich
-subtitle: +2 Budget
-unavailable-subtitle: Tax rates are already too high.
+subtitle: +2 예산
+unavailable-subtitle: 세율이 이미 너무 높습니다.
 choose-if: upper_tax_rates <= 5
 on-arrival: {!
 Q.upper_tax_rates += 1; 
@@ -144,11 +144,11 @@ Q.psri_relation += 5*(1-Q.dissent);
 Q.ldr_moderates -= 0.2;
 !}
 
-Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment.
+부유층 증세는 우리 지지층에게 인기가 있지만, 부르주아 계급의 이탈을 초래합니다. 또한 증세는 경제 수요를 위축시켜 실업률을 높일 수 있습니다.
 
 @cut_overall
-subtitle: -2 Budget [? if budget < 2 and liberal_budget_accepted :- This will put us into a deficit! ?]
-unavailable-subtitle: [? if upper_tax_rates < -5 or lower_tax_rates < -5 : Tax rates are already too low. ?][? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
+subtitle: -2 예산 [? if budget < 2 and liberal_budget_accepted :- 이로 인해 재정 적자가 발생할 것입니다! ?]'
+unavailable-subtitle: [? if upper_tax_rates < -5 or lower_tax_rates < -5 : 세율이 이미 너무 낮습니다. ?][? if national_economic_recovery and budget < 2 : 예산이 부족합니다. (2 필요) ?]'
 choose-if: upper_tax_rates >= -5 and lower_tax_rates >= -5 and (not national_economic_recovery or budget > 1)
 on-arrival: {!
 Q.budget -= 2; 
@@ -209,13 +209,13 @@ Q.ul_giolitti += 0.3;
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Cutting taxes benefits most the rich and middle-class, who pay more taxes than the working class. Our coalition partners are happy at our orthodox economic course.
+감세는 노동계급보다 더 많은 세금을 내는 부유층과 중산층에게 가장 큰 혜택을 줍니다. 연정 파트너들은 우리의 정통적인 경제 노선에 만족하고 있습니다.
 
-[? if ldr_promise_failed : Unfortunately, cutting taxes has led us to enter a deficit, breaking our agreement with the Liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 유감스럽게도, 감세로 인해 재정 적자가 발생하여 자유당과의 합의를 위반하게 되었고, 자유당 대표들은 이미 면담을 요청해 왔습니다. ?]
 
 @raise_overall
-subtitle: +3 budget
-unavailable-subtitle: Tax rates are already too high.
+subtitle: +3 예산
+unavailable-subtitle: 세율이 이미 너무 높습니다.
 choose-if: upper_tax_rates <= 5 and lower_tax_rates <= 5
 on-arrival: {!
 Q.budget += 3; 
@@ -280,11 +280,11 @@ if (Q.unemployment < 8) {
 Q.psri_relation -= 5*(1-Q.dissent);
 !}
 
-Raising taxes hurts our support among all those who pay taxes. [? if centre_left_coalition : However, our coalition partners are more supportive of the idea of "shared sacrifice" than simply taxing the rich. ?] Increasing taxes also decreases economic demand, which may lead to more unemployment.
+증세는 모든 납세 계층의 지지를 약화시킵니다. [? if centre_left_coalition : 하지만 연정 파트너들은 단순히 부유층에게만 과세하는 것보다 "고통 분담"이라는 개념을 더 지지합니다. ?] 또한 증세는 경제 수요를 위축시켜 실업률을 높일 수 있습니다.'
 
 @regressive
-title: Lower taxes on the rich, while increasing consumption taxes (which affect the working class more).
-subtitle: This does not change overall revenue. [? if upper_tax_rates < -5 : Upper tax rates are too low to cut anymore. ?] [? if lower_tax_rates > 5 : Lower tax rates are too high to increase. ?]
+title: 부유층 세율은 인하하는 한편, (노동계급에 더 큰 영향을 미치는) 소비세는 인상합니다.
+subtitle: 전체 세수에는 변동이 없습니다. [? if upper_tax_rates < -5 : 고소득층 세율이 이미 너무 낮아 더 이상 인하할 수 없습니다. ?] [? if lower_tax_rates > 5 : 저소득층 세율이 이미 너무 높아 더 이상 인상할 수 없습니다. ?]
 choose-if: lower_tax_rates <= 5 and upper_tax_rates >= -5
 on-arrival: {!
 
@@ -342,27 +342,27 @@ Q.ppi_left -= 0.1;
 Q.ldr_moderates += 0.1;
 !}
 
-Our regressive taxation policy benefits the rich while hurting the poor and working-class. [? if centre_left_coalition :Our bourgeois coalition partners approve of this orthodox economic course. ?][? if socialist_catholic_coalition :Our catholic coalition partner disapprove of this regressive tax policy. ?]
+우리의 역진적 조세 정책은 부유층에게 이득이 되지만 빈곤층과 노동계급에게는 손해를 입힙니다. [? if centre_left_coalition :우리 연정의 부르주아 파트너들은 이 정통적인 경제 노선을 승인합니다. ?][? if socialist_catholic_coalition :우리 연정의 가톨릭 파트너는 이 역진적 조세 정책에 반대합니다. ?]
 
 
 @tariffs
-title: Change tariffs instead.
+title: 대신 관세를 조정한다.
 
-Tariffs, or taxes on international imports, are another way to finance our government.
+해외 수입품에 부과하는 세금인 관세는 정부 재원을 확보하는 또 다른 방법입니다.
 
-Historically, socialists have been in favor of free trade and a low-tariff regime. Workers in export-oriented industries benefit from free trade, and they also benefit from lower prices for imported necessities. Do the present economic circumstances change these calculations?
+역사적으로 사회주의자들은 자유 무역과 저관세 체제를 옹호해 왔습니다. 수출 산업 노동자들은 자유 무역으로 이익을 보고, 수입 생필품 가격 인하의 혜택도 누리기 때문입니다. 현재의 경제 상황이 이러한 셈법을 바꿀 수 있을까요?
 
-Current tariff level: [+ tariffs : taxation +]
+현행 관세 수준: [+ tariffs : taxation +]
 
 - @raise_tariffs
 - @lower_tariffs
-- @fiscal_menu: Change domestic taxes instead of tariffs.
-- @root: Do not change tariffs or taxes.
+- @fiscal_menu: 관세 대신 국내 세금을 조정한다.
+- @root: 관세나 세금을 변경하지 않는다.
 - @easy_discard
 
 @raise_tariffs
-title: Raise tariffs on imports.
-subtitle: +2 Budget. Other countries will retaliate by increasing tariffs of their own. [? if tariffs > 5 : Further increases in tariffs will not raise revenue, as we have already nearly reached economic autarky. ?]
+title: 수입 관세를 인상한다.
+subtitle: +2 예산. 다른 국가들은 자국 관세를 인상하며 보복할 것입니다. [? if tariffs > 5 : 이미 경제적 자급자족 상태에 가까우므로, 관세를 더 인상해도 세수가 늘지 않을 것입니다. ?]'
 choose-if: tariffs <= 5
 on-arrival: {!
 Q.tariffs += 1; 
@@ -419,14 +419,14 @@ Q.balkan_relation -= 1;
 Q.ldr_moderates -= 0.2;
 !}
 
-Increasing tariffs leads to higher prices for basic goods, increasing inflation and hurting consumption among the working class. Retaliatory tariffs reduce the competitiveness of German exports, raising unemployment among workers. They also lead to an atmosphere of international suspicion, reducing our ability to negotiate with other countries.
+관세 인상은 생필품 가격 상승과 인플레이션을 유발하여 노동계급의 소비를 위축시킵니다. 보복 관세는 독일 수출품의 경쟁력을 떨어뜨려 노동자 실업률을 높입니다. 또한 이는 국제적 불신 분위기를 조장하여 외교적 협상력을 약화시킵니다.
 
-On the other hand, agricultural producers and some small businesses benefit from higher tariffs, as farmers can now command higher prices for grain, and formerly uncompetitive businesses are now able to function.
+반면, 농산물 생산자와 일부 중소기업은 관세 인상으로 이익을 봅니다. 농부들은 곡물 가격을 더 높게 받을 수 있고, 이전에는 경쟁력이 없던 기업들도 생존할 수 있게 되기 때문입니다.
 
 @lower_tariffs
-title: Lower tariffs on imports.
+title: 수입 관세를 인하한다.
 choose-if: tariffs > -5 and (not national_economic_recovery or budget > 1)
-subtitle: -2 Budget. [? if tariffs <= -5 : There are no tariffs left to cut. ?] [? if budget < 2 and liberal_budget_accepted : This will put us into a deficit! ?] [? if national_economic_recovery and budget < 2 : Not enough budget. (Need 2) ?]
+subtitle: -2 예산. [? if tariffs <= -5 : 더 이상 인하할 관세가 없습니다. ?] [? if budget < 2 and liberal_budget_accepted : 이로 인해 재정 적자가 발생할 것입니다! ?] [? if national_economic_recovery and budget < 2 : 예산이 부족합니다. (2 필요) ?]'
 on-arrival: {!
 Q.tariffs -= 1; 
 Q.budget -= 2; 
@@ -479,32 +479,32 @@ if (Q.budget < 0 && Q.liberal_budget_accepted == 1) {
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Lowering tariffs helps workers and the urban poor by reducing prices for basic necessities. In addition, other countries are pleased by lower tariffs, and are more willing to negotiate on many issues.
+관세 인하는 생필품 가격을 낮춰 노동자와 도시 빈민에게 도움이 됩니다. 또한 다른 국가들도 낮은 관세를 환영하며 여러 현안에 대해 더 적극적으로 협상에 임하게 됩니다.
 
-Farmers are hurt by this policy, as cheap imported grain leads to ruin for some small producers. In general, cheap imports are detrimental for small-scale industries aimed at the domestic market.
+값싼 수입 곡물로 인해 일부 소농들이 파산하는 등, 이 정책은 농민들에게 타격을 줍니다. 일반적으로 값싼 수입품은 내수 시장 중심의 소규모 산업에 해가 됩니다.
 
-[? if ldr_promise_failed : Unfortunately, lowering tariffs has led us to enter a deficit, breaking our agreement with the liberals, and their representatives have already requested a meeting with us. ?]
+[? if ldr_promise_failed : 유감스럽게도, 관세 인하로 인해 재정 적자가 발생하여 자유당과의 합의를 위반하게 되었고, 자유당 대표들은 이미 면담을 요청해 왔습니다. ?]
 
 @debts
-title: See our debt situation.
+title: 우리의 부채 상황을 확인한다.
 view-if: uk_debts_over = 0 or us_debts_over = 0
 
-In order to finance the war, Italy took out massive war debts and bonds, mainly to our allies of the United Kingdom and United States.
+전쟁 자금을 조달하기 위해, 이탈리아는 주로 동맹국인 영국과 미국으로부터 막대한 전쟁 빚을 졌습니다.
 
-Now that the war has ended, both nations expect debt repayments, but it is abundantly clear we will not be able to support quick full debt repayments, though it might not hurt to pay off our debts slightly to reassure our allies we are committed to repaying them.
+이제 전쟁이 끝났으므로 양국은 채무 상환을 기대하고 있지만, 빠른 시일 내에 전액을 상환하기는 불가능하다는 것이 명백합니다. 다만 채무 상환 의지를 보여주기 위해 부채의 일부를 갚는 것이 나쁘지는 않을 것입니다.
 
 - @repay_us_debts
 - @repay_uk_debts
-- @fiscal_menu: Change domestic taxes instead of tariffs.
-- @root: Do not change tariffs or taxes.
+- @fiscal_menu: 관세 대신 국내 세금을 조정한다.
+- @root: 관세나 세금을 변경하지 않는다.
 - @easy_discard
 
 @repay_us_debts
-title: Repay American debtors.
-subtitle: -1 Budget
+title: 미국 채권자에게 부채를 상환한다.
+subtitle: -1 예산
 view-if: american_debts > 0
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: {!
 Q.american_debts -= 1; 
 Q.budget -= 1;
@@ -528,14 +528,14 @@ if (Q.economic_growth < 0) {
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Paying off some of our American debtors reaffirms our commitment to repaying American war debt while making negotiations in order to resolve those same debts smoother, restoring investment confidence.
+미국 채권자들에게 부채 일부를 상환하면 미국의 전쟁 빚을 갚겠다는 우리의 의지를 재확인할 수 있으며, 관련 협상을 더 원활하게 하고 투자 신뢰도를 회복하는 데 도움이 될 것입니다.
 
 @repay_uk_debts
-title: Repay British debtors.
-subtitle: -1 Budget
+title: 영국 채권자에게 부채를 상환한다.
+subtitle: -1 예산
 view-if: uk_debts > 0
 choose-if: not national_economic_recovery or budget > 0
-unavailable-subtitle: Not enough budget. (Need 1)
+unavailable-subtitle: 예산이 부족합니다. (1 필요)
 on-arrival: {!
 Q.uk_debts -= 1; 
 Q.budget -= 1;
@@ -558,4 +558,4 @@ if (Q.economic_growth < 0) {
 !}
 go-to: ldr_promise_vonc if ldr_promise_failed = 1
 
-Paying off some of our British debtors reaffirms our commitment to repaying British war debt while making negotiations in order to resolve those same debts smoother, restoring investment confidence.
+영국 채권자들에게 부채 일부를 상환하면 영국의 전쟁 빚을 갚겠다는 우리의 의지를 재확인할 수 있으며, 관련 협상을 더 원활하게 하고 투자 신뢰도를 회복하는 데 도움이 될 것입니다.
