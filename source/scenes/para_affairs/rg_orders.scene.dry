@@ -1,4 +1,4 @@
-title: Red Guard Orders
+title: 적위대 행동지침
 new-page: true
 is-card: true
 tags: para_affairs
@@ -6,37 +6,37 @@ view-if: rg_orders_timer <= 0 and participating = 0 and rg_banned = 0
 card-image: img/RedGuards.jpg
 on-arrival: week_actions += 1; rg_orders_timer = 3;
 
-= Red Guards
+= 적위대 행동지침
 
-The *Guardie Rosse*, following our continued goal of violent revolution, will be pivotal to our cause and as such, we can command the organisation to aid our cause.
+*적위대는* 폭력 혁명이라는 우리의 최종 목표에 중추적인 역할을 할 것이므로, 우리 대의를 위해 이 조직에 명령을 내릴 수 있습니다.
 
-- @fighting: Utilise the Red Guards and test our forces against the fascists.
-- @occupations: Utilise the Red Guards to occupy factories.
-- @protests: Utilise the Red Guards to strike and demand better conditions.
-- @return: Keep the Red Guards as it is.
+- @fighting: 파시스트들을 상대로 적위대의 전투력을 시험해본다.
+- @occupations: 적위대를 동원하여 공장을 점거한다.
+- @protests: 적위대를 투입해 파업을 벌이고 더 나은 노동 조건을 요구한다.
+- @return: 적위대를 현 상태로 유지한다.
 - @easy_discard
 - @cancel_advisor_action
 
 @fighting
-subtitle: -3 Paramilitary Resources - Test the Red Guards against the Arditsmo.
+subtitle: -3 준군사 자원 - 결사대 운동을 상대로 적위대의 전력을 시험해 봅니다.
 choose-if: para_resources >= 3
-unavailable-subtitle: Not enough paramilitary resources. (Need 3)
+unavailable-subtitle: 준군사 자원이 부족합니다. (3 필요)
 on-arrival: para_resources -= 3; radicalisation += 0.1; revolutionary_fervour += 5; rg_strength -= 30*revolutionary_exhaustion; rg_militancy += 0.03*revolutionary_exhaustion; ard_strength -= 30*rg_militancy; revolutionary_exhaustion += 0.03 if not_participating = 1; middle_class_psi -= 6*(1-dissent); 
 
-Our forces begin intercepting and picking fights with the Arditismo, allowing them to gain combat experience and reinvigorating the party.
+우리 병력은 결사대 운동 세력과 교전을 시작하여 전투 경험을 쌓고, 당에 새로운 활력을 불어넣습니다.
 
 @occupations
-subtitle: -1 Paramilitary Resources - Aid factory workers to seize control of their workplaces.
+subtitle: -1 준군사 자원 - 공장 노동자들의 직장 점거 투쟁을 지원합니다.
 choose-if: para_resources >= 1
-unavailable-subtitle: Not enough paramilitary resources. (Need 1)
+unavailable-subtitle: 준군사 자원이 부족합니다. (1 필요)
 on-arrival: para_resources -= 1; radicalisation += 0.05; revolutionary_fervour += 3; rg_strength -= 10*revolutionary_exhaustion; workers_psi += 4; revolutionary_exhaustion += 0.02 if not_participating = 1; industrialists_psi -= 4; factory_takeovers += 1;  middle_class_psi -= 4*(1-dissent); 
 
-We have seized control of more factories and kicked the bourgeois industrialists out! This has reinvigorated the party, and convinced more workers to our side.
+우리는 더 많은 공장을 장악하고 부르주아 자본가들을 몰아냈습니다! 이로써 당에 새로운 활기가 돌았고, 더 많은 노동자들이 우리 편에 섰습니다.
 
 @protests
-subtitle: -1 Paramilitary Resources - Protest and strike against the current working conditions.
+subtitle: -1 준군사 자원 - 현재 노동 조건에 항의하며 파업을 벌입니다.
 choose-if: para_resources >= 1
-unavailable-subtitle: Not enough paramilitary resources. (Need 1)
+unavailable-subtitle: 준군사 자원이 부족합니다. (1 필요)
 on-arrival: para_resources -= 1; radicalisation += 0.02; revolutionary_fervour += 1; rg_strength -= 5*revolutionary_exhaustion; workers_psi += 2; revolutionary_exhaustion += 0.01 if not_participating = 1; industrialists_psi -= 2;  middle_class_psi -= 2*(1-dissent); 
 
-We utilise the Red Guards to aid the workers, forcing the hands of the industrialists to grant better conditions for the workers such as higher wages, lower hours and better benefits.
+우리는 적위대를 동원하여 노동자들을 지원하고, 자본가들에게 임금 인상, 노동 시간 단축, 복지 향상 등 더 나은 노동 조건을 제공하도록 압박합니다.

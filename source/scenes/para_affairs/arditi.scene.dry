@@ -1,4 +1,4 @@
-title: Arditi del Popolo
+title: 인민의 결사대
 new-page: true
 is-card: true
 on-arrival: arditi_timer = 2; week_actions += 1; 
@@ -7,32 +7,32 @@ frequency: 300
 card-image: img/Arditi.png
 tags: para_affairs
 
-= Arditi del Popolo
+= 인민의 결사대
 
-The *Arditi del Popolo* is a broad anti-fascist group, formed to combat the *Fasci Italiani di Combattimento* comprised of the broad left, ranging from Communists, Syndicalists, Anarchists, Socialists, Trade Unionists to Republicans and everything in between. Though some on the Left-wing of the party aren't entirely enthused about our decision to support the Arditi del Popolo due to their broad stance, it seems the growing rise of fascism has forced our hand.
+*인민의 결사대*는 *이탈리아 전투 파시*에 맞서기 위해 결성된 광범위한 반파시스트 연합으로, 공산주의자, 생디칼리스트, 아나키스트, 사회주의자, 노동조합원에서 공화주의자에 이르기까지 좌파 전체를 아우르는 조직입니다. 당내 좌파 파벌의 일부는 인민의 결사대의 포괄적인 성격 때문에 우리의 지원 결정에 열광하지는 않지만, 파시즘의 부상은 우리에게 다른 선택지를 남겨두지 않았습니다.
 
-Though its broad reach has allowed it to remain non-sectarian to any party, they would certainly be willing to cooperate with us or welcome any funds we are to provide to them, being a valuable ally in the event the fascists attempt anything. What should we do?
+조직의 포괄적인 성격은 특정 정당에 얽매이지 않게 해주었지만, 그들은 기꺼이 우리와 협력하거나 우리가 제공하는 자금을 환영할 것입니다. 파시스트들이 무언가를 시도할 때, 그들은 귀중한 동맹이 될 것입니다. 우리는 어떻게 해야 할까요?
 
-- @arditi_funding: Fund the Arditi del Popolo.
-- @arditi_training: Utilise the experienced Arditi members to train the Red Guards.
-- @arditi_fasci: Co-ordinate raids against the far-right groups.
+- @arditi_funding: 인민의 결사대에 자금을 지원한다.
+- @arditi_training: 숙련된 결사대원들을 활용해 적위대를 훈련시킨다.
+- @arditi_fasci: 극우 단체를 겨냥한 습격을 조율한다.
 - @easy_discard
 - @cancel_advisor_action
 
 @arditi_funding 
-subtitle: -1 Paramilitary Resource
+subtitle: -1 준군사 자원
 choose-if: para_resources > 0
-unavailable-subtitle: Not enough paramilitary resources. (Need 1)
+unavailable-subtitle: 준군사 자원이 부족합니다. (1 필요)
 on-arrival: para_resources -= 1; adp_strength += 17; adp_militancy += 0.05; socialist_sentiment += 1; republican_sentiment += 3;
 
-Our funding allows the Arditi to grow in number, strengthening our relations with them in the process.
+우리의 자금 지원 덕분에 인민의 결사대는 조직원을 늘릴 수 있었고, 그 과정에서 우리와의 관계도 더욱 돈독해졌습니다.
 
 @arditi_training
 on-arrival: rg_strength += adp_strength*0.06 if adp_strength < 100; rg_strength += adp_strength*0.02 if adp_strength >= 100; rg_militancy += adp_militancy*0.08; arditi_rg_cooperation = 1
 
-The more experienced Arditi offer to help train the Red Guards, growing our strength and making our members more proficient.
+숙련된 결사대원들이 적위대의 훈련을 돕겠다고 제안하여, 우리의 세력이 강해지고 대원들의 숙련도도 높아졌습니다.
 
 @arditi_fasci
 on-arrival: adp_strength -= 17; adp_militancy += 0.02*(1-dissent); rg_militancy += 0.02*(1-dissent); fdc_militancy -= 0.02*(1-dissent); fdc_strength += 28; ard_militancy -= 0.01*(1*dissent); ard_strength += 12; abl_strength += 9; radicalisation += 0.05; communist_strength += 7*(1-dissent); communist_dissent -= 5*(1-dissent); nationalist_sentiment -= 2; middle_class_psi -= 3*(1-dissent); rural_psi += 1*(1-dissent); strife -= 0.005;
 
-The Arditi, under our guidance, are able to carry out raids against far-right forces, seizing weapons and equipment. Our move secures weaponry for the Arditi and our own Red Guards, though the right take the opportunity to paint us as aggressive radicals to their backers, securing funding.
+우리의 지휘 아래 인민의 결사대는 극우 세력에 대한 급습을 감행하여 무기와 장비를 탈취했습니다. 이 행동으로 인민의 결사대와 우리 적위대는 무기를 확보했지만, 우익 세력은 이 기회를 틈타 우리를 공격적인 급진주의자로 자신들의 후원자에게 선전하며 자금을 확보했습니다.

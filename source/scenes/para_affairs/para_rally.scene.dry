@@ -1,4 +1,4 @@
-title: Paramilitary Rally
+title: 준군사조직 집회
 new-page: true
 is-card: true
 view-if: para_rally_timer <= 0 and rg_banned = 0
@@ -10,12 +10,12 @@ go-to: main_rally; far_right_disrupt if prime_minister_party = "PNF" and (fdc_ba
 
 @far_right_disrupt
 
-The far-right paramilitaries are disrupting our rally! Their street troops are preventing us from meeting.
+극우 준군사 조직이 우리 집회를 방해하고 있습니다! 그들의 거리 부대들이 우리의 집결을 막고 있습니다.
 
-- @rg_defend: Use the Red Guards to protect our rally.
-- @adp_defend: Use the Arditi del Popolo to protect our rally.
-- @both_defend: The Red Guards and Arditi del Popolo should work together to protect our rally.
-- @cancel: Cancel the rally.
+- @rg_defend: 적위대를 동원하여 집회를 보호한다.
+- @adp_defend: 인민의 결사대를 동원하여 집회를 보호한다.
+- @both_defend: 적위대와 인민의 결사대가 협력하여 집회를 보호한다.
+- @cancel: 집회를 취소한다.
 
 @rg_defend
 on-arrival: rg_defend_success = rg_strength*rg_militancy - disrupt_strength
@@ -24,12 +24,12 @@ go-to: rg_protect_win if rg_defend_success >= 0; rg_protect_lose if rg_defend_su
 @rg_protect_win 
 go-to: main_rally
 
-The Red Guards have successfully defended our rally, so it can go ahead as usual.
+적위대가 성공적으로 집회를 방어했으므로, 예정대로 진행할 수 있게 되었습니다.
 
 @rg_protect_lose
 on-arrival: workers_pnf += 3
 
-Unfortunately, the Red Guards were unable to hold back the far-right mob. The fascists have won this show of strength.
+불행히도, 적위대는 극우 폭도들을 막아내지 못했습니다. 이번 세력 과시에서는 파시스트들이 승리했습니다.
 
 @adp_defend
 view-if: arditi_cooperation
@@ -39,76 +39,76 @@ go-to: adp_protect_win if rg_defend_success >= 0; adp_protect_lose if rg_defend_
 @adp_protect_win 
 go-to: main_rally
 
-The Arditi del Popolo have successfully defended our rally, so it can go ahead as usual.
+인민의 결사대가 성공적으로 집회를 방어했으므로, 예정대로 진행할 수 있게 되었습니다.
 
 @adp_protect_lose
 on-arrival: workers_pnf += 3
 
-Unfortunately, the Arditi del Popolo were unable to hold back the far-right mob. The fascists have won this show of strength.
+불행히도, 인민의 결사대는 극우 폭도들을 막아내지 못했습니다. 이번 세력 과시에서는 파시스트들이 승리했습니다.
 
 @both_defend
 view-if: arditi_cooperation
 choose-if: arditi_rg_cooperation
-unavailable-subtitle: The Arditi del Popolo have never cooperated with the Red Guards before.
+unavailable-subtitle: 인민의 결사대는 이전까지 적위대와 협력한 전례가 없습니다.
 on-arrival: both_defend_success = ((adp_strength*adp_militancy) + (rg_strength*rg_militancy)) - disrupt_strength
 go-to: both_protect_win if both_defend_success >= 0; both_protect_lose if both_defend_success < 0
 
 @both_protect_win 
 go-to: main_rally
 
-The Red Guards and Arditi del Popolo have successfully defended our rally, so it can go ahead as usual.
+적위대와 인민의 결사대가 성공적으로 집회를 방어했으므로, 집회를 예정대로 진행할 수 있게 되었습니다.
 
 @both_protect_lose
 on-arrival: workers_pnf += 3
 
-Unfortunately, the Red Guards and Arditi del Popolo were unable to hold back the far-right mob. The fascists have won this show of strength.
+불행히도, 적위대와 인민의 결사대는 극우 폭도들을 막아내지 못했습니다. 이번 세력 과시에서는 파시스트들이 승리했습니다.
 
 @cancel
 on-arrival: workers_pnf += 3
 
-The far-right have won this show of strength.
+극우 세력이 이번 세력 과시에서 승리했습니다.
 
 @main_rally
 
-= Paramilitary Rally
+= 준군사조직 집회
 
-Though not its usual tasks, the Red Guards are able to utilise its numbers to rally for party support, as well as sway the party to a more favourable side. What should we do?
+평소의 임무는 아니지만, 적위대는 그 규모를 활용하여 당 지지를 호소하는 집회를 열고 당론을 우리에게 유리한 방향으로 이끌 수 있습니다. 우리는 어떻게 해야 할까요?
 
-- @defense: Rally for defense against the fascists and the far-right.
-- @revolution: Rally for revolution against the bourgeois parties and the king.
-- @pacifism: Rally for pacifism, against nationalism and war.
-- @republic: Rally for further republicanism and against the monarchy.
-- @economy: Rally for economic recovery, decreased unemployment and against government inaction.
+- @defense: 파시스트와 극우에 맞선 방어를 촉구하는 집회를 연다.
+- @revolution: 부르주아 정당과 국왕에 맞선 혁명을 촉구하는 집회를 연다.
+- @pacifism: 민족주의와 전쟁에 반대하고 평화주의를 옹호하는 집회를 연다.
+- @republic: 공화주의를 진전시키고 군주제에 반대하는 집회를 연다.
+- @economy: 경제 회복, 실업률 감소, 정부의 무대책을 규탄하는 집회를 연다.
 - @easy_discard
 
 @defense
-subtitle: -[+ rg_militarisation_cost +] paramilitary resources
+subtitle: -[+ rg_militarisation_cost +] 준군사 자원
 choose-if: para_resources >= rg_militarisation_cost
 on-arrival: para_resources -= rg_militarisation_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); communist_dissent += 4*(1-dissent); fasci_urgency += 1; workers_pnf -= 3*(1-dissent); nationalist_sentiment -= 2;
 
-The Red Guards rallies against the fascists, urging members of the party to be weary of this new threat and recruiting members to our cause. The Left wing of the party is critical of our silence towards the bourgeois parties, however.
+적위대는 파시스트에 대항하는 집회를 열어 당원들에게 새로운 위협에 대한 경각심을 일깨우고 우리 대의에 동참할 조직원들을 모집합니다. 그러나 당내 좌파 세력은 우리가 부르주아 정당들에 대해서는 침묵하는 것을 비판합니다.
 
 @revolution
-subtitle: -[+ rg_militarisation_cost +] paramilitary resources
+subtitle: -[+ rg_militarisation_cost +] 준군사 자원
 choose-if: para_resources >= rg_militarisation_cost
 on-arrival: para_resources -= rg_militarisation_cost; rg_strength += 15*(1-dissent); rg_militancy += 0.05*(1-dissent); reformist_dissent += 4*(1-dissent); ldr_relation -= 4; ul_relation -= 4; ds_relation -= 4; king_relation -= 5; workers_psi += 5*(1-dissent); radicalisation += 0.1; socialist_sentiment += 2*(1-dissent); republican_sentiment += 2*(1-dissent); revolutionary_fervour += 3
 
-The Red Guards rally against the bourgeois parties and the king, reaffirming our commitment to the left and swaying some of the more radical voters back into our bloc. The King and the bourgeois are unsurprisingly shocked by our rhetoric, decreasing relations, as is the reformist wing of the party.
+적위대가 부르주아 정당과 국왕에 반대하는 집회를 열자, 좌파에 대한 우리의 헌신이 재확인되었고 일부 급진 유권자들이 우리 편으로 돌아섰습니다. 당연하게도 국왕과 부르주아 계급은 우리의 거친 언사에 충격을 받아 관계가 악화되었으며, 당내 개혁주의파 파벌도 마찬가지입니다.
 
 @pacifism
 on-arrival: pacifism += 1; nationalist_sentiment -= 5; workers_psi += 5*(1-dissent) if pacifism >= 4; veterans_psi += 4*(1-dissent) if pacifism >= 4; middle_class_psi += 4*(1-dissent) if pacifism >= 4
 
-The Red Guards toes the party line, advocating for pacifism and our anti-war stance.
+적위대는 당론을 따라 평화주의와 우리의 반전 입장을 옹호하고 있습니다.
 
 @republic
 on-arrival: republican_sentiment += 5*(1-dissent); democratisation += 1; workers_psi += 5*(1-dissent) if democratisation >= 4; veterans_psi += 4*(1-dissent) if democratisation >= 4; middle_class_psi += 4*(1-dissent) if democratisation >= 4; king_relation -= 5*(1-dissent); socialist_sentiment += 2*(1-dissent);
 
-The Red Guards rallies for republicanism and against the monarchy, earning us some support from the Italian Republican Party.
+적위대는 공화주의를 옹호하고 군주제에 반대하는 집회를 열어, 이탈리아 공화당으로부터 일부 지지를 얻어냈습니다.
 
 @economy
 choose-if: unemployment > 5 or economic_growth < 0 or national_economic_recovery
-unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
+unavailable-subtitle: 경제 위기는 이제 거의 끝났으며, 대중은 더 이상 이 문제에 관심을 두지 않습니다.
 view-if: not psi_in_government and economic_plan = 1 and pnf_in_government = 0
 on-arrival: workers_psi += 2*(1-dissent); veterans_psi += 3*(1-dissent); middle_class_psi += 1*(1-dissent); rural_psi += 2*(1-dissent); ppi_relation -= 5; ldr_relation -= 5; ul_relation -= 5; ds_relation -= 5;
 
-The Red Guards are able to utilise the current recession to criticise the government, forming broad popular support against government inaction. The coalition in power are less receptive towards our efforts, unsurprisingly.
+적위대는 현재의 경기 침체를 빌미로 정부를 비판하고, 정부의 무대책에 대한 광범위한 대중의 지지를 이끌어냈습니다. 당연하게도, 집권 연정은 우리의 이러한 노력에 호의적이지 않습니다.

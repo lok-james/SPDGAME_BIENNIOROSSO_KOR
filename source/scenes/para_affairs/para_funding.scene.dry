@@ -1,4 +1,4 @@
-title: Paramilitary Funding
+title: 준군사 조직 자금 지원
 new-page: true
 view-if: para_funding_timer <= 0 and (not historical_mode)
 on-arrival: para_funding_timer = 2; week_actions += 1
@@ -7,62 +7,62 @@ is-card: true
 card-image: img/ParaFunding.jpg
 tags: para_affairs
 
-= Paramilitary Funding
+= 준군사 조직 자금 지원
 
-For better or for worse, both the party and the paramilitaries cannot exist without money. The question is: How should we divide up our funds?
+좋든 싫든, 당과 준군사 조직 모두 자금 없이는 유지될 수 없습니다. 진짜 문제는: 이 자금을 어떻게 분배해야 할까?입니다.
 
-- @all_fund: Siphon all of our funds into the Red Guards.
-- @big_fund: Siphon large amounts into the Red Guards.
-- @small_fund: Siphon a small amount into the Red Guards.
-- @small_decrease: Siphon a small amount back into our coffers.
-- @big_decrease: Siphon a large amount back into our coffers.
-- @all_decrease: Siphon all of our funds back into our coffers.
-- @return: Maintain current funds.
+- @all_fund: 모든 자금을 적위대로 이전한다.
+- @big_fund: 많은 자금을 적위대로 이전한다.
+- @small_fund: 소량의 자금을 적위대로 이전한다.
+- @small_decrease: 소량의 자금을 당 금고로 회수한다.
+- @big_decrease: 많은 자금을 당 금고로 회수한다.
+- @all_decrease: 모든 자금을 당 금고로 회수한다.
+- @return: 현 자금 상태를 유지한다.
 - @easy_discard
 - @cancel_advisor_action
 
 @all_fund
-subtitle: -[+ resources +] Party Resources, +[+ resources +] Paramilitary Resources - This will increase reformist dissent.
+subtitle: -[+ resources +] 당 자원, +[+ resources +] 준군사 자원 - 이 결정은 개혁주의파 파벌의 반발을 살 것입니다.
 view-if: resources > 2
 on-arrival: reformist_dissent += (resources - 2)*7; para_resources += resources; resources = 0;
 
-We pour all of our funds into the Red Guards. The reformist faction is understandably, upset by this.
+우리는 모든 자금을 적위대에 쏟아부었습니다. 예상대로 개혁주의파 파벌은 이에 불만을 표합니다.
 
 @big_fund
-subtitle: -2 Party Resources, +2 Paramilitary Resources
+subtitle: -2 당 자원, +2 준군사 자원
 choose-if: resources > 1
-unavailable-subtitle: [? if resources < 2 : We do not have enough to fund the Red Guards. ?]
+unavailable-subtitle: [? if resources < 2 : 적위대에 자금을 지원할 여력이 없습니다. ?]
 on-arrival: resources -= 2; para_resources += 2
 
-Large amounts of funds are sent over to the Red Guards.
+많은 양의 자금이 적위대에 전달되었습니다.
 
 @small_fund
 choose-if: resources > 0
-unavailable-subtitle: [? if resources < 1 : We do not have enough to fund the Red Guards. ?]
-subtitle: -1 Party Resources, +1 Paramilitary Resources
+unavailable-subtitle: [? if resources < 1 : 적위대에 자금을 지원할 여력이 없습니다. ?]
+subtitle: -1 당 자원, +1 준군사 자원
 on-arrival: resources -= 1; para_resources += 1;
 
-Small amounts of funds are sent over to the Red Guards.
+작은 양의 자금이 적위대에 전달되었습니다.
 
 @big_decrease
 choose-if: para_resources > 1
-unavailable-subtitle: [? if para_resources < 2 : We do not have enough to support the party. ?]
-subtitle: +2 Party Resources, -2 Paramilitary Resources
+unavailable-subtitle: [? if para_resources < 2 : 당을 지원할 여력이 없습니다. ?]
+subtitle: +2 당 자원, -2 준군사 자원
 on-arrival: resources += 2; para_resources -= 2;
 
-Large amounts of funds are transferred back to the party coffers.
+많은 양의 자금이 당 금고로 다시 환수되었습니다.
 
 @small_decrease
 choose-if: para_resources > 0
-unavailable-subtitle: [? if para_resources < 1 : We do not have enough to support the party. ?]
-subtitle: +1 Party Resources, -1 Paramilitary Resources
+unavailable-subtitle: [? if para_resources < 1 : 당을 지원할 여력이 없습니다. ?]
+subtitle: +1 당 자원, -1 준군사 자원
 on-arrival: resources += 1; para_resources -= 1;
 
-Small amounts of funds are transferred back to the party coffers.
+적은 양의 자금이 당 금고로 다시 환수되었습니다.
 
 @all_decrease
-subtitle: +[+ para_resources +] Party Resources, +[+ para_resources +] Paramilitary Resources - This will increase communist dissent.
+subtitle: +[+ para_resources +] 당 자원, -[+ para_resources +] 준군사 자원 - 이 결정은 공산주의파 파벌의 반발을 살 것입니다.
 view-if: para_resources > 2
 on-arrival: communist_dissent += (para_resources - 2)*7; resources += para_resources; para_resources = 0;
 
-We pour all of our funds back into party coffers. The communist faction is understandably, upset by this.
+우리는 모든 자금을 당 금고로 환수했습니다. 예상대로 공산주의파 파벌은 이에 불만을 표합니다.
