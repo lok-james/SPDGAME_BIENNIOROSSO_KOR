@@ -25,7 +25,7 @@ At the Labour and Socialist International, we can forge contacts with our frater
 @fr_uk
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5; foreign_invasion_time += 6 if violent_revolution; supported_entente += 1;
 
 The socialists of France and Britain can influence their governments to be friendlier towards Italy.
@@ -35,7 +35,7 @@ The socialists of France and Britain can influence their governments to be frien
 @germany
 subtitle: -1 resources
 choose-if: resources >= 1 and soviet_germany != 1
-unavailable-subtitle: [? if resources < 1 : Not enough resources. (Need 1) ?][? if soviet_germany : The Spartakusbund is no longer under threat. ?]
+unavailable-subtitle: [? if resources < 1 : 자원이 부족합니다. (1 필요) ?][? if soviet_germany : The Spartakusbund is no longer under threat. ?]
 on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04*revolutionary_exhaustion; resources -= 1; pcdi_bordiga += 1;
 
 Germany is in turmoil. With memories of the Spartacist Uprising still fresh, and the Spartacus League higher command under threat from right-wing forces, we can offer them refuge, welcoming them as exiles to Italy and training our forces with their experience in the Spartakusbund.
@@ -43,7 +43,7 @@ Germany is in turmoil. With memories of the Spartacist Uprising still fresh, and
 @comintern
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if rcw_over; pcdi_gramsci += 1; supported_ussr += 1; rg_militancy += 0.04*revolutionary_exhaustion if soviet_leader = "Trotsky"
 
 Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
@@ -61,7 +61,7 @@ We utilise our influence within the PPI to expand our contact amongst the PPI. W
 @america
 subtitle: -1 resources
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; supported_usa += 1;
 
 The Socialist Party of America is tiny and has limited support, especially following their loss in the recent elections. There is not much we can do for them, and conversely, not much they can do for us.
@@ -70,7 +70,7 @@ The Socialist Party of America is tiny and has limited support, especially follo
 subtitle: -1 resources
 choose-if: resources >= 1
 view-if: year < 1920 and month <= 8
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; supported_hungary += 1;
 
 The Hungarian Communists are in an opportune time to seize power, and we can only hope our aid helps them spread the cause further.

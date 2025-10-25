@@ -1,4 +1,4 @@
-title: Questions of Ideology
+title: 이념 문제
 new-page: true
 is-card: true
 tags: party_affairs
@@ -7,17 +7,17 @@ on-arrival: week_actions += 1; old_ideology = ideology; ideology_timer = 5
 card-image: img/Ideology.jpg
 max-visits: 8
 
-= Questions of Ideology
+= 이념 문제
 
-The [+ psi_name +] is torn between many different ideological currents. What should be our primary ideological guidance for now?
+[+ psi_name +]는 수많은 이념적 흐름 사이에서 분열되어 있습니다. 당분간 우리의 주된 이념적 지표는 무엇이 되어야 할까요?
 
-[? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
+[? if ideology != 0 : 우리는 이전에 [+ ideology +] 이념을 채택했습니다. 이를 변경하면 불이익이 따를 것입니다. ?]
 
-- @class_struggle: Class struggle and preparing the proletariat for the revolution are our primary goals.
-- @centrist: The Center Marxism of Karl Kautsky remains the best way to resolve our internal contradictions.
-- @syndicalism: The Syndicalism of De Ambris will best improve the lives of the proletariat.
-- @labour: We should work with the trade unions to improve the lives of workers.
-- @reform: Following Eduard Bernstein & Filippo Turati, we should work for ethical socialism, strengthen democracy, and expand the party's electorate.
+- @class_struggle: 계급 투쟁과 혁명을 위한 프롤레타리아 조직화가 우리의 주요 목표이다.
+- @centrist: 카를 카우츠키의 중도 마르크스주의가 당내 모순을 해결하는 최선의 길이다.
+- @syndicalism: 데 암브리스의 생디칼리즘이 프롤레타리아의 삶을 가장 효과적으로 개선할 것이다.
+- @labour: 노동조합과 협력하여 노동자의 삶을 개선해야 한다.
+- @reform: 에두아르트 베른슈타인과 필리포 투라티를 따라 윤리적 사회주의를 추구하고, 민주주의를 강화하며, 당의 유권자 기반을 확대해야 한다.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -30,7 +30,7 @@ if (Q.ideology && Q.ideology != "left") {
 go-to: changed if changed = 1
 on-departure: ideology = "left"; communist_strength += 10; communist_dissent -= 5; ldr_relation -= 3; ul_relation -= 5; ldr_moderates -= 0.2; socialist_sentiment += 2*(1-dissent); radicalisation += 0.1;
 
-The radical left of the party supports a course of class struggle, and violent revolution.
+당의 급진 좌파는 계급 투쟁과 폭력 혁명 노선을 지지합니다.
 
 @centrist
 on-arrival: {!
@@ -41,7 +41,7 @@ if (Q.ideology && Q.ideology != "centrist") {
 go-to: changed if changed = 1
 on-departure: ideology = "centrist"; maximalist_strength += 10; maximalist_dissent -= 10; communist_dissent -= 5; reformist_dissent -= 5
 
-The Center Marxists, represented by Serrati's faction, support a middle course of preparing for revolution while building up the consciousness of the working class.
+세라티 파벌로 대표되는 중도 마르크스주의자들은 노동계급의 의식을 고취하며 혁명을 준비하는 중도 노선을 지지합니다.
 
 @labour
 on-arrival: {!
@@ -52,7 +52,7 @@ if (Q.ideology && Q.ideology != "labour") {
 go-to: changed if changed = 1
 on-departure: ideology = "labour"; labour_strength += 10; labour_dissent -= 5; 
 
-The labour wing of the party supports continued participation in government in order to provide benefits to the workers, and the creation of public works programs for employment.
+당의 노동계 파벌은 노동자 이익 확보를 위한 지속적인 정부 참여와 일자리 창출을 위한 공공사업 프로그램 신설을 지지합니다.
 
 @syndicalism
 on-arrival: {!
@@ -63,7 +63,7 @@ if (Q.ideology && Q.ideology != "syndicalist") {
 go-to: changed if changed = 1
 on-departure: ideology = "syndicalist"; syndicalist_strength += 10; syndicalist_dissent -= 5 if syndicalist_active; 
 
-The minor syndicalist wing of the party supports violent means in order to provide benefits to the workers, such as strikes and factory occupations.
+당내 소수 생디칼리스트 파벌은 노동자들의 이익을 위해 파업이나 공장 점거와 같은 폭력적 수단을 지지합니다.
 
 @reform
 on-arrival: {!
@@ -74,9 +74,9 @@ if (Q.ideology && Q.ideology != "reformist") {
 go-to: changed if changed = 1
 on-departure: ideology = "reformist"; reformist_strength += 10; democratisation += 1; reformist_dissent -= 5; ldr_relation += 5; ul_relation += 5; republican_sentiment += 3*(1-dissent); radicalisation -= 0.1;
 
-The reformist wing of the party seeks to preserve continued participation in government, and is most supportive of coalitions with the other pro-democracy parties.
+당의 개혁주의 파벌은 정부에 계속 참여하고자 하며, 다른 민주주의 정당과의 연정에 가장 지지적입니다.
 
 @changed
 on-arrival: communist_dissent += 5; maximalist_dissent += 5; labour_dissent += 5; reformist_dissent += 5; syndicalist_dissent += 5 if syndicalist_active
 
-We have changed ideologies. Many in the party feel unmoored.
+이념 노선을 바꿨습니다. 당원 다수가 방향성을 잃은 듯한 느낌을 받습니다.
