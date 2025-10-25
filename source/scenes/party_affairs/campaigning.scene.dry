@@ -1,4 +1,4 @@
-title: Campaigning
+title: 선거 운동
 new-page: true
 on-arrival: week_actions += 1
 view-if: not_participating = 0
@@ -7,75 +7,75 @@ card-image: img/Campaigning.jpg
 frequency: 100
 tags: party_affairs
 
-= Campaigning
+= 선거 운동
 
-Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
+ 선거 기간 여부와 관계없이, 우리 당은 항상 유권자 기반을 넓히고자 합니다. 누구에게 유세 활동을 집중해야 할까요?
 
-- @workers: The urban working class, our traditional support base.
-- @middle_class: The middle class of small independent businessmen and artisans.
-- @industrialists: The industrialists and landowners who traditionally oppose us.
-- @rural: Rural workers and small farmers.
-- @veterans: Newly unemployed veterans discharged from the army.
-- @catholics: Catholics, who typically support the People's Party.
-- @women: Women, who typically support the People's Party.
-- @root: We either don't want to or cannot campaign right now.
+- @workers: 우리의 전통적 지지 기반인, 도시 노동 계급.
+- @middle_class: 소규모 자영업자와 장인으로 구성된 중산층.
+- @industrialists: 전통적으로 우리 당에 반대해온 기업가와 지주.
+- @rural: 농촌 노동자와 소농.
+- @veterans: 군에서 제대하여 갓 실업자가 된 재향 군인.
+- @catholics: 보통 이탈리아 인민당을 지지하는 가톨릭 신자.
+- @women: 보통 이탈리아 인민당을 지지하는 여성.
+- @root: 지금은 유세를 원치 않거나 할 수 없다.
 - @easy_discard
 
 @workers
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: workers_psi += 6*(1-dissent); workers_psi -= 2 if radicalisation > 8; workers_psi -= 2 if unemployment >= 15 and psi_in_government; workers_psi -= 2 if unemployment >= 25 and psi_in_government; resources -= 1; workers_psi += 3*(1-dissent) if nationalisation_progress >= 1;
 
-We have increased our campaigning among the workers. [? if unemployment >= 15: The high levels of unemployment make our campaign more difficult. ?]
+노동자층을 상대로 한 유세 활동을 강화했습니다. [? if unemployment >= 15: 높은 실업률 탓에 유세가 더 어려워졌습니다. ?]
 
 @middle_class
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: middle_class_psi += 6*(1-dissent); middle_class_psi -= 3 if anti_monarchist_sentiment <= 49; resources -= 1; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted
 
-We have increased our campaigning among the middle class. [? if socialist_sentiment <= 49: Our campaign is worsened by their wariness of our ideals. ?][? if nationalisation_adopted : Our campaign is worsened by our radical political & economic plan. ?]
+중산층을 상대로 한 유세 활동을 강화했습니다. [? if socialist_sentiment <= 49: 우리의 이념에 대한 이들의 경계심으로 인해 유세가 더 어려워졌습니다. ?][? if nationalisation_adopted : 우리의 급진적인 정치 경제 계획으로 인해 유세가 더 어려워졌습니다. ?]
 
 @industrialists
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: industrialists_psi += 5*(1-dissent); resources -= 1; industrialists_psi -= 1 if nationalist_sentiment >= 51; industrialists_psi -= 3 if nationalisation_adopted; industrialists_psi += 2 if welfare < 0
 
-We have increased our campaigning among the industrialists. Our ideals are diametrically opposed to them, making campaigning harder. [? if nationalisation_adopted : Our campaign is worsened by our radical political & economic plan. ?] [? if welfare < 0 : Our campaign is made easier by the gutting of the welfare system. ?]
+기업가층을 상대로 한 유세 활동을 강화했습니다. 우리의 이념은 이들과 정반대이기에 유세가 더욱 어렵습니다. [? if nationalisation_adopted : 우리의 급진적인 정치 경제 계획으로 인해 유세가 더 어려워졌습니다. ?] [? if welfare < 0 : 복지 제도가 대폭 축소되어 유세가 더 쉬워졌습니다. ?]
 
 @rural
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: rural_psi += 6*(1-dissent); rural_psi -= 3*(1-dissent) if socialist_sentiment > 49; resources -= 1; rural_psi += 3*(1-dissent) if agricultural_policy >= 2
 
-We have increased our campaigning among farmers. [? if agricultural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+농민층을 상대로 한 유세 활동을 강화했습니다. [? if agricultural_policy >= 2 : 우리의 농업 정책 덕분에 농민들의 지지를 얻기가 더 수월해졌습니다. ?]
 
 @veterans
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: veterans_psi += 6*(1-dissent); resources -= 1; veterans_psi -= 3 if welfare < 0; veterans_psi += 3*(1-dissent) if welfare >= 2;
 
-We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?]
+실업자들을 상대로 한 유세 활동을 강화했습니다. [? if welfare < 0: 우리 당이 참여한 정부가 단행한 복지 삭감과 그로 인한 빈곤 때문에, 유세가 더 어려워지고 있으며 심지어는 역효과를 낳을 수도 있습니다. ?]
 
 @catholics
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: catholic_psi += 6*(1-dissent); resources -= 1; catholic_psi -= 5*(1-dissent) if secularised_education; catholic_psi += 2*(1-dissent) if roman_question_answered; catholic_psi += 1 if pope = "Gasppari" and roman_question_answered; catholic_psi -= 1 if pope = "Del Val" and roman_question_answered
 
-We have increased our campaigning among Catholics. [? if secularised_education : Our campaign is made harder due to our decision to secularise education. ?] [? if roman_question_answered : The signing of the Lateran Treaty under our Foreign Minister makes building support easier. ?]
+가톨릭 신자들을 상대로 한 유세 활동을 강화했습니다. [? if secularised_education : 교육 세속화 결정으로 인해 유세가 더 어려워졌습니다. ?] [? if roman_question_answered : 우리 당 소속 외무부 장관이 체결한 라테라노 조약 덕분에 지지를 얻기 더 쉬워졌습니다. ?]
 
-[? if pope = "Del Val" and roman_question_answered: A Pope antagonistic to our cause has made campaigning slightly harder. ?] [? if pope = "Gasppari" and roman_question_answered: A Pope sympathetic to our cause has made campaigning easier. ?]
+[? if pope = "Del Val" and roman_question_answered: 우리에게 적대적인 교황 때문에 유세가 약간 더 어려워졌습니다. ?] [? if pope = "Gasppari" and roman_question_answered: 우리에게 호의적인 교황 덕분에 유세가 더 쉬워졌습니다. ?]
 
 @women
-subtitle: -1 resources
+subtitle: -1 자원
 view-if: womens_suffrage
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: women_psi += 6*(1-dissent); resources -= 1; women_psi += 2*(1-dissent) if abortion_rights; women_psi += 2*(1-dissent) if womens_rights > 2; 
 
-We have increased our campaigning among Women. [? if womens_rights > 2 : Our reforms to women's rights have made it easier for us to build support. ?]
+여성들을 상대로 한 유세 활동을 강화했습니다. [? if womens_rights > 2 : 여성 인권 신장을 위한 우리의 개혁 덕분에 지지를 얻기가 더 수월해졌습니다. ?]

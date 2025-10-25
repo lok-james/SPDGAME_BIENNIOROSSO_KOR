@@ -1,4 +1,4 @@
-title: Fundraising
+title: 당비 모금
 new-page: true
 view-if: fundraising_timer <= 0 and (not historical_mode)
 on-arrival: fundraising_timer = 3; week_actions += 1
@@ -7,33 +7,32 @@ is-card: true
 card-image: img/Fundraising.jpg
 tags: party_affairs
 
-= Fundraising
+= 당비 모금
 
-For better or for worse, the party cannot exist without money.
+좋든 싫든, 당은 자금 없이는 유지될 수 없습니다.
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+- @maintain: 현행 당비를 유지한다.
+- @reduce: 당비를 인하한다.
+- @increase: 당비를 인상한다.
 
 @maintain
-subtitle: [+ dues +] resources gained.
+subtitle: [+ dues +] 자원을 획득합니다.
 on-arrival: resources += dues;
 
-We maintain our current dues.
+현행 당비를 유지합니다.
 
 @reduce
-subtitle: [+ dues - 1 +] resources gained.
+subtitle: [+ dues - 1 +]의 자원을 획득합니다.
 choose-if: dues > 1
 on-arrival: dues -= 1; resources += dues; communist_dissent -= 8; maximalist_dissent -= 8; reformist_dissent -= 8; labour_dissent -= 8; syndicalist_dissent -= 8 if syndicalist_active
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
-
+기존 당원들은 이를 환영하지만, 낮은 당비가 입당을 결정하는 요인이 되지는 않습니다.
 @increase
-subtitle: [+ dues + 1 +] resources gained. [? if unemployment >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
+subtitle: [+ dues + 1 +]의 자원을 획득합니다. [? if unemployment >= 15 : 현 경제 상황에서는 고통스러운 결정이 될 수 있습니다. ?][? if dues >= 4 : 당비가 이미 상당히 높습니다. 더 인상하면 당원 수가 줄어들 수 있습니다. ?]
 on-arrival: dues += 1; resources += dues; workers_psi -= 3; veterans_psi -= 3; workers_psi -= 10 if unemployment >= 15; veterans_psi -= 10 if unemployment >= 15; workers_psi -= 3*dues if dues >= 5; veterans_psi -= 3*dues if dues >= 5
 view-if: dues <= 4
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources. 
+당원들은 불평하고, 일부 덜 열성적인 당원들은 탈당합니다. 하지만 이제 추가 자원을 확보했습니다.
 
-[? if unemployment >= 15 : Because of the presently high unemployment, our members are feeling the extra burden hard. ?]
+[? if unemployment >= 15 : 현재의 높은 실업률 때문에, 당원들은 추가 부담을 뼈저리게 느끼고 있습니다. ?]
 

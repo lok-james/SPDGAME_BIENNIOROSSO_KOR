@@ -7,17 +7,17 @@ is-card: true
 card-image: img/Enemies.jpg
 tags: party_affairs
 
-= Choosing our enemies
+= 우리의 주적 설정
 
-In our media and campaign materials, who should we consider as our main opponents?
+언론 성명과 유세 자료에서, 누구를 우리의 주적으로 규정해야 할까요?
 
-[? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
+[? if enemies != 0 : 이전에는 [+ enemies +]을/를 우리의 주적으로 삼았습니다. 노선을 바꿀 필요가 있을까요? ?]
 
-- @anti_dem: The anti-democratic parties of the far right and left - the PCd'I, and the [+ pnf_name +].
-- @communists: The PCd'I alone.
-- @pnf: The [+ pnf_name +] alone.
-- @religious: The Religious parties - the PPI.
-- @bourgeois: The Bourgeois parties - the [+ ldr_name +] and [+ ul_name +].
+- @anti_dem: 극우와 극좌 반민주 정당 - 이탈리아 공산당과 [+ pnf_name +].
+- @communists: 이탈리아 공산당만.
+- @pnf: [+ pnf_name +]만.
+- @religious: 종교 정당 - 이탈리아 인민당.
+- @bourgeois: 부르주아 정당 - [+ ldr_name +]와 [+ ul_name +].
 - @easy_discard
 - @cancel_advisor_action
 
@@ -25,25 +25,25 @@ In our media and campaign materials, who should we consider as our main opponent
 view-if: pcdi_formed
 on-arrival: enemies = "anti-democratic parties"; maximalist_strength += 5; reformist_strength += 5; communist_dissent += 5; workers_pcdi -= 2; workers_pnf -= 2; radicalisation -= 0.05;
 
-Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties.
+극우와 극좌를 공격하는 것은 부르주아 정당과 싸우길 바라는 당내 좌파를 제외한 모두에게 지지를 받습니다.
 
 @communists
 view-if: pcdi_formed
 on-arrival: enemies = "PCd'I"; reformist_strength += 5; communist_dissent += 8; reformist_dissent -= 5; pcdi_relation -= 15; ldr_relation += 3; ul_relation += 5; ppi_relation += 5; workers_pcdi -= 4; radicalisation -= 0.05;
 
-Attacking the PCd'I is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the communists, this may not be the best choice.
+이탈리아 공산당을 공격하는 것은 당내 극좌를 제외한 모두의 지지를 받으며, 부르주아 정당들로부터 어느 정도 호응을 얻을 수 있습니다. 하지만 공산주의자들과의 화해를 염두에 둔다면 최선의 선택은 아닐 것입니다.
 
 @pnf
 on-arrival: enemies = pnf_name; fasci_urgency += 1; workers_pnf -= 4; nationalist_sentiment -= 3*(1-dissent); workers_pnf += 4 if pnf_votes < 2; veterans_pnf += 8 if pnf_votes < 2
 
-[? if (fasci_urgency == 0 or pnf_seating_disp < 10) and prime_minister_party != pnf_name : The [+ pnf_name +] is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if (fasci_urgency > 0 and pnf_seating_disp >= 10) or prime_minister_party == pnf_name : The fascists are the most urgent problem for us to deal with. ?][? if pnf_votes < 2 and not pnf_in_government : Worse, giving them attention while they're such a small party only attracts attention to them. ?]
+[? if (fasci_urgency == 0 or pnf_seating_disp < 10) and prime_minister_party != pnf_name : 지금의 [+ pnf_name +]은 허세만 부릴 뿐인 군소 정당입니다. 당내의 많은 이들이 우리의 선택에 의문을 표하고 있습니다. ?][? if (fasci_urgency > 0 and pnf_seating_disp >= 10) or prime_minister_party == pnf_name : 파시스트들은 우리가 처리해야 할 가장 시급한 문제입니다. ?][? if pnf_votes < 2 and not pnf_in_government : 설상가상으로, 이렇게 미미한 정당에 주목하는 것은 오히려 그들에게 관심을 끌어줄 뿐입니다. ?]
 
 @religious
 on-arrival: enemies = "religious parties"; communist_strength += 5; reformist_dissent += 8; communist_dissent -= 5; ppi_relation -= 15; workers_ppi -= 4; republican_sentiment -= 4; coalition_dissent += 1 if socialist_catholic_coalition
 
-Attacking the PPI certainly aligns with our secular ideals, and wins us some measure of approval among the left. However, it may make it harder to build the coalitions that are necessary for government in the future.
+이탈리아 인민당을 공격하는 것은 우리의 세속주의 이념에 부합하며 좌파의 지지를 얻게 해줄 것입니다. 하지만 훗날 정부 구성을 위해 연정이 필요할 때 장애물이 될 수 있습니다.
 
 @bourgeois
 on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; ldr_relation -= 5; ul_relation -= 5; reformist_dissent += 8; workers_ldr -= 3; coalition_dissent += 1 if centre_left_coalition; republican_sentiment -= 3
 
-Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
+우리의 반-부르주아 수사는 좌파들에게 인기가 있지만, 훗날 정부 구성을 위한 연정을 맺는 데 어려움을 줄 수 있습니다.
