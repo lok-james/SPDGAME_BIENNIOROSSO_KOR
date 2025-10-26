@@ -1,4 +1,4 @@
-title: Supreme Soviet Elections
+title: 최고 소비에트 선거
 new-page: true
 tags: event
 priority: -1
@@ -52,11 +52,11 @@ Q.in_unstable_coalition = 0;
 on-departure: week_actions += 1; in_election = 0; next_election_year = next_election_year + 2; n_elections += 1; next_election_time = time + 24;
 set-jump: post_election_1919
 
-= Elections, [+ month : month +] [+ year +]
+= [+ year +]년 [+ month : month +]월 선거
 
-The elections of the Supreme Soviet are to be held now.
+이제 최고 소비에트 선거가 실시됩니다.
 
-- @post_election_1919: We will do our best.
+- @post_election_1919: 최선을 다하겠다.
 
 @post_election_1919
 on-arrival: {!
@@ -383,39 +383,39 @@ if (window && d3) {
 !}
 go-to: coalition_menu
 
-= Election results
+= 선거 결과
 
 {!<svg id="chamber" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 {!<tr><td>!} **[+ psi_full_name +]** {!</td><td>!} **[+ psi_r +]%** {!</td><td>!} **[+ str_change_psi +]%** {!</td><td>!} **[+ psi_seating +]** {!</td><td>!} **[+ psi_seating_disp +]%** {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} Communists: {!</td><td>!} [+ communist_r +]% {!</td><td>!} [+ str_change_communist +]% {!</td><td>!} [+ communist_seating +] {!</td><td>!} [+ communist_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8B0000; outline: 2px; outline-style: solid;'> </div>!} 공산주의파: {!</td><td>!} [+ communist_r +]% {!</td><td>!} [+ str_change_communist +]% {!</td><td>!} [+ communist_seating +] {!</td><td>!} [+ communist_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#DC143C; outline: 2px; outline-style: solid;'> </div>!} Maximalists: {!</td><td>!} [+ maximalist_r +]% {!</td><td>!} [+ str_change_maximalist +]% {!</td><td>!} [+ maximalist_seating +] {!</td><td>!} [+ maximalist_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#DC143C; outline: 2px; outline-style: solid;'> </div>!} 최대강령주의파: {!</td><td>!} [+ maximalist_r +]% {!</td><td>!} [+ str_change_maximalist +]% {!</td><td>!} [+ maximalist_seating +] {!</td><td>!} [+ maximalist_seating_disp +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#B22222; outline: 2px; outline-style: solid;'> </div>!} Labour: {!</td><td>!} [+ labour_r +]% {!</td><td>!} [+ str_change_labour +]% {!</td><td>!} [+ labour_seating +] {!</td><td>!} [+ labour_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#B22222; outline: 2px; outline-style: solid;'> </div>!} 노동파: {!</td><td>!} [+ labour_r +]% {!</td><td>!} [+ str_change_labour +]% {!</td><td>!} [+ labour_seating +] {!</td><td>!} [+ labour_seating_disp +]% {!</td></tr>!}
 
-[? if syndicalist_active : {!<tr><td><div class="box" style='background-color:#2F2F2F; outline: 2px; outline-style: solid;'> </div>!} Syndicalists: {!</td><td>!} [+ syndicalist_r +]% {!</td><td>!} [+ str_change_syndicalist +]% {!</td><td>!} [+ syndicalist_seating +] {!</td><td>!} [+ syndicalist_seating_disp +]% {!</td></tr>!} ?]
+[? if syndicalist_active : {!<tr><td><div class="box" style='background-color:#2F2F2F; outline: 2px; outline-style: solid;'> </div>!} 생디칼리슴파: {!</td><td>!} [+ syndicalist_r +]% {!</td><td>!} [+ str_change_syndicalist +]% {!</td><td>!} [+ syndicalist_seating +] {!</td><td>!} [+ syndicalist_seating_disp +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#FF6961; outline: 2px; outline-style: solid;'> </div>!} Reformists: {!</td><td>!} [+ reformist_r +]% {!</td><td>!} [+ str_change_reformist +]% {!</td><td>!} [+ reformist_seating +] {!</td><td>!} [+ reformist_seating_disp +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#FF6961; outline: 2px; outline-style: solid;'> </div>!} 개혁주의파: {!</td><td>!} [+ reformist_r +]% {!</td><td>!} [+ str_change_reformist +]% {!</td><td>!} [+ reformist_seating +] {!</td><td>!} [+ reformist_seating_disp +]% {!</td></tr>!}
 
-[? if (opposition or benevolence) : {!<tr><td>!} **Constitutional Opposition** {!</td><td>!} **[+ opposition_r +]%** {!</td><td>!} N/A {!</td><td>!} **[+ opposition_seating +]** {!</td><td>!} **[+ opposition_seating_disp +]%** {!</td></tr>!} ?]
+[? if (opposition or benevolence) : {!<tr><td>!} **입헌 야권** {!</td><td>!} **[+ opposition_r +]%** {!</td><td>!} N/A {!</td><td>!} **[+ opposition_seating +]** {!</td><td>!} **[+ opposition_seating_disp +]%** {!</td></tr>!} ?]
 
-[? if (opposition or benevolence) and pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35; outline: 2px; outline-style: solid;'> </div>!} PCd'I: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
+[? if (opposition or benevolence) and pcdi_formed : {!<tr><td><div class="box" style='background-color:#C72F35; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 공산당: {!</td><td>!} [+ pcdi_r +]% {!</td><td>!} [+ str_change_pcdi +]% {!</td><td>!} [+ pcdi_seating +] {!</td><td>!} [+ pcdi_seating_disp +]% {!</td></tr>!} ?]
 
-[? if (opposition or benevolence) and psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A; outline: 2px; outline-style: solid;'> </div>!} PSU: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
+[? if (opposition or benevolence) and psu_formed : {!<tr><td><div class="box" style='background-color:#E35A5A; outline: 2px; outline-style: solid;'> </div>!} 단일사회당: {!</td><td>!} [+ psu_r +]% {!</td><td>!} [+ str_change_psu +]% {!</td><td>!} [+ psu_seating +] {!</td><td>!} [+ psu_seating_disp +]% {!</td></tr>!} ?]
 
-[? if opposition or benevolence :  {!<tr><td><div class="box" style='background-color:#FFC0CB; outline: 2px; outline-style: solid;'> </div>!} PSRI: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
+[? if opposition or benevolence :  {!<tr><td><div class="box" style='background-color:#FFC0CB; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 개혁사회당: {!</td><td>!} [+ psri_r +]% {!</td><td>!} [+ str_change_psri +]% {!</td><td>!} [+ psri_seating +] {!</td><td>!} [+ psri_seating_disp +]% {!</td></tr>!} ?]
 
-[? if benevolence : {!<tr><td><div class="box" style='background-color:#3CB371; outline: 2px; outline-style: solid;'> </div>!} PRI: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
+[? if benevolence : {!<tr><td><div class="box" style='background-color:#3CB371; outline: 2px; outline-style: solid;'> </div>!} 이탈리아 공화당: {!</td><td>!} [+ pri_r +]% {!</td><td>!} [+ str_change_pri +]% {!</td><td>!} [+ pri_seating +] {!</td><td>!} [+ pri_seating_disp +]% {!</td></tr>!} ?]
 
 
 {!</table>!}
 
-[? if psi_seating_disp >= 50 : There is, naturally, one formable government. ?]
+[? if psi_seating_disp >= 50 : 물론, 구성 가능한 정부는 단 하나뿐입니다. ?]
 
-[? if psi_seating_disp < 50 : There is, naturally, on- Oh? Interesting. ?]
+[? if psi_seating_disp < 50 : 물론, 결과는 뻔- 오? 흥미롭군요. ?]
 
 @coalition_menu
 on-arrival: {!
@@ -435,8 +435,8 @@ Q.anti_socialist_coalition = 0;
 - @left_wing_coalition
 
 @psi_majority
-title: [+ psi_name +] Majority
-subtitle: [+ psi_name +] Majority: [+ psi_seating_disp +]%
+title: [+ psi_name +] 단독 정부
+subtitle: [+ psi_name +] 단독 정부: [+ psi_seating_disp +]%
 on-arrival: {!
 
 Q.prime_minister_party = Q.psi_name;
@@ -472,76 +472,76 @@ Q.deambris_support = parseFloat(Q.labour_seating_disp) + parseFloat(Q.syndicalis
 !}
 achievement: governo_monocolore
 
-The [+ psi_name +] will continue its rule over Italy.
+[+ psi_name +]가 이탈리아의 통치를 계속할 것입니다.
 
-- @gramsci: Antonio Gramsci is elected Secretary-General and Prime Minister.
-- @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
-- @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
-- @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.
-- @deambris: Alceste De Ambris is elected Secretary-General and Prime Minister.
-- @turati: Filippo Turati is elected Secretary-General and Prime Minister.
-- @bacci: No leader is able to secure a majority!
+- @gramsci: 안토니오 그람시를 서기장 겸 총리로 선출한다.
+- @bordiga: 아마데오 보르디가를 서기장 겸 총리로 선출한다.
+- @serrati: 자친토 메노티 세라티를 서기장 겸 총리로 선출한다.
+- @daragona: 루도비코 다라고나를 서기장 겸 총리로 선출한다.
+- @deambris: 알체스테 데 암브리스를 서기장 겸 총리로 선출한다.
+- @turati: 필리포 투라티를 서기장 겸 총리로 선출한다.
+- @bacci: 어떤 지도자도 과반을 확보하지 못했다!
 
 @gramsci
 choose-if: bordiga_support >= 50
 view-if: pcdi_gramsci > pcdi_bordiga
-subtitle: Gramsci leads the Communist faction and is able to sway the Maximalists.
-unavailable-subtitle: The Communists and Maximalists do not have enough votes.
+subtitle: 그람시는 공산주의파를 이끌며 최대강령주의파의 지지를 얻을 수 있습니다.
+unavailable-subtitle: 공산주의파와 최대강령주의파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "Gramsci"
 
-Antonio Gramsci is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+안토니오 그람시가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다.
 
 @bordiga
 choose-if: bordiga_support >= 50
 view-if: pcdi_gramsci <= pcdi_bordiga
-subtitle: Bordiga leads the Communist faction and is able to sway the Maximalists.
-unavailable-subtitle: The Communists and Maximalists do not have enough votes.
+subtitle: 보르디가는 공산주의파를 이끌며 최대강령주의파의 지지를 얻을 수 있습니다.
+unavailable-subtitle: 공산주의파와 최대강령주의파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "Bordiga"
 
-Amadeo Bordiga is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+아마데오 보르디가가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다.
 
 @serrati
 choose-if: serrati_support >= 50
-subtitle: Serrati leads the Maximalists and is able to sway the Communists and Labour.
-unavailable-subtitle: The Maximalists, Communists and Labour do not have enough votes.
+subtitle: 세라티는 최대강령주의파를 이끌며 공산주의파와 노동파의 지지를 얻을 수 있습니다.
+unavailable-subtitle: 최대강령주의파, 공산주의파, 노동파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "Serrati"
 
-Giacinto Menotti Serrati is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+자친토 메노티 세라티가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다.
 
 @daragona
 choose-if: daragona_support >= 50
-subtitle: D'Aragona leads the Labour faction, and is able to sway the Reformists.
-unavailable-subtitle: Labour and Reformists doesn't have have enough votes.
+subtitle: 다라고나는 노동파를 이끌며 개혁주의파의 지지를 얻을 수 있습니다.
+unavailable-subtitle: 노동파와 개혁주의파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "D'Aragona"
 
-Ludovico D'Aragona is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+루도비코 다라고나가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다.
 
 @deambris
 choose-if: deambris_support >= 50
-subtitle: De Ambris leads the Syndicalists, and is able to sway Labour.
-unavailable-subtitle: The Syndicalists and Labour don't have enough votes.
+subtitle: 데 암브리스는 생디칼리즘파를 이끌며 노동파의 지지를 얻을 수 있습니다.
+unavailable-subtitle: 생디칼리즘파와 노동파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "De Ambris"
 
-Alceste De Ambris is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy. Some are skeptical of his prior affiliation and ties with fascism, however.
+알체스테 데 암브리스가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다. 다만 일각에서는 그의 과거 소속과 파시즘과의 연관성에 대해 회의적인 시각을 보입니다.
 
 @turati
 choose-if: turati_support >= 50
-subtitle: Turati leads the Reformists, and is able to sway Labour.
-unavailable-subtitle: The Reformists and Labour do not have have enough votes.
+subtitle: 투라티는 개혁주의파를 이끌며 노동파의 지지를 얻을 수 있습니다.
+unavailable-subtitle: 개혁주의파와 노동파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "Turati"
 
-Filippo Turati is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+필리포 투라티가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다.
 
 @bacci
 view-if: bordiga_support < 50 and serrati_support < 50 and daragona_support < 50 and turati_support < 50
-subtitle: Giovanni Bacci will lead as a compromise Secretary-General and Prime Minister.
+subtitle: 타협안으로 조반니 바치가 서기장 겸 총리직을 수행할 것입니다.
 on-arrival: prime_minister = "Bacci"
 
-Giovanni Bacci is elected as Secretary-General of the [+ psi_name +], and Prime Minister of Italy.
+조반니 바치가 [+ psi_name +]의 서기장이자 이탈리아 공화국 총리로 선출됩니다.
 
 @left_wing_coalition
-title: Left-wing Coalition
-subtitle: A coalition of all parties; from communist to reformist: 100%
+title: 좌익 연정
+subtitle: 공산주의파부터 개혁주의파까지, 모든 정파의 연정: 100%
 view-if: psi_seating_disp < 50
 on-arrival: {!
 
@@ -577,22 +577,22 @@ Q.chisea_support = parseFloat(Q.pri_seating_disp) + parseFloat(Q.reformist_seati
 
 !}
 
-The Left-wing coalition will continue its rule over Italy. The Ministries are shared collaboratively within the coalition.
+좌익 연정이 이탈리아의 통치를 계속합니다. 내각 직위는 연정 참여 세력 전체에 고루 배분됩니다.
 
-- @gramsci: Antonio Gramsci is elected Secretary-General and Prime Minister.
-- @bordiga: Amadeo Bordiga is elected Secretary-General and Prime Minister.
-- @serrati: Giacinto Menotti Serrati is elected Secretary-General and Prime Minister.
-- @daragona: Ludovico D'Aragona is elected Secretary-General and Prime Minister.
-- @deambris: Alceste De Ambris is elected Secretary-General and Prime Minister.
-- @turati: Filippo Turati is elected Secretary-General and Prime Minister.
-- @chisea: Eugenio Chisea of the Italian Republican Party is elected Prime Minister!
-- @bacci: No leader is able to secure a majority!
+- @gramsci: 안토니오 그람시를 서기장 겸 총리로 선출한다.
+- @bordiga: 아마데오 보르디가를 서기장 겸 총리로 선출한다.
+- @serrati: 자친토 메노티 세라티를 서기장 겸 총리로 선출한다.
+- @daragona: 루도비코 다라고나를 서기장 겸 총리로 선출한다.
+- @deambris: 알체스테 데 암브리스를 서기장 겸 총리로 선출한다.
+- @turati: 필리포 투라티를 서기장 겸 총리로 선출한다.
+- @chisea: 이탈리아 공화당의 유지니오 키에자를 총리로 선출한다!
+- @bacci: 어떤 지도자도 과반을 확보하지 못했다!
 
 @chisea
 view-if: benevolence
 choose-if: chisea_support >= 50
-unavailable-subtitle: The Republicans and Reformists do not have have enough votes.
+unavailable-subtitle: 공화당과 개혁주의파는 의석이 충분하지 않습니다.
 on-arrival: prime_minister = "Chisea"; prime_minister_party = "PRI"
 achievement: il_sogno_mazziniano
 
-Surprisingly, the Constitutional Opposition, who have pushed forward the PRI’s candidate of Eugenio Chisea, has successfully taken the post of Prime Minister! With a resurgent Reformist faction after the initial socialist revolution tilting the scales towards the PRI, he is expected to represent cooperation between the ruling PSI and the more moderate Republicans. 
+놀랍게도, 이탈리아 공화당의 유지니오 키에자를 총리 후보로 내세운 입헌 야권이 총리직을 차지했습니다! 사회주의 혁명 이후 개혁주의 파벌이 부활하며 공화당에 힘을 실어주자, 키에자는 집권 이탈리아 사회당과 온건 공화파 간의 협력을 상징하는 인물이 될 것으로 기대됩니다.
