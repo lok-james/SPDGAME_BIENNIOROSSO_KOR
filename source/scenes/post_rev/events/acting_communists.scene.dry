@@ -1,5 +1,5 @@
-title: Red Guards Attack!
-subtitle: The Red Guards have begun attacks on our institutions.
+title: 적위대의 공격!
+subtitle: 적위대가 우리 기관을 공격하기 시작했습니다.
 tags: event
 view-if: communist_bomb_timer <= time and communist_terror
 on-arrival: {!
@@ -66,12 +66,12 @@ Q.women_ul -= 3*(1-Q.dissent);
 
 !}
 
-= Red Guard Attack 
+= 적위대의 공격
 
-The Red Guards have staged attacks on banks across Italy, seemingly as a way to fund the organisation in its early stages. Though the Interior Ministry, in collaboration with the Carabinieri was able to prevent some of the attacks from succeeding, many were able to escape from the grasp of the Carabinieri.
+적위대가 조직 초기 자금 마련을 목적으로 이탈리아 전역의 은행들을 공격했습니다. 내무부가 카라비니에리와 협력하여 일부 공격을 막는 데 성공했지만, 많은 이들이 카라비니에리의 추격망을 벗어났습니다.
 
-[? if psi_in_government : Naturally, our party has come under flak for allowing this to occur, as opposition parties criticise our inability to stabilise the nation; some even going as far to paint the *Red Guards* act as affiliated to us. ?]
+[? if psi_in_government : 당연하게도, 우리 당은 이 사태를 방치했다는 비판에 직면했습니다. 야당들은 우리가 국가를 안정시키지 못한다며 비난하고, 심지어 몇몇은 '적위대'의 소행을 우리와 연관시키려 했습니다. ?]
 
-[? if not psi_in_government : The blame of the attack falls onto the governing coalition, which we hold responsible for allowing such a reprehensive attack to occur in Italy. ?]
+[? if not psi_in_government :  공격의 책임은 연립정부에 있으며, 우리는 이탈리아에서 이처럼 끔찍한 공격이 일어나도록 방치한 현 정부를 규탄했습니다. ?]
 
-- @root: Concerning.
+- @root: 우려스럽군.

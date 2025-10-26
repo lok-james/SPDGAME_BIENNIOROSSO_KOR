@@ -1,12 +1,12 @@
-title: Arditi del Popolo dissolves!
-subtitle: The fascists have become less of a threat.
+title: 인민의 결사대 해체!
+subtitle: 파시스트가 더 이상 위협적이지 않습니다.
 tags: event
 view-if: (violent_revolution or pnf_collapse_seen)
 on-arrival: arditi_cooperation = 0; adp_strength = 0; adp_militancy = 0
 max-visits: 1
 
-= Dissolution of the Arditi del Popolo
+= 인민의 결사대 해체
 
-[? if pnf_collapse_seen : Following the collapse of the National Fascist Party, ?][? if violent_revolution : Following our rise to power against the fascists and bourgeois parties, ?] the main threat of the Arditi del Popolo, the *Blackshirts* have been mostly eliminated and defunct. Though attempting to remain whole, the lack of a common enemy has led to the split of the various republicans, anarchists, communists and socialists within the organisation, leading to its dissolution.
+[? if pnf_collapse_seen : 국가 파시스트당의 붕괴 이후, ?][? if violent_revolution : 파시스트와 부르주아 정당에 맞서 우리가 집권한 이후, ?] 인민의 결사대의 주적이었던 '검은 셔츠단'이 거의 소탕되어 사라졌습니다. 조직을 유지하려 했으나, 공동의 적이 사라지자 조직 내의 다양한 공화주의자, 무정부주의자, 공산주의자, 사회주의자들이 분열하여 결국 해체에 이르렀습니다.
 
-Unfortunately, this has decreased our ability to combat the remnants of fascism, no matter how small.
+안타깝게도, 이로 인해 미미하게나마 남은 파시즘의 잔재와 싸울 능력이 감소했습니다.

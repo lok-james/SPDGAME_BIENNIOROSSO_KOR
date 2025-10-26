@@ -1,5 +1,5 @@
-title: Fascists Attack!
-subtitle: The Fascists are clashing against our institutions! 
+title: 파시스트의 공격!
+subtitle: 파시스트가 우리 기관을 박살내고 있습니다! 
 tags: event
 view-if: fascist_bomb_timer <= time and fascist_terror
 on-arrival: {!
@@ -66,12 +66,12 @@ Q.women_ul -= 3*(1-Q.dissent);
 
 !}
 
-= Far-right Attack
+= 극우파의 공격
 
-The Far-right Paramilitaries, primarily the Fascists have engaged in a new round of attacks and bombings across Italy, vowing to take down the state via violent and forceful means. Deaths tolls cause by their attacks have reached double digits, as a new wave of fear and instability has seemingly hit Italy once more.
+극우 준군사조직, 특히 파시스트들이 폭력적이고 강압적인 수단으로 국가를 전복시키겠다고 공언하며 이탈리아 전역에서 새로운 공격과 폭탄 테러를 감행했습니다. 그들의 공격으로 인한 사망자 수가 두 자릿수를 기록하며, 새로운 공포와 불안의 물결이 다시 한번 이탈리아를 덮쳤습니다.
 
-[? if psi_in_government : Naturally, our party has come under flak for allowing this to occur, as opposition parties criticise our inability to stabilise the nation as the far-right loom over us. ?]
+[? if psi_in_government : 당연하게도 우리 당은 이 사태를 방치했다는 비난을 받고 있습니다. 야당들은 극우파가 위세를 떨치는 동안 국가를 안정시키지 못하는 우리의 무능을 비판했습니다. ?]
 
-[? if not psi_in_government : The blame of the attack falls onto the governing coalition, which we hold responsible for allowing such a reprehensive attack to occur in Italy. ?]
+[? if not psi_in_government : 공격의 책임은 연립정부에 있으며, 우리는 이탈리아에서 이처럼 끔찍한 공격이 일어나도록 방치한 현 정부를 규탄했습니다. ?]
 
-- @root: Concerning.
+- @root: 우려스럽군.

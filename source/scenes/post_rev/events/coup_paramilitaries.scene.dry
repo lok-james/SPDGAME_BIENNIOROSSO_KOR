@@ -1,5 +1,5 @@
-title: [? if fascist_coup_progress >= 7 : Fasci Coup! ?] [? if republican_coup_progress >= 5 : Anti-Communist Brigade Coup! ?] [? if communist_coup_progress >= 7 : New Red Guard Coup! ?]
-subtitle: The paramilitaries have spiralled out of control.
+title: [? if fascist_coup_progress >= 7 : 파시스트 쿠데타! ?] [? if republican_coup_progress >= 5 : 반공 여단 쿠데타! ?] [? if communist_coup_progress >= 7 : 신 적위대 쿠데타! ?]
+subtitle: 준군사조직들이 통제불능입니다.
 tags: event
 view-if: fascist_coup_progress >= 7 or republican_coup_progress >= 5 or communist_coup_progress >= 7
 max-visits: 1
@@ -7,19 +7,19 @@ go-to: coup_success if soviet_base != 1; coup_failure if soviet_base = 1
 
 @coup_success
 
-= [? if fascist_coup_progress >= 7 : Fasci Coup! ?] [? if republican_coup_progress >= 5 : Anti-Communist Brigade Coup! ?] [? if communist_coup_progress >= 7 : New Red Guard Coup! ?]
+= [? if fascist_coup_progress >= 7 : 파시스트 쿠데타! ?] [? if republican_coup_progress >= 5 : 반공 여단 쿠데타! ?] [? if communist_coup_progress >= 7 : 신 적위대 쿠데타! ?]
 
-Protests have been growing louder and louder across Italy. In cities, farms, factories, people are calling for your resignation. For the fall of the state it once desperately looked up to in hope, the same state that failed them. The state unable to prevent tragedy after tragedy from occurring. 
+이탈리아 전역에서 시위가 거세지고 있습니다. 도시에서, 농장에서, 공장에서, 사람들은 당신의 사임을 요구하고 있습니다. 한때 희망을 품고 간절히 바라보았던 국가, 바로 그들을 실망시킨 국가의 몰락을. 연이은 비극을 막지 못한 무능한 국가의 몰락을.
 
-So they turned. Desperate once more, the masses turned to ideologies far flung, promising them stability, prosperity that the current government — your government – could not give. And thus it came to a climax. The paramilitaries; whether communist, republican or fascist, now with public support behind them, have overthrown your government. Your forces are disarmed, your leadership arrested and shot. Italy plunges into darkness once more; a greater darkness than the one before you.
+그래서 그들은 등을 돌렸습니다. 다시 한번 절망에 빠진 대중은, 현 정부, 즉 당신의 정부가 줄 수 없었던 안정과 번영을 약속하는 극단적인 이념으로 눈을 돌렸습니다. 그리고 마침내 정점에 달했습니다. 공산주의자든, 공화주의자든, 파시스트든, 이제 대중의 지지를 등에 업은 준군사조직이 당신의 정부를 전복시켰습니다. 당신의 군대는 무장 해제되고, 지도부는 체포되어 총살당합니다. 이탈리아는 다시 한번 어둠 속으로, 이전보다 더 깊은 어둠 속으로 빠져듭니다.
 
-You had your chance. Now it's someone else's turn.
+당신에게 기회가 있었습니다. 이제 다른 사람 차례입니다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버.
 
 @coup_failure
 on-arrival: fascist_coup_progress = 0; republican_coup_progress = 0; communist_coup_progress = 0
 
-= Soviets thwart Paramilitary Coup
+= 소련이 준군사 쿠데타를 저지하다
 
-It seems that our alliance with the Soviets have paid off. Their military base has aided us in ending an attempted coup by the paramilitaries to overthrow the state, and it will take some time for them to recover once again.
+소비에트와의 동맹이 결실을 본 것 같습니다. 그들의 군사 기지 덕분에 국가를 전복시키려던 준군사 조직의 쿠데타 시도를 막을 수 있었습니다. 그들이 다시 세력을 회복하려면 시간이 좀 걸릴 것입니다.

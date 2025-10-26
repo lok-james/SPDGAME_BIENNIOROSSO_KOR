@@ -1,5 +1,5 @@
-title: Republicans Attack!
-subtitle: The Republicans are clashing against our institutions! 
+title: 공화파의 공격!
+subtitle: 공화주의자들이 우리 기관을 박살내고 있습니다.
 tags: event
 view-if: republican_bomb_timer <= time and republican_terror
 on-arrival: {!
@@ -66,10 +66,10 @@ Q.women_ul -= 3*(1-Q.dissent);
 
 !}
 
-= Republican Attack
+= 공화파의 공격
 
-The Republican Paramilitaries, mainly composed of supports of the liberals and even our former Republican allies have begun a wave of attacks across Italy, coming into conflict with our own forces in the Carabinieri and Interior Ministry.
+자유주의자와 심지어 우리의 옛 공화당 동맹의 지지자들로 주로 구성된 공화파 준군사조직이 이탈리아 전역에서 공격을 감행하여, 카라비니에리와 내무부의 우리 군대와 충돌했습니다.
 
-Naturally, our party has come under flak for allowing this to occur, as opposition factions, namely the reformists, criticise our inability to stabilise the nation and our unwillingness to allow the parties to participate in the Supreme Soviet that led to this situation in the first place.
+당연히, 우리 당은 이 사태를 방치했다는 비판에 직면했습니다. 특히 개혁주의자들은 국가 안정화에 실패한 우리의 무능과, 애초에 이 사태의 원인이 된 최고 소비에트에 다른 정당들의 참여를 허용하지 않으려는 우리의 비타협적인 태도를 비판합니다.
 
-- @root: Concerning.
+- @root: 우려스럽군.

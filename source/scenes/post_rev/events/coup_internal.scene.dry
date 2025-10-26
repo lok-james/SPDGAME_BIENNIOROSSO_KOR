@@ -1,43 +1,43 @@
-title: Internal Coup!
-subtitle: The Bolsheviks are trying to oust us!
+title: 내부 쿠데타!
+subtitle: 볼셰비키가 우릴 전복시키려 합니다!
 tags: event
 view-if: (soviet_influence >= 5 or (soviet_influence >= 3 and soviet_relation <= 3) or (soviet_influence >= 4 and soviet_relation <= 2)) and (prime_minister != "Gramsci" or (opposition = 1 or benevolence = 1)) and soviet_leader = "Stalin"
 on-arrival: soviet_aid_timer = time + 12
 max-visits: 1
 
-= Soviet-backed Coup!
+= 소련이 지원한 쿠데타!
 
-The Union of Soviet Socialist Republics have begun a coup against the nation, utilising its allies within the [+ psi_name +] gathered through influence with the goal of establishing a one-party dictatorship. Already, across the country, forces have begun taking up arms to secure the nation for their own.
+소비에트 사회주의 공화국 연방이 일당 독재 체제 수립을 목표로, [+ psi_name +] 내부에서 영향력으로 규합한 동맹 세력을 이용해 국가를 상대로 쿠데타를 일으켰습니다. 이미 전국에서 반란 세력이 자신들의 나라를 차지하기 위해 무장 봉기를 시작했습니다.
 
-Though many, naturally, wish for us to fight back and beat back our enemies, a rising defeatist movement has also emerged, willing to acquiesce in order for favourable terms. After all, would Italy really survive two economic crises and two civil wars?
+당연히 많은 이들이 우리가 맞서 싸워 적을 물리치기를 바라지만, 유리한 조건을 얻기 위해 굴복하려는 패배주의적인 움직임 또한 커지고 있습니다. 과연 이탈리아가 두 번의 경제 위기와 두 번의 내전을 버텨낼 수 있을까요?
 
-What should we do?
+어떻게 해야 할까요?
 
-- @fight: The Soviets be damned, mobilise our loyalists!
-- @give_up: Italy embraces the revolution.
+- @fight: 소련은 저주받을지어다, 충성파를 동원하라!
+- @give_up: 이탈리아는 혁명을 받아들인다.
 
 @fight
-subtitle: There will be no winners in this war.
+subtitle: 이 전쟁에는 승자가 없을 것입니다.
 
-The initial phase of the action ends, and somehow, both sides remain standing.
+교전의 초기 단계가 끝났지만, 어찌 된 일인지 양측 모두 건재합니다.
 
-The war settles into fixed battle lines. This will not be a quick coup, but a long civil war. The nation will destroy itself, as it has once before. 
+전선은 교착 상태에 빠집니다. 이것은 빠른 쿠데타가 아니라, 기나긴 내전이 될 것입니다. 국가는 이전처럼 스스로를 파멸시킬 것입니다.
 
-Tens, if not hundreds of thousands of lives will be lost, men pitted against each other, brother against brother in order to fulfill political ambitions of mere men who'll never see the battlefield, who'll never truly appreciate, nor regret the lives it took to get them to the place they stand. None will bat an eye, emptiness consuming their hearts as these same men take the stand and whisper sweet platitudes to the masses, decrying the death and suffering they themselves have brought to the land.
+수만, 어쩌면 수십만 명의 목숨이 사라질 것입니다. 결코 전장을 보지 못할, 현재의 자리에 오르기까지 희생된 생명들을 결코 제대로 감사하거나 후회하지 않을 자들의 정치적 야망을 위해, 남자들은 서로에게, 형제는 형제에게 맞서 싸울 것입니다. 공허함이 심장을 잠식한 채 그들은 눈 하나 깜짝하지 않을 것이며, 바로 그들이 연단에 서서 대중에게 달콤한 말을 속삭이며, 자신들이 이 땅에 가져온 죽음과 고통을 개탄할 것입니다.
 
-- @worth_it: Was it truly worth it?
+- @worth_it: 과연 그만한 가치가 있었는가?
 
 @give_up
-subtitle: Would the Soviets grant mercy?
+subtitle: 소련이 자비를 베풀까요?
 
-The coup occurs swiftly. Our leaders and commanders are arrested, our forces disarmed. By the end of the day, the Soviet-backed coup has consolidated, whether under the leadership of whatever prominent leader willing to sell their country to the devil; or some puppet on strings they've decided to put up with a hundred corruption cases behind him the Soviets promise to keep secret. Kangaroo courts are set up across Italy, packed with 'loyalists' willing to send men they viewed as friends mere days earlier in front of a barrel of a rifle. Orators – men and women once loyal to you – weave tales, spin lies that decry your rampant authoritarianism, disastrous policies that brought Italy to the brink of ruin; of course, before their *liberation*.
+쿠데타는 신속하게 일어났습니다. 우리 지도자와 지휘관들은 체포되고, 군대는 무장 해제되었습니다. 하루가 끝나갈 무렵, 악마에게 나라를 팔아넘긴 어떤 유력한 지도자 아래든, 아니면 소비에트가 비밀을 지켜주겠다 약속한 수백 건의 비리 사건을 덮어쓴 어떤 꼭두각시 아래든, 소비에트의 지원을 받은 쿠데타는 성공했습니다. 이탈리아 전역에 어용 재판소가 세워지고, 며칠 전까지만 해도 친구였던 이들을 소총 총구 앞에 기꺼이 내모는 '충성파'로 가득 찼습니다. 한때 당신에게 충성했던 연설가들은 당신의 만연한 권위주의와 이탈리아를 파멸 직전으로 몰고 간 재앙적인 정책들을 비난하는 이야기와 거짓말을 퍼뜨렸습니다. 물론, 그들의 소위 '해방' 이전의 일에 대해서 말입니다.
 
-At the very least, you've avoided war; war that would have claimed tens, if not hundreds of thousands of lives. In exchange, your legacy will be tarnished, your reputation besmirched as they convince the masses of how they were saved; to men and women desperate to be saved.
+적어도 당신은 전쟁을 피했습니다. 수만, 어쩌면 수십만 명의 목숨을 앗아갔을 전쟁을. 그 대가로, 구원받기를 간절히 바라는 사람들에게 '해방자'들이 자신들을 어떻게 구원했는지 설득하는 동안, 당신의 유산은 더럽혀지고 명성은 훼손될 것입니다.
 
-- @worth_it: Was it truly worth it?
+- @worth_it: 과연 그만한 가치가 있었는가?
 
 @worth_it
 
-To hell with it. Yes, it was.
+젠장. 그래, 가치 있었다.
 
-- @game_over: Game over.
+- @game_over: 게임 오버..
