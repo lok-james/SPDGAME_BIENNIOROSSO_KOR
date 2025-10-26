@@ -1,4 +1,4 @@
-title: [+ year +] National Congress
+title: [+ year +] 전국 대회
 new-page: true
 set-bg: img/DemBg.jpg
 audio: clear shuffle music/post_rev/GuardaGiuDallaPianura.mp3 music/post_rev/Innodeilavoratoridelmare.mp3 music/post_rev/InnodeiPezzenti.mp3 music/post_rev/InnodelleBarricate.mp3 music/post_rev/LaBrigataGaribaldi.mp3 music/post_rev/Sonlamondina.mp3
@@ -79,86 +79,86 @@ Q.labour_attempted = 0;
 max-visits: 1
 go-to: peaceful_menu
 
-= [+ year +] National Congress
+= [+ year +] 전국 대회
 
-The Statuto Albertino is no more. Removed as the nation's constitution following the latest Constitutional Reforms, it is now up to us to draft the newest constitution. As such, a National Congress has been called in order to determine the future of this nation, as well as a drafting of a new constitution to replace the Statuto Albertino.
+알베르티노 헌장은 이제 역사 속으로 사라졌습니다. 최근 단행된 헌법 개혁으로 국가 헌법의 지위를 상실했기 때문입니다. 이제 우리의 손으로 새로운 헌법을 제정해야 합니다. 이러한 시대적 소명에 따라, 국가의 미래를 결정하고 알베르티노 헌장을 대체할 새 헌법의 초안을 마련하기 위해 전국 대회가 소집되었습니다.
 
 @peaceful_menu
 
-- @peaceful_monarchy: The King of Italy.
-- @peaceful_party: The Political Parties.
-- @peaceful_elections: The Elections.
-- @peaceful_done: We have done all that we can.
+- @peaceful_monarchy: 이탈리아 국왕의 처분.
+- @peaceful_party: 타 정당의 존폐.
+- @peaceful_elections: 선거 실시.
+- @peaceful_done: 할 수 있는 모든 것을 다했다.
 
 @peaceful_monarchy
 on-arrival: peaceful_monarchy_seen = 1
 max-visits: 1
 
-The main, and perhaps most important of the matters is the issue of the Italian throne, the House of Savoy, and Vittorio Emanuele III. The King, during this period of crisis, has shown not only inaction, but incompetence, as violence erupts in the streets, unemployment skyrocketed and poverty and crime run rampant.
+가장 중요하고 시급한 의제는 이탈리아 왕위, 사보이 가문, 그리고 비토리오 에마누엘레 3세 국왕의 문제입니다. 국왕은 거리에서 폭력이 난무하고 실업률이 치솟으며 빈곤과 범죄가 만연하는 이 국가적 위기 상황에서 무대응과 무능으로 일관했습니다.
 
-There are two main factions of the National Congress regarding the King. The first, simply, is to abolish the Monarchy and transfer the majority of its powers to the Office of the Prime Minister. This would finally bring hundreds of years of autocratic rule to an end, freeing Italy. This is, naturally, supported by the [+ psi_name +], [? if psu_formed : the PSU, ?] [? if pcdi_formed : the PCd'I, ?] [? if pri_prominent : the PRI, ?] the PSRI, alongside some left-wing liberals and catholics.
+국왕 문제를 두고 전국 대회는 두 개의 주요 파벌로 나뉘었습니다. 첫 번째는 군주제를 완전히 폐지하고 그 권한 대부분을 총리에게 이양하자는 입장입니다. 이는 마침내 수백 년간 이어진 전제 군주제를 종식하고 이탈리아에 진정한 자유를 가져올 것입니다. 이 안은 당연히 [+ psi_name +], [? if psu_formed : 단일사회당, ?] [? if pcdi_formed : 이탈리아 공산당, ?] [? if pri_prominent : 이탈리아 공화당, ?] 이탈리아 개혁사회당, 그리고 일부 좌파 성향의 자유주의자와 가톨릭 신자들의 지지를 받고 있습니다.
 
-The other faction has instead offered a compromise; to keep the Monarchy as a figurehead of stability, forcing Vittorio Emanuele III to abdicate in favour of his son and stripping the powers of the throne. This is a less radical option, supported by the right-wing of the political sphere as a compromise to the question of the Monarchy.
+다른 파벌은 타협안을 제시했습니다. 군주제를 안정의 상징으로 유지하되, 비토리오 에마누엘레 3세를 아들에게 양위하도록 강요하고 왕의 권력을 박탈하자는 것입니다. 이는 군주제 문제에 대한 덜 급진적인 해법으로, 보수 우파 정치 세력의 지지를 받고 있습니다.
 
-- @king_abolish: Abolish the Italian Throne.
-- @king_figurehead: Keep the Throne as a figurehead and force Vittorio Emanuele III's abdication.
+- @king_abolish: 이탈리아 왕위를 폐지한다.
+- @king_figurehead: 왕위를 상징적인 존재로 유지하고 비토리오 에마누엘레 3세의 퇴위를 강요한다.
 
 @king_abolish
 on-arrival: king_abolished = 1;
 go-to: peaceful_menu
 
-Very well. We abolish the throne, turning Italy, for the first time since its founding, into a republic. The right criticise our unwillingness to accept their compromise, using as proof of how radical we are.
+알겠습니다. 왕위를 폐지하고, 이탈리아는 건국 이래 처음으로 공화국이 되었습니다. 우파는 우리가 그들의 타협안을 거부했다며, 우리의 급진성을 보여주는 증거라고 비난합니다.
 
 @king_figurehead
 on-arrival: king = "Umberto II"; king_powerless = 1;
 go-to: peaceful_menu
 
-Very well. We keep the throne as a figurehead, placing Umberto II, Vittorio Emanuele III's son on it as a mere figurehead. Our own party, alongside our allies, are outraged by this betrayal, calling us traitors to the cause.
+알겠습니다. 왕위를 상징적인 존재로 유지하고, 비토리오 에마누엘레 3세의 아들인 움베르토 2세를 실권 없는 군주로 앉혔습니다. 우리 당과 동맹들은 이 결정을 대의에 대한 배신이라며 격렬히 분노하고 있습니다.
 
 @peaceful_party
 on-arrival: peaceful_party_seen = 1
 max-visits: 1
 
-The other issue is are the radical political parties of the right. This, of course, meaning the PNF, who have shown themselves time and time again as radical totalitarians and clearly against democracy. As such, many of the left are calling for us to ban the PNF once and for all.
+또 다른 의제는 우익 급진 정당들의 문제입니다. 이는 물론, 스스로를 거듭 급진적 전체주의자이자 명백한 반민주 세력으로 증명해 온 국가 파시스트당을 의미합니다. 이에 많은 좌파 인사들이 국가 파시스트당의 완전한 해산을 요구하고 있습니다.
 
-- @pnf_ban: Ban the National Fascist Party.
-- @peaceful_menu: We have done enough.
+- @pnf_ban: 국민 파시스트당을 해산한다.
+- @peaceful_menu: 이만하면 충분하다.
 
 @pnf_ban
 view-if: pnf_banned = 0
 on-arrival: pnf_banned = 1 if not pcdi_formed
 go-to: pcdi_demand if pcdi_formed; peaceful_party if not pcdi_formed
 
-[? if not pcdi_formed : We ban the fascists, with limited outcry from right-wing liberals who criticise our so-called 'suppression' of parties. ?]
+[? if not pcdi_formed : 파시스트들을 해산했습니다. 일부 우익 자유주의자들이 우리의 '정당 탄압'이라며 비판하지만 그 목소리는 미미합니다. ?]
 
 @pcdi_demand
 
-Our decision to ban the National Fascist Party is unsurprisingly decried by right-wing liberals, but also joined in by moderate liberals, who demand the PCd'I should be banned as well due to being anti-democratic as well.
+국가 파시스트당 해산 결정에 예상대로 우익 자유주의자들이 반발했습니다. 여기에 중도 자유주의자들까지 가세하여, 이탈리아 공산당 또한 반민주적이므로 함께 해산되어야 한다고 주장합니다.
 
-- @pcdi_ban: Very well. Ban the Communist Party of Italy as well.
-- @peaceful_party: Forget it, then.
+- @pcdi_ban: 알겠다. 이탈리아 공산당도 해산한다.
+- @peaceful_party: 그렇다면 없던 일로 하자.
 
 @pcdi_ban
-subtitle: The left-wing of the party won't be happy about this.
+subtitle: 당의 좌파가 이 결정을 곱게 보지 않을 것입니다.
 on-arrival: pcdi_banned = 1; pnf_banned = 1 if pcdi_formed; maximalist_dissent += 10; communist_dissent += 20; rg_strength *= 0.8; communists_adapt = time + 4;
 go-to: peaceful_party
 
-The left-wing of the party is understandably outraged by our willingness to betray our ideological allies, comparing us to *Gustav Noske*. Many leave the party and call on other members to leave as well. Notably, we see a drop in Red Guard membership. 
+당의 좌파는 우리가 이념적 동맹을 배신한 것에 격분하며, 우리를 *구스타프 노스케*에 빗대고 있습니다. 많은 이들이 당을 떠나고 있으며 다른 이들에게도 탈당을 촉구하고 있습니다. 특히 적위대 대원 수가 눈에 띄게 감소했습니다.
 
 @peaceful_elections
 on-arrival: peaceful_elections_seen = 1; next_election_time = time + 3 if next_election_time >= time + 3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 go-to: peaceful_menu
 max-visits: 1
 
-In an agreed upon measure, elections have been scheduled following the end of the National Congress in order to elect a new set of deputies, and if needed, replace deputies from parties that have now been outlawed.
+만장일치 합의에 따라, 전국 대회가 끝난 후 새로운 의회 구성을 위해 선거를 실시하기로 했습니다. 이 선거를 통해 이제 불법이 된 정당 출신 의원들의 공석도 채우게 될 것입니다.
 
-The Chamber of Deputies has been dissolved, and we have resigned our positions in government.
+하원은 해산되었으며, 우리는 정부 직책에서 사임했습니다.
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+새로운 선거는 [+ next_election_year +]년 [+ next_election_month : month +]월로 정해졌습니다.
 
 @peaceful_done
 view-if: peaceful_monarchy_seen and peaceful_party_seen and peaceful_elections_seen
 
-We have strengthened democracy in Italy. Though the left wing will grumble, and we are still under threat by radicals who seek to bring this country back into the dark ages, the future, for once, looks bright.
+우리는 이탈리아의 민주주의를 한층 더 강화했습니다. 좌파의 불평과, 이 나라를 암흑시대로 되돌리려는 급진 세력의 위협은 여전하지만, 미래는 처음으로 밝아 보입니다.
 
-- @root: Only time can tell what the future holds.
+- @root: 미래는 오직 시간만이 말해줄 것이다.
