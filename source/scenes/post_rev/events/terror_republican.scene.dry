@@ -1,12 +1,12 @@
-title: Emergence of Republican Paramilitaries
-subtitle: We have seen broad anti-communist organisations appear.
+title: 공화파 준군사조직의 출현
+subtitle: 광범위한 반공 조직들이 나타났습니다.
 tags: event
 view-if: republicans_adapt <= time and violent_revolution and not benevolence
 on-arrival: republican_terror = 1; republican_bomb_timer = time + 12; terror_active = 1
 max-visits: 1
 
-= Emergence of Republican Paramilitaries
+= 공화파 준군사조직의 출현
 
-In response to the outlawing of parties, as well as the consolidation of the left-wing within Italy, numerous Republican paramilitary groups have risen up across Italy, determined to rid the nation of its newly socialist government. 
+정당들의 불법화와 이탈리아 내 좌파 세력의 통합에 반발하여, 이탈리아 전역에서 수많은 공화파 준군사단체들이 봉기했습니다. 그들의 목표는 새로 수립된 사회주의 정부를 타도하는 것입니다.
 
-Though certainly not as violent as the fascists, the Republican groups have become a thorn in our side, especially considering the already thinly-stretched Internal Ministry.
+파시스트만큼 폭력적이지는 않지만, 공화파 단체들은 이미 한계에 다다른 내무부의 상황을 고려할 때 우리에게 골칫거리가 되었습니다.

@@ -1,12 +1,12 @@
-title: Foreign Investors Withdraw!
-subtitle: A new economic crisis seems to be looming.
+title: 외국 투자자들의 이탈!
+subtitle: 새로운 경제 위기가 드리우는 듯합니다.
 on-arrival: inflation += 2.3; economic_growth -= 4.9; unemployment += 8.4; industrialists *= 0.5
 tags: event
 view-if: violent_revolution = 1
 max-visits: 1
 
-= Industrialists & Investors Withdraw
+= 국내 산업가와 투자자들의 이탈
 
-It seems the new change in government has prompted a capital flight from local industrialists and landowners, as well as foreign investors with investments in the country. Already, waves of unemployment has hit Italy, barely after the First World War and its economic recession.
+새로운 정부의 등장은 국내 산업가와 지주들뿐만 아니라 이탈리아에 투자한 외국인들의 자본 이탈을 촉발한 것으로 보입니다. 제1차 세계대전과 그에 따른 경제 불황이 채 가시기도 전에, 이미 실업의 파도가 이탈리아를 덮쳤습니다.
 
-Economic Growth is expected to decline sharply, alongside an increase in inflation as the government will attempt its best at keeping the worst of the crisis at bay.
+정부가 위기 확산을 막기 위해 최선을 다하고 있지만, 인플레이션 상승과 함께 경제 성장률은 급격히 하락할 것으로 예상됩니다.

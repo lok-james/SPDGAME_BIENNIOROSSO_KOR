@@ -1,12 +1,12 @@
-title: Emergence of *Red Guards*
-subtitle: An ironic twist of fate.
+title: *적위대*의 출현
+subtitle: 운명의 아이러니한 반전.
 tags: event
 view-if: communists_adapt <= time and peaceful_revolution and pcdi_banned 
 on-arrival: communist_terror = 1; communist_bomb_timer = time + 12; rg_strength *= 0.3; rg_militancy *= 0.4; ussr_enemy_timer = time + 8; terror_active = 1
 max-visits: 1
 
-= Emergence of the new *Red Guards*
+= 새로운 *적위대*의 출현
 
-In perhaps an ironic twist of fate, the Red Guards have disaffiliated with the party, taking up arms against us. The organisation has denounced our party as traitors, abandoning the left in favour of collaborating with the bourgeois parties.
+운명의 아이러니한 장난인지, 적위대가 당에서 이탈하여 우리에게 총구를 겨누었습니다. 그들은 우리 당이 부르주아 정당과 손잡고 좌파를 저버린 배신자라고 비난합니다.
 
-Fortunately for us, the Red Guards are weakened by the defections of moderates and reformists, seeing the extreme pivot of the organisation towards the far-left. Regardless, the organisation will be a thorn in our side for the foreseeable future.
+다행히도, 적위대는 조직이 극좌로 급선회하는 것을 본 온건파와 개혁주의파의 이탈로 약화되었습니다. 그럼에도 불구하고, 당분간 이 조직은 우리에게 골칫거리가 될 것입니다.

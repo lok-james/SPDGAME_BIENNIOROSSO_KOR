@@ -1,5 +1,5 @@
-title: USSR offers aid
-subtitle: The Soviets are willing to help us.
+title: 소련의 원조 제안
+subtitle: 소비에트 연방이 우리를 돕겠다고 나섰습니다.
 tags: event
 view-if: violent_revolution = 1 and soviet_aid_timer <= time and soviet_influence < 5
 on-arrival: soviet_aid_timer = time + 16
@@ -7,43 +7,43 @@ go-to: foreign_aid if soviet_influence <= 3; military_base if soviet_influence >
 
 @foreign_aid
 
-= Soviet Ambassador offers Financial Aid
+= 소련 대사의 재정 지원 제안
 
-Nikolai Iordansky, the Soviet Ambassador and Representative of the Union of Soviet Socialist Republics have informed us of a financial aid package our ideological comrades are willing to send and help us economically. Though most of the left-wing of the party are supportive of this aid, seeing it as a means to draw closer to the USSR and strengthen our relations, our members on the right warn of encroaching Soviet influence that might turn Italy into an de facto client state.
+소비에트 사회주의 연방 공화국 대사이자 대표인 니콜라이 이오르단스키가 우리에게 이념적 동지로서 경제적 지원을 제공할 의향이 있음을 알려왔습니다. 당내 좌파 대부분은 이를 소련과의 관계를 강화하고 협력을 증진할 기회로 보며 지지하고 있으나, 우파는 이탈리아가 소련의 사실상의 위성 국가로 전락할 수 있는 영향력 확대를 경계하고 있습니다.
 
-What should we do?
+어떤 결정을 내려야 할까?
 
-- @accept_aid: We welcome aid from our comrades.
-- @refuse_aid: Politely refuse aid temporarily.
+- @accept_aid: 동지들의 원조를 환영한다.
+- @refuse_aid: 일시적으로 정중히 원조를 거절한다.
 
 @accept_aid
 subtitle: +2 Budget
 on-arrival: soviet_influence += 1; economic_growth += 1.8; budget += 2;
 
-We accept the offer of aid, as a substantial financial package is sent our way that we are able to utilise to resolve the gaps the withdrawal of foreign funding left.
+우리는 원조 제안을 수락하며, 외국 자본 철수로 생긴 공백을 메울 수 있는 상당한 규모의 재정 지원을 받게 되었습니다.
 
 @refuse_aid
 on-arrival: soviet_relation -= 1; 
 
-We reject the offer, and though on the surface the Soviets seem amicable to the decision, we witness a slight deterioration in attitudes towards our own ambassadors.
+우리는 제안을 거절합니다. 겉으로는 소련이 우리의 결정을 존중하는 듯 보이지만, 우리 대사들에 대한 그들의 태도가 미묘하게 냉담해지는 것을 감지할 수 있습니다.
 
 @military_base
 
-= Soviet Ambassador offers Military Agreement
+= 소련 대사의 군사 협정 제안
 
-Nikolai Iordansky, the Soviet Ambassador and Representative of the Union of Soviet Socialist Republics have informed us of a military agreement the USSR is willing to sign with us to establish a permanent military base within the nation. Though most of the left-wing of the party are supportive of this aid, seeing it as a means to draw closer to the USSR and curb any attempts against the state, our members on the right warn of encroaching Soviet influence that might turn Italy into an de facto client state.
+소비에트 사회주의 연방 공화국 대사이자 대표인 니콜라이 이오르단스키가 국가 내에 영구적인 군사 기지를 설립하기 위한 군사 협정을 체결할 용의가 있음을 알려왔습니다. 당내 좌파 대부분은 이를 소련과의 관계를 긴밀히 하고 국가에 대한 어떠한 위협도 억제할 수단으로 보며 지지하고 있으나, 우파는 이탈리아가 소련의 사실상의 위성 국가로 전락할 수 있는 영향력 확대를 경계하고 있습니다.
 
-What should we do?
+어떤 결정을 내려야 할까요?
 
-- @accept_aid_base: We welcome aid from our comrades.
-- @refuse_aid_base: Politely refuse aid temporarily.
+- @accept_aid_base: 동지들의 원조를 환영한다.
+- @refuse_aid_base: 일시적으로 정중히 원조를 거절한다.
 
 @accept_aid_base
 on-arrival: soviet_base = 1; soviet_relation += 1; 
 
-We accept the offer of aid, as Soviet forces begin establishing a permanent military base, strengthening relations.
+우리는 원조 제안을 수락하며, 소련군이 영구 군사 기지 건설을 시작함에 따라 양국 관계는 더욱 공고해집니다.
 
 @refuse_aid_base
 on-arrival: soviet_relation -= 1; 
 
-We reject the offer, and though on the surface the Soviets seem amicable to the decision, we witness a slight deterioration in attitudes towards our own ambassadors.
+우리는 제안을 거절합니다. 겉으로는 소련이 우리의 결정을 존중하는 듯 보이지만, 우리 대사들에 대한 그들의 태도가 미묘하게 냉담해지는 것을 감지할 수 있습니다.

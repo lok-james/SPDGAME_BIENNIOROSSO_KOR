@@ -1,4 +1,4 @@
-title: Military Policy
+title: 군사 정책
 new-page: true
 is-card: true
 view-if: psi_in_government and military_influence_timer <= 0 and violent_revolution
@@ -7,25 +7,25 @@ on-arrival: week_actions += 1; military_influence_timer = 4
 card-image: img/MilitaryInfluence.jpg
 tags: govt_affairs, national_def
 
-= Military Policy
+= 군사 정책
 
-The former Regio Esercito, now merely called the Esercito Italiano, is a deeply reactionary institution that has been generally hostile to any notion of socialism or democracy. However, following our recent rise to power, the army has been purged and replaced with officers more loyal to us. This does, of course, mean that the current state of the army is decrepit, underfunded and inexperienced.
+구 왕립 육군은 현재 이탈리아 육군으로 불리며 사회주의와 민주주의에 뿌리 깊은 적대감을 가진 반동적 조직입니다. 그러나 우리가 권력을 잡은 후, 군대는 숙청되었고 우리에게 충성하는 장교들로 대체되었습니다. 이는 현재 군의 상태가 노후하고 자금이 부족하며 경험이 부족하다는 것을 의미하기도 합니다.
 
-- @increase_size: Increase funding of the Esercito Italiano.
-- @decrease_size: Decrease funding of the Esercito Italiano.
-- @root: Keep the Esercito Italiano as is.
+- @increase_size: 이탈리아 육군의 예산을 증액한다.
+- @decrease_size: 이탈리아 육군의 예산을 감액한다.
+- @root: 이탈리아 육군을 현 상태로 유지한다.
 
 @increase_size
 on-arrival: foreign_invasion_time += 12; budget -= 1; army_strength += 60; army_loyalty += 0.02; unemployment -= 0.2;
 choose-if: budget >= 1 or not national_economic_recovery
-subtitle: -1 Budget - This will help deter any foreign threats.
+subtitle: 예산 -1 - 이는 잠재적인 외적의 위협을 억제하는 데 도움이 될 것입니다.
 
-We bolster the funding of the Army further, developing our forces to adequately ensure we are able to defend ourselves. This also, naturally, deters any foreign invasions.
+육군의 예산을 더욱 증액하여, 우리 스스로를 지킬 수 있도록 군사력을 강화했습니다. 이는 당연히 모든 외국의 침략도 억제하는 효과를 가져옵니다.
 
 @decrease_size
 on-arrival: foreign_invasion_time -= 6; budget += 1; army_strength -= 60; army_loyalty -= 0.02; unemployment += 0.2;
 choose-if: army_strength >= 75
-unavailable-subtitle: There is not much army left to defund.
-subtitle: +1 Budget - This will free up funds needed elsewhere.
+unavailable-subtitle: 더 이상 예산을 삭감할 병력이 남아있지 않습니다.
+subtitle: 예산 +1 - 다른 곳에 필요한 자금을 확보할 수 있습니다.
 
-We cut funding of the Army, downsizing and demobilising where we can to save funds more appropriately used elsewhere. This also, naturally, makes foreign invasions likelier.
+다른 곳에 더 요긴하게 쓰일 자금을 마련하기 위해 육군의 규모를 줄이고 동원 해제를 실시했습니다. 이는 당연히 외국의 침략 가능성을 높이게 됩니다.

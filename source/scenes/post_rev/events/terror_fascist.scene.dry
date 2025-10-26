@@ -1,12 +1,12 @@
-title: Fascist Paramilitaries Adapt
-subtitle: Our enemies have taken a more...*radical* approach.
+title: 파시스트 준군사조직의 변모
+subtitle: 적들이 더욱...*급진적인 태세*를 취하고 있습니다.
 tags: event
 view-if: fascists_adapt <= time and violent_revolution
 on-arrival: fascist_terror = 1; fascist_bomb_timer = time + 12; terror_active = 1
 max-visits: 1
 
-= Fascist Paramilitaries Adapt
+= 파시스트 준군사조직의 변모
 
-In response to the changing political landscape, the fascist paramilitaries have adapted their strategies once more, abandoning their parliamentary route of the [+ pnf_name +], instead seeking to bring about fascism by subverting the state and democracy. 
+변화하는 정치 지형에 대응하여, 파시스트 준군사조직은 다시 한번 전략을 수정했습니다. 그들은 이제 [+ pnf_name +]을 통한 의회 진출 노선을 포기하고, 국가와 민주주의를 전복시켜 파시즘을 실현하려 하고 있습니다.
 
-Already, we have seen their methods become more ruthless, killings, assassinations and threats of bombings across Italy have tied up our Interior Ministry, and it is unlikely these will halt very soon.
+이미 그들의 수법은 더욱 잔혹해졌습니다. 이탈리아 전역에서 벌어지는 살인, 암살, 폭탄 테러 위협으로 내무부는 발이 묶였으며, 이들의 테러 행위가 조만간 멈출 것 같지는 않습니다.

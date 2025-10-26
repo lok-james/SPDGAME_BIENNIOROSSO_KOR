@@ -1,11 +1,11 @@
-title: Red Guard activity speeds up
-subtitle: It seems their backers are aiding them.
+title: 적위대 활동의 가속화
+subtitle: 배후 세력의 지원이 있는 것으로 보입니다.
 tags: event
 view-if: communist_terror = 1 and soviet_relation <= 5 and ussr_enemy_timer <= time
 on-arrival: ussr_enemy_timer = time + 16; communist_bomb_timer -= 6;
 
-= Red Guard Activity Increases
+= 적위대 활동의 증가
 
-The Interior Ministry has noted an increase in activity with the new *Red Guards*, with the organisation seemingly having received funds from an opposing socialist nation against us. Whatever the case, it seems whatever plans the Red Guards have in store have accelerated, and we should act fast.
+내무부는 새로운 적위대의 활동이 증가했다고 보고했으며, 이 조직이 우리에게 적대적인 사회주의 국가로부터 자금을 지원받은 것으로 보입니다. 어찌 되었든, 적위대의 계획이 가속화된 만큼 우리도 신속하게 대응해야 합니다.
 
-- @root: Concerning.
+- @root: 우려스러운 상황이다.

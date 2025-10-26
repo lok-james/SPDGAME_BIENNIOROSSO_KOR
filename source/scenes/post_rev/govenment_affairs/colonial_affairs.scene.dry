@@ -1,4 +1,4 @@
-title: Colonial Policy
+title: 식민지 정책
 new-page: true
 is-card: true
 view-if: psi_in_government and colonial_policy_timer <= 0 and violent_revolution
@@ -7,36 +7,36 @@ card-image: img/ColonialPolicy.jpg
 tags: govt_affairs
 max-visits: 1
 
-= Colonial Policy
+= 식민지 정책
 
-The colonies of Italian Libya, Eritrea in Africa, as well as the italian concession of Tianjin is up for contention. The party is fairly split on the issue; some on the left argue for independence and an end to the brutal imperialism under the Monarchy, while others on the right argue that colonialism would aid the spread of socialism abroad and allow us to continue our ideals abroad. Naturally as well, some in the middle don't mind either policy, viewing its debate as insignificant.
+이탈리아령 리비아, 에리트레아 등 아프리카 식민지와 톈진의 이탈리아 조계지의 향방이 초미의 관심사로 떠올랐습니다. 당내 의견은 분분합니다. 좌파 일각에서는 식민지 독립과 군주제하의 잔혹한 제국주의 종식을 주장하는 반면, 우파 일각에서는 식민주의가 사회주의 이념을 해외로 전파하고 우리의 이상을 실현하는 데 도움이 될 것이라고 주장합니다. 물론 중도파는 이 논쟁을 중요치 않게 여기며 어느 쪽이든 개의치 않습니다.
 
-What should we do?
+우리는 어떤 결정을 내려야 할까요?
 
-- @independence: Begin preparations to grant the colonies independence.
-- @autonomy: Grant the colonies nominal independence.
-- @status_quo: Keep the colonies as is while removing its excess mistreatment.
+- @independence: 식민지의 독립 준비에 착수한다.
+- @autonomy: 식민지에 명목상의 독립을 부여한다.
+- @status_quo: 과도한 학대를 없애는 선에서 식민지를 현상 유지한다.
 
 @independence
-subtitle: -1 Budget - This will strengthen communist elements within the party.
+subtitle: 예산 -1 - 이 결정은 당내 공산주의 세력에 힘을 실어줄 것입니다.
 on-arrival: communist_strength += 10; budget -= 1; foreign_invasion_time += 12; economic_growth -= 0.3
 
-We begin granting the colonies full independence, transferring control of governance and power over to local leadership. This takes some time and budget, of course, but our military forces now have a thinner frontline to maintain in the event of any invasion.
+우리는 식민지에 완전한 독립을 부여하고, 통치권과 권력을 현지 지도부에게 이양하는 절차를 시작합니다. 시간과 예산이 소요되겠지만, 외국의 침공 시 우리 군이 유지해야 할 전선은 그만큼 줄어들 것입니다.
 
-This does, unfortunately, come with an economic cost.
+하지만 이 결정에는 안타깝게도 경제적 대가가 따릅니다.
 
 @autonomy
-subtitle: This will strengthen moderate elements within the party.
+subtitle: 이 결정은 당내 중도파 세력에 힘을 실어줄 것입니다.
 on-arrival: maximalist_strength += 10;
 
-We grant the colonies nominal independence; Tianjin is return to the Chinese, while our colonies in Africa are allowed to rule themselves, granting them freedom for the first time in three decades.
+식민지에 명목상의 독립을 부여합니다. 톈진은 중국에 반환하고 아프리카 식민지들은 30년 만에 처음으로 자치권을 행사하게 됩니다.
 
-The economic, political and military reliance on us are merely temporary, of course.
+물론, 경제, 정치, 군사적 종속관계는 일시적일 뿐입니다.
 
 @status_quo
-subtitle: +1 Budget = This will strengthen reformist elements within the party.
+subtitle: 예산 +1 - 이 결정은 당내 개혁주의파 세력에 힘을 실어줄 것입니다.
 on-arrival: reformist_strength += 10; economic_growth += 0.4; budget += 1;
 
-We preserve the status quo, keeping the status of the colonies as they are. Naturally, we reform the colonial system to root out the brutality and mistreatment caused, but that is the extent of the reforms go.
+우리는 현상 유지를 통해 식민지의 현재 지위를 그대로 유지합니다. 물론 식민주의의 잔혹성과 학대를 뿌리 뽑기 위한 개혁은 단행하지만, 개혁은 거기까지입니다.
 
-The economic benefits of maintaining the colonies naturally are secondary, of course.
+식민지 유지에 따르는 경제적 이익은 물론 부차적인 문제입니다.
