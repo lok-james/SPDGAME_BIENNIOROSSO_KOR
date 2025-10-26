@@ -1,4 +1,4 @@
-title: Choosing Our Enemies
+title: 우리의 주적 설정
 new-page: true
 view-if: year <= 1922 and enemies_timer <= 0
 on-arrival: week_actions += 1; enemies_timer = 9
