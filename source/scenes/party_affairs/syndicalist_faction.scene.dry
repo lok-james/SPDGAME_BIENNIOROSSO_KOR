@@ -1,4 +1,4 @@
-title: Syndicalism
+title: 생디칼리즘
 new-page: true 
 is-card: true
 tags: party_affairs
@@ -7,22 +7,22 @@ card-image: img/ItalianSyndicalistUnion.jpg
 on-arrival: shuffle_leadership_timer = 0; syndicalist_active = 1;
 max-visits: 1
 
-= Syndicalism rises into prominence
+= 생디칼리즘의 부상
 
-The Unione Sindacale Italiana, also known as the Italian Syndicalist Union, splintered from the majority labour faction of the General Confederation of Labour in 1912, remaining more aligned with the left-wing of the party, retaining low influence amongst the party. However, it seems that recent actions have cause the USI to gain notable influence within the party.
+이탈리아 생디칼리스트 연합은 1912년 노동총동맹의 주류 노동계에서 분리되어, 당내 좌파와 더 가까운 노선을 유지하며 당 내에서 낮은 영향력을 유지해왔습니다. 그러나 최근의 활동으로 생디칼리스트 연합의 당내 영향력이 눈에 띄게 커진 것으로 보입니다.
 
-- @support_syn: Support the syndicalist movement.
-- @no_new_ideas: We don't need any new ideas.
+- @support_syn: 생디칼리스트 운동을 지지한다.
+- @no_new_ideas: 새로운 사상은 필요 없다.
 
 @support_syn
 on-arrival: syndicalist_strength += 10; syndicalist_active = 1; reformist_dissent += 7; maximalist_dissent += 5; communist_dissent += 7; labour_dissent *= 1.5;
 
-We support the new leaders, and start using new-style propaganda techniques in our campaigns. The results are uncertain so far...
+우리는 새로운 지도자들을 지지하고, 유세에서 새로운 방식의 선전 기법을 사용하기 시작했습니다. 결과는 아직 불확실합니다...
 
-- @shuffle_leadership: We should use this opportunity to change the party's leadership.
-- @root: Continue...
+- @shuffle_leadership: 이 기회에 당 지도부를 교체해야 한다.
+- @root: 계속...
 
 @no_new_ideas
 on-arrival: syndicalist_strength -= 10; syndicalist_active = 0; maximalist_strength += 7;
 
-We do not need these new ideas; they seem to imitate too closely those of the fascists.
+우리에겐 이런 새로운 사상이 필요 없습니다. 파시스트들을 너무 따라하는 것 같습니다.

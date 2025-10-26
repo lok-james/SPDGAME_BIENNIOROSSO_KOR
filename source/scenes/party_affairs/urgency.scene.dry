@@ -1,4 +1,4 @@
-title: Fascist Urgency
+title: 파시즘의 위협
 new-page: true
 view-if: urgency_timer = 0 and (fasci_urgency > 0 or pnf_seating_disp > 10) and not national_congress_seen and not pnf_collapse_seen and not pnf_in_government
 on-arrival: urgency_timer = 5; week_actions += 1
@@ -8,37 +8,37 @@ max-visits: 6
 card-image: img/FasciUrgency.jpg
 tags: party_affairs
 
-= Fascism in Italy
+= 이탈리아의 파시즘
 
-Following the end of the First World War, it seems a new ideology has taken root in Italy, preying on the nationalistic sentiment of veterans, angered by our so-called 'mutilated victory' and promising revanchism, and that ideology is Fascism. Already, thousands are signing up in droves across the nation, from disgruntled veterans who have seen the horrors of war to youth who idolise our victory in the war, expanding the electorate of voters of the PNF and their paramilitary wing.
+1차 대전 종전 후, '불완전한 승리'에 분노하고 보복주의를 바라는 재향군인들의 민족주의 감정을 파고드는 새로운 이념이 이탈리아에 뿌리를 내린 듯합니다. 바로 파시즘입니다. 이미 전쟁의 참상을 겪은 불만 가득한 재향군인부터 전쟁 승리를 맹목적으로 찬양하는 청년까지, 전국적으로 수천 명이 속속 가입하며 국가 파시스트당과 그 준군사조직의 지지 기반을 넓히고 있습니다.
 
-Though initially thought to be moribund, it seems we have been proven wrong, and some within the party warn of its growing strength, especially as the *Biennio Rosso* continues on, and anti-socialist sentiment grows, it would not bode well for us if they are forced to turn to the fascists.
+처음에는 곧 사라질 것으로 여겼지만, 우리가 틀렸음이 드러났습니다. 당내 일부에서는 특히 '붉은 2년'이 계속되고 반사회주의 정서가 커지면서 파시즘의 세력이 커지고 있다고 경고합니다. 이들이 파시스트에게 등을 돌리게 된다면 우리에게 불리할 것입니다.
 
-- @fascist_paramilitary: Our main goal should be targeting their paramilitaries.
-- @fascist_parties: Our main goal should be to prevent the Bloc from ever entering government. 
-- @fascist_votes: Our main goal should be campaign to their voters to pull the rug from under them.
-- @fascist_ignore: It would be best to ignore them; giving them attention only improves their appeal.
+- @fascist_paramilitary: 우리의 주 목표는 그들의 준군사조직을 겨냥하는 것이 되어야 한다.
+- @fascist_parties: 우리의 주 목표는 국민 블록이 정부에 입성하는 것을 막는 것이 되어야 한다.
+- @fascist_votes: 우리의 주 목표는 유권자 대상 유세를 통해 그들의 기반을 무너뜨리는 것이 되어야 한다.
+- @fascist_ignore: 관심을 주면 오히려 그들의 매력만 더해줄 뿐. 무시하는 것이 상책이다.
 - @easy_discard
 - @cancel_advisor_action
 
 @fascist_paramilitary
-subtitle: The threat comes from their violent means, after all.
+subtitle: 결국 위협은 그들의 폭력 수단에서 비롯됩니다.
 on-arrival: fasci_urgency += 1; rg_strength += 10*(1-dissent)*revolutionary_exhaustion; 
 
-We focus on their paramilitaries, strengthening our own forces to combat them.
+그들의 준군사조직에 집중하며, 이에 맞서기 위해 우리의 무력을 강화합시다.
 
 @fascist_parties
-subtitle: The threat comes from any potential coalitions including the Bloc, after all.
+subtitle: 결국 위협은 국민 블록을 포함하는 모든 잠재적 연정에서 비롯됩니다.
 on-arrival: fasci_urgency += 1; ul_relation += 4*(1-dissent); ldr_relation += 4*(1-dissent); republican_sentiment += 2;
 
-We focus on our relations with the other parties, ensuring they do not find themselves forced to ally against us.
+다른 정당과의 관계에 집중하여, 그들이 우리에게 맞서도록 어쩔 수 없이 동맹을 맺는 상황이 생기지 않도록 합시다.
 
 @fascist_votes
-subtitle: The threat comes from their seats in the Chamber, after all.
+subtitle: 결국 위협은 하원에서의 의석수에서 비롯됩니다.
 on-arrival: fasci_urgency += 1; veterans_pnf -= 2*(1-dissent); nationalist_sentiment -= 2; veterans_pnf -= 3*(1-dissent) if syndicalist_active; middle_class_pnf -= 3*(1-dissent) if syndicalist_active;
 
-We focus on their voters, campaigning towards them hard, sometimes clashing with the Fasci. [? if syndicalist_active : Our willingness to accept the syndicalist movement has swayed more away from the fascists. ?]
+우리가 그들의 유권자층에 집중하여 강하게 유세를 펼치자, 때로는 파쇼들과 충돌합니다. [? if syndicalist_active : 생디칼리즘 운동을 수용한 우리의 태도는 더 많은 이들이 파시스트에게서 등을 돌리게 했습니다. ?]
 
 @fascist_ignore
-subtitle: This is merely a post-war movement that will die down sooner or later, after all.
+subtitle: 이건 조만간 사그라질 전후의 운동일 뿐입니다.
 on-arrival: fasci_urgency -= 1;

@@ -1,4 +1,4 @@
-title: Dealing with Veterans' Welfare
+title: 재향군인 복지 문제
 new-page: true
 is-card: true
 frequency: 250
@@ -7,23 +7,23 @@ on-arrival: week_actions += 1; welfare_party_timer = 8; party_welfare_cost = 1; 
 card-image: img/WelfareParty.jpg
 tags: party_affairs
 
-= Dealing with Veterans' Welfare
+= 재향군인 복지 문제
 
-Following our defeat at Caporetto and the subsequent formation of the *Opera Nazionale Combattenti*, the previous liberal government promised soldiers welfare as high as the moon to re-moralise them, and now it is up to us to actually take care of our veterans and fufill these promises. 
+카포레토 패전 이후 *전국재향군인사업단*이 결성되면서, 이전 자유주의 정부는 병사들의 사기를 진작시키기 위해 엄청난 복지를 약속했습니다. 이제 그 약속을 이행하고 재향군인들을 돌보는 것은 우리의 몫입니다.
 
-What do we do?
+어떻게 할까요?
 
 # most of these will need to have a ministry involved as well; except the third one
 # place in party deck as well?
 
-- @veterans_organisations_party: Increase the funding of our own welfare organisations.
-- @root: Our resources limits our ability to improve welfare.
+- @veterans_organisations_party: 우리 소유의 자체 복지 단체에 대한 지원금을 늘린다.
+- @root: 우리 자원으로는 복지를 개선하는 데 한계가 있다.
 - @easy_discard
 
 @veterans_organisations_party
-subtitle: -[+ party_welfare_cost +] resource 
+subtitle: -[+ party_welfare_cost +] 자원 
 choose-if: resources >= party_welfare_cost
-unavailable-subtitle: Not enough resources. (Need [+ party_welfare_cost +])
+unavailable-subtitle: 자원이 부족합니다. ([+ party_welfare_cost +] 필요)
 on-arrival: party_welfare += 1; resources -= party_welfare_cost; veterans_psi += 1*(1-dissent)*party_welfare; veterans_pnf -= 1*(1-dissent)*party_welfare; unemployment -= 0.2; unemployment -= 0.1 if party_welfare > 2; unemployment -= 0.1 if party_welfare > 4; unemployment -= 0.1 if party_welfare > 6; unemployment -= 0.1 if party_welfare > 8
 
-We begin distributing funds to the *Opera Nazionale Combattenti*, and the funds are reallocated to aid veterans immediately.
+*전국재향군인사업단*에 자금을 지원하기 시작했으며, 이 자금은 즉시 재향군인을 돕는 데 재배정되었습니다.

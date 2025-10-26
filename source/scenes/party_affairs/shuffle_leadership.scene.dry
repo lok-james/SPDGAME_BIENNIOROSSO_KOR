@@ -1,4 +1,4 @@
-title: Shuffle Leadership
+title: 지도부 교체
 new-page: true
 is-card: true
 tags: party_affairs
@@ -7,254 +7,254 @@ on-arrival: week_activities += 1; shuffle_leadership_timer = 8;
 card-image: img/ShuffleLeadership.jpg
 go-to: rm_main
 
-Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
+당 지도부를 교체하는 것은 고통스러운 일이지만, 변화하는 상황에 적응하기 위해 필요할지도 모릅니다.
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength and reduce their dissent.
+고문을 해임하면 해당 파벌의 불만이 커지는 반면, 고문을 임명하면 해당 파벌의 세력이 커지고 불만은 줄어들 것입니다.
 
-- @rm_main: Remove advisors
-- @add_advisors: Add advisors
-- @remove_none: Don't change advisors.
+- @rm_main: 고문 해임
+- @add_advisors: 고문 추가
+- @remove_none: 고문을 교체하지 않음.
 - @easy_discard
 
 
 ###################### removing leaders
 
 @rm_main
-title: Remove advisors.
+title: 고문 해임
 tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor, syndicalist_advisor, nonfactional_advisor
 frequency: 1
 
 - #remove_advisor
-- @add_advisors: Add advisors
+- @add_advisors: 고문 추가
 
 @remove_none
-title: Stop changing advisors.
+title: 고문 교체 중단.
 go-to: root
 tags: remove_advisor
 
 
 @remove_serrati
-title: Remove Serrati
+title: 세라티 해임
 view-if: serrati_advisor = 1
 on-arrival: serrati_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Serrati has been removed as an advisor. The Maximalist faction disapproves.
+세라티가 고문직에서 해임되었습니다. 최대강령주의파 파벌이 반발합니다.
 
 @remove_lazzari
-title: Remove Lazzari
+title: 라차리 해임
 view-if: lazzari_advisor = 1
 tags: remove_advisor
 on-arrival: lazzari_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Lazzari has been removed as an advisor. The Maximalist faction disapproves.
+라차리가 고문직에서 해임되었습니다. 최대강령주의파 파벌이 반발합니다.
 
 @remove_ferri
-title: Remove Ferri
+title: 페리 해임
 view-if: ferri_advisor = 1
 tags: remove_advisor
 on-arrival: ferri_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Ferri has been removed as an advisor. The Maximalist faction disapproves.
+페리가 고문직에서 해임되었습니다. 최대강령주의파 파벌이 반발합니다.
 
 @remove_bombacci
-title: Remove Bombacci
+title: 봄바치 해임
 view-if: bombacci_advisor = 1
 tags: remove_advisor
 on-arrival: bombacci_advisor = 0; maximalist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Bombacci has been removed as an advisor. The Maximalist faction disapproves.
+봄바치가 고문직에서 해임되었습니다. 최대강령주의파 파벌이 반발합니다.
 
 
 # reformists
 
 @remove_kuliscioff
-title: Remove Kuliscioff
+title: 쿨리쇼프 해임
 view-if: kuliscioff_advisor = 1
 tags: remove_advisor
 on-arrival: kuliscioff_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Kuliscioff has been removed as an advisor. The Reformist faction disapproves.
+쿨리쇼프가 고문직에서 해임되었습니다. 개혁주의 파벌이 반발합니다.
 
 @remove_turati
-title: Remove Turati
+title: 투라티 해임
 view-if: turati_advisor = 1
 tags: remove_advisor
 on-arrival: turati_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Turati has been removed as an advisor. The Reformist faction disapproves.
+투라티가 고문직에서 해임되었습니다. 개혁주의 파벌이 반발합니다.
 
 @remove_salvemini
-title: Remove Salvemini
+title: 살베미니 해임
 view-if: salvemini_advisor = 1
 tags: remove_advisor
 on-arrival: salvemini_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Salvemini has been removed as an advisor. The Reformist faction disapproves.
+살베미니가 고문직에서 해임되었습니다. 개혁주의 파벌이 반발합니다.
 
 @remove_altobelli
-title: Remove Altobelli
+title: 알토벨리 해임
 view-if: altobelli_advisor = 1
 tags: remove_advisor
 on-arrival: altobelli_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Altobelli has been removed as an advisor. The Reformist faction disapproves.
+알토벨리가 고문직에서 해임되었습니다. 개혁주의 파벌이 반발합니다.
 
 @remove_buozzi
-title: Remove Buozzi
+title: 부오치 해임
 view-if: buozzi_advisor = 1
 tags: remove_advisor
 on-arrival: buozzi_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Buozzi has been removed as an advisor. The Reformist faction disapproves.
+부오치가 고문직에서 해임되었습니다. 개혁주의 파벌이 반발합니다.
 
 @remove_matteotti
-title: Remove Matteotti
+title: 마테오티 해임
 view-if: matteotti_advisor = 1
 tags: remove_advisor
 on-arrival: matteotti_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Matteotti has been removed as an advisor. The Reformist faction disapproves.
+마테오티가 고문직에서 해임되었습니다. 개혁주의 파벌이 반발합니다.
 
 # labour
 
 @remove_treves
-title: Remove Treves
+title: 트레베스 해임
 view-if: treves_advisor = 1
 tags: remove_advisor
 on-arrival: treves_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Treves has been removed as an advisor. The Labour faction disapproves.
+트레베스가 고문직에서 해임되었습니다. 노동계 파벌이 반발합니다.
 
 @remove_rigola
-title: Remove Rigola
+title: 리고라 해임
 view-if: rigola_advisor = 1
 tags: remove_advisor
 on-arrival: rigola_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Rigola has been removed as an advisor. The Labour faction disapproves.
+리고라가 고문직에서 해임되었습니다. 노동계 파벌이 반발합니다.
 
 @remove_daragona
-title: Remove D'Aragona
+title: 다라고나 해임
 view-if: daragona_advisor = 1
 tags: remove_advisor
 on-arrival: daragona_advisor = 0; labour_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-D'Aragona has been removed as an advisor. The Labour faction disapproves.
+다라고나가 고문직에서 해임되었습니다. 노동계 파벌이 반발합니다.
 
 # left
 
 @remove_tasca
-title: Remove Tasca
+title: 타스카 해임
 view-if: tasca_advisor = 1
 tags: remove_advisor
 on-arrival: tasca_advisor = 0; communist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Tasca has been removed as an advisor. The Leftist faction disapproves.
+타스카가 고문직에서 해임되었습니다. 좌파 파벌이 반발합니다.
 
 @remove_terracini
-title: Remove Terracini
+title: 테라치니 해임
 view-if: terracini_advisor = 1
 tags: remove_advisor
 on-arrival: terracini_advisor = 0; communist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Terracini has been removed as an advisor. The Leftist faction disapproves.
+테라치니가 고문직에서 해임되었습니다. 좌파 파벌이 반발합니다.
 
 @remove_togliatti
-title: Remove Togliatti
+title: 톨리아티 해임
 view-if: togliatti_advisor = 1
 tags: remove_advisor
 on-arrival: togliatti_advisor = 0; communist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Togliatti has been removed as an advisor. The Leftist faction disapproves.
+톨리아티가 고문직에서 해임되었습니다. 좌파 파벌이 반발합니다.
 
 @remove_gramsci
-title: Remove Gramsci
+title: 그람시 해임
 view-if: gramsci_advisor = 1
 tags: remove_advisor
 on-arrival: gramsci_advisor = 0; communist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Gramsci has been removed as an advisor. The Leftist faction disapproves.
+그람시가 고문직에서 해임되었습니다. 좌파 파벌이 반발합니다.
 
 @remove_bordiga
-title: Remove Bordiga
+title: 보르디가 해임
 view-if: bordiga_advisor = 1
 tags: remove_advisor
 on-arrival: bordiga_advisor = 0; communist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Bordiga has been removed as an advisor. The Leftist faction disapproves.
+보르디가가 고문직에서 해임되었습니다. 좌파 파벌이 반발합니다.
 
 # syndicalists
 
 @remove_deambris
-title: Remove De Ambris
+title: 데 암브리스 해임
 view-if: deambris_advisor = 1
 tags: remove_advisor
 on-arrival: deambris_advisor = 0; syndicalist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-De Ambris has been removed as an advisor. The Syndicalist faction disapproves.
+데 암브리스가 고문직에서 해임되었습니다. 생디칼리스트 파벌이 반발합니다.
 
 @remove_divittorio
-title: Remove Di Vittorio
+title: 디 비토리오 해임
 view-if: divittorio_advisor = 1
 tags: remove_advisor
 on-arrival: divittorio_advisor = 0; syndicalist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Di Vittorio has been removed as an advisor. The Syndicalist faction disapproves.
+디 비토리오가 고문직에서 해임되었습니다. 생디칼리스트 파벌이 반발합니다.
 
 #nonfactional
 
 @remove_picelli
-title: Remove Picelli
+title: 피첼리 해임
 view-if: picelli_advisor = 1
 tags: remove_advisor
 on-arrival: picelli_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Picelli has been removed as an advisor.
+피첼리가 고문직에서 해임되었습니다.
 
 ####################### adding advisors
 
 @add_advisors
-title: Add advisors
+title: 고문 추가
 choose-if: n_advisors < 3
-unavailable-subtitle: Maximum of 3 advisors.
+unavailable-subtitle: 고문은 최대 3명까지만 가능합니다.
 go-to: advisor_menu
 
 @advisor_menu
-title: Add other advisors.
+title: 다른 고문 추가.
 tags: maximalist_advisor, communist_advisor, reformist_advisor, labour_advisor, syndicalist_advisor, nonfactional_advisor
 frequency: 1
 
 
-- @centrist: Add Maximalists
-- @left: Add Leftists
-- @reformist: Add Reformists
-- @labour: Add Labour
-- @syndicalist: Add Syndicalists 
-- @nonfactional: Add Non-factional advisors
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
+- @centrist: 최대강령주의파 추가
+- @left: 좌파 추가
+- @reformist: 개혁주의자 추가
+- @labour: 노동계 추가
+- @syndicalist: 생디칼리스트 추가
+- @nonfactional: 무파벌 고문 추가
+- @rm_main: 대신 고문을 해임한다.
+- @remove_none: 고문 교체를 중단한다.
 
 @centrist
 view-if: n_advisors < 3
@@ -287,8 +287,8 @@ view-if: n_advisors < 3
 - #nonfactional_advisor
 
 @add_serrati
-title: Giacinto Menotti Serrati
-subtitle: Giacinto Menotti Serrati leads the Maximalist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Revolution or Reformist, Party Discipline, Implementing our Program ?]
+title: 히아친토 메노티 세라티
+subtitle: 히아친토 메노티 세라티는 당의 최대강령주의파를 이끕니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 개혁인가 혁명인가, 당 기강 확립, 당 강령 이행 ?]
 is-card: true
 card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: maximalist_advisor
@@ -296,11 +296,11 @@ view-if: serrati_advisor = 0 and n_advisors < 3 and maximalists_resign = 0
 on-arrival: serrati_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Giacinto Menotti Serrati is now an advisor.
+히아친토 메노티 세라티가 이제 고문입니다.
 
 @add_lazzari
-title: Constantinto Lazzari
-subtitle: Constantinto Lazzari is a pacifist leader of the party, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Party Disunity, Rally, Fiscal Policy ?]
+title: 콘스탄티노 라차리
+subtitle: 콘스탄티노 라차리는 당의 평화주의 지도자이자 최대강령주의파 소속입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 당내 분열, 집회, 재정 정책 ?]
 is-card: true
 card-image: img/portraits/ConstantintoLazzari.jpg
 tags: maximalist_advisor
@@ -308,11 +308,11 @@ view-if: lazzari_advisor = 0 and n_advisors < 3 and maximalists_resign = 0
 on-arrival: lazzari_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Constantinto Lazzari is now an advisor.
+콘스탄티노 라차리가 이제 고문입니다.
 
 @add_ferri
-title: Enrico Ferri
-subtitle: Enrico Ferri is a criminologist, sociologist, and member of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Editorial Line, Media ?]
+title: 엔리코 페리
+subtitle: 엔리코 페리는 범죄학자이자 사회학자로, 최대강령주의파 소속입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 긴급 자금 조달, 편집 노선, 언론 ?]
 is-card: true
 card-image: img/portraits/EnricoFerri.jpg
 tags: maximalist_advisor
@@ -320,11 +320,11 @@ view-if: ferri_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and sym
 on-arrival: ferri_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Enrico Ferri is now an advisor.
+엔리코 페리가 이제 고문입니다.
 
 @add_bombacci
-title: Nicola Bombacci
-subtitle: Nicola Bombacci is a prominent leader of the Maximalist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Ideology, Rally ?]
+title: 니콜라 봄바치
+subtitle: 니콜라 봄바치는 최대강령주의파의 유력한 지도자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 무장 봉기, 이념, 집회 ?]
 is-card: true
 card-image: img/portraits/NicolaBombacci.jpg
 tags: maximalist_advisor
@@ -332,13 +332,13 @@ view-if: bombacci_advisor = 0 and n_advisors < 3 and maximalists_resign = 0 and 
 on-arrival: bombacci_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Nicola Bombacci is now an advisor.
+니콜라 봄바치가 이제 고문입니다.
 
 # reformist
 
 @add_kuliscioff
-title: Anna Kuliscioff
-subtitle: Anna Kuliscioff is a Russian-born feminist, intellectual, and member of the Reformist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Women's Rights, Veteran's Welfare, Labour Rights ?]
+title: 안나 쿨리쇼프
+subtitle: 안나 쿨리쇼프는 러시아 태생의 페미니스트이자 지식인으로, 개혁주의 파벌 소속입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 여성 인권, 재향군인 복지, 노동권 ?]
 is-card: true
 card-image: img/portraits/AnnaKuliscioff.jpg
 tags: reformist_advisor
@@ -346,11 +346,11 @@ view-if: kuliscioff_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: kuliscioff_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Anna Kuliscioff is now an advisor.
+안나 쿨리쇼프가 이제 고문입니다.
 
 @add_turati
-title: Filippo Turati
-subtitle: Filippo Turati leads the reformist faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Interior Policy, Snap Election ?]
+title: 필리포 투라티
+subtitle: 필리포 투라티는 당의 개혁주의 파벌을 지도합니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 연정 협상, 내무 정책, 조기 선거 ?]
 is-card: true
 card-image: img/portraits/FilippoTurati.jpg
 tags: reformist_advisor
@@ -358,11 +358,11 @@ view-if: turati_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: turati_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Filippo Turati is now an advisor.
+필리포 투라티가 이제 고문입니다.
 
 @add_salvemini
-title: Gaetano Salvemini
-subtitle: Gaetano Salvemini is a reformist member who advocates for Southern Italy. {!<br><br>!}[? if difficulty < 0 : Actions - Southern Question, Public Education, Comintern Relations ?]
+title: 가에타노 살베미니
+subtitle: 가에타노 살베미니는 남부 이탈리아 문제를 강조하는 개혁주의자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 남부 문제, 공교육, 코민테른 관계 ?]
 is-card: true
 card-image: img/portraits/GaetanoSalvemini.jpg
 tags: reformist_advisor
@@ -370,11 +370,11 @@ view-if: salvemini_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: salvemini_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Gaetano Salvemini is now an advisor.
+가에타노 살베미니가 이제 고문입니다.
 
 @add_altobelli
-title: Argentina Altobelli
-subtitle: Argentina Altobelli is a trade unionist, leader of the *National Federation of Agricultural Workers*, and member of the Reformist faction. {!<br><br>!}[? if difficulty < 0 : Actions - Women's Rights, Party Disunity, Agricultural Policy ?]
+title: 아르젠티나 알토벨리
+subtitle: 아르젠티나 알토벨리는 노동조합 운동가이자 *전국농업노동자연맹*의 지도자이며, 개혁주의 파벌 소속입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 여성 인권, 당내 분열, 농업 정책 ?]
 is-card: true
 card-image: img/portraits/ArgentinaAltobelli.png
 tags: reformist_advisor
@@ -382,11 +382,11 @@ view-if: altobelli_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: altobelli_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Argentina Altobelli is now an advisor.
+아르젠티나 알토벨리가 이제 고문입니다.
 
 @add_buozzi
-title: Bruno Buozzi
-subtitle: Buozzi is an outspoken member of the reformist faction of the [+ psi_name +], as well as the leader of the *Italian Federation of Metallurgical Workers*. {!<br><br>!}[? if difficulty < 0 : Actions - Child Labour, Economic Democracy, Minimum Program Implementation ?]
+title: 브루노 부오치
+subtitle: 부오치는 [+ psi_name +] 개혁주의 파벌의 거침없는 인물이자, *이탈리아 금속노동자연맹*의 지도자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 아동 노동, 경제 민주주의, 최소 강령 이행 ?]
 is-card: true
 card-image: img/portraits/BrunoBuozzi.jpg
 tags: reformist_advisor
@@ -394,11 +394,11 @@ view-if: buozzi_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: buozzi_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Bruno Buozzi is now an advisor.
+브루노 부오치가 이제 고문입니다.
 
 @add_matteotti
 title: Giacomo Matteotti
-subtitle: Matteotti is a long-time deputy of the [+ psi_name +] in the Chamber of Deputies, as well as a member of the reformist faction under Turati. {!<br><br>!}[? if difficulty < 0 : Actions - Constitutional Reform, Foreign Policy, Fasci Urgency ?]
+subtitle: 마테오티는 하원에서 오랫동안 [+ psi_name +] 소속 의원으로 활동했으며, 투라티가 이끄는 개혁주의 파벌 소속입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 헌법 개혁, 외교 정책, 파시즘의 위협 ?]
 is-card: true
 card-image: img/portraits/GiacomoMatteotti.jpg
 tags: reformist_advisor
@@ -406,13 +406,13 @@ view-if: matteotti_advisor = 0 and n_advisors < 3 and reformists_defect = 0
 on-arrival: matteotti_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Giacomo Matteotti is now an advisor.
+자코모 마테오티가 이제 고문입니다.
 
 # left
 
 @add_tasca
-title: Angelo Tasca
-subtitle: Angelo Tasca is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Implementing the Maximum Plan, Paramilitary Funding ?]
+title: 안젤로 타스카
+subtitle: 안젤로 타스카는 당내 좌파의 일원으로, 그람시와 그의 *신질서* 그룹과 관련이 있습니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 언론, 최대 강령 이행, 준군사조직 자금 지원 ?]
 is-card: true
 card-image: img/portraits/AngeloTasca.jpg
 view-if: tasca_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -420,11 +420,11 @@ on-arrival: tasca_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor
 
-Angelo Tasca is now an advisor.
+안젤로 타스카가 이제 고문입니다.
 
 @add_terracini
-title: Umberto Terracini
-subtitle: Umberto Terracini is a member of the Left-wing of the party, affiliated with Grasmci and his *L'Ordine Nuovo*. {!<br><br>!}[? if difficulty < 0 : Actions - Comintern Relations, Constitutional Reform, Fasci Urgency ?]
+title: 움베르토 테라치니
+subtitle: 움베르토 테라치니는 당내 좌파의 일원으로, 그람시와 그의 *신질서* 그룹과 관련이 있습니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 코민테른 관계, 헌법 개혁, 파시즘의 위협 ?]
 is-card: true
 card-image: img/portraits/UmbertoTerracini.jpg
 view-if: terracini_advisor = 0 and n_advisors < 3 and communist_split = 0 and advisor_arrested != 1
@@ -432,11 +432,11 @@ on-arrival: terracini_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor
 
-Umberto Terracini is now an advisor.
+움베르토 테라치니가 이제 고문입니다.
 
 @add_togliatti
-title: Palmiro Togliatti
-subtitle: Palmiro Togliatti is affiliated with the Left-wing of the party, advocating for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Negotiating with the Coalition, Public Education, Shuffle Cabinet ?]
+title: 팔미로 톨리아티
+subtitle: 팔미로 톨리아티는 당내 좌파 소속으로 계급 투쟁을 주장합니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 연정 협상, 공교육, 내각 개편 ?]
 is-card: true
 card-image: img/portraits/PalmiroTogliatti.jpg
 view-if: togliatti_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -444,11 +444,11 @@ on-arrival: togliatti_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor
 
-Palmiro Togliatti is now an advisor.
+팔미로 톨리아티가 이제 고문입니다.
 
 @add_gramsci
-title: Antonio Gramsci
-subtitle: Antonio Gramsci leads the *L'Ordine Nuovo* bloc, advocating for differing ideals than the rest of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Media, Party Organisations, Organising Workers ?]
+title: 안토니오 그람시
+subtitle: 안토니오 그람시는 *신질서* 그룹을 이끌며, 당의 다른 분파와는 다른 이념을 주장합니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 언론, 당 조직, 노동자 조직화 ?]
 is-card: true
 card-image: img/portraits/AntonioGramsci.png
 view-if: gramsci_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -456,11 +456,11 @@ on-arrival: gramsci_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor
 
-Antonio Gramsci is now an advisor.
+안토니오 그람시가 이제 고문입니다.
 
 @add_bordiga
-title: Amadeo Bordiga
-subtitle: Amadeo Bordiga leads the Left-wing faction of the party. {!<br><br>!}[? if difficulty < 0 : Actions - Armed Uprising, Revolutionary Planning, Rural Campaign ?]
+title: 아마데오 보르디가
+subtitle: 아마데오 보르디가는 당내 좌파를 이끌고 있습니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 무장 봉기, 혁명 계획, 농촌 유세 ?]
 is-card: true
 card-image: img/portraits/AmadeoBordiga.png
 view-if: bordiga_advisor = 0 and n_advisors < 3 and communist_split = 0
@@ -468,14 +468,14 @@ on-arrival: bordiga_advisor = 1; n_advisors += 1; communist_strength += 5
 go-to: advisor_menu
 tags: communist_advisor
 
-Amadeo Bordiga is now an advisor.
+아마데오 보르디가가 이제 고문입니다.
 
 
 # labour
 
 @add_treves
-title: Claudio Treves
-subtitle: Claudio Treves is a socialist journalist, affiliated with the Trade Unions. {!<br><br>!}[? if difficulty < 0 : Actions - Judicial Reform, Media, Labour Rights ?]
+title: 클라우디오 트레베스
+subtitle: 클라우디오 트레베스는 사회주의 언론인이며 노동조합과 연계되어 있습니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 사법 개혁, 언론, 노동권 ?]
 is-card: true
 card-image: img/portraits/ClaudioTreves.jpg
 tags: labour_advisor
@@ -483,11 +483,11 @@ view-if: treves_advisor = 0 and n_advisors < 3 and unions_break = 0
 on-arrival: treves_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
-Claudio Treves is now an advisor.
+클라우디오 트레베스가 이제 고문입니다.
 
 @add_rigola
-title: Rinaldo Rigola
-subtitle: Rinaldo Rigola was the former Secretary of the Italian CGdL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Implementing the Minimum Plan, Veterans Welfare ?]
+title: 리날도 리고라
+subtitle: 리날도 리고라는 이탈리아 노동총동맹, 즉 *노동총동맹*의 전 서기이었습니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 긴급 자금 조달, 최소 강령 이행, 재향군인 복지 ?]
 is-card: true
 card-image: img/portraits/RinaldoRigola.png
 tags: labour_advisor
@@ -495,11 +495,11 @@ view-if: rigola_advisor = 0 and n_advisors < 3 and unions_break = 0
 on-arrival: rigola_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
-Rinaldo Rigola is now an advisor.
+리날도 리고라가 이제 고문입니다.
 
 @add_daragona
-title: Ludovico D'Aragona
-subtitle: Ludovico D'Aragona is the current Secretary of the Italian CGdL, *General Confederation of Labour*. {!<br><br>!}[? if difficulty < 0 : Actions - Labour Rights, Emergency Fundraising ?]
+title: 루도비코 다라고나
+subtitle: 루도비코 다라고나는 이탈리아 노동총동맹(CGdL), 즉 *노동총동맹*의 현 서기입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 노동권, 긴급 자금 조달 ?]
 is-card: true
 card-image: img/portraits/LudovicoDAragona.jpg
 tags: labour_advisor
@@ -507,13 +507,13 @@ view-if: daragona_advisor = 0 and n_advisors < 3
 on-arrival: daragona_advisor = 1; n_advisors += 1; labour_strength += 5
 go-to: advisor_menu
 
-Ludovico D'Aragona is now an advisor.
+루도비코 다라고나가 이제 고문입니다.
 
 # syndicalists
 
 @add_deambris
-title: Alceste De Ambris
-subtitle: De Ambris is a prominent revolutionary syndicalist and a defector from [+ pnf_leader +]'s *Fasces of Combat*. {!<br><br>!}[? if difficulty < 0 : Actions - Fasci Urgency, Red Guard Ordering, Arditi del Popolo ?]
+title: 알체스테 데 암브리스
+subtitle: 데 암브리스는 저명한 혁명적 생디칼리스트이며, [+ pnf_leader +]의 *전투 파시*에서 이탈한 인물입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 파시즘의 위협, 적위대 지휘, 인민의 결사대 ?]
 is-card: true
 card-image: img/portraits/AlcesteDeAmbris.jpg
 tags: syndicalist_advisor
@@ -521,11 +521,11 @@ view-if: deambris_advisor = 0 and n_advisors < 3
 on-arrival: deambris_advisor = 1; n_advisors += 1; syndicalist_strength += 5
 go-to: advisor_menu
 
-Alceste De Ambris is now an advisor.
+알체스테 데 암브리스가 이제 고문입니다.
 
 @add_divittorio
-title: Giuseppe Di Vittorio
-subtitle: DDi Vittorio is a syndicalist leader of the *Italian Syndicalist Union*. {!<br><br>!}[? if difficulty < 0 : Actions - Southern Question, Party Organisations, Revolutionary Preparations ?]
+title: 주세페 디 비토리오
+subtitle: 디 비토리오는 *이탈리아 생디칼리스트 연합*의 생디칼리스트 지도자입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 남부 문제, 당 조직, 혁명 준비 ?]
 is-card: true
 card-image: img/portraits/GiuseppeDiVittorio.jpg
 tags: syndicalist_advisor
@@ -533,13 +533,13 @@ view-if: divittorio_advisor = 0 and n_advisors < 3 and syndicalist_break = 0
 on-arrival: divittorio_advisor = 1; n_advisors += 1; syndicalist_strength += 5
 go-to: advisor_menu
 
-Giuseppe Di Vittorio is now an advisor.
+주세페 디 비토리오가 이제 고문입니다.
 
 # nonfactionals
 
 @add_picelli
-title: Guido Picelli
-subtitle: Picelli is a non-factional founding member of the Red Guards and a fierce anti-fascist. {!<br><br>!}[? if difficulty < 0 : Actions - Fasci Urgency, Red Guards, Arditi del Popolo ?]
+title: 귀도 피첼리
+subtitle: 피첼리는 무파벌 소속으로 적위대 창립 멤버이자 열렬한 반파시스트입니다. {!<br><br>!}[? if difficulty < 0 : 활동 - 파시즘의 위협, 적위대, 인민의 결사대 ?]
 is-card: true
 card-image: img/portraits/GuidoPicelli.jpg
 tags: nonfactional_advisor
@@ -547,5 +547,5 @@ view-if: picelli_advisor = 0 and n_advisors < 3 and advisor_arrested != 1
 on-arrival: picelli_advisor = 1; n_advisors += 1;
 go-to: advisor_menu
 
-Guido Picelli is now an advisor.
+귀도 피첼리가 이제 고문입니다.
 

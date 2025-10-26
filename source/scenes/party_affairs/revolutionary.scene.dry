@@ -1,4 +1,4 @@
-title: Revolution or Reform 
+title: 개혁인가 혁명인가
 new-page: true
 is-card: true
 view-if: revolutionary_timer <= 0 and not national_congress_seen
@@ -7,31 +7,31 @@ on-arrival: week_actions += 1; revolutionary_timer = 6;
 card-image: img/portraits/GiacintoMenottiSerrati.png
 tags: party_affairs
 
-= Revolution or Reform?
+= 개혁인가 혁명인가?
 
-Our party is wracked as to how to deal with the bourgeois and the monarchy. The Left-wing Maximalists advocate for direct, revolutionary action, seeking to overthrow the autocratic Monarchy utilising the paramilitaries and with popular support. On the other hand, the Reformists advocate for governmental participation in government, seeking to advocate and reform the political system within parliamentary means, while the Maximalists, caught in the middle, advocate for Centre Marxism, situating themselves between the revolutionary rhetoric of the Left-wing of the party and the reformist alignment of the Right-wing of the party. 
+우리 당은 부르주아와 군주제를 어떻게 다룰 것인지를 두고 분열되어 있습니다. 좌파 최대강령주의파는 준군사조직과 대중의 지지를 활용해 독재적 군주제를 타도하는 직접적인 혁명 행동을 주장합니다. 반면, 개혁주의자들은 정부에 참여하여 의회 내에서 정치 체제를 개혁할 것을 주장합니다. 그 중간에 낀 최대강령주의파는 중도 마르크스주의를 내세우며, 당내 좌파의 혁명 노선과 우파의 개혁 노선 사이에서 균형을 잡으려 합니다.
 
-[? if communist_strength > reformist_strength : The party is currently leaning more into its revolutionary support. ?]
+[? if communist_strength > reformist_strength : 현재 당은 혁명 노선에 더 기울어 있습니다. ?]
 
-[? if reformist_strength > communist_strength : The party is currently leaning more into parliamentary means as a cause. ?]
+[? if reformist_strength > communist_strength : 현재 당은 의회주의 노선에 더 기울어 있습니다. ?]
 
-- @support_reformists: Sway sympathetic members towards reformism.
-- @support_revolutionaries: Sway sympathetic members towards revolutionary ideals.
-- @support_none: Keep party alignments the same.
+- @support_reformists: 동조하는 당원들을 개혁주의로 유도한다.
+- @support_revolutionaries: 동조하는 당원들을 혁명 노선으로 유도한다.
+- @support_none: 당 노선을 그대로 유지한다.
 - @easy_discard
 
 @support_reformists
 on-arrival: communist_dissent += 7*(1-dissent); reformist_dissent -= 7*(1-dissent); radicalisation -= 0.5; revolutionary_fervour -= 3; reformist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent);
 
-We are able to sway some of the more right-wing members of the party to our cause, advocating for a more reformist approach. This only further exacerbates the split within the party, however.
+우리는 당내 우파 성향의 당원 일부를 설득하여 개혁주의적 접근을 지지하게 했습니다. 하지만 이로 인해 당내 분열은 더욱 심화되었습니다.
 
 @support_revolutionaries
 on-arrival: communist_dissent -= 7*(1-dissent); reformist_dissent += 7*(1-dissent); radicalisation += 0.5; revolutionary_fervour += 3; communist_strength += 5*(1-dissent); maximalist_strength -= 5*(1-dissent); revolutionary_fervor += 0.1 if not_participating = 1
 
-We are able to sway some of the more left-wing members of the party to our cause, advocating for a more revolutionary approach. This only further exacerbates the split within the party, however.
+우리는 당내 좌파 성향의 당원 일부를 설득하여 혁명적 접근을 지지하게 했습니다. 하지만 이로 인해 당내 분열은 더욱 심화되었습니다.
 
 @support_none
 
-Let's keep the party as it is for now.
+당분간은 당을 현 상태로 유지합시다.
 
-- @return: Continue...
+- @return: 계속...
