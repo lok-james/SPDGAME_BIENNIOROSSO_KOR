@@ -1,4 +1,4 @@
-title: Rallying against Grandi
+title: 그란디에 맞선 투쟁
 new-page: true
 view-if: rally_grandi_timer = 0 and pnf_in_government and pnf_leader = "Grandi"
 on-arrival: rally_grandi_timer = 5; week_actions += 1; rg_militarisation_cost = 2 if rg_militancy > 0.5 else rg_militarisation_cost = 1; rg_militarisation_cost = 3 if rg_militancy > 0.75
@@ -7,41 +7,41 @@ is-card: true
 card-image: img/portraits/DinoGrandi.jpg
 tags: party_affairs
 
-= Rallying against Grandi
+= 그란디에 맞선 투쟁
 
-Our worst fears have come true. A fascist is in control of Italy, though not the way we expected it. Dino Grandi. *Ras* leader and successor to Mussolini's ideological ideals. Grandi represents a nastier breed of fascism compared to Mussolini's – more violent, less politically apt and unwilling to compromise.
+최악의 우려가 현실이 되었습니다. 예상치 못한 인물이지만, 파시스트가 이탈리아를 장악했습니다. 디노 그란디. *라스* 지도자 출신이자 무솔리니 이념의 계승자입니다. 그란디는 무솔리니보다 더 폭력적이고 정치적으로 미숙하며 타협을 거부하는, 한층 더 지독한 파시즘을 상징합니다.
 
-What should we do?
+어떻게 해야 할까요?
 
-- @grandi_squadrismo: Campaign against Grandi's reckless violence and ruthlessness.
-- @grandi_rally: Rally against Grandi's policy failures and incompetence.
-- @grandi_fund: Continue funding the Red Guards to oppose the Squadrismo.
-- @grandi_dissent: Unify the party and reduce dissent.
-- @root: Do nothing for now.
+- @grandi_squadrismo: 그란디의 무자비하고 무모한 폭력에 맞서는 운동을 벌인다.
+- @grandi_rally: 그란디의 정책 실패와 무능을 규탄하는 집회를 개최한다.
+- @grandi_fund: 행동대에 맞서기 위해 적위대에 지속적으로 자금을 지원한다.
+- @grandi_dissent: 당을 통합하고 불만을 해소한다.
+- @root: 당분간은 아무것도 하지 않는다.
 - @easy_discard
 
 @grandi_squadrismo
-subtitle: The people desire stability; a reckless paramilitary shows the exact opposite.
+subtitle: 민중은 안정을 원합니다. 무모한 준군사 조직은 그 정반대의 상징입니다.
 on-arrival: abl_strength -= 3; ard_strength -= 5; fdc_strength -= 9; workers_pnf -= 4; middle_class_pnf -= 3;
 
-We campaign against the actions the Squadrismo have done under Grandi's control, which seems to resonate with the workers and middle class who wish to see a restoration of order.
+우리는 그란디의 지휘 아래 행동대가 저지른 만행에 맞서 투쟁하며, 질서 회복을 바라는 노동자와 중산층의 공감을 얻고 있습니다.
 
 @grandi_rally
-subtitle: Grandi, unlike Mussolini or D'Annunzio, is neither politically skilled nor charismatic.
+subtitle: 무솔리니나 단눈치오와 달리, 그란디는 정치적 수완도 카리스마도 없습니다.
 on-arrival: workers_pnf -= 2; rural_pnf -= 2; workers_psi += 2; 
 
-We rally workers and farmhands against Grandi, weakening his support base.
+우리는 노동자와 농민들을 규합하여 그란디에 맞서고, 그의 지지 기반을 약화시켰습니다.
 
 @grandi_fund
-subtitle: -1 Paramilitary Resources 
+subtitle: 준군사 자원 -1
 choose-if: para_resources >= rg_militarisation_cost
-unavailable-subtitle: Not enough paramilitary resources. (Need [+ rg_militarisation_cost +])
+unavailable-subtitle: 준군사 자원이 부족합니다. ([+ rg_militarisation_cost +] 필요)
 on-arrival: para_resources -= rg_militarisation_cost; rg_investment += 1; rg_strength += 15*revolutionary_exhaustion; rg_militancy += 0.04*revolutionary_exhaustion; communist_strength += 2; communist_dissent -= 2; reformist_dissent += 5; radicalisation += 0.1; workers_psi += 2*(1-dissent); veterans_psi += 2*(1-dissent); middle_class_psi -= 5*(1-dissent); rg_militancy += 0.02 if veterans_psi_normalised >= 40; rg_strength += 5 if veterans_psi_normalised >= 40
 
-We continue funding the Red Guards, who begin recruitment of more members and are able to acquire more effective weaponry.
+우리는 적위대에 지속적으로 자금을 지원하여, 더 많은 대원을 모집하고 더 효과적인 무기를 획득할 수 있도록 했습니다.
 
 @grandi_dissent
-subtitle: The party has to be united in this time of crisis.
+subtitle: 이 위기의 시기에 당은 단결해야 합니다.
 on-arrival: communist_dissent -= 5; maximalist_dissent -= 5; labour_dissent -= 5; syndicalist_dissent -= 5 if syndicalist_active; reformist_dissent -= 5;
 
-Though the party is typically a squabbling mess, we are able to quell dissent in order to face fascism as a united front.
+평소에는 다툼이 끊이지 않는 당이지만, 파시즘에 맞서 단일 대오를 형성하기 위해 당내 불만을 잠재울 수 있었습니다.

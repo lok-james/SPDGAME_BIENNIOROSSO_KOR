@@ -75,6 +75,6 @@ on-arrival: ldr_relation += 8; ul_relation += 8; communist_dissent += 4*(1-disse
 
 @psi_alone
 
- 수 없기 때문이든, 하려 하지 않기 때문이든, 지금 이 순간 다른 정당과 관계를 맺지 않습니다.
+할 수 없기 때문이든, 하려 하지 않기 때문이든, 지금 이 순간 다른 정당과 관계를 맺지 않습니다.
 
 - @return: 계속하기...

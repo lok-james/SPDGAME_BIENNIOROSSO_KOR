@@ -1,4 +1,4 @@
-title: King Relations
+title: 국왕과의 관계
 new-page: true
 is-card: true
 tags: party_affairs
@@ -6,34 +6,34 @@ view-if: king_relation_timer <= 0 and not_participating = 0 and not national_con
 on-arrival: week_actions += 1; king_relation_timer = 4;
 card-image: img/portraits/VitorioEmanuel.jpg
 
-= Royal Relations
+= 국왕과의 관계
 
-Our relationship with the King can be described as wary as best, due to our diametrically opposed ideals. However, if we are to make any solid reforms, we will need to have the King on our side.
+우리의 이념이 왕정과 정반대이기에, 국왕과의 관계는 좋게 말해야 조심스러운 수준입니다. 하지만 확고한 개혁을 이루려면 국왕을 우리 편으로 만들어야 합니다.
 
-- @king_funds: Arrange some meetings with the King.
-- @king_ldr: Utilise our influence with the [+ ldr_name +] to sway the King.
-- @king_ul: Utilise our influence with the [+ ul_name +] to sway the King.
-- @return: Let's not do this for now.
+- @king_funds: 국왕과의 회동을 주선한다.
+- @king_ldr: [+ ldr_name +] 내 영향력을 활용하여 국왕을 설득한다.
+- @king_ul: [+ ul_name +] 내 영향력을 활용하여 국왕을 설득한다.
+- @return: 지금은 보류한다.
 - @easy_discard
 
 @king_funds
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: resources -= 1; king_relation += 7; king_relation += 3*(1-dissent) if radicalisation < 3; king_relation -= 5*(1-dissent) if radicalisation > 6; radicalisation -= 0.1;
 
-We are received with wariness, though the King does not turn us away outright. [? if radicalisation > 6 : Our radicalisation, however, makes relations with the King hard to improve. ?]
+국왕의 경계심이 역력했지만, 국왕이 우리를 완전히 내치지는 않았습니다. [? if radicalisation > 6 : 하지만 우리의 급진적인 성향이 국왕과의 관계 개선을 어렵게 합니다. ?]
 
 @king_ldr
 choose-if: ldr_relation >= 64.9
-unavailable-subtitle: Our relationship with the [+ ldr_name +] isn't high enough.
+unavailable-subtitle: [+ ldr_name +]와의 관계가 충분히 우호적이지 않습니다.
 on-arrival: ldr_relation -= 5; king_relation += 3
 
-With some meetings and agreements, they agree to put a good word for us with the King.
+몇 차례의 회동과 합의 끝에, 그들은 국왕 앞에서 우리를 좋게 말해주기로 했습니다.
 
 @king_ul
 choose-if: ul_relation >= 64.9
-unavailable-subtitle: Our relationship with the [+ ul_name +] isn't high enough.
+unavailable-subtitle: [+ ul_name +]와의 관계가 충분히 우호적이지 않습니다.
 on-arrival: ul_relation -= 5; king_relation += 3
 
-With some meetings and agreements, they agree to sway some of their Senate-aligned members towards us, which in turn sways the King.
+몇 차례의 회동과 합의 끝에, 그들은 상원 내 자파 의원들을 설득해 우리에게 우호적인 태도를 취하게 했고, 이는 결국 국왕에게도 영향을 미쳤습니다.

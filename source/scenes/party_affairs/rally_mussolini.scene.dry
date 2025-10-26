@@ -1,4 +1,4 @@
-title: Rallying against Mussolini
+title: 무솔리니에 맞선 투쟁
 new-page: true
 view-if: rally_mussolini_timer = 0 and pnf_in_government and pnf_leader = "Mussolini"
 on-arrival: rally_mussolini_timer = 5; week_actions += 1; rg_militarisation_cost = 2 if rg_militancy > 0.5 else rg_militarisation_cost = 1; rg_militarisation_cost = 3 if rg_militancy > 0.75
@@ -7,41 +7,41 @@ is-card: true
 card-image: img/portraits/BenitoMussolini.jpg
 tags: party_affairs
 
-= Rallying against Mussolini
+= 무솔리니에 맞선 투쟁
 
-Our worst fears have come true. A fascist is in control of Italy, assuming the office of Prime Minister. Benito Mussolini. Former member of the [+ psi_name +] and dangerous – politically ambiguous and apt, he will seemingly do everything in his power to maintain power.
+최악의 우려가 현실이 되었습니다. 파시스트가 총리직에 오르며 이탈리아를 장악했습니다. 베니토 무솔리니. [+ psi_name +]의 전 당원이었던 그는 위험한 인물입니다. 정치적으로 모호하면서도 능수능란한 그는 권력을 유지하기 위해 무슨 짓이든 할 것입니다.
 
-What should we do?
+어떻게 해야 할까요?
 
-- @mussolini_rally: Rally against Mussolini's authoritarianism and violence.
-- @mussolini_relation: Strengthen ties with the other parties.
-- @mussolini_fund: Continue funding the Red Guards to oppose the Squadrismo.
-- @mussolini_dissent: Unify the party and reduce dissent.
-- @root: Do nothing for now.
+- @mussolini_rally: 무솔리니의 권위주의와 폭력에 맞서는 집회를 개최한다.
+- @mussolini_relation: 다른 정당과의 유대를 강화한다.
+- @mussolini_fund: 행동대에 맞서기 위해 적위대에 지속적으로 자금을 지원한다.
+- @mussolini_dissent: 당을 통합하고 불만을 해소한다.
+- @root: 당분간은 아무것도 하지 않는다.
 - @easy_discard
 
 @mussolini_rally
-subtitle: Emphasising Mussolini's desperation to cling to power might sway some supporters away from him.
+subtitle: 권력에 집착하는 무솔리니의 필사적인 모습을 부각하면 일부 지지자들의 마음을 돌릴 수 있을 것입니다.
 on-arrival: workers_pnf -= 2; rural_pnf -= 2; workers_psi += 2; 
 
-We rally workers and farmhands against Mussolini, weakening his support base.
+우리는 노동자와 농민들을 규합하여 무솔리니에 맞서고, 그의 지지 기반을 약화시켰습니다.
 
 @mussolini_relation
-subtitle: Mussolini's radicalism mean we might be able to sway the other parties against supporting him.
+subtitle: 무솔리니의 급진적 성향 때문에 다른 정당들이 그를 지지하지 않도록 설득할 수 있을지도 모릅니다.
 on-arrival: ds_relation += 5; psri_relation += 5; ldr_relation += 5; ppi_relation += 5;
 
-We reaffirm our ties with our fellow left-wing parties, as well as cultivate ties with the liberals and Catholics to aid us against Mussolini should the time come.
+우리는 동료 좌파 정당들과의 유대를 재확인하는 한편, 때가 왔을 때 무솔리니에 맞서 우리를 도울 수 있도록 자유주의 및 가톨릭 정당과 관계를 구축합니다.
 
 @mussolini_fund
-subtitle: -1 Paramilitary Resources 
+subtitle: 준군사 자원 -1
 choose-if: para_resources >= rg_militarisation_cost
-unavailable-subtitle: Not enough paramilitary resources. (Need [+ rg_militarisation_cost +])
+unavailable-subtitle: 준군사 자원이 부족합니다. ([+ rg_militarisation_cost +] 필요)
 on-arrival: para_resources -= rg_militarisation_cost; rg_investment += 1; rg_strength += 15*revolutionary_exhaustion; rg_militancy += 0.04*revolutionary_exhaustion; communist_strength += 2; communist_dissent -= 2; reformist_dissent += 5; radicalisation += 0.1; workers_psi += 2*(1-dissent); veterans_psi += 2*(1-dissent); middle_class_psi -= 5*(1-dissent); rg_militancy += 0.02 if veterans_psi_normalised >= 40; rg_strength += 5 if veterans_psi_normalised >= 40
 
-We continue funding the Red Guards, who begin recruitment of more members and are able to acquire more effective weaponry.
+우리는 적위대에 지속적으로 자금을 지원하여, 더 많은 대원을 모집하고 더 효과적인 무기를 획득할 수 있도록 했습니다.
 
 @mussolini_dissent
-subtitle: The party has to be united in this time of crisis.
+subtitle:이 위기의 시기에 당은 단결해야 합니다.
 on-arrival: communist_dissent -= 5; maximalist_dissent -= 5; labour_dissent -= 5; syndicalist_dissent -= 5 if syndicalist_active; reformist_dissent -= 5;
 
-Though the party is typically a squabbling mess, we are able to quell dissent in order to face fascism as a united front.
+평소에는 다툼이 끊이지 않는 당이지만, 파시즘에 맞서 단일 대오를 형성하기 위해 당내 불만을 잠재울 수 있었습니다.

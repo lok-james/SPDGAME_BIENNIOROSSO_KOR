@@ -1,4 +1,4 @@
-title: International Relations
+title: 인터내셔널 내 관계
 new-page: true
 is-card: true
 tags: party_affairs
@@ -8,69 +8,69 @@ card-image: img/Comintern.jpg
 max-visits: 12
 #subtitle: Building ties with our fraternal socialist parties.
 
-= Comintern Relations
+= 코민테른 관계
 
-At the Labour and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
+노동사회주의 인터내셔널에서 우리는 유럽과 전 세계의 형제 사회주의 정당들과 연대를 구축할 수 있습니다.
 
-- @fr_uk: Build relationships with the French SFIO and British Labour Party to keep their governments aligned with Italy.
-- @germany: Learn organisation and street fighting from the German communists.
-- @comintern: Expand our contacts and influence with the Soviets through the Comintern.
-- @papacy: Expand our contacts with the Papacy utilising our influence within the PPI.
-- @america: Contact the Socialist party of America.
-- @hungary: Send aid to the Party of Communists in Hungary.
-- @return: We do not need international contacts at the moment.
+- @fr_uk: 프랑스 사회당과 영국 노동당과의 관계를 심화하여 양국 정부가 이탈리아에 우호적인 태도를 유지하도록 유도한다.
+- @germany: 독일 공산주의자들로부터 조직 운영과 시가전 기술을 습득한다.
+- @comintern: 코민테른을 통해 소비에트와의 접촉을 넓히고 영향력을 확대한다.
+- @papacy: 이탈리아 인민당 내 영향력을 활용하여 교황청과의 관계를 확대한다.
+- @america: 미국 사회당과 접촉한다.
+- @hungary: 헝가리 공산당에 원조를 제공한다.
+- @return: 당분간 국제 관계는 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @fr_uk
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
 unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; entente_relation += 1; reformist_strength += 5; foreign_invasion_time += 6 if violent_revolution; supported_entente += 1;
 
-The socialists of France and Britain can influence their governments to be friendlier towards Italy.
+프랑스와 영국의 사회주의자들은 각국 정부가 이탈리아에 더 우호적인 태도를 취하도록 영향력을 행사할 수 있습니다.
 
-[? if violent_revolution : We are able to delay any plans that have towards us, as well. ?]
+[? if violent_revolution : 우리에 대한 적대적 계획도 지연시킬 수 있습니다. ?]
 
 @germany
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1 and soviet_germany != 1
-unavailable-subtitle: [? if resources < 1 : 자원이 부족합니다. (1 필요) ?][? if soviet_germany : The Spartakusbund is no longer under threat. ?]
+unavailable-subtitle: [? if resources < 1 : 자원이 부족합니다. (1 필요) ?][? if soviet_germany : 스파르타쿠스단은 더는 위협을 받지 않습니다. ?]
 on-arrival: communist_strength += 5; radicalisation += 0.3; rg_militancy += 0.04*revolutionary_exhaustion; resources -= 1; pcdi_bordiga += 1;
 
-Germany is in turmoil. With memories of the Spartacist Uprising still fresh, and the Spartacus League higher command under threat from right-wing forces, we can offer them refuge, welcoming them as exiles to Italy and training our forces with their experience in the Spartakusbund.
+독일은 혼란에 휩싸여 있습니다. 스파르타쿠스 봉기의 기억이 생생한 가운데, 우익 세력의 위협을 받는 스파르타쿠스단 지도부에 피난처를 제공할 수 있습니다. 그들을 이탈리아 망명객으로 환영하고, 그들의 스파르타쿠스단 경험을 통해 우리 병력을 훈련시킬 수 있습니다.
 
 @comintern
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
 unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; soviet_relation += 1; soviet_end_timer -= 1 if not rcw_over; soviet_recovery_timer -= 1 if rcw_over; pcdi_gramsci += 1; supported_ussr += 1; rg_militancy += 0.04*revolutionary_exhaustion if soviet_leader = "Trotsky"
 
-Our efforts are welcomed by the Soviets, and [? if not rcw_over :we aid them in their civil war against the White Army. ?][? if rcw_over :we aid them in their post-war recovery. ?]
+우리의 노력은 소비에트의 환영을 받았고, [? if not rcw_over :백군에 맞선 내전에서 그들을 지원했습니다. ?][? if rcw_over :그들의 전후 복구를 지원했습니다. ?]
 
-[? if soviet_leader = "Trotsky" : Secretary-General Trotsky sends us military equipment to arm the Red Guards in response. ?]
+[? if soviet_leader = "Trotsky" : 이에 트로츠키 서기장이 적위대를 무장시킬 군사 장비를 보내왔습니다. ?]
 
 @papacy
-subtitle: -2 resources
+subtitle: -2 자원
 choose-if: resources >= 2 and ppi_relation >= 55
-unavailable-subtitle: [? if resources < 2 : Not enough resources. (Need 2) ?][? if ppi_relation < 55 : Our influence within the PPI is too low. ?]
+unavailable-subtitle: [? if resources < 2 : 자원이 부족합니다. (2 필요) ?][? if ppi_relation < 55 : 이탈리아 인민당 내 영향력이 너무 낮습니다. ?]
 on-arrival: papal_relation += 1; ppi_relation -= 10; resources -= 2; 
 
-We utilise our influence within the PPI to expand our contact amongst the PPI. We notice an increase in attitude with the Holy See.
+이탈리아 인민당 내 영향력을 활용하여 당내 접촉을 확대했습니다. 이로 인해 교황청의 태도가 호의적으로 변한 것을 감지했습니다.
 
 @america
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
 unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; supported_usa += 1;
 
-The Socialist Party of America is tiny and has limited support, especially following their loss in the recent elections. There is not much we can do for them, and conversely, not much they can do for us.
+미국 사회당은 소수 정당이며, 특히 최근 선거 패배 이후 지지 기반이 미미합니다. 우리가 그들을 위해 해줄 수 있는 것도, 반대로 그들이 우리를 위해 해줄 수 있는 것도 많지 않습니다.
 
 @hungary
-subtitle: -1 resources
+subtitle: -1 자원
 choose-if: resources >= 1
 view-if: year < 1920 and month <= 8
 unavailable-subtitle: 자원이 부족합니다. (1 필요)
 on-arrival: resources -= 1; supported_hungary += 1;
 
-The Hungarian Communists are in an opportune time to seize power, and we can only hope our aid helps them spread the cause further.
+헝가리 공산주의자들은 정권 장악의 호기를 맞았으며, 우리의 원조가 그들의 대의를 확산하는 데 도움이 되기를 바랄 뿐입니다.

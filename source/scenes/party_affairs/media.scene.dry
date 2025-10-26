@@ -1,4 +1,4 @@
-title: Media
+title: 언론
 new-page: true
 is-card: true
 tags: party_affairs
@@ -7,9 +7,9 @@ on-arrival: week_actions += 1; media_timer = 3;
 card-image: img/Media.jpg
 #subtitle: Setting the direction for our newspapers and radio.
 
-= Media
+= 언론
 
-The [+ psi_name +] runs a veritable media empire, with many newspapers throughout every Italian city and region. We could use the media for various purposes...
+[+ psi_name +]는 이탈리아 모든 도시와 지역에 걸쳐 수많은 신문을 발행하며 거대한 언론 제국을 이루고 있습니다. 우리는 이 언론을 다양한 목적으로 활용할 수 있습니다...
 
 - @commercial
 - @campaign
@@ -18,65 +18,65 @@ The [+ psi_name +] runs a veritable media empire, with many newspapers throughou
 - @radio_2
 - @radio_3
 - @radio_4
-- @return: We should not do anything with media at the moment.
+- @return: 당분간 언론과 관련해 어떠한 조치도 취하지 않는다.
 - @easy_discard
 - @cancel_advisor_action
 
 @commercial
-title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.
-subtitle: This might upset ideological purists, but it may bring in more funds and perhaps expose the middle class to socialist views.
+title: 당 지지층을 넘어 독자층을 넓혀 신문의 상업성을 강화한다.
+subtitle: 이념적 순수주의자들을 화나게 할 수도 있지만, 더 많은 자금을 확보하고 중산층에게 사회주의 이념을 접하게 할 기회가 될 수 있습니다.
 on-arrival: resources += 1; middle_class_psi += 4*(1 - dissent); communist_dissent += 4; labour_dissent += 7; socialist_sentiment += 2; pcdi_gramsci += 0.5;
 
-Our commercialized newspapers are able to bring in more funds. However, the left and labour factions express their displeasure.
+상업화된 신문은 더 많은 자금을 벌어들일 수 있습니다. 하지만 좌파와 노동계 파벌은 불만을 표합니다.
 
 @campaign
-title: The purpose of our media is to elect more socialists.
-subtitle: Our newspapers will focus on the electoral campaign.
+title: 우리 언론의 목표는 더 많은 사회주의자를 당선시키는 것이다.
+subtitle: 우리 신문은 선거 유세에 집중할 것입니다.
 on-arrival: campaign_media += 1; workers_psi += 4*(1 - dissent); socialist_sentiment += 1*(1-dissent);
 
-Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+우리의 유세 언론은 대부분 이미 사회주의 선전으로 포화된 노동자들에게 전달되고 있지만, 분명 *어떤* 효과가 있을 것이라 기대합니다.
 
 @ideological
-title: We will have vibrant ideological debate within our newspapers.
-subtitle: There will be space for all factions to air their views.
+title: 우리 신문에 활발한 이념 토론의 장을 마련할 것이다.
+subtitle: 모든 파벌이 자신들의 견해를 피력할 공간이 마련될 것입니다.
 on-arrival: communist_dissent -= 6; labour_dissent -= 6; maximalist_dissent -= 6; reformist_dissent -= 6; syndicalist_dissent -= 6 if syndicalist_active
 
-This has been our media course historically, and it has successfully paved over the many tensions in our party.
+이것은 역사적으로 우리가 취해온 언론 노선이었으며, 당내의 수많은 긴장을 성공적으로 완화시켜 왔습니다.
 
 @radio
-title: Why not fund a radio station?
-subtitle: -3 resources
+title: 라디오 방송국 설립에 자금을 지원하는 것은 어떨까?
+subtitle: -3 자원
 choose-if: resources >= 3
-unavailable-subtitle: Not enough resources. (Need 3)
+unavailable-subtitle: 자원이 부족합니다. (3 필요)
 view-if: radio = 0
 on-arrival: radio += 1; resources -= 3; middle_class_psi += 3*(1 - dissent); industrialists_psi += 5*(1 - dissent); workers_psi += 1*(1 - dissent); labour_dissent += 5; socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent) if pacifism > 1; republican_sentiment += 3*(1-dissent) if democratisation > 1; middle_class_psi -= 1*(1-dissent) if nationalisation_adopted; industrialists_psi -= 2*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
 
-A radio station would be one of the first of its kind in Italy, and the first socialist station in the nation. Funding is expensive, and radio's in it of itself seem only affordable to the richest of the middle class, alongside industrialists and landowners, who will be the main consumers of our content, it seems.
+라디오 방송국은 이탈리아 최초 중 하나이며, 국내 최초의 사회주의 방송국이 될 것입니다. 자금 조달 비용이 높고, 라디오 자체는 현재로서는 부유한 중산층, 기업가, 지주들만 구매할 수 있기에 이들이 우리 콘텐츠의 주된 청취자가 될 것 같습니다.
 
 @radio_2
-title: We must keep on building up our radio network.
-subtitle: -1 resources
+title: 우리의 라디오 방송망을 계속 확장해야 한다.
+subtitle: -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 1)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 view-if: radio > 0 and radio <= 3
 on-arrival: radio += 1; resources -= 1; industrialists_psi += 4*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 1*(1 - dissent); socialist_sentiment += 1*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted; industrialists_psi -= 2*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
 
-Our new radio network has a mix of popular and political programming, and is proving a success.
+우리의 새로운 라디오 방송망은 대중 프로그램과 정치 프로그램을 혼합 편성하여 성공을 거두고 있습니다.
 
 @radio_3
-title: We must keep on building up our radio network.
-subtitle: It is now financially self-sufficient, and does not require any more resources.
+title: 우리의 라디오 방송망을 계속 확장해야 한다.
+subtitle: 이제 재정적으로 자급자족이 가능하여 더는 자원이 필요하지 않습니다.
 view-if: radio > 3 and radio <= 5 and year <= 1921
 on-arrival: radio += 1; industrialists_psi += 5*(1 - dissent); middle_class_psi += 3*(1 - dissent); workers_psi += 4*(1 - dissent); rural_psi += 3*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 2*(1 - dissent); nationalist_sentiment -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 3*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 2*(1-dissent) if nationalisation_adopted; industrialists_psi -= 1*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
 
-Our radio network has become a successful tool for spreading our message.
+우리의 라디오 방송망은 우리의 메시지를 전파하는 성공적인 도구가 되었습니다.
 
 @radio_4
-title: We should keep on supporting our radio network.
-subtitle: As radio becomes more common, the novelty is beginning to wear off, and radio is becoming saturated in society. -1 resources
+title: 우리의 라디오 방송망을 계속해서 지원해야 한다.
+subtitle: 라디오가 보편화되면서 신선함이 사라지고, 방송 시장은 포화 상태가 되어가고 있습니다. -1 자원
 choose-if: resources >= 1
-unavailable-subtitle: Not enough resources. (Need 3)
+unavailable-subtitle: 자원이 부족합니다. (1 필요)
 view-if: radio > 3 and (radio >= 6 or year >= 1922) and radio <= 9
 on-arrival: radio += 1; resources -= 1; middle_class_psi += 2*(1 - dissent); industrialists_psi += 2*(1 - dissent); workers_psi += 3*(1 - dissent); rural_psi += 2*(1 - dissent); veterans_psi += 2*(1-dissent); socialist_sentiment += 1*(1 - dissent); nationalist_sentiment -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; republican_sentiment += 2*(1-dissent)*(democratisation-2) if democratisation > 2; middle_class_psi -= 1*(1-dissent) if nationalisation_adopted; industrialists_psi -= 1*(1-dissent) if nationalisation_adopted; pcdi_gramsci += 1;
 
-We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, primarily due to us, and competition is becoming fierce, it seems.
+우리는 계속해서 라디오 방송국에 투자하고 있습니다. 우리 덕분에 상업 라디오와 정치 라디오 모두가 보편화되고 있으며, 경쟁이 치열해지는 듯합니다.

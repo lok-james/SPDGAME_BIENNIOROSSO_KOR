@@ -1,4 +1,4 @@
-title: Party Disunity
+title: 당내 분열
 new-page: true
 is-card: true
 view-if: party_disunity_timer = 0 and (dissent >= 0.3 or (reformist_dissent > 30 and not reformists_defect) or (maximalist_dissent > 30 and not maximalists_resign) or (communist_dissent > 30 and not pcdi_formed) or (labour_dissent > 30 and not unions_break) or (syndicalist_dissent > 30 and not unions_break))
@@ -9,17 +9,17 @@ tags: party_affairs
 
 # TODO: party dissent events for every faction, have a good image for this... 
 
-= Party Disunity
+= 당내 분열
 
-The party is being torn apart by internal dissent. Upset at the leadership and general direction, factions have started sabotaging their rivals, hampering our efforts to win votes and carry out our policies.
+당이 내분으로 분열되고 있습니다. 지도부와 당의 노선에 불만을 품은 파벌들이 경쟁 파벌을 방해하기 시작했고, 이로 인해 지지 확보와 정책 수행에 차질이 빚어지고 있습니다.
 
-[? if reformist_dissent > 30 : The reformists are upset at our direction.  ?]
-[? if maximalist_dissent > 30 : The maximalists are displeased with the direction of our party. ?]
-[? if labour_dissent > 30 : The labour unions disagree with our present course of action. ?]
-[? if communist_dissent > 30: Communists are making noises about a party split. ?]
-[? if syndicalist_dissent > 30 : The syndicalists are threatening a split. ?]
+[? if reformist_dissent > 30 : 개혁주의자들이 당의 노선에 불만을 품고 있습니다.  ?]
+[? if maximalist_dissent > 30 : 최대강령주의파가 당의 노선에 불만을 표하고 있습니다. ?]
+[? if labour_dissent > 30 : 노동조합이 현재 우리의 행동 노선에 반대합니다. ?]
+[? if communist_dissent > 30: 공산주의자들이 분당을 암시하는 발언을 하고 있습니다. ?]
+[? if syndicalist_dissent > 30 : 생디칼리스트들이 분당을 위협하고 있습니다. ?]
 
-Something must be done to reinforce party unity.
+당의 단결을 다지기 위해 무언가 조치를 취해야 합니다.
 
 - @enforce_unity
 - @concessions_reformists
@@ -31,52 +31,52 @@ Something must be done to reinforce party unity.
 - @cancel_advisor_action
 
 @enforce_unity
-title: Enforce party discipline.
+title: 당 기강을 확립한다.
 on-arrival: reformist_dissent -= 5; maximalist_dissent -= 5; labour_dissent -= 5; communist_dissent -= 5; syndicalist_dissent -= 5 if syndicalist_active; workers_psi -= 4; middle_class_psi -= 2; veterans_psi -= 2
 
-Enforcing party discipline reduces dissent, but it could lead to an exit of dissenting members.
+당 기강을 확립하면 불만을 줄일 수 있지만, 불만 당원들의 탈당으로 이어질 수 있습니다.
 
 # enforcing party discipline applies to all parties.
 
 # each party has a concessions action and an expulsions action.
 
 @concessions_reformists
-title: Give concessions to the reformists.
+title: 개혁주의자들에게 양보한다.
 view-if: reformist_dissent > 30
 on-arrival: reformist_dissent -= 7; communist_dissent += 5
 
-We have promised to adopt a more reformist posture. This may alienate the left, however.
+우리는 더 개혁적인 입장을 취하겠다고 약속했습니다. 하지만 이로 인해 좌파가 소외될 수 있습니다.
 
 @concessions_center
-title: Give concessions to the maximalists.
+title: 최대강령주의파에게 양보한다.
 view-if: maximalist_dissent > 30
 on-arrival: maximalist_dissent -= 7; reformist_dissent += 2; communist_dissent += 2;
 
-We have promised to take more policy suggestions from the maximalists. Both the left and reformist wings of the party might be displeased.
+최대강령주의파의 정책 제안을 더 많이 수용하기로 약속했습니다. 이로 인해 당내 좌파와 개혁주의파 모두 불만을 품을 수 있습니다.
 
 @concessions_left
-title: Give concessions to the left.
+title: 좌파에게 양보한다.
 view-if: communist_dissent > 30
 on-arrival: communist_dissent -= 7; reformist_dissent += 5; pcdi_bordiga += 1;
 
-We have promised that we will listen to the left wing of the party. Of course, this leads to increased dissent from the maximalists.
+당내 좌파의 의견에 귀를 기울이겠다고 약속했습니다. 당연히 이는 최대강령주의파의 불만을 키우는 결과로 이어집니다.
 
 @concessions_labour
-title: Give concessions to labour.
+title: 노동계에 양보한다.
 view-if: labour_dissent > 30
 on-arrival: labour_dissent -= 7; maximalist_dissent += 5; pcdi_bordiga += 1;
 
-The trade unions will be granted more influence in party decision making. This upsets the maximalists, who would prefer to centralize political decision making within the party.
+노동조합에 당 의사결정 과정에서 더 큰 영향력을 부여할 것입니다. 이는 정치적 의사결정을 당 중심으로 일원화하길 바라는 최대강령주의파를 자극할 것입니다.
 
 @concessions_syndicalist
-title: Give concessions to the syndicalists.
+title: 생디칼리스트들에게 양보한다.
 view-if: syndicalist_dissent > 30
 on-arrival: syndicalist_dissent -= 7; labour_dissent += 5
 
-The syndicalists will be granted more influence in party decision making. This upsets labour, who dislike us listening to the fringe factions and their union competitor.
+생디칼리스트들의 당 의사결정 과정에 더 큰 영향력을 부여할 것입니다. 이는 우리가 군소 파벌이자 자신들의 경쟁 세력인 생디칼리스트들의 의견을 경청하는 것을 못마땅해하는 노동계를 자극할 것입니다.
 
 @do_nothing
-title: Let the factions argue with themselves.
+title: 파벌들이 알아서 다투도록 내버려 둔다.
 on-arrival: labour_dissent += 1; communist_dissent += 1; maximalist_dissent += 1; reformist_dissent += 1; syndicalist_dissent += 1 if syndicalist_active;
 
-Let the factions bicker; perhaps dissent is healthy for the party.
+파벌들이 옥신각신하도록 내버려 둡시다. 어쩌면 적당한 불만은 당에 건강한 일일지도 모릅니다.
