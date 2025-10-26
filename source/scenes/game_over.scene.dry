@@ -222,7 +222,7 @@ go-to: eg_menu
 [? if psi_in_government: 우리의 주도 아래 실업률과 인플레이션이 모두 안정세에 접어들면서, 경제 위기가 서서히 해소되었습니다. ?][? if not psi_in_government: 놀랍게도 부르주아 정부가 위기를 최소한으로 억제하는 데 성공했습니다. ?]
 
 @achievements
-title: Achievements
+title: 업적
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
