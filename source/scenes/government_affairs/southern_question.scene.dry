@@ -30,7 +30,7 @@ tags: govt_affairs
 subtitle: -2 예산 - 이 조치는 자유당과의 관계를 **돌이킬 수 없을 정도로** 악화시킬 것입니다.
 choose-if: not centre_left_coalition and (king_relation >= 60 or national_congress_seen) and (not national_economic_recovery or budget >= 2)
 view-if: southern_land_reformed == 0 and moderate_plan_adopted
-unavailable-subtitle: [? if centre_left_coalition : 자유당은 이 법안이 하원에 상정되면 선제 불신임 투표를 감행하겠다고 위협 중입니다. ?][? if king_relation < 60 : 국왕은 이 법안이 상정되는 즉시 거부권을 행사하겠다는 뜻을 통보해왔습니다. ?][? if national_economic_recovery and budget < 2: 예산이 부족합니다. (2 필요) ?]
+unavailable-subtitle: [? if centre_left_coalition : 자유당은 이 법안이 하원에 상정되면 선제 불신임 투표를 감행하겠다고 위협 중입니다. ?][? if king_relation < 60 and not (violent_revolution or peaceful_revolution) : 국왕은 이 법안이 상정되는 즉시 거부권을 행사하겠다는 뜻을 통보해왔습니다. ?][? if national_economic_recovery and budget < 2: 예산이 부족합니다. (2 필요) ?]
 on-arrival: southern_land_reformed = 1; budget -= 2; ldr_relation -= 30; rural_psi += 17*(1-dissent); industrialists_ldr -= 7*(1-dissent); industrialists_pnf += 12*(1-dissent); middle_class_pnf += 4*(1-dissent); unemployment -= 0.9; inflation += 0.4; inflation += 0.1 if budget < 0; economic_growth += 0.6; fasci_coup_progress += 1; capital_strike_progress += 1; ldr_right += 3; rural += 4
 go-to: liberal_vote_of_no_confidence.let_it_happen if ldr_seating_disp + ul_seating_disp + pnf_seating_disp >= 50 and not violent_revolution
 

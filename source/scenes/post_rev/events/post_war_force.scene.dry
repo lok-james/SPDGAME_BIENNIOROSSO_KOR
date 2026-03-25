@@ -333,6 +333,7 @@ on-arrival: violent_legislation_seen = 1; violent_seen += 1
 - @violent_abortion: 낙태법을 자유화한다.
 - @violent_suffrage: 여성 참정권을 통과시킨다.
 - @violent_labour: 최저 노동 연령을 16세로 상향하여 아동 노동을 금지한다.
+- @violent_menu: 현재로썬 할 일이 없다.
 
 @violent_abortion
 view-if: not abortion_rights 

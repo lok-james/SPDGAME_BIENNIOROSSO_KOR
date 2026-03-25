@@ -4,7 +4,7 @@ view-if: pnf_in_power and pnf_leader = "Grandi" and dannunzio_king_seen and time
 max-visits: 1
 tags: event
 new-page: true
-on-arrival: grandi_dead = 1; pnf_leader = "Unorganised"
+on-arrival: grandi_dead = 1; pnf_leader = "Unorganised"; prime_minister = "Vacant"; prime_minister_party = "N/A"
 achievement: piu_fanno_rumore_quando_cadono
 
 이탈리아 총리 디노 그란디가 *베네치아 궁전*에서 정기 연설 도중 군중 속 암살자에게 가슴에 세 발의 총을 맞았고, 범인은 혼란을 틈타 성공적으로 도주했습니다. 용의자는 아직 발견되지 않았지만, 행동대는 즉시 좌파를 비난하며 적위대와 사회주의 세력에 대한 새로운 탄압을 예고했습니다.

@@ -48,7 +48,7 @@ go-to: uk_italy_menu if not uk_debts_over; us_italy_menu if uk_debts_over
 
 @grandi_uk_success
 view-if: debt_stat > 0
-on-arrival: uk_debts_over = 1; budget += 2; workers_pnf += 8; industrialists_pnf += 5; middle_class_pnf += 5; rural_pnf += 5; capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.6; economic_growth += 0.1 if economic_growth < 0 {!
+on-arrival: uk_debts_over = 1; uk_debts = 0; budget += 2; workers_pnf += 8; industrialists_pnf += 5; middle_class_pnf += 5; rural_pnf += 5; capital_strike_progress -= 2 if capital_strike_progress > 2; economic_growth += 0.6; economic_growth += 0.1 if economic_growth < 0 {!
 Q.grandi_good += 2;
 !}
 go-to: us_italy_menu if not us_debts_over
@@ -105,10 +105,9 @@ if (Q.american_relation > 6) {
 
 @grandi_us_success
 view-if: debt_stat > 0
-on-arrival: us_debts_over = 1; budget += 3; coalition_dissent -= 1 if coalition_dissent > 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_pnf += 12; industrialists_pnf += 9; middle_class_pnf += 7; rural_pnf += 8; capital_strike_progress -= 3 if capital_strike_progress > 3; economic_growth += 0.8; economic_growth += 0.2 if economic_growth < 0 {!
+on-arrival: us_debts_over = 1; american_debts = 0; budget += 3; coalition_dissent -= 1 if coalition_dissent > 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_pnf += 12; industrialists_pnf += 9; middle_class_pnf += 7; rural_pnf += 8; capital_strike_progress -= 3 if capital_strike_progress > 3; economic_growth += 0.8; economic_growth += 0.2 if economic_growth < 0 {!
 Q.grandi_good += 1;
 !}
-go-to: us_italy_menu if not us_debts_over
 
 미국과의 협상, 이전에 쌓아온 우호 관계, 그리고 친이탈리아 성향 미국 대사의 도움 덕분에 미국과 이탈리아는 합의에 이르렀습니다. 이는 부채 일부를 즉시 상환하고, 1차 세계 대전 승전으로 로마가 받은 배상금으로 나머지 부채를 분할 상환하는 계획을 포함합니다.
 
@@ -119,6 +118,5 @@ view-if: debt_stat <= 0
 on-arrival: american_relation -= 1 if american_relation > 0 {!
 Q.grandi_bad += 1;
 !}
-go-to: us_italy_menu if not us_debts_over
 
 외교적 실수였든, 현재 경제 상황 때문이었든, 미국 대사 [+ us_ambassador +]와 그란디의 회담은 친밀한 개인적 관계에도 불구하고 교착 상태에 빠졌고, 결국 어떠한 합의에도 이르지 못했습니다. 이는 그란디 외무장관의 외교 순방 실패로 기록되었습니다.
