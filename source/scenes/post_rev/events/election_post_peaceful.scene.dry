@@ -875,7 +875,7 @@ go-to: coalition_menu
 
 좌파 연정 ([+ psi_name +] + PSRI [? if pri_prominent :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]): [+ left_wing_coalition_r +]%
 
-중도좌파 연정n ([+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_prominent :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]): [+ centre_left_coalition_r +]%
+중도좌파 연정 ([+ psi_name +] + PSRI + [+ ldr_name +] [? if pri_prominent :+ PRI?] [? if ds_allies :+ [+ ds_name +]?] [? if ul_allies:+ [+ ul_name +]?] [? if pll_formed :+ PLL?]): [+ centre_left_coalition_r +]%
 
 사회-가톨릭 연정 ([+ psi_name +] + PSRI + PPI [? if pri_prominent :+ PRI?] [? if ds_allies :+ [+ ds_name +] ?] [? if pll_formed :+ PLL?]): [+ socialist_catholic_coalition_r +]%
  
@@ -971,7 +971,7 @@ achievement: governo_monocolore
 [+ prime_minister +]가 당내 경선을 통해 총리로 선출되었습니다.
 
 @left_wing_coalition
-title: 좌익 연정을 구성할 수 있을까?
+title: 좌파 연정을 구성할 수 있을까?
 subtitle: [+ psi_name +] + PSRI [? if pri_prominent :+ PRI?] [? if psu_coalitioning :+ PSU?] [? if ds_allies :+ [+ ds_name +]?] [? if pll_formed :+ PLL?]: ([+ left_wing_coalition_r +]%) [? if left_wing_coalition_r < 50: 일부 공화주의자 및 사회주의자들이 [? if pri_prominent = 0: 이탈리아 공화당과 함께?] 신임 투표를 통해 연정을 지지할 의사가 있습니다. ?]
 view-if: left_wing_coalition_r >= left_wing_minimum
 choose-if: (participating = 1 or maximalist_participating = 1) and psri_relation >= psri_min_relations and left_wing_coalition_failed = 0
